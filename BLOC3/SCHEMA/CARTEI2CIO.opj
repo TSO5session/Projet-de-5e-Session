@@ -1,0 +1,56 @@
+(ExpressProject "CARTEI2CIO"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\library1.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\cartei2cio.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (FLDSTUFF_Scope "0")
+    (FLDSTUFF_Action "0")
+    (FLDSTUFF_Report_File ".\library1.RPT")
+    (FLDSTUFF_Update_File ".\library1.UPD")
+    (FLDSTUFF__Uppercase_Result_Property "FALSE")
+    (FLDSTUFF_Uppercase_Update_Property "FALSE")
+    (FLDSTUFF_Uppercase_Unconditionally "FALSE")
+    (FLDSTUFF_Visibility "0")
+    (FLDSTUFF_inst_or_occurrence "0")
+    (FLDSTUFF_Create_Report_File "FALSE"))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (ACSL-6400
+      (FullPartName "ACSL-6400.Normal")
+      (LibraryName
+         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\LIBRARY1.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "Library")
+      (Path "Design Resources" "Library"
+         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\library1.olb")
+      (Select "Design Resources" "Library"
+         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\library1.olb"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -30 0 200 0 472"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 185 1827 -2 735")
+        (Scroll "-312 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1")))
+  (MPSSessionName "1230838"))
