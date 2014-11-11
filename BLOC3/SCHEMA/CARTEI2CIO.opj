@@ -55,10 +55,15 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" ".\cartei2cio.dsn")
-      (Path "Design Resources" ".\cartei2cio.dsn" "SCHEMATIC1")
+      (Path "Design Resources"
+         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\cartei2cio.dsn")
+      (Path "Design Resources"
+         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\cartei2cio.dsn"
+         "SCHEMATIC1")
       (Path "Design Resources" "Library")
-      (Select "Design Resources" ".\cartei2cio.dsn" "SCHEMATIC1" "PAGE5"))
+      (Select "Design Resources"
+         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\cartei2cio.dsn"
+         "SCHEMATIC1" "PAGE5"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -69,7 +74,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 2 3 -1 -1 -8 -30 185 1827 -2 735")
-        (Scroll "-288 0")
+        (Scroll "-434 0")
         (Zoom "100")
         (Occurrence "/"))
       (Path

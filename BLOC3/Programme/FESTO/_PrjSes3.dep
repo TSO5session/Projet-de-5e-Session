@@ -1,0 +1,6126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>917959579</fileChecksum>
+  <configuration>
+    <name>DALLAS</name>
+    <outputs>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorlogeIO.s51</file>
+      <file>$PROJ_DIR$\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\CLCommunic.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\CLTest.cpp</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLHorloge.r51</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLMaison.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLI2CBase.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorlogeIO.i</file>
+      <file>$PROJ_DIR$\CLEcran.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLMaison.r51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorloge.s51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorlogeIO.lst</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorloge1307.lst</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\CLCommunic.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLCommunic.lst</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLI2CBase.r51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLTest.i</file>
+      <file>$PROJ_DIR$\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLI2CBase.i</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLEcran.s51</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLHorlogeIO.r51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLI2CPort.s51</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLPiece.r51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLPiece.s51</file>
+      <file>$PROJ_DIR$\CLTest.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLEcran.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLHorloge.pbi</file>
+      <file>$PROJ_DIR$\CLI2CPort.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\TypeCible.h</file>
+      <file>$PROJ_DIR$\DALLAS\Exe\_ProjetSesisonCinq.HEX</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorloge1307.i</file>
+      <file>$PROJ_DIR$\DALLAS\List\_Session3Main.lst</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLEcran.lst</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLCommunic.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLI2CBase.s51</file>
+      <file>$PROJ_DIR$\_Session3Main.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\CLHorloge.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLInOutBase.lst</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorloge1307.s51</file>
+      <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLCommunic.r51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLTest.lst</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLI2CBase.lst</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLPiece.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLTest.s51</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\_Session3Main.pbi</file>
+      <file>$PROJ_DIR$\CLInOutBase.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLI2CPort.r51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLInOutBase.s51</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\CLPiece.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLI2CPort.lst</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLCommunic.i</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLMaison.lst</file>
+      <file>$PROJ_DIR$\DALLAS\List\_Session3Main.s51</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLPiece.i</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLMaison.s51</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLCommunic.s51</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\_PrjSes3.pbd</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLI2CPort.i</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLI2CPort.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorloge.i</file>
+      <file>$PROJ_DIR$\DALLAS\List\_Session3Main.i</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLPiece.lst</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLEcran.i</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLInOutBase.i</file>
+      <file>$PROJ_DIR$\CLMaison.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLMaison.i</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\_Session3Main.r51</file>
+      <file>$PROJ_DIR$\DALLAS\Obj\CLHorlogeIO.pbi</file>
+      <file>$PROJ_DIR$\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\DALLAS\List\CLHorloge.lst</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 84 74 46 96</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 43 59 29 53 17 66 94 55 48 70 98 38 28 24 90 75 37 69 56 18 42 85 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 2 43 59 29 53 17 66 94 55 48 70 98 38 28 24 90 75 37 69 81 56 18 42 85 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunic.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 72 78 25 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29 24</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 92 31 50 87</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17 2 43 59 29 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 17 2 43 59 29 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 83 20 99 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29 55 48</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29 55 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 45 58 22 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29 28 38 98</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29 28 38 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16 0 21 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29 48</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 30 52 62 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29 98</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 93 68 57 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 95 77 73 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 43 59 29 94 66 55 48 17 70</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 2 43 59 29 94 66 55 48 17 70</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 76 35 89 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29 70</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29 70</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 27 64 61 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 43 59 29 36 17 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 2 43 59 29 36 17 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 33 71 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 2 43 59 29 38 98</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66 2 43 59 29 38 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\DALLAS\Obj\_PrjSes3.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 51 39 40 49 97 15 82 86 14 63 88 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>DALLASDebug</name>
+    <outputs>
+      <file>$PROJ_DIR$\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\CLCommunic.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\CLTest.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\CLCommunic.h</file>
+      <file>$PROJ_DIR$\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\CLTest.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\TypeCible.h</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.h</file>
+      <file>$PROJ_DIR$\_Session3Main.h</file>
+      <file>$PROJ_DIR$\CLHorloge.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
+      <file>$PROJ_DIR$\CLCommunicCom2.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAdc7829.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPile.i</file>
+      <file>$PROJ_DIR$\CLMoTeurPasAPas.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLTest.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppConvCanRs232.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLIOPCF8574.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorlogeIO.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppConvCanRs232.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLJoyStick.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunicCom1.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLInclinometre.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLRoue.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLI2CBase.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCanBus.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCaptDistGP2D12.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLI2CBase.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge1306.i</file>
+      <file>$PROJ_DIR$\CLDac7226.cpp</file>
+      <file>$PROJ_DIR$\CLCaptDistSKU35080.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunicCom1.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEncodeur.s51</file>
+      <file>$PROJ_DIR$\CLEncodeur.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEntreeBuffer.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\write.lst</file>
+      <file>$PROJ_DIR$\CLEncodeur.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLClavier.s51</file>
+      <file>$PROJ_DIR$\CLSortieLatch.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCanBus.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\_PrjSes3.pbd</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdcTl2544.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLOneWire.s51</file>
+      <file>$PROJ_DIR$\CLDAC7554.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMemoire24C32.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSortieLatch.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSortie.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSuiveurLigne.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLPiece.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLi2CReg.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\CLAppAuto.cpp</file>
+      <file>$PROJ_DIR$\CLAppAuto.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\_Session3Main.r51</file>
+      <file>$PROJ_DIR$\CLPile.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLClavier.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\_ProjetSessionCinqMain.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge1306.lst</file>
+      <file>$PROJ_DIR$\CLJoyStick.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSortie.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorloge1306.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLTest.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPiece.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppTelecommande.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppVisSansFin.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppTelecommande.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLFesto.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDac6574.s51</file>
+      <file>$PROJ_DIR$\CLFesto.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEntree.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppAuto.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdc7829.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLDac7226.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\_Session3Main.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\_ProjetSessionCinqMain.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLJoyStick.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunic.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLRoue.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\read.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCommunicCom1.r51</file>
+      <file>$PROJ_DIR$\CLClavier.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunic.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLPile.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\read.c</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCaptDistGP2D12.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppVisSansFin.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLI2CPort.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLI2CBase.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEntree.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMoTeurPasAPas.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCommunicCom1.pbi</file>
+      <file>$PROJ_DIR$\CLAppVisSansFin.cpp</file>
+      <file>$PROJ_DIR$\CLAdcUpsd.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDAC7554.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLPiece.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCaptDistSKU35080.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdcUpsd.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\_Session3Main.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMemoire24C32.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunicCom2.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMoTeurPasAPas.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCaptDistSKU35080.lst</file>
+      <file>$PROJ_DIR$\..\ProjetDepart\_Ver810_lnk51ew_DS89C450.xcl</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLI2CBase.pbi</file>
+      <file>$PROJ_DIR$\CLCaptDistGp2d12.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCaptDistGP2D12.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppConvCanRs232.s51</file>
+      <file>$PROJ_DIR$\CLMemoire24C32.H</file>
+      <file>$PROJ_DIR$\CLIOMcp2309.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEntree.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\write.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLPwm.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMoTeurPasAPas.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLIOMcp2309.i</file>
+      <file>$PROJ_DIR$\CLSortie.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorloge.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLJoyStick.r51</file>
+      <file>$PROJ_DIR$\CLDac6574.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLIOPCF8574.r51</file>
+      <file>$PROJ_DIR$\CLInclinometre.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEncodeur.r51</file>
+      <file>$PROJ_DIR$\CLOneWire.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSuiveurLigne.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDac6574.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLClavier.lst</file>
+      <file>$PROJ_DIR$\CLCommunicCom1.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\write.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPwm.s51</file>
+      <file>$PROJ_DIR$\CLRoue.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLOneWire.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPwm.i</file>
+      <file>$PROJ_DIR$\CLLimiteVitesse.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMemoire24C32.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLOneWire.i</file>
+      <file>$PROJ_DIR$\CLPile.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLLimiteVitesse.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLI2CPort.s51</file>
+      <file>$PROJ_DIR$\CLCanBus.cpp</file>
+      <file>$PROJ_DIR$\CLAdcUpsd.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEcran.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunicCom2.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCanBus.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLPwm.r51</file>
+      <file>$PROJ_DIR$\CLAppTelecommande.cpp</file>
+      <file>$PROJ_DIR$\CLAdc7829.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEntreeBuffer.s51</file>
+      <file>$PROJ_DIR$\CLOneWire.cpp</file>
+      <file>$PROJ_DIR$\CLAdcTl2544.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdcTl2544.s51</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yfuns.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLFesto.pbi</file>
+      <file>$PROJ_DIR$\CLMachineSous.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppAuto.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppConvCanRs232.r51</file>
+      <file>$PROJ_DIR$\_TypeCible.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorlogeIO.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCommunic.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\write.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAdcTl2544.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCommunic.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSpiBase.pbi</file>
+      <file>$PROJ_DIR$\CLAppVisSansFin.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSpiBase.i</file>
+      <file>$PROJ_DIR$\CLI2CReg.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppTelecommande.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppTelecommande.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSuiveurLigne.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLIOMcp2309.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLDac6574.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdcUpsd.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLFesto.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDac7226.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLJoyStick.pbi</file>
+      <file>$PROJ_DIR$\CLSortieLatch.cpp</file>
+      <file>$PROJ_DIR$\_ProjetSessionCinqMain.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCanBus.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdcTl2544.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\_ProjetSessionCinqMain.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorlogeIO.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPile.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\read.lst</file>
+      <file>$PROJ_DIR$\CLSortie.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge1306.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCaptDistGP2D12.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLi2CReg.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge1307.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEntreeBuffer.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppAuto.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLFesto.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLADCMax1236.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMaison.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLInclinometre.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge1307.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPiece.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLTest.i</file>
+      <file>$PROJ_DIR$\CLMoteurPasAPas.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMachineSous.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\_ProjetSessionCinqMain.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLIOMcp2309.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSortie.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLIOPCF8574.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDAC7554.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDac6574.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLI2CBase.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdc7829.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSortieLatch.pbi</file>
+      <file>$PROJ_DIR$\CLIoPcf8574.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMaison.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdc7829.lst</file>
+      <file>$PROJ_DIR$\CLInclinometre.H</file>
+      <file>$PROJ_DIR$\CLIOPCF8574.cpp</file>
+      <file>$PROJ_DIR$\write.c</file>
+      <file>$PROJ_DIR$\CLCaptDistSKU35080.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAdcTl2544.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppVisSansFin.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAdc7829.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLInOutBase.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppVisSansFin.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\read.i</file>
+      <file>$PROJ_DIR$\CLPwm.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMaison.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\read.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLDac7226.pbi</file>
+      <file>$PROJ_DIR$\CLDac6574.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\_Session3Main.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Exe\_ProjetSesisonCinq.HEX</file>
+      <file>$PROJ_DIR$\CLSpiBase.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLIOPCF8574.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEncodeur.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEntree.i</file>
+      <file>$PROJ_DIR$\CLDac7226.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDAC7554.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorlogeIO.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSortie.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLInclinometre.s51</file>
+      <file>$PROJ_DIR$\CLI2CReg.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMaison.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPwm.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLADCMax1236.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLRoue.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMemoire24C32.r51</file>
+      <file>$PROJ_DIR$\CLRoue.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLInclinometre.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLInOutBase.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEntreeBuffer.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLIOMcp2309.r51</file>
+      <file>$PROJ_DIR$\CLADCMax1236.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCanBus.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLi2CReg.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMoTeurPasAPas.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMachineSous.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLInOutBase.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLDac6574.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLi2CReg.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorloge1306.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppAuto.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEcran.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCaptDistSKU35080.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLRoue.pbi</file>
+      <file>$PROJ_DIR$\CLCanBus.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPile.s51</file>
+      <file>$PROJ_DIR$\CLAppConvCanRs232.cpp</file>
+      <file>$PROJ_DIR$\_ProjetSessionCinqMain.cpp</file>
+      <file>$PROJ_DIR$\CLCommunicCom2.cpp</file>
+      <file>$PROJ_DIR$\CLFesto.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLLimiteVitesse.pbi</file>
+      <file>$PROJ_DIR$\CLSuiveurLigne.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLHorloge1307.lst</file>
+      <file>$PROJ_DIR$\CLHorloge1306.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSpiBase.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSortieLatch.i</file>
+      <file>$PROJ_DIR$\CLMemoire24C32.cpp</file>
+      <file>$PROJ_DIR$\CLAdc7829.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAppConvCanRs232.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLi2CReg.pbi</file>
+      <file>$PROJ_DIR$\CLSpiBase.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSortieLatch.lst</file>
+      <file>$PROJ_DIR$\CLIOMCP2309.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLADCMax1236.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSortieLatch.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLClavier.r51</file>
+      <file>$PROJ_DIR$\CLAppConvCanRs232.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLI2CPort.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\_Session3Main.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\_ProjetSessionCinqMain.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLDAC7554.pbi</file>
+      <file>$PROJ_DIR$\CLHorloge1306.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMachineSous.lst</file>
+      <file>$PROJ_DIR$\CLDac7554.H</file>
+      <file>$PROJ_DIR$\CLCaptDistGP2D12.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSuiveurLigne.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDac7226.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCaptDistGP2D12.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEntreeBuffer.r51</file>
+      <file>$PROJ_DIR$\_ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLOneWire.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLDac7226.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLJoyStick.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLOneWire.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLIOMcp2309.s51</file>
+      <file>$PROJ_DIR$\CLLimiteVitesse.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorlogeIO.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunic.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMaison.s51</file>
+      <file>$PROJ_DIR$\CLEntree.H</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLI2CPort.lst</file>
+      <file>$PROJ_DIR$\CLInOutBase.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\CLPiece.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\CLMaison.h</file>
+      <file>$PROJ_DIR$\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\_ProjetSesisonCinq.pbd</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunicCom2.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSortie.lst</file>
+      <file>$PROJ_DIR$\CLSuiveurLigne.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLDAC7554.r51</file>
+      <file>$PROJ_DIR$\CLMachineSous.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLClavier.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCommunicCom1.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAdcUpsd.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLFesto.lst</file>
+      <file>$PROJ_DIR$\CLJoyStick.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEncodeur.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLI2CPort.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLPile.pbi</file>
+      <file>$PROJ_DIR$\CLEntreeBuffer.cpp</file>
+      <file>$PROJ_DIR$\CLCommunicCom1.h</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLRoue.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEncodeur.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSuiveurLigne.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLADCMax1236.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLCaptDistSKU35080.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppTelecommande.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLInclinometre.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLHorloge.pbi</file>
+      <file>$PROJ_DIR$\CLClavier.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAdcUpsd.r51</file>
+      <file>$PROJ_DIR$\CLAdcMax1236.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppAuto.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMachineSous.i</file>
+      <file>$PROJ_DIR$\CLPwm.H</file>
+      <file>$PROJ_DIR$\CLEntreeBuffer.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLPiece.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\write.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\_ProjetSesisonCinq.map</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMemoire24C32.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLMoTeurPasAPas.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLLimiteVitesse.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLSpiBase.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLMachineSous.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLIOPCF8574.pbi</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLAppVisSansFin.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCommunicCom2.pbi</file>
+      <file>$PROJ_DIR$\CLEntree.cpp</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLAdcUpsd.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLEntree.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEcran.s51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\read.s51</file>
+      <file>$PROJ_DIR$\CLAppTelecommande.H</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCommunicCom2.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLLimiteVitesse.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLEcran.lst</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLSpiBase.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\Obj\CLCaptDistSKU35080.r51</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLADCMax1236.i</file>
+      <file>$PROJ_DIR$\DALLASDebug\List\CLLimiteVitesse.lst</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 249 309 118 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 22 27 16 24 12 333 341 25 23 335 342 19 15 14 339 336 18 334 26 13 21 338 340</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 22 27 16 24 12 333 341 25 23 335 342 19 15 14 339 336 18 334 337 26 13 21 338 340</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunic.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 181</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 328 94 100 178</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16 14</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16 14</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 282</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 161 388 393 240</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 1 22 27 16 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 12 1 22 27 16 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 366</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 37 244 200 137</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16 25 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16 25 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 208 215 293 119</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16 15 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16 15 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 35 201 257 327</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 226 107 45 42</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 276 268 239 113</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 245</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 230 329 261 213</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 22 27 16 341 333 25 23 12 335</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 22 27 16 341 333 25 23 12 335</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 115</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 374 216 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16 335</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16 335</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 217 32 79 280</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 22 27 16 17 12 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 22 27 16 17 12 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 308</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 106 158 332 355</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 333 1 22 27 16 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 333 1 22 27 16 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 250 376</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMoTeurPasAPas.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 274</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 109 122 378 134</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 218 56 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 218 56 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDac7226.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 247</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 317 193 322 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 255 333 56</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 255 333 56</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCaptDistSKU35080.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 363 283 123 395</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 235 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 235 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEncodeur.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 253</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 360 50 354 142</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 54 330 229 19 342 303 251 12 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 54 330 229 19 342 303 251 12 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\DALLASDebug\Obj\_PrjSes3.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 181 282 366 68 177 125 308 102 245 115 99 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDAC7554.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 311</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 114 224 256 347</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 314 251</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 314 251</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppAuto.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 281</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 88 174 210 370</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 70 12 333 358 28 150 139 19 342 292 229 156 369 235 126 153 25 15 339 336 18 334 26 13 21 338 340</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 70 12 333 358 28 150 139 19 342 292 229 156 369 235 126 153 25 15 339 336 18 334 337 26 13 21 338 340</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPile.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 356</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 30 286 202 101</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 156 369 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 156 369 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLJoyStick.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 194</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 93 323 38 138</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 353</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 353</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLFesto.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 84 211 352 192</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 290 229 19 342 12 333 358 98 330 303 251 204</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 290 229 19 342 12 333 358 98 330 303 251 204</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\read.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 246</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 242 389 203 96</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 171 338 336 18 334 26 13 21</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 171 338 336 18 334 337 26 13 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppVisSansFin.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 241</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 82 105 237 383</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 183 12 333 358 218 56 54 330 229 19 342 303 251</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 183 12 333 358 218 56 54 330 229 19 342 303 251</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLIOMcp2309.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 189</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 135 325 221 270</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 303 251</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 303 251</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSortie.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 258</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 64 222 345 77</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 204 229 19 342 303 251 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 204 229 19 342 303 251 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInclinometre.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 214</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 40 259 267 365</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunicCom1.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 39 350 49 97</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 358</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 358</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCanBus.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 43 272 163 197</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 285 251 12 333 358</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 285 251 12 333 358</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdcUpsd.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 351</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 117 386 191 368</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 112</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppTelecommande.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 186 81 83 364</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 390 358 28 98 333 353 232 251 112 372 12</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 390 358 28 98 333 353 232 251 112 372 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdc7829.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 89 227 231 238</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 298 333 373</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 298 333 373</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLOneWire.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 321</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 155 60 324 151</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 143</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 143</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdcTl2544.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 236</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 59 170 198 180</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CReg.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 300</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 278 273 67 207</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 260</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 260</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSortieLatch.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 228</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 296 305 302 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 56 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 56 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 382</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 252 34 223 140</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 229 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 229 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\write.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 132</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 179 148 53 375</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 171 338 336 18 334 26 13 21 12 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 171 338 336 18 334 337 26 13 21 12 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPwm.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 133</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 152 149 262 164</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 372</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 372</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDac6574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 190</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 225 85 145 277</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 139 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 139 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\DALLASDebug\Exe\_ProjetSesisonCinq.HEX</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 376</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 124 178 240 137 119 327 42 355 113 213 66 280 71 331</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLRoue.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 284</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 41 95 264 359</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 150 139 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 150 139 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLADCMax1236.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 362</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 396 212 304 263</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 369 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 369 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppConvCanRs232.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 36 128 299 175</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 307 358 98 333 12 285 251</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 307 358 98 333 12 285 251</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_ProjetSessionCinqMain.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 220</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 74 199 92 310</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 196 17 12 333 19 342 15 312 251 25 23 129 358 28 369 229 139 204 303 330 54 56 373 298 255 235 153 98</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 196 17 12 333 19 342 15 312 251 25 23 129 358 28 369 229 139 204 303 330 54 56 373 298 255 235 153 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunicCom2.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 384</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 121 162 344 391</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 28</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1306.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 46 205 75 279</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 312 251</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 312 251</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMemoire24C32.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 120 377 154 265</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 129 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 129 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSpiBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 182</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 184 295 380 394</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 251</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 251</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCaptDistGP2D12.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 318</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 206 127 104 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 126 369 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 126 369 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLLimiteVitesse.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 291</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 392 157 397 379</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 153 369 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 153 369 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\DALLASDebug\Obj\_ProjetSesisonCinq.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 362 29 236 351 281 33 187 241 57 318 116 73 110 384 311 190 247 282 253 87 209 172 366 78 68 177 189 382 102 214 194 291 381 62 274 321 356 133 284 258 228 182 65 99 125 308 300 220 246 132</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSuiveurLigne.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 361 188 144 316</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 292 229 19 342</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 292 229 19 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMachineSous.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 381</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 371 219 313 275</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 173 229 19 342 12 333 358 98 330 303 251 204 339 336 18 334 26 13 21 338 340</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 173 229 19 342 12 333 358 98 330 303 251 204 339 336 18 334 337 26 13 21 338 340</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEntreeBuffer.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 209</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 269 167 52 319</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 373 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 373 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLClavier.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 349 55 146 306</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 98 333</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 98 333</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEntree.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 254 131 108 387</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 176 27 320 330 229 19 342 303 251</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 176 27 320 330 229 19 342 303 251</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\CLCommunic.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\CLTest.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\CLCommunic.h</file>
+      <file>$PROJ_DIR$\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\CLTest.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\TypeCible.h</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.h</file>
+      <file>$PROJ_DIR$\_Session3Main.h</file>
+      <file>$PROJ_DIR$\CLHorloge.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
+      <file>$PROJ_DIR$\CLMoTeurPasAPas.cpp</file>
+      <file>$PROJ_DIR$\CLDac7226.cpp</file>
+      <file>$PROJ_DIR$\CLCaptDistSKU35080.cpp</file>
+      <file>$PROJ_DIR$\CLEncodeur.cpp</file>
+      <file>$PROJ_DIR$\CLDAC7554.cpp</file>
+      <file>$PROJ_DIR$\CLAppAuto.cpp</file>
+      <file>$PROJ_DIR$\CLPile.cpp</file>
+      <file>$PROJ_DIR$\CLJoyStick.cpp</file>
+      <file>$PROJ_DIR$\CLFesto.cpp</file>
+      <file>$PROJ_DIR$\read.c</file>
+      <file>$PROJ_DIR$\CLAppVisSansFin.cpp</file>
+      <file>$PROJ_DIR$\CLIOMcp2309.cpp</file>
+      <file>$PROJ_DIR$\CLSortie.cpp</file>
+      <file>$PROJ_DIR$\CLInclinometre.cpp</file>
+      <file>$PROJ_DIR$\CLCommunicCom1.cpp</file>
+      <file>$PROJ_DIR$\CLCanBus.cpp</file>
+      <file>$PROJ_DIR$\CLAdcUpsd.cpp</file>
+      <file>$PROJ_DIR$\CLAppTelecommande.cpp</file>
+      <file>$PROJ_DIR$\CLAdc7829.cpp</file>
+      <file>$PROJ_DIR$\CLOneWire.cpp</file>
+      <file>$PROJ_DIR$\CLAdcTl2544.cpp</file>
+      <file>$PROJ_DIR$\_TypeCible.h</file>
+      <file>$PROJ_DIR$\CLI2CReg.cpp</file>
+      <file>$PROJ_DIR$\CLSortieLatch.cpp</file>
+      <file>$PROJ_DIR$\_ProjetSessionCinqMain.h</file>
+      <file>$PROJ_DIR$\CLIOPCF8574.cpp</file>
+      <file>$PROJ_DIR$\write.c</file>
+      <file>$PROJ_DIR$\CLPwm.cpp</file>
+      <file>$PROJ_DIR$\CLDac6574.cpp</file>
+      <file>$PROJ_DIR$\CLRoue.cpp</file>
+      <file>$PROJ_DIR$\CLADCMax1236.cpp</file>
+      <file>$PROJ_DIR$\CLAppConvCanRs232.cpp</file>
+      <file>$PROJ_DIR$\_ProjetSessionCinqMain.cpp</file>
+      <file>$PROJ_DIR$\CLCommunicCom2.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge1306.cpp</file>
+      <file>$PROJ_DIR$\CLMemoire24C32.cpp</file>
+      <file>$PROJ_DIR$\CLSpiBase.cpp</file>
+      <file>$PROJ_DIR$\CLCaptDistGP2D12.cpp</file>
+      <file>$PROJ_DIR$\_ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\CLLimiteVitesse.cpp</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLPile.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorlogeIO.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLPwm.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMemoire24C32.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCommunicCom1.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCanBus.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSpiBase.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLI2CReg.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\_Session3Main.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLCommunic.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLCommunic.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorloge.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppAuto.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCommunicCom2.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorloge1306.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEncodeur.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLI2CReg.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLJoyStick.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\Debug\Obj\write.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLEcran.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorloge.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLI2CBase.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLTest.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\TypeCible.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLTest.cpp</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCommunicCom1.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLI2CBase.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLDAC7554.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppConvCanRs232.r51</file>
+      <file>$PROJ_DIR$\Debug\List\CLCommunic.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLEcran.s51</file>
+      <file>$PROJ_DIR$\Debug\List\CLHorloge.s51</file>
+      <file>$PROJ_DIR$\Debug\List\CLHorloge.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLHorloge1307.s51</file>
+      <file>$PROJ_DIR$\Debug\List\CLI2CPort.s51</file>
+      <file>$PROJ_DIR$\Debug\List\CLEcran.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLHorlogeIO.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLHorlogeIO.s51</file>
+      <file>$PROJ_DIR$\Debug\List\CLHorloge1307.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLI2CBase.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLMaison.s51</file>
+      <file>$PROJ_DIR$\Debug\List\CLI2CPort.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLI2CReg.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLInOutBase.s51</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLIOPcf8574.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorlogeIO.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CPort.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CReg.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLInOutBase.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\Debug\List\CLInOutBase.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLMaison.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLPiece.s51</file>
+      <file>$PROJ_DIR$\Debug\List\CLPiece.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\Debug\List\CLTest.s51</file>
+      <file>$PROJ_DIR$\Debug\List\_Session3Main.lst</file>
+      <file>$PROJ_DIR$\Debug\List\CLTest.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CReg.h</file>
+      <file>$PROJ_DIR$\Debug\List\_Session3Main.s51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLLimiteVitesse.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLMaison.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLPiece.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\_ProjetSessionCinqMain.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMachineSous.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCaptDistSKU35080.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCanBus.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCaptDistSKU35080.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSuiveurLigne.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorloge1306.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEntree.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSortie.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMachineSous.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppTelecommande.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSuiveurLigne.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLFesto.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLOneWire.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLI2CPort.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEcran.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMaison.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAdcUpsd.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMoTeurPasAPas.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLI2CPort.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLDAC7554.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCaptDistGP2D12.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEncodeur.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppConvCanRs232.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLClavier.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLInclinometre.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\_Session3Main.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLPile.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCaptDistGP2D12.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCommunicCom2.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLIOPCF8574.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCommunic.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLADCMax1236.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAdcUpsd.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEntreeBuffer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLDac7226.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSpiBase.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLPwm.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEntree.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLDac6574.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorlogeIO.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLIOPCF8574.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSortieLatch.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\write.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLOneWire.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppVisSansFin.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSortieLatch.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLDac6574.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppVisSansFin.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\read.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLClavier.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLADCMax1236.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLIOMcp2309.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\read.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMoTeurPasAPas.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorloge.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLLimiteVitesse.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppAuto.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorloge.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMemoire24C32.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLFesto.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLEntreeBuffer.r51</file>
+      <file>$PROJ_DIR$\Debug\Exe\_ProjetSesisonCinq.HEX</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLPiece.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\_Session3Main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLCommunic.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\_ProjetSesisonCinq.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAdcTl2544.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLDac7226.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAdcTl2544.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLRoue.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLRoue.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLSortie.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAppTelecommande.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLInclinometre.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLIOMcp2309.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLMaison.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAdc7829.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLAdc7829.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLPiece.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\CLJoyStick.pbi</file>
+      <file>$PROJ_DIR$\CLInOutBase.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\CLPiece.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\CLMaison.h</file>
+      <file>$PROJ_DIR$\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\CLSuiveurLigne.cpp</file>
+      <file>$PROJ_DIR$\CLMachineSous.cpp</file>
+      <file>$PROJ_DIR$\CLEntreeBuffer.cpp</file>
+      <file>$PROJ_DIR$\CLClavier.cpp</file>
+      <file>$PROJ_DIR$\CLEntree.cpp</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 211</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 171</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 22 27 16 24 12 230 238 25 23 232 239 19 15 14 236 233 18 231 234 26 13 21 235 237</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunic.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 176</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 213</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16 14</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 159</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 149</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 1 22 27 16 230</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 201</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 204</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16 25 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 212</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 205</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16 15 19 239</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 185</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 99</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16 239</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 191</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 220</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 225</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 22 27 16 238 230 25 23 12 232</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 210</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 228</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16 232</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 168</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 138</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 22 27 16 17 12 230</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 163</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 158</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230 1 22 27 16 19 239</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 209</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMoTeurPasAPas.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 200</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 162</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDac7226.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 216</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 180</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCaptDistSKU35080.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 147</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 145</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEncodeur.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 166</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDAC7554.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 100</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppAuto.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 203</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPile.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLJoyStick.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 229</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 89</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLFesto.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 156</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 207</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\read.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 195</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 199</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppVisSansFin.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 194</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 190</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLIOMcp2309.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 224</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 198</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSortie.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 221</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 152</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInclinometre.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 170</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 223</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunicCom1.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 98</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCanBus.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 146</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdcUpsd.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 161</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 178</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppTelecommande.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 222</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 154</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdc7829.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 226</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 227</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLOneWire.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 189</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdcTl2544.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 215</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CReg.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 75</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSortieLatch.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 192</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 187</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 186</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 175</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\write.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 188</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPwm.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 182</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDac6574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 193</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 184</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLRoue.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 219</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 218</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLADCMax1236.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppConvCanRs232.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 167</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 101</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_ProjetSessionCinqMain.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 143</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 49 66 52</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 49 66 52</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunicCom2.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 174</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1306.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 150</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 86</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMemoire24C32.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 206</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSpiBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 181</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCaptDistGP2D12.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 173</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 165</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLLimiteVitesse.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 202</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 139</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 211</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 137 134 171</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78 96 83 77 92 125 140 93 120 142 131 132 117 136 118 80 236 233 18 231 234 26 13 21 235 237</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLCommunic.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 176</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 102 213</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83 80</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83 80</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 201</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 104 105 204</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83 93 120</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83 93 120</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 212</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 106 111 205</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83 118 132 131</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83 118 132 131</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 159</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 103 108 149</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 92 78 96 83 125</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 92 78 96 83 125</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 168</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 133 135 138</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78 96 83 95 92 125</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78 96 83 95 92 125</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 185</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 110 109 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83 120</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83 120</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 112 99</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83 131</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83 131</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 163</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 107 114 158</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83 132 131</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83 132 131</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLI2CReg.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 115 75</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 136 78 96 83 132 125 131</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 136 78 96 83 132 125 131</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 191</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 116 127 220</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 113 128 225</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78 96 83 140 125 93 120 92 142</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78 96 83 140 125 93 120 92 142</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\Ressource\workspace\Libraire\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 210</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 129 130 228</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 96 83 142</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125 78 96 83 142</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\_ProjetSesisonCinq.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 143</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSuiveurLigne.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 148</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 155</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMachineSous.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 144</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 153</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEntreeBuffer.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLClavier.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 169</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 196</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEntree.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 151</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 183</file>
+        </tool>
+      </outputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs>
+      <file>$PROJ_DIR$\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\CLCommunic.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\CLTest.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.h</file>
+      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.cpp</file>
+      <file>$PROJ_DIR$\TypeCible.h</file>
+      <file>$PROJ_DIR$\_Session3Main.h</file>
+      <file>$PROJ_DIR$\Release\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CLHorlogeIO.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLCommunic.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CLHorlogeIO.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\_PrjSes3.pbd</file>
+      <file>$PROJ_DIR$\Release\Obj\CLI2CPort.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLI2CBase.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CLHorloge.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLCommunic.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLPiece.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLI2CPort.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CLEcran.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CLPiece.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CLHorloge.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\_Session3Main.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\_Session3Main.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLMaison.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\Release\Exe\_PrjSes3.a51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLI2CBase.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\CLMaison.pbi</file>
+      <file>$PROJ_DIR$\CLInOutBase.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 36</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 15 13 16 12 43</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunic.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 1 15 13 43</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 12 1 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 1 15 13</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 43 1 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Obj\_PrjSes3.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 31 32 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>UPSD</name>
+    <outputs>
+      <file>$PROJ_DIR$\Libraire\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\Libraire\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\Libraire\_Session3Main.h</file>
+      <file>$PROJ_DIR$\Libraire\CLADDA.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLADDA.h</file>
+      <file>$PROJ_DIR$\Libraire\CLCommunic.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLCommunic.h</file>
+      <file>$PROJ_DIR$\Libraire\CLDelai.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLDelai.h</file>
+      <file>$PROJ_DIR$\Libraire\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLEcran.h</file>
+      <file>$PROJ_DIR$\Libraire\CLHorloge.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Libraire\CLDAC7554.h</file>
+      <file>$PROJ_DIR$\Libraire\CLMCP2515.h</file>
+      <file>$PROJ_DIR$\Libraire\CLDAC7554.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLMCP2515.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLTLV2544.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLTLV2544.h</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLTLV2544.pbi</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLDAC7554.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLDAC7554.pbi</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLMCP2515.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLTLV2544.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLMCP2515.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLDAC7554.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLDAC7554.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLMCP2515.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLMCP2515.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLDAC7554.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLMCP2515.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLTLV2544.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLTLV2544.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLTLV2544.s51</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\Libraire\CLIOPcf8574.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLIOPcf8574.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLCommunic.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\_Session3Main.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLADDA.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLADDA.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLDelai.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLCommunic.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLDelai.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorloge.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLEcran.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorloge.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLPiece.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorlogeIO.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CPort.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CReg.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CReg.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLInOutBase.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLMaison.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLSPI.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLSPI.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLTest.h</file>
+      <file>$PROJ_DIR$\UPSD\List\CLSPI.s51</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLTest.cpp</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\TypeCible.h</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\iouPSD3254A.h</file>
+      <file>$PROJ_DIR$\UPSD\List\CLSPI.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLSPI.i</file>
+      <file>$PROJ_DIR$\Libraire\CLHorloge.h</file>
+      <file>$PROJ_DIR$\Libraire\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\Libraire\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLHorlogeIO.h</file>
+      <file>$PROJ_DIR$\Libraire\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\Libraire\CLI2CPort.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\Libraire\CLI2CReg.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLI2CReg.h</file>
+      <file>$PROJ_DIR$\Libraire\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLInOutBase.h</file>
+      <file>$PROJ_DIR$\Libraire\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLMaison.h</file>
+      <file>$PROJ_DIR$\Libraire\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLPiece.h</file>
+      <file>$PROJ_DIR$\Libraire\CLSPI.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLSPI.h</file>
+      <file>$PROJ_DIR$\Libraire\CLTest.cpp</file>
+      <file>$PROJ_DIR$\Libraire\CLTest.h</file>
+      <file>$PROJ_DIR$\Libraire\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\Libraire\ioDS89C450.h</file>
+      <file>$PROJ_DIR$\Libraire\iouPSD3254A.h</file>
+      <file>$PROJ_DIR$\Libraire\TypeCible.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CReg.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CReg.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorloge.s51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLI2CPort.r51</file>
+      <file>$PROJ_DIR$\UPSD\Exe\_ProjetSessionCinq.Hex</file>
+      <file>$PROJ_DIR$\UPSD\List\_Session3Main.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLCommunic.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLInOutBase.lst</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLI2CBase.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLInOutBase.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLPiece.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLHorloge.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLHorlogeIO.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLPiece.pbi</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorlogeIO.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLEcran.lst</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLMaison.r51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLInOutBase.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLEcran.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLTest.lst</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLEcran.pbi</file>
+      <file>$PROJ_DIR$\UPSD\Obj\_Session3Main.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLPiece.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLTest.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLI2CPort.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\_Session3Main.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLMaison.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLPiece.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\_PrjSes3.pbd</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorloge.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorlogeIO.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLMaison.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLCommunic.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CPort.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLCommunic.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLPiece.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLCommunic.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CBase.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorloge1307.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CPort.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLI2CBase.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\_Session3Main.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLHorlogeIO.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorloge1307.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorlogeIO.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CPort.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorloge.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CBase.lst</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLCommunic.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLEcran.s51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLMaison.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLHorloge1307.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLTest.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\_Session3Main.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLMaison.s51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLHorloge.pbi</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLSPI.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLI2CReg.pbi</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLI2CReg.r51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CReg.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLDelai.i</file>
+      <file>$PROJ_DIR$\UPSD\List\_ProjetSessionCinq.map</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLSPI.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLI2CBase.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLDelai.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLDelai.lst</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLDelai.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLADDA.r51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLADDA.s51</file>
+      <file>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLIOPcf8574.h</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLDelai.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLADDA.i</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLADDA.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLADDA.lst</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLIOPcf8574.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLIOPcf8574.pbi</file>
+      <file>$PROJ_DIR$\UPSD\List\CLIOPcf8574.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLIOPcf8574.lst</file>
+      <file>J:\FORG18089511\Annee3\Session 5\ProguC\Laboratoire\LABI2C\TSO\_Ver810_lnk51ew_uPSD3254A.xcl</file>
+      <file>$PROJ_DIR$\UPSD\List\CLFesto.lst</file>
+      <file>$PROJ_DIR$\UPSD\List\CLIOPcf8574.s51</file>
+      <file>$PROJ_DIR$\UPSD\List\CLFesto.i</file>
+      <file>$PROJ_DIR$\UPSD\List\CLFesto.s51</file>
+      <file>$PROJ_DIR$\Libraire\CLFesto.h</file>
+      <file>$PROJ_DIR$\Libraire\CLFesto.cpp</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLFesto.r51</file>
+      <file>$PROJ_DIR$\UPSD\Obj\CLFesto.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\Libraire\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 135</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 115 139 170 156</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 2 10 91 93 79 83 95 85 87 39 81 6 97 4 21 17 16 108 105 13 104 106 15 12 14 107 109</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 2 10 91 93 79 83 95 85 87 39 81 6 97 4 21 17 16 108 105 13 104 106 15 12 14 107 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLADDA.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 189</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 188 185 190 184</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 4 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 4 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLCommunic.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 146</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 150 148 117 163</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100 6</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLDelai.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 177 181 182 183</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8 0 103 102 100</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 8 0 103 102 100</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 134</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 132 165 128 123</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 0 103 102 100 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10 0 103 102 100 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 161 112 143 122</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100 79 83</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100 79 83</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 114 178</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLDAC7554.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 28 29 32 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 16 97 10 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 16 97 10 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLMCP2515.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 31 30 33 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 17 97 10 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 17 97 10 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLTLV2544.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 34 36 35 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 21 97 10 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 21 97 10 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLIOPcf8574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 192</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 193 197 194 191</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 39 87 91 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 39 87 91 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 135</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 115 139 170 156</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 75 76 74 43 50 65 67 53 57 55 59 61 186 63 56 41 69 44 46 108 105 13 104 106 15 12 14 107 109</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 42 75 76 74 43 50 65 67 53 57 55 59 61 186 63 56 41 69 44 46 108 105 13 104 106 15 12 14 107 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLADDA.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 189</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 188 185 190 184</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 75 76 74 44 65</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 42 75 76 74 44 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLCommunic.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 146</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 150 148 117 163</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLDelai.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 177 181 182 183</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46 42 75 76 74</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 46 42 75 76 74</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 161 112 143 122</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74 53 57</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74 53 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 134</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 132 165 128 123</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50 42 75 76 74 65</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 50 42 75 76 74 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 151</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 167 153 158 168</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74 56 61 59</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74 56 61 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 127 144 159 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74 57</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 119</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 180 152 162 155</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74 59</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 138</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 154 147 160 113</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74 61 59</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74 61 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLI2CReg.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 174</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 111 176 110 175</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 42 75 76 74 61 65 59</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 63 42 75 76 74 61 65 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 129</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 120 131 118 126</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 166</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 145 171 140 130</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 75 76 74 67 65 53 57 50 55</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 42 75 76 74 67 65 53 57 50 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 141 136 149 121</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 42 75 76 74 55</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 42 75 76 74 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLSPI.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78 72 77 173</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 75 76 74 69</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 42 75 76 74 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Ressource\workspace\Libraire\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 137 169 133 164</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 75 76 74 71 50 65</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 42 75 76 74 71 50 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 151</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 167 153 158 168</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100 81 87 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100 81 87 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 127 144 159 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100 83</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100 83</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 119</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 180 152 162 155</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 138</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 154 147 160 113</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100 87 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100 87 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLI2CReg.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 174</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 111 176 110 175</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89 0 103 102 100 87 91 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 89 0 103 102 100 87 91 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 129</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 120 131 118 126</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 166</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 145 171 140 130</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 93 91 79 83 10 95</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 93 91 79 83 10 95</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 141 136 149 121</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 0 103 102 100 95</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 0 103 102 100 95</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLSPI.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78 72 77 173</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 97</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 97</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 137 169 133 164</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 99 10 91</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 99 10 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\UPSD\Exe\_ProjetSessionCinq.Hex</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 178</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 195 184 163 23 183 123 202 122 168 124 155 113 175 191 126 25 130 121 173 26 164 156 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Libraire\CLFesto.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 198 199 196 202</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 103 102 100 200 39 87 91 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0 103 102 100 200 39 87 91 85</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>UPSDDebug</name>
+    <outputs>
+      <file>$PROJ_DIR$\_Session3Main.cpp</file>
+      <file>$PROJ_DIR$\_DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.cpp</file>
+      <file>$PROJ_DIR$\CLI2CBase.cpp</file>
+      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\CLMaison.cpp</file>
+      <file>$PROJ_DIR$\CLPiece.cpp</file>
+      <file>$PROJ_DIR$\CLTest.cpp</file>
+      <file>$PROJ_DIR$\CLEcran.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\CLTest.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\TypeCible.h</file>
+      <file>$PROJ_DIR$\CLHorlogeIO.h</file>
+      <file>$PROJ_DIR$\_Session3Main.h</file>
+      <file>$PROJ_DIR$\CLHorloge.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\CLCommunicCom2.h</file>
+      <file>$PROJ_DIR$\CLMoTeurPasAPas.cpp</file>
+      <file>$PROJ_DIR$\CLDac7226.cpp</file>
+      <file>$PROJ_DIR$\CLCaptDistSKU35080.cpp</file>
+      <file>$PROJ_DIR$\CLEncodeur.cpp</file>
+      <file>$PROJ_DIR$\CLEncodeur.H</file>
+      <file>$PROJ_DIR$\CLSortieLatch.H</file>
+      <file>$PROJ_DIR$\CLDAC7554.cpp</file>
+      <file>$PROJ_DIR$\CLAppAuto.cpp</file>
+      <file>$PROJ_DIR$\CLAppAuto.H</file>
+      <file>$PROJ_DIR$\CLPile.cpp</file>
+      <file>$PROJ_DIR$\CLJoyStick.cpp</file>
+      <file>$PROJ_DIR$\CLFesto.cpp</file>
+      <file>$PROJ_DIR$\CLClavier.H</file>
+      <file>$PROJ_DIR$\read.c</file>
+      <file>$PROJ_DIR$\CLAppVisSansFin.cpp</file>
+      <file>$PROJ_DIR$\CLAdcUpsd.H</file>
+      <file>$PROJ_DIR$\CLCaptDistGp2d12.H</file>
+      <file>$PROJ_DIR$\CLMemoire24C32.H</file>
+      <file>$PROJ_DIR$\CLIOMcp2309.cpp</file>
+      <file>$PROJ_DIR$\CLSortie.cpp</file>
+      <file>$PROJ_DIR$\CLDac6574.H</file>
+      <file>$PROJ_DIR$\CLInclinometre.cpp</file>
+      <file>$PROJ_DIR$\CLOneWire.H</file>
+      <file>$PROJ_DIR$\CLCommunicCom1.cpp</file>
+      <file>$PROJ_DIR$\CLRoue.h</file>
+      <file>$PROJ_DIR$\CLLimiteVitesse.H</file>
+      <file>$PROJ_DIR$\CLPile.H</file>
+      <file>$PROJ_DIR$\CLCanBus.cpp</file>
+      <file>$PROJ_DIR$\CLAdcUpsd.cpp</file>
+      <file>$PROJ_DIR$\CLAppTelecommande.cpp</file>
+      <file>$PROJ_DIR$\CLAdc7829.cpp</file>
+      <file>$PROJ_DIR$\CLOneWire.cpp</file>
+      <file>$PROJ_DIR$\CLAdcTl2544.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yfuns.h</file>
+      <file>$PROJ_DIR$\CLMachineSous.H</file>
+      <file>$PROJ_DIR$\_TypeCible.h</file>
+      <file>$PROJ_DIR$\CLAppVisSansFin.H</file>
+      <file>$PROJ_DIR$\CLI2CReg.cpp</file>
+      <file>$PROJ_DIR$\CLSortieLatch.cpp</file>
+      <file>$PROJ_DIR$\_ProjetSessionCinqMain.h</file>
+      <file>$PROJ_DIR$\CLSortie.H</file>
+      <file>$PROJ_DIR$\CLMoteurPasAPas.H</file>
+      <file>$PROJ_DIR$\CLIoPcf8574.H</file>
+      <file>$PROJ_DIR$\CLInclinometre.H</file>
+      <file>$PROJ_DIR$\CLIOPCF8574.cpp</file>
+      <file>$PROJ_DIR$\write.c</file>
+      <file>$PROJ_DIR$\CLCaptDistSKU35080.H</file>
+      <file>$PROJ_DIR$\CLPwm.cpp</file>
+      <file>$PROJ_DIR$\CLDac6574.cpp</file>
+      <file>$PROJ_DIR$\CLSpiBase.H</file>
+      <file>$PROJ_DIR$\CLDac7226.H</file>
+      <file>$PROJ_DIR$\CLI2CReg.h</file>
+      <file>$PROJ_DIR$\CLRoue.cpp</file>
+      <file>$PROJ_DIR$\CLADCMax1236.cpp</file>
+      <file>$PROJ_DIR$\CLCanBus.H</file>
+      <file>$PROJ_DIR$\CLAppConvCanRs232.cpp</file>
+      <file>$PROJ_DIR$\_ProjetSessionCinqMain.cpp</file>
+      <file>$PROJ_DIR$\CLCommunicCom2.cpp</file>
+      <file>$PROJ_DIR$\CLFesto.H</file>
+      <file>$PROJ_DIR$\CLSuiveurLigne.H</file>
+      <file>$PROJ_DIR$\CLHorloge1306.cpp</file>
+      <file>$PROJ_DIR$\CLMemoire24C32.cpp</file>
+      <file>$PROJ_DIR$\CLAdc7829.H</file>
+      <file>$PROJ_DIR$\CLSpiBase.cpp</file>
+      <file>$PROJ_DIR$\CLIOMCP2309.H</file>
+      <file>$PROJ_DIR$\CLAppConvCanRs232.H</file>
+      <file>$PROJ_DIR$\CLHorloge1306.H</file>
+      <file>$PROJ_DIR$\CLDac7554.H</file>
+      <file>$PROJ_DIR$\CLCaptDistGP2D12.cpp</file>
+      <file>$PROJ_DIR$\_ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\CLLimiteVitesse.cpp</file>
+      <file>$PROJ_DIR$\CLEntree.H</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\CLInOutBase.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\CLPiece.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\CLMaison.h</file>
+      <file>$PROJ_DIR$\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\CLSuiveurLigne.cpp</file>
+      <file>$PROJ_DIR$\CLMachineSous.cpp</file>
+      <file>$PROJ_DIR$\CLJoyStick.H</file>
+      <file>$PROJ_DIR$\CLEntreeBuffer.cpp</file>
+      <file>$PROJ_DIR$\CLCommunicCom1.h</file>
+      <file>$PROJ_DIR$\CLClavier.cpp</file>
+      <file>$PROJ_DIR$\CLAdcMax1236.H</file>
+      <file>$PROJ_DIR$\CLPwm.H</file>
+      <file>$PROJ_DIR$\CLEntreeBuffer.H</file>
+      <file>$PROJ_DIR$\CLEntree.cpp</file>
+      <file>$PROJ_DIR$\CLAppTelecommande.H</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCaptDistGP2D12.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\iouPSD3254A.h</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLDac7226.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEntreeBuffer.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\read.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLMaison.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLJoyStick.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLClavier.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLPwm.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLADCMax1236.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLi2CPort.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLi2CBase.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\_Session3Main.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEntree.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppConvCanRs232.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorloge1306.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEntreeBuffer.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLRoue.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMaison.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLIOMcp2309.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLJoyStick.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\read.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\_Session3Main.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCommunicCom2.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLInOutBase.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEcran.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLInclinometre.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Exe\_ProjetSesisonCinq.Hex</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorloge.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLi2CBase.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\_ProjetSesisonCinq.map</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAdcTl2544.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLInOutBase.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLADCMax1236.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLDAC7554.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCommunicCom1.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppTelecommande.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCaptDistSKU35080.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLPiece.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLEcran.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\write.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLInclinometre.pbi</file>
+      <file>$PROJ_DIR$\_Ver810_lnk51ew_uPSD3254A.xcl</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSortieLatch.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSuiveurLigne.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLPiece.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMaison.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAdcUpsd.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSpiBase.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLTest.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLIOPCF8574.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSortie.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLFesto.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAdcTl2544.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLDAC7554.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\write.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLOneWire.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLHorloge.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorloge1306.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSuiveurLigne.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLHorloge.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAdc7829.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCanBus.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLIOPCF8574.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLPiece.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLPile.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEncodeur.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCaptDistSKU35080.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLPiece.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\_Session3Main.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEntree.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCommunicCom2.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEncodeur.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\_Session3Main.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMemoire24C32.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppTelecommande.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLi2CReg.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLTest.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorlogeIO.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppAuto.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppAuto.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLOneWire.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCommunicCom1.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLFesto.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLPile.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\_ProjetSessionCinqMain.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLPwm.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\_ProjetSessionCinqMain.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCanBus.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAdc7829.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLi2CReg.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLMaison.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLInOutBase.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLDac6574.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLLimiteVitesse.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLDac7226.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSortieLatch.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMachineSous.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMoTeurPasAPas.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppConvCanRs232.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLDac6574.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLTest.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppVisSansFin.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLPiece.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMoTeurPasAPas.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSortie.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLCaptDistGP2D12.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLEcran.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLHorloge.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\_PrjSes3.pbd</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAppVisSansFin.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMachineSous.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLHorlogeIO.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLIOMcp2309.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLi2CPort.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorloge.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLMaison.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLEcran.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLAdcUpsd.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\_Session3Main.lst</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLMemoire24C32.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLRoue.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLHorlogeIO.s51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLClavier.pbi</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLLimiteVitesse.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\_ProjetSesisonCinq.pbd</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLHorlogeIO.r51</file>
+      <file>$PROJ_DIR$\UPSDDebug\List\CLHorlogeIO.i</file>
+      <file>$PROJ_DIR$\UPSDDebug\Obj\CLSpiBase.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\_Session3Main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 143</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 132 197 246 193</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 20 121 14 22 11 99 107 23 21 101 105 102 16 100 24 12 19 104 106</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 20 121 14 22 11 99 107 23 21 101 105 102 16 100 103 24 12 19 104 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 147</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 233 161 244 242</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11 1 20 121 14 99</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 11 1 20 121 14 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 241</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 180 234 183 150</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 1 20 121 14 23 21</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 99 1 20 121 14 23 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 162</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 198</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 13 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorlogeIO.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 254 249 238 253</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 1 20 121 14 21</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 99 1 20 121 14 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 131</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 151</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 185</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 145 154 218 205</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 1 20 121 14</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 99 1 20 121 14</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMaison.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 138</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 217 125 243 169</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 20 121 14 107 99 23 21 11 101</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 20 121 14 107 99 23 21 11 101</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPiece.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 192</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 160 188 168 229</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 1 20 121 14 101</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 99 1 20 121 14 101</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 146</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 202 227 172 140</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 20 121 14 15 11 99</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 20 121 14 15 11 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CPort.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 240</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 130</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 149 152</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMoTeurPasAPas.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 224</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 230</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 67 31 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDac7226.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 221</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 76 99 31</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCaptDistSKU35080.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 191</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 159</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 72 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEncodeur.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 196</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 190</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 30 97 68 17 108 90 75 11 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDAC7554.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 156</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 93 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppAuto.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 204</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 206</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 34 11 99 113 25 50 46 17 108 85 68 52 115 72 42 51 23 13 105 102 16 100 24 12 19 104 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPile.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 189</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 210</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 52 115 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLJoyStick.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 126</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 141</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 111</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLFesto.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 175</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 209</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 84 68 17 108 11 99 113 38 97 90 75 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\read.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 59 104 102 16 100 24 12 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppVisSansFin.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 236</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 228</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 62 11 99 113 67 31 30 97 68 17 108 90 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLIOMcp2309.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 139</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 239</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 90 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSortie.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 231</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 174</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 66 68 17 108 90 75 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInclinometre.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 148</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 69 75 41 116 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunicCom1.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 113</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCanBus.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 214</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 186</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 80 75 11 99 113</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdcUpsd.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 245</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 170</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppTelecommande.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 200</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 158</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 119 113 25 38 99 111 69 75 41 116 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdc7829.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 184</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 215</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 88 99 117</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLOneWire.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 207</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 179</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAdcTl2544.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 176</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 153</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CReg.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 201</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 216</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 77</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSortieLatch.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 222</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 166</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 31 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 173</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 187</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 68 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\write.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 178</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 163</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 59 104 102 16 100 24 12 19 11 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPwm.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 212</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 128</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDac6574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 226</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 219</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 46 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLRoue.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 248</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 137</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 50 46 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLADCMax1236.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 129</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 155</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 115 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLAppConvCanRs232.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 225</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 134</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 91 113 38 99 11 80 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_ProjetSessionCinqMain.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 211</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 213</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 65 119 113 25 38 99 111 69 75 41 116 11 30 97 68 17 108 90</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunicCom2.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 195</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 144</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 25</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLHorloge1306.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 181</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 135</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 92 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMemoire24C32.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 247</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 199</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 43 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSpiBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 255</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 171</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCaptDistGP2D12.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 232</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 42 115 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLLimiteVitesse.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 220</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 251</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 51 115 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSuiveurLigne.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 167</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 182</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 85 68 17 108</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLMachineSous.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 237</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 223</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 60 68 17 108 11 99 113 38 97 90 75 66 105 102 16 100 24 12 19 104 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEntreeBuffer.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 136</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 117 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLClavier.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 250</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 127</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 38 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEntree.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 194</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 133</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 61 121 95 97 68 17 108 90 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\UPSDDebug\Exe\_ProjetSesisonCinq.Hex</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 152</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 165 242 150 253 205 169 229 140 193 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\UPSDDebug\Obj\_PrjSes3.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 147 241 203 185 138 192 146 143</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\UPSDDebug\Obj\_ProjetSesisonCinq.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 129 184 176 245 204 225 200 236 214 120 191 250 157 195 177 226 122 147 196 194 123 175 241 181 162 203 139 173 185 164 126 220 237 247 224 207 189 212 248 231 222 255 167 146 131 240 201 211 142 178</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
