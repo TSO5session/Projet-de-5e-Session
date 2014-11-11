@@ -162,6 +162,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Historique = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.PC_Clock = new System.Windows.Forms.Label();
@@ -223,6 +224,8 @@
             this.groupBox22.SuspendLayout();
             this.groupBox23.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox18.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -257,7 +260,7 @@
             // 
             this.btnHwRefresh.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnHwRefresh.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnHwRefresh.Location = new System.Drawing.Point(6, 61);
+            this.btnHwRefresh.Location = new System.Drawing.Point(176, 60);
             this.btnHwRefresh.Name = "btnHwRefresh";
             this.btnHwRefresh.Size = new System.Drawing.Size(79, 23);
             this.btnHwRefresh.TabIndex = 45;
@@ -350,7 +353,7 @@
             this.btnRelease.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRelease.Enabled = false;
             this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnRelease.Location = new System.Drawing.Point(177, 61);
+            this.btnRelease.Location = new System.Drawing.Point(91, 60);
             this.btnRelease.Name = "btnRelease";
             this.btnRelease.Size = new System.Drawing.Size(79, 23);
             this.btnRelease.TabIndex = 35;
@@ -362,7 +365,7 @@
             this.btnInit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInit.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnInit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnInit.Location = new System.Drawing.Point(92, 61);
+            this.btnInit.Location = new System.Drawing.Point(6, 60);
             this.btnInit.Name = "btnInit";
             this.btnInit.Size = new System.Drawing.Size(79, 23);
             this.btnInit.TabIndex = 34;
@@ -981,7 +984,7 @@
             this.groupBox6.Controls.Add(this.groupBox12);
             this.groupBox6.Controls.Add(this.groupBox13);
             this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox6.Location = new System.Drawing.Point(21, 386);
+            this.groupBox6.Location = new System.Drawing.Point(21, 380);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(366, 130);
             this.groupBox6.TabIndex = 51;
@@ -1284,6 +1287,7 @@
             this.sauvegarderToolStripMenuItem.Name = "sauvegarderToolStripMenuItem";
             this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sauvegarderToolStripMenuItem.Text = "Sauvegarder";
+            this.sauvegarderToolStripMenuItem.Click += new System.EventHandler(this.sauvegarderToolStripMenuItem_Click);
             // 
             // effacerToolStripMenuItem
             // 
@@ -1291,6 +1295,7 @@
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
             this.effacerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.effacerToolStripMenuItem.Text = "Effacer";
+            this.effacerToolStripMenuItem.Click += new System.EventHandler(this.effacerToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -1383,6 +1388,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -1392,6 +1398,7 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "Start";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tabControl1
             // 
@@ -1751,7 +1758,7 @@
             // 
             this.Historique.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Historique.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Historique.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Historique.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Historique.Location = new System.Drawing.Point(3, 3);
             this.Historique.Name = "Historique";
             this.Historique.Size = new System.Drawing.Size(982, 385);
@@ -1760,6 +1767,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1767,6 +1775,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Visualisation du parcours";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PCANBasicExample.Properties.Resources.cercle1;
+            this.pictureBox1.Location = new System.Drawing.Point(309, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(362, 329);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox18
             // 
@@ -2008,7 +2026,7 @@
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(1012, 534);
             this.tabPage7.TabIndex = 2;
-            this.tabPage7.Text = "DEBUG window";
+            this.tabPage7.Text = "Onglet de Debug";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // UART1DisplayBox
@@ -2020,12 +2038,12 @@
             this.UART1DisplayBox.Name = "UART1DisplayBox";
             this.UART1DisplayBox.ReadOnly = true;
             this.UART1DisplayBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.UART1DisplayBox.Size = new System.Drawing.Size(906, 319);
+            this.UART1DisplayBox.Size = new System.Drawing.Size(977, 319);
             this.UART1DisplayBox.TabIndex = 5;
             // 
             // SendUART1
             // 
-            this.SendUART1.Location = new System.Drawing.Point(819, 336);
+            this.SendUART1.Location = new System.Drawing.Point(890, 338);
             this.SendUART1.Name = "SendUART1";
             this.SendUART1.Size = new System.Drawing.Size(108, 28);
             this.SendUART1.TabIndex = 4;
@@ -2038,7 +2056,7 @@
             this.SendZoneUART1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SendZoneUART1.Location = new System.Drawing.Point(21, 338);
             this.SendZoneUART1.Name = "SendZoneUART1";
-            this.SendZoneUART1.Size = new System.Drawing.Size(774, 26);
+            this.SendZoneUART1.Size = new System.Drawing.Size(863, 26);
             this.SendZoneUART1.TabIndex = 3;
             // 
             // serialPort1
@@ -2071,7 +2089,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CAN Opener";
+            this.Text = "Festo FUN";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -2114,6 +2132,8 @@
             this.groupBox23.ResumeLayout(false);
             this.groupBox23.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
             this.groupBox16.ResumeLayout(false);
@@ -2295,6 +2315,7 @@
         private System.Windows.Forms.GroupBox groupBox24;
         private System.Windows.Forms.RichTextBox Historique;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="10422.ico" />
+    <None Include="Resources\cercle1.gif" />
     <None Include="Resources\ouvre_boite_manuel_1.jpg" />
     <None Include="Resources\10422.png" />
   </ItemGroup>

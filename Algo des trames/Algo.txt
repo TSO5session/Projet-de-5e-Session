@@ -1,0 +1,18 @@
+CAN
+    Start le véhicule  0x??
+    Stop le véhicule   0x??
+    
+    Est arrêt          0x??
+    En  marche         0x??
+    Hors Circuit       0x??
+    
+    Vitesse (0-100)    0x??
+    Battire            0x??
+    
+    Couleur du bloc    0x??
+    Poids du bloc      0x??
+
+    Envoyer l'heure    0x??
+    
+    No. de la station  0x??
+    

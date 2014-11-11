@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO.Ports;       // Pour utiliser le port série
-
 using System.IO;             // Pour ouvrir un fichier
 
 /// <summary>
@@ -21,8 +20,7 @@ namespace ICDIBasic
 {
     public partial class Form1 : Form
     {
-        string[] PortsDisponible = SerialPort.GetPortNames(); //Met la liste des ports série dans un tableau de string
-        private delegate void SetTextBoxReceiveDeleg(string text);
+
 
         #region CAN STUFF
         #region Structures
@@ -174,6 +172,7 @@ namespace ICDIBasic
         /// Read-Delegate Handler
         /// </summary>
         private delegate void ReadDelegateHandler();
+        private delegate void SetTextBoxReceiveDeleg(string text);
         #endregion
 
         #region Members
@@ -598,21 +597,17 @@ namespace ICDIBasic
         #region Form event-handlers
         #endregion
         #endregion
-        /// <summary>
-        /// Consturctor
-        /// </summary>
+
+        string[] PortsDisponible = SerialPort.GetPortNames(); //Met la liste des ports série dans un tableau de string
+        
         public Form1()
         {
-            // Initializes Form's component
-            //
             InitializeComponent();
-            // Initializes specific components
-            //
             InitializeBasicComponents();
 
             COMselector.Items.AddRange(PortsDisponible); // Affiche les ports disponibles UART1
-            Connexion.Text = "Connexion";     // Le bouton sert à se connecter UART1
-            Connexion.Enabled = false; // UART1
+            Connexion.Text = "Connexion";                // Le bouton sert à se connecter UART1
+            Connexion.Enabled = false;                   // UART1
 
             timer1.Start(); // Timer du heartBeat
             timer2.Start(); // Timer de synchronisation de clock et de hertbeat
@@ -625,9 +620,10 @@ namespace ICDIBasic
             if (COMselector.Items.Count > 0)
             {
                 COMselector.SelectedIndex = 0;  // Le port par défaut est le premier port indexé
-                BAUDselector.SelectedIndex = 8; // La vitesse par défaut est 57 600
+                BAUDselector.SelectedIndex = 7; // La vitesse par défaut est 57 600
                 Connexion.Enabled = true; // UART1
             }
+
             serialPort1.ReadTimeout = 500; // Délais maximum pour les try catch
             serialPort1.WriteTimeout = 500; //Delai maximum pour les try catch
         }
@@ -638,9 +634,11 @@ namespace ICDIBasic
         /// </summary>
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Releases the used PCAN-Basic channel
-            //
-            PCANBasic.Uninitialize(m_PcanHandle);
+        if(serialPort1.IsOpen == true)
+          {
+           serialPort1.Close();
+          }
+        PCANBasic.Uninitialize(m_PcanHandle);
         }
         
 
@@ -1475,7 +1473,7 @@ namespace ICDIBasic
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("CAN Opener par Vincent Chouinard", "Hey listen!", MessageBoxButtons.OK);
+            DialogResult result1 = MessageBox.Show("CAN Opener par Vincent Chouinard", "Hey listen!", MessageBoxButtons.OK); // Note: À moifier
             if (result1 == DialogResult.Yes)
             {
 
@@ -1486,53 +1484,59 @@ namespace ICDIBasic
         {
             COMselector.Items.Clear();
             COMselector.Items.AddRange(SerialPort.GetPortNames());
+            COMselector.SelectedIndex = 0;
         }
 
         private void Connexion_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen == true)                     //Si le port série est déjà ouvert
+            if(serialPort1.IsOpen == true)
             {
-                if (Connexion.Text == "Déconnexion")            // Si le programme est connecté
+                if (Connexion.Text == "Déconnexion")
                 {
-                    serialPort1.Close();                        // déconnecte-le
-                    Connexion.Text = "Connexion";               // Le bouton sert à se connecter
+                    Connexion.Text = "Connexion";
+
+                    Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     Historique.AppendText("\r\n");
-                    Historique.AppendText("Déconnexion du réseau RS232");   // Enregistre le log de la connexion
+                    Historique.AppendText("Déconnexion du bus RS232");   // Enregistre le log de la connexion
                 }
-                else
-                {
-                    try
-                    {
-                        serialPort1.BaudRate = Convert.ToInt32(BAUDselector.Text); //Le baud rate choisi dans la combobox
-                        serialPort1.Parity = Parity.None;        //Aucune parité
-                        serialPort1.StopBits = StopBits.One;     //1 stop bit
-                        serialPort1.DataBits = 8;                //8 data bit
-                        serialPort1.Handshake = Handshake.None;  //pas de handshake
-                        serialPort1.PortName = COMselector.Text; //Avec le port série choisi
-                        serialPort1.Open();                      //Maintenant, connecte-toi 
-                        Connexion.Text = "Déconnexion";          // Le bouton devient un bouton de déconnexion
-                        serialPort1.Write("\r\n");               // Pour debug only
-
-                        Historique.AppendText("\r\n");
-                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                        Historique.AppendText("\r\n");
-                        Historique.AppendText("Connexion RS232 réussie");   // Enregistre le log de la connexion
-                        Historique.AppendText("\r\n");
-                        Historique.AppendText("à ");
-                        Historique.AppendText(BAUDselector.Text);
-                        Historique.AppendText(" bds");
-                        Historique.AppendText(" sur ");
-                        Historique.AppendText(COMselector.Text);
-                    }
-                    catch
-                    {
-                        Connexion.Text = "ERROR"; 
-                    }
-                }
-
+             
             }
+            else
+            {
+                try
+                {
+                    serialPort1.BaudRate = Convert.ToInt32(BAUDselector.Text); //Le baud rate choisi dans la combobox
+                    serialPort1.Parity = Parity.None;        //Aucune parité
+                    serialPort1.StopBits = StopBits.One;     //1 stop bit
+                    serialPort1.DataBits = 8;                //8 data bit
+                    serialPort1.Handshake = Handshake.None;  //pas de handshake
+                    serialPort1.PortName = COMselector.Text; //Avec le port série choisi
+                    serialPort1.Open();                      //Maintenant, connecte-toi 
+                    Connexion.Text = "Déconnexion";
+
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Connexion RS232 réussie");   // Enregistre le log de la connexion
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("à ");
+                    Historique.AppendText(BAUDselector.Text);
+                    Historique.AppendText(" bds");
+                    Historique.AppendText(" sur ");
+                    Historique.AppendText(COMselector.Text);
+                }
+                catch
+                {
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Échec de connexion RS232");   // Enregistre le log de la connexion
+                }
+            }  
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -1548,6 +1552,11 @@ namespace ICDIBasic
                 {
                     HeartBeatOUT.BackColor = Color.Black;
                     label7.Text = "Failure";
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Échec de l'envoi d'un heartbeat");   // Enregistre le log de la connexion
                 }
             }
         }
@@ -1570,11 +1579,21 @@ namespace ICDIBasic
                 {
                     string _charRecu = Convert.ToString(serialPort1.ReadExisting());
                     Invoke(new SetTextBoxReceiveDeleg(traitementDataReceivedUART1), new object[] { _charRecu });
+
+                    if(_charRecu == "Allo")
+                    {
+                        HeartBeatIN.BackColor = Color.Lime;
+                    }
+
                 }
                 catch
                 {
-           
-
+                    label7.Text = "Failure";
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Échec de réception des données en RS-232");   // Enregistre le log de la connexion
                 }
             }
         }
@@ -1582,7 +1601,6 @@ namespace ICDIBasic
         {
             UART1DisplayBox.AppendText(text);
             RXLED.BackColor = Color.Red;
-
         }
 
 
@@ -1593,6 +1611,7 @@ namespace ICDIBasic
                 serialPort1.Write(SendZoneUART1.Text);    // Envoie le string de texte
                 serialPort1.Write("\r\n");              // Avec un Eeter
                 SendZoneUART1.Clear();                    // Efface la zone d'envoi
+                SendZoneUART1.Focus();
                 TXLED.BackColor = Color.Lime;
             }
             else
@@ -1601,5 +1620,46 @@ namespace ICDIBasic
             }
             SendZoneUART1.Focus();        // Focus à la zone d'envoi
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Historique.AppendText("\r\n");
+            Historique.AppendText("\r\n");
+            Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Historique.AppendText("\r\n");
+            Historique.AppendText("Démarrage du véhicule");   // Enregistre le log de la connexion
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Historique.AppendText("\r\n");
+            Historique.AppendText("\r\n");
+            Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Historique.AppendText("\r\n");
+            Historique.AppendText("Arrêt du véhicule");   // Enregistre le log de la connexion
+        }
+        #region Enregistrement et effacement de l'historique
+        private void sauvegarderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();        //Cré un dialog de sauvegarde
+            saveFileDialog1.Filter = "Text file (*.doc)|*.doc";           //Fichier par défaut = .doc
+
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK //Si l'user à appuyé sur OK
+                && saveFileDialog1.FileName.Length > 0)
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Enregistrement de l'historique sur PC");   // Enregistre le log de la connexion
+                Historique.SaveFile(saveFileDialog1.FileName); //Sauvegarde le texte
+            }
+        }
+
+        private void effacerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Historique.Clear();
+        }
+        #endregion
     }
 }
