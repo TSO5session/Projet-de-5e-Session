@@ -19,10 +19,34 @@
     (FLDSTUFF_Uppercase_Unconditionally "FALSE")
     (FLDSTUFF_Visibility "0")
     (FLDSTUFF_inst_or_occurrence "0")
-    (FLDSTUFF_Create_Report_File "FALSE"))
+    (FLDSTUFF_Create_Report_File "FALSE")
+    (Board_sim_option "VHDL_flow")
+    (ANNOTATE_Scope "0")
+    (ANNOTATE_Mode "1")
+    (ANNOTATE_Action "0")
+    (Annotate_Page_Order "0")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "FALSE")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}{POWER_GROUP}")
+    (ANNOTATE_IncludeNonPrimitive "FALSE")
+    (ANNOTATE_Refdes_Control_Required "FALSE")
+    (Annotate_type "Left-Right")
+    (width_pages "100")
+    (width_start "80")
+    (width_End "80"))
   (Folder "Outputs")
   (Folder "Referenced Projects")
   (PartMRUSelector
+    ("CAP NP"
+      (FullPartName "CAP NP.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.2\TOOLS\CAPTURE\LIBRARY\OLDLIBS\DEVICE.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 20"
+      (FullPartName "HEADER 20.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.2\TOOLS\CAPTURE\LIBRARY\OLDLIBS\DEVICE.OLB")
+      (DeviceIndex "0"))
     (ACSL-6400
       (FullPartName "ACSL-6400.Normal")
       (LibraryName
@@ -31,26 +55,69 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
+      (Path "Design Resources" ".\cartei2cio.dsn")
+      (Path "Design Resources" ".\cartei2cio.dsn" "SCHEMATIC1")
       (Path "Design Resources" "Library")
-      (Path "Design Resources" "Library"
-         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\library1.olb")
-      (Select "Design Resources" "Library"
-         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\library1.olb"))
+      (Select "Design Resources" ".\cartei2cio.dsn" "SCHEMATIC1" "PAGE5"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -30 0 200 0 472"))
+        (Placement "44 0 1 -1 -1 -8 -30 0 200 0 472"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -30 185 1827 -2 735")
-        (Scroll "-312 0")
+        (Placement "44 2 3 -1 -1 -8 -30 185 1827 -2 735")
+        (Scroll "-288 0")
         (Zoom "100")
         (Occurrence "/"))
       (Path
          "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1")))
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 50 1696 50 564")
+        (Scroll "-333 0")
+        (Zoom "96")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE2"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 75 1721 75 589")
+        (Scroll "-333 0")
+        (Zoom "96")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE3"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 225 1871 225 739")
+        (Scroll "-333 0")
+        (Zoom "96")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE4"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 225 1579 225 739")
+        (Scroll "-168 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE5")))
   (MPSSessionName "1230838"))
