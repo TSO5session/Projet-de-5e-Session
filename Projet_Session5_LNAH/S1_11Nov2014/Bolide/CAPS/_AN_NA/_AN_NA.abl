@@ -1,0 +1,42 @@
+module _AN_NA
+
+library '_AN_NA_isig';
+library '_AN_NA_cs';
+X = .x.;
+Vcc = 1;
+Gnd = 0;
+address = [a15..a0];
+
+
+// Start Declaration
+// *** NOTE: Any pin number assignment specified in this section takes precedence over
+//                   assignment done at Pin Editor.
+
+// End Declaration
+
+equations
+
+jtagsel = !_reset;
+fs0 = (address >= ^h0000) & (address <= ^h7FFF);
+fs1 = (address >= ^h8000) & (address <= ^hFFFF);
+csboot0 = (address >= ^h8000) & (address <= ^h9FFF);
+csboot1 = (address >= ^hA000) & (address <= ^hBFFF);
+csboot2 = (address >= ^hC000) & (address <= ^hDFFF);
+csboot3 = (address >= ^hE000) & (address <= ^hF7FF);
+rs0 = (address >= ^h0000) & (address <= ^h7FFF);
+csiop = (address >= ^hFF00) & (address <= ^hFFFF);
+pc7 = (address >= ^hF800) & (address <= ^hF8FF) & (!_rd # !_wr);
+!pa5 = (address >= ^hFE00) & (address <= ^hFE7F) & (!_rd);
+!pa6 = (address >= ^hFE80) & (address <= ^hFEFF) & (!_wr);
+!pa0 = (address >= ^hFA00) & (address <= ^hFAFF) & (!_rd # !_wr);
+!pc2 = (address >= ^hF900) & (address <= ^hF9FF) & (!_rd # !_wr);
+!pa1 = (address >= ^hFB00) & (address <= ^hFBFF) & (!_rd # !_wr);
+pa2 = (address >= ^hFC00) & (address <= ^hFCFF) & (!_rd # !_wr);
+pa3 = (address >= ^hFD00) & (address <= ^hFDFF) & (!_rd # !_wr);
+!pa4 = (address >= ^hFE00) & (address <= ^hFE7F) & (!_wr);
+
+// Start Equations
+
+// End Equations
+
+end _AN_NA

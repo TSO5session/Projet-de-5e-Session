@@ -1,0 +1,28 @@
+[ProjectInfo]
+Project=_AN_NA
+Directory=C:\CAPS\Projects\_AN_NA
+Device Family=uPSD3200
+PartName=uPSD3254A-40U6
+Description=Prog du PLD
+
+
+[MemoryMapInfo]
+Address Mask=0x00FFFF
+Natural address field length(bits)=0x10
+Memcs0=fs0,0byyyyyyyy,0x0000,0x7FFF,F
+Memcs1=fs1,0byyyyyyyy,0x8000,0xFFFF,F
+Memcs2=csboot0,0byyyyyyyy,0x8000,0x9FFF,F
+Memcs3=csboot1,0byyyyyyyy,0xA000,0xBFFF,F
+Memcs4=csboot2,0byyyyyyyy,0xC000,0xDFFF,F
+Memcs5=csboot3,0byyyyyyyy,0xE000,0xF7FF,F
+Memcs6=rs0,0byyyyyyyy,0x0000,0x7FFF,V
+Memcs7=csiop,0byyyyyyyy,0xFF00,0xFFFF,V
+Memcs8=!pa0,0byyyyyyyy,0xFA00,0xFAFF,Peripheral;0byyyyyyyy,0xFA00,0xFAFF,Peripheral
+Memcs9=!pa1,0byyyyyyyy,0xFB00,0xFBFF,Peripheral;0byyyyyyyy,0xFB00,0xFBFF,Peripheral
+Memcs10=pa2,0byyyyyyyy,0xFC00,0xFCFF,Peripheral;0byyyyyyyy,0xFC00,0xFCFF,Peripheral
+Memcs11=pa3,0byyyyyyyy,0xFD00,0xFDFF,Peripheral;0byyyyyyyy,0xFD00,0xFDFF,Peripheral
+Memcs12=!pa4,0byyyyyyyy,0xFE00,0xFE7F,Peripheral
+Memcs13=!pa5,0byyyyyyyy,0xFE00,0xFE7F,Peripheral
+Memcs14=!pa6,0byyyyyyyy,0xFE80,0xFEFF,Peripheral
+Memcs15=!pc2,0byyyyyyyy,0xF900,0xF9FF,Peripheral;0byyyyyyyy,0xF900,0xF9FF,Peripheral
+Memcs16=pc7,0byyyyyyyy,0xF800,0xF8FF,Peripheral;0byyyyyyyy,0xF800,0xF8FF,Peripheral
