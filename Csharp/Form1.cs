@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Drawing;        //Pour mettre des animations
+using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
+using System.IO.Ports;       // Pour utiliser le port série
+
+using System.IO;             // Pour ouvrir un fichier
 
 /// <summary>
 /// Inclusion of PEAK PCAN-Basic namespace
@@ -16,6 +21,10 @@ namespace ICDIBasic
 {
     public partial class Form1 : Form
     {
+        string[] PortsDisponible = SerialPort.GetPortNames(); //Met la liste des ports série dans un tableau de string
+        private delegate void SetTextBoxReceiveDeleg(string text);
+
+        #region CAN STUFF
         #region Structures
 
         private class MessageStatus
@@ -587,6 +596,8 @@ namespace ICDIBasic
 
         #region Event Handlers
         #region Form event-handlers
+        #endregion
+        #endregion
         /// <summary>
         /// Consturctor
         /// </summary>
@@ -598,8 +609,30 @@ namespace ICDIBasic
             // Initializes specific components
             //
             InitializeBasicComponents();
+
+            COMselector.Items.AddRange(PortsDisponible); // Affiche les ports disponibles UART1
+            Connexion.Text = "Connexion";     // Le bouton sert à se connecter UART1
+            Connexion.Enabled = false; // UART1
+
+            timer1.Start(); // Timer du heartBeat
+            timer2.Start(); // Timer de synchronisation de clock et de hertbeat
+
+            Historique.AppendText("\r\n");
+            Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Historique.AppendText("\r\n");
+            Historique.AppendText("Programme exécuté");   // Enregistre le log de la connexion
+
+            if (COMselector.Items.Count > 0)
+            {
+                COMselector.SelectedIndex = 0;  // Le port par défaut est le premier port indexé
+                BAUDselector.SelectedIndex = 8; // La vitesse par défaut est 57 600
+                Connexion.Enabled = true; // UART1
+            }
+            serialPort1.ReadTimeout = 500; // Délais maximum pour les try catch
+            serialPort1.WriteTimeout = 500; //Delai maximum pour les try catch
         }
 
+        #region CAN STUFF
         /// <summary>
         /// Form-Closing Function / Finish function
         /// </summary>
@@ -609,7 +642,7 @@ namespace ICDIBasic
             //
             PCANBasic.Uninitialize(m_PcanHandle);
         }
-        #endregion
+        
 
         #region ComboBox event-handlers
         private void cbbChannel_SelectedIndexChanged(object sender, EventArgs e)
@@ -1424,6 +1457,8 @@ namespace ICDIBasic
         }
         #endregion
 
+        #endregion
+
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
@@ -1445,6 +1480,126 @@ namespace ICDIBasic
             {
 
             }
+        }
+
+        private void COMselector_Click(object sender, EventArgs e)
+        {
+            COMselector.Items.Clear();
+            COMselector.Items.AddRange(SerialPort.GetPortNames());
+        }
+
+        private void Connexion_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen == true)                     //Si le port série est déjà ouvert
+            {
+                if (Connexion.Text == "Déconnexion")            // Si le programme est connecté
+                {
+                    serialPort1.Close();                        // déconnecte-le
+                    Connexion.Text = "Connexion";               // Le bouton sert à se connecter
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Déconnexion du réseau RS232");   // Enregistre le log de la connexion
+                }
+                else
+                {
+                    try
+                    {
+                        serialPort1.BaudRate = Convert.ToInt32(BAUDselector.Text); //Le baud rate choisi dans la combobox
+                        serialPort1.Parity = Parity.None;        //Aucune parité
+                        serialPort1.StopBits = StopBits.One;     //1 stop bit
+                        serialPort1.DataBits = 8;                //8 data bit
+                        serialPort1.Handshake = Handshake.None;  //pas de handshake
+                        serialPort1.PortName = COMselector.Text; //Avec le port série choisi
+                        serialPort1.Open();                      //Maintenant, connecte-toi 
+                        Connexion.Text = "Déconnexion";          // Le bouton devient un bouton de déconnexion
+                        serialPort1.Write("\r\n");               // Pour debug only
+
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Connexion RS232 réussie");   // Enregistre le log de la connexion
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("à ");
+                        Historique.AppendText(BAUDselector.Text);
+                        Historique.AppendText(" bds");
+                        Historique.AppendText(" sur ");
+                        Historique.AppendText(COMselector.Text);
+                    }
+                    catch
+                    {
+                        Connexion.Text = "ERROR"; 
+                    }
+                }
+
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(serialPort1.IsOpen == true) // Envoie du heartbeat à toutes les secondes
+            {
+                try
+                {
+                    serialPort1.Write("Allo");
+                    HeartBeatOUT.BackColor = Color.Red;
+                }
+                catch
+                {
+                    HeartBeatOUT.BackColor = Color.Black;
+                    label7.Text = "Failure";
+                }
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e) // Timer de remise à zero de l'affichage
+        {                                                    // du heartbeat et des leds rxtx
+         HeartBeatOUT.BackColor = Color.White;
+         HeartBeatIN.BackColor = Color.White;
+         RXLED.BackColor = Color.White;
+         TXLED.BackColor = Color.White;
+
+         PC_Clock.Text = DateTime.Now.ToString("h:mm:ss tt");
+        }
+
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            if (serialPort1.IsOpen == true)
+            {
+                try
+                {
+                    string _charRecu = Convert.ToString(serialPort1.ReadExisting());
+                    Invoke(new SetTextBoxReceiveDeleg(traitementDataReceivedUART1), new object[] { _charRecu });
+                }
+                catch
+                {
+           
+
+                }
+            }
+        }
+        private void traitementDataReceivedUART1(string text)
+        {
+            UART1DisplayBox.AppendText(text);
+            RXLED.BackColor = Color.Red;
+
+        }
+
+
+        private void SendUART1_Click(object sender, EventArgs e) // Cette zone gère l'affichege de la window de debug
+        {
+            if (serialPort1.IsOpen == true) // Si le port série est ouvert
+            {
+                serialPort1.Write(SendZoneUART1.Text);    // Envoie le string de texte
+                serialPort1.Write("\r\n");              // Avec un Eeter
+                SendZoneUART1.Clear();                    // Efface la zone d'envoi
+                TXLED.BackColor = Color.Lime;
+            }
+            else
+            {
+
+            }
+            SendZoneUART1.Focus();        // Focus à la zone d'envoi
         }
     }
 }
