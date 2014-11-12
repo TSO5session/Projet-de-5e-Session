@@ -620,7 +620,7 @@ namespace ICDIBasic
             if (COMselector.Items.Count > 0)
             {
                 COMselector.SelectedIndex = 0;  // Le port par défaut est le premier port indexé
-                BAUDselector.SelectedIndex = 7; // La vitesse par défaut est 57 600
+                BAUDselector.SelectedIndex = 5; // La vitesse par défaut est 57 600
                 Connexion.Enabled = true; // UART1
             }
 
@@ -1482,9 +1482,21 @@ namespace ICDIBasic
 
         private void COMselector_Click(object sender, EventArgs e)
         {
+            try
+            {
             COMselector.Items.Clear();
             COMselector.Items.AddRange(SerialPort.GetPortNames());
             COMselector.SelectedIndex = 0;
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Aucun port série ouvert");   // Enregistre le log de la connexion
+            }
+
         }
 
         private void Connexion_Click(object sender, EventArgs e)
@@ -1563,9 +1575,10 @@ namespace ICDIBasic
                     Historique.AppendText("\r\n");
                     Historique.AppendText("Échec de l'envoi d'un heartbeat");   // Enregistre le log de la connexion
                 }
-                Historique.ScrollToCaret();
+                
             }
 
+             Historique.ScrollToCaret();
              // Le code qui suit est là pour fin de test
             int counter = Convert.ToInt32(GhostLabel.Text);
             counter++;
@@ -1660,11 +1673,11 @@ namespace ICDIBasic
             {
                 try
                 {
-                serialPort1.Write(SendZoneUART1.Text);    // Envoie le string de texte
-                serialPort1.Write("\r\n");              // Avec un Eeter
-                SendZoneUART1.Clear();                    // Efface la zone d'envoi
-                SendZoneUART1.Focus();
-                TXLED.BackColor = Color.Lime;
+                    serialPort1.Write(SendZoneUART1.Text);    // Envoie le string de texte
+                    serialPort1.Write("\r\n");              // Avec un Eeter
+                    SendZoneUART1.Clear();                    // Efface la zone d'envoi
+                    SendZoneUART1.Focus();
+                    TXLED.BackColor = Color.Lime;
                 }
                 catch
                 {
@@ -1685,20 +1698,43 @@ namespace ICDIBasic
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Historique.AppendText("\r\n");
-            Historique.AppendText("\r\n");
-            Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            Historique.AppendText("\r\n");
-            Historique.AppendText("Démarrage du véhicule");   // Enregistre le log de la connexion
+            try
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Démarrage du véhicule");   // Enregistre le log de la connexion
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Échec du démarrage du véhicule");   // Enregistre le log de la connexion
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Historique.AppendText("\r\n");
-            Historique.AppendText("\r\n");
-            Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            Historique.AppendText("\r\n");
-            Historique.AppendText("Arrêt du véhicule");   // Enregistre le log de la connexion
+            try
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Arrêt du véhicule");   // Enregistre le log de la connexion
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Échec de l'arrêt du véhicule");   // Enregistre le log de la connexion
+            }
         }
         #region Enregistrement et effacement de l'historique
         private void sauvegarderToolStripMenuItem_Click(object sender, EventArgs e)

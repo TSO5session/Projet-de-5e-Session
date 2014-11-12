@@ -128,25 +128,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.groupBox21 = new System.Windows.Forms.GroupBox();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
-            this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Historique = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -183,7 +164,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -208,9 +188,6 @@
             this.groupBox24.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            this.groupBox19.SuspendLayout();
-            this.groupBox20.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -238,7 +215,7 @@
             this.groupBox1.Controls.Add(this.btnRelease);
             this.groupBox1.Controls.Add(this.btnInit);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox1.Location = new System.Drawing.Point(10, 6);
+            this.groupBox1.Location = new System.Drawing.Point(3, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 96);
             this.groupBox1.TabIndex = 42;
@@ -708,7 +685,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 23);
             this.label6.TabIndex = 43;
-            this.label6.Text = "Parameter:";
+            this.label6.Text = "Parametres";
             // 
             // rdbParamActive
             // 
@@ -973,7 +950,7 @@
             this.groupBox6.Controls.Add(this.groupBox12);
             this.groupBox6.Controls.Add(this.groupBox13);
             this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox6.Location = new System.Drawing.Point(21, 380);
+            this.groupBox6.Location = new System.Drawing.Point(4, 391);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(366, 130);
             this.groupBox6.TabIndex = 51;
@@ -1362,7 +1339,7 @@
             // 
             this.groupBox24.Controls.Add(this.button2);
             this.groupBox24.Controls.Add(this.button3);
-            this.groupBox24.Location = new System.Drawing.Point(816, 6);
+            this.groupBox24.Location = new System.Drawing.Point(809, 6);
             this.groupBox24.Name = "groupBox24";
             this.groupBox24.Size = new System.Drawing.Size(90, 96);
             this.groupBox24.TabIndex = 62;
@@ -1394,10 +1371,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(10, 108);
+            this.tabControl1.Location = new System.Drawing.Point(3, 108);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(996, 417);
+            this.tabControl1.Size = new System.Drawing.Size(1009, 426);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 61;
             // 
@@ -1407,211 +1384,20 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(988, 391);
+            this.tabPage1.Size = new System.Drawing.Size(1001, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "État du système";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.groupBox26);
-            this.groupBox17.Controls.Add(this.groupBox19);
-            this.groupBox17.Controls.Add(this.groupBox20);
-            this.groupBox17.Controls.Add(this.groupBox21);
-            this.groupBox17.Controls.Add(this.groupBox22);
-            this.groupBox17.Controls.Add(this.groupBox23);
             this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(6, 6);
+            this.groupBox17.Location = new System.Drawing.Point(1, 0);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(978, 379);
+            this.groupBox17.Size = new System.Drawing.Size(994, 398);
             this.groupBox17.TabIndex = 59;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Informations en temps réel";
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.label31);
-            this.groupBox19.Controls.Add(this.label30);
-            this.groupBox19.Controls.Add(this.label29);
-            this.groupBox19.Controls.Add(this.label28);
-            this.groupBox19.Controls.Add(this.label27);
-            this.groupBox19.Controls.Add(this.label20);
-            this.groupBox19.Controls.Add(this.label21);
-            this.groupBox19.Controls.Add(this.label26);
-            this.groupBox19.Controls.Add(this.label22);
-            this.groupBox19.Controls.Add(this.label23);
-            this.groupBox19.Location = new System.Drawing.Point(6, 25);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(346, 163);
-            this.groupBox19.TabIndex = 61;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Véhicule";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(241, 128);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(41, 20);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "81%";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(241, 100);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(79, 20);
-            this.label30.TabIndex = 9;
-            this.label30.Text = "Clockwise";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(241, 76);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(73, 20);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "Immobile";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(241, 50);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(95, 20);
-            this.label28.TabIndex = 7;
-            this.label28.Text = "Station no.2";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(241, 24);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(86, 20);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "En marche";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 50);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(185, 20);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Emplacement du vhicule:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 100);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(129, 20);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "Sens du véhicule";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 128);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(144, 20);
-            this.label26.TabIndex = 6;
-            this.label26.Text = "Niveau de la battrie";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 24);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(126, 20);
-            this.label22.TabIndex = 4;
-            this.label22.Text = "État du véhicule:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 76);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(145, 20);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "Vitesse du véhicule";
-            // 
-            // groupBox20
-            // 
-            this.groupBox20.Controls.Add(this.label34);
-            this.groupBox20.Controls.Add(this.label33);
-            this.groupBox20.Controls.Add(this.label19);
-            this.groupBox20.Controls.Add(this.label18);
-            this.groupBox20.Location = new System.Drawing.Point(6, 194);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(346, 84);
-            this.groupBox20.TabIndex = 62;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "Marchandise";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(239, 57);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(97, 20);
-            this.label34.TabIndex = 12;
-            this.label34.Text = "41 grammes";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(239, 30);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(62, 20);
-            this.label33.TabIndex = 11;
-            this.label33.Text = "Orange";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 57);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(99, 20);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Poid du bloc:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 30);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(123, 20);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Couleur du bloc:";
-            // 
-            // groupBox21
-            // 
-            this.groupBox21.Location = new System.Drawing.Point(663, 25);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(309, 104);
-            this.groupBox21.TabIndex = 63;
-            this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "Station no.1";
-            // 
-            // groupBox22
-            // 
-            this.groupBox22.Location = new System.Drawing.Point(663, 135);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(309, 104);
-            this.groupBox22.TabIndex = 64;
-            this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "Station no.2";
-            // 
-            // groupBox23
-            // 
-            this.groupBox23.Location = new System.Drawing.Point(663, 245);
-            this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(309, 104);
-            this.groupBox23.TabIndex = 65;
-            this.groupBox23.TabStop = false;
-            this.groupBox23.Text = "Station no.3";
             // 
             // tabPage2
             // 
@@ -1670,7 +1456,7 @@
             // 
             this.groupBox18.Controls.Add(this.button1);
             this.groupBox18.Controls.Add(this.PC_Clock);
-            this.groupBox18.Location = new System.Drawing.Point(667, 6);
+            this.groupBox18.Location = new System.Drawing.Point(660, 6);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Size = new System.Drawing.Size(143, 96);
             this.groupBox18.TabIndex = 60;
@@ -1701,7 +1487,7 @@
             this.groupBox16.Controls.Add(this.HeartBeatIN);
             this.groupBox16.Controls.Add(this.label17);
             this.groupBox16.Controls.Add(this.label16);
-            this.groupBox16.Location = new System.Drawing.Point(536, 6);
+            this.groupBox16.Location = new System.Drawing.Point(529, 6);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(125, 96);
             this.groupBox16.TabIndex = 58;
@@ -1752,7 +1538,7 @@
             this.groupBox15.Controls.Add(this.COMselector);
             this.groupBox15.Controls.Add(this.label14);
             this.groupBox15.Controls.Add(this.label15);
-            this.groupBox15.Location = new System.Drawing.Point(286, 6);
+            this.groupBox15.Location = new System.Drawing.Point(279, 6);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(244, 96);
             this.groupBox15.TabIndex = 56;
@@ -1963,15 +1749,6 @@
             this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // groupBox26
-            // 
-            this.groupBox26.Location = new System.Drawing.Point(6, 284);
-            this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(346, 89);
-            this.groupBox26.TabIndex = 64;
-            this.groupBox26.TabStop = false;
-            this.groupBox26.Text = "Système de sauvegarde SOC8200";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2019,11 +1796,6 @@
             this.groupBox24.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -2165,30 +1937,11 @@
         private System.Windows.Forms.TextBox UART1DisplayBox;
         private System.Windows.Forms.Button SendUART1;
         private System.Windows.Forms.TextBox SendZoneUART1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label PC_Clock;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.GroupBox groupBox19;
-        private System.Windows.Forms.GroupBox groupBox20;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox21;
-        private System.Windows.Forms.GroupBox groupBox22;
-        private System.Windows.Forms.GroupBox groupBox23;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -2201,7 +1954,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label GhostLabel;
         private System.Windows.Forms.GroupBox groupBox25;
-        private System.Windows.Forms.GroupBox groupBox26;
     }
 }
 

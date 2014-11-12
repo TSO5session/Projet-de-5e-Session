@@ -7,6 +7,7 @@
 \contentsline {subsubsection}{\numberline {1.2.3}Bloc 3}{4}
 \contentsline {subsubsection}{\numberline {1.2.4}Bloc 4}{4}
 \contentsline {subsection}{\numberline {1.3}Liste des logiciels}{4}
+\contentsline {subsection}{\numberline {1.4}Liste des trames}{4}
 \contentsline {section}{\numberline {2}Le mat\IeC {\'e}riel}{5}
 \contentsline {subsection}{\numberline {2.1}Bloc 1}{5}
 \contentsline {subsection}{\numberline {2.2}Bloc 2}{5}
