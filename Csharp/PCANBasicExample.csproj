@@ -125,6 +125,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="10422.ico" />
+    <None Include="Resources\Station3CW.png" />
+    <None Include="Resources\Station3CCW.png" />
+    <None Include="Resources\Station2CCW.png" />
+    <None Include="Resources\Station1CW.png" />
+    <None Include="Resources\Station1CCW.png" />
+    <None Include="Resources\Staion2CW.png" />
+    <None Include="Resources\OutOfTrack.png" />
     <None Include="Resources\cercle1.gif" />
     <None Include="Resources\ouvre_boite_manuel_1.jpg" />
     <None Include="Resources\10422.png" />

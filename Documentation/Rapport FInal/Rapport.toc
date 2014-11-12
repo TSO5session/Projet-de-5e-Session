@@ -18,7 +18,7 @@
 \contentsline {subsubsection}{\numberline {2.6.2}CAN}{5}
 \contentsline {subsubsection}{\numberline {2.6.3}XBEE}{5}
 \contentsline {subsection}{\numberline {2.7}Liste des pi\IeC {\`e}ces}{5}
-\contentsline {subsubsection}{\numberline {2.7.1}Listes et lien web}{5}
+\contentsline {subsubsection}{\numberline {2.7.1}Liens web}{5}
 \contentsline {subsubsection}{\numberline {2.7.2}Datasheet des PDF}{5}
 \contentsline {section}{\numberline {3}Interface PC}{6}
 \contentsline {subsection}{\numberline {3.1}Structure du programme}{6}

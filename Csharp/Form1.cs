@@ -9,7 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.IO.Ports;       // Pour utiliser le port série
 using System.IO;             // Pour ouvrir un fichier
-
+using System.Text.RegularExpressions;
 /// <summary>
 /// Inclusion of PEAK PCAN-Basic namespace
 /// </summary>
@@ -1494,7 +1494,7 @@ namespace ICDIBasic
                 if (Connexion.Text == "Déconnexion")
                 {
                     Connexion.Text = "Connexion";
-
+                    serialPort1.Close();
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -1545,8 +1545,13 @@ namespace ICDIBasic
             {
                 try
                 {
-                    serialPort1.Write("Allo");
+                    serialPort1.Write("Allo\n");
+                    TXLED.BackColor = Color.Lime;
                     HeartBeatOUT.BackColor = Color.Red;
+                    serialPort1.DiscardInBuffer();   // Pas sur que ce soit nécessaire
+                    serialPort1.DiscardOutBuffer();  // Pas sur que ce soit nécessaire
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Heartbat Envoyé");   // Enregistre le log de la connexion
                 }
                 catch
                 {
@@ -1558,7 +1563,51 @@ namespace ICDIBasic
                     Historique.AppendText("\r\n");
                     Historique.AppendText("Échec de l'envoi d'un heartbeat");   // Enregistre le log de la connexion
                 }
+                Historique.ScrollToCaret();
             }
+
+             // Le code qui suit est là pour fin de test
+            int counter = Convert.ToInt32(GhostLabel.Text);
+            counter++;
+            if (counter == 8)
+            {
+                counter = 0;
+            }
+
+            GhostLabel.Text = Convert.ToString(counter);
+
+            switch(Convert.ToInt32(GhostLabel.Text))
+            {
+                case 0:
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.Station1CW;
+                break;
+
+                case 1:
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.Station3CW;
+                break;
+
+                case 3:
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.Staion2CW;
+                break;
+
+                case 4:
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.Station3CCW;
+                break;
+
+                case 5:
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.Station1CCW;
+                break;
+
+                case 6:
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.Station2CCW;
+                break;
+
+                case 7:
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.OutOfTrack;
+                break;
+            }
+
+
         }
 
         private void timer2_Tick(object sender, EventArgs e) // Timer de remise à zero de l'affichage
@@ -1567,7 +1616,6 @@ namespace ICDIBasic
          HeartBeatIN.BackColor = Color.White;
          RXLED.BackColor = Color.White;
          TXLED.BackColor = Color.White;
-
          PC_Clock.Text = DateTime.Now.ToString("h:mm:ss tt");
         }
 
@@ -1579,12 +1627,8 @@ namespace ICDIBasic
                 {
                     string _charRecu = Convert.ToString(serialPort1.ReadExisting());
                     Invoke(new SetTextBoxReceiveDeleg(traitementDataReceivedUART1), new object[] { _charRecu });
-
-                    if(_charRecu == "Allo")
-                    {
-                        HeartBeatIN.BackColor = Color.Lime;
-                    }
-
+                    serialPort1.DiscardInBuffer();   // Pas sur que ce soit nécessaire
+                    serialPort1.DiscardOutBuffer();  // Pas sur que ce soit nécessaire
                 }
                 catch
                 {
@@ -1601,6 +1645,12 @@ namespace ICDIBasic
         {
             UART1DisplayBox.AppendText(text);
             RXLED.BackColor = Color.Red;
+            if ((text == "Allo") || (text == "Allo\r\n"))
+            {
+             HeartBeatIN.BackColor = Color.Lime;
+             Historique.AppendText("\r\n");
+             Historique.AppendText("Heartbeat Reçu");
+            }
         }
 
 
@@ -1608,11 +1658,23 @@ namespace ICDIBasic
         {
             if (serialPort1.IsOpen == true) // Si le port série est ouvert
             {
+                try
+                {
                 serialPort1.Write(SendZoneUART1.Text);    // Envoie le string de texte
                 serialPort1.Write("\r\n");              // Avec un Eeter
                 SendZoneUART1.Clear();                    // Efface la zone d'envoi
                 SendZoneUART1.Focus();
                 TXLED.BackColor = Color.Lime;
+                }
+                catch
+                {
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Problème d'envoi");   // Enregistre le log de la connexion
+                }
+
             }
             else
             {
