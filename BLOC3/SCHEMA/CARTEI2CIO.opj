@@ -37,6 +37,11 @@
   (Folder "Outputs")
   (Folder "Referenced Projects")
   (PartMRUSelector
+    ("MOSFET P"
+      (FullPartName "MOSFET P.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.2\TOOLS\CAPTURE\LIBRARY\OLDLIBS\DEVICE.OLB")
+      (DeviceIndex "0"))
     ("CAP NP"
       (FullPartName "CAP NP.Normal")
       (LibraryName
@@ -56,73 +61,59 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources"
-         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\cartei2cio.dsn")
+         "C:\Users\1230838\Desktop\Projet-de-5e-Session\BLOC3\SCHEMA\cartei2cio.dsn")
       (Path "Design Resources"
-         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\cartei2cio.dsn"
+         "C:\Users\1230838\Desktop\Projet-de-5e-Session\BLOC3\SCHEMA\cartei2cio.dsn"
          "SCHEMATIC1")
-      (Path "Design Resources" "Library")
-      (Select "Design Resources"
-         "C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\SCHEMA\cartei2cio.dsn"
-         "SCHEMATIC1" "PAGE5"))
+      (Path "Design Resources" "Library"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -30 0 200 0 472"))
+        (Placement "44 2 3 -1 -1 -8 -30 0 200 0 472"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -30 185 1827 -2 735")
-        (Scroll "-434 0")
+        (Placement "44 0 1 -1 -1 -8 -30 25 1667 25 535")
+        (Scroll "-312 0")
         (Zoom "100")
         (Occurrence "/"))
       (Path
-         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+         "C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\SCHEMA\CARTEI2CIO.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE1"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -30 50 1696 50 564")
-        (Scroll "-333 0")
-        (Zoom "96")
+        (Scroll "-314 0")
+        (Zoom "100")
         (Occurrence "/"))
       (Path
-         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+         "C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\SCHEMA\CARTEI2CIO.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE2"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -30 75 1721 75 589")
-        (Scroll "-333 0")
-        (Zoom "96")
+        (Scroll "-314 0")
+        (Zoom "100")
         (Occurrence "/"))
       (Path
-         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+         "C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\SCHEMA\CARTEI2CIO.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE3"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -30 225 1871 225 739")
-        (Scroll "-333 0")
-        (Zoom "96")
-        (Occurrence "/"))
-      (Path
-         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "PAGE4"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -8 -30 225 1579 225 739")
-        (Scroll "-168 0")
+        (Placement "44 0 1 -1 -1 -8 -30 100 1746 100 614")
+        (Scroll "-314 0")
         (Zoom "100")
         (Occurrence "/"))
       (Path
-         "C:\USERS\1230838\DESKTOP\PROJETSESSION5\BLOC3\SCHEMA\CARTEI2CIO.DSN")
+         "C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\SCHEMA\CARTEI2CIO.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE5")))
   (MPSSessionName "1230838"))
