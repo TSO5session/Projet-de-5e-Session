@@ -123,18 +123,14 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.VoitureStop = new System.Windows.Forms.Button();
+            this.VoitureStart = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Historique = new System.Windows.Forms.RichTextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.GhostLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ClockSync = new System.Windows.Forms.Button();
             this.PC_Clock = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.HeartBeatOUT = new System.Windows.Forms.Button();
@@ -164,6 +160,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.GhostLabel2 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.VoitureHS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -186,10 +188,6 @@
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox24.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox18.SuspendLayout();
             this.groupBox16.SuspendLayout();
@@ -199,6 +197,8 @@
             this.groupBox14.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox25.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1226,7 +1226,7 @@
             // 
             this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "&Redémarrer";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -1234,7 +1234,7 @@
             // 
             this.exitToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "&Quitter";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1313,6 +1313,8 @@
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage8);
             this.tabControl2.Location = new System.Drawing.Point(0, 27);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -1321,8 +1323,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.groupBox17);
             this.tabPage5.Controls.Add(this.groupBox24);
-            this.tabPage5.Controls.Add(this.tabControl1);
             this.tabPage5.Controls.Add(this.groupBox18);
             this.tabPage5.Controls.Add(this.groupBox16);
             this.tabPage5.Controls.Add(this.groupBox15);
@@ -1337,78 +1339,46 @@
             // 
             // groupBox24
             // 
-            this.groupBox24.Controls.Add(this.button2);
-            this.groupBox24.Controls.Add(this.button3);
+            this.groupBox24.Controls.Add(this.VoitureHS);
+            this.groupBox24.Controls.Add(this.VoitureStop);
+            this.groupBox24.Controls.Add(this.GhostLabel2);
+            this.groupBox24.Controls.Add(this.VoitureStart);
             this.groupBox24.Location = new System.Drawing.Point(809, 6);
             this.groupBox24.Name = "groupBox24";
-            this.groupBox24.Size = new System.Drawing.Size(90, 96);
+            this.groupBox24.Size = new System.Drawing.Size(173, 96);
             this.groupBox24.TabIndex = 62;
             this.groupBox24.TabStop = false;
             this.groupBox24.Text = "Véhicule";
             // 
-            // button2
+            // VoitureStop
             // 
-            this.button2.Location = new System.Drawing.Point(6, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.VoitureStop.Location = new System.Drawing.Point(87, 27);
+            this.VoitureStop.Name = "VoitureStop";
+            this.VoitureStop.Size = new System.Drawing.Size(75, 23);
+            this.VoitureStop.TabIndex = 0;
+            this.VoitureStop.Text = "Stop";
+            this.VoitureStop.UseVisualStyleBackColor = true;
+            this.VoitureStop.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // VoitureStart
             // 
-            this.button3.Location = new System.Drawing.Point(6, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Start";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(3, 108);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1009, 426);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.tabControl1.TabIndex = 61;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox17);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1001, 400);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "État du système";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.VoitureStart.Location = new System.Drawing.Point(6, 27);
+            this.VoitureStart.Name = "VoitureStart";
+            this.VoitureStart.Size = new System.Drawing.Size(75, 23);
+            this.VoitureStart.TabIndex = 1;
+            this.VoitureStart.Text = "Start";
+            this.VoitureStart.UseVisualStyleBackColor = true;
+            this.VoitureStart.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox17
             // 
             this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(1, 0);
+            this.groupBox17.Location = new System.Drawing.Point(3, 108);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(994, 398);
+            this.groupBox17.Size = new System.Drawing.Size(1003, 420);
             this.groupBox17.TabIndex = 59;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Informations en temps réel";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.Historique);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(988, 391);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Historique";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Historique
             // 
@@ -1417,26 +1387,16 @@
             this.Historique.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Historique.Location = new System.Drawing.Point(3, 3);
             this.Historique.Name = "Historique";
-            this.Historique.Size = new System.Drawing.Size(982, 385);
+            this.Historique.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedHorizontal;
+            this.Historique.Size = new System.Drawing.Size(1006, 528);
             this.Historique.TabIndex = 0;
             this.Historique.Text = "";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.GhostLabel);
-            this.tabPage3.Controls.Add(this.pictureBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(988, 391);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Visualisation du parcours";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.Historique.TextChanged += new System.EventHandler(this.Historique_TextChanged);
             // 
             // GhostLabel
             // 
             this.GhostLabel.AutoSize = true;
-            this.GhostLabel.Location = new System.Drawing.Point(919, 32);
+            this.GhostLabel.Location = new System.Drawing.Point(963, 35);
             this.GhostLabel.Name = "GhostLabel";
             this.GhostLabel.Size = new System.Drawing.Size(13, 13);
             this.GhostLabel.TabIndex = 1;
@@ -1444,17 +1404,18 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::PCANBasicExample.Properties.Resources.Station1CW;
-            this.pictureBox1.Location = new System.Drawing.Point(172, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(635, 379);
+            this.pictureBox1.Size = new System.Drawing.Size(1006, 528);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.button1);
+            this.groupBox18.Controls.Add(this.ClockSync);
             this.groupBox18.Controls.Add(this.PC_Clock);
             this.groupBox18.Location = new System.Drawing.Point(660, 6);
             this.groupBox18.Name = "groupBox18";
@@ -1463,14 +1424,15 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Synchronisation du temps";
             // 
-            // button1
+            // ClockSync
             // 
-            this.button1.Location = new System.Drawing.Point(9, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Synchroniser";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ClockSync.Location = new System.Drawing.Point(9, 60);
+            this.ClockSync.Name = "ClockSync";
+            this.ClockSync.Size = new System.Drawing.Size(128, 23);
+            this.ClockSync.TabIndex = 1;
+            this.ClockSync.Text = "Synchroniser";
+            this.ClockSync.UseVisualStyleBackColor = true;
+            this.ClockSync.Click += new System.EventHandler(this.button1_Click);
             // 
             // PC_Clock
             // 
@@ -1695,6 +1657,7 @@
             // 
             // groupBox25
             // 
+            this.groupBox25.Controls.Add(this.button2);
             this.groupBox25.Controls.Add(this.UART1DisplayBox);
             this.groupBox25.Controls.Add(this.SendUART1);
             this.groupBox25.Controls.Add(this.SendZoneUART1);
@@ -1719,9 +1682,9 @@
             // 
             // SendUART1
             // 
-            this.SendUART1.Location = new System.Drawing.Point(880, 335);
+            this.SendUART1.Location = new System.Drawing.Point(866, 337);
             this.SendUART1.Name = "SendUART1";
-            this.SendUART1.Size = new System.Drawing.Size(108, 28);
+            this.SendUART1.Size = new System.Drawing.Size(58, 28);
             this.SendUART1.TabIndex = 4;
             this.SendUART1.Text = "Envoyer";
             this.SendUART1.UseVisualStyleBackColor = true;
@@ -1732,7 +1695,7 @@
             this.SendZoneUART1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SendZoneUART1.Location = new System.Drawing.Point(6, 337);
             this.SendZoneUART1.Name = "SendZoneUART1";
-            this.SendZoneUART1.Size = new System.Drawing.Size(863, 26);
+            this.SendZoneUART1.Size = new System.Drawing.Size(854, 26);
             this.SendZoneUART1.TabIndex = 3;
             // 
             // serialPort1
@@ -1748,6 +1711,63 @@
             // 
             this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // GhostLabel2
+            // 
+            this.GhostLabel2.AutoSize = true;
+            this.GhostLabel2.Location = new System.Drawing.Point(77, 11);
+            this.GhostLabel2.Name = "GhostLabel2";
+            this.GhostLabel2.Size = new System.Drawing.Size(13, 13);
+            this.GhostLabel2.TabIndex = 63;
+            this.GhostLabel2.Text = "0";
+            this.GhostLabel2.Visible = false;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.Historique);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1012, 534);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Historique";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.GhostLabel);
+            this.tabPage8.Controls.Add(this.pictureBox1);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1012, 534);
+            this.tabPage8.TabIndex = 4;
+            this.tabPage8.Text = "Visualisateur de parcours";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(930, 337);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(58, 28);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Clear";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // VoitureHS
+            // 
+            this.VoitureHS.Location = new System.Drawing.Point(6, 60);
+            this.VoitureHS.Name = "VoitureHS";
+            this.VoitureHS.Size = new System.Drawing.Size(156, 23);
+            this.VoitureHS.TabIndex = 64;
+            this.VoitureHS.Text = "Mettre hors circuit";
+            this.VoitureHS.UseVisualStyleBackColor = true;
+            this.VoitureHS.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -1794,11 +1814,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox24.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.groupBox24.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
@@ -1813,6 +1829,9 @@
             this.tabPage7.ResumeLayout(false);
             this.groupBox25.ResumeLayout(false);
             this.groupBox25.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1939,21 +1958,23 @@
         private System.Windows.Forms.TextBox SendZoneUART1;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.Label PC_Clock;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ClockSync;
+        private System.Windows.Forms.Button VoitureStart;
+        private System.Windows.Forms.Button VoitureStop;
         private System.Windows.Forms.ToolStripMenuItem historiqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sauvegarderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem effacerToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox24;
         private System.Windows.Forms.RichTextBox Historique;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label GhostLabel;
         private System.Windows.Forms.GroupBox groupBox25;
+        private System.Windows.Forms.Label GhostLabel2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Button VoitureHS;
     }
 }
 

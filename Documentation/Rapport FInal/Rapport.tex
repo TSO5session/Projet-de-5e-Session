@@ -183,43 +183,113 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \HRule
 \end{flushleft}
 
+\pagebreak
 \subsection{Liste des trames}
+
+\begin{table}[!ht]
+\caption{Index des identifiant matériel CAN}
+\medskip
+\centering
+\begin{tabular}{|l|c|}
+\hline 
+\textbf{Device} & \textbf{Identifiant matériel} \\ 
+\hline 
+Ordinateur & 000 \\ 
+\hline 
+SOC8200 & 001 \\ 
+\hline 
+Station 1 & 002 \\ 
+\hline 
+Station 2  & 003 \\ 
+\hline 
+Véhicule  & 004 \\ 
+\hline 
+\end{tabular} 
+\label{tab:testtab1}
+\end{table} 
+
 
 \begin{table}[!ht]
 \caption{Index des trames CAN}
 \medskip
 \centering
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|l|c|l|c|}
 \hline 
-\textbf{Fonctionnalité} & \textbf{Identifiant} & \textbf{Données} \\
+\textbf{Fonctionnalité} & \textbf{Composante} & \textbf{Données} & \textbf{TimeStamp}\\
 \hline 
-Démarre le véhcule & 0x00 & 0x00 \\ 
+Démarre le véhcule & 0x00 & 0x00 & TimeStamp\\ 
 \hline 
-Arrête le véhicule & 0x00 & 0x01 \\ 
+Arrête le véhicule & 0x00 & 0x01 & TimeStamp\\ 
 \hline 
-Le véhicule est arrêté & 0x01 & 0x00 \\ 
+Le véhicule est arrêté & 0x01 & 0x00 & TimeStamp\\ 
 \hline 
-Le véhicule est en marche& 0x01 & 0x01 \\ 
+Le véhicule est en marche& 0x01 & 0x01 & TimeStamp\\ 
 \hline 
-Le véhicule est hors circuit & 0x01 & 0x02 \\ 
+Le véhicule est hors circuit & 0x01 & 0x02 & TimeStamp\\ 
 \hline 
-Vitesse (0-100) & 0x02 & 0x00 à 0x64 \\ 
+Vitesse (0-100) & 0x02 & 0x00 à 0x64 & TimeStamp\\ 
 \hline 
-Battrie & 0x03 & 0x00 à 0x64 \\ 
+Battrie & 0x03 & 0x00 à 0x64 & TimeStamp\\ 
 \hline 
-Couleur du bloc & 0x04 & 0x00 à 0x02 \\ 
+Couleur du bloc & 0x04 & 0x00 à 0x02 & TimeStamp\\ 
 \hline 
-Poids du bloc & 0x05 & 0x00 à 0x64 \\ 
+Poids du bloc & 0x05 & 0x00 à 0x64 & TimeStamp\\ 
 \hline 
-Envoyer l'heure & 0x06 &   \\ 
+Envoyer l'heure & 0x06 &   & TimeStamp\\ 
 \hline 
-No. de la station & 0x07 & 0x00 à 0x02 \\ 
+No. de la station & 0x07 & 0x00 à 0x02 & TimeStamp\\ 
 \hline 
 \end{tabular} 
 \label{tab:testtab1}
 \end{table}
 
+\begin{table}[!ht]
+\caption{Index des communication CAN}
+\medskip
+\centering
+\begin{tabular}{|l|l|c|c|l|c|}
+\hline 
+\textbf{Émetteur} & \textbf{Action} & \textbf{Donnée envoyée} & \textbf{TimeStamp} & \textbf{Récepteur} & \textbf{Erreur retournée au PC}\\ 
+\hline 
+Ordinateur & Démarrer le véhicule & 004 00 00 & TimeStamp & Véhicule & 000 F1\\ 
+\hline 
+Ordinateur & Arrêter le véhicule & 004 00 01 & TimeStamp & Véhicule & 000 F2\\ 
+\hline 
+Véhicule & Dit: je suis arrêté & 000 01 00  & TimeStamp & Ordinateur & 000 F3\\
+\hline 
+Véhicule & Dit: j'avance & 000 01 01 & TimeStamp & Ordinateur  & 000 F4\\  
+\hline 
+Véhicule & Dit: je suis hors circuit & 000 01 02 & TimeStamp & Ordinateur & 000 F5\\ 
+\hline 
+Véhicule & Dit sa vitesse & 000 02 [00 à 64] & TimeStamp & Ordinateur & 000 F6\\ 
+\hline 
+Véhicule & Dit le niveau de sa battrie & 000 03 [00 à 64] & TimeStamp & Ordinateur & 000 F7\\ 
+\hline 
+Station 1 & Dit bloc = métal & 000 04 00 & TimeStamp & Ordinateur & 000 F8\\ 
+\hline  
+Station 1 & Dit bloc = orange & 000 04 01 & TimeStamp & Ordinateur & 000 F9\\
+\hline 
+Station 1 & Dit bloc = noir & 000 04 02 & TimeStamp & Ordinateur & 000 FA\\
+\hline 
+Station 1 & Dit le poid du bloc & 000 05 [00 à 64] & TimeStamp & Ordinateur & 000 FB\\ 
+\hline 
+Voiture & Dit qu'elle est à la station 1 & 000 07 00 & TimeStamp & Ordinateur & 000 FC\\ 
+\hline 
+Voiture & Dit qu'elle est à la station 2 & 000 07 01 & TimeStamp & Ordinateur & 000 FD\\
+\hline 
+Ordinateur & Envoie l'heure & 003 06 ? & TimeStamp & Station 1 & 000 FE\\ 
+\hline 
+\end{tabular} 
+\label{tab:testtab1}
+\end{table}
+\begin{flushleft}
+\textbf{Note:} S'il n'y a aucune erreur, le code retourné est 000 FF\\
+\textbf{Note:} Il faut définir les TimeStamps\\
+\textbf{Note:} La sttion no.1 relaie les données entre l'ordinateur et la station no.3 (pesage); entre l'ordinateur et la station no.2 (table festo) via xbee; entre la voiture et le PC via xbee.
+\end{flushleft}
 \pagebreak
+
+
 \section{Le matériel}
 \subsection{Bloc 1}
 

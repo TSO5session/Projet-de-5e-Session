@@ -20,7 +20,7 @@ namespace ICDIBasic
 {
     public partial class Form1 : Form
     {
-
+       
 
         #region CAN STUFF
         #region Structures
@@ -605,12 +605,13 @@ namespace ICDIBasic
             InitializeComponent();
             InitializeBasicComponents();
 
+            timer3.Start();
             COMselector.Items.AddRange(PortsDisponible); // Affiche les ports disponibles UART1
             Connexion.Text = "Connexion";                // Le bouton sert à se connecter UART1
             Connexion.Enabled = false;                   // UART1
 
-            timer1.Start(); // Timer du heartBeat
-            timer2.Start(); // Timer de synchronisation de clock et de hertbeat
+           // timer1.Start(); // Timer du heartBeat
+           // timer2.Start(); // Timer de synchronisation de clock et de hertbeat
 
             Historique.AppendText("\r\n");
             Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -620,7 +621,7 @@ namespace ICDIBasic
             if (COMselector.Items.Count > 0)
             {
                 COMselector.SelectedIndex = 0;  // Le port par défaut est le premier port indexé
-                BAUDselector.SelectedIndex = 5; // La vitesse par défaut est 57 600
+                BAUDselector.SelectedIndex = 4; // La vitesse par défaut est 57 600
                 Connexion.Enabled = true; // UART1
             }
 
@@ -641,7 +642,6 @@ namespace ICDIBasic
         PCANBasic.Uninitialize(m_PcanHandle);
         }
         
-
         #region ComboBox event-handlers
         private void cbbChannel_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1235,7 +1235,6 @@ namespace ICDIBasic
         private void tmrRead_Tick(object sender, EventArgs e)
         {
             // Checks if in the receive-queue are currently messages for read
-            // 
             ReadMessages();
         }
 
@@ -1457,20 +1456,22 @@ namespace ICDIBasic
 
         #endregion
 
+#region Option du menu fichier
+        #region Radémarrer l'application
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
-
         #endregion
-
+        
+        #region Quitter l'applicaition
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         #endregion
-
+        
+        #region Menu à propos
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("CAN Opener par Vincent Chouinard", "Hey listen!", MessageBoxButtons.OK); // Note: À moifier
@@ -1479,14 +1480,18 @@ namespace ICDIBasic
 
             }
         }
-
+        #endregion
+        #endregion
+        #endregion
+        #endregion
+#region Actualisation des ports COM disponibles
         private void COMselector_Click(object sender, EventArgs e)
         {
             try
             {
-            COMselector.Items.Clear();
-            COMselector.Items.AddRange(SerialPort.GetPortNames());
-            COMselector.SelectedIndex = 0;
+                COMselector.Items.Clear();
+                COMselector.Items.AddRange(SerialPort.GetPortNames());
+                COMselector.SelectedIndex = 0;
             }
             catch
             {
@@ -1496,24 +1501,36 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Aucun port série ouvert");   // Enregistre le log de la connexion
             }
-
         }
+#endregion
 
+#region Connexion et déconnexion au RS232
         private void Connexion_Click(object sender, EventArgs e)
         {
             if(serialPort1.IsOpen == true)
             {
                 if (Connexion.Text == "Déconnexion")
                 {
-                    Connexion.Text = "Connexion";
-                    serialPort1.Close();
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("Déconnexion du bus RS232");   // Enregistre le log de la connexion
-                }
-             
+                    try
+                    {
+                        Connexion.Text = "Connexion";
+                        serialPort1.Close();
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Déconnexion du bus RS232");   // Enregistre le log de la connexion
+                    }
+                    catch
+                    {
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Échec de la déconnexion du bus RS232");   // Enregistre le log de la connexion
+                    }
+
+                }     
             }
             else
             {
@@ -1527,7 +1544,7 @@ namespace ICDIBasic
                     serialPort1.PortName = COMselector.Text; //Avec le port série choisi
                     serialPort1.Open();                      //Maintenant, connecte-toi 
                     Connexion.Text = "Déconnexion";
-
+                    timer1.Start();                          // Timer du heartBeat
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -1550,7 +1567,11 @@ namespace ICDIBasic
                 }
             }  
         }
+        #endregion
 
+#region Timer de 1 seconde
+
+        #region Envoi du HeartBeat
         private void timer1_Tick(object sender, EventArgs e)
         {
             if(serialPort1.IsOpen == true) // Envoie du heartbeat à toutes les secondes
@@ -1575,11 +1596,15 @@ namespace ICDIBasic
                     Historique.AppendText("\r\n");
                     Historique.AppendText("Échec de l'envoi d'un heartbeat");   // Enregistre le log de la connexion
                 }
-                
             }
+        #endregion
 
-             Historique.ScrollToCaret();
-             // Le code qui suit est là pour fin de test
+        #region Gestion de l'image du parcours et de son animation de déplacement
+            ////////////////////////////////////////////////////////////////////////////
+            // Note: Le code sert de test et seul le timer gère l'animation           //
+            //       Il faudra remplacer les images et faire en sorte que se sont les //
+            //       données CAN qui viennent incrémanter le Ghost Label              //
+            ////////////////////////////////////////////////////////////////////////////
             int counter = Convert.ToInt32(GhostLabel.Text);
             counter++;
             if (counter == 8)
@@ -1619,19 +1644,23 @@ namespace ICDIBasic
                 pictureBox1.Image = PCANBasicExample.Properties.Resources.OutOfTrack;
                 break;
             }
-
-
         }
+            #endregion
+        #endregion
 
+#region Timer de battement du HeartBeat et de gestion de la clock
         private void timer2_Tick(object sender, EventArgs e) // Timer de remise à zero de l'affichage
         {                                                    // du heartbeat et des leds rxtx
          HeartBeatOUT.BackColor = Color.White;
          HeartBeatIN.BackColor = Color.White;
          RXLED.BackColor = Color.White;
          TXLED.BackColor = Color.White;
-         PC_Clock.Text = DateTime.Now.ToString("h:mm:ss tt");
         }
+        #endregion
 
+#region Lorsque le port série recoit des données
+
+        #region Réception des données
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             if (serialPort1.IsOpen == true)
@@ -1654,30 +1683,43 @@ namespace ICDIBasic
                 }
             }
         }
-        private void traitementDataReceivedUART1(string text)
+        #endregion
+
+        #region affichage par delegate
+
+        private void traitementDataReceivedUART1(string text) // Le délégué de réception
         {
-            UART1DisplayBox.AppendText(text);
-            RXLED.BackColor = Color.Red;
-            if ((text == "Allo") || (text == "Allo\r\n"))
+            UART1DisplayBox.AppendText(text);   // Lorsque des données sont reçues, autoscrolle l'historique
+            RXLED.BackColor = Color.Red;        // Fait clignotter la led de réception
+
+            if ((text == "Allo") || (text == "Allo\r\n"))  // Si un heartbeat est reçu
             {
-             HeartBeatIN.BackColor = Color.Lime;
-             Historique.AppendText("\r\n");
-             Historique.AppendText("Heartbeat Reçu");
+                if (GhostLabel2.Text == "0")               // Si c'est le premier heartbeat
+                {
+                  timer2.Start();                          // Start le timer de réception des heartbeat
+                  GhostLabel2.Text = "1";                  // Indique qu'un heartbeat est reçu
+                }
+
+               HeartBeatIN.BackColor = Color.Lime;       // Fait clignotter la led du heartbeat reçu
+               Historique.AppendText("\r\n");
+               Historique.AppendText("Heartbeat Reçu");
             }
         }
+        #endregion
+        #endregion
 
-
+#region Envoie manuel de données dans le port série via l'onglet de debug
         private void SendUART1_Click(object sender, EventArgs e) // Cette zone gère l'affichege de la window de debug
         {
             if (serialPort1.IsOpen == true) // Si le port série est ouvert
             {
                 try
                 {
-                    serialPort1.Write(SendZoneUART1.Text);    // Envoie le string de texte
+                    serialPort1.Write(SendZoneUART1.Text);  // Envoie le string de texte
                     serialPort1.Write("\r\n");              // Avec un Eeter
-                    SendZoneUART1.Clear();                    // Efface la zone d'envoi
+                    SendZoneUART1.Clear();                  // Efface la zone d'envoi
                     SendZoneUART1.Focus();
-                    TXLED.BackColor = Color.Lime;
+                    TXLED.BackColor = Color.Lime;           // Allume la led de Tx
                 }
                 catch
                 {
@@ -1687,24 +1729,53 @@ namespace ICDIBasic
                     Historique.AppendText("\r\n");
                     Historique.AppendText("Problème d'envoi");   // Enregistre le log de la connexion
                 }
-
-            }
-            else
-            {
-
             }
             SendZoneUART1.Focus();        // Focus à la zone d'envoi
         }
+        #endregion
 
+#region Démarrer le véhicule
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Démarrage du véhicule");   // Enregistre le log de la connexion
+                TPCANMsg CANMsg;
+                TPCANStatus stsResult;
+
+                CANMsg         = new TPCANMsg();
+                CANMsg.DATA    = new byte[6];
+                CANMsg.ID      = 004;             // Target = véhicule
+                CANMsg.LEN     = 6;               // Longueur = 6
+                CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+
+                for (int i = 0; i < CANMsg.LEN; i++)
+                {
+                    if (i == 0) { CANMsg.DATA[0] = 00; } // Data = 0000
+                    if (i == 1) { CANMsg.DATA[1] = 00; }
+                    if (i == 2) { CANMsg.DATA[2] = 00; }
+                    if (i == 3) { CANMsg.DATA[3] = 00; }
+                    if (i == 4) { CANMsg.DATA[4] = 00; }
+                    if (i == 5) { CANMsg.DATA[5] = 00; }
+                    if (i == 6) { CANMsg.DATA[6] = 00; }
+                    if (i == 7) { CANMsg.DATA[7] = 00; }
+                }
+                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg); // Envoi 004 00 00
+                if (stsResult == TPCANStatus.PCAN_ERROR_OK) 
+                {  
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Démarrage du véhicule");   // Enregistre le log de la connexion
+                }
+                else
+                {
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Échec du démarrage du véhicule");   // Enregistre le log de la connexion
+                }
             }
             catch
             {
@@ -1714,18 +1785,46 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Échec du démarrage du véhicule");   // Enregistre le log de la connexion
             }
-
         }
+        #endregion
+
+#region Arrêter le véhicule
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Arrêt du véhicule");   // Enregistre le log de la connexion
+                TPCANMsg CANMsg;
+                TPCANStatus stsResult;
+
+                CANMsg         = new TPCANMsg();
+                CANMsg.DATA    = new byte[6];
+                CANMsg.ID      = 004;              // Target = véhicule
+                CANMsg.LEN     = 6;               // Longueur = 6
+                CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+
+                for (int i = 0; i < CANMsg.LEN; i++)
+                {
+                    if (i == 0) { CANMsg.DATA[0] = 00; } // Data = 00 01
+                    if (i == 1) { CANMsg.DATA[1] = 00; }
+                    if (i == 2) { CANMsg.DATA[2] = 00; }
+                    if (i == 3) { CANMsg.DATA[3] = 01; }
+                    if (i == 4) { CANMsg.DATA[4] = 00; }
+                    if (i == 5) { CANMsg.DATA[5] = 00; }
+                    if (i == 6) { CANMsg.DATA[6] = 00; }
+                    if (i == 7) { CANMsg.DATA[7] = 00; }
+                }
+
+                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg); // Envoi 004 00 01
+
+                if (stsResult == TPCANStatus.PCAN_ERROR_OK) 
+                { 
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Arrêt du véhicule");   // Enregistre le log de la connexion
+                }
             }
             catch
             {
@@ -1736,7 +1835,9 @@ namespace ICDIBasic
                 Historique.AppendText("Échec de l'arrêt du véhicule");   // Enregistre le log de la connexion
             }
         }
-        #region Enregistrement et effacement de l'historique
+        #endregion
+
+#region Enregistrement et effacement de l'historique
         private void sauvegarderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();        //Cré un dialog de sauvegarde
@@ -1758,6 +1859,61 @@ namespace ICDIBasic
         {
             Historique.Clear();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            UART1DisplayBox.Clear();
+        }
         #endregion
+
+#region Autoscrolling de l'historique
+        private void Historique_TextChanged(object sender, EventArgs e)
+        {
+            Historique.ScrollToCaret();
+        }
+        #endregion
+
+#region Gestion de l'heure du PC
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+             PC_Clock.Text = DateTime.Now.ToString("h:mm:ss tt");
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Impossible de lire l'heure du PC");   // Enregistre le log de la connexion
+            }       
+        }
+        #endregion
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
