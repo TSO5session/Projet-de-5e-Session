@@ -1,0 +1,16 @@
+candump can0 >> ./histocan &
+nbligne=1
+anciennb=0
+  
+while true
+do
+ var=`tail -1 ./histocan`
+ if [ "$nbligne" != "$anciennb" ]
+ then
+   echo $var
+   echo $var >> ./histocandate
+   date >> ./histocandate
+   anciennb=$nbligne
+ fi
+ nbligne=`wc -l ./histocan` 
+done

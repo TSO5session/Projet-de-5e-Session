@@ -1,0 +1,19 @@
+while true
+do
+   var=`tail -1 ./histocan
+  
+   if [ "$var" != "$ancienvar" ]
+    then
+     if [ "$var" = "  can0    4  [3] 04 02 FF" ] #bloc orange
+      then
+	   /usr/bin/cansend can0 002#0800FF  #Sens horaire
+     fi
+   
+     if [ "$var" = "  can0    4  [3] 04 00 FF" ] #bloc metal
+      then
+	   /usr/bin/cansend can0 002#0801FF  #Sens antihoraire
+     fi    
+   
+   ancienvar=$var
+   fi
+done 
