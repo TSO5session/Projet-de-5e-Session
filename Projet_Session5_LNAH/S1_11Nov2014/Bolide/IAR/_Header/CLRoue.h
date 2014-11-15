@@ -17,32 +17,51 @@
 //
 // *****************************************************************************
 #include "DeclarationGenerale.h"
+#include "CLDAC7554.h"
 #include "CLDAC6574.h"
 
 #ifndef CLROUEH
    #define CLROUEH
 
-#define R_AVANTD   0
-#define R_AVANTG   1
-#define R_ARRIEREG 2
-#define R_ARRIERED 3
+#ifdef SPI_DALLAS
+  #define ARRETVARIABLE 0x0800
 
-#define ARRETVARIABLE 0x8000
+  #define R_AVANTG   0
+  #define R_AVANTD   1
+  #define R_ARRIEREG 2
+  #define R_ARRIERED 3
+#endif
 
-class CLRoue : public CLDAC6574
+#ifdef I2C_DALLAS
+  #define ARRETVARIABLE 0x8000
+ 
+  #define R_AVANTG   0
+  #define R_ARRIEREG 1
+  #define R_AVANTD   2
+  #define R_ARRIERED 3
+#endif
+
+class CLRoue
 {
 public:
    CLRoue(void);
-   CLRoue(UC ucAdresse);
+   CLRoue(UC ucVal);
   ~CLRoue(void);
 
-   void vMarcheAvant   (UC ucVitesse);
-   void vMarcheArriere (UC ucVitesse);
+   void vMarcheAvant   (USI uiVitesse);
+   void vMarcheArriere (USI uiVitesse);
    void vArret         (void);
 
 protected:
 
 private:
+   #ifdef SPI_DALLAS
+   class CLDAC7554 clDAC7554Roue;
+   #endif
+   #ifdef I2C_DALLAS
+   class CLDAC6574 clDAC6574Roue;
+   #endif
+   
    UC ucAdresseRoue;
 };
 #endif

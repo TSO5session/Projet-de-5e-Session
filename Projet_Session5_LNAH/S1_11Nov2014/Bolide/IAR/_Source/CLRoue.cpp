@@ -27,13 +27,12 @@
 
 CLRoue :: CLRoue(void)
  {
-   ucAdresseRoue = 0;
+   ucAdresseRoue = 0x00;
  }
 
-//// Constructeur initialisateur ////////////////////////////////////////////////
-CLRoue :: CLRoue(UC ucAdresse)
+CLRoue :: CLRoue(UC ucVal)
  {
-   ucAdresseRoue = ucAdresse;
+   ucAdresseRoue = ucVal;
  }
 
 //// Destructeur ////////////////////////////////////////////////////////////////
@@ -46,71 +45,83 @@ CLRoue :: ~CLRoue(void)
 // void CLRoue :: vMarcheAvant(UC ucVitesse)
 ///////////////////////////////////////////////////////////////////////////////
 //
-// Description: 
+// Description: Marche avant pour la roue
 //
-// Parametres d'entrees: null
+// Parametres d'entrees: uiVitesse(0x0000 a 0x07FF)
 //
 // Parametres de sortie: null
 //
-// Appel de la fonction: void (void);
+// Appel de la fonction: clRoue.vMarcheAvant(0xXXXX);
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree le 2014/11/13 par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-void CLRoue :: vMarcheAvant(UC ucVitesse)
+void CLRoue :: vMarcheAvant(USI uiVitesse)
  {
-   USI uiVitesseRoue  = ucVitesse;
+   #ifdef SPI_DALLAS
+   uiVitesse = uiVitesse & 0x0FFF;
+   uiVitesse = ARRETVARIABLE + uiVitesse;
+   clDAC7554Roue.vWriteChannel(uiVitesse, ucAdresseRoue);
+   #endif
    
-   uiVitesseRoue = uiVitesseRoue << 8;
-   uiVitesseRoue = ARRETVARIABLE + uiVitesseRoue;
-   vConfigurerDAC6574(ucAdresseRoue, uiVitesseRoue);
+   #ifdef I2C_DALLAS
+   uiVitesse = uiVitesse << 8;
+   uiVitesse = ARRETVARIABLE + uiVitesse;
+   clDAC6574Roue.vConfigurerDAC6574(ucAdresseRoue, uiVitesse);
+   #endif
  }
 
 ///////////////////////////////////////////////////////////////////////////////
 // void CLRoue :: vMarcheArriere(UC ucVitesse)
 ///////////////////////////////////////////////////////////////////////////////
 //
-// Description: 
+// Description: Marche arriere pour la roue
 //
-// Parametres d'entrees: null
+// Parametres d'entrees: uiVitesse(0x0000 a 0x07FF)
 //
 // Parametres de sortie: null
 //
-// Appel de la fonction: void (void);
+// Appel de la fonction: clRoue.vMarcheArriere(0xXXXX);
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree le  2014/11/13 par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-void CLRoue :: vMarcheArriere(UC ucVitesse)
+void CLRoue :: vMarcheArriere(USI uiVitesse)
  {
-   USI uiVitesseRoue  = ucVitesse;
+   #ifdef SPI_DALLAS
+   uiVitesse = uiVitesse & 0x0FFF;
+   uiVitesse = ARRETVARIABLE - uiVitesse;
+   clDAC7554Roue.vWriteChannel(uiVitesse, ucAdresseRoue);
+   #endif
    
-   uiVitesseRoue = uiVitesseRoue << 8;
-   uiVitesseRoue = ARRETVARIABLE - uiVitesseRoue;
-   vConfigurerDAC6574(ucAdresseRoue, uiVitesseRoue);
+   #ifdef I2C_DALLAS
+   uiVitesse = uiVitesse << 8;
+   uiVitesse = ARRETVARIABLE - uiVitesse;
+   clDAC6574Roue.vConfigurerDAC6574(ucAdresseRoue, uiVitesse);
+   #endif   
  }
 
 ///////////////////////////////////////////////////////////////////////////////
 // void CLRoue :: vArret(void)
 ///////////////////////////////////////////////////////////////////////////////
 //
-// Description: 
+// Description: Arrete la roue 
 //
 // Parametres d'entrees: null
 //
 // Parametres de sortie: null
 //
-// Appel de la fonction: void (void);
+// Appel de la fonction: clRoue.vArret();
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree le 2014/11/13 par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
@@ -119,7 +130,13 @@ void CLRoue :: vMarcheArriere(UC ucVitesse)
 
 void CLRoue :: vArret(void)
  { 
-   vConfigurerDAC6574(ucAdresseRoue, ARRETVARIABLE);
+   #ifdef SPI_DALLAS
+   clDAC7554Roue.vWriteChannel(ARRETVARIABLE, ucAdresseRoue);
+   #endif
+   
+   #ifdef I2C_DALLAS
+   clDAC6574Roue.vConfigurerDAC6574(ucAdresseRoue, ARRETVARIABLE);
+   #endif   
  }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.9.21)  13 NOV 2014 17:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.9.21)  14 NOV 2014 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,31 +933,61 @@ LaTeX Font Info:    Try loading font information for TS1+qhv on input line 124.
 
 (c:/texlive/2014/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
-) [4] [5] [6] [7]
-[8] [9] [10] (./Rapport.aux)
+) [4] [5]
+LaTeX Font Info:    Try loading font information for OT1+fdm on input line 303.
+
+
+(c:/texlive/2014/texmf-dist/tex/latex/droid/ot1fdm.fd
+File: ot1fdm.fd 2011/09/11 Fontinst v1.933 font definitions for OT1/fdm.
+) [6]
+LaTeX Font Info:    Try loading font information for OMS+qhv on input line 324.
+
+LaTeX Font Info:    No file OMSqhv.fd. on input line 324.
+
+
+LaTeX Font Warning: Font shape `OMS/qhv/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 324.
+
+LaTeX Font Info:    Try loading font information for OML+qhv on input line 349.
+
+LaTeX Font Info:    No file OMLqhv.fd. on input line 349.
+
+LaTeX Font Warning: Font shape `OML/qhv/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textless' on input line 349.
+
+[7] [8] [9] [10] [11] [12] [13] (./Rapport.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7418 strings out of 493108
- 100189 string characters out of 6138446
- 309524 words of memory out of 5000000
- 10706 multiletter control sequences out of 15000+600000
- 45819 words of font info for 58 fonts, out of 8000000 for 9000
+ 7996 strings out of 493108
+ 105745 string characters out of 6138446
+ 535524 words of memory out of 5000000
+ 11264 multiletter control sequences out of 15000+600000
+ 56592 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,60p,352b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2014/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/20
-14/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}{c:/texlive/2014/texmf-dist/fon
-ts/enc/dvips/tex-gyre/q-rm-sc.enc}<c:/texlive/2014/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb
-><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb><c:/texlive/2
-014/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb>
-Output written on Rapport.pdf (10 pages, 1150001 bytes).
+ 41i,14n,60p,352b,1500s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2014/texmf-dist/fonts/enc/dvips/droid/droid-02.enc}{c:/texlive/20
+14/texmf-dist/fonts/enc/dvips/droid/droid-01.enc}{c:/texlive/2014/texmf-dist/fo
+nts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/te
+x-gyre/q-rm.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm-sc.en
+c}<c:/texlive/2014/texmf-dist/fonts/type1/public/droid/DroidSansMono.pfb><c:/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2014/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2014/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publi
+c/tex-gyre/qhvb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhv
+r.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb>
+Output written on Rapport.pdf (13 pages, 1188918 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

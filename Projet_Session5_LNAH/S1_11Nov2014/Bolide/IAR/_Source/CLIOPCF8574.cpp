@@ -14,13 +14,12 @@
 // Pour Windows 7 on utilise la VMware pour programmer le upsd 3254A avec CAPS.
 //
 // AUTEUR : LOUIS-NORMAND ANG HOULE
-// DATE CREATION : XXXX/XX/XX VERSION: 1.0
+// DATE CREATION : 2014/11/14 VERSION: 1.0
 // DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
 
 #include "CLIOPCF8574.h"
-
 
 // Constructeur par defaut ////////////////////////////////////////////////////
 

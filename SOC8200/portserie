@@ -1,5 +1,5 @@
 while true
  do
   head -1 /dev/ttySCMA0 > ./junk
-  echo "Allo" > ./Test
+  echo "Allo" > ./hbeat
  done 

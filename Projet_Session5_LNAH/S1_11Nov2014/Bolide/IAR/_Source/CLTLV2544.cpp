@@ -76,13 +76,13 @@ CLTLV2544 :: ~CLTLV2544(void)
 USI CLTLV2544 :: uiLireConversion(UC ucCanal)
  {
    UNEntierOctet unLecture;
-     
-   ucCanal = ucCanal << 4;
    
    SLVSLCT_TLV2554 = 0;
    unLecture.stDeuxOctet.ucOctet1 = ucSPITransferMOD0(ucCanal);
    unLecture.stDeuxOctet.ucOctet2 = ucSPITransferMOD0(0x00);
    SLVSLCT_TLV2554 = 1;
+   
+   unLecture.uiEntier &= 0x0FFF;
    
    return unLecture.uiEntier;
  }

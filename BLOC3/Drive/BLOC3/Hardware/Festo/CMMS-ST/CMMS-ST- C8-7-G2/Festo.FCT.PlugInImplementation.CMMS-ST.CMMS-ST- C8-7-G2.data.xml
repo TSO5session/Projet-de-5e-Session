@@ -14,9 +14,9 @@
         <SimpleData Name="UsesRS232" Value="True" />
         <SimpleData Name="UsesStandardPassword" Value="False" />
         <SimpleData Name="ActiveComport" Value="COM1" />
-        <SimpleData Name="ActiveComportDescription" Value="COM1" />
+        <SimpleData Name="ActiveComportDescription" Value="COM20" />
         <SimpleData Name="Baudrate" Value="115200" />
-        <SimpleData Name="SelectedComport" Value="COM1" />
+        <SimpleData Name="SelectedComport" Value="COM20" />
       </ComplexData>
     </ComplexData>
     <ArrayData Name="MultiPlugin">
@@ -32,10 +32,10 @@
           <SimpleData Name="UsesEthernet" Value="False" />
           <SimpleData Name="UsesRS232" Value="True" />
           <SimpleData Name="UsesStandardPassword" Value="False" />
-          <SimpleData Name="ActiveComport" Value="COM1" />
-          <SimpleData Name="ActiveComportDescription" Value="COM1" />
+          <SimpleData Name="ActiveComport" Value="COM20" />
+          <SimpleData Name="ActiveComportDescription" Value="COM20" />
           <SimpleData Name="Baudrate" Value="115200" />
-          <SimpleData Name="SelectedComport" Value="COM1" />
+          <SimpleData Name="SelectedComport" Value="COM20" />
         </ComplexData>
       </ComplexData>
       <ComplexData Name="Plugin1">

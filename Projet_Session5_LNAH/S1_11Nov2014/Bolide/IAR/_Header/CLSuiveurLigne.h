@@ -10,6 +10,7 @@
 // Description: Fonctions de suivie de ligne pour le bolide
 // *****************************************************************************
 #include "DeclarationGenerale.h"
+#include "CLMCP23S09.h"
 #include "CLIOPCF8574.h"
 
 #ifndef CLSUIVEURLIGNEH
@@ -22,7 +23,7 @@
 #define DROITELENT  5
 #define GAUCHELENT  6
 
-class CLSuiveurLigne : public CLIOPCF8574
+class CLSuiveurLigne : public CLMCP23S09
 {
 public:
    CLSuiveurLigne(void);
@@ -34,6 +35,13 @@ public:
 protected:
 
 private:
+   #ifdef SPI_DALLAS
+   class CLMCP23S09 clMCP23S09Suiveur;
+   #endif
+  
+   #ifdef I2C_DALLAS
+   class CLIOPCF8574 clIOPCF8574Suiveur;  
+   #endif
 };
 #endif
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -60,15 +60,20 @@ CLDAC7554 :: ~CLDAC7554(void)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-void CLDAC7554 :: vWriteChannel(USI uiValue, UC ucChannel)
+void CLDAC7554 :: vWriteChannel(USI uiVal, UC ucChannel)
 {
+  UNEntierOctet unEcriture;
+    
+  ucChannel |= 0x08;
+  ucChannel = ucChannel << 4;
+  
+  unEcriture.uiEntier = uiVal;
+  unEcriture.stDeuxOctet.ucOctet2 |= ucChannel;
+  
   SLVSLCT_DAC7554 = 0;     
-     UC ucData = (ucChannel << 4) | (uiValue >> 8); 
-     ucSPITransferMOD0(ucData);
-     ucData |= uiValue;  
-     ucSPITransferMOD0(ucData);
+     ucSPITransferMOD0(unEcriture.stDeuxOctet.ucOctet2);
+     ucSPITransferMOD0(unEcriture.stDeuxOctet.ucOctet1);
   SLVSLCT_DAC7554 = 1;    
-
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

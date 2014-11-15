@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Festo.FCT.FestoConfigurationTool.Project.xsl"?>
+<PROJECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LNAH" Title="LNAH" Creation="2014-11-14" Author="1230838" Version="V1.0.0" LastModification="2014-11-14T16:41:21.7082387-05:00" SystemOfMeasurement="metric" xmlns="http://Festo.FCT.FestoConfigurationTool.Project">
+  <DESCRIPTION />
+  <ATTRIBUTES>
+    <ATTRIBUTE Name="SelectedTabIndex" Value="1" />
+  </ATTRIBUTES>
+  <HARDWARE>
+    <DEVICE DeviceInstanceName="CMMMS-ST-C8-7-G2" DeviceVendor="Festo" DeviceFamily="CMMS-ST" OpenModuleOnLoad="true" PlugInVersion="V2.0.1" />
+  </HARDWARE>
+</PROJECT>

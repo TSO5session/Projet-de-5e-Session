@@ -1,0 +1,412 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         14/Nov/2014  22:00:59 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\CLCommunic.cpp                                #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\CLCommunic.cpp" -D DALLAS89C450               #
+#                          --preprocess=cl "C:\Synchro\Dropbox\Travaux\Automn #
+#                          e 2014\ProjetSession5\Csharp\TEST\DALLAS TEST      #
+#                          PROG\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux #
+#                          \Automne 2014\ProjetSession5\Csharp\TEST\DALLAS    #
+#                          TEST PROG\DALLAS\List\" -lA                        #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\Csharp\TEST\DALLAS     #
+#                          TEST PROG\DALLAS\Obj\" -e --no_cse --no_unroll     #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\CLCommunic.lst                    #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\Obj\CLCommunic.r51                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\TEST\DALLAS TEST PROG\CLCommunic.cpp
+      1          #include "CLCommunic.h"             //inclue RS232.h.
+
+   \                                 In  segment SFR_AN, at 0x99
+   \   unsigned char volatile __sfr SBUF0
+   \                     SBUF0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8d
+   \   unsigned char volatile __sfr TH1
+   \                     TH1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x89
+   \   union <unnamed> volatile __sfr _A_TMOD
+   \                     _A_TMOD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x98
+   \   union <unnamed> volatile __sfr _A_SCON0
+   \                     _A_SCON0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x87
+   \   union <unnamed> volatile __sfr _A_PCON
+   \                     _A_PCON:
+   \   000000                DS 1
+      2          #include "ConversionKeilToIAR.h"
+      3          #include "stdio.h"
+      4          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+      5          RS232 :: RS232(void)
+   \                     ??RS232:
+      6          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+      7          SetConfig();   // Initialise le port serie.
+   \   000008                ; Setup parameters for call to function RS232::SetConfig()
+   \   000008   AA82         MOV     R2,DPL
+   \   00000A   AB83         MOV     R3,DPH
+   \   00000C   12....       LCALL   ??SetConfig
+      8          }
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   D083         POP     DPH
+   \   000015   D082         POP     DPL
+   \   000017   22           RET
+      9          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     10          RS232 :: RS232(UC ucLongBuf, UC ucLongTrame, UI uiBaud)
+   \                     ??RS232_1:
+     11          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     12          
+     13                                                    // communication.
+     14          }
+   \   000000   22           RET
+     15          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     16          RS232 :: ~RS232(void)
+   \                     `?~RS232`:
+     17          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     18          
+     19          }
+   \   000000   22           RET
+     20          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     21          void RS232 :: SendString(char const *ucpMessage)
+   \                     ??SendString:
+     22          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8016         SJMP    ??SendString_1
+     23          while(*ucpMessage != 0x00)          // Tant qu'on a pas atteint la fin de 
+     24            {                                 // la chaine.
+     25             SBUF0 = *ucpMessage;             // Envoye le caractere dans SBUF0 pour le transmetre sur TX                     
+   \                     ??SendString_2:
+   \   000006   8C82         MOV     DPL,R4
+   \   000008   8D83         MOV     DPH,R5
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F599         MOV     0x99,A
+     26             while(TI_0 ==0);                 // Si le flag TI_0 se met a 1 (termine)
+   \                     ??SendString_3:
+   \   00000D   A299         MOV     C,0x98.1
+   \   00000F   50FC         JNC     ??SendString_3
+     27             TI_0  = 0;                       // Remet le flag a 0. 
+   \   000011   C299         CLR     0x98.1
+     28             ucpMessage++;                    // Passe au caractere suivant.
+   \   000013   8C82         MOV     DPL,R4
+   \   000015   8D83         MOV     DPH,R5
+   \   000017   A3           INC     DPTR
+   \   000018   AC82         MOV     R4,DPL
+   \   00001A   AD83         MOV     R5,DPH
+     29            }
+   \                     ??SendString_1:
+   \   00001C   8C82         MOV     DPL,R4
+   \   00001E   8D83         MOV     DPH,R5
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   70E3         JNZ     ??SendString_2
+     30          }
+   \   000023   D083         POP     DPH
+   \   000025   D082         POP     DPL
+   \   000027   22           RET
+   \   000028                REQUIRE SBUF0
+   \   000028                REQUIRE _A_SCON0
+     31          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     32          void RS232 :: SendCar(char Caractere)
+   \                     ??SendCar:
+     33          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     34          SBUF0 = Caractere;         // Envoye le caractere dans SBUF0 pour le transmetre sur TX                     
+   \   000000   8999         MOV     0x99,R1
+     35          while(TI_0 ==0);           // Si le flag TI_0 se met a 1 (termine)
+   \                     ??SendCar_1:
+   \   000002   A299         MOV     C,0x98.1
+   \   000004   50FC         JNC     ??SendCar_1
+     36          TI_0  = 0;                 // Remet le flag a 0.  
+   \   000006   C299         CLR     0x98.1
+     37          }
+   \   000008   22           RET
+   \   000009                REQUIRE SBUF0
+   \   000009                REQUIRE _A_SCON0
+     38          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     39          char RS232 :: GetCar(void)
+   \                     ??GetCar:
+     40          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     41          return(SBUF0);
+   \   000000   A999         MOV     R1,0x99
+   \   000002   22           RET
+   \   000003                REQUIRE SBUF0
+     42          }
+     43          
+     44          
+     45          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     46          void RS232 :: SetConfig(void)
+   \                     ??SetConfig:
+     47          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     48          // Setup port serie 0 du Dallas pour 57600 baud a 11.059MHz.
+     49          SCON0 = 0x50;            // SCON: mode 1, 8-bit UART, enable rcvr.
+   \   000000   759850       MOV     0x98,#0x50
+     50          TMOD |= 0x20;            // TMOD: timer 1, mode 2, 8-bit reload.
+   \   000003   438920       ORL     0x89,#0x20
+     51          TH1   = 255;             // TH1: reload value for 57600 baud a 11.059MHz.
+   \   000006   758DFF       MOV     0x8d,#-0x1
+     52          PCON  = 0x80;            // SMOD_0 = 1 (doubleur de baud).
+   \   000009   758780       MOV     0x87,#-0x80
+     53          TR1   = 1;               // TR1: Part le timer 1.
+   \   00000C   D28E         SETB    0x88.6
+     54          TI_0  = 1;               // TI: set TI to send first char of UART.  
+   \   00000E   D299         SETB    0x98.1
+     55          }
+   \   000010   22           RET
+   \   000011                REQUIRE _A_SCON0
+   \   000011                REQUIRE _A_TMOD
+   \   000011                REQUIRE TH1
+   \   000011                REQUIRE _A_PCON
+   \   000011                REQUIRE _A_TCON
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant RS232 &RS232::new RS232()
+   \                     `??new RS232`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new RS232_2`
+   \   00001B                ; Setup parameters for call to function RS232::RS232()
+   \   00001B   12....       LCALL   ??RS232
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new RS232_3`
+   \                     `??new RS232_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new RS232_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant RS232 &RS232::new RS232(UC, UC, UI)
+   \                     `??new RS232_1`:
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D                ; Setup parameters for call to function operator new(unsigned int)
+   \   00000D   7A01         MOV     R2,#0x1
+   \   00000F   7B00         MOV     R3,#0x0
+   \   000011   12....       LCALL   `??operator new`
+   \   000014   8A..         MOV     ?V0 + 2,R2
+   \   000016   8B..         MOV     ?V0 + 3,R3
+   \   000018   A8..         MOV     R0,?V0 + 2
+   \   00001A   A9..         MOV     R1,?V0 + 3
+   \   00001C   E8           MOV     A,R0
+   \   00001D   FA           MOV     R2,A
+   \   00001E   E9           MOV     A,R1
+   \   00001F   FB           MOV     R3,A
+   \   000020   E8           MOV     A,R0
+   \   000021   49           ORL     A,R1
+   \   000022   601B         JZ      `??new RS232_4`
+   \   000024                ; Setup parameters for call to function RS232::RS232(UC, UC, UI)
+   \   000024   78..         MOV     R0,#?V0 + 0
+   \   000026   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000029   EF           MOV     A,R7
+   \   00002A   FC           MOV     R4,A
+   \   00002B   EE           MOV     A,R6
+   \   00002C   F9           MOV     R1,A
+   \   00002D   12....       LCALL   ??RS232_1
+   \   000030   7402         MOV     A,#0x2
+   \   000032   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000035   8A..         MOV     ?V0 + 0,R2
+   \   000037   8B..         MOV     ?V0 + 1,R3
+   \   000039   AA..         MOV     R2,?V0 + 0
+   \   00003B   AB..         MOV     R3,?V0 + 1
+   \   00003D   8004         SJMP    `??new RS232_5`
+   \                     `??new RS232_4`:
+   \   00003F   7A00         MOV     R2,#0x0
+   \   000041   7B00         MOV     R3,#0x0
+   \                     `??new RS232_5`:
+   \   000043   7F04         MOV     R7,#0x4
+   \   000045   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void RS232::delete ~RS232(RS232 *)
+   \                     `??delete ~RS232`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~RS232_1`
+   \   00000D                ; Setup parameters for call to function RS232::~RS232()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~RS232`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~RS232_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+     56          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+     57          
+     58          
+     59          
+     60          
+     61          
+     62          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     RS232::GetCar()                    0      0      0
+     RS232::RS232()                     2      0      0
+       -> RS232::SetConfig()            4      0      0
+     RS232::RS232(UC, UC, UI)           0      0     13
+     RS232::SendCar(char)               0      0      0
+     RS232::SendString(char const *)
+                                        2      0      0
+     RS232::SetConfig()                 0      0      0
+     RS232::delete ~RS232(RS232 *)      0      0      8
+       -> RS232::~RS232()               0      0     16
+       -> operator delete(void *)       0      0     16
+     RS232::new RS232()                 2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> RS232::RS232()                4      0      0
+     RS232::new RS232(UC, UC, UI)       0      0     13
+       -> operator new(unsigned int)
+                                        0      0     22
+       -> RS232::RS232(UC, UC, UI)      0      0     26
+     RS232::~RS232()                    0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     SBUF0                             1
+     _A_TCON                           1
+     TH1                               1
+     _A_TMOD                           1
+     _A_SCON0                          1
+     _A_PCON                           1
+     RS232::RS232()                   24
+     RS232::RS232(UC, UC, UI)          1
+     RS232::~RS232()                   1
+     RS232::SendString(char const *)
+                                      40
+     RS232::SendCar(char)              9
+     RS232::GetCar()                   3
+     RS232::SetConfig()               17
+     RS232::new RS232()               49
+     RS232::new RS232(UC, UC, UI)     72
+     RS232::delete ~RS232(RS232 *)    32
+
+ 
+ 248 bytes in segment NEAR_CODE
+   6 bytes in segment SFR_AN
+ 
+ 248 bytes of CODE memory
+   0 bytes of DATA memory (+ 6 bytes shared)
+
+Errors: none
+Warnings: none

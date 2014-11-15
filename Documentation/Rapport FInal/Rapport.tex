@@ -175,6 +175,7 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \item[•]TeXmaker 4.3
 \item[•]Dukto R6
 \item[•]Dia
+\item[•]Festo configuration tool
 \end{itemize}
 
 \end{multicols}
@@ -187,12 +188,12 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \subsection{Liste des trames}
 
 \begin{table}[!ht]
-\caption{Index des identifiant matériel CAN}
+\caption{Index des identifianst matériel CAN}
 \medskip
 \centering
 \begin{tabular}{|l|c|}
 \hline 
-\textbf{Device} & \textbf{Identifiant matériel} \\ 
+\textbf{Device} & \textbf{ID matériel} \\ 
 \hline 
 Ordinateur & 000 \\ 
 \hline 
@@ -235,59 +236,198 @@ Couleur du bloc & 0x04 & 0x00 à 0x02 & TimeStamp\\
 \hline 
 Poids du bloc & 0x05 & 0x00 à 0x64 & TimeStamp\\ 
 \hline 
-Envoyer l'heure & 0x06 &   & TimeStamp\\ 
+Envoyer l'heure & 0x06 & à déterminer  & TimeStamp\\ 
 \hline 
 No. de la station & 0x07 & 0x00 à 0x02 & TimeStamp\\ 
 \hline 
+Demande de l'historique & 0xC0 & 0x00 & TimeStamp\\ 
+\hline 
+Direction horaire et antihoraire & 0x08 & 0x00 à 0x01 & TimeStamp\\
+\hline
 \end{tabular} 
 \label{tab:testtab1}
 \end{table}
 
 \begin{table}[!ht]
-\caption{Index des communication CAN}
+\caption{Index des communications CAN}
 \medskip
 \centering
-\begin{tabular}{|l|l|c|c|l|c|}
+\begin{tabular}{|l|l|c|l|c|l|c|}
 \hline 
-\textbf{Émetteur} & \textbf{Action} & \textbf{Donnée envoyée} & \textbf{TimeStamp} & \textbf{Récepteur} & \textbf{Erreur retournée au PC}\\ 
+\textbf{Émetteur} & \textbf{Action} & \textbf{ID receveur} & \textbf{Donnée envoyée} & \textbf{TimeStamp} & \textbf{Récepteur} & \textbf{Erreur}\\ 
 \hline 
-Ordinateur & Démarrer le véhicule & 004 00 00 & TimeStamp & Véhicule & 000 F1\\ 
+Ordinateur & Démarrer le véhicule & 004 & 00 00 & TimeStamp & Véhicule &  F1\\ 
 \hline 
-Ordinateur & Arrêter le véhicule & 004 00 01 & TimeStamp & Véhicule & 000 F2\\ 
+Ordinateur & Arrêter le véhicule & 004 & 00 01 & TimeStamp & Véhicule &  F2\\ 
 \hline 
-Véhicule & Dit: je suis arrêté & 000 01 00  & TimeStamp & Ordinateur & 000 F3\\
+Véhicule & Dit: je suis arrêté & 000 & 01 00  & TimeStamp & Ordinateur &  F3\\
 \hline 
-Véhicule & Dit: j'avance & 000 01 01 & TimeStamp & Ordinateur  & 000 F4\\  
+Véhicule & Dit: j'avance & 000 & 01 01 & TimeStamp & Ordinateur  &  F4\\  
 \hline 
-Véhicule & Dit: je suis hors circuit & 000 01 02 & TimeStamp & Ordinateur & 000 F5\\ 
+Véhicule & Dit: je suis hors circuit & 000 & 01 02 & TimeStamp & Ordinateur &  F5\\ 
 \hline 
-Véhicule & Dit sa vitesse & 000 02 [00 à 64] & TimeStamp & Ordinateur & 000 F6\\ 
+Véhicule & Dit sa vitesse & 000 & 02 [00 à 64] & TimeStamp & Ordinateur &  F6\\ 
 \hline 
-Véhicule & Dit le niveau de sa battrie & 000 03 [00 à 64] & TimeStamp & Ordinateur & 000 F7\\ 
+Véhicule & Dit le niveau de sa battrie & 000 & 03 [00 à 64] & TimeStamp & Ordinateur &  F7\\ 
 \hline 
-Station 1 & Dit bloc = métal & 000 04 00 & TimeStamp & Ordinateur & 000 F8\\ 
+Station 1 & Dit bloc = métal & 000 & 04 00 & TimeStamp & Ordinateur &  F8\\ 
 \hline  
-Station 1 & Dit bloc = orange & 000 04 01 & TimeStamp & Ordinateur & 000 F9\\
+Station 1 & Dit bloc = orange & 000 & 04 01 & TimeStamp & Ordinateur &  F9\\
 \hline 
-Station 1 & Dit bloc = noir & 000 04 02 & TimeStamp & Ordinateur & 000 FA\\
+Station 1 & Dit bloc = noir & 000 & 04 02 & TimeStamp & Ordinateur &  FA\\
 \hline 
-Station 1 & Dit le poid du bloc & 000 05 [00 à 64] & TimeStamp & Ordinateur & 000 FB\\ 
+Station 1 & Dit le poid du bloc & 000 & 05 [00 à 64] & TimeStamp & Ordinateur &  FB\\ 
 \hline 
-Voiture & Dit qu'elle est à la station 1 & 000 07 00 & TimeStamp & Ordinateur & 000 FC\\ 
+Voiture & Dit qu'elle est à la station 1 & 000 & 07 00 & TimeStamp & Ordinateur &  FC\\ 
 \hline 
-Voiture & Dit qu'elle est à la station 2 & 000 07 01 & TimeStamp & Ordinateur & 000 FD\\
+Voiture & Dit qu'elle est à la station 2 & 000 & 07 01 & TimeStamp & Ordinateur &  FD\\
 \hline 
-Ordinateur & Envoie l'heure & 003 06 ? & TimeStamp & Station 1 & 000 FE\\ 
+Ordinateur & Envoie l'heure & 003 & 06 à déterminer & TimeStamp & Station 1 &  FE\\ 
 \hline 
+Ordinateur & Demande le LOG & 001 & C0 00 & TimeStamp & SOC8200 & E0\\ 
+\hline
+Ordinateur & Exige Horaire & 004 & 08 00 & TimeStamp & Véhicule & E1\\ 
+\hline
+Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\ 
+\hline
 \end{tabular} 
 \label{tab:testtab1}
 \end{table}
 \begin{flushleft}
-\textbf{Note:} S'il n'y a aucune erreur, le code retourné est 000 FF\\
-\textbf{Note:} Il faut définir les TimeStamps\\
-\textbf{Note:} La sttion no.1 relaie les données entre l'ordinateur et la station no.3 (pesage); entre l'ordinateur et la station no.2 (table festo) via xbee; entre la voiture et le PC via xbee.
+\textbf{Note:} Il faut définir les TimeStamps et la checkSUM\\
+\textbf{Note:} La sttion no.1 relaie les données entre l'ordinateur et la station no.3 (pesage), entre l'ordinateur et la station no.2 (table festo) via xbee et entre la voiture et le PC via xbee.
 \end{flushleft}
 \pagebreak
+\textbf{Note:} FF, c'est la checkSUM, mais elle n'a pas encore été faite \\
+\textbf{Note:} Il faut ajouter le TimeStamp 
+\begin{verbatim}
+   CAN.SendMCP("0100FF"); // Arrêté
+   CAN.SendMCP("0101FF"); // En marche
+   CAN.SendMCP("0102FF"); // Hors circuit
+   CAN.SendMCP("0264FF"); // Vitesse maximale
+   CAN.SendMCP("0364FF"); // Battrie pleine
+   CAN.SendMCP("0400FF"); // Bloc métallique
+   CAN.SendMCP("0401FF"); // Bloc noire
+   CAN.SendMCP("0402FF"); // Bloc orange
+   CAN.SendMCP("050064"); // Le bloc est lourd
+   CAN.SendMCP("0700FF"); // Rendu à la station 1
+   CAN.SendMCP("0701FF"); // Rendu à la station 2
+   CAN.SendMCP("0702FF"); // Rendu à la station 3
+\end{verbatim}
+
+\pagebreak
+
+\end{spacing}
+
+\textbf{Comment ajouter une entrée à l'historique}
+\begin{lstlisting}
+Historique.AppendText("\r\n");
+Historique.AppendText("\r\n");
+Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+Historique.AppendText("\r\n");
+Historique.AppendText("Insérer messge ici");   // Enregistre le log de la connexion
+\end{lstlisting}
+
+\begin{center}
+\HRule
+\end{center}
+
+\textbf{Comment envoyer une trame sécurisée}
+\begin{lstlisting}
+try
+{
+ TPCANMsg CANMsg;
+ TPCANStatus stsResult;
+
+ CANMsg = new TPCANMsg();
+ CANMsg.DATA = new byte[8];
+
+ CANMsg.ID = 006; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
+ CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
+ CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+
+ for (int i = 0; i < CANMsg.LEN; i++)
+    {
+    if (i == 0) { CANMsg.DATA[0] = 48; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
+    if (i == 1) { CANMsg.DATA[1] = 48; } // Ce programme en C# envoie en base 10
+    if (i == 2) { CANMsg.DATA[2] = 48; } // 48 en base 10 = 0x30 en hexa
+    if (i == 3) { CANMsg.DATA[3] = 48; } // 0x30 en hexa = 0 en ascii
+    if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
+    if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
+    if (i == 6) { CANMsg.DATA[6] = 00; }
+    if (i == 7) { CANMsg.DATA[7] = 00; }               
+   }
+
+ stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
+
+ if (stsResult == TPCANStatus.PCAN_ERROR_OK)
+   {
+    Historique.AppendText("\r\n");
+    Historique.AppendText("\r\n");
+    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+    Historique.AppendText("\r\n");
+    Historique.AppendText("XYZ command successfully sent");   
+   }
+ else
+   {
+    Historique.AppendText("\r\n");
+    Historique.AppendText("\r\n");
+    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+    Historique.AppendText("\r\n");
+    Historique.AppendText("Error sending START command");  
+   }
+ }
+catch
+   {
+    Historique.AppendText("\r\n");
+    Historique.AppendText("\r\n");
+    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+    Historique.AppendText("\r\n");
+    Historique.AppendText("Error sending data on CAN bus (try catch error)"); 
+   }
+\end{lstlisting}
+\pagebreak
+\textbf{Comment prendre une décision en fonction de la trame reçue}
+\begin{lstlisting}
+ListViewItem lviCurrentItem;
+try
+  {
+   foreach (MessageStatus msgStatus in m_LastMsgsList)
+     {
+      if (msgStatus.MarkedAsUpdated)
+        {
+         msgStatus.MarkedAsUpdated = false;
+         lviCurrentItem = lstMessages.Items[msgStatus.Position];
+         lviCurrentItem.SubItems[2].Text = msgStatus.CANMsg.LEN.ToString();
+         lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
+         lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
+         lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
+
+         textBox1.Text = lviCurrentItem.SubItems[3].Text;
+        }
+      }
+
+   if (textBox1.Text == "41 42 43 44 45 46 ") // Si cette trame est reçue
+     {
+      label19.Text = "BINGO";   // Prend cette décision
+
+      Historique.AppendText("\r\n");
+      Historique.AppendText("\r\n");
+      Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+      Historique.AppendText("\r\n");
+      Historique.AppendText("Donnée reçue"); 
+     }
+  }
+catch
+  {
+   Historique.AppendText("\r\n");
+   Historique.AppendText("\r\n");
+   Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+   Historique.AppendText("\r\n");
+   Historique.AppendText("Erreur de réception try catch");
+  }
+\end{lstlisting}
+\begin{spacing}{1.5}
 
 
 \section{Le matériel}

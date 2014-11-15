@@ -37,6 +37,21 @@
   (Folder "Outputs")
   (Folder "Referenced Projects")
   (PartMRUSelector
+    ("HEADER 2"
+      (FullPartName "HEADER 2.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.2\TOOLS\CAPTURE\LIBRARY\OLDLIBS\PCBDEV.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 16"
+      (FullPartName "HEADER 16.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.2\TOOLS\CAPTURE\LIBRARY\OLDLIBS\PCBDEV.OLB")
+      (DeviceIndex "0"))
+    ("MOSFET P DGS"
+      (FullPartName "MOSFET P DGS.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.2\TOOLS\CAPTURE\LIBRARY\OLDLIBS\PCBDEV.OLB")
+      (DeviceIndex "0"))
     ("MOSFET P"
       (FullPartName "MOSFET P.Normal")
       (LibraryName
@@ -116,4 +131,6 @@
          "C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\SCHEMA\CARTEI2CIO.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE5")))
-  (MPSSessionName "1230838"))
+  (MPSSessionName "1230838")
+  (LastUsedLibraryBrowseDirectory
+     "C:\OrCAD\OrCAD_16.2\tools\Capture\library\oldlibs"))

@@ -54,7 +54,7 @@ CLMCP23S09 :: ~CLMCP23S09(void)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-void CLMCP23S09 :: vSetModeMCP23S09(UC ucMode)
+void CLMCP23S09 :: vSetModeMCP23S09(UC ucMode, UC ucPort)
 {
   switch(ucMode)
   {
@@ -62,19 +62,19 @@ void CLMCP23S09 :: vSetModeMCP23S09(UC ucMode)
      SLVSLCT_MCP23S09 = 0;
       ucSPITransferMOD0(0x40); // Adresse de I/O expander
       ucSPITransferMOD0(0x00); // Va dans le registe I/O direction 
-      ucSPITransferMOD0(0xFF); // Les mets tous en lecture
-     SLVSLCT_MCP23S09 = 1;
+      ucSPITransferMOD0(ucPort); // Les mets en lecture
+     SLVSLCT_MCP23S09 = 1;      
      
      SLVSLCT_MCP23S09 = 0;
       ucSPITransferMOD0(0x40); // Adresse de I/O expander
-      ucSPITransferMOD0(0x0A); // Va dans le registe I/O direction 
-      ucSPITransferMOD0(0xFF); // Les mets tous en lecture
-     SLVSLCT_MCP23S09 = 1;        
+      ucSPITransferMOD0(0x01); 
+      ucSPITransferMOD0(0x00); 
+     SLVSLCT_MCP23S09 = 1;    
      
      SLVSLCT_MCP23S09 = 0;
       ucSPITransferMOD0(0x40); // Adresse de I/O expander
       ucSPITransferMOD0(0x06); // Va dans le registre des pull-up
-      ucSPITransferMOD0(0xFF); // Active les pull-up
+      ucSPITransferMOD0(0x00); // Desactive les pull-up
      SLVSLCT_MCP23S09 = 1;     
     break;
   
@@ -82,20 +82,26 @@ void CLMCP23S09 :: vSetModeMCP23S09(UC ucMode)
       SLVSLCT_MCP23S09 = 0;
       ucSPITransferMOD0(0x40); // Adresse de I/O expander
       ucSPITransferMOD0(0x00); // Va dans le registe I/O direction 
-      ucSPITransferMOD0(0x00); // Les mets tous en ecriture
+      ucSPITransferMOD0(ucPort ^= 0xFF); // Les mets tous en ecriture
      SLVSLCT_MCP23S09 = 1;
      
      SLVSLCT_MCP23S09 = 0;
       ucSPITransferMOD0(0x40); // Adresse de I/O expander
-      ucSPITransferMOD0(0x0A); // Va dans le registe I/O direction 
-      ucSPITransferMOD0(0x00); // Les mets tous en ecriture
-     SLVSLCT_MCP23S09 = 1;        
+      ucSPITransferMOD0(0x01);  
+      ucSPITransferMOD0(0x00); 
+     SLVSLCT_MCP23S09 = 1;   
      
      SLVSLCT_MCP23S09 = 0;
       ucSPITransferMOD0(0x40); // Adresse de I/O expander
       ucSPITransferMOD0(0x06); // Va dans le registre des pull-up
-      ucSPITransferMOD0(0x00); // Active les pull-up
+      ucSPITransferMOD0(0x00); // Desactive les pull-up
      SLVSLCT_MCP23S09 = 1;  
+ 
+     SLVSLCT_MCP23S09 = 0;
+      ucSPITransferMOD0(0x40); // Adresse de I/O expander
+      ucSPITransferMOD0(0x0A); // Va dans le registe I/O direction 
+      ucSPITransferMOD0(ucPort ^= 0xFF); // Les mets en ecriture
+     SLVSLCT_MCP23S09 = 1;   
     break;
   }
 }
@@ -155,9 +161,9 @@ UC CLMCP23S09 :: ucLireMCP23S09(void)
 void CLMCP23S09 :: vEcrireMCP23S09(UC ucDonnee)
  {
    SLVSLCT_MCP23S09 = 0;
-    ucSPITransferMOD0(0x40);      // Lit la puce
-    ucSPITransferMOD0(0x09);      // Lit le registre des I/O
-    ucSPITransferMOD0(ucDonnee); // Aquiert la donnée
+    ucSPITransferMOD0(0x40);      // Ecrit sur la puce
+    ucSPITransferMOD0(0x09);      // Ecrit sur le registre des I/O
+    ucSPITransferMOD0(ucDonnee);  // Envoi de la donnee
    SLVSLCT_MCP23S09 = 1;
  }
 

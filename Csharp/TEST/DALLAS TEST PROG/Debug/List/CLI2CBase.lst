@@ -1,0 +1,293 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         24/Oct/2014  02:25:56 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\CLI2CBase.Cpp                                  #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\CLI2CBase.Cpp" -lC "C:\Synchro\Dropbox\Travaux #
+#                          \Automne 2014\Fonctions\Projet Accumulatif         #
+#                          IAR\Debug\List\" -lA "C:\Synchro\Dropbox\Travaux\A #
+#                          utomne 2014\Fonctions\Projet Accumulatif           #
+#                          IAR\Debug\List\" -o "C:\Synchro\Dropbox\Travaux\Au #
+#                          tomne 2014\Fonctions\Projet Accumulatif            #
+#                          IAR\Debug\Obj\" -e --no_cse --no_unroll            #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\Debug\List\CLI2CBase.lst                       #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\Debug\Obj\CLI2CBase.r51                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\CLI2CBase.Cpp
+      1          
+      2          #include "CLI2CBase.h"
+      3          
+      4          // *****************************************************************************
+      5          //                            LES CONSTRUCTEURS
+      6          // *****************************************************************************
+      7          CLI2CBase :: CLI2CBase(void)
+      8          {
+      9          ucDelaiI2C = 5;
+     10          }
+     11          
+     12          CLI2CBase :: CLI2CBase(UC ucDelai)
+     13          {
+     14          ucDelaiI2C = ucDelai;
+     15          }
+     16          
+     17          // *****************************************************************************
+     18          //                            LE DESTRUCTEUR
+     19          // *****************************************************************************
+     20          CLI2CBase :: ~CLI2CBase(void)
+     21          {
+     22          
+     23          }
+     24          
+     25          ///////////////////////////////////////////////////////////////////////////////
+     26          // void CLI2CBase :: vI2CStart(void)
+     27          ///////////////////////////////////////////////////////////////////////////////
+     28          //
+     29          // Description:
+     30          //
+     31          // Parametres d'entrees: null
+     32          //
+     33          // Parametres de sortie: null
+     34          //
+     35          // Appel de la fonction:
+     36          //
+     37          // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+     38          //
+     39          // Modifications:
+     40          // -
+     41          //
+     42          ///////////////////////////////////////////////////////////////////////////////
+     43          void CLI2CBase :: vI2CStart(void)
+     44          {
+     45          SDA = HAUT;                              //Met SDA a 1
+                 ^
+Error[Pe020]: identifier "SDA" is undefined
+     46          SCL = HAUT;                              //Met SCL a 1
+                 ^
+Error[Pe020]: identifier "SCL" is undefined
+     47          vDelaiI2C();                             //Delai
+     48          SDA = BAS;                               //Met SDA a 0
+     49          vDelaiI2C();                             //Delai
+     50          SCL = BAS;                               //Met SCL a 0
+     51          vDelaiI2C();                             //Delai
+     52          }
+     53          
+     54          ///////////////////////////////////////////////////////////////////////////////
+     55          // void CLI2CBase :: vI2CStop(void)
+     56          ///////////////////////////////////////////////////////////////////////////////
+     57          //
+     58          // Description:
+     59          //
+     60          // Parametres d'entrees: null
+     61          //
+     62          // Parametres de sortie: null
+     63          //
+     64          // Appel de la fonction:
+     65          //
+     66          // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+     67          //
+     68          // Modifications:
+     69          // -
+     70          //
+     71          ///////////////////////////////////////////////////////////////////////////////
+     72          
+     73          void CLI2CBase :: vI2CStop(void)
+     74          {
+     75          SDA = BAS;                               //Met SDA a 0
+                 ^
+Error[Pe020]: identifier "SDA" is undefined
+     76          SCL = BAS;                               //Met SCL a 0
+                 ^
+Error[Pe020]: identifier "SCL" is undefined
+     77          vDelaiI2C();                             //Delai
+     78          SCL = HAUT;                              //Met SCL a 1
+     79          vDelaiI2C();                             //Delai
+     80          SDA = HAUT;                              //Met SDA a 1
+     81          vDelaiI2C();                             //Delai
+     82          }
+     83          
+     84          ///////////////////////////////////////////////////////////////////////////////
+     85          // UC   CLI2CBase :: ucI2CLireBit(void)
+     86          ///////////////////////////////////////////////////////////////////////////////
+     87          //
+     88          // Description:
+     89          //
+     90          // Parametres d'entrees: null
+     91          //
+     92          // Parametres de sortie: null
+     93          //
+     94          // Appel de la fonction:
+     95          //
+     96          // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+     97          //
+     98          // Modifications:
+     99          // -
+    100          //
+    101          ///////////////////////////////////////////////////////////////////////////////
+    102          
+    103          UC CLI2CBase :: ucI2CLireBit(void)
+    104          {
+    105          UC ucBit;
+    106          SDA = HAUT;
+                 ^
+Error[Pe020]: identifier "SDA" is undefined
+    107          vDelaiI2C();
+    108          SCL = HAUT;
+                 ^
+Error[Pe020]: identifier "SCL" is undefined
+    109          vDelaiI2C();
+    110          ucBit = SDA;
+    111          vDelaiI2C();
+    112          SCL = BAS;
+    113          vDelaiI2C();
+    114          return (ucBit);
+    115          }
+    116          
+    117          ///////////////////////////////////////////////////////////////////////////////
+    118          // void CLI2CBase :: vI2CEcrireBit(UC ucBit)
+    119          ///////////////////////////////////////////////////////////////////////////////
+    120          //
+    121          // Description:
+    122          //
+    123          // Parametres d'entrees: null
+    124          //
+    125          // Parametres de sortie: null
+    126          //
+    127          // Appel de la fonction:
+    128          //
+    129          // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+    130          //
+    131          // Modifications:
+    132          // -
+    133          //
+    134          ///////////////////////////////////////////////////////////////////////////////
+    135          
+    136          void CLI2CBase :: vI2CEcrireBit(UC ucBit)
+    137          {
+    138          SDA = ucBit;
+                 ^
+Error[Pe020]: identifier "SDA" is undefined
+    139          vDelaiI2C();
+    140          SCL = HAUT;
+                 ^
+Error[Pe020]: identifier "SCL" is undefined
+    141          vDelaiI2C();
+    142          SCL = BAS;
+    143          vDelaiI2C();
+    144          }
+    145          
+    146          ///////////////////////////////////////////////////////////////////////////////
+    147          // UC CLI2CBase :: ucI2CLireOctet(UC ucAck)
+    148          ///////////////////////////////////////////////////////////////////////////////
+    149          //
+    150          // Description:
+    151          //
+    152          // Parametres d'entrees: null
+    153          //
+    154          // Parametres de sortie: null
+    155          //
+    156          // Appel de la fonction:
+    157          //
+    158          // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+    159          //
+    160          // Modifications:
+    161          // -
+    162          //
+    163          ///////////////////////////////////////////////////////////////////////////////
+    164          
+    165          UC CLI2CBase :: ucI2CLireOctet(UC ucAck)
+    166          {
+    167          UC ucLecture = 0x00;              //Variable de reception
+    168          
+    169          for(UC i=0; i < 8; i++)           //Repeter 8 fois
+    170            {
+    171             if(ucI2CLireBit() == 1)        //Si lecture retourne 1
+    172               {
+    173                ucLecture = ucLecture + 1;  //Additionne 1 a LireOctet
+    174               }
+    175             ucLecture = ucLecture << 1;    //Decale LireOctet 1 vers gauche
+    176            }
+    177          vI2CEcrireBit(ucAck);
+    178          return(ucLecture);                //Retourne l'octet lue
+    179           }
+    180          
+    181          ///////////////////////////////////////////////////////////////////////////////
+    182          // UC CLI2CBase :: ucI2CEcrireOctet(UC ucOctet)
+    183          ///////////////////////////////////////////////////////////////////////////////
+    184          //
+    185          // Description:
+    186          //
+    187          // Parametres d'entrees: null
+    188          //
+    189          // Parametres de sortie: null
+    190          //
+    191          // Appel de la fonction:
+    192          //
+    193          // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+    194          //
+    195          // Modifications:
+    196          // -
+    197          //
+    198          ///////////////////////////////////////////////////////////////////////////////
+    199          UC CLI2CBase :: ucI2CEcrireOctet(UC ucOctet)
+    200          {
+    201          for(UC i=0; i<8; i++)
+    202            {
+    203             if((ucOctet & 0x80) == 0) vI2CEcrireBit(0);
+    204             else                      vI2CEcrireBit(1);
+    205                ucOctet = ucOctet << 1;
+    206            }
+    207          return (ucI2CLireBit());
+    208          }
+    209          
+    210          ///////////////////////////////////////////////////////////////////////////////
+    211          // void CLI2CBase :: vDelaiI2C(void)
+    212          ///////////////////////////////////////////////////////////////////////////////
+    213          //
+    214          // Description:
+    215          //
+    216          // Parametres d'entrees: null
+    217          //
+    218          // Parametres de sortie: null
+    219          //
+    220          // Appel de la fonction:
+    221          //
+    222          // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+    223          //
+    224          // Modifications:
+    225          // -
+    226          //
+    227          ///////////////////////////////////////////////////////////////////////////////
+    228          void CLI2CBase :: vDelaiI2C(void)
+    229          {
+    230          for (UC i= ucDelaiI2C; i>0; i--);
+    231          }
+    232          
+    233          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+Errors: 8
+Warnings: none

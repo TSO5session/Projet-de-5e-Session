@@ -1,0 +1,1423 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         27/Oct/2014  20:17:44 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo6\Programme\CLSPI.cpp                #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo6\Programme\CLSPI.cpp" -D UPSD3254A  #
+#                          --preprocess=cl "C:\Synchro\Dropbox\Travaux\Automn #
+#                          e 2014\Prog\Labo6\Programme\UPSD\List\" -lC        #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo6\Programme\UPSD\List\" -lA          #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo6\Programme\UPSD\List\" -o           #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo6\Programme\UPSD\Obj\" -e --no_cse   #
+#                          --no_unroll --no_inline --no_code_motion           #
+#                          --no_tbaa --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=near               #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo6\Programme\UPSD\List\CLSPI.lst      #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo6\Programme\UPSD\Obj\CLSPI.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Prog\Labo6\Programme\CLSPI.cpp
+      1          //**********************  Fichier: CLSPI.cpp
+      2          //  Description : Fonctions necessaire pour communiquer en SPI.
+      3          //
+      4          //  CLComSPI       (void);                     Constructeur
+      5          //  CLComSPI       (UC ucVal);                 Constructeur initialisateur
+      6          // ~CLComSPI       (void);                     Destructeur
+      7          //  UC   Write     (UC ucValeur, UC ucMode);   Pour ecrire une donnee en SPI
+      8          //  void Direction (UC ucDirection);           Pour la direction des port du MCP23S08
+      9          //
+     10          //  Composition  : aucune
+     11          //  Heritage     : aucune
+     12          //
+     13          //  Programmeur  : Vincent Chouinard
+     14          //  Cours        : 247-636
+     15          //
+     16          //  Date         : 22 Octobre 2014
+     17          //
+     18          //  Compilateur  : IAR 8.1
+     19          //
+     20          //  Modification :
+     21          //
+     22          //////////////////////////////////////////////////////////////////////////////
+     23          #include "CLSPI.h"                // Inclue le fichier d'entete I2CPort.h.
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     24          #include "_DeclarationGenerale.h" // inclue DeclarationGenerale.h
+     25          #include "MCP2515.h"              // define des registres du MCP2515
+     26          //******************************************************************************
+     27          //                            LE CONSTRUCTEUR PAR DEFAUT
+     28          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     29          CLSPI :: CLSPI(void)
+   \                     ??CLSPI:
+     30          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     31          MOSI     = LOW;  // Commence a bas  
+   \   000000   C295         CLR     0x90.5
+     32          MISO     = LOW;  // Commence a bas  
+   \   000002   C294         CLR     0x90.4
+     33          SCLK     = LOW;  // Commence a bas
+   \   000004   C296         CLR     0x90.6
+     34          CS       = HIGH; // Commence a bas
+   \   000006   D297         SETB    0x90.7
+     35          }
+   \   000008   22           RET
+   \   000009                REQUIRE _A_P1
+     36          
+     37          //******************************************************************************
+     38          //                            LE CONSTRUCTEUR INITIALISATEUR
+     39          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     40          CLSPI :: CLSPI(UC Directions)
+   \                     ??CLSPI_1:
+     41          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+     42          MOSI     = LOW;        // Commence a bas  
+   \   00000B   C295         CLR     0x90.5
+     43          MISO     = LOW;        // Commence a bas  
+   \   00000D   C294         CLR     0x90.4
+     44          SCLK     = LOW;        // Commence a bas
+   \   00000F   C296         CLR     0x90.6
+     45          CS       = HIGH;       // Commence a bas
+   \   000011   D297         SETB    0x90.7
+     46          
+     47          Direction(Directions); // Initialise les directions
+   \   000013                ; Setup parameters for call to function CLSPI::Direction(UC)
+   \   000013   F9           MOV     R1,A
+   \   000014   AA82         MOV     R2,DPL
+   \   000016   AB83         MOV     R3,DPH
+   \   000018   12....       LCALL   ??Direction
+     48          }
+   \   00001B   AA82         MOV     R2,DPL
+   \   00001D   AB83         MOV     R3,DPH
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000024                REQUIRE _A_P1
+     49          
+     50          // *****************************************************************************
+     51          //                            LE DESTRUCTEUR
+     52          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     53          CLSPI :: ~CLSPI(void)
+   \                     `?~CLSPI`:
+     54          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     55          
+     56          }
+   \   000000   22           RET
+     57          
+     58          //*****************************************************************************
+     59          // Nom de la fct       : vSPIEcire
+     60          // Description         : Fonction qui permet de lire et d'ecrire un octet
+     61          //                     : sous les 4 different mode SPI
+     62          //
+     63          // INCLUDE             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
+     64          //
+     65          // Prototype           : UC ucSPIEcire(UC ucValeur, UC ucMode);
+     66          //
+     67          //
+     68          // Parametre d'entree  : ucValeur pour la valeur a envoyer ucMode pour le mode
+     69          //
+     70          // Parametre de sortie : ucDonneeLue pour la donnee lue
+     71          //
+     72          // Procedure appelees  : aucune
+     73          //
+     74          // Exemple d'appel     : val = clComSPI.ucSPIEcire(0xAA);
+     75          //
+     76          // Fait par            : Vincent Chouinard
+     77          // Date                : 23 septembre 2014
+     78          // Revision            : A
+     79          // Modification
+     80          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     81          UC CLSPI :: Write(UC ucValeur, UC ucMode)
+   \                     ??Write:
+     82          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV     A,R1
+   \   000001   FA           MOV     R2,A
+     83          UC i;                               // Pour boucle
+     84          UC ucDonneeLue = 0;                 // Pour la donnee a transmettre
+   \   000002   7900         MOV     R1,#0x0
+     85          
+     86          if(ucMode == 0)                     // Si mode 0?
+   \   000004   EC           MOV     A,R4
+   \   000005   702A         JNZ     ??Write_1
+     87            {
+     88             SCLK = BAS;                      // Met la clock a 0
+   \   000007   C296         CLR     0x90.6
+     89          
+     90             for(i = 0; i < 8; i++)           // Fait 8 fois
+   \   000009   7800         MOV     R0,#0x0
+   \   00000B   8015         SJMP    ??Write_2
+     91               {
+     92                if((ucValeur & 0x80) == 0x80) //fait un masque si egale a 1
+     93                  {
+     94                   MOSI = 1;                  // Envoie 1
+     95                  }
+     96                 else                         // Sinon
+     97                  {
+     98                   MOSI =0;                   // Envoie 0.
+   \                     ??Write_3:
+   \   00000D   C295         CLR     0x90.5
+     99                  }
+    100          
+    101                 ucValeur    = ucValeur    << 1  ; // Decale la valeur a envoyer
+   \                     ??Write_4:
+   \   00000F   EA           MOV     A,R2
+   \   000010   C3           CLR     C
+   \   000011   33           RLC     A
+   \   000012   FA           MOV     R2,A
+    102                 ucDonneeLue = ucDonneeLue << 1  ; // Decale la valeur lue
+   \   000013   E9           MOV     A,R1
+   \   000014   C3           CLR     C
+   \   000015   33           RLC     A
+   \   000016   F9           MOV     R1,A
+    103                 SCLK        = HAUT              ; // Clock a 1
+   \   000017   D296         SETB    0x90.6
+    104                 ucDonneeLue = ucDonneeLue + MISO; // Aditionne l'etat de MISO avec
+   \   000019   A294         MOV     C,0x90.4
+   \   00001B   E4           CLR     A
+   \   00001C   33           RLC     A
+   \   00001D   29           ADD     A,R1
+   \   00001E   F9           MOV     R1,A
+    105                                                   // le reste de la donnee lue
+    106                 SCLK        = BAS               ; // Clock a 0.
+   \   00001F   C296         CLR     0x90.6
+   \   000021   08           INC     R0
+   \                     ??Write_2:
+   \   000022   E8           MOV     A,R0
+   \   000023   C3           CLR     C
+   \   000024   9408         SUBB    A,#0x8
+   \   000026   5009         JNC     ??Write_1
+   \   000028   EA           MOV     A,R2
+   \   000029   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00002B   50E0         JNC     ??Write_3
+   \   00002D   D295         SETB    0x90.5
+   \   00002F   80DE         SJMP    ??Write_4
+    107               }
+    108             }
+    109          
+    110          if(ucMode == 1)          // Si mode 1?
+   \                     ??Write_1:
+   \   000031   7401         MOV     A,#0x1
+   \   000033   6C           XRL     A,R4
+   \   000034   7028         JNZ     ??Write_5
+    111            {
+    112             SCLK = HAUT;
+   \   000036   D296         SETB    0x90.6
+    113             for(i = 0; i < 8; i++)
+   \   000038   7800         MOV     R0,#0x0
+   \   00003A   800B         SJMP    ??Write_6
+    114               {
+    115                ucDonneeLue = ucDonneeLue << 1;
+    116                SCLK        = HAUT;
+    117          
+    118                if((ucValeur & 0x80) == 0x80)
+    119                  {
+    120                   MOSI = 1;
+    121                  }
+    122                else
+    123                  {
+    124                   MOSI =0;
+   \                     ??Write_7:
+   \   00003C   C295         CLR     0x90.5
+    125                  }
+    126                ucDonneeLue = ucDonneeLue + MISO;
+   \                     ??Write_8:
+   \   00003E   A294         MOV     C,0x90.4
+   \   000040   E4           CLR     A
+   \   000041   33           RLC     A
+   \   000042   29           ADD     A,R1
+   \   000043   F9           MOV     R1,A
+    127                SCLK        = BAS;                // Met la clock a 0
+   \   000044   C296         CLR     0x90.6
+   \   000046   08           INC     R0
+   \                     ??Write_6:
+   \   000047   E8           MOV     A,R0
+   \   000048   C3           CLR     C
+   \   000049   9408         SUBB    A,#0x8
+   \   00004B   500F         JNC     ??Write_9
+   \   00004D   E9           MOV     A,R1
+   \   00004E   C3           CLR     C
+   \   00004F   33           RLC     A
+   \   000050   F9           MOV     R1,A
+   \   000051   D296         SETB    0x90.6
+   \   000053   EA           MOV     A,R2
+   \   000054   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000056   50E4         JNC     ??Write_7
+   \   000058   D295         SETB    0x90.5
+   \   00005A   80E2         SJMP    ??Write_8
+    128               }
+    129               SCLK = HAUT;
+   \                     ??Write_9:
+   \   00005C   D296         SETB    0x90.6
+    130             }
+    131          
+    132          if(ucMode == 2)          // Si mode 2?
+   \                     ??Write_5:
+   \   00005E   7402         MOV     A,#0x2
+   \   000060   6C           XRL     A,R4
+   \   000061   7024         JNZ     ??Write_10
+    133            {
+    134             for(i = 0; i < 8; i++)
+   \   000063   7800         MOV     R0,#0x0
+   \   000065   800D         SJMP    ??Write_11
+    135               {
+    136                ucDonneeLue = ucDonneeLue << 1;
+    137                if((ucValeur & 0x80) == 0x80)
+    138                  {
+    139                   MOSI = 1;
+    140                  }
+    141                else
+    142                  {
+    143                   MOSI =0;
+   \                     ??Write_12:
+   \   000067   C295         CLR     0x90.5
+    144                  }
+    145                 ucDonneeLue = ucDonneeLue + MISO;
+   \                     ??Write_13:
+   \   000069   A294         MOV     C,0x90.4
+   \   00006B   E4           CLR     A
+   \   00006C   33           RLC     A
+   \   00006D   29           ADD     A,R1
+   \   00006E   F9           MOV     R1,A
+    146                 SCLK        = BAS;
+   \   00006F   C296         CLR     0x90.6
+    147                 SCLK        = HAUT;
+   \   000071   D296         SETB    0x90.6
+   \   000073   08           INC     R0
+   \                     ??Write_11:
+   \   000074   E8           MOV     A,R0
+   \   000075   C3           CLR     C
+   \   000076   9408         SUBB    A,#0x8
+   \   000078   500D         JNC     ??Write_10
+   \   00007A   E9           MOV     A,R1
+   \   00007B   C3           CLR     C
+   \   00007C   33           RLC     A
+   \   00007D   F9           MOV     R1,A
+   \   00007E   EA           MOV     A,R2
+   \   00007F   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000081   50E4         JNC     ??Write_12
+   \   000083   D295         SETB    0x90.5
+   \   000085   80E2         SJMP    ??Write_13
+    148               }
+    149             }
+    150          
+    151          if(ucMode == 3)          // Si mode 3?
+   \                     ??Write_10:
+   \   000087   7403         MOV     A,#0x3
+   \   000089   6C           XRL     A,R4
+   \   00008A   7024         JNZ     ??Write_14
+    152            {
+    153             for(i = 0; i < 8; i++)
+   \   00008C   7800         MOV     R0,#0x0
+   \   00008E   800B         SJMP    ??Write_15
+    154               {
+    155                ucDonneeLue = ucDonneeLue << 1;
+    156                SCLK        = BAS;
+    157                if((ucValeur & 0x80) == 0x80)
+    158                  {
+    159                   MOSI = 1;
+    160                  }
+    161                else
+    162                  {
+    163                   MOSI = 0;
+   \                     ??Write_16:
+   \   000090   C295         CLR     0x90.5
+    164                  }
+    165                ucDonneeLue = ucDonneeLue + MISO;
+   \                     ??Write_17:
+   \   000092   A294         MOV     C,0x90.4
+   \   000094   E4           CLR     A
+   \   000095   33           RLC     A
+   \   000096   29           ADD     A,R1
+   \   000097   F9           MOV     R1,A
+    166                SCLK        = HAUT;
+   \   000098   D296         SETB    0x90.6
+   \   00009A   08           INC     R0
+   \                     ??Write_15:
+   \   00009B   E8           MOV     A,R0
+   \   00009C   C3           CLR     C
+   \   00009D   9408         SUBB    A,#0x8
+   \   00009F   500F         JNC     ??Write_14
+   \   0000A1   E9           MOV     A,R1
+   \   0000A2   C3           CLR     C
+   \   0000A3   33           RLC     A
+   \   0000A4   F9           MOV     R1,A
+   \   0000A5   C296         CLR     0x90.6
+   \   0000A7   EA           MOV     A,R2
+   \   0000A8   A2E7         MOV     C,0xE0 /* A   */.7
+   \   0000AA   50E4         JNC     ??Write_16
+   \   0000AC   D295         SETB    0x90.5
+   \   0000AE   80E2         SJMP    ??Write_17
+    167               }
+    168             }
+    169          return(ucDonneeLue);
+   \                     ??Write_14:
+   \   0000B0   22           RET
+   \   0000B1                REQUIRE _A_P1
+    170          }
+    171          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    172          UI CLSPI :: Write16(UI uiValeur, UC ucMode)
+   \                     ??Write16:
+    173          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    174          UC i;                      // Pour boucle
+    175          UI uiDonneeLue= 0;         // Pour la donnee a transmettre
+   \   000007   7A00         MOV     R2,#0x0
+   \   000009   7B00         MOV     R3,#0x0
+    176          
+    177          if(ucMode == 0)            // Si mode 0?
+   \   00000B   EF           MOV     A,R7
+   \   00000C   703E         JNZ     ??Write16_1
+    178            {
+    179             SCLK = BAS;             // Met la clock a 0
+   \   00000E   C296         CLR     0x90.6
+    180             for(i = 0; i < 16; i++) // Fait 8 fois
+   \   000010   7E00         MOV     R6,#0x0
+   \   000012   8022         SJMP    ??Write16_2
+    181               {
+    182                if((uiValeur & 0x8000) == 0x8000)//fait un masque si egale a 1
+    183                  {
+    184                   MOSI = 1;          // Envoie 1
+    185                  }
+    186                else                  // Sinon
+    187                  {
+    188                   MOSI =0;           // Envoie 0.
+   \                     ??Write16_3:
+   \   000014   C295         CLR     0x90.5
+    189                  }
+    190          
+    191                uiValeur    = uiValeur    << 1  ;  // Decale la valeur a envoyer
+   \                     ??Write16_4:
+   \   000016   EC           MOV     A,R4
+   \   000017   C3           CLR     C
+   \   000018   33           RLC     A
+   \   000019   FC           MOV     R4,A
+   \   00001A   ED           MOV     A,R5
+   \   00001B   33           RLC     A
+   \   00001C   FD           MOV     R5,A
+    192                uiDonneeLue = uiDonneeLue << 1  ;  // Decale la valeur lue
+   \   00001D   EA           MOV     A,R2
+   \   00001E   C3           CLR     C
+   \   00001F   33           RLC     A
+   \   000020   FA           MOV     R2,A
+   \   000021   EB           MOV     A,R3
+   \   000022   33           RLC     A
+   \   000023   FB           MOV     R3,A
+    193                SCLK        = HAUT              ; // Clock a 1
+   \   000024   D296         SETB    0x90.6
+    194                uiDonneeLue = uiDonneeLue + MISO; // Aditionne l'etat de MISO avec
+   \   000026   A294         MOV     C,0x90.4
+   \   000028   E4           CLR     A
+   \   000029   33           RLC     A
+   \   00002A   F8           MOV     R0,A
+   \   00002B   7900         MOV     R1,#0x0
+   \   00002D   EA           MOV     A,R2
+   \   00002E   28           ADD     A,R0
+   \   00002F   FA           MOV     R2,A
+   \   000030   EB           MOV     A,R3
+   \   000031   39           ADDC    A,R1
+   \   000032   FB           MOV     R3,A
+    195                                                  // le reste de la donnee lue
+    196                SCLK        = BAS               ; // Clock a 0.
+   \   000033   C296         CLR     0x90.6
+   \   000035   0E           INC     R6
+   \                     ??Write16_2:
+   \   000036   EE           MOV     A,R6
+   \   000037   C3           CLR     C
+   \   000038   9410         SUBB    A,#0x10
+   \   00003A   5010         JNC     ??Write16_1
+   \   00003C   EC           MOV     A,R4
+   \   00003D   5400         ANL     A,#0x0
+   \   00003F   F8           MOV     R0,A
+   \   000040   ED           MOV     A,R5
+   \   000041   5480         ANL     A,#0x80
+   \   000043   F9           MOV     R1,A
+   \   000044   E8           MOV     A,R0
+   \   000045   49           ORL     A,R1
+   \   000046   60CC         JZ      ??Write16_3
+   \   000048   D295         SETB    0x90.5
+   \   00004A   80CA         SJMP    ??Write16_4
+    197               }
+    198             }
+    199          
+    200             if(ucMode == 1)          // Si mode 1?
+   \                     ??Write16_1:
+   \   00004C   7401         MOV     A,#0x1
+   \   00004E   6F           XRL     A,R7
+   \   00004F   7039         JNZ     ??Write16_5
+    201              {
+    202               SCLK = HAUT;
+   \   000051   D296         SETB    0x90.6
+    203               for(i = 0; i < 16; i++)
+   \   000053   7E00         MOV     R6,#0x0
+   \   000055   8012         SJMP    ??Write16_6
+    204                 {
+    205                  uiDonneeLue = uiDonneeLue << 1;
+    206                  SCLK        = HAUT;
+    207                  if((uiValeur & 0x8000) == 0x8000)
+    208                   {
+    209                    MOSI = 1;
+    210                   }
+    211                  else
+    212                   {
+    213                    MOSI =0;
+   \                     ??Write16_7:
+   \   000057   C295         CLR     0x90.5
+    214                   }
+    215                  uiDonneeLue = uiDonneeLue + MISO;
+   \                     ??Write16_8:
+   \   000059   A294         MOV     C,0x90.4
+   \   00005B   E4           CLR     A
+   \   00005C   33           RLC     A
+   \   00005D   F8           MOV     R0,A
+   \   00005E   7900         MOV     R1,#0x0
+   \   000060   EA           MOV     A,R2
+   \   000061   28           ADD     A,R0
+   \   000062   FA           MOV     R2,A
+   \   000063   EB           MOV     A,R3
+   \   000064   39           ADDC    A,R1
+   \   000065   FB           MOV     R3,A
+    216                  SCLK        = BAS;   // Met la clock a 0
+   \   000066   C296         CLR     0x90.6
+   \   000068   0E           INC     R6
+   \                     ??Write16_6:
+   \   000069   EE           MOV     A,R6
+   \   00006A   C3           CLR     C
+   \   00006B   9410         SUBB    A,#0x10
+   \   00006D   5019         JNC     ??Write16_9
+   \   00006F   EA           MOV     A,R2
+   \   000070   C3           CLR     C
+   \   000071   33           RLC     A
+   \   000072   FA           MOV     R2,A
+   \   000073   EB           MOV     A,R3
+   \   000074   33           RLC     A
+   \   000075   FB           MOV     R3,A
+   \   000076   D296         SETB    0x90.6
+   \   000078   EC           MOV     A,R4
+   \   000079   5400         ANL     A,#0x0
+   \   00007B   F8           MOV     R0,A
+   \   00007C   ED           MOV     A,R5
+   \   00007D   5480         ANL     A,#0x80
+   \   00007F   F9           MOV     R1,A
+   \   000080   E8           MOV     A,R0
+   \   000081   49           ORL     A,R1
+   \   000082   60D3         JZ      ??Write16_7
+   \   000084   D295         SETB    0x90.5
+   \   000086   80D1         SJMP    ??Write16_8
+    217                 }
+    218               SCLK = HAUT;
+   \                     ??Write16_9:
+   \   000088   D296         SETB    0x90.6
+    219              }
+    220            if(ucMode == 2)          // Si mode 2?
+   \                     ??Write16_5:
+   \   00008A   7402         MOV     A,#0x2
+   \   00008C   6F           XRL     A,R7
+   \   00008D   7035         JNZ     ??Write16_10
+    221              {
+    222               for(i = 0; i < 16; i++)
+   \   00008F   7E00         MOV     R6,#0x0
+   \   000091   8014         SJMP    ??Write16_11
+    223                 {
+    224                  uiDonneeLue = uiDonneeLue << 1;
+    225                  if((uiValeur & 0x8000) == 0x8000)
+    226                    {
+    227                     MOSI = 1;
+    228                    }
+    229                  else
+    230                   {
+    231                    MOSI =0;
+   \                     ??Write16_12:
+   \   000093   C295         CLR     0x90.5
+    232                   }
+    233                 uiDonneeLue = uiDonneeLue + MISO;
+   \                     ??Write16_13:
+   \   000095   A294         MOV     C,0x90.4
+   \   000097   E4           CLR     A
+   \   000098   33           RLC     A
+   \   000099   F8           MOV     R0,A
+   \   00009A   7900         MOV     R1,#0x0
+   \   00009C   EA           MOV     A,R2
+   \   00009D   28           ADD     A,R0
+   \   00009E   FA           MOV     R2,A
+   \   00009F   EB           MOV     A,R3
+   \   0000A0   39           ADDC    A,R1
+   \   0000A1   FB           MOV     R3,A
+    234                 SCLK        = BAS;
+   \   0000A2   C296         CLR     0x90.6
+    235                 SCLK        = HAUT;
+   \   0000A4   D296         SETB    0x90.6
+   \   0000A6   0E           INC     R6
+   \                     ??Write16_11:
+   \   0000A7   EE           MOV     A,R6
+   \   0000A8   C3           CLR     C
+   \   0000A9   9410         SUBB    A,#0x10
+   \   0000AB   5017         JNC     ??Write16_10
+   \   0000AD   EA           MOV     A,R2
+   \   0000AE   C3           CLR     C
+   \   0000AF   33           RLC     A
+   \   0000B0   FA           MOV     R2,A
+   \   0000B1   EB           MOV     A,R3
+   \   0000B2   33           RLC     A
+   \   0000B3   FB           MOV     R3,A
+   \   0000B4   EC           MOV     A,R4
+   \   0000B5   5400         ANL     A,#0x0
+   \   0000B7   F8           MOV     R0,A
+   \   0000B8   ED           MOV     A,R5
+   \   0000B9   5480         ANL     A,#0x80
+   \   0000BB   F9           MOV     R1,A
+   \   0000BC   E8           MOV     A,R0
+   \   0000BD   49           ORL     A,R1
+   \   0000BE   60D3         JZ      ??Write16_12
+   \   0000C0   D295         SETB    0x90.5
+   \   0000C2   80D1         SJMP    ??Write16_13
+    236                }
+    237             }
+    238          
+    239             if(ucMode == 3)          // Si mode 3?
+   \                     ??Write16_10:
+   \   0000C4   7403         MOV     A,#0x3
+   \   0000C6   6F           XRL     A,R7
+   \   0000C7   7035         JNZ     ??Write16_14
+    240               {
+    241                for(i = 0; i < 16; i++)
+   \   0000C9   7E00         MOV     R6,#0x0
+   \   0000CB   8012         SJMP    ??Write16_15
+    242                  {
+    243                   uiDonneeLue = uiDonneeLue << 1;
+    244                   SCLK        = BAS;
+    245                   if((uiValeur & 0x8000) == 0x8000)
+    246                     {
+    247                      MOSI = 1;
+    248                     }
+    249                   else
+    250                     {
+    251                      MOSI =0;
+   \                     ??Write16_16:
+   \   0000CD   C295         CLR     0x90.5
+    252                     }
+    253                   uiDonneeLue = uiDonneeLue + MISO;
+   \                     ??Write16_17:
+   \   0000CF   A294         MOV     C,0x90.4
+   \   0000D1   E4           CLR     A
+   \   0000D2   33           RLC     A
+   \   0000D3   F8           MOV     R0,A
+   \   0000D4   7900         MOV     R1,#0x0
+   \   0000D6   EA           MOV     A,R2
+   \   0000D7   28           ADD     A,R0
+   \   0000D8   FA           MOV     R2,A
+   \   0000D9   EB           MOV     A,R3
+   \   0000DA   39           ADDC    A,R1
+   \   0000DB   FB           MOV     R3,A
+    254                   SCLK        = HAUT;
+   \   0000DC   D296         SETB    0x90.6
+   \   0000DE   0E           INC     R6
+   \                     ??Write16_15:
+   \   0000DF   EE           MOV     A,R6
+   \   0000E0   C3           CLR     C
+   \   0000E1   9410         SUBB    A,#0x10
+   \   0000E3   5019         JNC     ??Write16_14
+   \   0000E5   EA           MOV     A,R2
+   \   0000E6   C3           CLR     C
+   \   0000E7   33           RLC     A
+   \   0000E8   FA           MOV     R2,A
+   \   0000E9   EB           MOV     A,R3
+   \   0000EA   33           RLC     A
+   \   0000EB   FB           MOV     R3,A
+   \   0000EC   C296         CLR     0x90.6
+   \   0000EE   EC           MOV     A,R4
+   \   0000EF   5400         ANL     A,#0x0
+   \   0000F1   F8           MOV     R0,A
+   \   0000F2   ED           MOV     A,R5
+   \   0000F3   5480         ANL     A,#0x80
+   \   0000F5   F9           MOV     R1,A
+   \   0000F6   E8           MOV     A,R0
+   \   0000F7   49           ORL     A,R1
+   \   0000F8   60D3         JZ      ??Write16_16
+   \   0000FA   D295         SETB    0x90.5
+   \   0000FC   80D1         SJMP    ??Write16_17
+    255                  }
+    256          
+    257                }
+    258          return(uiDonneeLue);
+   \                     ??Write16_14:
+   \   0000FE   7F01         MOV     R7,#0x1
+   \   000100   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000103                REQUIRE _A_P1
+    259          }
+    260          
+    261          //*****************************************************************************
+    262          // Nom de la fct:       : Direction
+    263          // Description:         : Fonction qui permet de modifier la direction des ports
+    264          //                      : du MCP23S08
+    265          //
+    266          // INCLUDE:             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
+    267          //
+    268          // Prototype:           : Direction(UC ucDirection)
+    269          //
+    270          //
+    271          // Parametre d'entree:  : ucDirection pour la direction des I/O.
+    272          //
+    273          // Parametre de sortie: : aucun
+    274          //
+    275          // Procedure appelees:  : aucune
+    276          //
+    277          // Exemple d'appel:     : val = clComSPI.ucSPIEcire(0xAA);
+    278          //
+    279          // Fait par             : Vincent Chouinard
+    280          // Date:                : 23 septembre 2014
+    281          // Revision             :
+    282          // Modification         :
+    283          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    284          void CLSPI :: Direction (UC ucDirection)
+   \                     ??Direction:
+    285          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+    286          CS = BAS             ; // Chip select bas
+   \   00000B   C297         CLR     0x90.7
+    287          Write(0x40, 0)       ; // Envoie l'adresse du boitier
+   \   00000D                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   00000D   7C00         MOV     R4,#0x0
+   \   00000F   7940         MOV     R1,#0x40
+   \   000011   AA82         MOV     R2,DPL
+   \   000013   AB83         MOV     R3,DPH
+   \   000015   12....       LCALL   ??Write
+   \   000018   E9           MOV     A,R1
+    288          Write(0x00, 0)       ; // Envoie le registre a modifier
+   \   000019                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000019   7C00         MOV     R4,#0x0
+   \   00001B   7900         MOV     R1,#0x0
+   \   00001D   AA82         MOV     R2,DPL
+   \   00001F   AB83         MOV     R3,DPH
+   \   000021   12....       LCALL   ??Write
+   \   000024   E9           MOV     A,R1
+    289          Write(ucDirection, 0); // Envoie la direction
+   \   000025                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000025   7C00         MOV     R4,#0x0
+   \   000027   EE           MOV     A,R6
+   \   000028   F9           MOV     R1,A
+   \   000029   AA82         MOV     R2,DPL
+   \   00002B   AB83         MOV     R3,DPH
+   \   00002D   12....       LCALL   ??Write
+   \   000030   E9           MOV     A,R1
+    290          CS = HAUT            ; // Chip Select haut
+   \   000031   D297         SETB    0x90.7
+    291          }
+   \   000033   7F01         MOV     R7,#0x1
+   \   000035   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000038                REQUIRE _A_P1
+    292          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    293          UC CLSPI :: WriteMPC (UC Data)
+   \                     ??WriteMPC:
+    294          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+    295          Write(0x40, 0) ;        // Envoie l'adresse du boitier
+   \   00000B                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   00000B   7C00         MOV     R4,#0x0
+   \   00000D   7940         MOV     R1,#0x40
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   12....       LCALL   ??Write
+   \   000016   E9           MOV     A,R1
+    296          Write(0x09, 0) ;        // Envoie l'adresse du reistre des IO
+   \   000017                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000017   7C00         MOV     R4,#0x0
+   \   000019   7909         MOV     R1,#0x9
+   \   00001B   AA82         MOV     R2,DPL
+   \   00001D   AB83         MOV     R3,DPH
+   \   00001F   12....       LCALL   ??Write
+   \   000022   E9           MOV     A,R1
+    297          return(Write(Data, 0)); // Envoie la donnee hexa a ecrire sur les IO
+   \   000023                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000023   7C00         MOV     R4,#0x0
+   \   000025   EE           MOV     A,R6
+   \   000026   F9           MOV     R1,A
+   \   000027   AA82         MOV     R2,DPL
+   \   000029   AB83         MOV     R3,DPH
+   \   00002B   12....       LCALL   ??Write
+   \   00002E   7F01         MOV     R7,#0x1
+   \   000030   02....       LJMP    ?FUNC_LEAVE_XDATA
+    298          }
+    299          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    300          UC CLSPI :: ReadMPC (void)
+   \                     ??ReadMPC:
+    301          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+    302          Write(0x41, 0) ;        // Envoie l'adresse du boitier
+   \   000008                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000008   7C00         MOV     R4,#0x0
+   \   00000A   7941         MOV     R1,#0x41
+   \   00000C   AA82         MOV     R2,DPL
+   \   00000E   AB83         MOV     R3,DPH
+   \   000010   12....       LCALL   ??Write
+   \   000013   E9           MOV     A,R1
+    303          Write(0x09, 0) ;        // Envoie l'adresse du reistre des IO
+   \   000014                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000014   7C00         MOV     R4,#0x0
+   \   000016   7909         MOV     R1,#0x9
+   \   000018   AA82         MOV     R2,DPL
+   \   00001A   AB83         MOV     R3,DPH
+   \   00001C   12....       LCALL   ??Write
+   \   00001F   E9           MOV     A,R1
+    304          return(Write(NULL, 0)); // Lit la donnee hexa a correspondant aux IO
+   \   000020                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000020   7C00         MOV     R4,#0x0
+   \   000022   7900         MOV     R1,#0x0
+   \   000024   AA82         MOV     R2,DPL
+   \   000026   AB83         MOV     R3,DPH
+   \   000028   12....       LCALL   ??Write
+   \   00002B   D083         POP     DPH
+   \   00002D   D082         POP     DPL
+   \   00002F   22           RET
+    305          }
+    306          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    307          UC CLSPI :: WritePOT (UC Data)
+   \                     ??WritePOT:
+    308          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+    309          Write(0x00, 0) ;        // Pour activer le mode ecriture
+   \   00000B                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   00000B   7C00         MOV     R4,#0x0
+   \   00000D   7900         MOV     R1,#0x0
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   12....       LCALL   ??Write
+   \   000016   E9           MOV     A,R1
+    310          return(Write(Data, 0)); // Ecrit la valeur sur le POT numerique
+   \   000017                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000017   7C00         MOV     R4,#0x0
+   \   000019   EE           MOV     A,R6
+   \   00001A   F9           MOV     R1,A
+   \   00001B   AA82         MOV     R2,DPL
+   \   00001D   AB83         MOV     R3,DPH
+   \   00001F   12....       LCALL   ??Write
+   \   000022   7F01         MOV     R7,#0x1
+   \   000024   02....       LJMP    ?FUNC_LEAVE_XDATA
+    311          }
+    312          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    313          UC CLSPI :: WriteDAC (UC ucPin, int iData)
+   \                     ??WriteDAC:
+    314          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FF           MOV     R7,A
+    315          UC ucUseless = 0;
+   \   00000B   75..00       MOV     ?V0 + 0,#0x0
+    316          UC ucHaut;
+    317          UC ucBas;
+    318          
+    319          switch (ucPin)
+   \   00000E   14           DEC     A
+   \   00000F   600C         JZ      ??WriteDAC_1
+   \   000011   14           DEC     A
+   \   000012   6032         JZ      ??WriteDAC_2
+   \   000014   14           DEC     A
+   \   000015   6057         JZ      ??WriteDAC_3
+   \   000017   14           DEC     A
+   \   000018   607C         JZ      ??WriteDAC_4
+   \   00001A   02....       LJMP    ??WriteDAC_5
+    320            { 
+    321            case 1:     // Write on DAC A
+    322               ucHaut    = (iData << 8) & 0x000F; 
+   \                     ??WriteDAC_1:
+   \   00001D   7900         MOV     R1,#0x0
+    323               ucHaut    = ucHaut |       0x80  ;    
+   \   00001F   D3           SETB    C
+   \   000020   E9           MOV     A,R1
+   \   000021   92E7         MOV     0xE0 /* A   */.7,C
+   \   000023   F9           MOV     R1,A
+    324               ucBas     = iData  &       0x00FF;    
+   \   000024   EC           MOV     A,R4
+   \   000025   FE           MOV     R6,A
+    325            CSDA = LOW; // DAC CHip Select ON
+   \   000026   C296         CLR     0x90.6
+    326               ucUseless = Write(ucHaut, 0);
+   \   000028                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000028   7C00         MOV     R4,#0x0
+   \   00002A   AA82         MOV     R2,DPL
+   \   00002C   AB83         MOV     R3,DPH
+   \   00002E   12....       LCALL   ??Write
+   \   000031   E9           MOV     A,R1
+   \   000032   F5..         MOV     ?V0 + 0,A
+    327               ucUseless = Write(ucBas,  0);
+   \   000034                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000034   7C00         MOV     R4,#0x0
+   \   000036   EE           MOV     A,R6
+   \   000037   F9           MOV     R1,A
+   \   000038   AA82         MOV     R2,DPL
+   \   00003A   AB83         MOV     R3,DPH
+   \   00003C   12....       LCALL   ??Write
+   \   00003F   E9           MOV     A,R1
+   \   000040   F5..         MOV     ?V0 + 0,A
+    328            CSDA = HIGH;// DAC CHip Select OFF 
+   \   000042   D296         SETB    0x90.6
+    329            break;
+   \   000044   8076         SJMP    ??WriteDAC_5
+    330            
+    331            case 2:     // Write on DAC B
+    332               ucHaut    = (iData << 8) & 0x000F; 
+   \                     ??WriteDAC_2:
+   \   000046   7900         MOV     R1,#0x0
+    333               ucHaut    = ucHaut |       0x90  ;    
+   \   000048   C9           XCH     A,R1
+   \   000049   4490         ORL     A,#0x90
+   \   00004B   F9           MOV     R1,A
+    334               ucBas     = iData  &       0x00FF;   
+   \   00004C   EC           MOV     A,R4
+   \   00004D   FE           MOV     R6,A
+    335            CSDA = LOW; // DAC CHip Select ON
+   \   00004E   C296         CLR     0x90.6
+    336               ucUseless = Write(ucHaut, 0);
+   \   000050                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000050   7C00         MOV     R4,#0x0
+   \   000052   AA82         MOV     R2,DPL
+   \   000054   AB83         MOV     R3,DPH
+   \   000056   12....       LCALL   ??Write
+   \   000059   E9           MOV     A,R1
+   \   00005A   F5..         MOV     ?V0 + 0,A
+    337               ucUseless = Write(ucBas,  0);
+   \   00005C                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   00005C   7C00         MOV     R4,#0x0
+   \   00005E   EE           MOV     A,R6
+   \   00005F   F9           MOV     R1,A
+   \   000060   AA82         MOV     R2,DPL
+   \   000062   AB83         MOV     R3,DPH
+   \   000064   12....       LCALL   ??Write
+   \   000067   E9           MOV     A,R1
+   \   000068   F5..         MOV     ?V0 + 0,A
+    338            CSDA = HIGH;// DAC CHip Select OFF    
+   \   00006A   D296         SETB    0x90.6
+    339            break;
+   \   00006C   804E         SJMP    ??WriteDAC_5
+    340          
+    341            case 3:     // Write on DAC C
+    342               ucHaut    = (iData << 8) & 0x000F; 
+   \                     ??WriteDAC_3:
+   \   00006E   7900         MOV     R1,#0x0
+    343               ucHaut    = ucHaut |       0xA0  ;    
+   \   000070   C9           XCH     A,R1
+   \   000071   44A0         ORL     A,#0xa0
+   \   000073   F9           MOV     R1,A
+    344               ucBas     = iData  &       0x00FF;   
+   \   000074   EC           MOV     A,R4
+   \   000075   FE           MOV     R6,A
+    345            CSDA = LOW; // DAC CHip Select ON
+   \   000076   C296         CLR     0x90.6
+    346               ucUseless = Write(ucHaut, 0);
+   \   000078                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000078   7C00         MOV     R4,#0x0
+   \   00007A   AA82         MOV     R2,DPL
+   \   00007C   AB83         MOV     R3,DPH
+   \   00007E   12....       LCALL   ??Write
+   \   000081   E9           MOV     A,R1
+   \   000082   F5..         MOV     ?V0 + 0,A
+    347               ucUseless = Write(ucBas,  0);
+   \   000084                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000084   7C00         MOV     R4,#0x0
+   \   000086   EE           MOV     A,R6
+   \   000087   F9           MOV     R1,A
+   \   000088   AA82         MOV     R2,DPL
+   \   00008A   AB83         MOV     R3,DPH
+   \   00008C   12....       LCALL   ??Write
+   \   00008F   E9           MOV     A,R1
+   \   000090   F5..         MOV     ?V0 + 0,A
+    348            CSDA = HIGH;// DAC CHip Select OFF     
+   \   000092   D296         SETB    0x90.6
+    349            break;
+   \   000094   8026         SJMP    ??WriteDAC_5
+    350          
+    351            case 4:     // Write on DAC D
+    352               ucHaut    = (iData << 8) & 0x000F; 
+   \                     ??WriteDAC_4:
+   \   000096   7900         MOV     R1,#0x0
+    353               ucHaut    = ucHaut |       0xB0  ;    
+   \   000098   C9           XCH     A,R1
+   \   000099   44B0         ORL     A,#0xb0
+   \   00009B   F9           MOV     R1,A
+    354               ucBas     = iData  &       0x00FF;    
+   \   00009C   EC           MOV     A,R4
+   \   00009D   FE           MOV     R6,A
+    355            CSDA = LOW; // DAC CHip Select ON
+   \   00009E   C296         CLR     0x90.6
+    356               ucUseless = Write(ucHaut, 0);
+   \   0000A0                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   0000A0   7C00         MOV     R4,#0x0
+   \   0000A2   AA82         MOV     R2,DPL
+   \   0000A4   AB83         MOV     R3,DPH
+   \   0000A6   12....       LCALL   ??Write
+   \   0000A9   E9           MOV     A,R1
+   \   0000AA   F5..         MOV     ?V0 + 0,A
+    357               ucUseless = Write(ucBas,  0);
+   \   0000AC                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   0000AC   7C00         MOV     R4,#0x0
+   \   0000AE   EE           MOV     A,R6
+   \   0000AF   F9           MOV     R1,A
+   \   0000B0   AA82         MOV     R2,DPL
+   \   0000B2   AB83         MOV     R3,DPH
+   \   0000B4   12....       LCALL   ??Write
+   \   0000B7   E9           MOV     A,R1
+   \   0000B8   F5..         MOV     ?V0 + 0,A
+    358            CSDA = HIGH;// DAC CHip Select OFF     
+   \   0000BA   D296         SETB    0x90.6
+    359            break;
+    360           }
+    361          return(ucUseless);
+   \                     ??WriteDAC_5:
+   \   0000BC   A9..         MOV     R1,?V0 + 0
+   \   0000BE   7F01         MOV     R7,#0x1
+   \   0000C0   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   0000C3                REQUIRE _A_P1
+    362          }
+    363          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    364          UC CLSPI :: WriteMPC2514(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
+   \                     ??WriteMPC2514:
+    365          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 2,R2
+   \   00000C   8B..         MOV     ?V0 + 3,R3
+   \   00000E   89..         MOV     ?V0 + 0,R1
+   \   000010   EC           MOV     A,R4
+   \   000011   FE           MOV     R6,A
+   \   000012   ED           MOV     A,R5
+   \   000013   FF           MOV     R7,A
+   \   000014   740E         MOV     A,#0xe
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   F8           MOV     R0,A
+    366             UC k;
+    367          
+    368             UC Donnees[3] = {0x00};
+                       ^
+Warning[Pe550]: variable "Donnees" was set but never used
+   \   00001B   90....       MOV     DPTR,#`?<Constant {(UC)'\\000'}>`
+   \   00001E   C082         PUSH    DPL
+   \   000020   C083         PUSH    DPH
+   \   000022   85..82       MOV     DPL,?XSP + 0
+   \   000025   85..83       MOV     DPH,?XSP + 1
+   \   000028   AC82         MOV     R4,DPL
+   \   00002A   AD83         MOV     R5,DPH
+   \   00002C   D083         POP     DPH
+   \   00002E   D082         POP     DPL
+   \   000030   7403         MOV     A,#0x3
+   \   000032   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    369                Donnees[0] = Donnee1;
+   \   000035   EE           MOV     A,R6
+   \   000036   85..82       MOV     DPL,?XSP + 0
+   \   000039   85..83       MOV     DPH,?XSP + 1
+   \   00003C   F0           MOVX    @DPTR,A
+    370                Donnees[1] = Donnee2;
+   \   00003D   EF           MOV     A,R7
+   \   00003E   C0E0         PUSH    A
+   \   000040   7401         MOV     A,#0x1
+   \   000042   12....       LCALL   ?XSTACK_DISP0_8
+   \   000045   D0E0         POP     A
+   \   000047   F0           MOVX    @DPTR,A
+    371                Donnees[2] = Donnee3;
+   \   000048   E8           MOV     A,R0
+   \   000049   C0E0         PUSH    A
+   \   00004B   7402         MOV     A,#0x2
+   \   00004D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000050   D0E0         POP     A
+   \   000052   F0           MOVX    @DPTR,A
+    372          
+    373             CS = 0;   // Un chip select
+   \   000053   C297         CLR     0x90.7
+    374          
+    375             for(k = 0; k < NombreDonneesEnvoyer; k++)
+   \   000055   75..00       MOV     ?V0 + 1,#0x0
+   \   000058   8020         SJMP    ??WriteMPC2514_1
+    376             {
+    377                   Write(k,0);      // = Donnees[k];
+   \                     ??WriteMPC2514_2:
+   \   00005A                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   00005A   7C00         MOV     R4,#0x0
+   \   00005C   A9..         MOV     R1,?V0 + 1
+   \   00005E   AA..         MOV     R2,?V0 + 2
+   \   000060   AB..         MOV     R3,?V0 + 3
+   \   000062   12....       LCALL   ??Write
+   \   000065   E9           MOV     A,R1
+    378                   Delai(1);   // Delai au moins tant que le module du SPI est occupé 
+   \   000066                ; Setup parameters for call to function CLSPI::Delai(unsigned long)
+   \   000066   90....       MOV     DPTR,#__Constant_1
+   \   000069   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   00006C   AA..         MOV     R2,?V0 + 2
+   \   00006E   AB..         MOV     R3,?V0 + 3
+   \   000070   12....       LCALL   ??Delai
+   \   000073   7404         MOV     A,#0x4
+   \   000075   12....       LCALL   ?DEALLOC_XSTACK8
+    379             }
+   \   000078   05..         INC     ?V0 + 1
+   \                     ??WriteMPC2514_1:
+   \   00007A   E5..         MOV     A,?V0 + 1
+   \   00007C   C3           CLR     C
+   \   00007D   95..         SUBB    A,?V0 + 0
+   \   00007F   40D9         JC      ??WriteMPC2514_2
+    380          
+    381             CS = HIGH;   // Un chip select
+   \   000081   D297         SETB    0x90.7
+    382             return(0x01);
+   \   000083   7901         MOV     R1,#0x1
+   \   000085   7403         MOV     A,#0x3
+   \   000087   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00008A   7F04         MOV     R7,#0x4
+   \   00008C   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00008F                REQUIRE _A_P1
+    383          }
+    384          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    385          void CLSPI :: Delai(unsigned long Temps)
+   \                     ??Delai:
+    386          {
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   740F         MOV     A,#0xf
+   \   000007   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000A   78..         MOV     R0,#?V0 + 0
+   \   00000C   12....       LCALL   ?L_MOV_X
+    387             unsigned long k;
+    388          
+    389             for(k = 0; k < Temps; k++);  
+   \   00000F   90....       MOV     DPTR,#__Constant_0
+   \   000012   78..         MOV     R0,#?V0 + 4
+   \   000014   12....       LCALL   ?L_MOV_X
+   \   000017   8008         SJMP    ??Delai_1
+   \                     ??Delai_2:
+   \   000019   90....       MOV     DPTR,#__Constant_1
+   \   00001C   78..         MOV     R0,#?V0 + 4
+   \   00001E   12....       LCALL   ?L_ADD_X
+   \                     ??Delai_1:
+   \   000021   78..         MOV     R0,#?V0 + 0
+   \   000023   79..         MOV     R1,#?V0 + 4
+   \   000025   12....       LCALL   ?UL_GT
+   \   000028   40EF         JC      ??Delai_2
+    390          }
+   \   00002A   7F08         MOV     R7,#0x8
+   \   00002C   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_1:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_1>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_1>`:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_0:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_0>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_0>`:
+   \   000000   00000000     DD 0
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     `?<Constant {(UC)'\\000'}>`:
+   \   000000                DS 3
+   \   000003                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLSPI &CLSPI::new CLSPI()
+   \                     `??new CLSPI`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLSPI_2`
+   \   00001B                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   00001B   12....       LCALL   ??CLSPI
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLSPI_3`
+   \                     `??new CLSPI_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLSPI_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLSPI &CLSPI::new CLSPI(UC)
+   \                     `??new CLSPI_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A01         MOV     R2,#0x1
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new CLSPI_4`
+   \   00001E                ; Setup parameters for call to function CLSPI::CLSPI(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??CLSPI_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new CLSPI_5`
+   \                     `??new CLSPI_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new CLSPI_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLSPI::delete ~CLSPI(CLSPI *)
+   \                     `??delete ~CLSPI`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLSPI_1`
+   \   00000D                ; Setup parameters for call to function CLSPI::~CLSPI()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLSPI`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLSPI_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    391          
+    392          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+    393          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLSPI::CLSPI()                     0      0      0
+     CLSPI::CLSPI(UC)                   0      0     17
+       -> CLSPI::Direction(UC)          0      0     16
+     CLSPI::Delai(unsigned long)        0      0     33
+     CLSPI::Direction(UC)               0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+     CLSPI::ReadMPC()                   2      0      0
+       -> CLSPI::Write(UC, UC)          4      0      0
+       -> CLSPI::Write(UC, UC)          4      0      0
+       -> CLSPI::Write(UC, UC)          4      0      0
+     CLSPI::Write(UC, UC)               0      0     14
+     CLSPI::Write16(UI, UC)             0      0      8
+     CLSPI::WriteDAC(UC, int)           0      0      8
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+     CLSPI::WriteMPC(UC)                0      0      8
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+     CLSPI::WriteMPC2514(UC, UC, UC, UC)
+                                        2      0     19
+       -> CLSPI::Write(UC, UC)          0      0     28
+       -> CLSPI::Delai(unsigned long)
+                                        0      0     36
+     CLSPI::WritePOT(UC)                0      0      8
+       -> CLSPI::Write(UC, UC)          0      0     16
+       -> CLSPI::Write(UC, UC)          0      0     16
+     CLSPI::delete ~CLSPI(CLSPI *)      0      0      8
+       -> CLSPI::~CLSPI()               0      0     16
+       -> operator delete(void *)       0      0     16
+     CLSPI::new CLSPI()                 2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLSPI::CLSPI()                4      0      0
+     CLSPI::new CLSPI(UC)               0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> CLSPI::CLSPI(UC)              0      0     18
+     CLSPI::~CLSPI()                    0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     _A_P1                              1
+     CLSPI::CLSPI()                     9
+     CLSPI::CLSPI(UC)                  36
+     CLSPI::~CLSPI()                    1
+     CLSPI::Write(UC, UC)             177
+     CLSPI::Write16(UI, UC)           259
+     CLSPI::Direction(UC)              56
+     CLSPI::WriteMPC(UC)               51
+     CLSPI::ReadMPC()                  48
+     CLSPI::WritePOT(UC)               39
+     CLSPI::WriteDAC(UC, int)         195
+     CLSPI::WriteMPC2514(UC, UC, UC, UC)
+                                      143
+     CLSPI::Delai(unsigned long)       47
+     __Constant_1                       4
+     ?<Initializer for __Constant_1>    4
+     __Constant_0                       4
+     ?<Initializer for __Constant_0>    4
+     ?<Constant {(UC)'\000'}>           3
+     CLSPI::new CLSPI()                49
+     CLSPI::new CLSPI(UC)              54
+     CLSPI::delete ~CLSPI(CLSPI *)     32
+
+ 
+ 1 196 bytes in segment NEAR_CODE
+     1 byte  in segment SFR_AN
+     8 bytes in segment XDATA_I
+     8 bytes in segment XDATA_ID
+     3 bytes in segment XDATA_Z
+ 
+ 1 196 bytes of CODE  memory (+ 8 bytes shared)
+     0 bytes of DATA  memory (+ 1 byte  shared)
+     3 bytes of XDATA memory (+ 8 bytes shared)
+
+Errors: none
+Warnings: 1

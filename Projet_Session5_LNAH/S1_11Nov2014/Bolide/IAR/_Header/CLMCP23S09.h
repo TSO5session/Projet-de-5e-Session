@@ -41,7 +41,7 @@ class CLMCP23S09 : public CLSerialPortInterface
      
      UC ucLireMCP23S09(void);
      void vEcrireMCP23S09(UC ucDonnee);
-     void vSetModeMCP23S09(UC ucMode);
+     void vSetModeMCP23S09(UC ucMode, UC ucPort);
      
    protected:
 

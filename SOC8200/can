@@ -1,19 +1,35 @@
-while true
+while true 
 do
-   var=`tail -1 ./histocan
-  
+ var=`tail -1 ./histocan`
    if [ "$var" != "$ancienvar" ]
-    then
-     if [ "$var" = "  can0    4  [3] 04 02 FF" ] #bloc orange
-      then
-	   /usr/bin/cansend can0 002#0800FF  #Sens horaire
-     fi
-   
-     if [ "$var" = "  can0    4  [3] 04 00 FF" ] #bloc metal
-      then
-	   /usr/bin/cansend can0 002#0801FF  #Sens antihoraire
-     fi    
-   
-   ancienvar=$var
-   fi
-done 
+    then  
+     if [ "$var" = "  can0    4  [3] 04 00 FF" ]
+	  then 
+	   echo "Anti-Horaire (Bloc Métalique)"
+	    /usr/bin/cansend can0 001#0801FF
+	  fi
+
+	 if [ "$var" = "  can0    4  [3] 04 01 FF" ]
+	  then 
+	   echo "Invalide (Bloc Noir)"
+	  fi
+
+     if [ "$var" = "  can0    4  [3] 04 02 FF" ]
+	  then 
+	   echo "Horaire (Bloc Orange)"
+	    /usr/bin/cansend can0 001#0800FF
+	  fi
+	  
+     if [ "$var" = "  can0    4  [3] 07 00 FF" ]
+	  then 
+	   echo "Station 1"
+	  fi	  
+	  
+     if [ "$var" = "  can0    4  [3] 07 01 FF" ]
+	  then 
+	   echo "Station 2"
+	  fi
+	  
+	  ancienvar=$var
+    fi
+done	

@@ -37,7 +37,7 @@ class CLDAC7554 : public CLSerialPortInterface
    CLDAC7554(UC ucAdresse);
   ~CLDAC7554(void);
   
-   void vWriteChannel(USI uiValue, UC ucChannel);
+   void vWriteChannel(USI uiVal, UC ucChannel);
    protected:
 
    private:

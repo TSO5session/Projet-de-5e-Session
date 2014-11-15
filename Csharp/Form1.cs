@@ -813,6 +813,7 @@ namespace ICDIBasic
             // Sets the connection status of the main-form
             //
             SetConnectionStatus(stsResult == TPCANStatus.PCAN_ERROR_OK);
+            timer4RealTimeCAN.Start(); // Démarre le timer CAN de réception en temps réel
         }
 
         private void btnRelease_Click(object sender, EventArgs e)
@@ -1474,7 +1475,7 @@ namespace ICDIBasic
         #region Menu à propos
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("CAN Opener par Vincent Chouinard", "Hey listen!", MessageBoxButtons.OK); // Note: À moifier
+            DialogResult result1 = MessageBox.Show("Projet de 5ème session Par Vincent, Hicham, Gabriel et Louis-Normand", "Hey listen!", MessageBoxButtons.OK); // Note: À moifier
             if (result1 == DialogResult.Yes)
             {
 
@@ -1529,7 +1530,6 @@ namespace ICDIBasic
                         Historique.AppendText("\r\n");
                         Historique.AppendText("Échec de la déconnexion du bus RS232");   // Enregistre le log de la connexion
                     }
-
                 }     
             }
             else
@@ -1734,6 +1734,9 @@ namespace ICDIBasic
         }
         #endregion
 
+
+
+
 #region Démarrer le véhicule
         private void button3_Click(object sender, EventArgs e)
         {
@@ -1742,39 +1745,43 @@ namespace ICDIBasic
                 TPCANMsg CANMsg;
                 TPCANStatus stsResult;
 
-                CANMsg         = new TPCANMsg();
-                CANMsg.DATA    = new byte[6];
-                CANMsg.ID      = 004;             // Target = véhicule
-                CANMsg.LEN     = 6;               // Longueur = 6
+                CANMsg = new TPCANMsg();
+                CANMsg.DATA = new byte[8];
+
+                CANMsg.ID = 006; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
+                CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
                 CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
 
                 for (int i = 0; i < CANMsg.LEN; i++)
-                {
-                    if (i == 0) { CANMsg.DATA[0] = 00; } // Data = 0000
-                    if (i == 1) { CANMsg.DATA[1] = 00; }
-                    if (i == 2) { CANMsg.DATA[2] = 00; }
-                    if (i == 3) { CANMsg.DATA[3] = 00; }
-                    if (i == 4) { CANMsg.DATA[4] = 00; }
-                    if (i == 5) { CANMsg.DATA[5] = 00; }
+                  {
+                    if (i == 0) { CANMsg.DATA[0] = 00; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
+                    if (i == 1) { CANMsg.DATA[1] = 00; } // Ce programme en C# envoie en base 10
+                    if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
+                    if (i == 3) { CANMsg.DATA[3] = 00; } // 0x30 en hexa = 0 en ascii
+                    if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
+                    if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
                     if (i == 6) { CANMsg.DATA[6] = 00; }
-                    if (i == 7) { CANMsg.DATA[7] = 00; }
-                }
-                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg); // Envoi 004 00 00
-                if (stsResult == TPCANStatus.PCAN_ERROR_OK) 
-                {  
+                    if (i == 7) { CANMsg.DATA[7] = 00; }               
+                  }
+
+                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
+
+                if (stsResult == TPCANStatus.PCAN_ERROR_OK)
+                {
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     Historique.AppendText("\r\n");
-                    Historique.AppendText("Démarrage du véhicule");   // Enregistre le log de la connexion
+                    Historique.AppendText("START command successfully sent");   // Enregistre le log de la connexion
                 }
+
                 else
                 {
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     Historique.AppendText("\r\n");
-                    Historique.AppendText("Échec du démarrage du véhicule");   // Enregistre le log de la connexion
+                    Historique.AppendText("Error sending START command");   // Enregistre le log de la connexion
                 }
             }
             catch
@@ -1783,7 +1790,7 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
-                Historique.AppendText("Échec du démarrage du véhicule");   // Enregistre le log de la connexion
+                Historique.AppendText("Error sending data on CAN bus (try catch error)");   // Enregistre le log de la connexion
             }
         }
         #endregion
@@ -1797,33 +1804,43 @@ namespace ICDIBasic
                 TPCANMsg CANMsg;
                 TPCANStatus stsResult;
 
-                CANMsg         = new TPCANMsg();
-                CANMsg.DATA    = new byte[6];
-                CANMsg.ID      = 004;              // Target = véhicule
-                CANMsg.LEN     = 6;               // Longueur = 6
+                CANMsg = new TPCANMsg();
+                CANMsg.DATA = new byte[8];
+
+                CANMsg.ID = 006; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
+                CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
                 CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
 
                 for (int i = 0; i < CANMsg.LEN; i++)
                 {
-                    if (i == 0) { CANMsg.DATA[0] = 00; } // Data = 00 01
-                    if (i == 1) { CANMsg.DATA[1] = 00; }
-                    if (i == 2) { CANMsg.DATA[2] = 00; }
-                    if (i == 3) { CANMsg.DATA[3] = 01; }
-                    if (i == 4) { CANMsg.DATA[4] = 00; }
-                    if (i == 5) { CANMsg.DATA[5] = 00; }
+                    if (i == 0) { CANMsg.DATA[0] = 00; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
+                    if (i == 1) { CANMsg.DATA[1] = 00; } // Ce programme en C# envoie en base 10
+                    if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
+                    if (i == 3) { CANMsg.DATA[3] = 01; } // 0x30 en hexa = 0 en ascii
+                    if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
+                    if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
                     if (i == 6) { CANMsg.DATA[6] = 00; }
                     if (i == 7) { CANMsg.DATA[7] = 00; }
                 }
 
-                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg); // Envoi 004 00 01
+                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
 
-                if (stsResult == TPCANStatus.PCAN_ERROR_OK) 
-                { 
+                if (stsResult == TPCANStatus.PCAN_ERROR_OK)
+                {
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     Historique.AppendText("\r\n");
-                    Historique.AppendText("Arrêt du véhicule");   // Enregistre le log de la connexion
+                    Historique.AppendText("STOP command successfully sent");   // Enregistre le log de la connexion
+                }
+
+                else
+                {
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Error sending STOP command");   // Enregistre le log de la connexion
                 }
             }
             catch
@@ -1832,7 +1849,7 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
-                Historique.AppendText("Échec de l'arrêt du véhicule");   // Enregistre le log de la connexion
+                Historique.AppendText("Error sending data on CAN bus (try catch error)");   // Enregistre le log de la connexion
             }
         }
         #endregion
@@ -1878,7 +1895,7 @@ namespace ICDIBasic
         {
             try
             {
-             PC_Clock.Text = DateTime.Now.ToString("h:mm:ss tt");
+             PC_Clock.Text = DateTime.Now.ToString("h:mm:ss");
             }
             catch
             {
@@ -1890,7 +1907,6 @@ namespace ICDIBasic
             }       
         }
         #endregion
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -1906,13 +1922,301 @@ namespace ICDIBasic
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            ListViewItem lviCurrentItem;
             try
             {
+             foreach (MessageStatus msgStatus in m_LastMsgsList)
+               {
+                if (msgStatus.MarkedAsUpdated)
+                  {
+                    msgStatus.MarkedAsUpdated = false;
+                    lviCurrentItem = lstMessages.Items[msgStatus.Position];
 
+                    lviCurrentItem.SubItems[2].Text = msgStatus.CANMsg.LEN.ToString();
+                    lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
+                    lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
+                    lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
+
+                    textBox1.Text = lviCurrentItem.SubItems[3].Text;
+                  }
+               }
+
+
+             if (textBox1.Text == "41 42 43 44 45 46 ")
+               {
+                label19.Text = "Donnée de debug reçue";
+
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Donnée de debug reçue"); 
+               }
             }
             catch
             {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Erreur de réception try catch");
+            }
+        }
 
+        private void timer4RealTimeCAN_Tick(object sender, EventArgs e)
+        {
+            ListViewItem lviCurrentItem;
+            try
+            {
+                foreach (MessageStatus msgStatus in m_LastMsgsList)
+                {
+                    if (msgStatus.MarkedAsUpdated)
+                    {
+                        msgStatus.MarkedAsUpdated = false;
+                        lviCurrentItem = lstMessages.Items[msgStatus.Position];
+                        lviCurrentItem.SubItems[2].Text = msgStatus.CANMsg.LEN.ToString();
+                        lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
+                        lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
+                        lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
+                        GhostLabelDeRéception.Text = lviCurrentItem.SubItems[3].Text;
+                    }
+                }
+             } 
+            catch
+              {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Erreur de réception try catch");
+            }
+
+            if (GhostLabelDeRéception.Text == "30 31 30 30 46 46 ") // Lorsque le véhicule est arrêté
+            {
+                lblEtatVehicule.Text = "Arrêté";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est arrêté");
+            }
+            if (GhostLabelDeRéception.Text == "30 31 30 31 46 46 ") // Lorsque le véhicule est en marche
+            {
+                lblEtatVehicule.Text = "En marche";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est en marche");
+            }
+            if (GhostLabelDeRéception.Text == "30 31 30 32 46 46 ") // Lorsque le véhicule est hors circuit
+            {
+                lblEtatVehicule.Text = "En marche";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est Hors circuit");
+            }
+            if (GhostLabelDeRéception.Text == "30 33 36 34 46 46 ") // Indice de battrie
+            {
+                lblBattryLevel.Text = "100 %";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Battrie à ");
+                Historique.AppendText(lblBattryLevel.Text);
+            }
+            if (GhostLabelDeRéception.Text == "30 32 36 34 46 46 ") // Indice de vitesse
+            {
+                lblSpeed.Text = "MAX";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("La vitesse est");
+                Historique.AppendText(lblSpeed.Text);
+            }
+            if (GhostLabelDeRéception.Text == "30 34 30 30 46 46 ") // Lorsque le bloc est métallique
+            {
+                lblBlocColor.Text = "Métalique";
+                lblDirection.Text = "Horaire";  // Déclanche l'événement textchanged du label lblDirection
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est en métal");
+            }
+            if (GhostLabelDeRéception.Text == "30 34 30 31 46 46 ") // Lorsque le bloc est noire
+            {
+                lblBlocColor.Text = "Noir";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est noir");
+            }
+            if (GhostLabelDeRéception.Text == "30 34 30 32 46 46 ") // Lorsque le bloc est orange
+            {
+                lblBlocColor.Text = "Orange";
+                lblDirection.Text = "Antihoraire";  // Déclanche l'événement textchanged du label lblDirection
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est orange");
+            }
+            if (GhostLabelDeRéception.Text == "30 35 36 34 46 46 ") // Lorsque le bloc est pesé
+            {
+                LblPoidBloc.Text = "Lourd";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est lourd");
+            }
+            if (GhostLabelDeRéception.Text == "30 37 30 30 46 46 ") // Lorsque le véhicule est à la station de pesée
+            {
+                lblStation.Text = "Station 1, la pesée";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la station de pesée");
+            }
+            if (GhostLabelDeRéception.Text == "30 37 30 31 46 46 ") //Le véhicule est à la table FESTO
+            {
+                lblStation.Text = "Table FESTO";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la table FESTO");
+            }
+            if (GhostLabelDeRéception.Text == "30 37 30 32 46 46 ") // Le véhicule est à la station 3
+            {
+                lblStation.Text = "Station 3";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la station 3");
+            }
+        }
+
+        private void lblDirection_TextChanged(object sender, EventArgs e)
+        {
+            if(lblDirection.Text == "Horaire")
+            {
+                try
+                {
+                    TPCANMsg CANMsg;
+                    TPCANStatus stsResult;
+
+                    CANMsg = new TPCANMsg();
+                    CANMsg.DATA = new byte[2];
+
+                    CANMsg.ID = 004; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
+                    CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
+                    CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+
+                    for (int i = 0; i < CANMsg.LEN; i++)
+                    {
+                        if (i == 0) { CANMsg.DATA[0] = 08; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
+                        if (i == 1) { CANMsg.DATA[1] = 00; } // Ce programme en C# envoie en base 10
+                        if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
+                        if (i == 3) { CANMsg.DATA[3] = 00; } // 0x30 en hexa = 0 en ascii
+                        if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
+                        if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
+                        if (i == 6) { CANMsg.DATA[6] = 00; }
+                        if (i == 7) { CANMsg.DATA[7] = 00; }
+                    }
+
+                    stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
+
+                    if (stsResult == TPCANStatus.PCAN_ERROR_OK)
+                    {
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Go CounterClockwise command successfully sent");   // Enregistre le log de la connexion
+                    }
+
+                    else
+                    {
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Error sending Go CounterClockwise command");   // Enregistre le log de la connexion
+                    }
+                }
+                catch
+                {
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Error sending data on CAN bus (try catch error)");   // Enregistre le log de la connexion
+                }
+            }
+
+            if(lblDirection.Text == "Antihoraire")
+            {
+                try
+                {
+                    TPCANMsg CANMsg;
+                    TPCANStatus stsResult;
+
+                    CANMsg = new TPCANMsg();
+                    CANMsg.DATA = new byte[2];
+
+                    CANMsg.ID = 004; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
+                    CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
+                    CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+
+                    for (int i = 0; i < CANMsg.LEN; i++)
+                    {
+                        if (i == 0) { CANMsg.DATA[0] = 08; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
+                        if (i == 1) { CANMsg.DATA[1] = 01; } // Ce programme en C# envoie en base 10
+                        if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
+                        if (i == 3) { CANMsg.DATA[3] = 00; } // 0x30 en hexa = 0 en ascii
+                        if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
+                        if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
+                        if (i == 6) { CANMsg.DATA[6] = 00; }
+                        if (i == 7) { CANMsg.DATA[7] = 00; }
+                    }
+
+                    stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
+
+                    if (stsResult == TPCANStatus.PCAN_ERROR_OK)
+                    {
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Go CounterClockwise command successfully sent");   // Enregistre le log de la connexion
+                    }
+
+                    else
+                    {
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Error sending Go CounterClockwise command");   // Enregistre le log de la connexion
+                    }
+                }
+                catch
+                {
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Error sending data on CAN bus (try catch error)");   // Enregistre le log de la connexion
+                }
             }
         }
     }

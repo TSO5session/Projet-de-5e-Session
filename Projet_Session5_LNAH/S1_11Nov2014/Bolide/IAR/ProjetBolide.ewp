@@ -1483,7 +1483,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>J:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Header</state>
+          <state>F:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Header</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1820,7 +1820,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>J:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Ver810_lnk51ew_DS89C450.xcl</state>
+          <state>F:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Ver810_lnk51ew_DS89C450.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -2527,7 +2527,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>J:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Header</state>
+          <state>F:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Header</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2864,7 +2864,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>J:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Ver810_lnk51ew_uPSD3254A.xcl</state>
+          <state>F:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Ver810_lnk51ew_uPSD3254A.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -3135,7 +3135,13 @@
     </settings>
   </configuration>
   <file>
+    <name>$PROJ_DIR$\_Source\CLADCMAX1236.cpp</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\_Source\CLClavier.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\_Source\CLDAC6574.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLDAC7554.cpp</name>
@@ -3153,16 +3159,28 @@
     <name>$PROJ_DIR$\_Source\CLInOutBase.cpp</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\_Source\CLIOPCF8574.cpp</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\_Source\CLMCP23S09.cpp</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\_Source\CLRoue.cpp</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\_Source\CLSuiveurLigne.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLTest.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLTLV2544.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\_Source\CLVehicule.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\Laboratoire.cpp</name>

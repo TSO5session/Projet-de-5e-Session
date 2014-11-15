@@ -25,16 +25,15 @@
 
 //// Constructeur par defaut ///////////////////////////////////////////////////
 
-CLSuiveurLigne :: CLSuiveurLigne(void):
-CLIOPCF8574(0x44)
+CLSuiveurLigne :: CLSuiveurLigne(void)
+: clIOPCF8574Suiveur (0x44)
  {
-   
+
  }
 
 //// Constructeur Initialisateur ///////////////////////////////////////////////
 
-CLSuiveurLigne :: CLSuiveurLigne(UC ucAdresse): 
-CLIOPCF8574(ucAdresse)  
+CLSuiveurLigne :: CLSuiveurLigne(UC ucAdresse) 
  {
    
  } 
@@ -50,7 +49,7 @@ CLSuiveurLigne :: ~CLSuiveurLigne(void)
 // UC CLSuiveurLigne :: ucSuivreLigne(void)
 ///////////////////////////////////////////////////////////////////////////////
 //
-// Description: 
+// Description: Renvoi la direction 
 //
 // Parametres d'entrees: null
 //
@@ -67,10 +66,40 @@ CLSuiveurLigne :: ~CLSuiveurLigne(void)
 
 UC CLSuiveurLigne :: ucSuivreLigne(void)
  {
+   #ifdef SPI_DALLAS
    union UNOctetBit unSuiveurLigne;
    UC    ucDirection;
    
-   unSuiveurLigne.ucOctet = ucLireIOPCF(); 
+   clMCP23S09Suiveur.vSetModeMCP23S09(LECTURE_MCP23S09, 0xE0);
+   
+   unSuiveurLigne.ucOctet = clMCP23S09Suiveur.ucLireMCP23S09(); 
+  
+   if((unSuiveurLigne.ucOctet == 0xFF) || //Tous les senseurs sont ouverts.
+      (unSuiveurLigne.ucOctet == 0xBF))   //Le senseur central est actif.
+    {
+      ucDirection = DROITDEVANT;
+    }   
+       
+   else
+    {
+      if(unSuiveurLigne.stChampBit.bBit5 == 1)
+       {
+         ucDirection = GAUCHE;
+       }
+      if(unSuiveurLigne.stChampBit.bBit7 == 1)
+       { 
+         ucDirection = DROITE;
+       }
+    } 
+
+   return(ucDirection);
+   #endif
+   
+   #ifdef I2C_DALLAS
+   union UNOctetBit unSuiveurLigne;
+   UC    ucDirection;
+   
+   unSuiveurLigne.ucOctet = clIOPCF8574Suiveur.ucLireIOPCF(); 
   
    if(unSuiveurLigne.ucOctet == 0xFE) ucDirection = DROITE; 
    
@@ -104,6 +133,7 @@ UC CLSuiveurLigne :: ucSuivreLigne(void)
     } 
 
    return(ucDirection);
+   #endif   
  }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

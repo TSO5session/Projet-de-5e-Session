@@ -101,8 +101,8 @@ void CLDAC6574 :: vConfigurerDAC6574(UC ucCanal, USI uiValeur)
    unValeur.uiEntier = uiValeur;
    
    uctTableau[0] = unCanal.ucOctet;
-   uctTableau[1] = unValeur.stDoubleOctet.ucOctet2;
-   uctTableau[2] = unValeur.stDoubleOctet.ucOctet1; 
+   uctTableau[1] = unValeur.stDeuxOctet.ucOctet2;
+   uctTableau[2] = unValeur.stDeuxOctet.ucOctet1; 
  
    vI2CEcrireDonnee(ucAdresseDAC6574, NULL, PASADR, uctTableau, 3);  
  }

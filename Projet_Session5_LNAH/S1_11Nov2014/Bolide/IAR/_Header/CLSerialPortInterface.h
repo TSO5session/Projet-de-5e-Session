@@ -23,9 +23,9 @@
    #define CLSERIALPORTINTERFACEH
 
 #ifdef DALLAS89C450
-   #define MISO          P1_4
-   #define MOSI          P1_5
-   #define SCLK          P1_6
+   #define MISO          P1_1
+   #define MOSI          P1_2
+   #define SCLK          P1_3
 #endif
 
 #ifdef UPSD3254A

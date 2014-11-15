@@ -110,8 +110,8 @@ switch(ucCanal)
 vI2CEcrireDonnee(ADRMAX1236, NULL, PASADR, uctTableau, 1); // Prepare le MAX1236
 vI2CLireDonnee  (ADRMAX1236, NULL, PASADR, uctLecture, 2); // Lit la conversion
       
-unLecture.stDoubleOctet.ucOctet2 = uctLecture[0] & 0x0F; // Valeur lue, MSB
-unLecture.stDoubleOctet.ucOctet1 = uctLecture[1]; // Valeur lue, LSB 
+unLecture.stDeuxOctet.ucOctet2 = uctLecture[0] & 0x0F; // Valeur lue, MSB
+unLecture.stDeuxOctet.ucOctet1 = uctLecture[1]; // Valeur lue, LSB 
      
 return(unLecture.uiEntier); // Retourne la valeur convertie par le MAX1236
 }

@@ -1,0 +1,266 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        08/Sep/2014  18:14:29 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Prog\Labo1\Programme\NomDuProjet.cpp         /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo1\Programme\NomDuProjet.cpp" -D     /
+//                          UPSD3254A --preprocess=cl                         /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -lC    /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -lA    /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -o     /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo1\Programme\UPSDDebug\Obj\" -e      /
+//                          --no_cse --no_unroll --no_inline                  /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large --code_model=near  /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data --nr_virtual_regs 8        /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++     /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Prog\Labo1\Programme\UPSDDebug\List\NomDuPro /
+//                          jet.s51                                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME NomDuProjet
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?XSP
+
+        PUBWEAK WDKEY
+        PUBWEAK _A_IE
+        PUBLIC main
+        FUNCTION main,021a03H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 5, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN ??CLI2CHardware
+        FUNCTION ??CLI2CHardware,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 5, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Synchro\Dropbox\Travaux\Automne 2014\Prog\Labo1\Programme\NomDuProjet.cpp
+//    1 // **************************Main.c
+//    2 // Auteur:      Vincent Chouinard
+//    3 // Date:        5 aout Janvier 2014
+//    4 // Version :    1.0
+//    5 //
+//    6 // Compilateur: Keil 4.72.9 && IAR 8.10
+//    7 //
+//    8 // Description: Fichier principal
+//    9 //
+//   10 // *****************************************************************************
+//   11 // **** LES INCLUDES ****************//
+//   12 #include "CLI2CHard.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IE
+_A_IE:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0aeH
+// unsigned char volatile __sfr WDKEY
+WDKEY:
+        DATA8
+        DS 1
+//   13 #include "_DeclarationGenerale.h"    // Raccourcis Linguistiques utiles
+//   14 #include "ConversionKeilToIAR.h"     //
+//   15 #include "CLClavier.h"               // Pour utiliser le clavier
+//   16 #include "CLEcran.h"                 // Pour utiliser l'écran
+//   17 //#include "NomDuProjet.h"             //
+//   18 #include "CLCommunic.h"              // Pour utiliser le port série
+//   19 // **** LES FONCTIONS DU MAIN *******//
+//   20 
+//   21 // **** CLASS DECLARATION ***********//
+//   22 
+//   23 // **** PROGRAMME PRINCIPAL *********//
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   24 void main(void)
+main:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function main
+        CODE
+//   25 {
+        FUNCALL main, ??CLI2CHardware
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 5, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 5, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 5)
+//   26 EA    = 0;     // Disable interrupt.
+        CLR     0xa8.7
+//   27 WDKEY = 0x55;  // Disable WatchDog.
+        MOV     0xae,#0x55
+//   28 EA    = 1;
+        SETB    0xa8.7
+//   29  
+//   30 class CLI2CHardware clHardwareI2C;       // Initialise le port I2C Software
+        ; Setup parameters for call to function CLI2CHardware::CLI2CHardware()
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??CLI2CHardware
+//   31 
+//   32 
+//   33 
+//   34 
+//   35 
+//   36 
+//   37 
+//   38 
+//   39 
+//   40 
+//   41 while(1)
+??main_0:
+        SJMP    ??main_0
+        CFI EndBlock cfiBlock0
+        REQUIRE _A_IE
+        REQUIRE WDKEY
+//   42   {
+//   43   
+//   44   }
+//   45 }
+
+        END
+//   46 
+//   47 
+//   48 
+//   49 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+// 27 bytes in segment NEAR_CODE
+//  2 bytes in segment SFR_AN
+// 
+// 27 bytes of CODE memory
+//  0 bytes of DATA memory (+ 2 bytes shared)
+//
+//Errors: none
+//Warnings: none

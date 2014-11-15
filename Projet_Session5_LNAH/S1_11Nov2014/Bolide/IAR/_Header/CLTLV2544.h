@@ -30,6 +30,11 @@
    #define SLVSLCT_TLV2554 P1_5
 #endif
 
+#define TLV2554_CAN0 0x00
+#define TLV2554_CAN1 0x20
+#define TLV2554_CAN2 0x40
+#define TLV2554_CAN3 0x60
+
 class CLTLV2544 : public CLSerialPortInterface
 {
    public:  
