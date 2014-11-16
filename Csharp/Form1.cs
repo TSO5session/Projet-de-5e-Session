@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region les includes
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,19 +11,15 @@ using System.Windows.Forms;
 using System.IO.Ports;       // Pour utiliser le port série
 using System.IO;             // Pour ouvrir un fichier
 using System.Text.RegularExpressions;
-/// <summary>
-/// Inclusion of PEAK PCAN-Basic namespace
-/// </summary>
 using Peak.Can.Basic;
 using TPCANHandle = System.Byte;
+#endregion
 
 namespace ICDIBasic
 {
     public partial class Form1 : Form
     {
-       
-
-        #region CAN STUFF
+#region Unmodified RAW CAN STUFF
         #region Structures
 
         private class MessageStatus
@@ -210,11 +207,9 @@ namespace ICDIBasic
         private TPCANHandle[] m_HandlesArray;
         #endregion
 
-        #region Methods
         #region Help functions
-        /// <summary>
-        /// Initialization of PCAN-Basic components
-        /// </summary>
+      
+
         private void InitializeBasicComponents()
         {
             // Creates the list for received messages
@@ -592,12 +587,9 @@ namespace ICDIBasic
             } while (btnRelease.Enabled && (!Convert.ToBoolean(stsResult & TPCANStatus.PCAN_ERROR_QRCVEMPTY)));
         }
         #endregion
+#endregion
 
-        #region Event Handlers
-        #region Form event-handlers
-        #endregion
-        #endregion
-
+#region Initialisation du port série et de l'histoique
         string[] PortsDisponible = SerialPort.GetPortNames(); //Met la liste des ports série dans un tableau de string
         
         public Form1()
@@ -605,7 +597,7 @@ namespace ICDIBasic
             InitializeComponent();
             InitializeBasicComponents();
 
-            timer3.Start();
+            timer3.Start(); // Pour gérer la clock interne du PC, celle pour la synchronisation de l'heure
             COMselector.Items.AddRange(PortsDisponible); // Affiche les ports disponibles UART1
             Connexion.Text = "Connexion";                // Le bouton sert à se connecter UART1
             Connexion.Enabled = false;                   // UART1
@@ -621,18 +613,16 @@ namespace ICDIBasic
             if (COMselector.Items.Count > 0)
             {
                 COMselector.SelectedIndex = 0;  // Le port par défaut est le premier port indexé
-                BAUDselector.SelectedIndex = 4; // La vitesse par défaut est 57 600
+                BAUDselector.SelectedIndex = 4; // La vitesse par défaut est 9600
                 Connexion.Enabled = true; // UART1
             }
 
             serialPort1.ReadTimeout = 500; // Délais maximum pour les try catch
             serialPort1.WriteTimeout = 500; //Delai maximum pour les try catch
         }
+        #endregion
 
-        #region CAN STUFF
-        /// <summary>
-        /// Form-Closing Function / Finish function
-        /// </summary>
+#region Fermeture du programme lorsque l'utilisateur clique sur X
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
         if(serialPort1.IsOpen == true)
@@ -641,8 +631,11 @@ namespace ICDIBasic
           }
         PCANBasic.Uninitialize(m_PcanHandle);
         }
-        
-        #region ComboBox event-handlers
+        #endregion
+
+#region Unmodified RAW CAN StUFF
+
+        #region ComboBox event-handlers (CAN code non modifié)
         private void cbbChannel_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool bNonPnP;
@@ -757,7 +750,7 @@ namespace ICDIBasic
         }
         #endregion
 
-        #region Button event-handlers
+        #region Button event-handlers (CAN code non modifié)
         private void btnHwRefresh_Click(object sender, EventArgs e)
         {
             UInt32 iBuffer;
@@ -1232,7 +1225,7 @@ namespace ICDIBasic
         }
         #endregion        
 
-        #region Timer event-handler
+        #region Timer event-handler (CAN code non modifié)
         private void tmrRead_Tick(object sender, EventArgs e)
         {
             // Checks if in the receive-queue are currently messages for read
@@ -1245,7 +1238,7 @@ namespace ICDIBasic
         }
         #endregion
 
-        #region Message List-View event-handler
+        #region Message List-View event-handler (CAN code non modifié)
         private void lstMessages_DoubleClick(object sender, EventArgs e)
         {
             // Clears the content of the Message List-View
@@ -1254,7 +1247,7 @@ namespace ICDIBasic
         }
         #endregion
 
-        #region Information List-Box event-handler
+        #region Information List-Box event-handler (CAN code non modifié)
         private void lbxInfo_DoubleClick(object sender, EventArgs e)
         {
             // Clears the content of the Information List-Box
@@ -1263,7 +1256,7 @@ namespace ICDIBasic
         }
         #endregion
 
-        #region Textbox event handlers
+        #region Textbox event handlers (CAN code non modifié)
         private void txtID_Leave(object sender, EventArgs e)
         {
             int iTextLength;
@@ -1332,7 +1325,7 @@ namespace ICDIBasic
         }
         #endregion
 
-        #region Radio- and Check- Buttons event-handlers
+        #region Radio- and Check- Buttons event-handlers (CAN code non modifié)
         private void chbShowPeriod_CheckedChanged(object sender, EventArgs e)
         {
             // According with the check-value of this checkbox,
@@ -1454,10 +1447,9 @@ namespace ICDIBasic
             btnRead.Enabled = btnRelease.Enabled && rdbManual.Checked;
         }
         #endregion
-
         #endregion
 
-#region Option du menu fichier
+#region Menu Fichier et compagnie
         #region Radémarrer l'application
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1483,16 +1475,15 @@ namespace ICDIBasic
         }
         #endregion
         #endregion
-        #endregion
-        #endregion
+
 #region Actualisation des ports COM disponibles
-        private void COMselector_Click(object sender, EventArgs e)
+        private void COMselector_Click(object sender, EventArgs e) // Lorsque l'user clique sur la liste des ports COM
         {
             try
             {
-                COMselector.Items.Clear();
-                COMselector.Items.AddRange(SerialPort.GetPortNames());
-                COMselector.SelectedIndex = 0;
+                COMselector.Items.Clear();                             // Flush la liste
+                COMselector.Items.AddRange(SerialPort.GetPortNames()); // Relit les ports disponibles
+                COMselector.SelectedIndex = 0;                         // Port par défaut = premier port
             }
             catch
             {
@@ -1508,14 +1499,14 @@ namespace ICDIBasic
 #region Connexion et déconnexion au RS232
         private void Connexion_Click(object sender, EventArgs e)
         {
-            if(serialPort1.IsOpen == true)
+            if(serialPort1.IsOpen == true)           // Si le port série est ouvert
             {
-                if (Connexion.Text == "Déconnexion")
+                if (Connexion.Text == "Déconnexion") // Si le programme est déjà connecté au port série
                 {
                     try
                     {
                         Connexion.Text = "Connexion";
-                        serialPort1.Close();
+                        serialPort1.Close();           // Essaie de te décoonnecter
                         Historique.AppendText("\r\n");
                         Historique.AppendText("\r\n");
                         Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -1532,24 +1523,26 @@ namespace ICDIBasic
                     }
                 }     
             }
-            else
+            else // Lorsque le programme n'est pas connecté au port série et qu'un port série est disponible
             {
-                try
+                try //Essaie de...
                 {
-                    serialPort1.BaudRate = Convert.ToInt32(BAUDselector.Text); //Le baud rate choisi dans la combobox
-                    serialPort1.Parity = Parity.None;        //Aucune parité
-                    serialPort1.StopBits = StopBits.One;     //1 stop bit
-                    serialPort1.DataBits = 8;                //8 data bit
-                    serialPort1.Handshake = Handshake.None;  //pas de handshake
-                    serialPort1.PortName = COMselector.Text; //Avec le port série choisi
-                    serialPort1.Open();                      //Maintenant, connecte-toi 
+                    serialPort1.BaudRate  = Convert.ToInt32(BAUDselector.Text); //Le baud rate choisi dans la combobox
+                    serialPort1.Parity    = Parity.None;      //Aucune parité
+                    serialPort1.StopBits  = StopBits.One;     //1 stop bit
+                    serialPort1.DataBits  = 8;                //8 data bit
+                    serialPort1.Handshake = Handshake.None;   //pas de handshake
+                    serialPort1.PortName  = COMselector.Text; //Avec le port série choisi
+                    serialPort1.Open();                       //Maintenant, connecte-toi 
                     Connexion.Text = "Déconnexion";
-                    timer1.Start();                          // Timer du heartBeat
-                    Historique.AppendText("\r\n");
+
+                    timer1.Start();                           // Début du Timer du heartBeat
+
+                    Historique.AppendText("\r\n");            // Enregistre le log de la connexion
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     Historique.AppendText("\r\n");
-                    Historique.AppendText("Connexion RS232 réussie");   // Enregistre le log de la connexion
+                    Historique.AppendText("Connexion RS232 réussie");   
                     Historique.AppendText("\r\n");
                     Historique.AppendText("à ");
                     Historique.AppendText(BAUDselector.Text);
@@ -1563,7 +1556,7 @@ namespace ICDIBasic
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     Historique.AppendText("\r\n");
-                    Historique.AppendText("Échec de connexion RS232");   // Enregistre le log de la connexion
+                    Historique.AppendText("Échec de connexion RS232 (try catch error)");   // Enregistre le log de la connexion
                 }
             }  
         }
@@ -1572,21 +1565,21 @@ namespace ICDIBasic
 #region Timer de 1 seconde
 
         #region Envoi du HeartBeat
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) // À toutes les secondes
         {
             if(serialPort1.IsOpen == true) // Envoie du heartbeat à toutes les secondes
             {
-                try
+                try  // Esaie de...
                 {
-                    serialPort1.Write("Allo\n");
-                    TXLED.BackColor = Color.Lime;
-                    HeartBeatOUT.BackColor = Color.Red;
+                    serialPort1.Write("Allo\n");    // Envoie le heartBeat
+                    TXLED.BackColor = Color.Lime;   // Fait clignotter la LED de transmission
+                    HeartBeatOUT.BackColor = Color.Red; // Fait clignotter la LED de transmission de HeartBeat
                     serialPort1.DiscardInBuffer();   // Pas sur que ce soit nécessaire
                     serialPort1.DiscardOutBuffer();  // Pas sur que ce soit nécessaire
                     Historique.AppendText("\r\n");
-                    Historique.AppendText("Heartbat Envoyé");   // Enregistre le log de la connexion
+                    Historique.AppendText("Heartbat Envoyé");   // Enregistre le log de la connexion (peut-être à enlever...)
                 }
-                catch
+                catch  // Si ça ne fonctionne pas...
                 {
                     HeartBeatOUT.BackColor = Color.Black;
                     label7.Text = "Failure";
@@ -1603,19 +1596,20 @@ namespace ICDIBasic
             ////////////////////////////////////////////////////////////////////////////
             // Note: Le code sert de test et seul le timer gère l'animation           //
             //       Il faudra remplacer les images et faire en sorte que se sont les //
-            //       données CAN qui viennent incrémanter le Ghost Label              //
+            //       données CAN qui viennent modifier le Ghost Label, et non pas     //
+            //       le timer 1                                                       //
             ////////////////////////////////////////////////////////////////////////////
-            int counter = Convert.ToInt32(GhostLabel.Text);
-            counter++;
-            if (counter == 8)
-            {
+            int counter = Convert.ToInt32(GhostLabel.Text); // Lit le ghost label
+            counter++;                                      // et incrémente le counter
+            if (counter == 8) // Counter de 8 positions
+            {                 
                 counter = 0;
             }
 
-            GhostLabel.Text = Convert.ToString(counter);
+            GhostLabel.Text = Convert.ToString(counter); // Enregistre la valeur du counter dans le ghost label
 
-            switch(Convert.ToInt32(GhostLabel.Text))
-            {
+            switch(Convert.ToInt32(GhostLabel.Text)) // Switch Case selon la valeur du Ghost Label...
+            { // Les lignes de code qui suivent permettent d'afficher une image à partir du fichier ressource
                 case 0:
                     pictureBox1.Image = PCANBasicExample.Properties.Resources.Station1CW;
                 break;
@@ -1734,13 +1728,10 @@ namespace ICDIBasic
         }
         #endregion
 
-
-
-
-#region Démarrer le véhicule
+#region Bouton Démarrer le véhicule
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+            try // Essaie d'envoyer sur le bus CAN
             {
                 TPCANMsg CANMsg;
                 TPCANStatus stsResult;
@@ -1748,25 +1739,25 @@ namespace ICDIBasic
                 CANMsg = new TPCANMsg();
                 CANMsg.DATA = new byte[8];
 
-                CANMsg.ID = 006; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
-                CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
+                CANMsg.ID = 006; // 006 c'est pour faire des tests avec le fichier .HEX d'Hicham. Mettre 004 pour la version finale
+                CANMsg.LEN = 4;  
                 CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
 
-                for (int i = 0; i < CANMsg.LEN; i++)
+                for (int i = 0; i < CANMsg.LEN; i++) // Incrémenteur de longueur de message
                   {
-                    if (i == 0) { CANMsg.DATA[0] = 00; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
-                    if (i == 1) { CANMsg.DATA[1] = 00; } // Ce programme en C# envoie en base 10
-                    if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
-                    if (i == 3) { CANMsg.DATA[3] = 00; } // 0x30 en hexa = 0 en ascii
-                    if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
-                    if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
+                    if (i == 0) { CANMsg.DATA[0] = 00; } // Note: Ce programme en C# envoie en base 10
+                    if (i == 1) { CANMsg.DATA[1] = 00; } // 0x30 (en ascii) = caractère '0'
+                    if (i == 2) { CANMsg.DATA[2] = 00; } // 0 (en base 10) = caractère ascii '0' (0x30)
+                    if (i == 3) { CANMsg.DATA[3] = 00; } 
+                    if (i == 4) { CANMsg.DATA[4] = 00; } 
+                    if (i == 5) { CANMsg.DATA[5] = 00; } 
                     if (i == 6) { CANMsg.DATA[6] = 00; }
                     if (i == 7) { CANMsg.DATA[7] = 00; }               
                   }
 
-                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
+                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg); // Écrit le message
 
-                if (stsResult == TPCANStatus.PCAN_ERROR_OK)
+                if (stsResult == TPCANStatus.PCAN_ERROR_OK) // Si l'envoie est réussi
                 {
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
@@ -1775,7 +1766,7 @@ namespace ICDIBasic
                     Historique.AppendText("START command successfully sent");   // Enregistre le log de la connexion
                 }
 
-                else
+                else // Si l'envoi à échoué
                 {
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
@@ -1784,7 +1775,7 @@ namespace ICDIBasic
                     Historique.AppendText("Error sending START command");   // Enregistre le log de la connexion
                 }
             }
-            catch
+            catch // En cas d'échec d'envoi sur le bus CAN
             {
                 Historique.AppendText("\r\n");
                 Historique.AppendText("\r\n");
@@ -1795,7 +1786,7 @@ namespace ICDIBasic
         }
         #endregion
 
-#region Arrêter le véhicule
+#region Bouton Arrêter le véhicule
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -1808,17 +1799,17 @@ namespace ICDIBasic
                 CANMsg.DATA = new byte[8];
 
                 CANMsg.ID = 006; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
-                CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
+                CANMsg.LEN = 4;  
                 CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
 
                 for (int i = 0; i < CANMsg.LEN; i++)
                 {
-                    if (i == 0) { CANMsg.DATA[0] = 00; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
-                    if (i == 1) { CANMsg.DATA[1] = 00; } // Ce programme en C# envoie en base 10
-                    if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
-                    if (i == 3) { CANMsg.DATA[3] = 01; } // 0x30 en hexa = 0 en ascii
-                    if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
-                    if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
+                    if (i == 0) { CANMsg.DATA[0] = 00; } 
+                    if (i == 1) { CANMsg.DATA[1] = 00; } 
+                    if (i == 2) { CANMsg.DATA[2] = 00; } 
+                    if (i == 3) { CANMsg.DATA[3] = 01; } 
+                    if (i == 4) { CANMsg.DATA[4] = 00; } 
+                    if (i == 5) { CANMsg.DATA[5] = 00; } 
                     if (i == 6) { CANMsg.DATA[6] = 00; }
                     if (i == 7) { CANMsg.DATA[7] = 00; }
                 }
@@ -1833,7 +1824,6 @@ namespace ICDIBasic
                     Historique.AppendText("\r\n");
                     Historique.AppendText("STOP command successfully sent");   // Enregistre le log de la connexion
                 }
-
                 else
                 {
                     Historique.AppendText("\r\n");
@@ -1890,10 +1880,10 @@ namespace ICDIBasic
         }
         #endregion
 
-#region Gestion de l'heure du PC
-        private void timer3_Tick(object sender, EventArgs e)
+#region Gestion de la clock interne du PC
+        private void timer3_Tick(object sender, EventArgs e) // À toutes les secondes...
         {
-            try
+            try // Essaie de lire la clock interne du PC
             {
              PC_Clock.Text = DateTime.Now.ToString("h:mm:ss");
             }
@@ -1903,12 +1893,13 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
-                Historique.AppendText("Impossible de lire l'heure du PC");   // Enregistre le log de la connexion
+                Historique.AppendText("Erreur critique: Impossible de lire l'heure du PC");   
             }       
         }
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+#region Bouton Synchroniser les horloges
+        private void button1_Click(object sender, EventArgs e) // Lorsque l'utilisateur veut synchroniser toutes les horloges
         {
             try
             {
@@ -1919,7 +1910,9 @@ namespace ICDIBasic
 
             }
         }
+        #endregion
 
+#region Bouton de test de réception CAN de l'onglet de Debug (à utiliser avec le .HEX d'hicham)
         private void button1_Click_1(object sender, EventArgs e)
         {
             ListViewItem lviCurrentItem;
@@ -1940,8 +1933,6 @@ namespace ICDIBasic
                     textBox1.Text = lviCurrentItem.SubItems[3].Text;
                   }
                }
-
-
              if (textBox1.Text == "41 42 43 44 45 46 ")
                {
                 label19.Text = "Donnée de debug reçue";
@@ -1962,23 +1953,25 @@ namespace ICDIBasic
                 Historique.AppendText("Erreur de réception try catch");
             }
         }
+        #endregion
 
-        private void timer4RealTimeCAN_Tick(object sender, EventArgs e)
+#region Lecture du CAN aux 50 ms et prise de décisions
+        private void timer4RealTimeCAN_Tick(object sender, EventArgs e)  // À toutes les 50 ms
         {
             ListViewItem lviCurrentItem;
-            try
+            try // Essaie de lire le bus CAN
             {
                 foreach (MessageStatus msgStatus in m_LastMsgsList)
                 {
                     if (msgStatus.MarkedAsUpdated)
-                    {
+                    { // ATTENTION: CETTE FONCTIONNALITÉ UTILISE UN GHOST LABEL
                         msgStatus.MarkedAsUpdated = false;
                         lviCurrentItem = lstMessages.Items[msgStatus.Position];
                         lviCurrentItem.SubItems[2].Text = msgStatus.CANMsg.LEN.ToString();
                         lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
                         lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
                         lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
-                        GhostLabelDeRéception.Text = lviCurrentItem.SubItems[3].Text;
+                        GhostLabelDeRéception.Text = lviCurrentItem.SubItems[3].Text; // Met le string lu dans un GHOST LABEL
                     }
                 }
              } 
@@ -1991,6 +1984,13 @@ namespace ICDIBasic
                 Historique.AppendText("Erreur de réception try catch");
             }
 
+            ///////////////////////////////////////////////////////////////////////
+            // Toutes les prises de décision qui suivent sont des comparaison    //
+            // du ghost Label avec la trame prédéfinie                           //
+            // Note: 46 46 est le code ASCII de FF                               //
+            // Note: Ne pas oublier de mettre un espace entre le dernier         //
+            //       caractère et le guillemet fermant                           //
+            ///////////////////////////////////////////////////////////////////////
             if (GhostLabelDeRéception.Text == "30 31 30 30 46 46 ") // Lorsque le véhicule est arrêté
             {
                 lblEtatVehicule.Text = "Arrêté";
@@ -2041,7 +2041,7 @@ namespace ICDIBasic
             if (GhostLabelDeRéception.Text == "30 34 30 30 46 46 ") // Lorsque le bloc est métallique
             {
                 lblBlocColor.Text = "Métalique";
-                lblDirection.Text = "Horaire";  // Déclanche l'événement textchanged du label lblDirection
+                lblDirection.Text = "Horaire";  // *** Déclanche l'événement textchanged du label lblDirection***
                 Historique.AppendText("\r\n");
                 Historique.AppendText("\r\n");
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -2104,31 +2104,35 @@ namespace ICDIBasic
                 Historique.AppendText("Le véhicule est à la station 3");
             }
         }
+        #endregion
 
+#region Directives de changement de direction pour le véhicule
+
+        // Note: Cet événement se déclanche à l'aide de l'événement
+        //       TectChanged du label lblDirection
         private void lblDirection_TextChanged(object sender, EventArgs e)
         {
-            if(lblDirection.Text == "Horaire")
+            if(lblDirection.Text == "Horaire") // Si le text du label exige un sens horaire
             {
-                try
+                try // essaie d'envoyer la commande CAN HORAIRE
                 {
                     TPCANMsg CANMsg;
                     TPCANStatus stsResult;
 
                     CANMsg = new TPCANMsg();
                     CANMsg.DATA = new byte[2];
-
-                    CANMsg.ID = 004; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
-                    CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
+                    CANMsg.ID = 004; 
+                    CANMsg.LEN = 4;  
                     CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
 
                     for (int i = 0; i < CANMsg.LEN; i++)
                     {
-                        if (i == 0) { CANMsg.DATA[0] = 08; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
-                        if (i == 1) { CANMsg.DATA[1] = 00; } // Ce programme en C# envoie en base 10
-                        if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
-                        if (i == 3) { CANMsg.DATA[3] = 00; } // 0x30 en hexa = 0 en ascii
-                        if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
-                        if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
+                        if (i == 0) { CANMsg.DATA[0] = 08; } 
+                        if (i == 1) { CANMsg.DATA[1] = 00; } 
+                        if (i == 2) { CANMsg.DATA[2] = 00; } 
+                        if (i == 3) { CANMsg.DATA[3] = 00; } 
+                        if (i == 4) { CANMsg.DATA[4] = 00; } 
+                        if (i == 5) { CANMsg.DATA[5] = 00; } 
                         if (i == 6) { CANMsg.DATA[6] = 00; }
                         if (i == 7) { CANMsg.DATA[7] = 00; }
                     }
@@ -2143,7 +2147,6 @@ namespace ICDIBasic
                         Historique.AppendText("\r\n");
                         Historique.AppendText("Go CounterClockwise command successfully sent");   // Enregistre le log de la connexion
                     }
-
                     else
                     {
                         Historique.AppendText("\r\n");
@@ -2163,7 +2166,7 @@ namespace ICDIBasic
                 }
             }
 
-            if(lblDirection.Text == "Antihoraire")
+            if (lblDirection.Text == "Antihoraire") // Si le text du label exige un sens antihoraire
             {
                 try
                 {
@@ -2172,19 +2175,18 @@ namespace ICDIBasic
 
                     CANMsg = new TPCANMsg();
                     CANMsg.DATA = new byte[2];
-
-                    CANMsg.ID = 004; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
-                    CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
+                    CANMsg.ID = 004; 
+                    CANMsg.LEN = 4; 
                     CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
 
                     for (int i = 0; i < CANMsg.LEN; i++)
                     {
-                        if (i == 0) { CANMsg.DATA[0] = 08; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
-                        if (i == 1) { CANMsg.DATA[1] = 01; } // Ce programme en C# envoie en base 10
-                        if (i == 2) { CANMsg.DATA[2] = 00; } // 48 en base 10 = 0x30 en hexa
-                        if (i == 3) { CANMsg.DATA[3] = 00; } // 0x30 en hexa = 0 en ascii
-                        if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
-                        if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
+                        if (i == 0) { CANMsg.DATA[0] = 08; } 
+                        if (i == 1) { CANMsg.DATA[1] = 01; } 
+                        if (i == 2) { CANMsg.DATA[2] = 00; } 
+                        if (i == 3) { CANMsg.DATA[3] = 00; } 
+                        if (i == 4) { CANMsg.DATA[4] = 00; } 
+                        if (i == 5) { CANMsg.DATA[5] = 00; } 
                         if (i == 6) { CANMsg.DATA[6] = 00; }
                         if (i == 7) { CANMsg.DATA[7] = 00; }
                     }
@@ -2219,5 +2221,6 @@ namespace ICDIBasic
                 }
             }
         }
+        #endregion
     }
 }

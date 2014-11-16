@@ -123,25 +123,22 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.GhostLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblStation = new System.Windows.Forms.Label();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.lblDirection = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblEtatVehicule = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.lblBattryLevel = new System.Windows.Forms.Label();
+            this.lblStation = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblSpeed = new System.Windows.Forms.Label();
             this.LblPoidBloc = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.lblBlocColor = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lblSpeed = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lblBattryLevel = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.GhostLabelDeRéception = new System.Windows.Forms.Label();
-            this.lblEtatVehicule = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
             this.VoitureHS = new System.Windows.Forms.Button();
             this.VoitureStop = new System.Windows.Forms.Button();
@@ -149,11 +146,13 @@
             this.VoitureStart = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.ClockSync = new System.Windows.Forms.Button();
+            this.GhostLabel = new System.Windows.Forms.Label();
             this.PC_Clock = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.HeartBeatOUT = new System.Windows.Forms.Button();
             this.HeartBeatIN = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.GhostLabelDeRéception = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.Connexion = new System.Windows.Forms.Button();
@@ -174,6 +173,10 @@
             this.UART1DisplayBox = new System.Windows.Forms.TextBox();
             this.SendUART1 = new System.Windows.Forms.Button();
             this.SendZoneUART1 = new System.Windows.Forms.TextBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Historique = new System.Windows.Forms.RichTextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
@@ -183,9 +186,6 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4RealTimeCAN = new System.Windows.Forms.Timer(this.components);
-            this.lblDirection = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -208,8 +208,8 @@
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox17.SuspendLayout();
+            this.groupBox20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox19.SuspendLayout();
             this.groupBox24.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.groupBox16.SuspendLayout();
@@ -219,8 +219,8 @@
             this.groupBox14.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox25.SuspendLayout();
+            this.groupBox19.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.groupBox20.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1248,7 +1248,7 @@
             // 
             this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.saveAsToolStripMenuItem.Text = "&Redémarrer";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -1256,7 +1256,7 @@
             // 
             this.exitToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.exitToolStripMenuItem.Text = "&Quitter";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1273,7 +1273,7 @@
             // 
             this.sauvegarderToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.sauvegarderToolStripMenuItem.Name = "sauvegarderToolStripMenuItem";
-            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sauvegarderToolStripMenuItem.Text = "Sauvegarder";
             this.sauvegarderToolStripMenuItem.Click += new System.EventHandler(this.sauvegarderToolStripMenuItem_Click);
             // 
@@ -1281,7 +1281,7 @@
             // 
             this.effacerToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.effacerToolStripMenuItem.Text = "Effacer";
             this.effacerToolStripMenuItem.Click += new System.EventHandler(this.effacerToolStripMenuItem_Click);
             // 
@@ -1370,34 +1370,28 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Informations en temps réel";
             // 
-            // GhostLabel
+            // groupBox20
             // 
-            this.GhostLabel.AutoSize = true;
-            this.GhostLabel.Location = new System.Drawing.Point(6, 27);
-            this.GhostLabel.Name = "GhostLabel";
-            this.GhostLabel.Size = new System.Drawing.Size(13, 13);
-            this.GhostLabel.TabIndex = 1;
-            this.GhostLabel.Text = "0";
-            this.GhostLabel.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PCANBasicExample.Properties.Resources.Station1CW;
-            this.pictureBox1.Location = new System.Drawing.Point(311, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(698, 411);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblStation
-            // 
-            this.lblStation.AutoSize = true;
-            this.lblStation.Location = new System.Drawing.Point(162, 231);
-            this.lblStation.Name = "lblStation";
-            this.lblStation.Size = new System.Drawing.Size(18, 20);
-            this.lblStation.TabIndex = 17;
-            this.lblStation.Text = "?";
+            this.groupBox20.Controls.Add(this.label27);
+            this.groupBox20.Controls.Add(this.lblDirection);
+            this.groupBox20.Controls.Add(this.label18);
+            this.groupBox20.Controls.Add(this.label28);
+            this.groupBox20.Controls.Add(this.lblEtatVehicule);
+            this.groupBox20.Controls.Add(this.label21);
+            this.groupBox20.Controls.Add(this.lblBattryLevel);
+            this.groupBox20.Controls.Add(this.lblStation);
+            this.groupBox20.Controls.Add(this.label22);
+            this.groupBox20.Controls.Add(this.lblSpeed);
+            this.groupBox20.Controls.Add(this.LblPoidBloc);
+            this.groupBox20.Controls.Add(this.label23);
+            this.groupBox20.Controls.Add(this.label26);
+            this.groupBox20.Controls.Add(this.lblBlocColor);
+            this.groupBox20.Location = new System.Drawing.Point(3, 25);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(302, 264);
+            this.groupBox20.TabIndex = 20;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "Contrôle";
             // 
             // label27
             // 
@@ -1408,6 +1402,88 @@
             this.label27.TabIndex = 16;
             this.label27.Text = "Station active";
             // 
+            // lblDirection
+            // 
+            this.lblDirection.AutoSize = true;
+            this.lblDirection.Location = new System.Drawing.Point(162, 132);
+            this.lblDirection.Name = "lblDirection";
+            this.lblDirection.Size = new System.Drawing.Size(18, 20);
+            this.lblDirection.TabIndex = 19;
+            this.lblDirection.Text = "?";
+            this.lblDirection.TextChanged += new System.EventHandler(this.lblDirection_TextChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(12, 29);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 20);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "État du véhicule";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(12, 132);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(72, 20);
+            this.label28.TabIndex = 18;
+            this.label28.Text = "Direction";
+            // 
+            // lblEtatVehicule
+            // 
+            this.lblEtatVehicule.AutoSize = true;
+            this.lblEtatVehicule.Location = new System.Drawing.Point(162, 29);
+            this.lblEtatVehicule.Name = "lblEtatVehicule";
+            this.lblEtatVehicule.Size = new System.Drawing.Size(18, 20);
+            this.lblEtatVehicule.TabIndex = 6;
+            this.lblEtatVehicule.Text = "?";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(12, 65);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(144, 20);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "Niveau de la battrie";
+            // 
+            // lblBattryLevel
+            // 
+            this.lblBattryLevel.AutoSize = true;
+            this.lblBattryLevel.Location = new System.Drawing.Point(162, 65);
+            this.lblBattryLevel.Name = "lblBattryLevel";
+            this.lblBattryLevel.Size = new System.Drawing.Size(18, 20);
+            this.lblBattryLevel.TabIndex = 9;
+            this.lblBattryLevel.Text = "?";
+            // 
+            // lblStation
+            // 
+            this.lblStation.AutoSize = true;
+            this.lblStation.Location = new System.Drawing.Point(162, 231);
+            this.lblStation.Name = "lblStation";
+            this.lblStation.Size = new System.Drawing.Size(18, 20);
+            this.lblStation.TabIndex = 17;
+            this.lblStation.Text = "?";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(12, 99);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(62, 20);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Vitesse";
+            // 
+            // lblSpeed
+            // 
+            this.lblSpeed.AutoSize = true;
+            this.lblSpeed.Location = new System.Drawing.Point(162, 99);
+            this.lblSpeed.Name = "lblSpeed";
+            this.lblSpeed.Size = new System.Drawing.Size(18, 20);
+            this.lblSpeed.TabIndex = 11;
+            this.lblSpeed.Text = "?";
+            // 
             // LblPoidBloc
             // 
             this.LblPoidBloc.AutoSize = true;
@@ -1416,6 +1492,15 @@
             this.LblPoidBloc.Size = new System.Drawing.Size(18, 20);
             this.LblPoidBloc.TabIndex = 15;
             this.LblPoidBloc.Text = "?";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(12, 166);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(119, 20);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Couleur du bloc";
             // 
             // label26
             // 
@@ -1435,117 +1520,15 @@
             this.lblBlocColor.TabIndex = 13;
             this.lblBlocColor.Text = "?";
             // 
-            // label23
+            // pictureBox1
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(12, 166);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(119, 20);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "Couleur du bloc";
-            // 
-            // lblSpeed
-            // 
-            this.lblSpeed.AutoSize = true;
-            this.lblSpeed.Location = new System.Drawing.Point(162, 99);
-            this.lblSpeed.Name = "lblSpeed";
-            this.lblSpeed.Size = new System.Drawing.Size(18, 20);
-            this.lblSpeed.TabIndex = 11;
-            this.lblSpeed.Text = "?";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 99);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 20);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Vitesse";
-            // 
-            // lblBattryLevel
-            // 
-            this.lblBattryLevel.AutoSize = true;
-            this.lblBattryLevel.Location = new System.Drawing.Point(162, 65);
-            this.lblBattryLevel.Name = "lblBattryLevel";
-            this.lblBattryLevel.Size = new System.Drawing.Size(18, 20);
-            this.lblBattryLevel.TabIndex = 9;
-            this.lblBattryLevel.Text = "?";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 65);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(144, 20);
-            this.label21.TabIndex = 8;
-            this.label21.Text = "Niveau de la battrie";
-            // 
-            // GhostLabelDeRéception
-            // 
-            this.GhostLabelDeRéception.AutoSize = true;
-            this.GhostLabelDeRéception.Location = new System.Drawing.Point(4, 46);
-            this.GhostLabelDeRéception.Name = "GhostLabelDeRéception";
-            this.GhostLabelDeRéception.Size = new System.Drawing.Size(35, 13);
-            this.GhostLabelDeRéception.TabIndex = 7;
-            this.GhostLabelDeRéception.Text = "Ghost";
-            this.GhostLabelDeRéception.Visible = false;
-            // 
-            // lblEtatVehicule
-            // 
-            this.lblEtatVehicule.AutoSize = true;
-            this.lblEtatVehicule.Location = new System.Drawing.Point(162, 29);
-            this.lblEtatVehicule.Name = "lblEtatVehicule";
-            this.lblEtatVehicule.Size = new System.Drawing.Size(18, 20);
-            this.lblEtatVehicule.TabIndex = 6;
-            this.lblEtatVehicule.Text = "?";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 29);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 20);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "État du véhicule";
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.label19);
-            this.groupBox19.Controls.Add(this.textBox1);
-            this.groupBox19.Controls.Add(this.button1);
-            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(387, 391);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(264, 130);
-            this.groupBox19.TabIndex = 4;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Test de réception .HEX d\'Hichie";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 100);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "label19";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(7, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(7, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.pictureBox1.Image = global::PCANBasicExample.Properties.Resources.Station1CW;
+            this.pictureBox1.Location = new System.Drawing.Point(311, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(698, 411);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox24
             // 
@@ -1621,6 +1604,16 @@
             this.ClockSync.UseVisualStyleBackColor = true;
             this.ClockSync.Click += new System.EventHandler(this.button1_Click);
             // 
+            // GhostLabel
+            // 
+            this.GhostLabel.AutoSize = true;
+            this.GhostLabel.Location = new System.Drawing.Point(6, 27);
+            this.GhostLabel.Name = "GhostLabel";
+            this.GhostLabel.Size = new System.Drawing.Size(13, 13);
+            this.GhostLabel.TabIndex = 1;
+            this.GhostLabel.Text = "0";
+            this.GhostLabel.Visible = false;
+            // 
             // PC_Clock
             // 
             this.PC_Clock.AutoSize = true;
@@ -1670,6 +1663,16 @@
             this.label17.Size = new System.Drawing.Size(49, 13);
             this.label17.TabIndex = 13;
             this.label17.Text = "Transmis";
+            // 
+            // GhostLabelDeRéception
+            // 
+            this.GhostLabelDeRéception.AutoSize = true;
+            this.GhostLabelDeRéception.Location = new System.Drawing.Point(4, 46);
+            this.GhostLabelDeRéception.Name = "GhostLabelDeRéception";
+            this.GhostLabelDeRéception.Size = new System.Drawing.Size(35, 13);
+            this.GhostLabelDeRéception.TabIndex = 7;
+            this.GhostLabelDeRéception.Text = "Ghost";
+            this.GhostLabelDeRéception.Visible = false;
             // 
             // label16
             // 
@@ -1897,6 +1900,45 @@
             this.SendZoneUART1.Size = new System.Drawing.Size(854, 26);
             this.SendZoneUART1.TabIndex = 3;
             // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.label19);
+            this.groupBox19.Controls.Add(this.textBox1);
+            this.groupBox19.Controls.Add(this.button1);
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.Location = new System.Drawing.Point(387, 391);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(264, 130);
+            this.groupBox19.TabIndex = 4;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Test de réception .HEX d\'Hichie";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 100);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "label19";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(251, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(7, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(251, 37);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.Historique);
@@ -1944,48 +1986,6 @@
             this.timer4RealTimeCAN.Interval = 50;
             this.timer4RealTimeCAN.Tick += new System.EventHandler(this.timer4RealTimeCAN_Tick);
             // 
-            // lblDirection
-            // 
-            this.lblDirection.AutoSize = true;
-            this.lblDirection.Location = new System.Drawing.Point(162, 132);
-            this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(18, 20);
-            this.lblDirection.TabIndex = 19;
-            this.lblDirection.Text = "?";
-            this.lblDirection.TextChanged += new System.EventHandler(this.lblDirection_TextChanged);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(12, 132);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(72, 20);
-            this.label28.TabIndex = 18;
-            this.label28.Text = "Direction";
-            // 
-            // groupBox20
-            // 
-            this.groupBox20.Controls.Add(this.label27);
-            this.groupBox20.Controls.Add(this.lblDirection);
-            this.groupBox20.Controls.Add(this.label18);
-            this.groupBox20.Controls.Add(this.label28);
-            this.groupBox20.Controls.Add(this.lblEtatVehicule);
-            this.groupBox20.Controls.Add(this.label21);
-            this.groupBox20.Controls.Add(this.lblBattryLevel);
-            this.groupBox20.Controls.Add(this.lblStation);
-            this.groupBox20.Controls.Add(this.label22);
-            this.groupBox20.Controls.Add(this.lblSpeed);
-            this.groupBox20.Controls.Add(this.LblPoidBloc);
-            this.groupBox20.Controls.Add(this.label23);
-            this.groupBox20.Controls.Add(this.label26);
-            this.groupBox20.Controls.Add(this.lblBlocColor);
-            this.groupBox20.Location = new System.Drawing.Point(3, 25);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(302, 264);
-            this.groupBox20.TabIndex = 20;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "Contrôle";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2031,9 +2031,9 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
             this.groupBox24.ResumeLayout(false);
             this.groupBox24.PerformLayout();
             this.groupBox18.ResumeLayout(false);
@@ -2049,9 +2049,9 @@
             this.tabPage7.ResumeLayout(false);
             this.groupBox25.ResumeLayout(false);
             this.groupBox25.PerformLayout();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
