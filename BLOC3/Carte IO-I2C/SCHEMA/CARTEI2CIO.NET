@@ -1,0 +1,612 @@
+Wire List
+
+Carte I/O I2C                                 Revised: Monday, November 17, 2014
+Cartei2cio.dsn                                Revision: A
+
+Gabriel Fortin-Bélanger
+TSO
+
+
+
+<<< Component List >>>
+100nF                         C1-1      1210
+100nF                         C1-2      1210
+100nF                         C1-3      1210
+100nF                         C1-4      1210
+100nF                         C2-1      1210
+100nF                         C2-2      1210
+100nF                         C2-3      1210
+SignauxUPSD                   JP1-1     J\20P
+Alimentation 24V              JP1-2     200MILS_ALIM
+OUT                           JP1-3     200MILS/16P
+IN                            JP1-4     200MILS/16P
+MT HOLE                       MT1-1     MTHOLE1
+MT HOLE                       MT1-2     MTHOLE1
+MT HOLE                       MT1-3     MTHOLE1
+MT HOLE                       MT1-4     MTHOLE1
+BS250                         Q2-1      TO-92A
+BS250                         Q2-2      TO-92A
+BS250                         Q2-3      TO-92A
+BS250                         Q2-4      TO-92A
+BS250                         Q2-5      TO-92A
+BS250                         Q2-6      TO-92A
+BS250                         Q2-7      TO-92A
+BS250                         Q2-8      TO-92A
+BS250                         Q3-1      TO-92A
+BS250                         Q3-2      TO-92A
+BS250                         Q3-3      TO-92A
+BS250                         Q3-4      TO-92A
+BS250                         Q3-5      TO-92A
+BS250                         Q3-6      TO-92A
+BS250                         Q3-7      TO-92A
+BS250                         Q3-8      TO-92A
+4K7                           R1-1      1206
+4K7                           R1-2      1206
+4K7                           R2-1      1206
+4K7                           R2-2      1206
+4K7                           R2-3      1206
+4K7                           R2-4      1206
+4K7                           R2-5      1206
+4K7                           R2-6      1206
+4K7                           R2-7      1206
+4K7                           R2-8      1206
+4K7                           R3-1      1206
+4K7                           R3-2      1206
+4K7                           R3-3      1206
+4K7                           R3-4      1206
+4K7                           R3-5      1206
+4K7                           R3-6      1206
+4K7                           R3-7      1206
+4K7                           R3-8      1206
+20k                           R4-1      1206
+20k                           R4-10     1206
+20k                           R4-11     1206
+20k                           R4-12     1206
+20k                           R4-13     1206
+20k                           R4-14     1206
+20k                           R4-15     1206
+20k                           R4-16     1206
+5.1k                          R4-17     1206
+5.1k                          R4-18     1206
+5.1k                          R4-19     1206
+20k                           R4-2      1206
+5.1k                          R4-20     1206
+5.1k                          R4-21     1206
+5.1k                          R4-22     1206
+5.1k                          R4-23     1206
+5.1k                          R4-24     1206
+5.1k                          R4-25     1206
+5.1k                          R4-26     1206
+5.1k                          R4-27     1206
+5.1k                          R4-28     1206
+5.1k                          R4-29     1206
+20k                           R4-3      1206
+5.1k                          R4-30     1206
+5.1k                          R4-31     1206
+5.1k                          R4-32     1206
+20k                           R4-4      1206
+20k                           R4-5      1206
+20k                           R4-6      1206
+20k                           R4-7      1206
+20k                           R4-8      1206
+20k                           R4-9      1206
+PCF8574                       U1-1      DIP16
+PCF8574                       U1-2      DIP16
+PCF8574                       U1-3      DIP16
+PCF8574                       U1-4      DIP16
+7407                          U2-1      DIP14
+7407                          U2-2      DIP14
+7407                          U3-1      DIP14
+
+<<< Wire List >>>
+
+  NODE  REFERENCE    PIN #   PIN NAME           PIN TYPE       PART VALUE
+
+[00001] IN3-24V
+        JP1-4           4       4               Passive        IN
+        R4-4            2       2               Passive        20k
+
+[00002] IN15-24V
+        JP1-4           16      16              Passive        IN
+        R4-16           2       2               Passive        20k
+
+[00003] IN14-24V
+        JP1-4           15      15              Passive        IN
+        R4-15           2       2               Passive        20k
+
+[00004] IN5-24V
+        JP1-4           6       6               Passive        IN
+        R4-6            2       2               Passive        20k
+
+[00005] IN4-24V
+        JP1-4           5       5               Passive        IN
+        R4-5            2       2               Passive        20k
+
+[00006] IN2-24V
+        JP1-4           3       3               Passive        IN
+        R4-3            2       2               Passive        20k
+
+[00007] IN13-24V
+        JP1-4           14      14              Passive        IN
+        R4-14           2       2               Passive        20k
+
+[00008] IN8-24V
+        JP1-4           9       9               Passive        IN
+        R4-9            2       2               Passive        20k
+
+[00009] N772658
+        R2-1            2       2               Passive        4K7
+        Q2-1            2       GATE            Input          BS250
+        U2-1            2       O_A             Open Collector 7407
+
+[00010] N786431
+        Q2-8            2       GATE            Input          BS250
+        U2-2            4       O_B             Open Collector 7407
+        R2-8            2       2               Passive        4K7
+
+[00011] N773879
+        R2-7            2       2               Passive        4K7
+        U2-2            2       O_A             Open Collector 7407
+        Q2-7            2       GATE            Input          BS250
+
+[00012] N786263
+        R2-4            2       2               Passive        4K7
+        U2-1            8       O_D             Open Collector 7407
+        Q2-4            2       GATE            Input          BS250
+
+[00013] VCC
+        U3-1            14      VCC             Power          7407
+        U2-2            14      VCC             Power          7407
+        U1-4            16      VDD             Power          PCF8574
+        U1-3            16      VDD             Power          PCF8574
+        U1-1            16      VDD             Power          PCF8574
+        U1-2            16      VDD             Power          PCF8574
+        JP1-1           2       2               Passive        SignauxUPSD
+        JP1-1           1       1               Passive        SignauxUPSD
+        C1-1            1       1               Passive        100nF
+        C1-3            1       1               Passive        100nF
+        JP1-1           11      11              Passive        SignauxUPSD
+        U1-1            2       A1              BiDirectional  PCF8574
+        U1-4            1       A0              BiDirectional  PCF8574
+        R1-2            1       1               Passive        4K7
+        R1-1            1       1               Passive        4K7
+        C1-2            1       1               Passive        100nF
+        U1-2            1       A0              BiDirectional  PCF8574
+        U1-2            2       A1              BiDirectional  PCF8574
+        C1-4            1       1               Passive        100nF
+        U2-1            14      VCC             Power          7407
+        C2-3            1       1               Passive        100nF
+        C2-2            1       1               Passive        100nF
+        C2-1            1       1               Passive        100nF
+
+[00014] GND
+        U3-1            7       GND             Power          7407
+        U2-2            7       GND             Power          7407
+        U1-4            8       VSS             Power          PCF8574
+        U1-3            8       VSS             Power          PCF8574
+        U1-1            8       VSS             Power          PCF8574
+        U1-2            8       VSS             Power          PCF8574
+        JP1-2           1       1               Passive        Alimentation 24V
+        JP1-1           20      20              Passive        SignauxUPSD
+        MT1-3           1       1               Output         MT HOLE
+        JP1-1           14      14              Passive        SignauxUPSD
+        JP1-1           9       9               Passive        SignauxUPSD
+        JP1-1           19      19              Passive        SignauxUPSD
+        JP1-1           17      17              Passive        SignauxUPSD
+        MT1-1           1       1               Output         MT HOLE
+        U1-1            1       A0              BiDirectional  PCF8574
+        U1-1            3       A2              BiDirectional  PCF8574
+        C1-1            2       2               Passive        100nF
+        C1-2            2       2               Passive        100nF
+        C1-3            2       2               Passive        100nF
+        U1-4            3       A2              BiDirectional  PCF8574
+        U1-4            2       A1              BiDirectional  PCF8574
+        MT1-4           1       1               Output         MT HOLE
+        U1-3            3       A2              BiDirectional  PCF8574
+        U1-3            2       A1              BiDirectional  PCF8574
+        U1-3            1       A0              BiDirectional  PCF8574
+        MT1-2           1       1               Output         MT HOLE
+        U1-2            3       A2              BiDirectional  PCF8574
+        C1-4            2       2               Passive        100nF
+        U2-1            7       GND             Power          7407
+        C2-1            2       2               Passive        100nF
+        C2-2            2       2               Passive        100nF
+        C2-3            2       2               Passive        100nF
+        R4-17           2       2               Passive        5.1k
+        R4-28           2       2               Passive        5.1k
+        R4-20           2       2               Passive        5.1k
+        R4-19           2       2               Passive        5.1k
+        R4-21           2       2               Passive        5.1k
+        R4-22           2       2               Passive        5.1k
+        R4-23           2       2               Passive        5.1k
+        R4-25           2       2               Passive        5.1k
+        R4-24           2       2               Passive        5.1k
+        R4-26           2       2               Passive        5.1k
+        R4-27           2       2               Passive        5.1k
+        R4-31           2       2               Passive        5.1k
+        R4-30           2       2               Passive        5.1k
+        R4-32           2       2               Passive        5.1k
+        R4-29           2       2               Passive        5.1k
+        R4-18           2       2               Passive        5.1k
+
+[00015] SDA1
+        JP1-1           3       3               Passive        SignauxUPSD
+
+[00016] PD1
+        JP1-1           18      18              Passive        SignauxUPSD
+
+[00017] PWM2
+        JP1-1           8       8               Passive        SignauxUPSD
+
+[00018] PWM4
+        JP1-1           12      12              Passive        SignauxUPSD
+
+[00019] SCL1
+        JP1-1           5       5               Passive        SignauxUPSD
+
+[00020] SCL2
+        U1-2            14      SCL             BiDirectional  PCF8574
+        U1-1            14      SCL             BiDirectional  PCF8574
+        U1-4            14      SCL             BiDirectional  PCF8574
+        U1-3            14      SCL             BiDirectional  PCF8574
+        JP1-1           15      15              Passive        SignauxUPSD
+        R1-2            2       2               Passive        4K7
+
+[00021] PWM1
+        JP1-1           6       6               Passive        SignauxUPSD
+
+[00022] VSYNC
+        JP1-1           7       7               Passive        SignauxUPSD
+
+[00023] SDA2
+        U1-2            15      SDA             BiDirectional  PCF8574
+        U1-1            15      SDA             BiDirectional  PCF8574
+        R1-1            2       2               Passive        4K7
+        U1-3            15      SDA             BiDirectional  PCF8574
+        JP1-1           13      13              Passive        SignauxUPSD
+        U1-4            15      SDA             BiDirectional  PCF8574
+
+[00024] PD2
+        JP1-1           16      16              Passive        SignauxUPSD
+
+[00025] PWM3
+        JP1-1           10      10              Passive        SignauxUPSD
+
+[00026] PWM0
+        JP1-1           4       4               Passive        SignauxUPSD
+
+[00027] N897506
+        R3-7            2       2               Passive        4K7
+        Q3-7            2       GATE            Input          BS250
+        U2-2            6       O_C             Open Collector 7407
+
+[00028] N897158
+        U3-1            2       O_A             Open Collector 7407
+        Q3-1            2       GATE            Input          BS250
+        R3-1            2       2               Passive        4K7
+
+[00029] N897366
+        U3-1            10      O_E             Open Collector 7407
+        Q3-5            2       GATE            Input          BS250
+        R3-5            2       2               Passive        4K7
+
+[00030] N897314
+        Q3-3            2       GATE            Input          BS250
+        R3-3            2       2               Passive        4K7
+        U3-1            6       O_C             Open Collector 7407
+
+[00031] N910940
+        Q2-5            2       GATE            Input          BS250
+        U2-1            10      O_E             Open Collector 7407
+        R2-5            2       2               Passive        4K7
+
+[00032] N912666
+        Q2-3            2       GATE            Input          BS250
+        U2-1            6       O_C             Open Collector 7407
+        R2-3            2       2               Passive        4K7
+
+[00033] N824175
+        U2-1            12      O_F             Open Collector 7407
+        R2-6            2       2               Passive        4K7
+        Q2-6            2       GATE            Input          BS250
+
+[00034] N918589
+        Q2-2            2       GATE            Input          BS250
+        U2-1            4       O_B             Open Collector 7407
+        R2-2            2       2               Passive        4K7
+
+[00035] 24VCC
+        Q3-5            3       SOURCE          Input          BS250
+        R3-6            1       1               Passive        4K7
+        Q3-3            3       SOURCE          Input          BS250
+        R3-4            1       1               Passive        4K7
+        R3-5            1       1               Passive        4K7
+        R3-3            1       1               Passive        4K7
+        Q3-6            3       SOURCE          Input          BS250
+        Q3-8            3       SOURCE          Input          BS250
+        R3-2            1       1               Passive        4K7
+        Q3-7            3       SOURCE          Input          BS250
+        Q3-2            3       SOURCE          Input          BS250
+        R3-8            1       1               Passive        4K7
+        R3-7            1       1               Passive        4K7
+        Q3-1            3       SOURCE          Input          BS250
+        Q3-4            3       SOURCE          Input          BS250
+        R3-1            1       1               Passive        4K7
+        JP1-2           2       2               Passive        Alimentation 24V
+        R2-7            1       1               Passive        4K7
+        R2-5            1       1               Passive        4K7
+        Q2-7            3       SOURCE          Input          BS250
+        Q2-4            3       SOURCE          Input          BS250
+        R2-3            1       1               Passive        4K7
+        R2-4            1       1               Passive        4K7
+        Q2-5            3       SOURCE          Input          BS250
+        Q2-3            3       SOURCE          Input          BS250
+        R2-8            1       1               Passive        4K7
+        Q2-8            3       SOURCE          Input          BS250
+        Q2-1            3       SOURCE          Input          BS250
+        R2-1            1       1               Passive        4K7
+        R2-2            1       1               Passive        4K7
+        Q2-6            3       SOURCE          Input          BS250
+        Q2-2            3       SOURCE          Input          BS250
+        R2-6            1       1               Passive        4K7
+
+[00036] N929769
+        Q3-2            2       GATE            Input          BS250
+        U3-1            4       O_B             Open Collector 7407
+        R3-2            2       2               Passive        4K7
+
+[00037] OUT1-5V
+        U1-3            5       P1              BiDirectional  PCF8574
+        U2-1            5       I_C             Input          7407
+
+[00038] N931468
+        R3-8            2       2               Passive        4K7
+        U2-2            8       O_D             Open Collector 7407
+        Q3-8            2       GATE            Input          BS250
+
+[00039] OUT0-5V
+        U1-3            4       P0              BiDirectional  PCF8574
+        U2-1            1       I_A             Input          7407
+
+[00040] N930977
+        U3-1            12      O_F             Open Collector 7407
+        Q3-6            2       GATE            Input          BS250
+        R3-6            2       2               Passive        4K7
+
+[00041] OUT2-5V
+        U1-3            6       P2              BiDirectional  PCF8574
+        U2-1            11      I_E             Input          7407
+
+[00042] N930495
+        R3-4            2       2               Passive        4K7
+        U3-1            8       O_D             Open Collector 7407
+        Q3-4            2       GATE            Input          BS250
+
+[00043] OUT3-5V
+        U1-3            7       P3              BiDirectional  PCF8574
+        U2-2            1       I_A             Input          7407
+
+[00044] OUT4-5V
+        U1-3            9       P4              BiDirectional  PCF8574
+        U2-1            3       I_B             Input          7407
+
+[00045] OUT15-5V
+        U2-2            9       I_D             Input          7407
+        U1-4            12      P7              BiDirectional  PCF8574
+
+[00046] OUT6-5V
+        U1-3            11      P6              BiDirectional  PCF8574
+        U2-1            13      I_F             Input          7407
+
+[00047] OUT9-5V
+        U3-1            5       I_C             Input          7407
+        U1-4            5       P1              BiDirectional  PCF8574
+
+[00048] OUT13-5V
+        U3-1            9       I_D             Input          7407
+        U1-4            10      P5              BiDirectional  PCF8574
+
+[00049] OUT11-5V
+        U2-2            5       I_C             Input          7407
+        U1-4            7       P3              BiDirectional  PCF8574
+
+[00050] OUT10-5V
+        U3-1            11      I_E             Input          7407
+        U1-4            6       P2              BiDirectional  PCF8574
+
+[00051] OUT14-5V
+        U3-1            13      I_F             Input          7407
+        U1-4            11      P6              BiDirectional  PCF8574
+
+[00052] OUT7-5V
+        U1-3            12      P7              BiDirectional  PCF8574
+        U2-2            3       I_B             Input          7407
+
+[00053] OUT5-5V
+        U1-3            10      P5              BiDirectional  PCF8574
+        U2-1            9       I_D             Input          7407
+
+[00054] OUT12-5V
+        U3-1            3       I_B             Input          7407
+        U1-4            9       P4              BiDirectional  PCF8574
+
+[00055] OUT8-5V
+        U3-1            1       I_A             Input          7407
+        U1-4            4       P0              BiDirectional  PCF8574
+
+[00056] IN0-5V
+        U1-1            4       P0              BiDirectional  PCF8574
+        R4-1            1       1               Passive        20k
+        R4-17           1       1               Passive        5.1k
+
+[00057] IN13-5V
+        U1-2            10      P5              BiDirectional  PCF8574
+        R4-30           1       1               Passive        5.1k
+        R4-14           1       1               Passive        20k
+
+[00058] IN3-5V
+        U1-1            7       P3              BiDirectional  PCF8574
+        R4-4            1       1               Passive        20k
+        R4-20           1       1               Passive        5.1k
+
+[00059] IN9-5V
+        U1-2            5       P1              BiDirectional  PCF8574
+        R4-10           1       1               Passive        20k
+        R4-26           1       1               Passive        5.1k
+
+[00060] OUT11-24V
+        Q3-7            1       DRAIN           Input          BS250
+        JP1-3           12      12              Passive        OUT
+
+[00061] IN5-5V
+        U1-1            10      P5              BiDirectional  PCF8574
+        R4-22           1       1               Passive        5.1k
+        R4-6            1       1               Passive        20k
+
+[00062] IN7-5V
+        U1-1            12      P7              BiDirectional  PCF8574
+        R4-24           1       1               Passive        5.1k
+        R4-8            1       1               Passive        20k
+
+[00063] IN14-5V
+        U1-2            11      P6              BiDirectional  PCF8574
+        R4-31           1       1               Passive        5.1k
+        R4-15           1       1               Passive        20k
+
+[00064] IN8-5V
+        U1-2            4       P0              BiDirectional  PCF8574
+        R4-9            1       1               Passive        20k
+        R4-25           1       1               Passive        5.1k
+
+[00065] OUT7-24V
+        JP1-3           8       8               Passive        OUT
+        Q2-8            1       DRAIN           Input          BS250
+
+[00066] IN10-5V
+        U1-2            6       P2              BiDirectional  PCF8574
+        R4-11           1       1               Passive        20k
+        R4-27           1       1               Passive        5.1k
+
+[00067] OUT6-24V
+        JP1-3           7       7               Passive        OUT
+        Q2-6            1       DRAIN           Input          BS250
+
+[00068] IN11-5V
+        U1-2            7       P3              BiDirectional  PCF8574
+        R4-12           1       1               Passive        20k
+        R4-28           1       1               Passive        5.1k
+
+[00069] OUT5-24V
+        JP1-3           6       6               Passive        OUT
+        Q2-4            1       DRAIN           Input          BS250
+
+[00070] IN12-5V
+        U1-2            9       P4              BiDirectional  PCF8574
+        R4-29           1       1               Passive        5.1k
+        R4-13           1       1               Passive        20k
+
+[00071] OUT1-24V
+        JP1-3           2       2               Passive        OUT
+        Q2-3            1       DRAIN           Input          BS250
+
+[00072] IN6-5V
+        U1-1            11      P6              BiDirectional  PCF8574
+        R4-23           1       1               Passive        5.1k
+        R4-7            1       1               Passive        20k
+
+[00073] OUT3-24V
+        JP1-3           4       4               Passive        OUT
+        Q2-7            1       DRAIN           Input          BS250
+
+[00074] IN4-5V
+        U1-1            9       P4              BiDirectional  PCF8574
+        R4-21           1       1               Passive        5.1k
+        R4-5            1       1               Passive        20k
+
+[00075] OUT4-24V
+        JP1-3           5       5               Passive        OUT
+        Q2-2            1       DRAIN           Input          BS250
+
+[00076] IN2-5V
+        U1-1            6       P2              BiDirectional  PCF8574
+        R4-3            1       1               Passive        20k
+        R4-19           1       1               Passive        5.1k
+
+[00077] OUT2-24V
+        JP1-3           3       3               Passive        OUT
+        Q2-5            1       DRAIN           Input          BS250
+
+[00078] OUT8-24V
+        Q3-1            1       DRAIN           Input          BS250
+        JP1-3           9       9               Passive        OUT
+
+[00079] IN15-5V
+        U1-2            12      P7              BiDirectional  PCF8574
+        R4-16           1       1               Passive        20k
+        R4-32           1       1               Passive        5.1k
+
+[00080] OUT12-24V
+        Q3-2            1       DRAIN           Input          BS250
+        JP1-3           13      13              Passive        OUT
+
+[00081] IN1-5V
+        U1-1            5       P1              BiDirectional  PCF8574
+        R4-2            1       1               Passive        20k
+        R4-18           1       1               Passive        5.1k
+
+[00082] OUT10-24V
+        Q3-5            1       DRAIN           Input          BS250
+        JP1-3           11      11              Passive        OUT
+
+[00083] OUT9-24V
+        Q3-3            1       DRAIN           Input          BS250
+        JP1-3           10      10              Passive        OUT
+
+[00084] OUT14-24V
+        Q3-6            1       DRAIN           Input          BS250
+        JP1-3           15      15              Passive        OUT
+
+[00085] OUT13-24V
+        Q3-4            1       DRAIN           Input          BS250
+        JP1-3           14      14              Passive        OUT
+
+[00086] OUT15-24V
+        Q3-8            1       DRAIN           Input          BS250
+        JP1-3           16      16              Passive        OUT
+
+[00087] IN7-24V
+        JP1-4           8       8               Passive        IN
+        R4-8            2       2               Passive        20k
+
+[00088] IN11-24V
+        JP1-4           12      12              Passive        IN
+        R4-12           2       2               Passive        20k
+
+[00089] IN1-24V
+        JP1-4           2       2               Passive        IN
+        R4-2            2       2               Passive        20k
+
+[00090] IN9-24V
+        JP1-4           10      10              Passive        IN
+        R4-10           2       2               Passive        20k
+
+[00091] IN6-24V
+        JP1-4           7       7               Passive        IN
+        R4-7            2       2               Passive        20k
+
+[00092] OUT0-24V
+        JP1-3           1       1               Passive        OUT
+        Q2-1            1       DRAIN           Input          BS250
+
+[00093] IN12-24V
+        JP1-4           13      13              Passive        IN
+        R4-13           2       2               Passive        20k
+
+[00094] IN10-24V
+        JP1-4           11      11              Passive        IN
+        R4-11           2       2               Passive        20k
+
+[00095] IN0-24V
+        JP1-4           1       1               Passive        IN
+        R4-1            2       2               Passive        20k
+

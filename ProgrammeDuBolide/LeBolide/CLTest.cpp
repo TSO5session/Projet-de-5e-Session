@@ -12,7 +12,7 @@
 //  les modules qui sont contenus dans la librairie.
 //
 //  AUTEUR : LOUIS-NORMAND ANG HOULE
-//  DATE CREATION :    2014/03/20		 VERSION: 1.0
+//  DATE CREATION :    2014/03/20       VERSION: 1.0
 //  DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
@@ -47,7 +47,7 @@ CLTest :: ~CLTest(void)
 //
 // Cree le  14 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 
@@ -77,7 +77,7 @@ void CLTest :: vControleTest(void)
 //
 // Cree le  30 septembre 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 
@@ -101,7 +101,7 @@ void CLTest :: vTestGeneral(void)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 
@@ -159,7 +159,7 @@ void CLTest :: vTestEcran(void)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 
@@ -206,7 +206,7 @@ void CLTest :: vTestI2C(void)
 //
 // Cree le 16 septembre 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 
@@ -225,7 +225,7 @@ void CLTest :: vTestSPI(void)
    while(1)
    {
       clTestEcran.vLCDCursor(0,1);
-      clTestEcran.vLCDDisplayCaracChain("TEST SPI");//Affichage chaine  
+      clTestEcran.String("TEST SPI");//Affichage chaine  
       clTestEcran.vLCDCursor(0,2);
       clTestEcran.vLCDDisplayEtatPort(clTestMCP23S09.ucLireMCP23S09());
       clTestEcran.vLCDCursor(0,3);
@@ -256,7 +256,7 @@ void CLTest :: vTestSPI(void)
 //
 // Cree le 24 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 
@@ -280,7 +280,7 @@ void CLTest :: vTestCommunic(void)
 //
 // Cree le 11 novembre 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 
@@ -305,7 +305,7 @@ void CLTest :: vTestCAN(void)
 //
 // Cree le 11 novembre 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 /////////////////////////////////////////////////////////////////////////////// 

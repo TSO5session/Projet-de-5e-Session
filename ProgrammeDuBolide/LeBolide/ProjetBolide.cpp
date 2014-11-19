@@ -15,27 +15,31 @@
 //
 //  Pour Windows 7 on utilise la VMware pour programmer le upsd 3254A avec CAPS.
 //
-//  AUTEUR : LOUIS-NORMAND ANG HOULE
+//  AUTEURs : LOUIS-NORMAND ANG HOULE VINCENT CHOUINARD
 //  DATE CREATION :    2014/02/20       VERSION: 1.0
 //  DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
 #include "ProjetBolide.h"
+#include "CLXBEE.h"  
+#include "CLRS232.h"
 
 void main(void)
  { 
-   class CLTest clTest;    // Declaration d'un objet de test
-  // class CLEcran LCD;
-
-//   clTest.vControleTest(); // Excecution des tests selectionnees 
-
+  class CLTest clTest;    // Declaration d'un objet de test
+  // class CLXbee XBee;
+   
+   
 #ifdef DALLAS89C450   
    class CLVehicule clVehicule;
    
    while(1)
-    {
-    //  LCD.String("TEST");      
+    {      
       clVehicule.vControleBolide();
+     // XBee.SendString("HODOR");
+     // XBee.SendCarac ('A');
+     // XBee.SendNumber(514);
+     // UC mavar = XBee.GetChar();
     }  
 #endif
    
@@ -45,7 +49,7 @@ void main(void)
    
    while(1)
     {
-      clTelecommande.vControleTelecommande();      
+           
     } 
 #endif  
    

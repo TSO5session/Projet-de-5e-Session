@@ -16,11 +16,13 @@
 
 // ** ********************************************************************** **
 //  Choix de la cible
-#define DALLAS89C450
-  // #define SPI_DALLAS
-   #define I2C_DALLAS
-
 //#define UPSD3254A
+  #define DALLAS89C450
+   // #define SPI_DALLAS
+      #define I2C_DALLAS
+        //#define PCF_5_CAPTEURS
+          #define PCF_3_CAPTEURS
+
 // ** ********************************************************************** **
 
 // ****************************************************************************

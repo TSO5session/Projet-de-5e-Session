@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.9.21)  14 NOV 2014 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.9.21)  18 NOV 2014 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -765,6 +765,9 @@ LaTeX Warning: Label `tab:testtab1' multiply defined.
 
 LaTeX Warning: Label `tab:testtab1' multiply defined.
 
+
+LaTeX Warning: Label `tab:testtab1' multiply defined.
+
 )
 \openout1 = `Rapport.aux'.
 
@@ -928,36 +931,211 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `Rapport.lot'.
 
  [3]
-LaTeX Font Info:    Try loading font information for TS1+qhv on input line 124.
+LaTeX Font Info:    Try loading font information for TS1+qhv on input line 139.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
-) [4] [5]
-LaTeX Font Info:    Try loading font information for OT1+fdm on input line 303.
+) [4] [5] [6]
+LaTeX Font Info:    Try loading font information for OT1+fdm on input line 320.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/droid/ot1fdm.fd
 File: ot1fdm.fd 2011/09/11 Fontinst v1.933 font definitions for OT1/fdm.
-) [6]
-LaTeX Font Info:    Try loading font information for OMS+qhv on input line 324.
+) [7]
+LaTeX Font Info:    Try loading font information for OMS+qhv on input line 341.
 
-LaTeX Font Info:    No file OMSqhv.fd. on input line 324.
+LaTeX Font Info:    No file OMSqhv.fd. on input line 341.
 
 
 LaTeX Font Warning: Font shape `OMS/qhv/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 324.
+(Font)              for symbol `textbackslash' on input line 341.
 
-LaTeX Font Info:    Try loading font information for OML+qhv on input line 349.
+LaTeX Font Info:    Try loading font information for OML+qhv on input line 366.
 
-LaTeX Font Info:    No file OMLqhv.fd. on input line 349.
+LaTeX Font Info:    No file OMLqhv.fd. on input line 366.
 
 LaTeX Font Warning: Font shape `OML/qhv/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 349.
+(Font)              for symbol `textless' on input line 366.
 
-[7] [8] [9] [10] [11] [12] [13] (./Rapport.aux)
+[8] [9] [10]
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/74HC14.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/74HC14.pdf, id=48, 614.295pt x 794.97pt>
+File: Figures/Datasheets/74HC14.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/74HC14.pdf>
+Package pdftex.def Info: Figures/Datasheets/74HC14.pdf used on input line 517.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/dac6574.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/dac6574.pdf, id=49, 614.295pt x 794.97pt>
+File: Figures/Datasheets/dac6574.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/dac6574.pdf>
+Package pdftex.def Info: Figures/Datasheets/dac6574.pdf used on input line 519.
+
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/DS89C450.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/DS89C450.pdf, id=50, 614.295pt x 794.97pt>
+File: Figures/Datasheets/DS89C450.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/DS89C450.pdf>
+Package pdftex.def Info: Figures/Datasheets/DS89C450.pdf used on input line 521
+.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/LineSensor.pdf): PDF in
+clusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/LineSensor.pdf, id=51, 614.295pt x 794.97pt>
+File: Figures/Datasheets/LineSensor.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/LineSensor.pdf>
+Package pdftex.def Info: Figures/Datasheets/LineSensor.pdf used on input line 5
+23.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/lm3914.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/lm3914.pdf, id=52, 614.295pt x 794.97pt>
+File: Figures/Datasheets/lm3914.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/lm3914.pdf>
+Package pdftex.def Info: Figures/Datasheets/lm3914.pdf used on input line 525.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--526
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/opt101.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/opt101.pdf, id=53, 614.295pt x 794.97pt>
+File: Figures/Datasheets/opt101.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/opt101.pdf>
+Package pdftex.def Info: Figures/Datasheets/opt101.pdf used on input line 527.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/PCF8574.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/PCF8574.pdf, id=54, 614.295pt x 794.97pt>
+File: Figures/Datasheets/PCF8574.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/PCF8574.pdf>
+Package pdftex.def Info: Figures/Datasheets/PCF8574.pdf used on input line 529.
+
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/UPSD3254A.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/UPSD3254A.pdf, id=55, 614.295pt x 794.97pt>
+File: Figures/Datasheets/UPSD3254A.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/UPSD3254A.pdf>
+Package pdftex.def Info: Figures/Datasheets/UPSD3254A.pdf used on input line 53
+1.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/Sabertooth.pdf): PDF in
+clusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/Sabertooth.pdf, id=56, 614.295pt x 794.97pt>
+File: Figures/Datasheets/Sabertooth.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/Sabertooth.pdf>
+Package pdftex.def Info: Figures/Datasheets/Sabertooth.pdf used on input line 5
+33.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+[11 <./Figures/Datasheets/74HC14.pdf> <./Figures/Datasheets/dac6574.pdf> <./Fig
+ures/Datasheets/DS89C450.pdf> <./Figures/Datasheets/LineSensor.pdf> <./Figures/
+Datasheets/lm3914.pdf> <./Figures/Datasheets/opt101.pdf> <./Figures/Datasheets/
+PCF8574.pdf> <./Figures/Datasheets/UPSD3254A.pdf> <./Figures/Datasheets/Saberto
+oth.pdf>] <Images/Bolid.jpg, id=119, 486.81876pt x 276.03125pt>
+File: Images/Bolid.jpg Graphic file (type jpg)
+
+<use Images/Bolid.jpg>
+Package pdftex.def Info: Images/Bolid.jpg used on input line 542.
+(pdftex.def)             Requested size: 340.7708pt x 193.22055pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 545--547
+
+ []
+
+File: Images/Bolid.jpg Graphic file (type jpg)
+<use Images/Bolid.jpg>
+Package pdftex.def Info: Images/Bolid.jpg used on input line 551.
+(pdftex.def)             Requested size: 340.7708pt x 193.22055pt.
+File: Images/Bolid.jpg Graphic file (type jpg)
+ <use Images/Bolid.jpg>
+Package pdftex.def Info: Images/Bolid.jpg used on input line 560.
+(pdftex.def)             Requested size: 340.7708pt x 193.22055pt.
+ [12 <./Images/Bolid.jpg>]
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--649
+
+ []
+
+[15] [16] [17] (./Rapport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -966,13 +1144,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7996 strings out of 493108
- 105745 string characters out of 6138446
+ 8052 strings out of 493108
+ 107286 string characters out of 6138446
  535524 words of memory out of 5000000
- 11264 multiletter control sequences out of 15000+600000
- 56592 words of font info for 78 fonts, out of 8000000 for 9000
+ 11308 multiletter control sequences out of 15000+600000
+ 62466 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,60p,352b,1500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,60p,583b,1502s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2014/texmf-dist/fonts/enc/dvips/droid/droid-02.enc}{c:/texlive/20
 14/texmf-dist/fonts/enc/dvips/droid/droid-01.enc}{c:/texlive/2014/texmf-dist/fo
 nts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/te
@@ -980,14 +1158,21 @@ x-gyre/q-rm.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm-sc.en
 c}<c:/texlive/2014/texmf-dist/fonts/type1/public/droid/DroidSansMono.pfb><c:/te
 xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/201
 4/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2014/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publi
-c/tex-gyre/qhvb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhv
-r.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb>
-Output written on Rapport.pdf (13 pages, 1188918 bytes).
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/20
+14/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2014/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dist/fonts/
+type1/public/tex-gyre/qhvb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/t
+ex-gyre/qhvr.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhvri.
+pfb>
+Output written on Rapport.pdf (17 pages, 4471493 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 202 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

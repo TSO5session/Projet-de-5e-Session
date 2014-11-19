@@ -37,9 +37,10 @@
 class CLI2CPort : public CLI2CBase
 {
 public:
-
    CLI2CPort(void);
   ~CLI2CPort(void);
+  
+   UC LirePCF8574(void);
 
 protected:
    UC   ucI2CLireDonnee (UC ucAdrBoitier, UC ucAdrRegistre);
@@ -49,7 +50,6 @@ protected:
    void vI2CEcrireDonnee(UC ucAdrBoitier, UC ucAdrRegistre, UC ucDonnee);
    void vI2CEcrireDonnee(UC ucAdrBoitier, USI uiAdrRegistre, UC ucTypeAdr,
                          UC *ucpDonnee, UC ucNbrEcritures);
-
 private:
    UC ucAdrBoitier;
 };

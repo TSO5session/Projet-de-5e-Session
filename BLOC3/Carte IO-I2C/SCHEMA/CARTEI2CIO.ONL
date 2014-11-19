@@ -1,0 +1,1758 @@
+(PCB CARTEI2CIO
+ (description
+  (timeStamp "2014 11 17 21 06 13")
+  (program "CAPTURE.EXE" (Version "16.2.0.p001"))
+  (source "Original data from OrCAD/CAPTURE schematic")
+  (title "Carte I/O I2C")
+  (date "Monday, November 17, 2014")
+  (document "Cartei2cio.dsn")
+  (revision "A")
+  (organization "")
+  (address1 "Gabriel Fortin-Bélanger")
+  (address2 "TSO")
+  (address3 "")
+  (address4 "")
+  (partvaluecombine "{Value}")
+  (pcbfootprintcombine "{PCB Footprint}"))
+ (structure )
+ (placement
+  (component "MOSFET P DGS"
+   (place "Q2-1"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C788A)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q2-2"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C7ED7)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q2-3"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C7988)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q2-4"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C7DD9)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q2-5"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C7A86)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q2-6"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C7CDB)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q2-7"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C7B84)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q2-8"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000C7C82)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-1"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB046)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-2"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB2D8)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-3"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB164)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-4"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB2C6)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-5"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB1B2)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-6"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB2B4)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-7"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB1F0)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250)))
+   (place "Q3-8"
+    (property 
+     ("PCB Footprint" "TO-92A")
+     (timestamp 000DB2A2)
+     ("Source Package" "MOSFET P DGS")
+     (Value BS250))))
+  (component PCF8574
+   (place "U1-1"
+    (property 
+     ("PCB Footprint" DIP16)
+     (timestamp 00004B4A)
+     ("Source Package" PCF8574)
+     (Value PCF8574)))
+   (place "U1-2"
+    (property 
+     ("PCB Footprint" DIP16)
+     (timestamp 00004B76)
+     ("Source Package" PCF8574)
+     (Value PCF8574)))
+   (place "U1-4"
+    (property 
+     ("PCB Footprint" DIP16)
+     (timestamp 00001AEF)
+     ("Source Package" PCF8574)
+     (Value PCF8574))))
+  (component "HEADER 16"
+   (place "JP1-3"
+    (property 
+     ("PCB Footprint" 200MILS/16P)
+     (timestamp 000C9F9D)
+     ("Source Package" "HEADER 16")
+     (Value OUT)))
+   (place "JP1-4"
+    (property 
+     ("PCB Footprint" 200MILS/16P)
+     (timestamp 000CA11F)
+     ("Source Package" "HEADER 16")
+     (Value IN))))
+  (component "CAP NP"
+   (place "C2-1"
+    (property 
+     ("PCB Footprint" 1210)
+     (timestamp 000A55E8)
+     ("Source Package" "CAP NP")
+     (Value 100nF)))
+   (place "C2-2"
+    (property 
+     ("PCB Footprint" 1210)
+     (timestamp 000A558C)
+     ("Source Package" "CAP NP")
+     (Value 100nF)))
+   (place "C2-3"
+    (property 
+     ("PCB Footprint" 1210)
+     (timestamp 000A5644)
+     ("Source Package" "CAP NP")
+     (Value 100nF)))
+   (place "C1-1"
+    (property 
+     ("PCB Footprint" 1210)
+     (timestamp 000A683E)
+     ("Source Package" "CAP NP")
+     (Value 100nF)))
+   (place "C1-2"
+    (property 
+     ("PCB Footprint" 1210)
+     (timestamp 000A685E)
+     ("Source Package" "CAP NP")
+     (Value 100nF)))
+   (place "C1-3"
+    (property 
+     ("PCB Footprint" 1210)
+     (timestamp 000A684E)
+     ("Source Package" "CAP NP")
+     (Value 100nF)))
+   (place "C1-4"
+    (property 
+     ("PCB Footprint" 1210)
+     (timestamp 000AAC29)
+     ("Source Package" "CAP NP")
+     (Value 100nF))))
+  (component PCF8574_0
+   (place "U1-3"
+    (property 
+     ("PCB Footprint" DIP16)
+     (timestamp 00001AA3)
+     ("Source Package" PCF8574_0)
+     (Value PCF8574))))
+  (component 7407_0
+   (place "U3-1"
+    (property 
+     ("PCB Footprint" DIP14)
+     (timestamp 000DAFD0)
+     ("Source Package" 7407_0)
+     (Value 7407)))
+   (place "U2-1"
+    (property 
+     ("PCB Footprint" DIP14)
+     (timestamp 000BCA4A)
+     ("Source Package" 7407_0)
+     (Value 7407)))
+   (place "U2-2"
+    (property 
+     ("PCB Footprint" DIP14)
+     (timestamp 000BCF0F)
+     ("Source Package" 7407_0)
+     (Value 7407))))
+  (component "HEADER 10X2"
+   (place "JP1-1"
+    (property 
+     ("PCB Footprint" J\\20P)
+     (timestamp 0000178E)
+     ("Source Package" "HEADER 10X2")
+     (Value SignauxUPSD))))
+  (component "HEADER 2"
+   (place "JP1-2"
+    (property 
+     ("PCB Footprint" 200MILS_ALIM)
+     (timestamp 000CA43D)
+     ("Source Package" "HEADER 2")
+     (Value "Alimentation 24V"))))
+  (component ANTENNA
+   (place "MT1-1"
+    (property 
+     ("PCB Footprint" MTHOLE1)
+     (timestamp 000CF495)
+     ("Source Package" ANTENNA)
+     (Value "MT HOLE")))
+   (place "MT1-2"
+    (property 
+     ("PCB Footprint" MTHOLE1)
+     (timestamp 000C110A)
+     ("Source Package" ANTENNA)
+     (Value "MT HOLE")))
+   (place "MT1-3"
+    (property 
+     ("PCB Footprint" MTHOLE1)
+     (timestamp 000CF5DD)
+     ("Source Package" ANTENNA)
+     (Value "MT HOLE")))
+   (place "MT1-4"
+    (property 
+     ("PCB Footprint" MTHOLE1)
+     (timestamp 000CF71F)
+     ("Source Package" ANTENNA)
+     (Value "MT HOLE"))))
+  (component R
+   (place "R1-1"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000CB654)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R1-2"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000CB6FD)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-20"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1E53)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-21"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1E95)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-22"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1EDB)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-23"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1F25)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-24"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1F73)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-25"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D20BB)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-26"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D2111)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-27"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D216B)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-28"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D21C9)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-29"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D222B)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-1"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 00087D36)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-2"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1DEB)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-3"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1E25)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-4"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1E63)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-5"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1EA5)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-6"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1EEB)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-7"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1F35)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-30"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D2291)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-8"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1F83)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-9"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D20CB)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-31"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D22FB)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-32"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D2369)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R3-1"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB1D6)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R3-2"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB28C)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R3-3"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB214)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R3-4"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB278)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R3-5"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB228)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R3-6"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB264)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R3-7"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB240)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R3-8"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000DB254)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-10"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D2121)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-11"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D217B)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-12"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D21D9)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R2-1"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000C8FEA)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-13"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D223B)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R2-2"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000C94B8)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-14"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D22A1)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R2-3"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000C90DC)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R2-4"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000C9461)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-15"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D230B)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-16"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D2379)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 20k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R2-5"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000C91CF)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R2-6"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000C9367)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R4-17"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 00093E21)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-18"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1DDB)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R2-7"
+    (property 
+     (COMPFIXED NO)
+     (COMPLOCKED NO)
+     (COMPROT 0)
+     (MEMORY NO)
+     ("PCB Footprint" 1206)
+     (timestamp 000C921E)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPSIDE TOP)
+     (COMPHEIGHT 0.000)))
+   (place "R2-8"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000C926F)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 4K7)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))
+   (place "R4-19"
+    (property 
+     (COMPLOCKED NO)
+     (COMPFIXED NO)
+     (MEMORY NO)
+     (COMPROT 0)
+     ("PCB Footprint" 1206)
+     (timestamp 000D1E15)
+     (DECOUPLER NO)
+     (COMPKEY NO)
+     ("Source Package" R)
+     (COMPLOC "[1600.000,-1700.000]")
+     (COMPGROUP 0)
+     (Value 5.1k)
+     (COMPHEIGHT 0.000)
+     (COMPSIDE TOP)))))
+ (library
+  (image "MOSFET P DGS"
+   (property 
+    (sourcelib C:\\ORCAD\\ORCAD_16.2\\TOOLS\\CAPTURE\\LIBRARY\\OLDLIBS\\PCBDEV.OLB))
+   (pin 999 2
+    (property 
+     (pinname GATE)
+     (pintype 0)))
+   (pin 999 1
+    (property 
+     (pinname DRAIN)
+     (pintype 0)))
+   (pin 999 3
+    (property 
+     (pinname SOURCE)
+     (pintype 0))))
+  (image "HEADER 10X2"
+   (property 
+    (sourcelib C:\\ORCAD\\ORCAD_16.2\\TOOLS\\CAPTURE\\LIBRARY\\OLDLIBS\\DEVICE.OLB))
+   (pin 999 1
+    (property 
+     (pinname 1)
+     (pintype 4)))
+   (pin 999 2
+    (property 
+     (pinname 2)
+     (pintype 4)))
+   (pin 999 3
+    (property 
+     (pinname 3)
+     (pintype 4)))
+   (pin 999 4
+    (property 
+     (pinname 4)
+     (pintype 4)))
+   (pin 999 5
+    (property 
+     (pinname 5)
+     (pintype 4)))
+   (pin 999 6
+    (property 
+     (pinname 6)
+     (pintype 4)))
+   (pin 999 7
+    (property 
+     (pinname 7)
+     (pintype 4)))
+   (pin 999 8
+    (property 
+     (pinname 8)
+     (pintype 4)))
+   (pin 999 9
+    (property 
+     (pinname 9)
+     (pintype 4)))
+   (pin 999 10
+    (property 
+     (pinname 10)
+     (pintype 4)))
+   (pin 999 11
+    (property 
+     (pinname 11)
+     (pintype 4)))
+   (pin 999 12
+    (property 
+     (pinname 12)
+     (pintype 4)))
+   (pin 999 13
+    (property 
+     (pinname 13)
+     (pintype 4)))
+   (pin 999 14
+    (property 
+     (pinname 14)
+     (pintype 4)))
+   (pin 999 15
+    (property 
+     (pinname 15)
+     (pintype 4)))
+   (pin 999 16
+    (property 
+     (pinname 16)
+     (pintype 4)))
+   (pin 999 17
+    (property 
+     (pinname 17)
+     (pintype 4)))
+   (pin 999 18
+    (property 
+     (pinname 18)
+     (pintype 4)))
+   (pin 999 19
+    (property 
+     (pinname 19)
+     (pintype 4)))
+   (pin 999 20
+    (property 
+     (pinname 20)
+     (pintype 4))))
+  (image R
+   (property 
+    (sourcelib H:\\ORCAD\\ORCAD_16.2\\TOOLS\\CAPTURE\\LIBRARY\\OLDLIBS\\PCBDEV.OLB))
+   (pin 999 1
+    (property 
+     (pinname 1)
+     (pintype 4)))
+   (pin 999 2
+    (property 
+     (pinname 2)
+     (pintype 4))))
+  (image "HEADER 2"
+   (property 
+    (sourcelib C:\\ORCAD\\ORCAD_16.2\\TOOLS\\CAPTURE\\LIBRARY\\OLDLIBS\\PCBDEV.OLB))
+   (pin 999 1
+    (property 
+     (pinname 1)
+     (pintype 4)))
+   (pin 999 2
+    (property 
+     (pinname 2)
+     (pintype 4))))
+  (image 7407_0
+   (property 
+    (sourcelib "C:\\USERS\\1230838\\DESKTOP\\PROJET-DE-5E-SESSION\\BLOC3\\SCHEMA\\CARTEI2CIO.DSN"))
+   (pin 999 1
+    (property 
+     (pinname I_A)
+     (pintype 0)))
+   (pin 999 2
+    (property 
+     (pinname O_A)
+     (pintype 3)))
+   (pin 999 14
+    (property 
+     (pinname VCC)
+     (pintype 7)))
+   (pin 999 7
+    (property 
+     (pinname GND)
+     (pintype 7)))
+   (pin 999 3
+    (property 
+     (pinname I_B)
+     (pintype 0)))
+   (pin 999 4
+    (property 
+     (pinname O_B)
+     (pintype 3)))
+   (pin 999 5
+    (property 
+     (pinname I_C)
+     (pintype 0)))
+   (pin 999 6
+    (property 
+     (pinname O_C)
+     (pintype 3)))
+   (pin 999 9
+    (property 
+     (pinname I_D)
+     (pintype 0)))
+   (pin 999 8
+    (property 
+     (pinname O_D)
+     (pintype 3)))
+   (pin 999 11
+    (property 
+     (pinname I_E)
+     (pintype 0)))
+   (pin 999 10
+    (property 
+     (pinname O_E)
+     (pintype 3)))
+   (pin 999 13
+    (property 
+     (pinname I_F)
+     (pintype 0)))
+   (pin 999 12
+    (property 
+     (pinname O_F)
+     (pintype 3))))
+  (image "HEADER 16"
+   (property 
+    (sourcelib C:\\ORCAD\\ORCAD_16.2\\TOOLS\\CAPTURE\\LIBRARY\\OLDLIBS\\PCBDEV.OLB))
+   (pin 999 1
+    (property 
+     (pinname 1)
+     (pintype 4)))
+   (pin 999 2
+    (property 
+     (pinname 2)
+     (pintype 4)))
+   (pin 999 3
+    (property 
+     (pinname 3)
+     (pintype 4)))
+   (pin 999 4
+    (property 
+     (pinname 4)
+     (pintype 4)))
+   (pin 999 5
+    (property 
+     (pinname 5)
+     (pintype 4)))
+   (pin 999 6
+    (property 
+     (pinname 6)
+     (pintype 4)))
+   (pin 999 7
+    (property 
+     (pinname 7)
+     (pintype 4)))
+   (pin 999 8
+    (property 
+     (pinname 8)
+     (pintype 4)))
+   (pin 999 9
+    (property 
+     (pinname 9)
+     (pintype 4)))
+   (pin 999 10
+    (property 
+     (pinname 10)
+     (pintype 4)))
+   (pin 999 11
+    (property 
+     (pinname 11)
+     (pintype 4)))
+   (pin 999 12
+    (property 
+     (pinname 12)
+     (pintype 4)))
+   (pin 999 13
+    (property 
+     (pinname 13)
+     (pintype 4)))
+   (pin 999 14
+    (property 
+     (pinname 14)
+     (pintype 4)))
+   (pin 999 15
+    (property 
+     (pinname 15)
+     (pintype 4)))
+   (pin 999 16
+    (property 
+     (pinname 16)
+     (pintype 4))))
+  (image PCF8574
+   (property 
+    (sourcelib C:\\USERS\\1230838\\DESKTOP\\PROJETSESSION5\\BLOC3\\SCHEMA\\LIBRARY1.OLB))
+   (pin 999 1
+    (property 
+     (pinname A0)
+     (pintype 1)))
+   (pin 999 2
+    (property 
+     (pinname A1)
+     (pintype 1)))
+   (pin 999 3
+    (property 
+     (pinname A2)
+     (pintype 1)))
+   (pin 999 13
+    (property 
+     (pinname /INT)
+     (pintype 1)))
+   (pin 999 14
+    (property 
+     (pinname SCL)
+     (pintype 1)))
+   (pin 999 15
+    (property 
+     (pinname SDA)
+     (pintype 1)))
+   (pin 999 4
+    (property 
+     (pinname P0)
+     (pintype 1)))
+   (pin 999 5
+    (property 
+     (pinname P1)
+     (pintype 1)))
+   (pin 999 6
+    (property 
+     (pinname P2)
+     (pintype 1)))
+   (pin 999 7
+    (property 
+     (pinname P3)
+     (pintype 1)))
+   (pin 999 9
+    (property 
+     (pinname P4)
+     (pintype 1)))
+   (pin 999 10
+    (property 
+     (pinname P5)
+     (pintype 1)))
+   (pin 999 11
+    (property 
+     (pinname P6)
+     (pintype 1)))
+   (pin 999 12
+    (property 
+     (pinname P7)
+     (pintype 1)))
+   (pin 999 16
+    (property 
+     (pinname VDD)
+     (pintype 7)))
+   (pin 999 8
+    (property 
+     (pinname VSS)
+     (pintype 7))))
+  (image PCF8574_0
+   (property 
+    (sourcelib C:\\USERS\\1230838\\DESKTOP\\PROJETSESSION5\\BLOC3\\SCHEMA\\CARTEI2CIO.DSN))
+   (pin 999 1
+    (property 
+     (pinname A0)
+     (pintype 1)))
+   (pin 999 2
+    (property 
+     (pinname A1)
+     (pintype 1)))
+   (pin 999 3
+    (property 
+     (pinname A2)
+     (pintype 1)))
+   (pin 999 13
+    (property 
+     (pinname /INT)
+     (pintype 1)))
+   (pin 999 14
+    (property 
+     (pinname SCL)
+     (pintype 1)))
+   (pin 999 15
+    (property 
+     (pinname SDA)
+     (pintype 1)))
+   (pin 999 4
+    (property 
+     (pinname P0)
+     (pintype 1)))
+   (pin 999 5
+    (property 
+     (pinname P1)
+     (pintype 1)))
+   (pin 999 6
+    (property 
+     (pinname P2)
+     (pintype 1)))
+   (pin 999 7
+    (property 
+     (pinname P3)
+     (pintype 1)))
+   (pin 999 9
+    (property 
+     (pinname P4)
+     (pintype 1)))
+   (pin 999 10
+    (property 
+     (pinname P5)
+     (pintype 1)))
+   (pin 999 11
+    (property 
+     (pinname P6)
+     (pintype 1)))
+   (pin 999 12
+    (property 
+     (pinname P7)
+     (pintype 1)))
+   (pin 999 16
+    (property 
+     (pinname VDD)
+     (pintype 7)))
+   (pin 999 8
+    (property 
+     (pinname VSS)
+     (pintype 7))))
+  (image "CAP NP"
+   (property 
+    (sourcelib C:\\ORCAD\\ORCAD_16.2\\TOOLS\\CAPTURE\\LIBRARY\\OLDLIBS\\DEVICE.OLB))
+   (pin 999 1
+    (property 
+     (pinname 1)
+     (pintype 4)))
+   (pin 999 2
+    (property 
+     (pinname 2)
+     (pintype 4))))
+  (image ANTENNA
+   (property 
+    (sourcelib C:\\ORCAD\\ORCAD_16.2\\TOOLS\\CAPTURE\\LIBRARY\\OLDLIBS\\DEVICE.OLB))
+   (pin 999 1
+    (property 
+     (pinname 1)
+     (pintype 2)))))
+ (network
+  (net "IN3-24V"
+   (pins
+     "JP1-4"-4 "R4-4"-2))
+  (net "IN15-24V"
+   (pins
+     "JP1-4"-16 "R4-16"-2))
+  (net "IN14-24V"
+   (pins
+     "JP1-4"-15 "R4-15"-2))
+  (net "IN5-24V"
+   (pins
+     "JP1-4"-6 "R4-6"-2))
+  (net "IN4-24V"
+   (pins
+     "JP1-4"-5 "R4-5"-2))
+  (net "IN2-24V"
+   (pins
+     "JP1-4"-3 "R4-3"-2))
+  (net "IN13-24V"
+   (pins
+     "JP1-4"-14 "R4-14"-2))
+  (net "IN8-24V"
+   (pins
+     "JP1-4"-9 "R4-9"-2))
+  (net N772658
+   (pins
+     "R2-1"-2 "Q2-1"-2 "U2-1"-2))
+  (net N786431
+   (pins
+     "Q2-8"-2 "U2-2"-4 "R2-8"-2))
+  (net N773879
+   (pins
+     "R2-7"-2 "U2-2"-2 "Q2-7"-2))
+  (net N786263
+   (pins
+     "R2-4"-2 "U2-1"-8 "Q2-4"-2))
+  (net VCC
+    (property 
+     (nettype S))
+   (pins
+     "U3-1"-14 "U2-2"-14 "U1-4"-16 "U1-3"-16 "U1-1"-16 "U1-2"-16 "JP1-1"-2 "JP1-1"-1 "C1-1"-1
+     "C1-3"-1 "JP1-1"-11 "U1-1"-2 "U1-4"-1 "R1-2"-1 "R1-1"-1 "C1-2"-1 "U1-2"-1 "U1-2"-2
+     "C1-4"-1 "U2-1"-14 "C2-3"-1 "C2-2"-1 "C2-1"-1))
+  (net GND
+    (property 
+     (nettype S))
+   (pins
+     "U3-1"-7 "U2-2"-7 "U1-4"-8 "U1-3"-8 "U1-1"-8 "U1-2"-8 "JP1-2"-1 "JP1-1"-20 "MT1-3"-1
+     "JP1-1"-14 "JP1-1"-9 "JP1-1"-19 "JP1-1"-17 "MT1-1"-1 "U1-1"-1 "U1-1"-3 "C1-1"-2 "C1-2"-2
+     "C1-3"-2 "U1-4"-3 "U1-4"-2 "MT1-4"-1 "U1-3"-3 "U1-3"-2 "U1-3"-1 "MT1-2"-1 "U1-2"-3
+     "C1-4"-2 "U2-1"-7 "C2-1"-2 "C2-2"-2 "C2-3"-2 "R4-17"-2 "R4-28"-2 "R4-20"-2 "R4-19"-2
+     "R4-21"-2 "R4-22"-2 "R4-23"-2 "R4-25"-2 "R4-24"-2 "R4-26"-2 "R4-27"-2 "R4-31"-2 "R4-30"-2
+     "R4-32"-2 "R4-29"-2 "R4-18"-2))
+  (net SDA1
+   (pins
+     "JP1-1"-3))
+  (net PD1
+   (pins
+     "JP1-1"-18))
+  (net PWM2
+   (pins
+     "JP1-1"-8))
+  (net PWM4
+   (pins
+     "JP1-1"-12))
+  (net SCL1
+   (pins
+     "JP1-1"-5))
+  (net SCL2
+   (pins
+     "U1-2"-14 "U1-1"-14 "U1-4"-14 "U1-3"-14 "JP1-1"-15 "R1-2"-2))
+  (net PWM1
+   (pins
+     "JP1-1"-6))
+  (net VSYNC
+   (pins
+     "JP1-1"-7))
+  (net SDA2
+   (pins
+     "U1-2"-15 "U1-1"-15 "R1-1"-2 "U1-3"-15 "JP1-1"-13 "U1-4"-15))
+  (net PD2
+   (pins
+     "JP1-1"-16))
+  (net PWM3
+   (pins
+     "JP1-1"-10))
+  (net PWM0
+   (pins
+     "JP1-1"-4))
+  (net N897506
+   (pins
+     "R3-7"-2 "Q3-7"-2 "U2-2"-6))
+  (net N897158
+   (pins
+     "U3-1"-2 "Q3-1"-2 "R3-1"-2))
+  (net N897366
+   (pins
+     "U3-1"-10 "Q3-5"-2 "R3-5"-2))
+  (net N897314
+   (pins
+     "Q3-3"-2 "R3-3"-2 "U3-1"-6))
+  (net N910940
+   (pins
+     "Q2-5"-2 "U2-1"-10 "R2-5"-2))
+  (net N912666
+   (pins
+     "Q2-3"-2 "U2-1"-6 "R2-3"-2))
+  (net N824175
+   (pins
+     "U2-1"-12 "R2-6"-2 "Q2-6"-2))
+  (net N918589
+   (pins
+     "Q2-2"-2 "U2-1"-4 "R2-2"-2))
+  (net 24VCC
+    (property 
+     (nettype S))
+   (pins
+     "Q3-5"-3 "R3-6"-1 "Q3-3"-3 "R3-4"-1 "R3-5"-1 "R3-3"-1 "Q3-6"-3 "Q3-8"-3 "R3-2"-1
+     "Q3-7"-3 "Q3-2"-3 "R3-8"-1 "R3-7"-1 "Q3-1"-3 "Q3-4"-3 "R3-1"-1 "JP1-2"-2 "R2-7"-1
+     "R2-5"-1 "Q2-7"-3 "Q2-4"-3 "R2-3"-1 "R2-4"-1 "Q2-5"-3 "Q2-3"-3 "R2-8"-1 "Q2-8"-3
+     "Q2-1"-3 "R2-1"-1 "R2-2"-1 "Q2-6"-3 "Q2-2"-3 "R2-6"-1))
+  (net N929769
+   (pins
+     "Q3-2"-2 "U3-1"-4 "R3-2"-2))
+  (net "OUT1-5V"
+   (pins
+     "U1-3"-5 "U2-1"-5))
+  (net N931468
+   (pins
+     "R3-8"-2 "U2-2"-8 "Q3-8"-2))
+  (net "OUT0-5V"
+   (pins
+     "U1-3"-4 "U2-1"-1))
+  (net N930977
+   (pins
+     "U3-1"-12 "Q3-6"-2 "R3-6"-2))
+  (net "OUT2-5V"
+   (pins
+     "U1-3"-6 "U2-1"-11))
+  (net N930495
+   (pins
+     "R3-4"-2 "U3-1"-8 "Q3-4"-2))
+  (net "OUT3-5V"
+   (pins
+     "U1-3"-7 "U2-2"-1))
+  (net "OUT4-5V"
+   (pins
+     "U1-3"-9 "U2-1"-3))
+  (net "OUT15-5V"
+   (pins
+     "U2-2"-9 "U1-4"-12))
+  (net "OUT6-5V"
+   (pins
+     "U1-3"-11 "U2-1"-13))
+  (net "OUT9-5V"
+   (pins
+     "U3-1"-5 "U1-4"-5))
+  (net "OUT13-5V"
+   (pins
+     "U3-1"-9 "U1-4"-10))
+  (net "OUT11-5V"
+   (pins
+     "U2-2"-5 "U1-4"-7))
+  (net "OUT10-5V"
+   (pins
+     "U3-1"-11 "U1-4"-6))
+  (net "OUT14-5V"
+   (pins
+     "U3-1"-13 "U1-4"-11))
+  (net "OUT7-5V"
+   (pins
+     "U1-3"-12 "U2-2"-3))
+  (net "OUT5-5V"
+   (pins
+     "U1-3"-10 "U2-1"-9))
+  (net "OUT12-5V"
+   (pins
+     "U3-1"-3 "U1-4"-9))
+  (net "OUT8-5V"
+   (pins
+     "U3-1"-1 "U1-4"-4))
+  (net "IN0-5V"
+   (pins
+     "U1-1"-4 "R4-1"-1 "R4-17"-1))
+  (net "IN13-5V"
+   (pins
+     "U1-2"-10 "R4-30"-1 "R4-14"-1))
+  (net "IN3-5V"
+   (pins
+     "U1-1"-7 "R4-4"-1 "R4-20"-1))
+  (net "IN9-5V"
+   (pins
+     "U1-2"-5 "R4-10"-1 "R4-26"-1))
+  (net "OUT11-24V"
+   (pins
+     "Q3-7"-1 "JP1-3"-12))
+  (net "IN5-5V"
+   (pins
+     "U1-1"-10 "R4-22"-1 "R4-6"-1))
+  (net "IN7-5V"
+   (pins
+     "U1-1"-12 "R4-24"-1 "R4-8"-1))
+  (net "IN14-5V"
+   (pins
+     "U1-2"-11 "R4-31"-1 "R4-15"-1))
+  (net "IN8-5V"
+   (pins
+     "U1-2"-4 "R4-9"-1 "R4-25"-1))
+  (net "OUT7-24V"
+   (pins
+     "JP1-3"-8 "Q2-8"-1))
+  (net "IN10-5V"
+   (pins
+     "U1-2"-6 "R4-11"-1 "R4-27"-1))
+  (net "OUT6-24V"
+   (pins
+     "JP1-3"-7 "Q2-6"-1))
+  (net "IN11-5V"
+   (pins
+     "U1-2"-7 "R4-12"-1 "R4-28"-1))
+  (net "OUT5-24V"
+   (pins
+     "JP1-3"-6 "Q2-4"-1))
+  (net "IN12-5V"
+   (pins
+     "U1-2"-9 "R4-29"-1 "R4-13"-1))
+  (net "OUT1-24V"
+   (pins
+     "JP1-3"-2 "Q2-3"-1))
+  (net "IN6-5V"
+   (pins
+     "U1-1"-11 "R4-23"-1 "R4-7"-1))
+  (net "OUT3-24V"
+   (pins
+     "JP1-3"-4 "Q2-7"-1))
+  (net "IN4-5V"
+   (pins
+     "U1-1"-9 "R4-21"-1 "R4-5"-1))
+  (net "OUT4-24V"
+   (pins
+     "JP1-3"-5 "Q2-2"-1))
+  (net "IN2-5V"
+   (pins
+     "U1-1"-6 "R4-3"-1 "R4-19"-1))
+  (net "OUT2-24V"
+   (pins
+     "JP1-3"-3 "Q2-5"-1))
+  (net "OUT8-24V"
+   (pins
+     "Q3-1"-1 "JP1-3"-9))
+  (net "IN15-5V"
+   (pins
+     "U1-2"-12 "R4-16"-1 "R4-32"-1))
+  (net "OUT12-24V"
+   (pins
+     "Q3-2"-1 "JP1-3"-13))
+  (net "IN1-5V"
+   (pins
+     "U1-1"-5 "R4-2"-1 "R4-18"-1))
+  (net "OUT10-24V"
+   (pins
+     "Q3-5"-1 "JP1-3"-11))
+  (net "OUT9-24V"
+   (pins
+     "Q3-3"-1 "JP1-3"-10))
+  (net "OUT14-24V"
+   (pins
+     "Q3-6"-1 "JP1-3"-15))
+  (net "OUT13-24V"
+   (pins
+     "Q3-4"-1 "JP1-3"-14))
+  (net "OUT15-24V"
+   (pins
+     "Q3-8"-1 "JP1-3"-16))
+  (net "IN7-24V"
+   (pins
+     "JP1-4"-8 "R4-8"-2))
+  (net "IN11-24V"
+   (pins
+     "JP1-4"-12 "R4-12"-2))
+  (net "IN1-24V"
+   (pins
+     "JP1-4"-2 "R4-2"-2))
+  (net "IN9-24V"
+   (pins
+     "JP1-4"-10 "R4-10"-2))
+  (net "IN6-24V"
+   (pins
+     "JP1-4"-7 "R4-7"-2))
+  (net "OUT0-24V"
+   (pins
+     "JP1-3"-1 "Q2-1"-1))
+  (net "IN12-24V"
+   (pins
+     "JP1-4"-13 "R4-13"-2))
+  (net "IN10-24V"
+   (pins
+     "JP1-4"-11 "R4-11"-2))
+  (net "IN0-24V"
+   (pins
+     "JP1-4"-1 "R4-1"-2)))
+)

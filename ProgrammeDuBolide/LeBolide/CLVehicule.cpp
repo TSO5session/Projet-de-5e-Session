@@ -23,7 +23,7 @@
 
 // Constructeur par defaut ////////////////////////////////////////////////////
 CLVehicule :: CLVehicule(void) :
- LCD(0xF800)    ,
+ LCD(0xF800)                ,
  clRoueAvantD   (R_AVANTD)  ,
  clRoueAvantG   (R_AVANTG)  ,
  clRoueArriereD (R_ARRIERED),
@@ -116,7 +116,7 @@ void CLVehicule :: vAvancer(UC ucDirection)
     LCD.String("    ");  
     LCD.vLCDCursor(0,3);
     
-    #ifdef SPI_DALLAs
+    #ifdef SPI_DALLAS
     if(ucDirection == GAUCHE)
      {
        LCD.String("GAU");  
@@ -230,8 +230,8 @@ void CLVehicule :: vAvancer(UC ucDirection)
 void CLVehicule :: vSuivreLigne(void)
  {
 #ifdef SPI_DALLAS
-   clEcranVehicule.vLCDCursor(0,1);
-   clEcranVehicule.vLCDDisplayCaracChain("SUIVIE LIGNE SPI");  // Pourquoi ça ne s'affiche pas?
+   LCD.vLCDCursor(0,1);
+   LCD.String("SUIVIE LIGNE SPI");  // Pourquoi ça ne s'affiche pas?
 
    uiVitesse       = 0x0280; 
 
@@ -291,5 +291,4 @@ void CLVehicule :: vSuivreLigne(void)
     }
 #endif
  }
-
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

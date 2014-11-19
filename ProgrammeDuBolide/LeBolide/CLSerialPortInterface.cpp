@@ -20,23 +20,20 @@
 // DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
-
 #include "CLSerialPortInterface.h"
 
-
 // Constructeur par defaut ////////////////////////////////////////////////////
-
 CLSerialPortInterface :: CLSerialPortInterface(void)
- {
-   SCLK = 0;
-   MISO = 0;
- }
+{
+SCLK = 0;
+MISO = 0;
+}
  
 // Destructeur ////////////////////////////////////////////////////////////////
-
 CLSerialPortInterface :: ~CLSerialPortInterface(void)
- {
- }
+{
+  
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -50,29 +47,28 @@ CLSerialPortInterface :: ~CLSerialPortInterface(void)
 //
 // Appel de la fonction: void (void);
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 UC CLSerialPortInterface :: ucSPITransferMOD0(UC ucSPIbyte)
- {
-   for (UC ucSPIcount = 8; ucSPIcount > 0; ucSPIcount--)
-    {
-      if(ucSPIbyte & 0x80) MOSI = 1;
-      else                 MOSI = 0;
-      ucSPIbyte = ucSPIbyte << 1; 
+{
+for (UC ucSPIcount = 8; ucSPIcount > 0; ucSPIcount--)
+  {
+   if(ucSPIbyte & 0x80) MOSI = 1;
+   else                 MOSI = 0;
+   ucSPIbyte = ucSPIbyte << 1; 
       
-      SCLK = 1; 
+   SCLK = 1; 
       
-      ucSPIbyte |= MISO; 
+   ucSPIbyte |= MISO; 
       
-      SCLK = 0;
-     }
-   return (ucSPIbyte);
- } 
+   SCLK = 0;
+  }
+return (ucSPIbyte);
+} 
 
 ///////////////////////////////////////////////////////////////////////////////
 //

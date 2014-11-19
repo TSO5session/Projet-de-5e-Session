@@ -16,7 +16,8 @@
 //
 #include "TypeCible.h"
 #include "ConversionKeilToIAR.h"
-#include <stdio.h>
+#include "ioDS89C450.h"
+//#include <stdio.h>
 //
 // *****************************************************************************
 
@@ -27,23 +28,29 @@
 //                            DEFINITION DE MOT CLE
 // *****************************************************************************
 
-#define ACTIF   1              //
-#define INACTIF 0              //
+#define ACTIF   1
+#define INACTIF 0
 
-#define ON      1              //
-#define OFF     0              //
+#define ON      1
+#define OFF     0
 
-#define HAUT    1              //
-#define BAS     0              //
+#define VRAI    1
+#define FAUX    0
 
-#define HIGH    1              //
-#define LOW     0              //
+#define HIGH    1
+#define LOW     0
 
-#define VRAI    1              //
-#define FAUX    0              //
+#define HAUT    1
+#define BAS     0
 
-#define TRUE    1              //
-#define FALSE   0              //
+#define ACK     0
+#define NOACK   1
+
+#define TRUE    1
+#define FALSE   0
+
+#define COMPLET   1
+#define INCOMPLET 0
 
 // *****************************************************************************
 //                            DEFINITION DE TYPE
@@ -55,25 +62,21 @@ typedef void                VOID;
   #define NULL 0
 #endif
 
-typedef float               F;
-
-typedef signed char         C;
-typedef signed char         INT8;
-
-typedef unsigned char       UC;
-typedef unsigned char       UINT8;
-
-typedef signed short int    INT16;
-typedef signed short int    SI;
-
-typedef unsigned short int  UINT16;
-typedef unsigned short int  USI;
-
-typedef signed long         INT32;
-typedef signed long         L;
-
-typedef unsigned  long      UINT32;
-typedef unsigned  long      UL;
+typedef bool               bit;        
+typedef float              F;
+typedef signed long        L;
+typedef signed char        C;
+typedef unsigned  long     UL;
+typedef unsigned char      UC;
+typedef unsigned int       UI;
+typedef signed short int   SI;
+typedef unsigned short int USI;
+typedef signed char        INT8;
+typedef unsigned char      UINT8;
+typedef unsigned short int UINT16;
+typedef signed long        INT32;
+typedef unsigned long int  UINT32;
+typedef void               VOID;
 
 // *****************************************************************************
 //                    DEFINITION DE STRUCTURES UTILES

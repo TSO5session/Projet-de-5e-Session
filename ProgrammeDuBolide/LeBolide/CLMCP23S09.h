@@ -16,7 +16,6 @@
 //
 //
 // *****************************************************************************
-
 #include "DeclarationGenerale.h"
 #include "CLSerialPortInterface.h"
 
@@ -35,20 +34,17 @@
 
 class CLMCP23S09 : public CLSerialPortInterface
 {
-   public:  
-     CLMCP23S09(void);
-     ~CLMCP23S09(void);
+public:  
+   CLMCP23S09(void);
+  ~CLMCP23S09(void);
      
-     UC ucLireMCP23S09(void);
-     void vEcrireMCP23S09(UC ucDonnee);
-     void vSetModeMCP23S09(UC ucMode, UC ucPort);
+   UC ucLireMCP23S09(void);
+   void vEcrireMCP23S09(UC ucDonnee);
+   void vSetModeMCP23S09(UC ucMode, UC ucPort);
      
-   protected:
+protected:
 
-   private:
-
+private:
 };
-
 #endif
-
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

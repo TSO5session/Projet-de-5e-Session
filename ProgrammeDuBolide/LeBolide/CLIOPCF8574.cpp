@@ -62,10 +62,12 @@ CLIOPCF8574 :: ~CLIOPCF8574(void)
 ///////////////////////////////////////////////////////////////////////////////
 UC CLIOPCF8574 :: ucLireIOPCF(void)
 {
-   UC uctDonnee[1]; 
-   vI2CLireDonnee(ucAdresseIOPCF, NULL, PASADR, uctDonnee, 1);
-   
-   return(uctDonnee[0]);
+//UC uctDonnee[1]; 
+//ucI2CLireDonnee(0X41, 0X42);
+//vI2CLireDonnee(ucAdresseIOPCF, NULL, PASADR, uctDonnee, 1);
+//return(uctDonnee[0]);
+  
+return(LirePCF8574());
 }
 
 ///////////////////////////////////////////////////////////////////////////////

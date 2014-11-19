@@ -18,19 +18,19 @@
 // DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
-
 #include "CLI2CPort.h"
 
 // Constructeur par defaut //////////////////////////////////////////////////// 
 CLI2CPort :: CLI2CPort(void)
- {
- }
+{
+  
+}
 
 // Destructeur ////////////////////////////////////////////////////////////////
 CLI2CPort :: ~CLI2CPort(void)
- {
+{
    
- }
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // UC CLI2CPort :: ucI2CLireDonnee(UC ucAdrBoitier, UC ucAdrRegistre)
@@ -46,30 +46,35 @@ CLI2CPort :: ~CLI2CPort(void)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 UC CLI2CPort :: ucI2CLireDonnee(UC ucAdrBoitier, UC ucAdrRegistre)
- {
-   UC ucReadOctet = 0;
+{
+UC ucReadOctet = 0;
    
+vI2CStart();
+
+while(ucI2CEcrireOctet(ucAdrBoitier + WRITE)== NACK)         
+  {
    vI2CStart();
-   while(ucI2CEcrireOctet(ucAdrBoitier + WRITE)== NACK)         
-    {
-      vI2CStart();
-    }
-   while(ucI2CEcrireOctet(ucAdrRegistre)       == NACK); 
+  }
+
+while(ucI2CEcrireOctet(ucAdrRegistre)       == NACK);
+
+vI2CStart();
+
+while(ucI2CEcrireOctet(ucAdrBoitier + READ) == NACK)
+  {
    vI2CStart();
-   while(ucI2CEcrireOctet(ucAdrBoitier + READ) == NACK)
-    {
-      vI2CStart();
-    }
-   ucReadOctet = ucI2CLireOctet(NACK);
-   vI2CStop();
-   return(ucReadOctet);
- }
+  }
+
+ucReadOctet = ucI2CLireOctet(NACK);
+vI2CStop();
+
+return(ucReadOctet);
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //void CLI2CPort :: vI2CLireDonnee(UC ucAdrBoitier, USI uiAdrRegistre, 
@@ -85,20 +90,18 @@ UC CLI2CPort :: ucI2CLireDonnee(UC ucAdrBoitier, UC ucAdrRegistre)
 //
 // Appel de la fonction: 
 //
-// Cree le  4 avril 2014 par Louis-Normand Ang Houle 
+// Cree le  4 avril 2014 par Louis-Normand Ang-Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-void CLI2CPort :: vI2CLireDonnee(UC ucAdrBoitier,USI uiAdrRegistre,UC ucTypeAdr
-                                 ,UC *ucpRecevoirDonnee ,UC ucNbrLectures)
- {		 
+void CLI2CPort :: vI2CLireDonnee(UC ucAdrBoitier, USI uiAdrRegistre, UC ucTypeAdr,
+                                 UC *ucpRecevoirDonnee, UC ucNbrLectures)
+ {       
    union UNEntierOctet unAdresse;
-   
-   unAdresse.uiEntier = uiAdrRegistre;
-   
+   unAdresse.uiEntier = uiAdrRegistre;  
 //----------------------------------------------------------------------
    switch (ucTypeAdr)
      {
@@ -124,7 +127,7 @@ void CLI2CPort :: vI2CLireDonnee(UC ucAdrBoitier,USI uiAdrRegistre,UC ucTypeAdr
          }         
       break;
 //----------------------------------------------------------------------
-      case ADR16BIT:		
+      case ADR16BIT:      
        vI2CStart();
        while(ucI2CEcrireOctet(ucAdrBoitier + WRITE)             == NACK)
          {
@@ -157,6 +160,33 @@ void CLI2CPort :: vI2CLireDonnee(UC ucAdrBoitier,USI uiAdrRegistre,UC ucTypeAdr
   }
 
 ///////////////////////////////////////////////////////////////////////////////
+// void CLI2CPort :: LirePCF8574(void)
+///////////////////////////////////////////////////////////////////////////////
+//
+// Description: Lit le PCF8574 et returne la aleur lue
+//
+// Parametres d'entrees: null
+//            
+// Parametres de sortie: UV
+//
+// Appel de la fonction: 
+//
+// Cree le  18 novembre 2014 par Vincie-Boy!
+// 
+// Modifications:   
+//
+///////////////////////////////////////////////////////////////////////////////
+UC CLI2CPort :: LirePCF8574(void)
+{
+UC ucDonneeLue;  
+vI2CStart();
+while(ucI2CEcrireOctet(0x40) == NACK){vI2CStart();}  
+ucDonneeLue = ucI2CLireOctet(NACK);
+vI2CStop();
+return(ucDonneeLue);
+}
+
+///////////////////////////////////////////////////////////////////////////////
 // void CLI2CPort :: vI2CEcrireDonnee(UC ucAdrBoitier,UC ucAdrRegistre,
 //                                    UC ucDonnee)
 ///////////////////////////////////////////////////////////////////////////////
@@ -171,11 +201,10 @@ void CLI2CPort :: vI2CLireDonnee(UC ucAdrBoitier,USI uiAdrRegistre,UC ucTypeAdr
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 void CLI2CPort :: vI2CEcrireDonnee(UC ucAdrBoitier, UC ucAdrRegistre, UC ucDonnee)
  {  
    vI2CStart();
@@ -208,7 +237,7 @@ void CLI2CPort :: vI2CEcrireDonnee(UC ucAdrBoitier, UC ucAdrRegistre, UC ucDonne
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -239,7 +268,7 @@ void CLI2CPort :: vI2CEcrireDonnee(UC ucAdrBoitier, USI uiAdrRegistre,
         while(ucI2CEcrireOctet(unAdresse.stDeuxOctet.ucOctet1) == NACK);
       break;
 //----------------------------------------------------------------------
-      case ADR16BIT:										  
+      case ADR16BIT:                                
         vI2CStart();
         while(ucI2CEcrireOctet(ucAdrBoitier + WRITE)             == NACK)
          {

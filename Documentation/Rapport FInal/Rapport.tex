@@ -99,13 +99,28 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \begin{spacing}{1.5}
 
 \section{Présentation du projet}
+Le projet de la cinquième session consiste à réaliser
+\begin{itemize}
+\item[$\Rightarrow$] Le Bolide
+\item[$\Rightarrow$] Carte Dallas DS89C450
+\item[$\Rightarrow$] Carte uPSD 3254A
+\item[$\Rightarrow$] SOC8200
+\item[$\Rightarrow$] Table FESTO
+\item[$\Rightarrow$] Carte PIC16F88
+\item[$\Rightarrow$] Carte d'extension I{\small 2}C
+\item[$\Rightarrow$] Carte d'extension SPI
+\item[$\Rightarrow$] Une pile de 10.8 volts
+\item[$\Rightarrow$] Quatre moteurs et autant de pneus
+\end{itemize}
 
 \subsection{Explication du projet}
 
 \subsection{Schéma bloc du système}
 \subsubsection{Bloc 1}
-
+Le bloc 1 est composé d'un ordinateur muni d'une carte d'extension PCI vers bus CAN. Son rôle est de contrôler et diriger toute l'opération et de veiller au bon fonctionnement de chaque composantes à l'aide d'une application en Csharp. Le bloc 1 est le cerveau de l'usine.
+ 
 \subsubsection{Bloc 2}
+Le bloc 2 est composé d'un système embarqué Linux basé sur le SOC8200. Son rôle principal est d'agir comme sniffeur d'information et d'afficher sur son écran toutes les données qui transitent sur le bus CAN. Toutefois, ce dernier est en mesure de détecter une défaillance du PC via un gestionnaire de HeartBeat et de prendre la relève en tant que cerveau de l'opération. Le SOC8200 agit comme vice-président du bus CAN.
 
 \subsubsection{Bloc 3}
 
@@ -188,7 +203,7 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \subsection{Liste des trames}
 
 \begin{table}[!ht]
-\caption{Index des identifianst matériel CAN}
+\caption{Index des identifiants matériel CAN}
 \medskip
 \centering
 \begin{tabular}{|l|c|}
@@ -202,8 +217,10 @@ SOC8200 & 001 \\
 Station 1 & 002 \\ 
 \hline 
 Station 2  & 003 \\ 
+\hline
+Station 3  & 004 \\
 \hline 
-Véhicule  & 004 \\ 
+Véhicule  & 005 \\ 
 \hline 
 \end{tabular} 
 \label{tab:testtab1}
@@ -295,7 +312,7 @@ Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\
 \end{table}
 \begin{flushleft}
 \textbf{Note:} Il faut définir les TimeStamps et la checkSUM\\
-\textbf{Note:} La sttion no.1 relaie les données entre l'ordinateur et la station no.3 (pesage), entre l'ordinateur et la station no.2 (table festo) via xbee et entre la voiture et le PC via xbee.
+\textbf{Note:} La station no.1 relaie les données entre l'ordinateur et la station no.3 (pesage), entre l'ordinateur et la station no.2 (table Festo) via xbee et entre la voiture et le PC via Xbee.
 \end{flushleft}
 \pagebreak
 \textbf{Note:} FF, c'est la checkSUM, mais elle n'a pas encore été faite \\
@@ -332,7 +349,7 @@ Historique.AppendText("Insérer messge ici");   // Enregistre le log de la conne
 \HRule
 \end{center}
 
-\textbf{Comment envoyer une trame sécurisée}
+\textbf{Comment envoyer une trame sécurisée par try catch}
 \begin{lstlisting}
 try
 {
@@ -348,19 +365,19 @@ try
 
  for (int i = 0; i < CANMsg.LEN; i++)
     {
-    if (i == 0) { CANMsg.DATA[0] = 48; } // Note: le programme .HEX de Gab ne reconnait que l'ASCII
-    if (i == 1) { CANMsg.DATA[1] = 48; } // Ce programme en C# envoie en base 10
-    if (i == 2) { CANMsg.DATA[2] = 48; } // 48 en base 10 = 0x30 en hexa
-    if (i == 3) { CANMsg.DATA[3] = 48; } // 0x30 en hexa = 0 en ascii
-    if (i == 4) { CANMsg.DATA[4] = 00; } // Donc, pour écrire un 0 sur la carte Dallas de GAB,
-    if (i == 5) { CANMsg.DATA[5] = 00; } // il faut envoyer 48
-    if (i == 6) { CANMsg.DATA[6] = 00; }
-    if (i == 7) { CANMsg.DATA[7] = 00; }               
+     if (i == 0) { CANMsg.DATA[0] = 00; } // Note: Ce programme en C# envoie en base 10
+     if (i == 1) { CANMsg.DATA[1] = 00; } // 0x30 (en ascii) = caractère '0'
+     if (i == 2) { CANMsg.DATA[2] = 00; } // 0 (en base 10) = caractère ascii '0' (0x30)
+     if (i == 3) { CANMsg.DATA[3] = 00; } 
+     if (i == 4) { CANMsg.DATA[4] = 00; } 
+     if (i == 5) { CANMsg.DATA[5] = 00; } 
+     if (i == 6) { CANMsg.DATA[6] = 00; }
+     if (i == 7) { CANMsg.DATA[7] = 00; }               
    }
 
  stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
 
- if (stsResult == TPCANStatus.PCAN_ERROR_OK)
+ if (stsResult == TPCANStatus.PCAN_ERROR_OK)// Si l'envoie est réussi
    {
     Historique.AppendText("\r\n");
     Historique.AppendText("\r\n");
@@ -368,16 +385,16 @@ try
     Historique.AppendText("\r\n");
     Historique.AppendText("XYZ command successfully sent");   
    }
- else
+ else // Si l'envoi à échoué
    {
     Historique.AppendText("\r\n");
     Historique.AppendText("\r\n");
     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
     Historique.AppendText("\r\n");
-    Historique.AppendText("Error sending START command");  
+    Historique.AppendText("Error sending XYZ command");  
    }
  }
-catch
+catch // En cas d'échec d'envoi sur le bus CAN
    {
     Historique.AppendText("\r\n");
     Historique.AppendText("\r\n");
@@ -387,7 +404,7 @@ catch
    }
 \end{lstlisting}
 \pagebreak
-\textbf{Comment prendre une décision en fonction de la trame reçue}
+\textbf{Comment prendre une décision en fonction de la trame reçue (avec try catch)}
 \begin{lstlisting}
 ListViewItem lviCurrentItem;
 try
@@ -403,11 +420,11 @@ try
          lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
          lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
 
-         textBox1.Text = lviCurrentItem.SubItems[3].Text;
+         textBox1.Text = lviCurrentItem.SubItems[3].Text; // Enregistre le text reçu dans un string
         }
       }
 
-   if (textBox1.Text == "41 42 43 44 45 46 ") // Si cette trame est reçue
+   if (textBox1.Text == "41 42 43 44 45 46 ") // Si cette trame en particulier est reçue
      {
       label19.Text = "BINGO";   // Prend cette décision
 
@@ -428,10 +445,11 @@ catch
   }
 \end{lstlisting}
 \begin{spacing}{1.5}
-
+\pagebreak
 
 \section{Le matériel}
 \subsection{Bloc 1}
+D'un pont de vu matériel, le bloc 1 est le plus simple, car il est composé d'un ordinateur Windows munie d'une carte PCI vers CAN et d'une prise RS232. Il n'y a rien à faire, mise à part brancher les bons câbles aux bons endroits.
 
 \subsection{Bloc 2}
 
@@ -442,7 +460,11 @@ catch
 
 
 \subsection{Explication des types de liens}
+\subsubsection{RS232}
+Un lien RS232 9600 Bauds est établi entre l'ordinateur et le SOC8200. Ce lien sert à l'envoie et à la réception de HeartBeat, afin que le SOC8200 ou l'ordinateur soit informé de toute défaillance de l'autre.
 
+\subsubsection{Xbee}
+Lorsque les modules Xbee sont adéquatement configurés, ils font office de remplacement au câble RS232. En effet, nos Xbee discutent entre eux à l'aide du protocole de communication RS232 à 9600 bauds.  
 
 
 \subsection{Explication des trames}
@@ -486,16 +508,63 @@ catch
 \HRule
 \end{center}
 
-
 \subsubsection{Liens web}
+Mettre ien vers GitHUB
 
-\subsubsection{Datasheet des PDF}
+\subsubsection{Datasheets}
+Note: Toutes les datasheets sont en format non-compressé. Vous pouvez zoomer sur le document PDF\footnote{Inclure les datasheet de la sorte économise du papier, donc des arbres} afin de lire l'intégralité de leurs première page.
+\begin{multicols}{3}
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/74HC14.pdf}}\\
 
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/dac6574.pdf}}\\
 
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/DS89C450.pdf}}\\
+
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/LineSensor.pdf}}\\
+
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/lm3914.pdf}}\\
+
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/opt101.pdf}}\\
+
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/PCF8574.pdf}} \\
+
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/UPSD3254A.pdf}}\\
+
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/Sabertooth.pdf}}\\
+\end{multicols}
+\vfill
 \pagebreak
 \section{Interface PC}
 
+\begin{figure}[hbtp]
+\caption{Programme de contrôle principal}
+\centering
+\includegraphics[scale=0.7]{Images/Bolid.jpg}
+\end{figure}
+
+Notre programme, écrit en Csharp à l'aide de Visual Studio, peut se connecter au bus CAN via une carte SPI\footnote{Spécifier le fabricant} et au bus RS232 via un câble DB9 ou USB\footnote{S'il y a présence d'un FTDI}. La connexion RS232 sert à l'envoie et à la réception du HeartBeat afin d'informer le SOC8200 si l'ordinateur en venait à connaître une défaillance. De plus, des témoins lumineux s'allument en présence de données transmises et reçues. \\
+Le programme peut lire l'heure interne du PC et, par un simple clic sur le bouton «Synchroniser», ajuster l'heure de référence de la station no.2.\\
+
+\begin{figure}[hbtp]
+\caption{Options CAN avancées}
+\centering
+\includegraphics[scale=0.7]{Images/Bolid.jpg}
+\end{figure}
+Il est possible d'utiliser des fonctionnalités CAN avancées tels que les masques et filtres de données. De plus, cette fenêtre permet de visualiser les données CAN reçues à l'état brutes et non traitées, ce qui peut s'avérer utile pour du débogage.
+
+
+
+\begin{figure}[hbtp]
+\caption{Historique des actions}
+\centering
+\includegraphics[scale=0.7]{Images/Bolid.jpg}
+\end{figure}
+Toute action effectué via le programme ainsi que toute donnée ayant transité sur le bus CAN et RS232 est catalogué en bonne et due forme dans l'onglet historique qu'il est possible de consulter et sauvegarder à tout moment.
+
+
+
 \subsection{Structure du programme}
+Parler des GhostLabels
 
 \subsection{Explication des trames}
 
@@ -508,6 +577,7 @@ catch
 \pagebreak
 \section{Logiciel du SOC8200}
 \subsection{Description du programme}
+Le programme du SOC2800 est écrit en script Shell\footnote{Car c'est plus simple que de se battre avec le gestionnaire de licence de Sourcery Codebench}\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable sur un système Linux}
 
 \subsection{Schéma bloc}
 \subsubsection{Du code}
@@ -527,18 +597,37 @@ catch
 
 \pagebreak
 \section{Logiciel de la station 1 et 2 et du bolide}
+Le programme de la station 1, 2 et du bolide est écrit en C++ à l'aide d'IAR WorkBench 8.20 et la compilation conditionnelle offre de le compiler pour chacune des trois stations mentionnées. De plus, la compilation conditionnelle permet au bolide d'utiliser soit une carte d'extension I2C, soit une carte d'extension SPI pour contrôler ses moteurs.
 
 \subsection{La station no.1}
 
 \subsection{La station no.2}
 
 \subsection{Le bolide}
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline 
+\textbf{Composante} & \textbf{Adresse I{\small 2}C} & \textbf{Description} \\ 
+\hline 
+MAX1236 & 0x68 & Convertisseur analogique-numérique \\ 
+\hline 
+DS1307  & 0xD0 & Circuit d'horloge RTC \\ 
+\hline 
+PCF8574 & 0x40 & I/O Expender pour bus I{\small 2}C \\ 
+\hline 
+DAC6574 & 0x98  & Convertisseur numérique-analogique  \\ 
+\hline 
+OPT101  &  0x50 & Suiveur de ligne  \\ 
+\hline 
+\end{tabular} 
+\caption{Informations sur le bus I{\small 2}C du bolide}
+\label{tab:testtab1}
+\end{table}
 
 \subsection{Procédure de compilation sur IAR}
 
 \subsection{Procédure de vérification}
-
-
 
 
 \section{Logiciel du module PIC18F258}
@@ -548,6 +637,18 @@ catch
 
 \subsection{Procédure de vérification}
 
+\section{Calculs}
+\subsection{Calcul du pas de conversion de la pile}
+$V_{MAX}=10.8V \Rightarrow MAX1236  = 12 bit \Rightarrow Pas = \dfrac{4K\Omega \cdot \left(\dfrac{10.8V}{10K\Omega}\right)}{2^{12}(pas)} = 1.33(mV/pas)$
+\subsection{Calcul du baudrate}
+$Baud = \dfrac{2^{SMOD}}{32}\cdot\dfrac{Crystal (Hz)}{12\cdot(256 - TH1)}$\\
+
+%\bigskip
+
+Alors...\\
+
+
+$\overbrace{9600 = \dfrac{2^{1}}{32} \cdot \dfrac{24\cdot10^{6}(Hz)}{12\cdot(256 - 243)}}^{uPSD 3254} $ $\Leftarrow \& \Rightarrow $ $ \overbrace{9600 = \dfrac{2^{0}}{32}\cdot \dfrac{11.0597 \cdot 10^{6}(Hz)}{12\cdot(256 - 253)}}^{DS89C450}$
 
 
 

@@ -3102,15 +3102,6 @@
     <name>$PROJ_DIR$\CLADCuPSD.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLCapteurDistance.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\CLClavier.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\CLCommunicCom2.cpp</name>
-  </file>
-  <file>
     <name>$PROJ_DIR$\CLDAC6574.cpp</name>
   </file>
   <file>
@@ -3129,16 +3120,10 @@
     <name>$PROJ_DIR$\CLI2CPort.Cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLInclinometre.cpp</name>
-  </file>
-  <file>
     <name>$PROJ_DIR$\CLInOutBase.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\CLLimiteVitesse.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\CLMCP23S09.cpp</name>
@@ -3151,6 +3136,9 @@
   </file>
   <file>
     <name>$PROJ_DIR$\CLRoue.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\CLRS232.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\CLSerialPortInterface.cpp</name>
@@ -3168,7 +3156,13 @@
     <name>$PROJ_DIR$\CLVehicule.cpp</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\CLXBEE.cpp</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\ProjetBolide.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\Station1.cpp</name>
   </file>
 </project>
 

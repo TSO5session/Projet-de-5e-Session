@@ -1,0 +1,787 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Nov/2014  11:41:08 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\Libraire\CLI2CReg.cpp                  #
+#    Command line       =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\Libraire\CLI2CReg.cpp -D UPSD3254A     #
+#                          --preprocess=cl C:\Users\1230838\Desktop\PROJETSES #
+#                          SION5\BLOC3\Programme\FESTO\UPSD\List\ -lC         #
+#                          C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\List\ -lA                         #
+#                          C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\List\ -o                          #
+#                          C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\Obj\ -e --no_cse --no_unroll      #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files\IAR                #
+#                          Systems\Embedded Workbench                         #
+#                          6.4\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\List\CLI2CReg.lst                 #
+#    Object file        =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\Obj\CLI2CReg.r51                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Programme\FESTO\Libraire\CLI2CReg.cpp
+      1          // ***************** FICHIER:CLI2CREG.cpp
+      2          //
+      3          //  Description: Contient les déclaration pour le i2c matériel
+      4          //               
+      5          //
+      6          //  Application realisee avec IAR
+      7          //
+      8          //  AUTEUR : Gabriel Fortin-Belanger
+      9          //  DATE CREATION :    2014-02-07		 VERSION: 1.0
+     10          //  DATE MODIFICATION: ****-**-**
+     11          //
+     12          //******************************************************************************
+     13          #include "CLI2CReg.h"
+
+   \                                 In  segment SFR_AN, at 0xa7
+   \   union <unnamed> volatile __sfr _A_IEA
+   \                     _A_IEA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IE
+   \                     _A_IE:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb7
+   \   union <unnamed> volatile __sfr _A_IPA
+   \                     _A_IPA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdd
+   \   union <unnamed> volatile __sfr _A_S2STA
+   \                     _A_S2STA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdc
+   \   union <unnamed> volatile __sfr _A_S2CON
+   \                     _A_S2CON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x93
+   \   union <unnamed> volatile __sfr _A_P3SFS
+   \                     _A_P3SFS:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xde
+   \   unsigned char volatile __sfr S2DAT
+   \                     S2DAT:
+   \   000000                DS 1
+     14          #include "_DeclarationGenerale.h"
+     15          #include "CLI2CPort.h"
+     16          
+     17          
+     18          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     19                  UC CLI2CReg :: I2C_State;
+   \                     ??I2C_State:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     20                  UC CLI2CReg :: ucI2C_MX;
+   \                     ??ucI2C_MX:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     21            
+     22          
+     23          
+     24          // S2STA 
+     25              
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     26          xdata unsigned char i2c_xmit_buf[256]; // message xmit buffer
+   \                     i2c_xmit_buf:
+   \   000000                DS 256
+   \   000100                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     27          xdata unsigned char i2c_rcv_buf[256]; // message rcv buffer
+   \                     i2c_rcv_buf:
+   \   000000                DS 256
+   \   000100                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     28          unsigned int i;                       // array pointer
+   \                     i:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     29          unsigned char  dummybyte;
+   \                     dummybyte:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     30          UC  i2c_timeout; // dummy byte to rcv, timeout cntr
+   \                     i2c_timeout:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     31          UC  i2c_init_flag; 
+   \                     i2c_init_flag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     32          UC CLI2CReg :: i2cwait; 
+   \                     ??i2cwait:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     33          UC  i2c_master; 
+   \                     i2c_master:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     34          UC  i2c_xmitr; // callable status flag bits
+   \                     i2c_xmitr:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     35          UC  bus_lost_flag; 
+   \                     bus_lost_flag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     36          UC CLI2CReg :: slave_nack_flag; 
+   \                     ??slave_nack_flag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     37          UC CLI2CReg :: i2c_timeout_flag;// error flag bits    
+   \                     ??i2c_timeout_flag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     38                  
+     39                  
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     40          CLI2CReg :: CLI2CReg(void)
+   \                     ??CLI2CReg:
+     41          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     42          
+     43          
+     44          
+     45          }
+   \   000000   22           RET
+     46          
+     47          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     48          CLI2CReg :: ~CLI2CReg(void)
+   \                     `?~CLI2CReg`:
+     49          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     50          
+     51          	
+     52          
+     53          }
+   \   000000   22           RET
+     54          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     55          void CLI2CReg :: vI2CRegInit(void)
+   \                     ??vI2CRegInit:
+     56          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     57            
+     58            
+     59               P3SFS |= 0xC0; //
+   \   000004   4393C0       ORL     0x93,#0xc0
+     60               S2CON |= 0x80; // Frequence deu crystal a 100khz;
+   \   000007   43DC80       ORL     0xdc,#0x80
+     61               i2c_init_flag = 1; // set init done flag
+   \   00000A   90....       MOV     DPTR,#i2c_init_flag
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+     62               i2c_timeout_flag = 0; // clear timeout error flag
+   \   000010   90....       MOV     DPTR,#??i2c_timeout_flag
+   \   000013   7400         MOV     A,#0x0
+   \   000015   F0           MOVX    @DPTR,A
+     63               //PX1 =0;
+     64               IPA |= 0x02; // set high priority for EI2C
+   \   000016   43B702       ORL     0xb7,#0x2
+     65               IEA |= 0x02; // set EI2C I2C Int. Enable bit
+   \   000019   43A702       ORL     0xa7,#0x2
+     66               //EX1 = 1;
+     67                EA =1;
+   \   00001C   D2AF         SETB    0xa8.7
+     68               
+     69              
+     70          
+     71          }
+   \   00001E   D083         POP     DPH
+   \   000020   D082         POP     DPL
+   \   000022   22           RET
+   \   000023                REQUIRE _A_P3SFS
+   \   000023                REQUIRE _A_S2CON
+   \   000023                REQUIRE _A_IPA
+   \   000023                REQUIRE _A_IEA
+   \   000023                REQUIRE _A_IE
+     72          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     73          UC CLI2CReg :: ucI2CMaster_Transmit(UC ucSlaveAdr,UC ucData)
+   \                     ??ucI2CMaster_Transmit:
+     74          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+   \   00000B   8C..         MOV     ?V0 + 1,R4
+     75          
+     76            
+     77            P1_1 = 0;
+   \   00000D   C291         CLR     0x90.1
+     78            while(S2STA_bit.Bbusy != 0);
+   \                     ??ucI2CMaster_Transmit_1:
+   \   00000F   E5DD         MOV     A,0xdd
+   \   000011   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000013   40FA         JC      ??ucI2CMaster_Transmit_1
+     79            i2c_master = 1;
+   \   000015   90....       MOV     DPTR,#i2c_master
+   \   000018   7401         MOV     A,#0x1
+   \   00001A   F0           MOVX    @DPTR,A
+     80            i2c_xmitr = 1; // set up for master transmitter
+   \   00001B   90....       MOV     DPTR,#i2c_xmitr
+   \   00001E   7401         MOV     A,#0x1
+   \   000020   F0           MOVX    @DPTR,A
+     81            I2C_State = ucI2C_MX;
+   \   000021   90....       MOV     DPTR,#??ucI2C_MX
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   90....       MOV     DPTR,#??I2C_State
+   \   000028   F0           MOVX    @DPTR,A
+     82            S2DAT = ucSlaveAdr;
+   \   000029   85..DE       MOV     0xde,?V0 + 0
+     83            S2CON_bit.EN1 = 1;
+   \   00002C   43DC40       ORL     0xdc,#0x40
+     84            S2CON_bit.STO = 0;
+   \   00002F   53DCEF       ANL     0xdc,#0xef
+     85            S2CON_bit.STA = 1;
+   \   000032   43DC20       ORL     0xdc,#0x20
+     86            S2CON_bit.AA = 0;
+   \   000035   53DCFB       ANL     0xdc,#0xfb
+     87            vWaitForInt();
+   \   000038                ; Setup parameters for call to function CLI2CReg::vWaitForInt()
+   \   000038   EE           MOV     A,R6
+   \   000039   FA           MOV     R2,A
+   \   00003A   EF           MOV     A,R7
+   \   00003B   FB           MOV     R3,A
+   \   00003C   12....       LCALL   ??vWaitForInt
+     88             S2CON_bit.STA = 0;
+   \   00003F   53DCDF       ANL     0xdc,#0xdf
+     89             S2CON_bit.STO = 1; // set STO (stop bit)
+   \   000042   43DC10       ORL     0xdc,#0x10
+     90             S2DAT = ucData; // send last data byte 
+   \   000045   85..DE       MOV     0xde,?V0 + 1
+     91             vWaitForInt(); // Wait for interrupt
+   \   000048                ; Setup parameters for call to function CLI2CReg::vWaitForInt()
+   \   000048   EE           MOV     A,R6
+   \   000049   FA           MOV     R2,A
+   \   00004A   EF           MOV     A,R7
+   \   00004B   FB           MOV     R3,A
+   \   00004C   12....       LCALL   ??vWaitForInt
+     92             S2DAT = 0xFF;
+   \   00004F   75DEFF       MOV     0xde,#-0x1
+     93             S2CON_bit.STO = 0;
+   \   000052   53DCEF       ANL     0xdc,#0xef
+     94             S2CON_bit.EN1 = 0;
+   \   000055   53DCBF       ANL     0xdc,#0xbf
+     95          
+     96            
+     97          
+     98          
+     99          
+    100          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "CLI2CReg::ucI2CMaster_Transmit"
+   \   000058   7F02         MOV     R7,#0x2
+   \   00005A   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00005D                REQUIRE _A_P1
+   \   00005D                REQUIRE _A_S2STA
+   \   00005D                REQUIRE S2DAT
+   \   00005D                REQUIRE _A_S2CON
+    101          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    102          UC CLI2CReg :: upsd_i2c_rcv (unsigned char i2c_address)
+   \                     ??upsd_i2c_rcv:
+    103          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+    104            while(S2STA_bit.Bbusy != 0);
+   \                     ??upsd_i2c_rcv_1:
+   \   00000B   E5DD         MOV     A,0xdd
+   \   00000D   A2E3         MOV     C,0xE0 /* A   */.3
+   \   00000F   40FA         JC      ??upsd_i2c_rcv_1
+    105            i2c_master = 1;
+   \   000011   90....       MOV     DPTR,#i2c_master
+   \   000014   7401         MOV     A,#0x1
+   \   000016   F0           MOVX    @DPTR,A
+    106            i2c_xmitr = 0; // set flags for master receiver
+   \   000017   90....       MOV     DPTR,#i2c_xmitr
+   \   00001A   7400         MOV     A,#0x0
+   \   00001C   F0           MOVX    @DPTR,A
+    107          
+    108          
+    109            
+    110            S2DAT = (i2c_address | 0x01); // set up i2c address (set R/W bit)
+   \   00001D   7401         MOV     A,#0x1
+   \   00001F   45..         ORL     A,?V0 + 0
+   \   000021   F5DE         MOV     0xde,A
+    111            S2CON_bit.EN1 = 1;
+   \   000023   43DC40       ORL     0xdc,#0x40
+    112            S2CON_bit.STO =  0;
+   \   000026   53DCEF       ANL     0xdc,#0xef
+    113            S2CON_bit.STA = 1;
+   \   000029   43DC20       ORL     0xdc,#0x20
+    114            S2CON_bit.AA = 0;
+   \   00002C   53DCFB       ANL     0xdc,#0xfb
+    115            vWaitForInt();
+   \   00002F                ; Setup parameters for call to function CLI2CReg::vWaitForInt()
+   \   00002F   EE           MOV     A,R6
+   \   000030   FA           MOV     R2,A
+   \   000031   EF           MOV     A,R7
+   \   000032   FB           MOV     R3,A
+   \   000033   12....       LCALL   ??vWaitForInt
+    116            S2CON_bit.STA = 0;
+   \   000036   53DCDF       ANL     0xdc,#0xdf
+    117            S2DAT = 0xFF; // send byte for rcv mode
+   \   000039   75DEFF       MOV     0xde,#-0x1
+    118             S2CON_bit.AA = 1;
+   \   00003C   43DC04       ORL     0xdc,#0x4
+    119           vWaitForInt();
+   \   00003F                ; Setup parameters for call to function CLI2CReg::vWaitForInt()
+   \   00003F   EE           MOV     A,R6
+   \   000040   FA           MOV     R2,A
+   \   000041   EF           MOV     A,R7
+   \   000042   FB           MOV     R3,A
+   \   000043   12....       LCALL   ??vWaitForInt
+    120           // for (i=0; i < (data_len-1); i++)
+    121           // {
+    122           //  dummybyte = S2STA; // Dummy Read S2STA
+    123           //  i2c_rcv_buf[i] = S2DAT; // Get data byte from Slave
+    124           //  vWaitForInt(); // Wait for interrupt
+    125           // }
+    126            S2CON_bit.AA = 0;
+   \   000046   53DCFB       ANL     0xdc,#0xfb
+    127             i2c_rcv_buf[i] = S2DAT; // Get last data byte
+   \   000049   E5DE         MOV     A,0xde
+   \   00004B   C0E0         PUSH    A
+   \   00004D   90....       MOV     DPTR,#i
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   24..         ADD     A,#i2c_rcv_buf & 0xff
+   \   000053   F8           MOV     R0,A
+   \   000054   A3           INC     DPTR
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   34..         ADDC    A,#(i2c_rcv_buf >> 8) & 0xff
+   \   000058   F9           MOV     R1,A
+   \   000059   8882         MOV     DPL,R0
+   \   00005B   8983         MOV     DPH,R1
+   \   00005D   D0E0         POP     A
+   \   00005F   F0           MOVX    @DPTR,A
+    128              vWaitForInt(); // Wait for interrupt
+   \   000060                ; Setup parameters for call to function CLI2CReg::vWaitForInt()
+   \   000060   EE           MOV     A,R6
+   \   000061   FA           MOV     R2,A
+   \   000062   EF           MOV     A,R7
+   \   000063   FB           MOV     R3,A
+   \   000064   12....       LCALL   ??vWaitForInt
+    129             dummybyte = S2STA; // Dummy Read S2STA
+   \   000067   E5DD         MOV     A,0xdd
+   \   000069   90....       MOV     DPTR,#dummybyte
+   \   00006C   F0           MOVX    @DPTR,A
+    130             //i++;
+    131             i2c_rcv_buf[i] = S2DAT; // Get dummy data byte
+   \   00006D   E5DE         MOV     A,0xde
+   \   00006F   C0E0         PUSH    A
+   \   000071   90....       MOV     DPTR,#i
+   \   000074   E0           MOVX    A,@DPTR
+   \   000075   24..         ADD     A,#i2c_rcv_buf & 0xff
+   \   000077   F8           MOV     R0,A
+   \   000078   A3           INC     DPTR
+   \   000079   E0           MOVX    A,@DPTR
+   \   00007A   34..         ADDC    A,#(i2c_rcv_buf >> 8) & 0xff
+   \   00007C   F9           MOV     R1,A
+   \   00007D   8882         MOV     DPL,R0
+   \   00007F   8983         MOV     DPH,R1
+   \   000081   D0E0         POP     A
+   \   000083   F0           MOVX    @DPTR,A
+    132             return(i2c_rcv_buf[i]);
+   \   000084   90....       MOV     DPTR,#i
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   24..         ADD     A,#i2c_rcv_buf & 0xff
+   \   00008A   F8           MOV     R0,A
+   \   00008B   A3           INC     DPTR
+   \   00008C   E0           MOVX    A,@DPTR
+   \   00008D   34..         ADDC    A,#(i2c_rcv_buf >> 8) & 0xff
+   \   00008F   F9           MOV     R1,A
+   \   000090   8882         MOV     DPL,R0
+   \   000092   8983         MOV     DPH,R1
+   \   000094   E0           MOVX    A,@DPTR
+   \   000095   F9           MOV     R1,A
+   \   000096   7F01         MOV     R7,#0x1
+   \   000098   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00009B                REQUIRE _A_S2STA
+   \   00009B                REQUIRE S2DAT
+   \   00009B                REQUIRE _A_S2CON
+    133          }
+    134          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    135          void CLI2CReg :: vWaitForInt(void)
+   \                     ??vWaitForInt:
+    136          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    137            int i;
+    138            i2cwait = 1; //
+   \   000004   90....       MOV     DPTR,#??i2cwait
+   \   000007   7401         MOV     A,#0x1
+   \   000009   F0           MOVX    @DPTR,A
+    139            i2c_timeout = 0;
+   \   00000A   90....       MOV     DPTR,#i2c_timeout
+   \   00000D   7400         MOV     A,#0x0
+   \   00000F   F0           MOVX    @DPTR,A
+   \   000010   801D         SJMP    ??vWaitForInt_1
+    140            while (i2cwait == 1)
+    141             { // .. wait for int to clear flag
+    142               if(i2c_timeout >= 10)
+    143                 { // 10mS timeout loop
+    144                   i2c_timeout_flag = 1;// set error flag
+    145                   i2cwait = 0; //
+    146                 }
+    147          
+    148               for(i=0;i<200;i++);
+   \                     ??vWaitForInt_2:
+   \   000012   E8           MOV     A,R0
+   \   000013   2401         ADD     A,#0x1
+   \   000015   F8           MOV     R0,A
+   \   000016   E9           MOV     A,R1
+   \   000017   3400         ADDC    A,#0x0
+   \   000019   F9           MOV     R1,A
+   \                     ??vWaitForInt_3:
+   \   00001A   C3           CLR     C
+   \   00001B   E8           MOV     A,R0
+   \   00001C   94C8         SUBB    A,#-0x38
+   \   00001E   E9           MOV     A,R1
+   \   00001F   9400         SUBB    A,#0x0
+   \   000021   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000023   65D0         XRL     A,PSW
+   \   000025   33           RLC     A
+   \   000026   40EA         JC      ??vWaitForInt_2
+    149               i2c_timeout++;
+   \   000028   90....       MOV     DPTR,#i2c_timeout
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   2401         ADD     A,#0x1
+   \   00002E   F0           MOVX    @DPTR,A
+   \                     ??vWaitForInt_1:
+   \   00002F   90....       MOV     DPTR,#??i2cwait
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   6401         XRL     A,#0x1
+   \   000035   701B         JNZ     ??vWaitForInt_4
+   \   000037   90....       MOV     DPTR,#i2c_timeout
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   C3           CLR     C
+   \   00003C   940A         SUBB    A,#0xa
+   \   00003E   400C         JC      ??vWaitForInt_5
+   \   000040   90....       MOV     DPTR,#??i2c_timeout_flag
+   \   000043   7401         MOV     A,#0x1
+   \   000045   F0           MOVX    @DPTR,A
+   \   000046   90....       MOV     DPTR,#??i2cwait
+   \   000049   7400         MOV     A,#0x0
+   \   00004B   F0           MOVX    @DPTR,A
+   \                     ??vWaitForInt_5:
+   \   00004C   7800         MOV     R0,#0x0
+   \   00004E   7900         MOV     R1,#0x0
+   \   000050   80C8         SJMP    ??vWaitForInt_3
+    150          
+    151            }
+    152          }
+   \                     ??vWaitForInt_4:
+   \   000052   D083         POP     DPH
+   \   000054   D082         POP     DPL
+   \   000056   22           RET
+    153          
+    154          
+    155          #pragma vector = 0x43
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    156           __interrupt void CLI2CReg :: i2c_isr(void)
+   \                     ??i2c_isr:
+    157          {
+   \   000000   C0E0         PUSH    A
+   \   000002   C0D0         PUSH    PSW
+   \   000004   E8           MOV     A,R0
+   \   000005   C0E0         PUSH    A
+   \   000007   C082         PUSH    DPL
+   \   000009   C083         PUSH    DPH
+   \   00000B                ; Saved register size: 5
+   \   00000B                ; Auto size: 0
+    158            P1_1 = 1;
+   \   00000B   D291         SETB    0x90.1
+    159          if (S2STA_bit.Blost == 1)
+   \   00000D   E5DD         MOV     A,0xdd
+   \   00000F   A2E2         MOV     C,0xE0 /* A   */.2
+   \   000011   5009         JNC     ??i2c_isr_1
+    160          {
+    161          S2DAT = 0xFF; // send dummy byte
+   \   000013   75DEFF       MOV     0xde,#-0x1
+    162          bus_lost_flag = 1;
+   \   000016   90....       MOV     DPTR,#bus_lost_flag
+   \   000019   7401         MOV     A,#0x1
+   \   00001B   F0           MOVX    @DPTR,A
+    163          }
+    164          if (S2STA_bit.ACK_R == 1)
+   \                     ??i2c_isr_1:
+   \   00001C   E5DD         MOV     A,0xdd
+   \   00001E   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000020   5009         JNC     ??i2c_isr_2
+    165          {
+    166          
+    167          S2DAT = 0xFF; // send dummy byte
+   \   000022   75DEFF       MOV     0xde,#-0x1
+    168          slave_nack_flag = 1;
+   \   000025   90....       MOV     DPTR,#??slave_nack_flag
+   \   000028   7401         MOV     A,#0x1
+   \   00002A   F0           MOVX    @DPTR,A
+    169          }
+    170          if (i2c_master & i2c_xmitr)
+   \                     ??i2c_isr_2:
+   \   00002B   90....       MOV     DPTR,#i2c_xmitr
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   F8           MOV     R0,A
+   \   000030   90....       MOV     DPTR,#i2c_master
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   58           ANL     A,R0
+   \   000035   6006         JZ      ??i2c_isr_3
+    171          { 
+    172          i2cwait = 0; // reset wait flag
+   \   000037   90....       MOV     DPTR,#??i2cwait
+   \   00003A   7400         MOV     A,#0x0
+   \   00003C   F0           MOVX    @DPTR,A
+    173          }
+    174          if (i2c_master & ~i2c_xmitr)
+   \                     ??i2c_isr_3:
+   \   00003D   90....       MOV     DPTR,#i2c_xmitr
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   F4           CPL     A
+   \   000042   F8           MOV     R0,A
+   \   000043   90....       MOV     DPTR,#i2c_master
+   \   000046   E0           MOVX    A,@DPTR
+   \   000047   58           ANL     A,R0
+   \   000048   6006         JZ      ??i2c_isr_4
+    175          { // mstr receiver mode
+    176          i2cwait = 0; // reset wait flag
+   \   00004A   90....       MOV     DPTR,#??i2cwait
+   \   00004D   7400         MOV     A,#0x0
+   \   00004F   F0           MOVX    @DPTR,A
+    177          }
+    178          }
+   \                     ??i2c_isr_4:
+   \   000050   D083         POP     DPH
+   \   000052   D082         POP     DPL
+   \   000054   D0E0         POP     A
+   \   000056   F8           MOV     R0,A
+   \   000057   D0D0         POP     PSW
+   \   000059   D0E0         POP     A
+   \   00005B   32           RETI
+   \   00005C                REQUIRE _A_P1
+   \   00005C                REQUIRE _A_S2STA
+   \   00005C                REQUIRE S2DAT
+
+   \                                 In  segment INTVEC, offset 0x43, root
+   \                     `??i2c_isr??INTVEC 67`:
+   \   000043   02....       LJMP       (??i2c_isr)
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLI2CReg &CLI2CReg::new CLI2CReg()
+   \                     `??new CLI2CReg`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLI2CReg_1`
+   \   00001B                ; Setup parameters for call to function CLI2CReg::CLI2CReg()
+   \   00001B   12....       LCALL   ??CLI2CReg
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLI2CReg_2`
+   \                     `??new CLI2CReg_1`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLI2CReg_2`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLI2CReg::delete ~CLI2CReg(CLI2CReg *)
+   \                     `??delete ~CLI2CReg`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLI2CReg_1`
+   \   00000D                ; Setup parameters for call to function CLI2CReg::~CLI2CReg()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLI2CReg`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLI2CReg_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      0  CLI2CReg::CLI2CReg()
+       0      0      8  CLI2CReg::delete ~CLI2CReg(CLI2CReg *)
+                          0 0 8 -> CLI2CReg::~CLI2CReg()
+                          0 0 8 -> operator delete(void *)
+       5      0      0  CLI2CReg::i2c_isr()
+       2      0      0  CLI2CReg::new CLI2CReg()
+                          2 0 0 -> CLI2CReg::CLI2CReg()
+                          2 0 0 -> operator new(unsigned int)
+       0      0      9  CLI2CReg::ucI2CMaster_Transmit(UC, UC)
+                          0 0 9 -> CLI2CReg::vWaitForInt()
+       1      0      8  CLI2CReg::upsd_i2c_rcv(unsigned char)
+                          0 0 8 -> CLI2CReg::vWaitForInt()
+       2      0      0  CLI2CReg::vI2CRegInit()
+       2      0      9  CLI2CReg::vWaitForInt()
+       0      0      8  CLI2CReg::~CLI2CReg()
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       3  ??i2c_isr??INTVEC 67
+       1  CLI2CReg::CLI2CReg()
+       1  CLI2CReg::I2C_State
+      32  CLI2CReg::delete ~CLI2CReg(CLI2CReg *)
+      92  CLI2CReg::i2c_isr()
+       1  CLI2CReg::i2c_timeout_flag
+       1  CLI2CReg::i2cwait
+      49  CLI2CReg::new CLI2CReg()
+       1  CLI2CReg::slave_nack_flag
+      93  CLI2CReg::ucI2CMaster_Transmit(UC, UC)
+       1  CLI2CReg::ucI2C_MX
+     155  CLI2CReg::upsd_i2c_rcv(unsigned char)
+      35  CLI2CReg::vI2CRegInit()
+      87  CLI2CReg::vWaitForInt()
+       1  CLI2CReg::~CLI2CReg()
+       1  S2DAT
+       1  _A_IE
+       1  _A_IEA
+       1  _A_IPA
+       1  _A_P1
+       1  _A_P3SFS
+       1  _A_S2CON
+       1  _A_S2STA
+       1  bus_lost_flag
+       1  dummybyte
+       2  i
+       1  i2c_init_flag
+       1  i2c_master
+     256  i2c_rcv_buf
+       1  i2c_timeout
+     256  i2c_xmit_buf
+       1  i2c_xmitr
+
+ 
+   3 bytes in segment INTVEC
+ 545 bytes in segment NEAR_CODE
+   8 bytes in segment SFR_AN
+ 525 bytes in segment XDATA_Z
+ 
+ 545 bytes of CODE  memory (+ 3 bytes shared)
+   0 bytes of DATA  memory (+ 8 bytes shared)
+ 525 bytes of XDATA memory
+
+Errors: none
+Warnings: 1
