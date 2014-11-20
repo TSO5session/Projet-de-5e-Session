@@ -10,7 +10,6 @@
 // *****************************************************************************
 #include "DeclarationGenerale.h"  // Raccourcis de programmation & variables
 #include "CLXBEE.h"               // Fichier de definitions de communication XBEE
-//#include "CLRS232.h"              // En-tete de communication RS232
 
 //******************************************************************************
 //                            LE CONSTRUCTEUR PAR DEFAUT
@@ -38,21 +37,21 @@ CLXbee :: ~CLXbee(void)
 
 void CLXbee :: SendString(char const *ucMonString)
 {
-Serial.SendString(ucMonString);  
+  Serial.SendString(ucMonString);  
 }
 
 void CLXbee :: SendCarac(UC ucCar)
 {
-Serial.Send(ucCar);
+  Serial.Send(ucCar);
 }
 
 void CLXbee :: SendNumber(UI uiChiffreAAfficher)
 {
-Serial.SendNumber(uiChiffreAAfficher);  
+  Serial.SendNumber(uiChiffreAAfficher);  
 }
 
 UC CLXbee :: GetChar(void)
 {
-return(Serial.GetChar());  
+  return(Serial.GetChar());  
 }
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

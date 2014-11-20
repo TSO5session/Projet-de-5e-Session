@@ -23,7 +23,7 @@
 #include "CLEcran.h"
 
 #ifdef UPSD3254A
-   #include "CLClavier.h"
+  // #include "CLClavier.h"
 #endif
 
 #ifdef DALLAS89C450
@@ -54,7 +54,7 @@ public:
    class CLEcran        clTestEcran;
    
    #ifdef UPSD3254A
-   class CLClavier      clTestClavier;
+  // class CLClavier      clTestClavier;
    #endif
    
    void vControleTest    (void);

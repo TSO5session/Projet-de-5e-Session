@@ -82,7 +82,7 @@ CLRS232::CLRS232(void)
  cptrLecture  = &cTabCaractereRecu[0];                  // Pointeur lecture au debut.
 
 #ifdef DALLAS89C450
- vInitBaudRate(57600);                                  // Initialise le port serie.
+ vInitBaudRate(9600);                                  // Initialise le port serie.
 #endif 
  
 #ifdef UPSD3254A

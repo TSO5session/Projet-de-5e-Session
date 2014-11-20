@@ -12,11 +12,7 @@
 // 
 // DESCRIPTION DES FONCTIONS
 //
-// 
-//
-//
 // ****************************************************************************
-
 #include "DeclarationGenerale.h"
 
 #ifndef CLSERIALPORTINTERFACEH
@@ -34,6 +30,14 @@
    #define SCLK          P1_6
 #endif
 
+/////////////////////////////////////
+#define CS   P1_7                  // Le chip-select
+#define CSIO P1_4                  // Chip select des I/O
+#define CSAD P1_5                  // Chip select des AD
+#define CSDA P1_6                  // Chip select des DA
+#define EOC  P1_7                  // END of conversion flag
+/////////////////////////////////////
+
 class CLSerialPortInterface
 {
 public:
@@ -44,11 +48,17 @@ public:
   UC ucSPITransferMOD1(UC ucSPIbyte);
   UC ucSPITransferMOD2(UC ucSPIbyte);
   UC ucSPITransferMOD3(UC ucSPIbyte);
+  
+  UC WriteMPC     (UC Data);              // Pour envoyer une valeur hexa sur les IO du MPC
+  UC WriteMPC     (UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);   
+  UC ReadMPC      (void);                 // Pour lire la valeur hexa des IO du MPC
    
 protected:
 
 private:
-         
+   void Delai     (unsigned long Temps);     // Implémentation d'un delai ajustable      
+   UC   Write     (UC ucValeur, UC ucMode);  // Pour ecrire une donnee 8  bit en SPI
+   UI   Write16   (UI uiValeur, UC ucMode);  // Pour ecrire une donnee 16 bit en SPI 
 };
 
 #endif

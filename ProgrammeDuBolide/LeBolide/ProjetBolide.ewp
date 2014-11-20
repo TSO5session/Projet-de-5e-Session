@@ -1799,7 +1799,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDUBolide\LeBolide\_Ver810_lnk51ew_DS89C450.xcl</state>
+          <state>C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuBolide\LeBolide\_Ver810_lnk51ew_DS89C450.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -2501,7 +2501,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>F:\Projet\IAR\Header</state>
+          <state>C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuBolide\LeBolide</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2830,7 +2830,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>C:\Synchro\Dropbox\Travaux\OLD\Hiver2014\Le Bolide\Programme\PROJET FINAL COMPILABLE\_Ver810_lnk51ew_DS89C450.xcl</state>
+          <state>C:\Synchro\Dropbox\Travaux\OLD\Hiver2014\Le Bolide\Programme\PROJET FINAL COMPILABLE\_Ver810_lnk51ew_uPSD3254A.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -3095,6 +3095,9 @@
       <data/>
     </settings>
   </configuration>
+  <file>
+    <name>$PROJ_DIR$\CANBUS.cpp</name>
+  </file>
   <file>
     <name>$PROJ_DIR$\CLADCMAX1236.cpp</name>
   </file>

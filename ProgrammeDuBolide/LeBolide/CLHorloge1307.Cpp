@@ -18,20 +18,19 @@
 // DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
-
 #include "CLHorloge1307.h"
 
 // Constructeur par defaut ////////////////////////////////////////////////////
-
 CLHorloge1307 :: CLHorloge1307 (void)
- {
- }
+{
+  
+}
 
 // Destructeur ////////////////////////////////////////////////////////////////
-
 CLHorloge1307 :: ~CLHorloge1307(void)
- {
- }
+{
+  
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // void CLHorloge1307 :: vReadTime (void)
@@ -51,7 +50,6 @@ CLHorloge1307 :: ~CLHorloge1307(void)
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 void CLHorloge1307 :: vReadTime (void)
  {
     stHMS.ucHeure   = ucI2CLireDonnee(BOITIER1307, HEURE1307);
@@ -81,16 +79,15 @@ void CLHorloge1307 :: vReadTime (void)
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 void CLHorloge1307 :: vWriteTime (void)
  {
     stHMS.ucHeure   = stTemps.ucHeure;
     stHMS.ucMinute  = stTemps.ucMinute;
     stHMS.ucSeconde = stTemps.ucSeconde;
 
-    vI2CEcrireDonnee(BOITIER1307, HEURE1307, stHMS.ucHeure);
-    vI2CEcrireDonnee(BOITIER1307, MIN1307,stHMS.ucMinute);
-    vI2CEcrireDonnee(BOITIER1307, SEC1307,stHMS.ucSeconde);
+    vI2CEcrireDonnee(BOITIER1307, HEURE1307, stHMS.ucHeure  );
+    vI2CEcrireDonnee(BOITIER1307, MIN1307  , stHMS.ucMinute );
+    vI2CEcrireDonnee(BOITIER1307, SEC1307  , stHMS.ucSeconde);
  }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -111,7 +108,6 @@ void CLHorloge1307 :: vWriteTime (void)
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 void CLHorloge1307 :: vReadDate(void)
  {
     stJMA.ucAnnee = ucI2CLireDonnee(BOITIER1307, ANNEE1307);
@@ -141,7 +137,6 @@ void CLHorloge1307 :: vReadDate(void)
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 void CLHorloge1307 :: vWriteDate (void)
  {
     stJMA.ucAnnee = stDate.ucAnnee;

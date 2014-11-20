@@ -20,18 +20,16 @@ public:
    CLXbee(void);             // ***Constructeur par defaut
    CLXbee(UC ucParametre);   // ***Constructeur initialisateur
   ~CLXbee(void);             // ***Destructeur
-
-   class CLRS232 Serial;
    
    void SendString (char const  *ucMonString); // Transmettre un string    par Xbee
-   void SendCarac  (UC  ucCar);                // Transmettre un caractère par Xbee
+   void SendCarac  (UC ucCar);                 // Transmettre un caractère par Xbee
    void SendNumber (UI uiChiffreAAfficher);    // Transmettre un chiffre   par Xbee
    UC   GetChar    (void);                     // Lire un caractère        par Xbee
    
 protected:
 
 private:
-
+   class CLRS232 Serial;
 };
 #endif
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

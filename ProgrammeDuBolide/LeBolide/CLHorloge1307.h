@@ -13,14 +13,14 @@
 #ifndef CLHORLOGE1307H
    #define CLHORLOGE1307H
 
-#define BOITIER1307 0xD0  //Adresse DS1307
-#define SQW1307     0x07  //Registre Onde Carree
-#define ANNEE1307   0x06  //Registre Annee
-#define MOIS1307    0x05  //Registre Mois
-#define JOUR1307    0x04  //Registre Jour
-#define HEURE1307   0x02  //Registre Heure
-#define MIN1307     0x01  //Registre Minute
-#define SEC1307     0x00  //Registre Seconde
+#define BOITIER1307 0xD0  // Adresse DS1307
+#define SQW1307     0x07  // Registre Onde Carree
+#define ANNEE1307   0x06  // Registre Annee
+#define MOIS1307    0x05  // Registre Mois
+#define JOUR1307    0x04  // Registre Jour
+#define HEURE1307   0x02  // Registre Heure
+#define MIN1307     0x01  // Registre Minute
+#define SEC1307     0x00  // Registre Seconde
 
 struct STDate
 {

@@ -44,13 +44,6 @@ public:
    CLVehicule(USI uiVit, USI uiVitTourne);
   ~CLVehicule(void);
 
-   class CLEcran           LCD;
-   class CLRoue            clRoueAvantD;
-   class CLRoue            clRoueAvantG;
-   class CLRoue            clRoueArriereD;
-   class CLRoue            clRoueArriereG;
-   class CLSuiveurLigne    clSuiveurLigne;
-
    void  vControleBolide   (void);
    void  vAvancer          (UC ucDirection);
    void  vSuivreLigne      (void);
@@ -58,6 +51,13 @@ public:
 protected:
 
 private:
+   class CLEcran           LCD;
+   class CLRoue            clRoueAvantD;
+   class CLRoue            clRoueAvantG;
+   class CLRoue            clRoueArriereD;
+   class CLRoue            clRoueArriereG;
+   class CLSuiveurLigne    clSuiveurLigne;  
+  
    UC ucMode;
    
    #ifdef SPI_DALLAS   

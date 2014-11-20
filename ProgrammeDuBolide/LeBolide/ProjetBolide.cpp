@@ -20,9 +20,11 @@
 //  DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
+#include "TypeCible.h"
 #include "ProjetBolide.h"
 #include "CLXBEE.h"  
 #include "CLRS232.h"
+#include "Station1.h"     // Fichier de definitions de...
 
 void main(void)
  { 
@@ -32,24 +34,25 @@ void main(void)
    
 #ifdef DALLAS89C450   
    class CLVehicule clVehicule;
+   class CLStation1 StationUPSD;
    
    while(1)
     {      
       clVehicule.vControleBolide();
-     // XBee.SendString("HODOR");
-     // XBee.SendCarac ('A');
-     // XBee.SendNumber(514);
-     // UC mavar = XBee.GetChar();
     }  
 #endif
    
 #ifdef UPSD3254A
-   class CLTelecommande clTelecommande;
+   class CLStation1 StationUPSD;
    WDKEY = 0x55;
    
    while(1)
     {
-           
+      StationUPSD.SendToPC    ("Hodor");
+      StationUPSD.SendToPIC   ("Hodor");
+      StationUPSD.SendToSOC   ("Hodor");
+      StationUPSD.SendToBolide("Hodor");
+      StationUPSD.SendToFesto ("Hodor");           
     } 
 #endif  
    
