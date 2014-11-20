@@ -58,7 +58,7 @@ void CLTest :: vControleTest(void)
 //   vTestSPI();
 //   vTestCommunic();
 //   vTestCAN(); 
-//   vTestVehicule();
+   vTestVehicule();
  }
  
 ///////////////////////////////////////////////////////////////////////////////

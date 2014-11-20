@@ -1,0 +1,2401 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         14/Nov/2014  22:00:58 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\CLEcran.cpp                                   #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\CLEcran.cpp" -D DALLAS89C450 --preprocess=cl  #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux #
+#                          \Automne 2014\ProjetSession5\Csharp\TEST\DALLAS    #
+#                          TEST PROG\DALLAS\List\" -lA                        #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\Csharp\TEST\DALLAS     #
+#                          TEST PROG\DALLAS\Obj\" -e --no_cse --no_unroll     #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\CLEcran.lst                       #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\Obj\CLEcran.r51                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\TEST\DALLAS TEST PROG\CLEcran.cpp
+      1          // **************************CLEcran.cpp
+      2          // Auteur:      Vincent Chouinard
+      3          // Date:        13 fevrier 2014
+      4          // Version :    1.0
+      5          //
+      6          // vLcdAffCar      ---> Affiche un caracter (a-z,A-Z0-9)
+      7          // vLcdClr         ---> Efface l'ecran
+      8          // vLcdPoscurC0L1  ---> Positionne le curseur
+      9          // vLcdInit        ---> Initialise l'ecran
+     10          // vDelaisEcran    ---> Delais a tout faire
+     11          // vLcdAffChaine   ---> Affiche un string de "Texte"
+     12          // vLcdAffEcran    ---> Pour afficher des menus
+     13          // vLcdAffCarHex   ---> Pour afficher un caracter en HEX
+     14          // vLcdCarGen      ---> Pour creer des caracteres customs
+     15          // vHexToAscii2    ---> Pour transformer l'ASCII en HEX
+     16          // vLcdBusy        ---> Busy Polling
+     17          //
+     18          // Compilateur: IAR 8.2 && Keil 4.79.9
+     19          //
+     20          // Description: Fichier de definitions pour utiliser un ecran LCD
+     21          //
+     22          // *****************************************************************************
+     23          #include "CLEcran.h"
+     24          // *****************************************************************************
+     25          //                            LES CONSTRUCTEURS
+     26          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     27          CLEcran :: CLEcran(void)
+   \                     ??CLEcran:
+     28          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     29          uiAdresseEcran = 0xF800;
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   7400         MOV     A,#0x0
+   \   00000F   F0           MOVX    @DPTR,A
+   \   000010   A3           INC     DPTR
+   \   000011   74F8         MOV     A,#-0x8
+   \   000013   F0           MOVX    @DPTR,A
+     30          vLCDInit();
+   \   000014                ; Setup parameters for call to function CLEcran::vLCDInit()
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   ??vLCDInit
+     31          }
+   \   00001B   EE           MOV     A,R6
+   \   00001C   FA           MOV     R2,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   FB           MOV     R3,A
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
+     32          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     33          CLEcran :: CLEcran(USI uiAdresse)
+   \                     ??CLEcran_1:
+     34          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     35          uiAdresseEcran = uiAdresse;
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   EC           MOV     A,R4
+   \   00000E   F0           MOVX    @DPTR,A
+   \   00000F   A3           INC     DPTR
+   \   000010   ED           MOV     A,R5
+   \   000011   F0           MOVX    @DPTR,A
+     36          vLCDInit();
+   \   000012                ; Setup parameters for call to function CLEcran::vLCDInit()
+   \   000012   EE           MOV     A,R6
+   \   000013   FA           MOV     R2,A
+   \   000014   EF           MOV     A,R7
+   \   000015   FB           MOV     R3,A
+   \   000016   12....       LCALL   ??vLCDInit
+     37          }
+   \   000019   EE           MOV     A,R6
+   \   00001A   FA           MOV     R2,A
+   \   00001B   EF           MOV     A,R7
+   \   00001C   FB           MOV     R3,A
+   \   00001D   7F01         MOV     R7,#0x1
+   \   00001F   02....       LJMP    ?FUNC_LEAVE_XDATA
+     38          
+     39          // *****************************************************************************
+     40          //                            LE DESTRUCTEUR
+     41          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     42          CLEcran :: ~CLEcran(void)
+   \                     `?~CLEcran`:
+     43          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     44          vLCDClr();
+   \   000000                ; Setup parameters for call to function CLEcran::vLCDClr()
+   \   000000   02....       LJMP    ??vLCDClr
+     45          }
+     46          
+     47          // **********************FONCTION: NomDeLaFonction()**************************
+     48          //
+     49          // DESCRIPTION: Positionne le curseur d'ecriture a l'endroit spécifie par
+     50          //              la fonction appelante
+     51          //
+     52          // INCLUDE: <_DeclarationGenerale.h>
+     53          //          "CLEcran.h"
+     54          //
+     55          // PROTOTYPE:           void vLcdPoscurC0L1(UC,UC)
+     56          //
+     57          // PROCEDURE D'APPEL:   vLcdPoscurC0L1(ucCol,ucLigne)
+     58          //
+     59          // PARAMETRE D'ENTREE:  ucCol   ---> Positionne la colone
+     60          //                      ucLigne ---> Positionne la ligne
+     61          //
+     62          // PARAMETRE DE SORTIE: AUCUN
+     63          //
+     64          // EXEMPLE: vLcdPoscurC0L1(0,1) ---> Met le curseur au debut de l'ecran
+     65          //
+     66          // Auteur:              Vincent Chouinard
+     67          // Date:                22 mars 2014   (Version 1.0)
+     68          // Modification:
+     69          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     70          void CLEcran :: vDelaiLCD(USI uiDelai)
+   \                     ??vDelaiLCD:
+     71          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     72          USI i;
+     73          for(i = 0;i <= uiDelai; i++);
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??vDelaiLCD_1
+   \                     ??vDelaiLCD_2:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   F8           MOV     R0,A
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??vDelaiLCD_1:
+   \   00000E   C3           CLR     C
+   \   00000F   EC           MOV     A,R4
+   \   000010   98           SUBB    A,R0
+   \   000011   ED           MOV     A,R5
+   \   000012   99           SUBB    A,R1
+   \   000013   50F1         JNC     ??vDelaiLCD_2
+     74          }
+   \   000015   22           RET
+     75          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     76          void CLEcran :: vLCDBusy(void)
+   \                     ??vLCDBusy:
+     77          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     78          while(ucIn(uiAdresseEcran + ECRANFLAG) & 0x80);
+   \                     ??vLCDBusy_1:
+   \   000009                ; Setup parameters for call to function CLInOutBase::ucIn(USI)
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   2401         ADD     A,#0x1
+   \   000010   FC           MOV     R4,A
+   \   000011   A3           INC     DPTR
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   3400         ADDC    A,#0x0
+   \   000015   FD           MOV     R5,A
+   \   000016   EE           MOV     A,R6
+   \   000017   FA           MOV     R2,A
+   \   000018   EF           MOV     A,R7
+   \   000019   FB           MOV     R3,A
+   \   00001A   12....       LCALL   ??ucIn
+   \   00001D   E9           MOV     A,R1
+   \   00001E   F8           MOV     R0,A
+   \   00001F   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000021   40E6         JC      ??vLCDBusy_1
+     79          }
+   \   000023   7F01         MOV     R7,#0x1
+   \   000025   02....       LJMP    ?FUNC_LEAVE_XDATA
+     80          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     81          void CLEcran :: vLCDClr(void)
+   \                     ??vLCDClr:
+     82          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     83          vLCDBusy();
+   \   000009                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??vLCDBusy
+     84          vOut(uiAdresseEcran + ECRANCONFIG, 0x01);
+   \   000010                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   000010   7901         MOV     R1,#0x1
+   \   000012   8E82         MOV     DPL,R6
+   \   000014   8F83         MOV     DPH,R7
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   FC           MOV     R4,A
+   \   000018   A3           INC     DPTR
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   FD           MOV     R5,A
+   \   00001B   EE           MOV     A,R6
+   \   00001C   FA           MOV     R2,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   FB           MOV     R3,A
+   \   00001F   12....       LCALL   ??vOut
+     85          }
+   \   000022   7F01         MOV     R7,#0x1
+   \   000024   02....       LJMP    ?FUNC_LEAVE_XDATA
+     86          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     87          void CLEcran :: vLCDInit(void)
+   \                     ??vLCDInit:
+     88          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     89          USI i;
+     90          for(i = 0; i <= 3; i++)    //Faire 3 fois
+   \   000009   75..00       MOV     ?V0 + 0,#0x0
+   \   00000C   75..00       MOV     ?V0 + 1,#0x0
+   \   00000F   8029         SJMP    ??vLCDInit_1
+     91            {
+     92             vDelaiLCD(10000);                  //Attendre la stabilisation des parametres
+   \                     ??vLCDInit_2:
+   \   000011                ; Setup parameters for call to function CLEcran::vDelaiLCD(USI)
+   \   000011   7C10         MOV     R4,#0x10
+   \   000013   7D27         MOV     R5,#0x27
+   \   000015   EE           MOV     A,R6
+   \   000016   FA           MOV     R2,A
+   \   000017   EF           MOV     A,R7
+   \   000018   FB           MOV     R3,A
+   \   000019   12....       LCALL   ??vDelaiLCD
+     93             vOut(uiAdresseEcran + ECRANCONFIG,0x38);
+   \   00001C                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   00001C   7938         MOV     R1,#0x38
+   \   00001E   8E82         MOV     DPL,R6
+   \   000020   8F83         MOV     DPH,R7
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   FC           MOV     R4,A
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   FD           MOV     R5,A
+   \   000027   EE           MOV     A,R6
+   \   000028   FA           MOV     R2,A
+   \   000029   EF           MOV     A,R7
+   \   00002A   FB           MOV     R3,A
+   \   00002B   12....       LCALL   ??vOut
+     94            }
+   \   00002E   E5..         MOV     A,?V0 + 0
+   \   000030   2401         ADD     A,#0x1
+   \   000032   F5..         MOV     ?V0 + 0,A
+   \   000034   E5..         MOV     A,?V0 + 1
+   \   000036   3400         ADDC    A,#0x0
+   \   000038   F5..         MOV     ?V0 + 1,A
+   \                     ??vLCDInit_1:
+   \   00003A   C3           CLR     C
+   \   00003B   E5..         MOV     A,?V0 + 0
+   \   00003D   9404         SUBB    A,#0x4
+   \   00003F   E5..         MOV     A,?V0 + 1
+   \   000041   9400         SUBB    A,#0x0
+   \   000043   40CC         JC      ??vLCDInit_2
+     95          
+     96          vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x38); // Attente du Busy Flag
+   \   000045                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   000045   EE           MOV     A,R6
+   \   000046   FA           MOV     R2,A
+   \   000047   EF           MOV     A,R7
+   \   000048   FB           MOV     R3,A
+   \   000049   12....       LCALL   ??vLCDBusy
+   \   00004C                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   00004C   7938         MOV     R1,#0x38
+   \   00004E   8E82         MOV     DPL,R6
+   \   000050   8F83         MOV     DPH,R7
+   \   000052   E0           MOVX    A,@DPTR
+   \   000053   FC           MOV     R4,A
+   \   000054   A3           INC     DPTR
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   FD           MOV     R5,A
+   \   000057   EE           MOV     A,R6
+   \   000058   FA           MOV     R2,A
+   \   000059   EF           MOV     A,R7
+   \   00005A   FB           MOV     R3,A
+   \   00005B   12....       LCALL   ??vOut
+     97          vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x01); // Attente du Busy Flag
+   \   00005E                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   00005E   EE           MOV     A,R6
+   \   00005F   FA           MOV     R2,A
+   \   000060   EF           MOV     A,R7
+   \   000061   FB           MOV     R3,A
+   \   000062   12....       LCALL   ??vLCDBusy
+   \   000065                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   000065   7901         MOV     R1,#0x1
+   \   000067   8E82         MOV     DPL,R6
+   \   000069   8F83         MOV     DPH,R7
+   \   00006B   E0           MOVX    A,@DPTR
+   \   00006C   FC           MOV     R4,A
+   \   00006D   A3           INC     DPTR
+   \   00006E   E0           MOVX    A,@DPTR
+   \   00006F   FD           MOV     R5,A
+   \   000070   EE           MOV     A,R6
+   \   000071   FA           MOV     R2,A
+   \   000072   EF           MOV     A,R7
+   \   000073   FB           MOV     R3,A
+   \   000074   12....       LCALL   ??vOut
+     98          vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x0C); // Attente du Busy Flag
+   \   000077                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   000077   EE           MOV     A,R6
+   \   000078   FA           MOV     R2,A
+   \   000079   EF           MOV     A,R7
+   \   00007A   FB           MOV     R3,A
+   \   00007B   12....       LCALL   ??vLCDBusy
+   \   00007E                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   00007E   790C         MOV     R1,#0xc
+   \   000080   8E82         MOV     DPL,R6
+   \   000082   8F83         MOV     DPH,R7
+   \   000084   E0           MOVX    A,@DPTR
+   \   000085   FC           MOV     R4,A
+   \   000086   A3           INC     DPTR
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   FD           MOV     R5,A
+   \   000089   EE           MOV     A,R6
+   \   00008A   FA           MOV     R2,A
+   \   00008B   EF           MOV     A,R7
+   \   00008C   FB           MOV     R3,A
+   \   00008D   12....       LCALL   ??vOut
+     99          vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x06); // Attente du Busy Flag
+   \   000090                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   000090   EE           MOV     A,R6
+   \   000091   FA           MOV     R2,A
+   \   000092   EF           MOV     A,R7
+   \   000093   FB           MOV     R3,A
+   \   000094   12....       LCALL   ??vLCDBusy
+   \   000097                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   000097   7906         MOV     R1,#0x6
+   \   000099   8E82         MOV     DPL,R6
+   \   00009B   8F83         MOV     DPH,R7
+   \   00009D   E0           MOVX    A,@DPTR
+   \   00009E   FC           MOV     R4,A
+   \   00009F   A3           INC     DPTR
+   \   0000A0   E0           MOVX    A,@DPTR
+   \   0000A1   FD           MOV     R5,A
+   \   0000A2   EE           MOV     A,R6
+   \   0000A3   FA           MOV     R2,A
+   \   0000A4   EF           MOV     A,R7
+   \   0000A5   FB           MOV     R3,A
+   \   0000A6   12....       LCALL   ??vOut
+    100          }
+   \   0000A9   7F02         MOV     R7,#0x2
+   \   0000AB   02....       LJMP    ?FUNC_LEAVE_XDATA
+    101          
+    102          // **********************FONCTION: NomDeLaFonction()**************************
+    103          //
+    104          // DESCRIPTION: Positionne le curseur d'ecriture a l'endroit spécifie par
+    105          //              la fonction appelante
+    106          //
+    107          // INCLUDE: <_DeclarationGenerale.h>
+    108          //          "CLEcran.h"
+    109          //
+    110          // PROTOTYPE:           void vLcdPoscurC0L1(UC,UC)
+    111          //
+    112          // PROCEDURE D'APPEL:   vLcdPoscurC0L1(ucCol,ucLigne)
+    113          //
+    114          // PARAMETRE D'ENTREE:  ucCol   ---> Positionne la colone
+    115          //                      ucLigne ---> Positionne la ligne
+    116          //
+    117          // PARAMETRE DE SORTIE: AUCUN
+    118          //
+    119          // EXEMPLE: vLcdPoscurC0L1(0,1) ---> Met le curseur au debut de l'ecran
+    120          //
+    121          // Auteur:              Vincent Chouinard
+    122          // Date:                22 mars 2014   (Version 1.0)
+    123          // Modification:
+    124          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    125          void CLEcran :: vLCDCursor(UC ucCol, UC ucLine)
+   \                     ??vLCDCursor:
+    126          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 1,R1
+   \   00000B   8C..         MOV     ?V0 + 2,R4
+    127          UC ucPosition;
+    128          switch(ucLine)
+   \   00000D   E5..         MOV     A,?V0 + 2
+   \   00000F   14           DEC     A
+   \   000010   600B         JZ      ??vLCDCursor_1
+   \   000012   14           DEC     A
+   \   000013   600D         JZ      ??vLCDCursor_2
+   \   000015   14           DEC     A
+   \   000016   6012         JZ      ??vLCDCursor_3
+   \   000018   14           DEC     A
+   \   000019   6017         JZ      ??vLCDCursor_4
+   \   00001B   801D         SJMP    ??vLCDCursor_5
+    129            {
+    130             case 1:                       //Si ligne 1 choisi
+    131                ucPosition = 0x00 + ucCol; //Curseur sur ligne 1 (1,Y)
+   \                     ??vLCDCursor_1:
+   \   00001D   85....       MOV     ?V0 + 0,?V0 + 1
+    132             break;
+   \   000020   801B         SJMP    ??vLCDCursor_6
+    133          
+    134             case 2:                       //Si ligne 2 choisi
+    135                ucPosition = 0x40 + ucCol; //Curseur sur ligne 2 (2,Y)
+   \                     ??vLCDCursor_2:
+   \   000022   7440         MOV     A,#0x40
+   \   000024   25..         ADD     A,?V0 + 1
+   \   000026   F5..         MOV     ?V0 + 0,A
+    136             break;
+   \   000028   8013         SJMP    ??vLCDCursor_6
+    137          
+    138             case 3:                       //Si ligne 3 choisi
+    139                ucPosition = 0x14 + ucCol; //Curseur sur ligne 3 (3,Y)
+   \                     ??vLCDCursor_3:
+   \   00002A   7414         MOV     A,#0x14
+   \   00002C   25..         ADD     A,?V0 + 1
+   \   00002E   F5..         MOV     ?V0 + 0,A
+    140             break;
+   \   000030   800B         SJMP    ??vLCDCursor_6
+    141          
+    142             case 4:                       //Si ligne 4 choisi
+    143                ucPosition = 0x54 + ucCol; //Curseur sur ligne 4 (4,Y)
+   \                     ??vLCDCursor_4:
+   \   000032   7454         MOV     A,#0x54
+   \   000034   25..         ADD     A,?V0 + 1
+   \   000036   F5..         MOV     ?V0 + 0,A
+    144             break;
+   \   000038   8003         SJMP    ??vLCDCursor_6
+    145          
+    146             default:                      //Sinon
+    147                ucPosition = 0x00 + ucCol; //Curseur à position initial (0,0)
+   \                     ??vLCDCursor_5:
+   \   00003A   85....       MOV     ?V0 + 0,?V0 + 1
+    148             break;
+    149            }
+    150          
+    151          ucPosition = ucPosition | 0x80; //Definition du registre du curseur
+   \                     ??vLCDCursor_6:
+   \   00003D   D3           SETB    C
+   \   00003E   E5..         MOV     A,?V0 + 0
+   \   000040   92E7         MOV     0xE0 /* A   */.7,C
+   \   000042   F5..         MOV     ?V0 + 0,A
+    152          vLCDBusy();                                   //Attente du Flag Busy
+   \   000044                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   000044   EE           MOV     A,R6
+   \   000045   FA           MOV     R2,A
+   \   000046   EF           MOV     A,R7
+   \   000047   FB           MOV     R3,A
+   \   000048   12....       LCALL   ??vLCDBusy
+    153          vOut(uiAdresseEcran+ECRANCONFIG, ucPosition); //Envoi de la commande
+   \   00004B                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   00004B   A9..         MOV     R1,?V0 + 0
+   \   00004D   8E82         MOV     DPL,R6
+   \   00004F   8F83         MOV     DPH,R7
+   \   000051   E0           MOVX    A,@DPTR
+   \   000052   FC           MOV     R4,A
+   \   000053   A3           INC     DPTR
+   \   000054   E0           MOVX    A,@DPTR
+   \   000055   FD           MOV     R5,A
+   \   000056   EE           MOV     A,R6
+   \   000057   FA           MOV     R2,A
+   \   000058   EF           MOV     A,R7
+   \   000059   FB           MOV     R3,A
+   \   00005A   12....       LCALL   ??vOut
+    154          }
+   \   00005D   7F03         MOV     R7,#0x3
+   \   00005F   02....       LJMP    ?FUNC_LEAVE_XDATA
+    155          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    156          void CLEcran :: Lettre(UC ucCaractere)
+   \                     ??Lettre:
+    157          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+    158          vLCDBusy();
+   \   00000B                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   00000B   EE           MOV     A,R6
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   FB           MOV     R3,A
+   \   00000F   12....       LCALL   ??vLCDBusy
+    159          vOut(uiAdresseEcran+ECRANWR, ucCaractere);
+   \   000012                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   000012   A9..         MOV     R1,?V0 + 0
+   \   000014   8E82         MOV     DPL,R6
+   \   000016   8F83         MOV     DPH,R7
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   2402         ADD     A,#0x2
+   \   00001B   FC           MOV     R4,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   3400         ADDC    A,#0x0
+   \   000020   FD           MOV     R5,A
+   \   000021   EE           MOV     A,R6
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   FB           MOV     R3,A
+   \   000025   12....       LCALL   ??vOut
+    160          }
+   \   000028   7F01         MOV     R7,#0x1
+   \   00002A   02....       LJMP    ?FUNC_LEAVE_XDATA
+    161          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    162          void CLEcran :: Lettre(char cCaractere)
+   \                     ??Lettre_1:
+    163          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+    164          vLCDBusy();
+   \   00000B                ; Setup parameters for call to function CLEcran::vLCDBusy()
+   \   00000B   EE           MOV     A,R6
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   FB           MOV     R3,A
+   \   00000F   12....       LCALL   ??vLCDBusy
+    165          vOut(uiAdresseEcran+ECRANWR, cCaractere);
+   \   000012                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   000012   A9..         MOV     R1,?V0 + 0
+   \   000014   8E82         MOV     DPL,R6
+   \   000016   8F83         MOV     DPH,R7
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   2402         ADD     A,#0x2
+   \   00001B   FC           MOV     R4,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   3400         ADDC    A,#0x0
+   \   000020   FD           MOV     R5,A
+   \   000021   EE           MOV     A,R6
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   FB           MOV     R3,A
+   \   000025   12....       LCALL   ??vOut
+    166          }
+   \   000028   7F01         MOV     R7,#0x1
+   \   00002A   02....       LJMP    ?FUNC_LEAVE_XDATA
+    167          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    168          void CLEcran :: vHexToASCII(UC ucHexCar, UC *ucpHi, UC *ucpLo)
+   \                     ??vHexToASCII:
+    169          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FA           MOV     R2,A
+   \   000007   7408         MOV     A,#0x8
+   \   000009   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   F8           MOV     R0,A
+   \   00000E   A3           INC     DPTR
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   F9           MOV     R1,A
+    170          UC ucTemp;
+    171          ucTemp = ucHexCar;
+   \   000011   EA           MOV     A,R2
+   \   000012   FB           MOV     R3,A
+    172          *ucpHi = ucTemp   >> 4;
+   \   000013   C4           SWAP    A
+   \   000014   540F         ANL     A,#0xf
+   \   000016   8C82         MOV     DPL,R4
+   \   000018   8D83         MOV     DPH,R5
+   \   00001A   F0           MOVX    @DPTR,A
+    173          *ucpLo = ucHexCar & 0x0F;
+   \   00001B   740F         MOV     A,#0xf
+   \   00001D   5A           ANL     A,R2
+   \   00001E   8882         MOV     DPL,R0
+   \   000020   8983         MOV     DPH,R1
+   \   000022   F0           MOVX    @DPTR,A
+    174          
+    175          if(*ucpHi <= 9)             //SI MSB est chiffe
+   \   000023   8C82         MOV     DPL,R4
+   \   000025   8D83         MOV     DPH,R5
+   \   000027   E0           MOVX    A,@DPTR
+   \   000028   C3           CLR     C
+   \   000029   940A         SUBB    A,#0xa
+   \   00002B   500A         JNC     ??vHexToASCII_2
+    176            {
+    177             *ucpHi = *ucpHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
+   \   00002D   8C82         MOV     DPL,R4
+   \   00002F   8D83         MOV     DPH,R5
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   2430         ADD     A,#0x30
+   \   000034   F0           MOVX    @DPTR,A
+   \   000035   8008         SJMP    ??vHexToASCII_3
+    178            }
+    179          else                        //SINON
+    180            {
+    181             *ucpHi = *ucpHi + 0x37;  //Convertion hexa a ASCII (Lettre)
+   \                     ??vHexToASCII_2:
+   \   000037   8C82         MOV     DPL,R4
+   \   000039   8D83         MOV     DPH,R5
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   2437         ADD     A,#0x37
+   \   00003E   F0           MOVX    @DPTR,A
+    182            }
+    183          
+    184          if(*ucpLo <= 9)             //SI LSB est chiffre
+   \                     ??vHexToASCII_3:
+   \   00003F   8882         MOV     DPL,R0
+   \   000041   8983         MOV     DPH,R1
+   \   000043   E0           MOVX    A,@DPTR
+   \   000044   C3           CLR     C
+   \   000045   940A         SUBB    A,#0xa
+   \   000047   500A         JNC     ??vHexToASCII_4
+    185            {
+    186             *ucpLo = *ucpLo + 0x30;  //Convertion hexa a ASCII (Chiffre)
+   \   000049   8882         MOV     DPL,R0
+   \   00004B   8983         MOV     DPH,R1
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   2430         ADD     A,#0x30
+   \   000050   F0           MOVX    @DPTR,A
+   \   000051   8008         SJMP    ??vHexToASCII_5
+    187            }
+    188          else                        //SINON
+    189            {
+    190             *ucpLo = *ucpLo + 0x37;  //Convertion hexa a ASCII (Lettre)
+   \                     ??vHexToASCII_4:
+   \   000053   8882         MOV     DPL,R0
+   \   000055   8983         MOV     DPH,R1
+   \   000057   E0           MOVX    A,@DPTR
+   \   000058   2437         ADD     A,#0x37
+   \   00005A   F0           MOVX    @DPTR,A
+    191            }
+    192          }
+   \                     ??vHexToASCII_5:
+   \   00005B   7F01         MOV     R7,#0x1
+   \   00005D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    193          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    194          void CLEcran :: vHexToASCII(USI uiHexCar, UC *ucpHiOctHi, UC *ucpLoOctHi,
+   \                     ??vHexToASCII_1:
+    195                                                    UC *ucpHiOctLo, UC *ucpLoOctLo)
+    196          {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 0
+   \   000005   740D         MOV     A,#0xd
+   \   000007   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F8           MOV     R0,A
+   \   00000C   A3           INC     DPTR
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   F9           MOV     R1,A
+   \   00000F   E8           MOV     A,R0
+   \   000010   FA           MOV     R2,A
+   \   000011   E9           MOV     A,R1
+   \   000012   FB           MOV     R3,A
+   \   000013   740F         MOV     A,#0xf
+   \   000015   12....       LCALL   ?XSTACK_DISP0_8
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F8           MOV     R0,A
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   F9           MOV     R1,A
+   \   00001D   E8           MOV     A,R0
+   \   00001E   FE           MOV     R6,A
+   \   00001F   E9           MOV     A,R1
+   \   000020   FF           MOV     R7,A
+   \   000021   7411         MOV     A,#0x11
+   \   000023   12....       LCALL   ?XSTACK_DISP0_8
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   F8           MOV     R0,A
+   \   000028   A3           INC     DPTR
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   F9           MOV     R1,A
+   \   00002B   88..         MOV     ?V0 + 2,R0
+   \   00002D   89..         MOV     ?V0 + 3,R1
+   \   00002F   7413         MOV     A,#0x13
+   \   000031   12....       LCALL   ?XSTACK_DISP0_8
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F8           MOV     R0,A
+   \   000036   A3           INC     DPTR
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F9           MOV     R1,A
+   \   000039   88..         MOV     ?V0 + 4,R0
+   \   00003B   89..         MOV     ?V0 + 5,R1
+    197          *ucpHiOctHi = (uiHexCar >> 12) & 0x0F;
+   \   00003D   8C..         MOV     ?V0 + 0,R4
+   \   00003F   8D..         MOV     ?V0 + 1,R5
+   \   000041   740C         MOV     A,#0xc
+   \   000043   78..         MOV     R0,#?V0 + 0
+   \   000045   12....       LCALL   ?US_SHR
+   \   000048   E5..         MOV     A,?V0 + 0
+   \   00004A   8A82         MOV     DPL,R2
+   \   00004C   8B83         MOV     DPH,R3
+   \   00004E   E5..         MOV     A,?V0 + 0
+   \   000050   F0           MOVX    @DPTR,A
+    198          *ucpLoOctHi = (uiHexCar >> 8 ) & 0x0F;
+   \   000051   EC           MOV     A,R4
+   \   000052   F8           MOV     R0,A
+   \   000053   ED           MOV     A,R5
+   \   000054   F9           MOV     R1,A
+   \   000055   E4           CLR     A
+   \   000056   E9           MOV     A,R1
+   \   000057   F8           MOV     R0,A
+   \   000058   540F         ANL     A,#0xf
+   \   00005A   8E82         MOV     DPL,R6
+   \   00005C   8F83         MOV     DPH,R7
+   \   00005E   F0           MOVX    @DPTR,A
+    199          *ucpHiOctLo = (uiHexCar >> 4 ) & 0x0F;
+   \   00005F   EC           MOV     A,R4
+   \   000060   C4           SWAP    A
+   \   000061   540F         ANL     A,#0xf
+   \   000063   85..82       MOV     DPL,?V0 + 2
+   \   000066   85..83       MOV     DPH,?V0 + 3
+   \   000069   F0           MOVX    @DPTR,A
+    200          *ucpLoOctLo =  uiHexCar        & 0x0F;
+   \   00006A   EC           MOV     A,R4
+   \   00006B   540F         ANL     A,#0xf
+   \   00006D   85..82       MOV     DPL,?V0 + 4
+   \   000070   85..83       MOV     DPH,?V0 + 5
+   \   000073   F0           MOVX    @DPTR,A
+    201          
+    202          if(*ucpHiOctHi <= 9)                  //SI MSB est chiffe
+   \   000074   8A82         MOV     DPL,R2
+   \   000076   8B83         MOV     DPH,R3
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   C3           CLR     C
+   \   00007A   940A         SUBB    A,#0xa
+   \   00007C   500A         JNC     ??vHexToASCII_6
+    203            {
+    204             *ucpHiOctHi = *ucpHiOctHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
+   \   00007E   8A82         MOV     DPL,R2
+   \   000080   8B83         MOV     DPH,R3
+   \   000082   E0           MOVX    A,@DPTR
+   \   000083   2430         ADD     A,#0x30
+   \   000085   F0           MOVX    @DPTR,A
+   \   000086   8008         SJMP    ??vHexToASCII_7
+    205            }
+    206          else                                  //SINON
+    207            {
+    208             *ucpHiOctHi = *ucpHiOctHi + 0x37;  //Convertion hexa a ASCII (Lettre)
+   \                     ??vHexToASCII_6:
+   \   000088   8A82         MOV     DPL,R2
+   \   00008A   8B83         MOV     DPH,R3
+   \   00008C   E0           MOVX    A,@DPTR
+   \   00008D   2437         ADD     A,#0x37
+   \   00008F   F0           MOVX    @DPTR,A
+    209            }
+    210          
+    211          if(*ucpLoOctHi <= 9)                  //SI LSB est chiffre
+   \                     ??vHexToASCII_7:
+   \   000090   8E82         MOV     DPL,R6
+   \   000092   8F83         MOV     DPH,R7
+   \   000094   E0           MOVX    A,@DPTR
+   \   000095   C3           CLR     C
+   \   000096   940A         SUBB    A,#0xa
+   \   000098   500A         JNC     ??vHexToASCII_8
+    212            {
+    213             *ucpLoOctHi = *ucpLoOctHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
+   \   00009A   8E82         MOV     DPL,R6
+   \   00009C   8F83         MOV     DPH,R7
+   \   00009E   E0           MOVX    A,@DPTR
+   \   00009F   2430         ADD     A,#0x30
+   \   0000A1   F0           MOVX    @DPTR,A
+   \   0000A2   8008         SJMP    ??vHexToASCII_9
+    214            }
+    215          else                                  //SINON
+    216            {
+    217             *ucpLoOctHi = *ucpLoOctHi + 0x37;  //Convertion hexa a ASCII (Lettre)
+   \                     ??vHexToASCII_8:
+   \   0000A4   8E82         MOV     DPL,R6
+   \   0000A6   8F83         MOV     DPH,R7
+   \   0000A8   E0           MOVX    A,@DPTR
+   \   0000A9   2437         ADD     A,#0x37
+   \   0000AB   F0           MOVX    @DPTR,A
+    218            }
+    219          
+    220          if(*ucpHiOctLo <= 9 )                 //SI MSB est chiffre
+   \                     ??vHexToASCII_9:
+   \   0000AC   85..82       MOV     DPL,?V0 + 2
+   \   0000AF   85..83       MOV     DPH,?V0 + 3
+   \   0000B2   E0           MOVX    A,@DPTR
+   \   0000B3   C3           CLR     C
+   \   0000B4   940A         SUBB    A,#0xa
+   \   0000B6   500C         JNC     ??vHexToASCII_10
+    221            {
+    222             *ucpHiOctLo = *ucpHiOctLo + 0x30;  //Convertion hexa a ASCII (Chiffre)
+   \   0000B8   85..82       MOV     DPL,?V0 + 2
+   \   0000BB   85..83       MOV     DPH,?V0 + 3
+   \   0000BE   E0           MOVX    A,@DPTR
+   \   0000BF   2430         ADD     A,#0x30
+   \   0000C1   F0           MOVX    @DPTR,A
+   \   0000C2   800A         SJMP    ??vHexToASCII_11
+    223            }
+    224          else                                  //SINON
+    225            {
+    226             *ucpHiOctLo = *ucpHiOctLo + 0x37;  //Convertion hexa a ASCII (Lettre)
+   \                     ??vHexToASCII_10:
+   \   0000C4   85..82       MOV     DPL,?V0 + 2
+   \   0000C7   85..83       MOV     DPH,?V0 + 3
+   \   0000CA   E0           MOVX    A,@DPTR
+   \   0000CB   2437         ADD     A,#0x37
+   \   0000CD   F0           MOVX    @DPTR,A
+    227            }
+    228          
+    229          if(*ucpLoOctLo <= 9 )                 //SI LSB est chiffre
+   \                     ??vHexToASCII_11:
+   \   0000CE   85..82       MOV     DPL,?V0 + 4
+   \   0000D1   85..83       MOV     DPH,?V0 + 5
+   \   0000D4   E0           MOVX    A,@DPTR
+   \   0000D5   C3           CLR     C
+   \   0000D6   940A         SUBB    A,#0xa
+   \   0000D8   500C         JNC     ??vHexToASCII_12
+    230            {
+    231             *ucpLoOctLo = *ucpLoOctLo + 0x30;  //Convertion hexa a ASCII (Chiffre)
+   \   0000DA   85..82       MOV     DPL,?V0 + 4
+   \   0000DD   85..83       MOV     DPH,?V0 + 5
+   \   0000E0   E0           MOVX    A,@DPTR
+   \   0000E1   2430         ADD     A,#0x30
+   \   0000E3   F0           MOVX    @DPTR,A
+   \   0000E4   800A         SJMP    ??vHexToASCII_13
+    232            }
+    233          else                                  //SINON
+    234            {
+    235             *ucpLoOctLo = *ucpLoOctLo + 0x37;  //Convertion hexa a ASCII (Lettre)
+   \                     ??vHexToASCII_12:
+   \   0000E6   85..82       MOV     DPL,?V0 + 4
+   \   0000E9   85..83       MOV     DPH,?V0 + 5
+   \   0000EC   E0           MOVX    A,@DPTR
+   \   0000ED   2437         ADD     A,#0x37
+   \   0000EF   F0           MOVX    @DPTR,A
+    236            }
+    237          }
+   \                     ??vHexToASCII_13:
+   \   0000F0   7F06         MOV     R7,#0x6
+   \   0000F2   02....       LJMP    ?FUNC_LEAVE_XDATA
+    238          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    239          void CLEcran :: vLCDDisplayHexCarac(UC ucHexCar)
+   \                     ??vLCDDisplayHexCarac:
+    240           {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   89..         MOV     ?V0 + 0,R1
+    241            UC ucHi;UC ucLo;
+    242          
+    243            vHexToASCII(ucHexCar, &ucHi, &ucLo); //Conversion de Hexadecimal a ASCII
+   \   000010                ; Setup parameters for call to function CLEcran::vHexToASCII(UC, UC *, UC *)
+   \   000010   85..82       MOV     DPL,?XSP + 0
+   \   000013   85..83       MOV     DPH,?XSP + 1
+   \   000016   8582..       MOV     ?V0 + 2,DPL
+   \   000019   8583..       MOV     ?V0 + 3,DPH
+   \   00001C   78..         MOV     R0,#?V0 + 2
+   \   00001E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000021   7403         MOV     A,#0x3
+   \   000023   12....       LCALL   ?XSTACK_DISP0_8
+   \   000026   AC82         MOV     R4,DPL
+   \   000028   AD83         MOV     R5,DPH
+   \   00002A   A9..         MOV     R1,?V0 + 0
+   \   00002C   EE           MOV     A,R6
+   \   00002D   FA           MOV     R2,A
+   \   00002E   EF           MOV     A,R7
+   \   00002F   FB           MOV     R3,A
+   \   000030   12....       LCALL   ??vHexToASCII
+   \   000033   7402         MOV     A,#0x2
+   \   000035   12....       LCALL   ?DEALLOC_XSTACK8
+    244            Lettre(ucHi);              //Affiche MSB
+   \   000038                ; Setup parameters for call to function CLEcran::Lettre(UC)
+   \   000038   7401         MOV     A,#0x1
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F9           MOV     R1,A
+   \   00003F   EE           MOV     A,R6
+   \   000040   FA           MOV     R2,A
+   \   000041   EF           MOV     A,R7
+   \   000042   FB           MOV     R3,A
+   \   000043   12....       LCALL   ??Lettre
+    245            Lettre(ucLo);              //Affiche LSB
+   \   000046                ; Setup parameters for call to function CLEcran::Lettre(UC)
+   \   000046   85..82       MOV     DPL,?XSP + 0
+   \   000049   85..83       MOV     DPH,?XSP + 1
+   \   00004C   E0           MOVX    A,@DPTR
+   \   00004D   F9           MOV     R1,A
+   \   00004E   EE           MOV     A,R6
+   \   00004F   FA           MOV     R2,A
+   \   000050   EF           MOV     A,R7
+   \   000051   FB           MOV     R3,A
+   \   000052   12....       LCALL   ??Lettre
+    246           }
+   \   000055   7402         MOV     A,#0x2
+   \   000057   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00005A   7F04         MOV     R7,#0x4
+   \   00005C   02....       LJMP    ?FUNC_LEAVE_XDATA
+    247          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    248          void CLEcran :: vLCDDisplayHexCarac(USI uiHexCar)
+   \                     ??vLCDDisplayHexCarac_1:
+    249          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    250          UC ucHiOctHi;
+    251          UC ucLoOctHi;
+    252          UC ucHiOctLo;
+    253          UC ucLoOctLo;
+    254          
+    255          vHexToASCII(uiHexCar, &ucHiOctHi, &ucLoOctHi, &ucHiOctLo, &ucLoOctLo);
+   \   00000E                ; Setup parameters for call to function CLEcran::vHexToASCII(USI, UC *, UC *, UC *, UC *)
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   8582..       MOV     ?V0 + 0,DPL
+   \   000017   8583..       MOV     ?V0 + 1,DPH
+   \   00001A   78..         MOV     R0,#?V0 + 0
+   \   00001C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001F   7403         MOV     A,#0x3
+   \   000021   12....       LCALL   ?XSTACK_DISP0_8
+   \   000024   8582..       MOV     ?V0 + 0,DPL
+   \   000027   8583..       MOV     ?V0 + 1,DPH
+   \   00002A   78..         MOV     R0,#?V0 + 0
+   \   00002C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00002F   7406         MOV     A,#0x6
+   \   000031   12....       LCALL   ?XSTACK_DISP0_8
+   \   000034   8582..       MOV     ?V0 + 0,DPL
+   \   000037   8583..       MOV     ?V0 + 1,DPH
+   \   00003A   78..         MOV     R0,#?V0 + 0
+   \   00003C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00003F   7409         MOV     A,#0x9
+   \   000041   12....       LCALL   ?XSTACK_DISP0_8
+   \   000044   8582..       MOV     ?V0 + 0,DPL
+   \   000047   8583..       MOV     ?V0 + 1,DPH
+   \   00004A   78..         MOV     R0,#?V0 + 0
+   \   00004C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004F   EE           MOV     A,R6
+   \   000050   FA           MOV     R2,A
+   \   000051   EF           MOV     A,R7
+   \   000052   FB           MOV     R3,A
+   \   000053   12....       LCALL   ??vHexToASCII_1
+   \   000056   7408         MOV     A,#0x8
+   \   000058   12....       LCALL   ?DEALLOC_XSTACK8
+    256          
+    257          Lettre(ucHiOctHi); //Affiche MSB OctHI
+   \   00005B                ; Setup parameters for call to function CLEcran::Lettre(UC)
+   \   00005B   7403         MOV     A,#0x3
+   \   00005D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000060   E0           MOVX    A,@DPTR
+   \   000061   F9           MOV     R1,A
+   \   000062   EE           MOV     A,R6
+   \   000063   FA           MOV     R2,A
+   \   000064   EF           MOV     A,R7
+   \   000065   FB           MOV     R3,A
+   \   000066   12....       LCALL   ??Lettre
+    258          Lettre(ucLoOctHi); //Affiche LSB OctHI
+   \   000069                ; Setup parameters for call to function CLEcran::Lettre(UC)
+   \   000069   7402         MOV     A,#0x2
+   \   00006B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006E   E0           MOVX    A,@DPTR
+   \   00006F   F9           MOV     R1,A
+   \   000070   EE           MOV     A,R6
+   \   000071   FA           MOV     R2,A
+   \   000072   EF           MOV     A,R7
+   \   000073   FB           MOV     R3,A
+   \   000074   12....       LCALL   ??Lettre
+    259          Lettre(ucHiOctLo); //Affiche MSB OctLO
+   \   000077                ; Setup parameters for call to function CLEcran::Lettre(UC)
+   \   000077   7401         MOV     A,#0x1
+   \   000079   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   F9           MOV     R1,A
+   \   00007E   EE           MOV     A,R6
+   \   00007F   FA           MOV     R2,A
+   \   000080   EF           MOV     A,R7
+   \   000081   FB           MOV     R3,A
+   \   000082   12....       LCALL   ??Lettre
+    260          Lettre(ucLoOctLo); //Affiche LSB OctLO
+   \   000085                ; Setup parameters for call to function CLEcran::Lettre(UC)
+   \   000085   85..82       MOV     DPL,?XSP + 0
+   \   000088   85..83       MOV     DPH,?XSP + 1
+   \   00008B   E0           MOVX    A,@DPTR
+   \   00008C   F9           MOV     R1,A
+   \   00008D   EE           MOV     A,R6
+   \   00008E   FA           MOV     R2,A
+   \   00008F   EF           MOV     A,R7
+   \   000090   FB           MOV     R3,A
+   \   000091   12....       LCALL   ??Lettre
+    261          }
+   \   000094   7404         MOV     A,#0x4
+   \   000096   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000099   7F02         MOV     R7,#0x2
+   \   00009B   02....       LJMP    ?FUNC_LEAVE_XDATA
+    262          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    263          void CLEcran :: String(const UC *ucpMessage)
+   \                     ??String:
+    264          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C82         MOV     DPL,R4
+   \   00000B   8D83         MOV     DPH,R5
+   \   00000D   800A         SJMP    ??String_2
+    265          while(*ucpMessage != 0x00)
+    266            {
+    267             Lettre(*ucpMessage);
+   \                     ??String_3:
+   \   00000F                ; Setup parameters for call to function CLEcran::Lettre(UC)
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   F9           MOV     R1,A
+   \   000011   EE           MOV     A,R6
+   \   000012   FA           MOV     R2,A
+   \   000013   EF           MOV     A,R7
+   \   000014   FB           MOV     R3,A
+   \   000015   12....       LCALL   ??Lettre
+    268             ucpMessage++;
+   \   000018   A3           INC     DPTR
+    269            }
+   \                     ??String_2:
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   70F3         JNZ     ??String_3
+    270          }
+   \   00001C   7F01         MOV     R7,#0x1
+   \   00001E   02....       LJMP    ?FUNC_LEAVE_XDATA
+    271          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    272          void CLEcran ::String (const char *cpMessage)
+   \                     ??String_1:
+    273          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C82         MOV     DPL,R4
+   \   00000B   8D83         MOV     DPH,R5
+   \   00000D   800A         SJMP    ??String_4
+    274          while(*cpMessage != 0x00)
+    275            {
+    276             Lettre(*cpMessage);
+   \                     ??String_5:
+   \   00000F                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   F9           MOV     R1,A
+   \   000011   EE           MOV     A,R6
+   \   000012   FA           MOV     R2,A
+   \   000013   EF           MOV     A,R7
+   \   000014   FB           MOV     R3,A
+   \   000015   12....       LCALL   ??Lettre_1
+    277             cpMessage++;
+   \   000018   A3           INC     DPTR
+    278            }
+   \                     ??String_4:
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   70F3         JNZ     ??String_5
+    279          }
+   \   00001C   7F01         MOV     R7,#0x1
+   \   00001E   02....       LJMP    ?FUNC_LEAVE_XDATA
+    280          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    281          void CLEcran :: vLCDDisplayScreen(const UC *ucpEcran)
+   \                     ??vLCDDisplayScreen:
+    282          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C82         MOV     DPL,R4
+   \   00000B   8D83         MOV     DPH,R5
+    283          UC ucLigne;
+    284          for(ucLigne = 1; ucLigne <= 4; ucLigne++)
+   \   00000D   75..01       MOV     ?V0 + 0,#0x1
+   \   000010   8019         SJMP    ??vLCDDisplayScreen_1
+    285            {
+    286             vLCDCursor(1,ucLigne);
+   \                     ??vLCDDisplayScreen_2:
+   \   000012                ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
+   \   000012   AC..         MOV     R4,?V0 + 0
+   \   000014   7901         MOV     R1,#0x1
+   \   000016   EE           MOV     A,R6
+   \   000017   FA           MOV     R2,A
+   \   000018   EF           MOV     A,R7
+   \   000019   FB           MOV     R3,A
+   \   00001A   12....       LCALL   ??vLCDCursor
+    287             String(ucpEcran);
+   \   00001D                ; Setup parameters for call to function CLEcran::String(UC const *)
+   \   00001D   AC82         MOV     R4,DPL
+   \   00001F   AD83         MOV     R5,DPH
+   \   000021   EE           MOV     A,R6
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   FB           MOV     R3,A
+   \   000025   12....       LCALL   ??String
+    288             ucpEcran = ucpEcran + 1;
+   \   000028   A3           INC     DPTR
+    289            }
+   \   000029   05..         INC     ?V0 + 0
+   \                     ??vLCDDisplayScreen_1:
+   \   00002B   E5..         MOV     A,?V0 + 0
+   \   00002D   C3           CLR     C
+   \   00002E   9405         SUBB    A,#0x5
+   \   000030   40E0         JC      ??vLCDDisplayScreen_2
+    290          }
+   \   000032   7F01         MOV     R7,#0x1
+   \   000034   02....       LJMP    ?FUNC_LEAVE_XDATA
+    291          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    292          void CLEcran :: vLCDDisplayEtatPort(UC ucEtatPort)
+   \                     ??vLCDDisplayEtatPort:
+    293          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FF           MOV     R7,A
+    294          for(UC i = 0; i < 8; i++)
+   \   00000B   7E00         MOV     R6,#0x0
+   \   00000D   800E         SJMP    ??vLCDDisplayEtatPort_1
+    295            {
+    296             if((ucEtatPort & 0x80) == 0x80)
+    297               {
+    298                Lettre('1');
+    299               }
+    300             else
+    301               {
+    302                Lettre('0');
+   \                     ??vLCDDisplayEtatPort_2:
+   \   00000F                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   00000F   7930         MOV     R1,#0x30
+   \   000011   AA82         MOV     R2,DPL
+   \   000013   AB83         MOV     R3,DPH
+   \   000015   12....       LCALL   ??Lettre_1
+    303               }
+    304             ucEtatPort = ucEtatPort << 1;
+   \                     ??vLCDDisplayEtatPort_3:
+   \   000018   EF           MOV     A,R7
+   \   000019   C3           CLR     C
+   \   00001A   33           RLC     A
+   \   00001B   FF           MOV     R7,A
+   \   00001C   0E           INC     R6
+   \                     ??vLCDDisplayEtatPort_1:
+   \   00001D   EE           MOV     A,R6
+   \   00001E   C3           CLR     C
+   \   00001F   9408         SUBB    A,#0x8
+   \   000021   5010         JNC     ??vLCDDisplayEtatPort_4
+   \   000023   EF           MOV     A,R7
+   \   000024   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000026   50E7         JNC     ??vLCDDisplayEtatPort_2
+   \   000028                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000028   7931         MOV     R1,#0x31
+   \   00002A   AA82         MOV     R2,DPL
+   \   00002C   AB83         MOV     R3,DPH
+   \   00002E   12....       LCALL   ??Lettre_1
+   \   000031   80E5         SJMP    ??vLCDDisplayEtatPort_3
+    305            }
+    306          }
+   \                     ??vLCDDisplayEtatPort_4:
+   \   000033   7F01         MOV     R7,#0x1
+   \   000035   02....       LJMP    ?FUNC_LEAVE_XDATA
+    307          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    308          void CLEcran :: vLCDDisplayFloat(float fInputFloat)
+   \                     ??vLCDDisplayFloat:
+    309          {
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 14
+   \   000005   74F2         MOV     A,#-0xe
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   EA           MOV     A,R2
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   A3           INC     DPTR
+   \   000013   EB           MOV     A,R3
+   \   000014   F0           MOVX    @DPTR,A
+   \   000015   741D         MOV     A,#0x1d
+   \   000017   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001A   78..         MOV     R0,#?V0 + 0
+   \   00001C   12....       LCALL   ?L_MOV_X
+    310          int i                 = 0; // Pour les boucles de comptage
+   \   00001F   7402         MOV     A,#0x2
+   \   000021   12....       LCALL   ?XSTACK_DISP0_8
+   \   000024   7400         MOV     A,#0x0
+   \   000026   F0           MOVX    @DPTR,A
+   \   000027   A3           INC     DPTR
+   \   000028   7400         MOV     A,#0x0
+   \   00002A   F0           MOVX    @DPTR,A
+    311          float fTemporaire     = 0; // Pour le calcul de decimales
+   \   00002B   90....       MOV     DPTR,#__Constant_0
+   \   00002E   12....       LCALL   ?XLOAD_R2345
+   \   000031   740A         MOV     A,#0xa
+   \   000033   12....       LCALL   ?XSTACK_DISP0_8
+   \   000036   12....       LCALL   ?XSTORE_R2345
+    312          USI usiLesEntiers     = 0; // Pour la conversion d'un float en entier
+   \   000039   7406         MOV     A,#0x6
+   \   00003B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003E   7400         MOV     A,#0x0
+   \   000040   F0           MOVX    @DPTR,A
+   \   000041   A3           INC     DPTR
+   \   000042   7400         MOV     A,#0x0
+   \   000044   F0           MOVX    @DPTR,A
+    313          USI usiLesEntiersTemp = 0; // Pour la conversion d'un float en entier
+   \   000045   7404         MOV     A,#0x4
+   \   000047   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004A   7400         MOV     A,#0x0
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   A3           INC     DPTR
+   \   00004E   7400         MOV     A,#0x0
+   \   000050   F0           MOVX    @DPTR,A
+    314          USI usiDecimalesTemp  = 0; // Pour convertir les decimales d'un float en entier
+   \   000051   7E00         MOV     R6,#0x0
+   \   000053   7F00         MOV     R7,#0x0
+    315          USI usiLesDecimales   = 0; // Pour convertir les decimales d'un float en entier
+   \   000055   7408         MOV     A,#0x8
+   \   000057   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005A   7400         MOV     A,#0x0
+   \   00005C   F0           MOVX    @DPTR,A
+   \   00005D   A3           INC     DPTR
+   \   00005E   7400         MOV     A,#0x0
+   \   000060   F0           MOVX    @DPTR,A
+    316          
+    317          usiLesEntiers   = (USI)fInputFloat; // Conversion des floats en USI sans virgule
+   \   000061   85....       MOV     ?V0 + 4,?V0 + 0
+   \   000064   85....       MOV     ?V0 + 5,?V0 + 1
+   \   000067   85....       MOV     ?V0 + 6,?V0 + 2
+   \   00006A   85....       MOV     ?V0 + 7,?V0 + 3
+   \   00006D   78..         MOV     R0,#?V0 + 4
+   \   00006F   12....       LCALL   ?FLT_TO_L
+   \   000072   7406         MOV     A,#0x6
+   \   000074   12....       LCALL   ?XSTACK_DISP0_8
+   \   000077   E5..         MOV     A,?V0 + 4
+   \   000079   F0           MOVX    @DPTR,A
+   \   00007A   A3           INC     DPTR
+   \   00007B   E5..         MOV     A,?V0 + 5
+   \   00007D   F0           MOVX    @DPTR,A
+    318          usiLesDecimales = (USI)fInputFloat; // Enleve les decimales du float
+   \   00007E   85....       MOV     ?V0 + 4,?V0 + 0
+   \   000081   85....       MOV     ?V0 + 5,?V0 + 1
+   \   000084   85....       MOV     ?V0 + 6,?V0 + 2
+   \   000087   85....       MOV     ?V0 + 7,?V0 + 3
+   \   00008A   78..         MOV     R0,#?V0 + 4
+   \   00008C   12....       LCALL   ?FLT_TO_L
+   \   00008F   7408         MOV     A,#0x8
+   \   000091   12....       LCALL   ?XSTACK_DISP0_8
+   \   000094   E5..         MOV     A,?V0 + 4
+   \   000096   F0           MOVX    @DPTR,A
+   \   000097   A3           INC     DPTR
+   \   000098   E5..         MOV     A,?V0 + 5
+   \   00009A   F0           MOVX    @DPTR,A
+    319          fTemporaire     = (fInputFloat - (float)usiLesDecimales) * 100;//Decimales 0-999
+   \   00009B   7408         MOV     A,#0x8
+   \   00009D   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A0   E0           MOVX    A,@DPTR
+   \   0000A1   F5..         MOV     ?V0 + 4,A
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   E0           MOVX    A,@DPTR
+   \   0000A5   F5..         MOV     ?V0 + 5,A
+   \   0000A7   E4           CLR     A
+   \   0000A8   F5..         MOV     ?V0 + 6,A
+   \   0000AA   F5..         MOV     ?V0 + 7,A
+   \   0000AC   78..         MOV     R0,#?V0 + 4
+   \   0000AE   12....       LCALL   ?UL_TO_FLT
+   \   0000B1   78..         MOV     R0,#?V0 + 0
+   \   0000B3   79..         MOV     R1,#?V0 + 4
+   \   0000B5   12....       LCALL   ?FLT_SUB
+   \   0000B8   90....       MOV     DPTR,#__Constant_42c80000
+   \   0000BB   78..         MOV     R0,#?V0 + 4
+   \   0000BD   12....       LCALL   ?L_MOV_X
+   \   0000C0   78..         MOV     R0,#?V0 + 0
+   \   0000C2   79..         MOV     R1,#?V0 + 4
+   \   0000C4   12....       LCALL   ?FLT_MUL
+   \   0000C7   740A         MOV     A,#0xa
+   \   0000C9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CC   78..         MOV     R0,#?V0 + 0
+   \   0000CE   12....       LCALL   ?L_MOV_TO_X
+    320          usiLesDecimales = (USI)fTemporaire; //Conversion (.0 a .999) vers (0 a 999)
+   \   0000D1   740A         MOV     A,#0xa
+   \   0000D3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D6   12....       LCALL   ?XLOAD_R2345
+   \   0000D9   12....       LCALL   ?R2345_FLT_TO_L
+   \   0000DC   7408         MOV     A,#0x8
+   \   0000DE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E1   E5..         MOV     A,?V0 + 0
+   \   0000E3   F0           MOVX    @DPTR,A
+   \   0000E4   A3           INC     DPTR
+   \   0000E5   E5..         MOV     A,?V0 + 1
+   \   0000E7   F0           MOVX    @DPTR,A
+    321          
+    322          for(i = 0; i < 3; i++) //Pour trois fois (Centaine, dizaine, unite)
+   \   0000E8   7402         MOV     A,#0x2
+   \   0000EA   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000ED   7400         MOV     A,#0x0
+   \   0000EF   F0           MOVX    @DPTR,A
+   \   0000F0   A3           INC     DPTR
+   \   0000F1   7400         MOV     A,#0x0
+   \   0000F3   F0           MOVX    @DPTR,A
+   \   0000F4   801E         SJMP    ??vLCDDisplayFloat_1
+    323            {
+    324             if(i == 0) // Pour les centaines
+    325               {
+    326                usiLesEntiersTemp = usiLesEntiers /  100;
+    327                usiLesEntiers     = usiLesEntiers - (100 * usiLesEntiersTemp);
+    328               }
+    329             if(i == 1) // Pour les dizaines
+    330               {
+    331                usiLesEntiersTemp = usiLesEntiers /  10;
+    332                usiLesEntiers     = usiLesEntiers - (10 * usiLesEntiersTemp);
+    333               }
+    334             if(i == 2) // Pour les unitees
+    335               {
+    336                usiLesEntiersTemp=usiLesEntiers;
+    337               }
+    338          
+    339             switch(usiLesEntiersTemp) // Affiche un caractere correspondant a l'unite
+    340               {                       // float lue
+    341                case 0:
+    342                   Lettre('0');
+    343                break;
+    344          
+    345                case 1:
+    346                   Lettre('1');
+    347                break;
+    348          
+    349                case 2:
+    350                   Lettre('2');
+    351                break;
+    352          
+    353                case 3:
+    354                   Lettre('3');
+    355                break;
+    356          
+    357                case 4:
+    358                   Lettre('4');
+    359                break;
+    360          
+    361                case 5:
+    362                   Lettre('5');
+    363                break;
+    364          
+    365                case 6:
+    366                   Lettre('6');
+    367                break;
+    368          
+    369                case 7:
+    370                   Lettre('7');
+    371                break;
+    372          
+    373                case 8:
+    374                   Lettre('8');
+    375                break;
+    376          
+    377                case 9:
+    378                   Lettre('9');
+   \                     ??vLCDDisplayFloat_2:
+   \   0000F6                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0000F6   7939         MOV     R1,#0x39
+   \   0000F8   85..82       MOV     DPL,?XSP + 0
+   \   0000FB   85..83       MOV     DPH,?XSP + 1
+   \   0000FE   E0           MOVX    A,@DPTR
+   \   0000FF   FA           MOV     R2,A
+   \   000100   A3           INC     DPTR
+   \   000101   E0           MOVX    A,@DPTR
+   \   000102   FB           MOV     R3,A
+   \   000103   12....       LCALL   ??Lettre_1
+    379                break;
+   \                     ??vLCDDisplayFloat_3:
+   \   000106   7402         MOV     A,#0x2
+   \   000108   12....       LCALL   ?XSTACK_DISP0_8
+   \   00010B   E0           MOVX    A,@DPTR
+   \   00010C   2401         ADD     A,#0x1
+   \   00010E   F0           MOVX    @DPTR,A
+   \   00010F   A3           INC     DPTR
+   \   000110   E0           MOVX    A,@DPTR
+   \   000111   3400         ADDC    A,#0x0
+   \   000113   F0           MOVX    @DPTR,A
+   \                     ??vLCDDisplayFloat_1:
+   \   000114   7402         MOV     A,#0x2
+   \   000116   12....       LCALL   ?XSTACK_DISP0_8
+   \   000119   C3           CLR     C
+   \   00011A   E0           MOVX    A,@DPTR
+   \   00011B   9403         SUBB    A,#0x3
+   \   00011D   A3           INC     DPTR
+   \   00011E   E0           MOVX    A,@DPTR
+   \   00011F   9400         SUBB    A,#0x0
+   \   000121   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000123   65D0         XRL     A,PSW
+   \   000125   33           RLC     A
+   \   000126   4003         JC      $+5
+   \   000128   02....       LJMP    ??vLCDDisplayFloat_4
+   \   00012B   7402         MOV     A,#0x2
+   \   00012D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000130   E0           MOVX    A,@DPTR
+   \   000131   F8           MOV     R0,A
+   \   000132   A3           INC     DPTR
+   \   000133   E0           MOVX    A,@DPTR
+   \   000134   F9           MOV     R1,A
+   \   000135   E8           MOV     A,R0
+   \   000136   49           ORL     A,R1
+   \   000137   7047         JNZ     ??vLCDDisplayFloat_5
+   \   000139   7406         MOV     A,#0x6
+   \   00013B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013E   E0           MOVX    A,@DPTR
+   \   00013F   F8           MOV     R0,A
+   \   000140   A3           INC     DPTR
+   \   000141   E0           MOVX    A,@DPTR
+   \   000142   F9           MOV     R1,A
+   \   000143   7A64         MOV     R2,#0x64
+   \   000145   7B00         MOV     R3,#0x0
+   \   000147   12....       LCALL   ?US_DIV_MOD
+   \   00014A   7404         MOV     A,#0x4
+   \   00014C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00014F   E8           MOV     A,R0
+   \   000150   F0           MOVX    @DPTR,A
+   \   000151   A3           INC     DPTR
+   \   000152   E9           MOV     A,R1
+   \   000153   F0           MOVX    @DPTR,A
+   \   000154   7404         MOV     A,#0x4
+   \   000156   12....       LCALL   ?XSTACK_DISP0_8
+   \   000159   E0           MOVX    A,@DPTR
+   \   00015A   F8           MOV     R0,A
+   \   00015B   A3           INC     DPTR
+   \   00015C   E0           MOVX    A,@DPTR
+   \   00015D   F9           MOV     R1,A
+   \   00015E   E8           MOV     A,R0
+   \   00015F   75F064       MOV     B,#0x64
+   \   000162   A4           MUL     AB
+   \   000163   C8           XCH     A,R0
+   \   000164   AAF0         MOV     R2,B
+   \   000166   75F000       MOV     B,#0x0
+   \   000169   A4           MUL     AB
+   \   00016A   2A           ADD     A,R2
+   \   00016B   FA           MOV     R2,A
+   \   00016C   75F064       MOV     B,#0x64
+   \   00016F   E9           MOV     A,R1
+   \   000170   A4           MUL     AB
+   \   000171   2A           ADD     A,R2
+   \   000172   F9           MOV     R1,A
+   \   000173   7406         MOV     A,#0x6
+   \   000175   12....       LCALL   ?XSTACK_DISP0_8
+   \   000178   C3           CLR     C
+   \   000179   E0           MOVX    A,@DPTR
+   \   00017A   98           SUBB    A,R0
+   \   00017B   F0           MOVX    @DPTR,A
+   \   00017C   A3           INC     DPTR
+   \   00017D   E0           MOVX    A,@DPTR
+   \   00017E   99           SUBB    A,R1
+   \   00017F   F0           MOVX    @DPTR,A
+   \                     ??vLCDDisplayFloat_5:
+   \   000180   7402         MOV     A,#0x2
+   \   000182   12....       LCALL   ?XSTACK_DISP0_8
+   \   000185   E0           MOVX    A,@DPTR
+   \   000186   6401         XRL     A,#0x1
+   \   000188   7004         JNZ     ??vLCDDisplayFloat_6
+   \   00018A   A3           INC     DPTR
+   \   00018B   E0           MOVX    A,@DPTR
+   \   00018C   6400         XRL     A,#0x0
+   \                     ??vLCDDisplayFloat_6:
+   \   00018E   7047         JNZ     ??vLCDDisplayFloat_7
+   \   000190   7406         MOV     A,#0x6
+   \   000192   12....       LCALL   ?XSTACK_DISP0_8
+   \   000195   E0           MOVX    A,@DPTR
+   \   000196   F8           MOV     R0,A
+   \   000197   A3           INC     DPTR
+   \   000198   E0           MOVX    A,@DPTR
+   \   000199   F9           MOV     R1,A
+   \   00019A   7A0A         MOV     R2,#0xa
+   \   00019C   7B00         MOV     R3,#0x0
+   \   00019E   12....       LCALL   ?US_DIV_MOD
+   \   0001A1   7404         MOV     A,#0x4
+   \   0001A3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A6   E8           MOV     A,R0
+   \   0001A7   F0           MOVX    @DPTR,A
+   \   0001A8   A3           INC     DPTR
+   \   0001A9   E9           MOV     A,R1
+   \   0001AA   F0           MOVX    @DPTR,A
+   \   0001AB   7404         MOV     A,#0x4
+   \   0001AD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001B0   E0           MOVX    A,@DPTR
+   \   0001B1   F8           MOV     R0,A
+   \   0001B2   A3           INC     DPTR
+   \   0001B3   E0           MOVX    A,@DPTR
+   \   0001B4   F9           MOV     R1,A
+   \   0001B5   E8           MOV     A,R0
+   \   0001B6   75F00A       MOV     B,#0xa
+   \   0001B9   A4           MUL     AB
+   \   0001BA   C8           XCH     A,R0
+   \   0001BB   AAF0         MOV     R2,B
+   \   0001BD   75F000       MOV     B,#0x0
+   \   0001C0   A4           MUL     AB
+   \   0001C1   2A           ADD     A,R2
+   \   0001C2   FA           MOV     R2,A
+   \   0001C3   75F00A       MOV     B,#0xa
+   \   0001C6   E9           MOV     A,R1
+   \   0001C7   A4           MUL     AB
+   \   0001C8   2A           ADD     A,R2
+   \   0001C9   F9           MOV     R1,A
+   \   0001CA   7406         MOV     A,#0x6
+   \   0001CC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001CF   C3           CLR     C
+   \   0001D0   E0           MOVX    A,@DPTR
+   \   0001D1   98           SUBB    A,R0
+   \   0001D2   F0           MOVX    @DPTR,A
+   \   0001D3   A3           INC     DPTR
+   \   0001D4   E0           MOVX    A,@DPTR
+   \   0001D5   99           SUBB    A,R1
+   \   0001D6   F0           MOVX    @DPTR,A
+   \                     ??vLCDDisplayFloat_7:
+   \   0001D7   7402         MOV     A,#0x2
+   \   0001D9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001DC   E0           MOVX    A,@DPTR
+   \   0001DD   6402         XRL     A,#0x2
+   \   0001DF   7004         JNZ     ??vLCDDisplayFloat_8
+   \   0001E1   A3           INC     DPTR
+   \   0001E2   E0           MOVX    A,@DPTR
+   \   0001E3   6400         XRL     A,#0x0
+   \                     ??vLCDDisplayFloat_8:
+   \   0001E5   7014         JNZ     ??vLCDDisplayFloat_9
+   \   0001E7   7406         MOV     A,#0x6
+   \   0001E9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001EC   E0           MOVX    A,@DPTR
+   \   0001ED   F8           MOV     R0,A
+   \   0001EE   A3           INC     DPTR
+   \   0001EF   E0           MOVX    A,@DPTR
+   \   0001F0   F9           MOV     R1,A
+   \   0001F1   7404         MOV     A,#0x4
+   \   0001F3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001F6   E8           MOV     A,R0
+   \   0001F7   F0           MOVX    @DPTR,A
+   \   0001F8   A3           INC     DPTR
+   \   0001F9   E9           MOV     A,R1
+   \   0001FA   F0           MOVX    @DPTR,A
+   \                     ??vLCDDisplayFloat_9:
+   \   0001FB   7404         MOV     A,#0x4
+   \   0001FD   12....       LCALL   ?XSTACK_DISP0_8
+   \   000200   E0           MOVX    A,@DPTR
+   \   000201   F5..         MOV     ?V0 + 0,A
+   \   000203   A3           INC     DPTR
+   \   000204   E0           MOVX    A,@DPTR
+   \   000205   F5..         MOV     ?V0 + 1,A
+   \   000207   78..         MOV     R0,#?V0 + 0
+   \   000209   12....       LCALL   ?US_SWITCH_DENSE
+   \                     `?<Jumptable for vLCDDisplayFloat>_0`:
+   \   00020C   0000         DW        0
+   \   00020E   09           DB        9
+   \   00020F   ....         DW        ??vLCDDisplayFloat_3
+   \   000211   ....         DW        ??vLCDDisplayFloat_10
+   \   000213   ....         DW        ??vLCDDisplayFloat_11
+   \   000215   ....         DW        ??vLCDDisplayFloat_12
+   \   000217   ....         DW        ??vLCDDisplayFloat_13
+   \   000219   ....         DW        ??vLCDDisplayFloat_14
+   \   00021B   ....         DW        ??vLCDDisplayFloat_15
+   \   00021D   ....         DW        ??vLCDDisplayFloat_16
+   \   00021F   ....         DW        ??vLCDDisplayFloat_17
+   \   000221   ....         DW        ??vLCDDisplayFloat_18
+   \   000223   ....         DW        ??vLCDDisplayFloat_2
+   \                     ??vLCDDisplayFloat_10:
+   \   000225                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000225   7930         MOV     R1,#0x30
+   \   000227   85..82       MOV     DPL,?XSP + 0
+   \   00022A   85..83       MOV     DPH,?XSP + 1
+   \   00022D   E0           MOVX    A,@DPTR
+   \   00022E   FA           MOV     R2,A
+   \   00022F   A3           INC     DPTR
+   \   000230   E0           MOVX    A,@DPTR
+   \   000231   FB           MOV     R3,A
+   \   000232   12....       LCALL   ??Lettre_1
+   \   000235   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_11:
+   \   000238                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000238   7931         MOV     R1,#0x31
+   \   00023A   85..82       MOV     DPL,?XSP + 0
+   \   00023D   85..83       MOV     DPH,?XSP + 1
+   \   000240   E0           MOVX    A,@DPTR
+   \   000241   FA           MOV     R2,A
+   \   000242   A3           INC     DPTR
+   \   000243   E0           MOVX    A,@DPTR
+   \   000244   FB           MOV     R3,A
+   \   000245   12....       LCALL   ??Lettre_1
+   \   000248   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_12:
+   \   00024B                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   00024B   7932         MOV     R1,#0x32
+   \   00024D   85..82       MOV     DPL,?XSP + 0
+   \   000250   85..83       MOV     DPH,?XSP + 1
+   \   000253   E0           MOVX    A,@DPTR
+   \   000254   FA           MOV     R2,A
+   \   000255   A3           INC     DPTR
+   \   000256   E0           MOVX    A,@DPTR
+   \   000257   FB           MOV     R3,A
+   \   000258   12....       LCALL   ??Lettre_1
+   \   00025B   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_13:
+   \   00025E                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   00025E   7933         MOV     R1,#0x33
+   \   000260   85..82       MOV     DPL,?XSP + 0
+   \   000263   85..83       MOV     DPH,?XSP + 1
+   \   000266   E0           MOVX    A,@DPTR
+   \   000267   FA           MOV     R2,A
+   \   000268   A3           INC     DPTR
+   \   000269   E0           MOVX    A,@DPTR
+   \   00026A   FB           MOV     R3,A
+   \   00026B   12....       LCALL   ??Lettre_1
+   \   00026E   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_14:
+   \   000271                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000271   7934         MOV     R1,#0x34
+   \   000273   85..82       MOV     DPL,?XSP + 0
+   \   000276   85..83       MOV     DPH,?XSP + 1
+   \   000279   E0           MOVX    A,@DPTR
+   \   00027A   FA           MOV     R2,A
+   \   00027B   A3           INC     DPTR
+   \   00027C   E0           MOVX    A,@DPTR
+   \   00027D   FB           MOV     R3,A
+   \   00027E   12....       LCALL   ??Lettre_1
+   \   000281   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_15:
+   \   000284                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000284   7935         MOV     R1,#0x35
+   \   000286   85..82       MOV     DPL,?XSP + 0
+   \   000289   85..83       MOV     DPH,?XSP + 1
+   \   00028C   E0           MOVX    A,@DPTR
+   \   00028D   FA           MOV     R2,A
+   \   00028E   A3           INC     DPTR
+   \   00028F   E0           MOVX    A,@DPTR
+   \   000290   FB           MOV     R3,A
+   \   000291   12....       LCALL   ??Lettre_1
+   \   000294   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_16:
+   \   000297                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000297   7936         MOV     R1,#0x36
+   \   000299   85..82       MOV     DPL,?XSP + 0
+   \   00029C   85..83       MOV     DPH,?XSP + 1
+   \   00029F   E0           MOVX    A,@DPTR
+   \   0002A0   FA           MOV     R2,A
+   \   0002A1   A3           INC     DPTR
+   \   0002A2   E0           MOVX    A,@DPTR
+   \   0002A3   FB           MOV     R3,A
+   \   0002A4   12....       LCALL   ??Lettre_1
+   \   0002A7   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_17:
+   \   0002AA                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0002AA   7937         MOV     R1,#0x37
+   \   0002AC   85..82       MOV     DPL,?XSP + 0
+   \   0002AF   85..83       MOV     DPH,?XSP + 1
+   \   0002B2   E0           MOVX    A,@DPTR
+   \   0002B3   FA           MOV     R2,A
+   \   0002B4   A3           INC     DPTR
+   \   0002B5   E0           MOVX    A,@DPTR
+   \   0002B6   FB           MOV     R3,A
+   \   0002B7   12....       LCALL   ??Lettre_1
+   \   0002BA   02....       LJMP    ??vLCDDisplayFloat_3
+   \                     ??vLCDDisplayFloat_18:
+   \   0002BD                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0002BD   7938         MOV     R1,#0x38
+   \   0002BF   85..82       MOV     DPL,?XSP + 0
+   \   0002C2   85..83       MOV     DPH,?XSP + 1
+   \   0002C5   E0           MOVX    A,@DPTR
+   \   0002C6   FA           MOV     R2,A
+   \   0002C7   A3           INC     DPTR
+   \   0002C8   E0           MOVX    A,@DPTR
+   \   0002C9   FB           MOV     R3,A
+   \   0002CA   12....       LCALL   ??Lettre_1
+   \   0002CD   02....       LJMP    ??vLCDDisplayFloat_3
+    380               }
+    381             }
+    382          
+    383          Lettre('.'); // Affiche la satane virgule
+   \                     ??vLCDDisplayFloat_4:
+   \   0002D0                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0002D0   792E         MOV     R1,#0x2e
+   \   0002D2   85..82       MOV     DPL,?XSP + 0
+   \   0002D5   85..83       MOV     DPH,?XSP + 1
+   \   0002D8   E0           MOVX    A,@DPTR
+   \   0002D9   FA           MOV     R2,A
+   \   0002DA   A3           INC     DPTR
+   \   0002DB   E0           MOVX    A,@DPTR
+   \   0002DC   FB           MOV     R3,A
+   \   0002DD   12....       LCALL   ??Lettre_1
+    384          
+    385          for(i = 0; i < 2; i++) //Pour deux fois (Dixieme, centieme)
+   \   0002E0   7402         MOV     A,#0x2
+   \   0002E2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002E5   7400         MOV     A,#0x0
+   \   0002E7   F0           MOVX    @DPTR,A
+   \   0002E8   A3           INC     DPTR
+   \   0002E9   7400         MOV     A,#0x0
+   \   0002EB   F0           MOVX    @DPTR,A
+   \   0002EC   801E         SJMP    ??vLCDDisplayFloat_19
+    386            {
+    387             if(i == 0)          // Pour les dixiemes
+    388               {
+    389                usiDecimalesTemp = usiLesDecimales /  10;
+    390               }
+    391             if(i == 1)          // Pour les centiemes
+    392               {
+    393                usiDecimalesTemp = usiLesDecimales - (10 * usiDecimalesTemp) ;
+    394               }
+    395          
+    396             switch(usiDecimalesTemp) // Affiche un caractere correspondant a l'unite
+    397               {                      // float lue
+    398                case 0:
+    399                   Lettre('0');
+    400                break;
+    401          
+    402                case 1:
+    403                   Lettre('1');
+    404                break;
+    405          
+    406                case 2:
+    407                   Lettre('2');
+    408                break;
+    409          
+    410                case 3:
+    411                   Lettre('3');
+    412                break;
+    413          
+    414                case 4:
+    415                   Lettre('4');
+    416                break;
+    417          
+    418                case 5:
+    419                   Lettre('5');
+    420                break;
+    421          
+    422                case 6:
+    423                   Lettre('6');
+    424                break;
+    425          
+    426                case 7:
+    427                   Lettre('7');
+    428                break;
+    429          
+    430                case 8:
+    431                   Lettre('8');
+    432                break;
+    433          
+    434                case 9:
+    435                   Lettre('9');
+   \                     ??vLCDDisplayFloat_20:
+   \   0002EE                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0002EE   7939         MOV     R1,#0x39
+   \   0002F0   85..82       MOV     DPL,?XSP + 0
+   \   0002F3   85..83       MOV     DPH,?XSP + 1
+   \   0002F6   E0           MOVX    A,@DPTR
+   \   0002F7   FA           MOV     R2,A
+   \   0002F8   A3           INC     DPTR
+   \   0002F9   E0           MOVX    A,@DPTR
+   \   0002FA   FB           MOV     R3,A
+   \   0002FB   12....       LCALL   ??Lettre_1
+    436                break;
+   \                     ??vLCDDisplayFloat_21:
+   \   0002FE   7402         MOV     A,#0x2
+   \   000300   12....       LCALL   ?XSTACK_DISP0_8
+   \   000303   E0           MOVX    A,@DPTR
+   \   000304   2401         ADD     A,#0x1
+   \   000306   F0           MOVX    @DPTR,A
+   \   000307   A3           INC     DPTR
+   \   000308   E0           MOVX    A,@DPTR
+   \   000309   3400         ADDC    A,#0x0
+   \   00030B   F0           MOVX    @DPTR,A
+   \                     ??vLCDDisplayFloat_19:
+   \   00030C   7402         MOV     A,#0x2
+   \   00030E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000311   C3           CLR     C
+   \   000312   E0           MOVX    A,@DPTR
+   \   000313   9402         SUBB    A,#0x2
+   \   000315   A3           INC     DPTR
+   \   000316   E0           MOVX    A,@DPTR
+   \   000317   9400         SUBB    A,#0x0
+   \   000319   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00031B   65D0         XRL     A,PSW
+   \   00031D   33           RLC     A
+   \   00031E   4003         JC      $+5
+   \   000320   02....       LJMP    ??vLCDDisplayFloat_22
+   \   000323   7402         MOV     A,#0x2
+   \   000325   12....       LCALL   ?XSTACK_DISP0_8
+   \   000328   E0           MOVX    A,@DPTR
+   \   000329   F8           MOV     R0,A
+   \   00032A   A3           INC     DPTR
+   \   00032B   E0           MOVX    A,@DPTR
+   \   00032C   F9           MOV     R1,A
+   \   00032D   E8           MOV     A,R0
+   \   00032E   49           ORL     A,R1
+   \   00032F   7019         JNZ     ??vLCDDisplayFloat_23
+   \   000331   7408         MOV     A,#0x8
+   \   000333   12....       LCALL   ?XSTACK_DISP0_8
+   \   000336   E0           MOVX    A,@DPTR
+   \   000337   F8           MOV     R0,A
+   \   000338   A3           INC     DPTR
+   \   000339   E0           MOVX    A,@DPTR
+   \   00033A   F9           MOV     R1,A
+   \   00033B   7A0A         MOV     R2,#0xa
+   \   00033D   7B00         MOV     R3,#0x0
+   \   00033F   12....       LCALL   ?US_DIV_MOD
+   \   000342   88..         MOV     ?V0 + 0,R0
+   \   000344   89..         MOV     ?V0 + 1,R1
+   \   000346   AE..         MOV     R6,?V0 + 0
+   \   000348   AF..         MOV     R7,?V0 + 1
+   \                     ??vLCDDisplayFloat_23:
+   \   00034A   7402         MOV     A,#0x2
+   \   00034C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00034F   E0           MOVX    A,@DPTR
+   \   000350   6401         XRL     A,#0x1
+   \   000352   7004         JNZ     ??vLCDDisplayFloat_24
+   \   000354   A3           INC     DPTR
+   \   000355   E0           MOVX    A,@DPTR
+   \   000356   6400         XRL     A,#0x0
+   \                     ??vLCDDisplayFloat_24:
+   \   000358   7022         JNZ     ??vLCDDisplayFloat_25
+   \   00035A   7408         MOV     A,#0x8
+   \   00035C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00035F   EE           MOV     A,R6
+   \   000360   75F00A       MOV     B,#0xa
+   \   000363   A4           MUL     AB
+   \   000364   CE           XCH     A,R6
+   \   000365   A8F0         MOV     R0,B
+   \   000367   75F000       MOV     B,#0x0
+   \   00036A   A4           MUL     AB
+   \   00036B   28           ADD     A,R0
+   \   00036C   F8           MOV     R0,A
+   \   00036D   75F00A       MOV     B,#0xa
+   \   000370   EF           MOV     A,R7
+   \   000371   A4           MUL     AB
+   \   000372   28           ADD     A,R0
+   \   000373   FF           MOV     R7,A
+   \   000374   E0           MOVX    A,@DPTR
+   \   000375   C3           CLR     C
+   \   000376   9E           SUBB    A,R6
+   \   000377   FE           MOV     R6,A
+   \   000378   A3           INC     DPTR
+   \   000379   E0           MOVX    A,@DPTR
+   \   00037A   9F           SUBB    A,R7
+   \   00037B   FF           MOV     R7,A
+   \                     ??vLCDDisplayFloat_25:
+   \   00037C   8E..         MOV     ?V0 + 0,R6
+   \   00037E   8F..         MOV     ?V0 + 1,R7
+   \   000380   78..         MOV     R0,#?V0 + 0
+   \   000382   12....       LCALL   ?US_SWITCH_DENSE
+   \                     `?<Jumptable for vLCDDisplayFloat>_1`:
+   \   000385   0000         DW        0
+   \   000387   09           DB        9
+   \   000388   ....         DW        ??vLCDDisplayFloat_21
+   \   00038A   ....         DW        ??vLCDDisplayFloat_26
+   \   00038C   ....         DW        ??vLCDDisplayFloat_27
+   \   00038E   ....         DW        ??vLCDDisplayFloat_28
+   \   000390   ....         DW        ??vLCDDisplayFloat_29
+   \   000392   ....         DW        ??vLCDDisplayFloat_30
+   \   000394   ....         DW        ??vLCDDisplayFloat_31
+   \   000396   ....         DW        ??vLCDDisplayFloat_32
+   \   000398   ....         DW        ??vLCDDisplayFloat_33
+   \   00039A   ....         DW        ??vLCDDisplayFloat_34
+   \   00039C   ....         DW        ??vLCDDisplayFloat_20
+   \                     ??vLCDDisplayFloat_26:
+   \   00039E                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   00039E   7930         MOV     R1,#0x30
+   \   0003A0   85..82       MOV     DPL,?XSP + 0
+   \   0003A3   85..83       MOV     DPH,?XSP + 1
+   \   0003A6   E0           MOVX    A,@DPTR
+   \   0003A7   FA           MOV     R2,A
+   \   0003A8   A3           INC     DPTR
+   \   0003A9   E0           MOVX    A,@DPTR
+   \   0003AA   FB           MOV     R3,A
+   \   0003AB   12....       LCALL   ??Lettre_1
+   \   0003AE   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_27:
+   \   0003B1                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0003B1   7931         MOV     R1,#0x31
+   \   0003B3   85..82       MOV     DPL,?XSP + 0
+   \   0003B6   85..83       MOV     DPH,?XSP + 1
+   \   0003B9   E0           MOVX    A,@DPTR
+   \   0003BA   FA           MOV     R2,A
+   \   0003BB   A3           INC     DPTR
+   \   0003BC   E0           MOVX    A,@DPTR
+   \   0003BD   FB           MOV     R3,A
+   \   0003BE   12....       LCALL   ??Lettre_1
+   \   0003C1   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_28:
+   \   0003C4                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0003C4   7932         MOV     R1,#0x32
+   \   0003C6   85..82       MOV     DPL,?XSP + 0
+   \   0003C9   85..83       MOV     DPH,?XSP + 1
+   \   0003CC   E0           MOVX    A,@DPTR
+   \   0003CD   FA           MOV     R2,A
+   \   0003CE   A3           INC     DPTR
+   \   0003CF   E0           MOVX    A,@DPTR
+   \   0003D0   FB           MOV     R3,A
+   \   0003D1   12....       LCALL   ??Lettre_1
+   \   0003D4   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_29:
+   \   0003D7                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0003D7   7933         MOV     R1,#0x33
+   \   0003D9   85..82       MOV     DPL,?XSP + 0
+   \   0003DC   85..83       MOV     DPH,?XSP + 1
+   \   0003DF   E0           MOVX    A,@DPTR
+   \   0003E0   FA           MOV     R2,A
+   \   0003E1   A3           INC     DPTR
+   \   0003E2   E0           MOVX    A,@DPTR
+   \   0003E3   FB           MOV     R3,A
+   \   0003E4   12....       LCALL   ??Lettre_1
+   \   0003E7   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_30:
+   \   0003EA                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0003EA   7934         MOV     R1,#0x34
+   \   0003EC   85..82       MOV     DPL,?XSP + 0
+   \   0003EF   85..83       MOV     DPH,?XSP + 1
+   \   0003F2   E0           MOVX    A,@DPTR
+   \   0003F3   FA           MOV     R2,A
+   \   0003F4   A3           INC     DPTR
+   \   0003F5   E0           MOVX    A,@DPTR
+   \   0003F6   FB           MOV     R3,A
+   \   0003F7   12....       LCALL   ??Lettre_1
+   \   0003FA   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_31:
+   \   0003FD                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   0003FD   7935         MOV     R1,#0x35
+   \   0003FF   85..82       MOV     DPL,?XSP + 0
+   \   000402   85..83       MOV     DPH,?XSP + 1
+   \   000405   E0           MOVX    A,@DPTR
+   \   000406   FA           MOV     R2,A
+   \   000407   A3           INC     DPTR
+   \   000408   E0           MOVX    A,@DPTR
+   \   000409   FB           MOV     R3,A
+   \   00040A   12....       LCALL   ??Lettre_1
+   \   00040D   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_32:
+   \   000410                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000410   7936         MOV     R1,#0x36
+   \   000412   85..82       MOV     DPL,?XSP + 0
+   \   000415   85..83       MOV     DPH,?XSP + 1
+   \   000418   E0           MOVX    A,@DPTR
+   \   000419   FA           MOV     R2,A
+   \   00041A   A3           INC     DPTR
+   \   00041B   E0           MOVX    A,@DPTR
+   \   00041C   FB           MOV     R3,A
+   \   00041D   12....       LCALL   ??Lettre_1
+   \   000420   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_33:
+   \   000423                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000423   7937         MOV     R1,#0x37
+   \   000425   85..82       MOV     DPL,?XSP + 0
+   \   000428   85..83       MOV     DPH,?XSP + 1
+   \   00042B   E0           MOVX    A,@DPTR
+   \   00042C   FA           MOV     R2,A
+   \   00042D   A3           INC     DPTR
+   \   00042E   E0           MOVX    A,@DPTR
+   \   00042F   FB           MOV     R3,A
+   \   000430   12....       LCALL   ??Lettre_1
+   \   000433   02....       LJMP    ??vLCDDisplayFloat_21
+   \                     ??vLCDDisplayFloat_34:
+   \   000436                ; Setup parameters for call to function CLEcran::Lettre(char)
+   \   000436   7938         MOV     R1,#0x38
+   \   000438   85..82       MOV     DPL,?XSP + 0
+   \   00043B   85..83       MOV     DPH,?XSP + 1
+   \   00043E   E0           MOVX    A,@DPTR
+   \   00043F   FA           MOV     R2,A
+   \   000440   A3           INC     DPTR
+   \   000441   E0           MOVX    A,@DPTR
+   \   000442   FB           MOV     R3,A
+   \   000443   12....       LCALL   ??Lettre_1
+   \   000446   02....       LJMP    ??vLCDDisplayFloat_21
+    437               }
+    438            }
+    439          }
+   \                     ??vLCDDisplayFloat_22:
+   \   000449   740E         MOV     A,#0xe
+   \   00044B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00044E   7F08         MOV     R7,#0x8
+   \   000450   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_0:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_0>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_0>`:
+   \   000000   00000000     DD 0H
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_42c80000:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_42c80000>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_42c80000>`:
+   \   000000   0000C842     DD 42C80000H
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran()
+   \                     `??new CLEcran`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A02         MOV     R2,#0x2
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLEcran_2`
+   \   00001B                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   00001B   12....       LCALL   ??CLEcran
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLEcran_3`
+   \                     `??new CLEcran_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLEcran_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran(USI)
+   \                     `??new CLEcran_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009                ; Setup parameters for call to function operator new(unsigned int)
+   \   000009   7A02         MOV     R2,#0x2
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   `??operator new`
+   \   000010   8A..         MOV     ?V0 + 0,R2
+   \   000012   8B..         MOV     ?V0 + 1,R3
+   \   000014   A8..         MOV     R0,?V0 + 0
+   \   000016   A9..         MOV     R1,?V0 + 1
+   \   000018   E8           MOV     A,R0
+   \   000019   FA           MOV     R2,A
+   \   00001A   E9           MOV     A,R1
+   \   00001B   FB           MOV     R3,A
+   \   00001C   E8           MOV     A,R0
+   \   00001D   49           ORL     A,R1
+   \   00001E   6011         JZ      `??new CLEcran_4`
+   \   000020                ; Setup parameters for call to function CLEcran::CLEcran(USI)
+   \   000020   EE           MOV     A,R6
+   \   000021   FC           MOV     R4,A
+   \   000022   EF           MOV     A,R7
+   \   000023   FD           MOV     R5,A
+   \   000024   12....       LCALL   ??CLEcran_1
+   \   000027   8A..         MOV     ?V0 + 0,R2
+   \   000029   8B..         MOV     ?V0 + 1,R3
+   \   00002B   AA..         MOV     R2,?V0 + 0
+   \   00002D   AB..         MOV     R3,?V0 + 1
+   \   00002F   8004         SJMP    `??new CLEcran_5`
+   \                     `??new CLEcran_4`:
+   \   000031   7A00         MOV     R2,#0x0
+   \   000033   7B00         MOV     R3,#0x0
+   \                     `??new CLEcran_5`:
+   \   000035   7F02         MOV     R7,#0x2
+   \   000037   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLEcran::delete ~CLEcran(CLEcran *)
+   \                     `??delete ~CLEcran`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLEcran_1`
+   \   00000D                ; Setup parameters for call to function CLEcran::~CLEcran()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLEcran`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLEcran_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    440          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLEcran::CLEcran()                 0      0      8
+       -> CLEcran::vLCDInit()           0      0     16
+     CLEcran::CLEcran(USI)              0      0     17
+       -> CLEcran::vLCDInit()           0      0     16
+     CLEcran::Lettre(UC)                0      0     21
+       -> CLEcran::vLCDBusy()           0      0     16
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     16
+     CLEcran::Lettre(char)              0      0     37
+       -> CLEcran::vLCDBusy()           0      0     16
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     16
+     CLEcran::String(UC const *)        0      0     16
+       -> CLEcran::Lettre(UC)           0      0     16
+     CLEcran::String(char const *)      0      0      8
+       -> CLEcran::Lettre(char)         0      0     16
+     CLEcran::delete ~CLEcran(CLEcran *)
+                                        0      0      8
+       -> CLEcran::~CLEcran()           0      0     16
+       -> operator delete(void *)       0      0     16
+     CLEcran::new CLEcran()             2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLEcran::CLEcran()            4      0      0
+     CLEcran::new CLEcran(USI)          0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> CLEcran::CLEcran(USI)         0      0     18
+     CLEcran::vDelaiLCD(USI)            0      0      9
+     CLEcran::vHexToASCII(UC, UC *, UC *)
+                                        1      0     23
+     CLEcran::vHexToASCII(USI, UC *, UC *, UC *, UC *)
+                                        1      0     34
+     CLEcran::vLCDBusy()                0      0     18
+       -> CLInOutBase::ucIn(USI)        0      0     16
+     CLEcran::vLCDClr()                 0      0      8
+       -> CLEcran::vLCDBusy()           0      0     16
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     16
+     CLEcran::vLCDCursor(UC, UC)        0      0     18
+       -> CLEcran::vLCDBusy()           0      0     20
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     20
+     CLEcran::vLCDDisplayEtatPort(UC)
+                                        0      0      8
+       -> CLEcran::Lettre(char)         0      0     16
+       -> CLEcran::Lettre(char)         0      0     16
+     CLEcran::vLCDDisplayFloat(float)
+                                        0      0     33
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+       -> CLEcran::Lettre(char)         0      0     58
+     CLEcran::vLCDDisplayHexCarac(UC)
+                                        0      0     15
+       -> CLEcran::vHexToASCII(UC, UC *, UC *)
+                                        0      0     30
+       -> CLEcran::Lettre(UC)           0      0     26
+       -> CLEcran::Lettre(UC)           0      0     26
+     CLEcran::vLCDDisplayHexCarac(USI)
+                                        0      0     21
+       -> CLEcran::vHexToASCII(USI, UC *, UC *, UC *, UC *)
+                                        0      0     42
+       -> CLEcran::Lettre(UC)           0      0     26
+       -> CLEcran::Lettre(UC)           0      0     26
+       -> CLEcran::Lettre(UC)           0      0     26
+       -> CLEcran::Lettre(UC)           0      0     26
+     CLEcran::vLCDDisplayScreen(UC const *)
+                                        0      0      8
+       -> CLEcran::vLCDCursor(UC, UC)
+                                        0      0     16
+       -> CLEcran::String(UC const *)
+                                        0      0     16
+     CLEcran::vLCDInit()                0      0     17
+       -> CLEcran::vDelaiLCD(USI)       0      0     18
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     18
+       -> CLEcran::vLCDBusy()           0      0     18
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     18
+       -> CLEcran::vLCDBusy()           0      0     18
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     18
+       -> CLEcran::vLCDBusy()           0      0     18
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     18
+       -> CLEcran::vLCDBusy()           0      0     18
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     18
+     CLEcran::~CLEcran()                0      0      8
+       -> CLEcran::vLCDClr()            0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     CLEcran::CLEcran()                       36
+     CLEcran::CLEcran(USI)                    34
+     CLEcran::~CLEcran()                       3
+     CLEcran::vDelaiLCD(USI)                  22
+     CLEcran::vLCDBusy()                      40
+     CLEcran::vLCDClr()                       39
+     CLEcran::vLCDInit()                     174
+     CLEcran::vLCDCursor(UC, UC)              98
+     CLEcran::Lettre(UC)                      45
+     CLEcran::Lettre(char)                    45
+     CLEcran::vHexToASCII(UC, UC *, UC *)
+                                              96
+     CLEcran::vHexToASCII(USI, UC *, UC *, UC *, UC *)
+                                             245
+     CLEcran::vLCDDisplayHexCarac(UC)
+                                              95
+     CLEcran::vLCDDisplayHexCarac(USI)
+                                             158
+     CLEcran::String(UC const *)              33
+     CLEcran::String(char const *)            33
+     CLEcran::vLCDDisplayScreen(UC const *)
+                                              55
+     CLEcran::vLCDDisplayEtatPort(UC)
+                                              56
+     CLEcran::vLCDDisplayFloat(float)
+                                            1107
+     __Constant_0                              4
+     ?<Initializer for __Constant_0>           4
+     __Constant_42c80000                       4
+     ?<Initializer for __Constant_42c80000>    4
+     CLEcran::new CLEcran()                   49
+     CLEcran::new CLEcran(USI)                58
+     CLEcran::delete ~CLEcran(CLEcran *)
+                                              32
+
+ 
+ 2 553 bytes in segment NEAR_CODE
+     8 bytes in segment XDATA_I
+     8 bytes in segment XDATA_ID
+ 
+ 2 553 bytes of CODE  memory (+ 8 bytes shared)
+     0 bytes of XDATA memory (+ 8 bytes shared)
+
+Errors: none
+Warnings: none

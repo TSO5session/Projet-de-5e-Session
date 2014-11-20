@@ -1,0 +1,251 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         08/Sep/2014  18:14:28 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo1\Programme\CLI2CHard.cpp            #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\CLI2CHard.cpp" -D        #
+#                          UPSD3254A --preprocess=cl                          #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -lC     #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -lA     #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -o      #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\Obj\" -e       #
+#                          --no_cse --no_unroll --no_inline --no_code_motion  #
+#                          --no_tbaa --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=near               #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\CLI2CHard #
+#                          .lst                                               #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\Obj\CLI2CHard. #
+#                          r51                                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Prog\Labo1\Programme\CLI2CHard.cpp
+      1          // ************************** FICHIER: CLI2CPORT.CPP ************************
+      2          #include "CLI2CHard.h"
+
+   \                                 In  segment SFR_AN, at 0xa7
+   \   union <unnamed> volatile __sfr _A_IEA
+   \                     _A_IEA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb7
+   \   union <unnamed> volatile __sfr _A_IPA
+   \                     _A_IPA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdc
+   \   union <unnamed> volatile __sfr _A_S2CON
+   \                     _A_S2CON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x93
+   \   union <unnamed> volatile __sfr _A_P3SFS
+   \                     _A_P3SFS:
+   \   000000                DS 1
+      3          #include "_DeclarationGenerale.h"
+      4          #include "ConversionKeilToIAR.h"     // Conversion KEIL <--> IAR
+      5          
+      6          // *****************************************************************************
+      7          //                            LES CONSTRUCTEURS
+      8          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+      9          CLI2CHardware :: CLI2CHardware(void)
+   \                     ??CLI2CHardware:
+     10          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+     11          vInitUpsd();
+   \   000008                ; Setup parameters for call to function CLI2CHardware::vInitUpsd()
+   \   000008   AA82         MOV     R2,DPL
+   \   00000A   AB83         MOV     R3,DPH
+   \   00000C   12....       LCALL   ??vInitUpsd_1
+     12          }
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   D083         POP     DPH
+   \   000015   D082         POP     DPL
+   \   000017   22           RET
+     13          
+     14          // *****************************************************************************
+     15          //                            LE DESTRUCTEUR
+     16          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     17          CLI2CHardware :: ~CLI2CHardware(void)
+   \                     `?~CLI2CHardware`:
+     18          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19          
+     20          }
+   \   000000   22           RET
+     21          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     22          void vInitUpsd(void)
+   \                     ??vInitUpsd:
+     23          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     24          P3SFS           |= 0xC0;  // Enable P3.7 for SCL, P3.6 for SDA
+   \   000000   4393C0       ORL     0x93,#0xc0
+     25          //S2CON         |= 0x81;  // Setup I2C-2 for 50KHz (24MHz XTAL)
+     26          S2CON           |= 0x01;  // Setup I2C-2 for 500KHz (24MHz XTAL)
+   \   000003   43DC01       ORL     0xdc,#0x1
+     27          //i2c_init_flag    = 1;     // set init done flag
+     28          //i2c_timeout_flag = 0;     // clear timeout error flag
+     29          //PX1            = 0;     // set low priority for INT1
+     30          IPA             |= 0x02;  // set high priority for EI2C
+   \   000006   43B702       ORL     0xb7,#0x2
+     31          IEA             |= 0x02;  // set EI2C I2C Int. Enable bit
+   \   000009   43A702       ORL     0xa7,#0x2
+     32          //EX1            = 1;     // set EX1 Int. Enable bit (INT1)
+     33          }
+   \   00000C   22           RET
+   \   00000D                REQUIRE _A_P3SFS
+   \   00000D                REQUIRE _A_S2CON
+   \   00000D                REQUIRE _A_IPA
+   \   00000D                REQUIRE _A_IEA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLI2CHardware &CLI2CHardware::new CLI2CHardware()
+   \                     `??new CLI2CHardware`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A05         MOV     R2,#0x5
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLI2CHardware_1`
+   \   00001B                ; Setup parameters for call to function CLI2CHardware::CLI2CHardware()
+   \   00001B   12....       LCALL   ??CLI2CHardware
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLI2CHardware_2`
+   \                     `??new CLI2CHardware_1`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLI2CHardware_2`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLI2CHardware::delete ~CLI2CHardware(CLI2CHardware *)
+   \                     `??delete ~CLI2CHardware`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLI2CHardware_1`
+   \   00000D                ; Setup parameters for call to function CLI2CHardware::~CLI2CHardware()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLI2CHardware`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLI2CHardware_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLI2CHardware::CLI2CHardware()     2      0      0
+       -> CLI2CHardware::vInitUpsd()
+                                        4      0      0
+     CLI2CHardware::delete ~CLI2CHardware(CLI2CHardware *)
+                                        0      0      8
+       -> CLI2CHardware::~CLI2CHardware()
+                                        0      0     16
+       -> operator delete(void *)       0      0     16
+     CLI2CHardware::new CLI2CHardware()
+                                        2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLI2CHardware::CLI2CHardware()
+                                        4      0      0
+     CLI2CHardware::~CLI2CHardware()
+                                        0      0      8
+     vInitUpsd()                        0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     _A_IEA                            1
+     _A_IPA                            1
+     _A_S2CON                          1
+     _A_P3SFS                          1
+     CLI2CHardware::CLI2CHardware()   24
+     CLI2CHardware::~CLI2CHardware()
+                                       1
+     vInitUpsd()                      13
+     CLI2CHardware::new CLI2CHardware()
+                                      49
+     CLI2CHardware::delete ~CLI2CHardware(CLI2CHardware *)
+                                      32
+
+ 
+ 119 bytes in segment NEAR_CODE
+   4 bytes in segment SFR_AN
+ 
+ 119 bytes of CODE memory
+   0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

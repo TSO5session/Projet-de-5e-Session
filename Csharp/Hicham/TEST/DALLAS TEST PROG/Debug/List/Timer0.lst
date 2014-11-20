@@ -1,0 +1,309 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         24/Oct/2014  02:25:57 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif IAR\Timer0.cpp   #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif IAR\Timer0.cpp"  #
+#                          -lC "C:\Synchro\Dropbox\Travaux\Automne            #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\Debug\List\" -lA "C:\Synchro\Dropbox\Travaux\A #
+#                          utomne 2014\Fonctions\Projet Accumulatif           #
+#                          IAR\Debug\List\" -o "C:\Synchro\Dropbox\Travaux\Au #
+#                          tomne 2014\Fonctions\Projet Accumulatif            #
+#                          IAR\Debug\Obj\" -e --no_cse --no_unroll            #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\Debug\List\Timer0.lst                          #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\Debug\Obj\Timer0.r51                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\Timer0.cpp
+      1          // **************************Timer0.cpp
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         24 septembre 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+     12          #include "Timer0.h"
+     13          UC   DutyCycle = 0;
+     14          //******************************************************************************
+     15          //                            LE CONSTRUCTEUR PAR DEFAUT
+     16          // *****************************************************************************
+     17          Timer0 :: Timer0(void)
+     18          {
+     19          InitTimer0();
+     20          }
+     21          
+     22          //******************************************************************************
+     23          //                            LE CONSTRUCTEUR PAR DEFAUT
+     24          // *****************************************************************************
+     25          Timer0 :: Timer0(UC ucParametre)
+     26          {
+     27          CustomSpeed(ucParametre);
+     28          }
+     29          
+     30          
+     31          // *****************************************************************************
+     32          //                            LE DESTRUCTEUR
+     33          // *****************************************************************************
+     34          Timer0 :: ~Timer0(void)
+     35          {
+     36          
+     37          }
+     38          
+     39          /*
+     40          Note: La fréquence en HZ doit etre passee comme suit:
+     41          250hz = 1sec / 250 = 0.004 sec ---> Passez 4 en parametre
+     42          */
+     43          void Timer0 :: ClockGenerator(void)
+     44          {
+     45          if(TCON_bit.TF0 == 1)     // Si flag de depassement du timer0 (default =  1ms)
+                    ^
+Error[Pe020]: identifier "TCON_bit" is undefined
+     46            {
+     47             TCON_bit.TF0 = 0;      // Reinitialisation du flag de depassement
+     48             TH0          = 0xF8;   // Remet le compteur a 1ms
+                    ^
+Error[Pe020]: identifier "TH0" is undefined
+     49             TL0          = 0x60;   // Remet le compteur a 1ms
+                    ^
+Error[Pe020]: identifier "TL0" is undefined
+     50             DutyCycle++;
+     51             if(DutyCycle <= 3){P1_7 = HIGH;}
+                                       ^
+Error[Pe020]: identifier "P1_7" is undefined
+     52             if(DutyCycle == 4){P1_7 = LOW, DutyCycle = 0;}
+                                       ^
+Error[Pe020]: identifier "P1_7" is undefined
+     53            }
+     54          }
+     55          
+     56          char Timer0 :: DelayMs(void)  // retourne 1 a chaque ms
+     57          {
+     58          char i;
+     59          i = 0;                        // Dit qu'il n'y a pas d'interrupt
+     60          if(TCON_bit.TF0 == 1)         // Si flag de depassement du timer0 ( a 10ms)
+                    ^
+Error[Pe020]: identifier "TCON_bit" is undefined
+     61            {
+     62             TCON_bit.TF0 = 0;          // Reinitialisation du flag de depassement
+     63             TH0 = 0xF8;                // Remet le compteur a 1ms
+                    ^
+Error[Pe020]: identifier "TH0" is undefined
+     64             TL0 = 0x60;                // Remet le compteur a 1ms
+                    ^
+Error[Pe020]: identifier "TL0" is undefined
+     65             i   = 1;                   // Dit qu'il y a un interrupt
+     66            }
+     67          return(i);
+     68          }
+     69          
+     70          void Timer0 :: InitTimer0(void)       //Initialise le timer 0 a 1ms
+     71          {
+     72          EA           = 0;
+                 ^
+Error[Pe020]: identifier "EA" is undefined
+     73          TMOD         = (TMOD & 0xF0) | 0x01;  // timer0 en mode timer 16bit
+                 ^
+Error[Pe020]: identifier "TMOD" is undefined
+     74          TL0          = 0x60;                  // Initialise le timer0 a 1ms
+                 ^
+Error[Pe020]: identifier "TL0" is undefined
+     75          TH0          = 0xF8;                  // Initialise le timer0 a 1ms
+                 ^
+Error[Pe020]: identifier "TH0" is undefined
+     76          TH0          = 0;                     // Clear le flag d'overflow du timer0
+     77          IE_bit.ET0   = 0;                     // Desactive les interruptions timer0
+                 ^
+Error[Pe020]: identifier "IE_bit" is undefined
+     78          TCON_bit.TR0 = 1;                     // Stop le timer0
+                 ^
+Error[Pe020]: identifier "TCON_bit" is undefined
+     79          EA           = 1;                     // Enable Interrupt
+     80          }
+     81          
+     82          void Timer0 :: CustomSpeed(UC ucCustomMili) // Initialise un timer custom via
+     83          {                                           // le constructeur initialisateur
+     84          EA           = 0;                           // Desactive les interruptions
+                 ^
+Error[Pe020]: identifier "EA" is undefined
+     85          TMOD         = (TMOD & 0xF0) | 0x01;        // timer0 en mode timer 16bit
+                 ^
+Error[Pe020]: identifier "TMOD" is undefined
+     86          
+     87          switch(ucCustomMili)//En fonction des milisecondes demandees
+     88            {
+     89             case 1:
+     90                TL0 = 0x02;   // Initialise le timer0 a 1ms
+                       ^
+Error[Pe020]: identifier "TL0" is undefined
+     91                TH0 = 0xF8;   // Initialise le timer0 a 1ms
+                       ^
+Error[Pe020]: identifier "TH0" is undefined
+     92             break;
+     93          
+     94             case 2:
+     95                TL0 = 0x05;   // Initialise le timer0 a 2ms
+     96                TH0 = 0xF0;   // Initialise le timer0 a 2ms
+     97             break;
+     98          
+     99             case 3:
+    100                TL0 = 0x08;   // Initialise le timer0 a 3ms
+    101                TH0 = 0xE8;   // Initialise le timer0 a 3ms
+    102             break;
+    103          
+    104             case 4:
+    105                TL0 = 0xBF;   // Initialise le timer0 a 4ms
+    106                TH0 = 0xE0;   // Initialise le timer0 a 4ms
+    107             break;
+    108          
+    109             case 5:
+    110                TL0 = 0xEF;   // Initialise le timer0 a 5ms
+    111                TH0 = 0xD8;   // Initialise le timer0 a 5ms
+    112             break;
+    113          
+    114             case 6:
+    115                TL0 = 0x1F;   // Initialise le timer0 a 6ms
+    116                TH0 = 0xD1;   // Initialise le timer0 a 6ms
+    117             break;
+    118          
+    119             case 7:
+    120                TL0 = 0x4F;   // Initialise le timer0 a 7ms
+    121                TH0 = 0xC9;   // Initialise le timer0 a 7ms
+    122             break;
+    123          
+    124             case 8:
+    125                TL0 = 0x07;   // Initialise le timer0 a 8ms
+    126                TH0 = 0xC1;   // Initialise le timer0 a 8ms
+    127             break;
+    128          
+    129             case 9:
+    130                TL0 = 0xAF;   // Initialise le timer0 a 9ms
+    131                TH0 = 0xB9;   // Initialise le timer0 a 9ms
+    132             break;
+    133          
+    134             case 10:
+    135                TL0 = 0xDF;   // Initialise le timer0 a 10ms
+    136                TH0 = 0xB1;   // Initialise le timer0 a 10ms
+    137             break;
+    138          
+    139             case 11:
+    140                TL0 = 0x0F;   // Initialise le timer0 a 11ms
+    141                TH0 = 0xAA;   // Initialise le timer0 a 11ms
+    142             break;
+    143          
+    144             case 12:
+    145                TL0 = 0x3F;   // Initialise le timer0 a 12ms
+    146                TH0 = 0xA2;   // Initialise le timer0 a 12ms
+    147             break;
+    148          
+    149            case 13:
+    150                TL0 = 0x6F;   // Initialise le timer0 a 13ms
+    151                TH0 = 0x9A;   // Initialise le timer0 a 13ms
+    152             break;
+    153          
+    154             case 14:
+    155                TL0 = 0x9F;   // Initialise le timer0 a 14ms
+    156                TH0 = 0x92;   // Initialise le timer0 a 14ms
+    157             break;
+    158          
+    159             case 15:
+    160                TL0 = 0xCF;   // Initialise le timer0 a 15ms
+    161                TH0 = 0x8A;   // Initialise le timer0 a 15ms
+    162             break;
+    163          
+    164             case 16:
+    165                TL0 = 0xFF;   // Initialise le timer0 a 16ms
+    166                TH0 = 0x82;   // Initialise le timer0 a 16ms
+    167             break;
+    168          
+    169             case 17:
+    170                TL0 = 0x2F;   // Initialise le timer0 a 17ms
+    171                TH0 = 0x7B;   // Initialise le timer0 a 17ms
+    172             break;
+    173          
+    174             case 18:
+    175                TL0 = 0x5F;   // Initialise le timer0 a 18ms
+    176                TH0 = 0x73;   // Initialise le timer0 a 18ms
+    177             break;
+    178          
+    179             case 19:
+    180                TL0 = 0x8F;   // Initialise le timer0 a 19ms
+    181                TH0 = 0x6B;   // Initialise le timer0 a 19ms
+    182             break;
+    183          
+    184             case 20:
+    185                TL0 = 0xBF;   // Initialise le timer0 a 20ms
+    186                TH0 = 0x63;   // Initialise le timer0 a 20ms
+    187             break;
+    188          
+    189             case 21:
+    190                TL0 = 0xEF;   // Initialise le timer0 a 21ms
+    191                TH0 = 0x5B;   // Initialise le timer0 a 21ms
+    192             break;
+    193          
+    194             case 22:
+    195                TL0 = 0x1F;   // Initialise le timer0 a 22ms
+    196                TH0 = 0x54;   // Initialise le timer0 a 22ms
+    197             break;
+    198          
+    199             case 23:
+    200                TL0 = 0x4F;   // Initialise le timer0 a 23ms
+    201                TH0 = 0x4C;   // Initialise le timer0 a 23ms
+    202             break;
+    203          
+    204             case 24:
+    205                TL0 = 0x7F;   // Initialise le timer0 a 24ms
+    206                TH0 = 0x44;   // Initialise le timer0 a 24ms
+    207             break;
+    208          
+    209             case 25:
+    210                TL0 = 0xAF;   // Initialise le timer0 a 25ms
+    211                TH0 = 0x3C;   // Initialise le timer0 a 25ms
+    212             break;
+    213          
+    214             default:
+    215                TL0 = 0x60;   // Initialise le timer0 a 1ms
+    216                TH0 = 0xF8;   // Initialise le timer0 a 1ms
+    217             break;
+    218          }
+    219          TH0          = 0;   // Clear le flag d'overflow du timer0
+                 ^
+Error[Pe020]: identifier "TH0" is undefined
+    220          IE_bit.ET0   = 0;   // Desactive les interruptions timer0
+                 ^
+Error[Pe020]: identifier "IE_bit" is undefined
+    221          TCON_bit.TR0 = 1;   // Stop le timer0
+                 ^
+Error[Pe020]: identifier "TCON_bit" is undefined
+    222          EA           = 1;   // Enable Interrupt
+    223          }
+    224          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+Errors: 21
+Warnings: none

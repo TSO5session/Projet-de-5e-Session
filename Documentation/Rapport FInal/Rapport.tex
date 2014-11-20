@@ -335,115 +335,7 @@ Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\
 \pagebreak
 
 \end{spacing}
-
-\textbf{Comment ajouter une entrée à l'historique}
-\begin{lstlisting}
-Historique.AppendText("\r\n");
-Historique.AppendText("\r\n");
-Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-Historique.AppendText("\r\n");
-Historique.AppendText("Insérer messge ici");   // Enregistre le log de la connexion
-\end{lstlisting}
-
-\begin{center}
-\HRule
-\end{center}
-
-\textbf{Comment envoyer une trame sécurisée par try catch}
-\begin{lstlisting}
-try
-{
- TPCANMsg CANMsg;
- TPCANStatus stsResult;
-
- CANMsg = new TPCANMsg();
- CANMsg.DATA = new byte[8];
-
- CANMsg.ID = 006; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
- CANMsg.LEN = 4;  // Note: l'index commence à zero, donc 3 = 4
- CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
-
- for (int i = 0; i < CANMsg.LEN; i++)
-    {
-     if (i == 0) { CANMsg.DATA[0] = 00; } // Note: Ce programme en C# envoie en base 10
-     if (i == 1) { CANMsg.DATA[1] = 00; } // 0x30 (en ascii) = caractère '0'
-     if (i == 2) { CANMsg.DATA[2] = 00; } // 0 (en base 10) = caractère ascii '0' (0x30)
-     if (i == 3) { CANMsg.DATA[3] = 00; } 
-     if (i == 4) { CANMsg.DATA[4] = 00; } 
-     if (i == 5) { CANMsg.DATA[5] = 00; } 
-     if (i == 6) { CANMsg.DATA[6] = 00; }
-     if (i == 7) { CANMsg.DATA[7] = 00; }               
-   }
-
- stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
-
- if (stsResult == TPCANStatus.PCAN_ERROR_OK)// Si l'envoie est réussi
-   {
-    Historique.AppendText("\r\n");
-    Historique.AppendText("\r\n");
-    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-    Historique.AppendText("\r\n");
-    Historique.AppendText("XYZ command successfully sent");   
-   }
- else // Si l'envoi à échoué
-   {
-    Historique.AppendText("\r\n");
-    Historique.AppendText("\r\n");
-    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-    Historique.AppendText("\r\n");
-    Historique.AppendText("Error sending XYZ command");  
-   }
- }
-catch // En cas d'échec d'envoi sur le bus CAN
-   {
-    Historique.AppendText("\r\n");
-    Historique.AppendText("\r\n");
-    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-    Historique.AppendText("\r\n");
-    Historique.AppendText("Error sending data on CAN bus (try catch error)"); 
-   }
-\end{lstlisting}
-\pagebreak
-\textbf{Comment prendre une décision en fonction de la trame reçue (avec try catch)}
-\begin{lstlisting}
-ListViewItem lviCurrentItem;
-try
-  {
-   foreach (MessageStatus msgStatus in m_LastMsgsList)
-     {
-      if (msgStatus.MarkedAsUpdated)
-        {
-         msgStatus.MarkedAsUpdated = false;
-         lviCurrentItem = lstMessages.Items[msgStatus.Position];
-         lviCurrentItem.SubItems[2].Text = msgStatus.CANMsg.LEN.ToString();
-         lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
-         lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
-         lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
-
-         textBox1.Text = lviCurrentItem.SubItems[3].Text; // Enregistre le text reçu dans un string
-        }
-      }
-
-   if (textBox1.Text == "41 42 43 44 45 46 ") // Si cette trame en particulier est reçue
-     {
-      label19.Text = "BINGO";   // Prend cette décision
-
-      Historique.AppendText("\r\n");
-      Historique.AppendText("\r\n");
-      Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-      Historique.AppendText("\r\n");
-      Historique.AppendText("Donnée reçue"); 
-     }
-  }
-catch
-  {
-   Historique.AppendText("\r\n");
-   Historique.AppendText("\r\n");
-   Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-   Historique.AppendText("\r\n");
-   Historique.AppendText("Erreur de réception try catch");
-  }
-\end{lstlisting}
+f
 \begin{spacing}{1.5}
 \pagebreak
 
@@ -494,7 +386,7 @@ Lorsque les modules Xbee sont adéquatement configurés, ils font office de remp
 \item[•]Table FESTO
 \item[•]Carte d'extension IO
 \item[•]Carte connecteur DAC ADC
-\item[•]
+\item[•]Carte Xbee vers DB9
 \item[•]
 \item[•]
 \item[•]
@@ -512,24 +404,31 @@ Lorsque les modules Xbee sont adéquatement configurés, ils font office de remp
 Mettre ien vers GitHUB
 
 \subsubsection{Datasheets}
-Note: Toutes les datasheets sont en format non-compressé. Vous pouvez zoomer sur le document PDF\footnote{Inclure les datasheet de la sorte économise du papier, donc des arbres} afin de lire l'intégralité de leurs première page.
+Note: Toutes les datasheets sont en format non-compressé. Vous pouvez zoomer sur le document PDF\footnote{Présenter les datasheets de la sorte économise du papier, donc des arbres, mais requiert de consulter le document .PDF afin de lire adéquatement les datasheets.} afin de lire l'intégralité de leurs première page.
 \begin{multicols}{3}
+74HC14\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/74HC14.pdf}}\\
-
+DAC6574\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/dac6574.pdf}}\\
-
+DS89C450\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/DS89C450.pdf}}\\
 
+\medskip
+
+LineSensors\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/LineSensor.pdf}}\\
-
+LM3914\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/lm3914.pdf}}\\
-
+OPT101\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/opt101.pdf}}\\
 
+\medskip
+
+PCF8573\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/PCF8574.pdf}} \\
-
+uPSD3254A\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/UPSD3254A.pdf}}\\
-
+SaberTooth motor drive\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/Sabertooth.pdf}}\\
 \end{multicols}
 \vfill
@@ -539,32 +438,40 @@ Note: Toutes les datasheets sont en format non-compressé. Vous pouvez zoomer su
 \begin{figure}[hbtp]
 \caption{Programme de contrôle principal}
 \centering
-\includegraphics[scale=0.7]{Images/Bolid.jpg}
+\fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
 \end{figure}
 
-Notre programme, écrit en Csharp à l'aide de Visual Studio, peut se connecter au bus CAN via une carte SPI\footnote{Spécifier le fabricant} et au bus RS232 via un câble DB9 ou USB\footnote{S'il y a présence d'un FTDI}. La connexion RS232 sert à l'envoie et à la réception du HeartBeat afin d'informer le SOC8200 si l'ordinateur en venait à connaître une défaillance. De plus, des témoins lumineux s'allument en présence de données transmises et reçues. \\
-Le programme peut lire l'heure interne du PC et, par un simple clic sur le bouton «Synchroniser», ajuster l'heure de référence de la station no.2.\\
+Notre programme, écrit en C\# à l'aide de Visual Studio, peut se connecter au bus CAN via une carte SPI\footnote{Spécifier le fabricant} et au bus RS232 via un câble DB9 ou USB\footnote{S'il y a présence d'un FTDI}. La connexion RS232 sert à l'envoie et à la réception du HeartBeat afin d'informer le SOC8200 si l'ordinateur en venait à connaître une défaillance. De plus, des témoins lumineux s'allument en présence de données transmises et reçues. \\
+Le programme peut lire l'heure interne du PC et, par un simple clic sur le bouton «Synchroniser», ajuster l'heure de référence de la station no.1.\\
+\vfill
+\pagebreak
+
+
+
+
 
 \begin{figure}[hbtp]
 \caption{Options CAN avancées}
 \centering
-\includegraphics[scale=0.7]{Images/Bolid.jpg}
+\fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
 \end{figure}
 Il est possible d'utiliser des fonctionnalités CAN avancées tels que les masques et filtres de données. De plus, cette fenêtre permet de visualiser les données CAN reçues à l'état brutes et non traitées, ce qui peut s'avérer utile pour du débogage.
 
 
-
+\pagebreak
 \begin{figure}[hbtp]
 \caption{Historique des actions}
 \centering
-\includegraphics[scale=0.7]{Images/Bolid.jpg}
+\fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
 \end{figure}
 Toute action effectué via le programme ainsi que toute donnée ayant transité sur le bus CAN et RS232 est catalogué en bonne et due forme dans l'onglet historique qu'il est possible de consulter et sauvegarder à tout moment.
 
 
 
 \subsection{Structure du programme}
-Parler des GhostLabels
+\subsubsection{Les Ghosts Labels}
+Un ghost label est un label de texte présent sur l'interface, mais définit comme invisible. Il est doc impossible pour l'usager de le voir et d'y accéder. Leurs principales utilités est de faire office de variable globale afin de passer des paramètres entre fonctions et de déclencher des événements système lorsqu'ils sont lut ou modifié.
+
 
 \subsection{Explication des trames}
 
@@ -600,8 +507,9 @@ Le programme du SOC2800 est écrit en script Shell\footnote{Car c'est plus simpl
 Le programme de la station 1, 2 et du bolide est écrit en C++ à l'aide d'IAR WorkBench 8.20 et la compilation conditionnelle offre de le compiler pour chacune des trois stations mentionnées. De plus, la compilation conditionnelle permet au bolide d'utiliser soit une carte d'extension I2C, soit une carte d'extension SPI pour contrôler ses moteurs.
 
 \subsection{La station no.1}
-
+La sation no.1 est composé de $\mu$PSD et s'appelle Bloc no.2 dans le cahier de consignes. Cette station reçoit les directives du PC par le BUS CAN et les expédie sur le bus CAN (et vice-versa) aux endroits appropriés. C'est aussi à cette station qu'incombe la tâche de communiquer avec le bolide et la table FESTO via des Xbee
 \subsection{La station no.2}
+La sation no.2 est composé de la table FESTO et s'appelle Bloc no.3 dans le cahier de consignes
 
 \subsection{Le bolide}
 \begin{table}[!ht]
@@ -626,7 +534,16 @@ OPT101  &  0x50 & Suiveur de ligne  \\
 \end{table}
 
 \subsection{Procédure de compilation sur IAR}
-
+\end{spacing}
+\begin{verbatim}
+   //#define UPSD3254A
+   //#define DALLAS89C450
+   //#define SPI_DALLAS
+   //#define I2C_DALLAS
+   //#define PCF_5_CAPTEURS
+   //#define PCF_3_CAPTEURS
+\end{verbatim}
+\begin{spacing}{1.5}
 \subsection{Procédure de vérification}
 
 
@@ -637,12 +554,13 @@ OPT101  &  0x50 & Suiveur de ligne  \\
 
 \subsection{Procédure de vérification}
 
+\pagebreak
 \section{Calculs}
 \subsection{Calcul du pas de conversion de la pile}
 $V_{MAX}=10.8V \Rightarrow MAX1236  = 12 bit \Rightarrow Pas = \dfrac{4K\Omega \cdot \left(\dfrac{10.8V}{10K\Omega}\right)}{2^{12}(pas)} = 1.33(mV/pas)$
 \subsection{Calcul du baudrate}
 $Baud = \dfrac{2^{SMOD}}{32}\cdot\dfrac{Crystal (Hz)}{12\cdot(256 - TH1)}$\\
-
+\pagebreak
 %\bigskip
 
 Alors...\\

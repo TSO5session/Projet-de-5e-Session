@@ -18,21 +18,19 @@
 // DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
-
 #include "CLMCP23S09.h"
 
 // Constructeur par defaut ////////////////////////////////////////////////////
-
 CLMCP23S09 :: CLMCP23S09(void)
- {
-     SLVSLCT_MCP23S09 = 1;  
- }
+{
+ SLVSLCT_MCP23S09 = 1;  
+}
 
 // Destructeur ////////////////////////////////////////////////////////////////
-
 CLMCP23S09 :: ~CLMCP23S09(void)
- {
- }
+{
+  
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // UC ucLireMCP23S09(void);
@@ -127,11 +125,11 @@ void CLMCP23S09 :: vSetModeMCP23S09(UC ucMode, UC ucPort)
 UC CLMCP23S09 :: ucLireMCP23S09(void)
 { 
 UC ucLecture;
-SLVSLCT_MCP23S09 = 0;
-   ucSPITransferMOD0(0x41);      // Lit la puce
-   ucSPITransferMOD0(0x09);      // Lit le registre des I/O
+SLVSLCT_MCP23S09 = 0;                   // Chip Select ON
+   ucSPITransferMOD0(0x41);             // Lit la puce
+   ucSPITransferMOD0(0x09);             // Lit le registre des I/O
    ucLecture = ucSPITransferMOD0(0x00); // Aquiert la donnée
-SLVSLCT_MCP23S09 = 1;
+SLVSLCT_MCP23S09 = 1;                   // Chip select OFF
   
 return(ucLecture);
 }

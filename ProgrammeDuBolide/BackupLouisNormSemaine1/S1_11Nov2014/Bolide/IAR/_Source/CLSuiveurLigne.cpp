@@ -26,7 +26,8 @@
 //// Constructeur par defaut ///////////////////////////////////////////////////
 
 CLSuiveurLigne :: CLSuiveurLigne(void)
-: clIOPCF8574Suiveur (0x44)
+
+
  {
 
  }
@@ -74,23 +75,22 @@ UC CLSuiveurLigne :: ucSuivreLigne(void)
    
    unSuiveurLigne.ucOctet = clMCP23S09Suiveur.ucLireMCP23S09(); 
   
-   if((unSuiveurLigne.ucOctet == 0xFF) || //Tous les senseurs sont ouverts.
-      (unSuiveurLigne.ucOctet == 0xBF))   //Le senseur central est actif.
+   if((unSuiveurLigne.stChampBit.bBit5 == 1) & //Tous les senseurs sont ouverts.
+      (unSuiveurLigne.stChampBit.bBit7 == 1))   //Le senseur central est actif.
     {
       ucDirection = DROITDEVANT;
     }   
-       
    else
-    {
-      if(unSuiveurLigne.stChampBit.bBit5 == 1)
-       {
-         ucDirection = GAUCHE;
-       }
-      if(unSuiveurLigne.stChampBit.bBit7 == 1)
-       { 
-         ucDirection = DROITE;
-       }
-    } 
+  
+   if(unSuiveurLigne.stChampBit.bBit5 == 0)
+     {
+      ucDirection = DROITE;
+     }
+   if(unSuiveurLigne.stChampBit.bBit7 == 0)
+     { 
+      ucDirection = GAUCHE;
+     }
+     
 
    return(ucDirection);
    #endif

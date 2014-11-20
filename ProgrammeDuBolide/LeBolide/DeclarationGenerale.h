@@ -9,45 +9,45 @@
 //
 // Description: Raccourcis linguistiques utiles
 // *****************************************************************************
-
-// *****************************************************************************
 // FICHIER PERMETTANT DE FAIRE LA CONVERSION ENTRE LES COMPILATEURS
 // ET D'INDIQUER L'APPLICATION A COMPILER
 //
 #include "TypeCible.h"
 #include "ConversionKeilToIAR.h"
 #include "ioDS89C450.h"
-//#include <stdio.h>
-//
 // *****************************************************************************
-
 #ifndef DECLARATIONGENERALEH
    #define DECLARATIONGENERALEH
 
 // *****************************************************************************
-//                            DEFINITION DE MOT CLE
+//                            DEFINITION DE MOTS CLES
 // *****************************************************************************
+#define ACTIF     1
+#define INACTIF   0
 
-#define ACTIF   1
-#define INACTIF 0
+#define ON        1
+#define OFF       0
 
-#define ON      1
-#define OFF     0
+#define VRAI      1
+#define FAUX      0
 
-#define VRAI    1
-#define FAUX    0
+#define FAIL      1
+#define WIN       0
 
-#define HIGH    1
-#define LOW     0
+#define HIGH      1
+#define LOW       0
 
-#define HAUT    1
-#define BAS     0
+#define HAUT      1
+#define BAS       0
 
-#define ACK     0
-#define NOACK   1
+#define Hicham    1
+#define LeReste   0
 
-#define TRUE    1
-#define FALSE   0
+#define ACK       0
+#define NOACK     1
+
+#define TRUE      1
+#define FALSE     0
 
 #define COMPLET   1
 #define INCOMPLET 0
@@ -56,12 +56,11 @@
 //                            DEFINITION DE TYPE
 // *****************************************************************************
 
-/* Alternate definitions */
-typedef void                VOID;
 #ifndef NULL
   #define NULL 0
 #endif
 
+typedef void               VOID;
 typedef bool               bit;        
 typedef float              F;
 typedef signed long        L;
@@ -81,7 +80,6 @@ typedef void               VOID;
 // *****************************************************************************
 //                    DEFINITION DE STRUCTURES UTILES
 // *****************************************************************************
-
 struct STTemps
  {
    UC ucSeconde;

@@ -17,11 +17,11 @@
 // ** ********************************************************************** **
 //  Choix de la cible
    //#define UPSD3254A
-    #define DALLAS89C450
-    #define SPI_DALLAS
+   #define DALLAS89C450
+   #define SPI_DALLAS
    //#define I2C_DALLAS
    //#define PCF_5_CAPTEURS
-   //#define PCF_3_CAPTEURS
+   #define PCF_3_CAPTEURS
 
 // ** ********************************************************************** **
 
@@ -35,6 +35,7 @@
   #ifdef UPSD3254A
     #include <ioUPSD3254A.h>
   #endif
+
 // ****************************************************************************
 #endif
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

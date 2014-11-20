@@ -51,15 +51,15 @@ public:
    CLEcran(USI uiAdresse);
   ~CLEcran(void);
 
-   void vLCDClr         (void);
-   void vLCDInit        (void);
-   void vLCDCursor      (UC   ucCol, UC ucLine);
-   void vLCDDisplayCarac(UC   ucCaractere);
-   void vLCDDisplayCarac(char cCaractere);
+   void vLCDClr              (void);
+   void vLCDInit             (void);
+   void vLCDCursor           (UC   ucCol, UC ucLine);
+   void vLCDDisplayCarac     (UC   ucCaractere);
+   void vLCDDisplayCarac     (char cCaractere);
 
-   void vHexToASCII     (UC  ucHexCar,   UC *ucpHi,      UC *ucpLo);
-   void vHexToASCII     (USI uiHexCar,   UC *ucpHiOctHi, UC *ucpLoOctHi,
-                         UC *ucpHiOctLo, UC *ucpLoOctLo);
+   void vHexToASCII          (UC  ucHexCar,   UC *ucpHi,      UC *ucpLo);
+   void vHexToASCII          (USI uiHexCar,   UC *ucpHiOctHi, UC *ucpLoOctHi,
+                              UC *ucpHiOctLo, UC *ucpLoOctLo);
 
    void String               (const UC   *ucpMessage);
    void String               (const char *cpMessage) ;   

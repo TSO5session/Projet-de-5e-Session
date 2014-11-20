@@ -28,6 +28,9 @@ void main(void)
    WDKEY = 0x55;
 #endif
    class CLTest clTest;    // Declaration d'un objet de test
+   class CLMCP23S09 mcp;
+   
+   mcp.vSetModeMCP23S09 (LECTURE_MCP23S09,0xE0);
    clTest.vControleTest(); // Excecution des tests selectionnees 
    
 

@@ -61,10 +61,8 @@ for (UC ucSPIcount = 8; ucSPIcount > 0; ucSPIcount--)
    else                 MOSI = 0;
    ucSPIbyte = ucSPIbyte << 1; 
       
-   SCLK = 1; 
-      
-   ucSPIbyte |= MISO; 
-      
+   SCLK = 1;      
+   ucSPIbyte |= MISO;      
    SCLK = 0;
   }
 return (ucSPIbyte);

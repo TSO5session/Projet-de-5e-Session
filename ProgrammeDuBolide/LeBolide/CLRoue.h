@@ -58,6 +58,7 @@ private:
    #ifdef SPI_DALLAS
       class CLDAC7554 clDAC7554Roue;
    #endif
+      
    #ifdef I2C_DALLAS
       class CLDAC6574 clDAC6574Roue;
    #endif

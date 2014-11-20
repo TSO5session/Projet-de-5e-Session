@@ -12,6 +12,7 @@
 #include "DeclarationGenerale.h"
 #include "CLMCP23S09.h"
 #include "CLIOPCF8574.h"
+//#include "CLEcran.h" // Pour faire des tests
 
 #ifndef CLSUIVEURLIGNEH
    #define CLSUIVEURLIGNEH
@@ -37,6 +38,7 @@ protected:
 private:
    #ifdef SPI_DALLAS
    class CLMCP23S09 clMCP23S09Suiveur;
+   //class CLEcran LCD;
    #endif
   
    #ifdef I2C_DALLAS

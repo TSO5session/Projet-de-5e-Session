@@ -17,8 +17,8 @@
 // ** ********************************************************************** **
 //  Choix de la cible
 #define DALLAS89C450
-//   #define SPI_DALLAS
-   #define I2C_DALLAS
+   #define SPI_DALLAS
+ //  #define I2C_DALLAS
 
 //#define UPSD3254A
 // ** ********************************************************************** **

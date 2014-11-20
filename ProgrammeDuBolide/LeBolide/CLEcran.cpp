@@ -16,29 +16,27 @@
 //  DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
-
 #include "CLEcran.h" 
-
 
 // Constructeur par defaut //////////////////////////////////////////////////// 
 CLEcran :: CLEcran(void)
- {
+{
  uiAdresseEcran = 0xF800;
  vLCDInit();
- }
+}
 
 // Constructeur par defaut //////////////////////////////////////////////////// 
 CLEcran :: CLEcran(USI uiAdresse)
- {
+{
  uiAdresseEcran = uiAdresse;
  vLCDInit();
- }
+}
 
 // Destructeur ////////////////////////////////////////////////////////////////
 CLEcran :: ~CLEcran(void)
- {
+{
  vLCDClr();
- }
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // void CLEcran :: vDelaiLCD(USI uiDelai)
@@ -493,14 +491,12 @@ void CLEcran :: vLCDDisplayScreen(const UC *ucpEcran)
 //
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 void CLEcran :: vLCDDisplayEtatPort(UC ucEtatPort)
  {
    for(UC i = 0; i < 8; i++)
     {
       if((ucEtatPort & 0x80) == 0x80) vLCDDisplayCarac('1');
-      else                            vLCDDisplayCarac('0');
-      
+      else                            vLCDDisplayCarac('0');    
       ucEtatPort = ucEtatPort << 1;
     }   
  }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\_PrjSes3.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ProjetSession5</name>
+      <member>
+        <project>_ProjetSesisonCinq</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>_ProjetSesisonCinq</project>
+        <configuration>Release</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

@@ -122,7 +122,7 @@ void CLVehicule :: vAvancer(UC ucDirection)
     clEcranVehicule.vLCDDisplayCaracChain("    ");  
     clEcranVehicule.vLCDCursor(0,3);
     
-    #ifdef SPI_DALLAs
+    #ifdef SPI_DALLAS
     if(ucDirection == GAUCHE)
      {
        clEcranVehicule.vLCDDisplayCaracChain("GAU");  
@@ -255,6 +255,7 @@ void CLVehicule :: vSuivreLigne(void)
     break;
  
     case DROITDEVANT:
+      
       vAvancer(DROITDEVANT);
     break;
     }

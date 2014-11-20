@@ -40,11 +40,13 @@ void CLStation1 :: WriteClockStation3(UC AAAA, UC Mo, UC JJ, UC HH, UC MI, UC SS
 Clock.stDate.ucJour     = JJ;
 Clock.stDate.ucMois     = Mo;
 Clock.stDate.ucAnnee    = AAAA;
+Clock.vWriteDate();
+
 Clock.stTemps.ucHeure   = HH;
 Clock.stTemps.ucMinute  = MI;
 Clock.stTemps.ucSeconde = SS;
 Clock.vWriteTime(); 
-Clock.vWriteDate(); 
+ 
 }
 
 void CLStation1 :: ReadClock(void)
@@ -55,22 +57,22 @@ Clock.vReadDate();
 
 void CLStation1 :: SendToPC(const UC *Message)
 {
-  CAN.SendMCP(Message);
+  CAN.SendMCP(Message);  // Note: il faut gérer l'ID
 }
 
 void CLStation1 :: SendToPIC(const UC *Message)
 {
-  CAN.SendMCP(Message);  
+  CAN.SendMCP(Message);  // Note: il faut gérer l'ID
 }
 
 void CLStation1 :: SendToSOC(const UC *Message)
 {
-  CAN.SendMCP(Message);  
+  CAN.SendMCP(Message);  // Note: il faut gérer l'ID
 }
 
 void CLStation1 :: SendToBolide(const char *Message)
 {
-  XBee.SendCarac('B');      // Indique que le message est destiné au bolide
+  XBee.SendCarac('B');     // Indique que le message est destiné au bolide
   XBee.SendString(Message);
 }
 

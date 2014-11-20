@@ -8,23 +8,24 @@
 \contentsline {subsubsection}{\numberline {1.2.4}Bloc 4}{4}
 \contentsline {subsection}{\numberline {1.3}Liste des logiciels}{4}
 \contentsline {subsection}{\numberline {1.4}Liste des trames}{6}
-\contentsline {section}{\numberline {2}Le mat\IeC {\'e}riel}{10}
-\contentsline {subsection}{\numberline {2.1}Bloc 1}{10}
-\contentsline {subsection}{\numberline {2.2}Bloc 2}{10}
-\contentsline {subsection}{\numberline {2.3}Bloc 3}{10}
-\contentsline {subsection}{\numberline {2.4}Bloc 4}{10}
-\contentsline {subsection}{\numberline {2.5}Explication des types de liens}{10}
-\contentsline {subsubsection}{\numberline {2.5.1}RS232}{10}
-\contentsline {subsubsection}{\numberline {2.5.2}Xbee}{10}
-\contentsline {subsection}{\numberline {2.6}Explication des trames}{10}
-\contentsline {subsubsection}{\numberline {2.6.1}RS-232}{10}
-\contentsline {subsubsection}{\numberline {2.6.2}CAN}{10}
-\contentsline {subsubsection}{\numberline {2.6.3}XBEE}{10}
-\contentsline {subsection}{\numberline {2.7}Liste des pi\IeC {\`e}ces}{10}
-\contentsline {subsubsection}{\numberline {2.7.1}Liens web}{11}
-\contentsline {subsubsection}{\numberline {2.7.2}Datasheets}{11}
-\contentsline {section}{\numberline {3}Interface PC}{12}
+\contentsline {section}{\numberline {2}Le mat\IeC {\'e}riel}{9}
+\contentsline {subsection}{\numberline {2.1}Bloc 1}{9}
+\contentsline {subsection}{\numberline {2.2}Bloc 2}{9}
+\contentsline {subsection}{\numberline {2.3}Bloc 3}{9}
+\contentsline {subsection}{\numberline {2.4}Bloc 4}{9}
+\contentsline {subsection}{\numberline {2.5}Explication des types de liens}{9}
+\contentsline {subsubsection}{\numberline {2.5.1}RS232}{9}
+\contentsline {subsubsection}{\numberline {2.5.2}Xbee}{9}
+\contentsline {subsection}{\numberline {2.6}Explication des trames}{9}
+\contentsline {subsubsection}{\numberline {2.6.1}RS-232}{9}
+\contentsline {subsubsection}{\numberline {2.6.2}CAN}{9}
+\contentsline {subsubsection}{\numberline {2.6.3}XBEE}{9}
+\contentsline {subsection}{\numberline {2.7}Liste des pi\IeC {\`e}ces}{9}
+\contentsline {subsubsection}{\numberline {2.7.1}Liens web}{10}
+\contentsline {subsubsection}{\numberline {2.7.2}Datasheets}{10}
+\contentsline {section}{\numberline {3}Interface PC}{11}
 \contentsline {subsection}{\numberline {3.1}Structure du programme}{13}
+\contentsline {subsubsection}{\numberline {3.1.1}Les Ghosts Labels}{13}
 \contentsline {subsection}{\numberline {3.2}Explication des trames}{13}
 \contentsline {subsection}{\numberline {3.3}Ordre de gestion des t\IeC {\^a}ches}{13}
 \contentsline {section}{\numberline {4}Logiciel du SOC8200}{14}
@@ -45,22 +46,22 @@
 \contentsline {subsection}{\numberline {6.1}Description du fonctionnement du programme}{15}
 \contentsline {subsection}{\numberline {6.2}Proc\IeC {\'e}dure de compilation sur MPLAB}{15}
 \contentsline {subsection}{\numberline {6.3}Proc\IeC {\'e}dure de v\IeC {\'e}rification}{15}
-\contentsline {section}{\numberline {7}Calculs}{15}
-\contentsline {subsection}{\numberline {7.1}Calcul du pas de conversion de la pile}{15}
-\contentsline {subsection}{\numberline {7.2}Calcul du baudrate}{15}
-\contentsline {section}{\numberline {8}Conclusion}{17}
-\contentsline {subsection}{\numberline {8.1}Ce que le projet m'a apport\IeC {\'e}}{17}
-\contentsline {subsubsection}{\numberline {8.1.1}Vincent Chouinard}{17}
-\contentsline {subsubsection}{\numberline {8.1.2}Hicham Safoine}{17}
-\contentsline {subsubsection}{\numberline {8.1.3}Gabriel Fortin-B\IeC {\'e}langer}{17}
-\contentsline {subsubsection}{\numberline {8.1.4}Louis-Norman Ang-Houle}{17}
-\contentsline {subsection}{\numberline {8.2}Difficult\IeC {\'e}s et corrections}{17}
-\contentsline {subsubsection}{\numberline {8.2.1}Vincent Chouinard}{17}
-\contentsline {subsubsection}{\numberline {8.2.2}Hicham Safoine}{17}
-\contentsline {subsubsection}{\numberline {8.2.3}Gabriel Fortin-B\IeC {\'e}langer}{17}
-\contentsline {subsubsection}{\numberline {8.2.4}Louis-Norman Ang-Houle}{17}
-\contentsline {subsection}{\numberline {8.3}Ce que j'ai aim\IeC {\'e} ou pas}{17}
-\contentsline {subsubsection}{\numberline {8.3.1}Vincent Chouinard}{17}
-\contentsline {subsubsection}{\numberline {8.3.2}Hicham Safoine}{17}
-\contentsline {subsubsection}{\numberline {8.3.3}Gabriel Fortin-B\IeC {\'e}langer}{17}
-\contentsline {subsubsection}{\numberline {8.3.4}Louis-Norman Ang-Houle}{17}
+\contentsline {section}{\numberline {7}Calculs}{16}
+\contentsline {subsection}{\numberline {7.1}Calcul du pas de conversion de la pile}{16}
+\contentsline {subsection}{\numberline {7.2}Calcul du baudrate}{16}
+\contentsline {section}{\numberline {8}Conclusion}{18}
+\contentsline {subsection}{\numberline {8.1}Ce que le projet m'a apport\IeC {\'e}}{18}
+\contentsline {subsubsection}{\numberline {8.1.1}Vincent Chouinard}{18}
+\contentsline {subsubsection}{\numberline {8.1.2}Hicham Safoine}{18}
+\contentsline {subsubsection}{\numberline {8.1.3}Gabriel Fortin-B\IeC {\'e}langer}{18}
+\contentsline {subsubsection}{\numberline {8.1.4}Louis-Norman Ang-Houle}{18}
+\contentsline {subsection}{\numberline {8.2}Difficult\IeC {\'e}s et corrections}{18}
+\contentsline {subsubsection}{\numberline {8.2.1}Vincent Chouinard}{18}
+\contentsline {subsubsection}{\numberline {8.2.2}Hicham Safoine}{18}
+\contentsline {subsubsection}{\numberline {8.2.3}Gabriel Fortin-B\IeC {\'e}langer}{18}
+\contentsline {subsubsection}{\numberline {8.2.4}Louis-Norman Ang-Houle}{18}
+\contentsline {subsection}{\numberline {8.3}Ce que j'ai aim\IeC {\'e} ou pas}{18}
+\contentsline {subsubsection}{\numberline {8.3.1}Vincent Chouinard}{18}
+\contentsline {subsubsection}{\numberline {8.3.2}Hicham Safoine}{18}
+\contentsline {subsubsection}{\numberline {8.3.3}Gabriel Fortin-B\IeC {\'e}langer}{18}
+\contentsline {subsubsection}{\numberline {8.3.4}Louis-Norman Ang-Houle}{18}

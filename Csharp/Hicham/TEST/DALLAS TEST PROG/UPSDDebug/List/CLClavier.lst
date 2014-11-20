@@ -1,0 +1,434 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         08/Sep/2014  18:14:28 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo1\Programme\CLClavier.cpp            #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\CLClavier.cpp" -D        #
+#                          UPSD3254A --preprocess=cl                          #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -lC     #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -lA     #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\" -o      #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\Obj\" -e       #
+#                          --no_cse --no_unroll --no_inline --no_code_motion  #
+#                          --no_tbaa --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=near               #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\List\CLClavier #
+#                          .lst                                               #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Prog\Labo1\Programme\UPSDDebug\Obj\CLClavier. #
+#                          r51                                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Prog\Labo1\Programme\CLClavier.cpp
+      1          // **************************CLClavier.cpp
+      2          // Auteur:      Vincent Chouinard
+      3          // Date:        17 avril 2014
+      4          // Version :    1.0
+      5          //
+      6          // Compilateur: IAR 8.1
+      7          //
+      8          // Description: Fichier permettant d'utiliser le clavier de l'uPSD
+      9          //
+     10          ///////////////////////////////////////////////////////////////////////////////
+     11          //                     Infos relatives au montage du clavier sur le uPSD     
+     12          // Utilise un 74HCC922                                                       
+     13          // 74HCC922     uPSD
+     14          //        A sur D0
+     15          //        B sur D1
+     16          //        C sur D2
+     17          //        D sur D3                                                          
+     18          //       OE sur CS1     (OutputEnable sur chip select 1)                     
+     19          //       DA sur INT0    (DataAvailible sur interrupt0)                       
+     20          ///////////////////////////////////////////////////////////////////////////////
+     21          #include "CLClavier.h"            // Fichier de definitions du clavier
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IE
+   \                     _A_IE:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+     22          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     23          UC  CLClavier  :: ucEtatClavier = INACTIF;
+   \                     ??ucEtatClavier:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     24          
+     25          //******************************************************************************
+     26          //                            LE CONSTRUCTEUR PAR DEFAUT
+     27          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     28          CLClavier :: CLClavier(void)           
+   \                     ??CLClavier:
+     29          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     30          EX0 = 1;
+   \   000000   D2A8         SETB    0xa8.0
+     31          IT0 = 1;
+   \   000002   D288         SETB    0x88.0
+     32          }
+   \   000004   22           RET
+   \   000005                REQUIRE _A_IE
+   \   000005                REQUIRE _A_TCON
+     33          
+     34          // *****************************************************************************
+     35          //                            LE DESTRUCTEUR
+     36          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     37          CLClavier :: ~CLClavier(void)
+   \                     `?~CLClavier`:
+     38          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     39          
+     40          }
+   \   000000   22           RET
+     41          
+     42          // ********************** FONCTION: ucBoutonAppuye()
+     43          //
+     44          // DESCRIPTION:         Fonction pour transmettre un caractere
+     45          //
+     46          // INCLUDE:             "Clavier.h"
+     47          //
+     48          // PROTOTYPE:           UC ucBoutonAppuye(void)
+     49          //
+     50          // PROCEDURE D'APPEL:   UC = ucBoutonAppuye()
+     51          //
+     52          // PARAMETRE D'ENTREE:  AUCUN
+     53          //
+     54          // PARAMETRE DE SORTIE: UC ---> Contient le bouton appuye
+     55          //
+     56          // Auteur:              Vincent Chouinard
+     57          // Date:                17 avril 2014 (Version 1.0)
+     58          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     59          UC CLClavier :: ucBoutonAppuye(void)
+   \                     ??ucBoutonAppuye:
+     60          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     61          UC ucEtat;
+     62          if(ucEtatClavier == ACTIF)
+   \   000004   90....       MOV     DPTR,#??ucEtatClavier
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   6401         XRL     A,#0x1
+   \   00000A   7004         JNZ     ??ucBoutonAppuye_1
+     63            {
+     64             ucEtat = ACTIF;
+   \   00000C   7901         MOV     R1,#0x1
+   \   00000E   8002         SJMP    ??ucBoutonAppuye_2
+     65            }
+     66          else
+     67            {
+     68             ucEtat = INACTIF;
+   \                     ??ucBoutonAppuye_1:
+   \   000010   7900         MOV     R1,#0x0
+     69            }
+     70          return(ucEtat);
+   \                     ??ucBoutonAppuye_2:
+   \   000012   D083         POP     DPH
+   \   000014   D082         POP     DPL
+   \   000016   22           RET
+     71          }
+     72          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     73          UC CLClavier:: ucLireClavier(void)
+   \                     ??ucLireClavier:
+     74          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 16
+   \   000005   74F0         MOV     A,#-0x10
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+     75          UC  uctTouche[]={         // Tableau des correspondances des
+     76              '1','2','3','A',      // touches du clavier et de leurs
+     77              '4','5','6','B',      // positions.
+     78              '7','8','9','C',      //
+     79              '*','0','#','D'};     //
+   \   00000E   90....       MOV     DPTR,#`?<Constant {(UC)'1', (UC)'2', (UC)'3', (UC)'A'`
+   \   000011   C082         PUSH    DPL
+   \   000013   C083         PUSH    DPH
+   \   000015   85..82       MOV     DPL,?XSP + 0
+   \   000018   85..83       MOV     DPH,?XSP + 1
+   \   00001B   AC82         MOV     R4,DPL
+   \   00001D   AD83         MOV     R5,DPH
+   \   00001F   D083         POP     DPH
+   \   000021   D082         POP     DPL
+   \   000023   7410         MOV     A,#0x10
+   \   000025   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+     80            
+     81          ucToucheClavier = ucIn(0xF900);
+   \   000028                ; Setup parameters for call to function CLInOutBase::ucIn(USI)
+   \   000028   7C00         MOV     R4,#0x0
+   \   00002A   7DF9         MOV     R5,#-0x7
+   \   00002C   EE           MOV     A,R6
+   \   00002D   FA           MOV     R2,A
+   \   00002E   EF           MOV     A,R7
+   \   00002F   FB           MOV     R3,A
+   \   000030   12....       LCALL   ??ucIn
+   \   000033   E9           MOV     A,R1
+   \   000034   8E82         MOV     DPL,R6
+   \   000036   8F83         MOV     DPH,R7
+   \   000038   F0           MOVX    @DPTR,A
+     82          ucEtatClavier   = INACTIF;
+   \   000039   90....       MOV     DPTR,#??ucEtatClavier
+   \   00003C   7400         MOV     A,#0x0
+   \   00003E   F0           MOVX    @DPTR,A
+     83          return(uctTouche[ucToucheClavier]); 
+   \   00003F   8E82         MOV     DPL,R6
+   \   000041   8F83         MOV     DPH,R7
+   \   000043   E0           MOVX    A,@DPTR
+   \   000044   F8           MOV     R0,A
+   \   000045   7900         MOV     R1,#0x0
+   \   000047   85..82       MOV     DPL,?XSP + 0
+   \   00004A   85..83       MOV     DPH,?XSP + 1
+   \   00004D   E582         MOV     A,DPL
+   \   00004F   28           ADD     A,R0
+   \   000050   F582         MOV     DPL,A
+   \   000052   E583         MOV     A,DPH
+   \   000054   39           ADDC    A,R1
+   \   000055   F583         MOV     DPH,A
+   \   000057   E0           MOVX    A,@DPTR
+   \   000058   F9           MOV     R1,A
+   \   000059   7410         MOV     A,#0x10
+   \   00005B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00005E   7F01         MOV     R7,#0x1
+   \   000060   02....       LJMP    ?FUNC_LEAVE_XDATA
+     84          }
+     85          
+     86          // ********************** FONCTION: vkeyboardInterrupt()
+     87          //
+     88          // DESCRIPTION:         Fonction d'interruption pour lire le clavier
+     89          //
+     90          // INCLUDE:             "Clavier.h"
+     91          //
+     92          // PROTOTYPE:           __interrupt void vkeyboardInterrupt(void)
+     93          //
+     94          // PROCEDURE D'APPEL:   #pragma vector = 0x03 (Seul un interrupt0 peut appeler
+     95          //                                             cette fonction)
+     96          //
+     97          // PARAMETRE D'ENTREE:  AUCUN
+     98          //
+     99          // PARAMETRE DE SORTIE: AUCUN
+    100          //
+    101          // Auteur:              Vincent Chouinard
+    102          // Date:                17 avril 2014 (Version 1.0)
+    103          // *****************************************************************************
+    104          #pragma vector = 0x03 // Lors d'une interruption de type INTERRUPT 0
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    105          __interrupt void CLClavier :: vKeyboardInterrupt(void)
+   \                     ??vKeyboardInterrupt:
+    106          {
+   \   000000   C0E0         PUSH    A
+   \   000002   C0D0         PUSH    PSW
+   \   000004   C082         PUSH    DPL
+   \   000006   C083         PUSH    DPH
+   \   000008                ; Saved register size: 4
+   \   000008                ; Auto size: 0
+    107          EA = 0;
+   \   000008   C2AF         CLR     0xa8.7
+    108          ucEtatClavier = ACTIF;
+   \   00000A   90....       MOV     DPTR,#??ucEtatClavier
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    109          EA = 1;
+   \   000010   D2AF         SETB    0xa8.7
+    110          }
+   \   000012   D083         POP     DPH
+   \   000014   D082         POP     DPL
+   \   000016   D0D0         POP     PSW
+   \   000018   D0E0         POP     A
+   \   00001A   32           RETI
+   \   00001B                REQUIRE _A_IE
+
+   \                                 In  segment INTVEC, offset 0x3, root
+   \                     `??vKeyboardInterrupt??INTVEC 3`:
+   \   000003   02....       LJMP       (??vKeyboardInterrupt)
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant {(UC)'1', (UC)'2',`:
+   \   000000   31           DB 49
+   \   000001   32           DB 50
+   \   000002   33           DB 51
+   \   000003   41           DB 65
+   \   000004   34           DB 52
+   \   000005   35           DB 53
+   \   000006   36           DB 54
+   \   000007   42           DB 66
+   \   000008   37           DB 55
+   \   000009   38           DB 56
+   \   00000A   39           DB 57
+   \   00000B   43           DB 67
+   \   00000C   2A           DB 42
+   \   00000D   30           DB 48
+   \   00000E   23           DB 35
+   \   00000F   44           DB 68
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant {(UC)'1', (UC)'2', (UC)'3', (UC)'A'`:
+   \   000000                DS 16
+   \   000010                REQUIRE `?<Initializer for <Constant {(UC)'1', (UC)'2',`
+   \   000010                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLClavier &CLClavier::new CLClavier()
+   \                     `??new CLClavier`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLClavier_1`
+   \   00001B                ; Setup parameters for call to function CLClavier::CLClavier()
+   \   00001B   12....       LCALL   ??CLClavier
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLClavier_2`
+   \                     `??new CLClavier_1`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLClavier_2`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLClavier::delete ~CLClavier(CLClavier *)
+   \                     `??delete ~CLClavier`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLClavier_1`
+   \   00000D                ; Setup parameters for call to function CLClavier::~CLClavier()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLClavier`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLClavier_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    111          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLClavier::CLClavier()             0      0      0
+     CLClavier::delete ~CLClavier(CLClavier *)
+                                        0      0      8
+       -> CLClavier::~CLClavier()       0      0     16
+       -> operator delete(void *)       0      0     16
+     CLClavier::new CLClavier()         2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLClavier::CLClavier()        4      0      0
+     CLClavier::ucBoutonAppuye()        2      0      0
+     CLClavier::ucLireClavier()         2      0     24
+       -> CLInOutBase::ucIn(USI)        0      0     48
+     CLClavier::vKeyboardInterrupt()
+                                        4      0      0
+     CLClavier::~CLClavier()            0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     _A_IE                                             1
+     _A_TCON                                           1
+     CLClavier::ucEtatClavier                          1
+     CLClavier::CLClavier()                            5
+     CLClavier::~CLClavier()                           1
+     CLClavier::ucBoutonAppuye()                      23
+     CLClavier::ucLireClavier()                       99
+     CLClavier::vKeyboardInterrupt()
+                                                      27
+     ??vKeyboardInterrupt??INTVEC 3                    3
+     ?<Initializer for <Constant {(UC)'1', (UC)'2',   16
+     ?<Constant {(UC)'1', (UC)'2', (UC)'3', (UC)'A'   16
+     CLClavier::new CLClavier()                       49
+     CLClavier::delete ~CLClavier(CLClavier *)
+                                                      32
+
+ 
+   3 bytes in segment INTVEC
+ 236 bytes in segment NEAR_CODE
+   2 bytes in segment SFR_AN
+  16 bytes in segment XDATA_I
+  16 bytes in segment XDATA_ID
+   1 byte  in segment XDATA_Z
+ 
+ 252 bytes of CODE  memory (+ 3 bytes shared)
+   0 bytes of DATA  memory (+ 2 bytes shared)
+  17 bytes of XDATA memory
+
+Errors: none
+Warnings: none

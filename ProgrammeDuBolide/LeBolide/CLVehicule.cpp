@@ -113,7 +113,7 @@ vSuivreLigne();
 void CLVehicule :: vAvancer(UC ucDirection)
 {
     LCD.vLCDCursor(0,3);
-    LCD.String("    ");  
+    LCD.String    ("    ");  
     LCD.vLCDCursor(0,3);
     
     #ifdef SPI_DALLAS
@@ -198,6 +198,7 @@ void CLVehicule :: vAvancer(UC ucDirection)
        clRoueArriereD.vArret();
        clRoueArriereG.vArret();      
      } 
+    
     if (ucDirection == MARCHEARRIERE)
      {
        LCD.String("ARR");
@@ -230,65 +231,121 @@ void CLVehicule :: vAvancer(UC ucDirection)
 void CLVehicule :: vSuivreLigne(void)
  {
 #ifdef SPI_DALLAS
-   LCD.vLCDCursor(0,1);
-   LCD.String("SUIVIE LIGNE SPI");  // Pourquoi ça ne s'affiche pas?
-
-   uiVitesse       = 0x0280; 
-
+ LCD.vLCDCursor(0,1);
+ LCD.String("Line Follower SPI"); 
+   
+   uiVitesse = 0x0280; 
+   
+   #ifdef PCF_5_CAPTEURS
    switch(clSuiveurLigne.ucSuivreLigne())
     {
-    case GAUCHE:
-      uiVitesseTourne = 0x0700;
-      vAvancer(GAUCHE);
-    break;
+       case GAUCHE:
+         ucVitesseTourne = 0x70;
+         vAvancer(GAUCHE);
+       break;
+      
+       case GAUCHELENT:
+         ucVitesseTourne = 0x30;
+         vAvancer(GAUCHE);
+       break;  
     
-    case DROITE:
-      uiVitesseTourne = 0x0700;
-      vAvancer(DROITE);
-    break;
- 
-    case DROITDEVANT:
-      vAvancer(DROITDEVANT);
-    break;
+       case DROITE:
+         ucVitesseTourne = 0x70;
+         vAvancer(DROITE);
+       break;
+    
+       case DROITELENT:  
+         ucVitesseTourne = 0x30;
+         vAvancer(DROITE);
+       break;  
+      
+       case DROITDEVANT:
+         vAvancer(DROITDEVANT);
+       break;
+    
+       case ARRET:
+         vAvancer(ARRET);
+       break;      
     }
+   #endif
+   
+   #ifdef PCF_3_CAPTEURS
+   switch(clSuiveurLigne.ucSuivreLigne())
+    {
+     case GAUCHE:
+       uiVitesseTourne = 0x0700;
+       vAvancer(GAUCHE);
+     break;
+    
+     case DROITE:
+       uiVitesseTourne = 0x0700;
+       vAvancer(DROITE);
+     break;
+ 
+     case DROITDEVANT:
+       vAvancer(DROITDEVANT);
+     break;
+    }
+   #endif
 #endif
    
 #ifdef I2C_DALLAS
-   LCD.vLCDCursor(0,1);
-   LCD.String("SUIVIE LIGNE I2C");  
+  LCD.vLCDCursor(0,1);
+  LCD.String("Line Follower I2C"); 
+   
+  #ifdef PCF_5_CAPTEURS
+     ucVitesse = 0x28; 
 
-   ucVitesse       = 0x28; 
-
-   switch(clSuiveurLigne.ucSuivreLigne())
-    {
-    case GAUCHE:
-      ucVitesseTourne = 0x70;
-      vAvancer(GAUCHE);
-    break;
-    
-    case GAUCHELENT:
-      ucVitesseTourne = 0x30;
-      vAvancer(GAUCHE);
-    break;  
-    
-    case DROITE:
-      ucVitesseTourne = 0x70;
-      vAvancer(DROITE);
-    break;
-    
-    case DROITELENT:  
-      ucVitesseTourne = 0x30;
-      vAvancer(DROITE);
-    break;  
+     switch(clSuiveurLigne.ucSuivreLigne())
+      {
+       case GAUCHE:
+         ucVitesseTourne = 0x70;
+         vAvancer(GAUCHE);
+       break;
       
-    case DROITDEVANT:
-      vAvancer(DROITDEVANT);
-    break;
+       case GAUCHELENT:
+         ucVitesseTourne = 0x30;
+         vAvancer(GAUCHE);
+       break;  
     
-    case ARRET:
-      vAvancer(ARRET);
-    break;
-    }
+       case DROITE:
+         ucVitesseTourne = 0x70;
+         vAvancer(DROITE);
+       break;
+    
+       case DROITELENT:  
+         ucVitesseTourne = 0x30;
+         vAvancer(DROITE);
+       break;  
+      
+       case DROITDEVANT:
+         vAvancer(DROITDEVANT);
+       break;
+    
+       case ARRET:
+         vAvancer(ARRET);
+       break;
+     }
+   #endif
+    
+   #ifdef PCF_3_CAPTEURS
+     switch(clSuiveurLigne.ucSuivreLigne())
+      {
+       case GAUCHE:
+         uiVitesseTourne = 0x0700;
+         vAvancer(GAUCHE);
+       break;
+    
+       case DROITE:
+         uiVitesseTourne = 0x0700;
+         vAvancer(DROITE);
+       break;
+ 
+       case DROITDEVANT:
+         vAvancer(DROITDEVANT);
+       break;        
+      }
+   #endif
 #endif
  }
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

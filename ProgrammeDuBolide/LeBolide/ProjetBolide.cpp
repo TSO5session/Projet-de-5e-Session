@@ -25,20 +25,18 @@
 #include "CLXBEE.h"  
 #include "CLRS232.h"
 #include "Station1.h"     // Fichier de definitions de...
+#include "CLEcran.h" 
 
 void main(void)
  { 
   class CLTest clTest;    // Declaration d'un objet de test
-  // class CLXbee XBee;
-   
-   
+     
 #ifdef DALLAS89C450   
-   class CLVehicule clVehicule;
-   class CLStation1 StationUPSD;
+   class CLVehicule Vehicule;
    
    while(1)
     {      
-      clVehicule.vControleBolide();
+      Vehicule.vControleBolide();
     }  
 #endif
    
