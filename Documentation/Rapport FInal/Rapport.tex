@@ -317,26 +317,29 @@ Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\
 \pagebreak
 \textbf{Note:} FF, c'est la checkSUM, mais elle n'a pas encore été faite \\
 \textbf{Note:} Il faut ajouter le TimeStamp 
-\begin{verbatim}
-   CAN.SendMCP("0100FF"); // Arrêté
-   CAN.SendMCP("0101FF"); // En marche
-   CAN.SendMCP("0102FF"); // Hors circuit
-   CAN.SendMCP("0264FF"); // Vitesse maximale
-   CAN.SendMCP("0364FF"); // Battrie pleine
-   CAN.SendMCP("0400FF"); // Bloc métallique
-   CAN.SendMCP("0401FF"); // Bloc noire
-   CAN.SendMCP("0402FF"); // Bloc orange
-   CAN.SendMCP("050064"); // Le bloc est lourd
-   CAN.SendMCP("0700FF"); // Rendu à la station 1
-   CAN.SendMCP("0701FF"); // Rendu à la station 2
-   CAN.SendMCP("0702FF"); // Rendu à la station 3
-\end{verbatim}
-
+\end{spacing}
+\begin{lstlisting}
+   CAN.SendToPC("0100FF"); // Arrêté
+   CAN.SendToPC("0101FF"); // En marche
+   CAN.SendToPC("0102FF"); // Hors circuit
+   CAN.SendToPC("02xxFF"); // Vitesse de xx
+   CAN.SendToPC("03xxFF"); // Battrie chargée à xx %
+   CAN.SendToPC("0400FF"); // Bloc métallique
+   CAN.SendToPC("0401FF"); // Bloc noire
+   CAN.SendToPC("0402FF"); // Bloc orange
+   CAN.SendToPC("050064"); // Le bloc est lourd
+   CAN.SendToPC("0700FF"); // Rendu à la station 1
+   CAN.SendToPC("0701FF"); // Rendu à la station 2
+   CAN.SendToPC("0702FF"); // Rendu à la station 3
+\end{lstlisting}
+\begin{spacing}{1.5}
 \pagebreak
 
 \end{spacing}
 f
 \begin{spacing}{1.5}
+
+
 \pagebreak
 
 \section{Le matériel}
@@ -361,11 +364,12 @@ Lorsque les modules Xbee sont adéquatement configurés, ils font office de remp
 
 \subsection{Explication des trames}
 \subsubsection{RS-232}
+Le protocole RS-232 sert à envoyer et à recevoir des HeartBeat. Le PC et le SOC 8200 s'envoient tous deux un HeartBeat par seconde à 9600 bauds. Un HeartBeat, c'est simplement le mot "Allo". Le PC et le SOC2800 "écoutent" les HeartBeats, et si ces derniers ne sont pas entendus, chaque dispositif prend pour acquis que l'autre est hors-service et prend la relève de la gestion du bus CAN.
 
 \subsubsection{CAN}
 
 \subsubsection{XBEE}
-
+Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station no.1 (la carte $\mu PSD$), sur la station no.2 (la table FESTO) et la station no.6, c'est à dire le bolide. La particularité des Xbee est que lorsqu'ils sont adéquatement configurés, tout ce qu'envoie un Xbee est reçu et lu par tous les autres Xbee à proximité, et c'est pourquoi nous avons définit un système de trames.
 
 
 
@@ -456,15 +460,22 @@ Le programme peut lire l'heure interne du PC et, par un simple clic sur le bouto
 \fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
 \end{figure}
 Il est possible d'utiliser des fonctionnalités CAN avancées tels que les masques et filtres de données. De plus, cette fenêtre permet de visualiser les données CAN reçues à l'état brutes et non traitées, ce qui peut s'avérer utile pour du débogage.
-
-
 \pagebreak
+
+\subsection{Gestion de l'historique}
 \begin{figure}[hbtp]
 \caption{Historique des actions}
 \centering
 \fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
 \end{figure}
 Toute action effectué via le programme ainsi que toute donnée ayant transité sur le bus CAN et RS232 est catalogué en bonne et due forme dans l'onglet historique qu'il est possible de consulter et sauvegarder à tout moment.
+
+\subsubsection{Exemple d'historique typique}
+\end{spacing}
+\begin{verbatim}
+wefsd
+\end{verbatim}
+\begin{spacing}{1.5}
 
 
 
@@ -533,16 +544,27 @@ OPT101  &  0x50 & Suiveur de ligne  \\
 \label{tab:testtab1}
 \end{table}
 
+\pagebreak
 \subsection{Procédure de compilation sur IAR}
+Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivante, afin de compiler le code pour la carte Dallas ou pour la carte $\mu$PSD. 
+
+\begin{figure}[hbtp]
+\caption{Choix de la cible sur IAR}
+\centering
+\fbox{\includegraphics[scale=1]{Figures/Procedure/procedure.png}}
+\end{figure}
+
+De plus, des paramètres de compilation optionnelle vous permettent, via la décommentation, de compiler le code pour la carte Dallasou $\mu$PSD, pour la carte d'extension I2C ou SPI et pour un capteur de ligne à 3 ou à 5 photoréccepteurs.\\
 \end{spacing}
-\begin{verbatim}
+\textbf{Appercu des directives de compilation conditionnelles}
+\begin{lstlisting}
    //#define UPSD3254A
    //#define DALLAS89C450
    //#define SPI_DALLAS
    //#define I2C_DALLAS
    //#define PCF_5_CAPTEURS
    //#define PCF_3_CAPTEURS
-\end{verbatim}
+\end{lstlisting}
 \begin{spacing}{1.5}
 \subsection{Procédure de vérification}
 
@@ -605,5 +627,8 @@ $\overbrace{9600 = \dfrac{2^{1}}{32} \cdot \dfrac{24\cdot10^{6}(Hz)}{12\cdot(256
 
 \subsubsection{Louis-Norman Ang-Houle}
 \end{spacing}
+\include{Codesource/BolideUpsd}
+\include{Codesource/cSharp}
+\include{Codesource/PIC}
 \end{document}
 

@@ -1,0 +1,1187 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        27/Oct/2014  20:17:46 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Prog\Labo6\Programme\Timer0.cpp              /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\Timer0.cpp" -D          /
+//                          UPSD3254A --preprocess=cl                         /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\List\" -lC         /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\List\" -lA         /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\List\" -o          /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\Obj\" -e --no_cse  /
+//                          --no_unroll --no_inline --no_code_motion          /
+//                          --no_tbaa --debug --core=plain --dptr=16,1        /
+//                          --data_model=large --code_model=near              /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data --nr_virtual_regs 8        /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++     /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Prog\Labo6\Programme\UPSD\List\Timer0.s51    /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME Timer0
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?UC_SWITCH_DENSE
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??ClockGenerator
+        FUNCTION ??ClockGenerator,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??CustomSpeed
+        FUNCTION ??CustomSpeed,080203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??DelayMs
+        FUNCTION ??DelayMs,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??InitTimer0
+        FUNCTION ??InitTimer0,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??Timer0
+        FUNCTION ??Timer0,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??Timer0_1
+        FUNCTION ??Timer0_1,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??delete ~Timer0`
+        FUNCTION `??delete ~Timer0`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new Timer0`
+        FUNCTION `??new Timer0`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new Timer0_1`
+        FUNCTION `??new Timer0_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~Timer0`
+        FUNCTION `?~Timer0`,0203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC DutyCycle
+        PUBWEAK TH0
+        PUBWEAK TL0
+        PUBWEAK _A_IE
+        PUBWEAK _A_P1
+        PUBWEAK _A_TCON
+        PUBWEAK _A_TMOD
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Synchro\Dropbox\Travaux\Automne 2014\Prog\Labo6\Programme\Timer0.cpp
+//    1 // **************************Timer0.cpp
+//    2 // Auteur:       Vincent Chouinard
+//    3 // Date:         24 septembre 2014
+//    4 // Version:      1.0
+//    5 // Modification: Aucune
+//    6 //
+//    7 // Compilateur:  IAR 8.1
+//    8 //
+//    9 // Description:
+//   10 // *****************************************************************************
+//   11 #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IE
+_A_IE:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08cH
+// unsigned char volatile __sfr TH0
+TH0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,088H
+// union <unnamed> volatile __sfr _A_TCON
+_A_TCON:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,089H
+// union <unnamed> volatile __sfr _A_TMOD
+_A_TMOD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr TL0
+TL0:
+        DATA8
+        DS 1
+//   12 #include "Timer0.h"
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   13 UC   DutyCycle = 0;
+DutyCycle:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant Timer0 &Timer0::new Timer0()
+`??new Timer0`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new Timer0`
+        CODE
+        FUNCALL `??new Timer0`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new Timer0`, ??Timer0
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new Timer0_2`
+        ; Setup parameters for call to function Timer0::Timer0()
+        LCALL   ??Timer0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new Timer0_3`
+`??new Timer0_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new Timer0_3`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant Timer0 &Timer0::new Timer0(UC)
+`??new Timer0_1`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??new Timer0_1`
+        CODE
+        FUNCALL `??new Timer0_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new Timer0_1`, ??Timer0_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new Timer0_4`
+        ; Setup parameters for call to function Timer0::Timer0(UC)
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??Timer0_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new Timer0_5`
+`??new Timer0_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new Timer0_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void Timer0::delete ~Timer0(Timer0 *)
+`??delete ~Timer0`:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function `??delete ~Timer0`
+        CODE
+        FUNCALL `??delete ~Timer0`, `?~Timer0`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~Timer0`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~Timer0_1`
+        ; Setup parameters for call to function Timer0::~Timer0()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~Timer0`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~Timer0_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//   14 //******************************************************************************
+//   15 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   16 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   17 Timer0 :: Timer0(void)
+??Timer0:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ??Timer0
+        CODE
+//   18 {
+        FUNCALL ??Timer0, ??InitTimer0
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//   19 InitTimer0();
+        ; Setup parameters for call to function Timer0::InitTimer0()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??InitTimer0
+//   20 }
+        MOV     R2,DPL
+        MOV     R3,DPH
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock3
+//   21 
+//   22 //******************************************************************************
+//   23 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   24 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   25 Timer0 :: Timer0(UC ucParametre)
+??Timer0_1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??Timer0_1
+        CODE
+//   26 {
+        FUNCALL ??Timer0_1, ??CustomSpeed
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R6,A
+//   27 CustomSpeed(ucParametre);
+        ; Setup parameters for call to function Timer0::CustomSpeed(UC)
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??CustomSpeed
+//   28 }
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//   29 
+//   30 
+//   31 // *****************************************************************************
+//   32 //                            LE DESTRUCTEUR
+//   33 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   34 Timer0 :: ~Timer0(void)
+`?~Timer0`:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function `?~Timer0`
+        CODE
+//   35 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   36 
+//   37 }
+        RET
+        CFI EndBlock cfiBlock5
+//   38 
+//   39 /*
+//   40 Note: La fréquence en HZ doit etre passee comme suit:
+//   41 250hz = 1sec / 250 = 0.004 sec ---> Passez 4 en parametre
+//   42 */
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   43 void Timer0 :: ClockGenerator(void)
+??ClockGenerator:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ??ClockGenerator
+        CODE
+//   44 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//   45 if(TCON_bit.TF0 == 1)     // Si flag de depassement du timer0 (default =  1ms)
+        MOV     C,0x88.5
+        JNC     ??ClockGenerator_1
+//   46   {
+//   47    TCON_bit.TF0 = 0;      // Reinitialisation du flag de depassement
+        CLR     0x88.5
+//   48    TH0          = 0xF8;   // Remet le compteur a 1ms
+        MOV     0x8c,#-0x8
+//   49    TL0          = 0x60;   // Remet le compteur a 1ms
+        MOV     0x8a,#0x60
+//   50    DutyCycle++;
+        MOV     DPTR,#DutyCycle
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+//   51    if(DutyCycle <= 3){P1_7 = HIGH;}
+        MOV     DPTR,#DutyCycle
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x4
+        JNC     ??ClockGenerator_2
+        SETB    0x90.7
+//   52    if(DutyCycle == 4){P1_7 = LOW, DutyCycle = 0;}
+??ClockGenerator_2:
+        MOV     DPTR,#DutyCycle
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JNZ     ??ClockGenerator_1
+        CLR     0x90.7
+        MOV     DPTR,#DutyCycle
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   53   }
+//   54 }
+??ClockGenerator_1:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_TCON
+        REQUIRE TH0
+        REQUIRE TL0
+        REQUIRE _A_P1
+//   55 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   56 char Timer0 :: DelayMs(void)  // retourne 1 a chaque ms
+??DelayMs:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function ??DelayMs
+        CODE
+//   57 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   58 char i;
+//   59 i = 0;                        // Dit qu'il n'y a pas d'interrupt
+        MOV     R1,#0x0
+//   60 if(TCON_bit.TF0 == 1)         // Si flag de depassement du timer0 ( a 10ms)
+        MOV     C,0x88.5
+        JNC     ??DelayMs_1
+//   61   {
+//   62    TCON_bit.TF0 = 0;          // Reinitialisation du flag de depassement
+        CLR     0x88.5
+//   63    TH0 = 0xF8;                // Remet le compteur a 1ms
+        MOV     0x8c,#-0x8
+//   64    TL0 = 0x60;                // Remet le compteur a 1ms
+        MOV     0x8a,#0x60
+//   65    i   = 1;                   // Dit qu'il y a un interrupt
+        MOV     R1,#0x1
+//   66   }
+//   67 return(i);
+??DelayMs_1:
+        RET
+        CFI EndBlock cfiBlock7
+        REQUIRE _A_TCON
+        REQUIRE TH0
+        REQUIRE TL0
+//   68 }
+//   69 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   70 void Timer0 :: InitTimer0(void)       //Initialise le timer 0 a 1ms
+??InitTimer0:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??InitTimer0
+        CODE
+//   71 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   72 EA           = 0;
+        CLR     0xa8.7
+//   73 TMOD         = (TMOD & 0xF0) | 0x01;  // timer0 en mode timer 16bit
+        MOV     A,0x89
+        ANL     A,#0xf0
+        ORL     A,#0x1
+        MOV     0x89,A
+//   74 TL0          = 0x60;                  // Initialise le timer0 a 1ms
+        MOV     0x8a,#0x60
+//   75 TH0          = 0xF8;                  // Initialise le timer0 a 1ms
+        MOV     0x8c,#-0x8
+//   76 TH0          = 0;                     // Clear le flag d'overflow du timer0
+        MOV     0x8c,#0x0
+//   77 IE_bit.ET0   = 0;                     // Desactive les interruptions timer0
+        CLR     0xa8.1
+//   78 TCON_bit.TR0 = 1;                     // Stop le timer0
+        SETB    0x88.4
+//   79 EA           = 1;                     // Enable Interrupt
+        SETB    0xa8.7
+//   80 }
+        RET
+        CFI EndBlock cfiBlock8
+        REQUIRE _A_IE
+        REQUIRE _A_TMOD
+        REQUIRE TL0
+        REQUIRE TH0
+        REQUIRE _A_TCON
+//   81 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   82 void Timer0 :: CustomSpeed(UC ucCustomMili) // Initialise un timer custom via
+??CustomSpeed:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function ??CustomSpeed
+        CODE
+//   83 {                                           // le constructeur initialisateur
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//   84 EA           = 0;                           // Desactive les interruptions
+        CLR     0xa8.7
+//   85 TMOD         = (TMOD & 0xF0) | 0x01;        // timer0 en mode timer 16bit
+        MOV     A,0x89
+        ANL     A,#0xf0
+        ORL     A,#0x1
+        MOV     0x89,A
+//   86 
+//   87 switch(ucCustomMili)//En fonction des milisecondes demandees
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for CustomSpeed>_0`:
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        1
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        24
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_10
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_11
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_12
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_13
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_14
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_15
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_17
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_18
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_19
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_20
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_21
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_22
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_23
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_24
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_25
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??CustomSpeed_26
+        CODE
+//   88   {
+//   89    case 1:
+//   90       TL0 = 0x02;   // Initialise le timer0 a 1ms
+??CustomSpeed_2:
+        MOV     0x8a,#0x2
+//   91       TH0 = 0xF8;   // Initialise le timer0 a 1ms
+        MOV     0x8c,#-0x8
+//   92    break;
+        LJMP    ??CustomSpeed_27
+//   93 
+//   94    case 2:
+//   95       TL0 = 0x05;   // Initialise le timer0 a 2ms
+??CustomSpeed_3:
+        MOV     0x8a,#0x5
+//   96       TH0 = 0xF0;   // Initialise le timer0 a 2ms
+        MOV     0x8c,#-0x10
+//   97    break;
+        LJMP    ??CustomSpeed_27
+//   98 
+//   99    case 3:
+//  100       TL0 = 0x08;   // Initialise le timer0 a 3ms
+??CustomSpeed_4:
+        MOV     0x8a,#0x8
+//  101       TH0 = 0xE8;   // Initialise le timer0 a 3ms
+        MOV     0x8c,#-0x18
+//  102    break;
+        LJMP    ??CustomSpeed_27
+//  103 
+//  104    case 4:
+//  105       TL0 = 0xBF;   // Initialise le timer0 a 4ms
+??CustomSpeed_5:
+        MOV     0x8a,#-0x41
+//  106       TH0 = 0xE0;   // Initialise le timer0 a 4ms
+        MOV     0x8c,#-0x20
+//  107    break;
+        LJMP    ??CustomSpeed_27
+//  108 
+//  109    case 5:
+//  110       TL0 = 0xEF;   // Initialise le timer0 a 5ms
+??CustomSpeed_6:
+        MOV     0x8a,#-0x11
+//  111       TH0 = 0xD8;   // Initialise le timer0 a 5ms
+        MOV     0x8c,#-0x28
+//  112    break;
+        LJMP    ??CustomSpeed_27
+//  113 
+//  114    case 6:
+//  115       TL0 = 0x1F;   // Initialise le timer0 a 6ms
+??CustomSpeed_7:
+        MOV     0x8a,#0x1f
+//  116       TH0 = 0xD1;   // Initialise le timer0 a 6ms
+        MOV     0x8c,#-0x2f
+//  117    break;
+        LJMP    ??CustomSpeed_27
+//  118 
+//  119    case 7:
+//  120       TL0 = 0x4F;   // Initialise le timer0 a 7ms
+??CustomSpeed_8:
+        MOV     0x8a,#0x4f
+//  121       TH0 = 0xC9;   // Initialise le timer0 a 7ms
+        MOV     0x8c,#-0x37
+//  122    break;
+        LJMP    ??CustomSpeed_27
+//  123 
+//  124    case 8:
+//  125       TL0 = 0x07;   // Initialise le timer0 a 8ms
+??CustomSpeed_9:
+        MOV     0x8a,#0x7
+//  126       TH0 = 0xC1;   // Initialise le timer0 a 8ms
+        MOV     0x8c,#-0x3f
+//  127    break;
+        LJMP    ??CustomSpeed_27
+//  128 
+//  129    case 9:
+//  130       TL0 = 0xAF;   // Initialise le timer0 a 9ms
+??CustomSpeed_10:
+        MOV     0x8a,#-0x51
+//  131       TH0 = 0xB9;   // Initialise le timer0 a 9ms
+        MOV     0x8c,#-0x47
+//  132    break;
+        LJMP    ??CustomSpeed_27
+//  133 
+//  134    case 10:
+//  135       TL0 = 0xDF;   // Initialise le timer0 a 10ms
+??CustomSpeed_11:
+        MOV     0x8a,#-0x21
+//  136       TH0 = 0xB1;   // Initialise le timer0 a 10ms
+        MOV     0x8c,#-0x4f
+//  137    break;
+        SJMP    ??CustomSpeed_27
+//  138 
+//  139    case 11:
+//  140       TL0 = 0x0F;   // Initialise le timer0 a 11ms
+??CustomSpeed_12:
+        MOV     0x8a,#0xf
+//  141       TH0 = 0xAA;   // Initialise le timer0 a 11ms
+        MOV     0x8c,#-0x56
+//  142    break;
+        SJMP    ??CustomSpeed_27
+//  143 
+//  144    case 12:
+//  145       TL0 = 0x3F;   // Initialise le timer0 a 12ms
+??CustomSpeed_13:
+        MOV     0x8a,#0x3f
+//  146       TH0 = 0xA2;   // Initialise le timer0 a 12ms
+        MOV     0x8c,#-0x5e
+//  147    break;
+        SJMP    ??CustomSpeed_27
+//  148 
+//  149   case 13:
+//  150       TL0 = 0x6F;   // Initialise le timer0 a 13ms
+??CustomSpeed_14:
+        MOV     0x8a,#0x6f
+//  151       TH0 = 0x9A;   // Initialise le timer0 a 13ms
+        MOV     0x8c,#-0x66
+//  152    break;
+        SJMP    ??CustomSpeed_27
+//  153 
+//  154    case 14:
+//  155       TL0 = 0x9F;   // Initialise le timer0 a 14ms
+??CustomSpeed_15:
+        MOV     0x8a,#-0x61
+//  156       TH0 = 0x92;   // Initialise le timer0 a 14ms
+        MOV     0x8c,#-0x6e
+//  157    break;
+        SJMP    ??CustomSpeed_27
+//  158 
+//  159    case 15:
+//  160       TL0 = 0xCF;   // Initialise le timer0 a 15ms
+??CustomSpeed_16:
+        MOV     0x8a,#-0x31
+//  161       TH0 = 0x8A;   // Initialise le timer0 a 15ms
+        MOV     0x8c,#-0x76
+//  162    break;
+        SJMP    ??CustomSpeed_27
+//  163 
+//  164    case 16:
+//  165       TL0 = 0xFF;   // Initialise le timer0 a 16ms
+??CustomSpeed_17:
+        MOV     0x8a,#-0x1
+//  166       TH0 = 0x82;   // Initialise le timer0 a 16ms
+        MOV     0x8c,#-0x7e
+//  167    break;
+        SJMP    ??CustomSpeed_27
+//  168 
+//  169    case 17:
+//  170       TL0 = 0x2F;   // Initialise le timer0 a 17ms
+??CustomSpeed_18:
+        MOV     0x8a,#0x2f
+//  171       TH0 = 0x7B;   // Initialise le timer0 a 17ms
+        MOV     0x8c,#0x7b
+//  172    break;
+        SJMP    ??CustomSpeed_27
+//  173 
+//  174    case 18:
+//  175       TL0 = 0x5F;   // Initialise le timer0 a 18ms
+??CustomSpeed_19:
+        MOV     0x8a,#0x5f
+//  176       TH0 = 0x73;   // Initialise le timer0 a 18ms
+        MOV     0x8c,#0x73
+//  177    break;
+        SJMP    ??CustomSpeed_27
+//  178 
+//  179    case 19:
+//  180       TL0 = 0x8F;   // Initialise le timer0 a 19ms
+??CustomSpeed_20:
+        MOV     0x8a,#-0x71
+//  181       TH0 = 0x6B;   // Initialise le timer0 a 19ms
+        MOV     0x8c,#0x6b
+//  182    break;
+        SJMP    ??CustomSpeed_27
+//  183 
+//  184    case 20:
+//  185       TL0 = 0xBF;   // Initialise le timer0 a 20ms
+??CustomSpeed_21:
+        MOV     0x8a,#-0x41
+//  186       TH0 = 0x63;   // Initialise le timer0 a 20ms
+        MOV     0x8c,#0x63
+//  187    break;
+        SJMP    ??CustomSpeed_27
+//  188 
+//  189    case 21:
+//  190       TL0 = 0xEF;   // Initialise le timer0 a 21ms
+??CustomSpeed_22:
+        MOV     0x8a,#-0x11
+//  191       TH0 = 0x5B;   // Initialise le timer0 a 21ms
+        MOV     0x8c,#0x5b
+//  192    break;
+        SJMP    ??CustomSpeed_27
+//  193 
+//  194    case 22:
+//  195       TL0 = 0x1F;   // Initialise le timer0 a 22ms
+??CustomSpeed_23:
+        MOV     0x8a,#0x1f
+//  196       TH0 = 0x54;   // Initialise le timer0 a 22ms
+        MOV     0x8c,#0x54
+//  197    break;
+        SJMP    ??CustomSpeed_27
+//  198 
+//  199    case 23:
+//  200       TL0 = 0x4F;   // Initialise le timer0 a 23ms
+??CustomSpeed_24:
+        MOV     0x8a,#0x4f
+//  201       TH0 = 0x4C;   // Initialise le timer0 a 23ms
+        MOV     0x8c,#0x4c
+//  202    break;
+        SJMP    ??CustomSpeed_27
+//  203 
+//  204    case 24:
+//  205       TL0 = 0x7F;   // Initialise le timer0 a 24ms
+??CustomSpeed_25:
+        MOV     0x8a,#0x7f
+//  206       TH0 = 0x44;   // Initialise le timer0 a 24ms
+        MOV     0x8c,#0x44
+//  207    break;
+        SJMP    ??CustomSpeed_27
+//  208 
+//  209    case 25:
+//  210       TL0 = 0xAF;   // Initialise le timer0 a 25ms
+??CustomSpeed_26:
+        MOV     0x8a,#-0x51
+//  211       TH0 = 0x3C;   // Initialise le timer0 a 25ms
+        MOV     0x8c,#0x3c
+//  212    break;
+        SJMP    ??CustomSpeed_27
+//  213 
+//  214    default:
+//  215       TL0 = 0x60;   // Initialise le timer0 a 1ms
+??CustomSpeed_1:
+        MOV     0x8a,#0x60
+//  216       TH0 = 0xF8;   // Initialise le timer0 a 1ms
+        MOV     0x8c,#-0x8
+//  217    break;
+//  218 }
+//  219 TH0          = 0;   // Clear le flag d'overflow du timer0
+??CustomSpeed_27:
+        MOV     0x8c,#0x0
+//  220 IE_bit.ET0   = 0;   // Desactive les interruptions timer0
+        CLR     0xa8.1
+//  221 TCON_bit.TR0 = 1;   // Stop le timer0
+        SETB    0x88.4
+//  222 EA           = 1;   // Enable Interrupt
+        SETB    0xa8.7
+//  223 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock9
+        REQUIRE _A_IE
+        REQUIRE _A_TMOD
+        REQUIRE TL0
+        REQUIRE TH0
+        REQUIRE _A_TCON
+
+        END
+//  224 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+// 587 bytes in segment NEAR_CODE
+//   6 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_Z
+// 
+// 587 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 6 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

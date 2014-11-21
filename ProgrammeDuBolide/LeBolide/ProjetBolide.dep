@@ -2,1402 +2,818 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>747352915</fileChecksum>
+  <fileChecksum>2418133065</fileChecksum>
   <configuration>
     <name>DS89C450</name>
     <outputs>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLRoue.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLTest.r51</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
-      <file>$PROJ_DIR$\..\Source\CLADCMAX1236.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLInOutBase.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLInOutBase.r51</file>
-      <file>$PROJ_DIR$\..\Source\CLRoue.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLClavier.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Exe\ProjetBolide.hex</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLCapteurDistance.r51</file>
-      <file>$PROJ_DIR$\CANBUS.h</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\TypeCible.h</file>
-      <file>$PROJ_DIR$\CLDAC6574.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-      <file>$TOOLKIT_DIR$\inc\ioUPSD3254A.h</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLEcran.h</file>
-      <file>$PROJ_DIR$\..\Source\CLI2CPort.Cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\Conversions.pbi</file>
-      <file>$PROJ_DIR$\CLInOutBase.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLI2CBase.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLInclinometre.r51</file>
-      <file>$PROJ_DIR$\..\Source\CLLimiteVitesse.cpp</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01.r51</file>
-      <file>$PROJ_DIR$\CLRoue.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLI2CPort.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLTLV2544.r51</file>
-      <file>$PROJ_DIR$\Conversions.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC7554.r51</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLPWMuPSD.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLPile.r51</file>
-      <file>$PROJ_DIR$\..\Source\CLTest.cpp</file>
-      <file>$PROJ_DIR$\CLCapteurDistance.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CANBUS.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\_DeclarationGenerale.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLLimiteVitesse.r51</file>
-      <file>$PROJ_DIR$\CLDAC7554.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLMCP23S09.pbi</file>
-      <file>$PROJ_DIR$\CLPile.h</file>
-      <file>$PROJ_DIR$\..\Source\CLHorloge1307.Cpp</file>
-      <file>$PROJ_DIR$\CLClavier.h</file>
-      <file>$PROJ_DIR$\CLSerialPortInterface.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLCommunicCom2.pbi</file>
-      <file>$PROJ_DIR$\..\Header\TypeCible.h</file>
-      <file>$PROJ_DIR$\MCP2515.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLReception.r51</file>
-      <file>$PROJ_DIR$\..\Source\CLClavier.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLIOPCF8574.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLLimiteVitesse.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLInclinometre.pbi</file>
-      <file>$PROJ_DIR$\..\Source\CLADCuPSD.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLClavier.pbi</file>
-      <file>$PROJ_DIR$\..\Header\DeclarationGenerale.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CANBUS.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\ProjetBolide.pbd</file>
-      <file>$PROJ_DIR$\CLMCP23S09.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLI2CBase.pbi</file>
-      <file>$PROJ_DIR$\..\Source\CLCommunicCom2.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLVehicule.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLSuiveurLigne.pbi</file>
-      <file>$PROJ_DIR$\CLADCMAX1236.h</file>
-      <file>$PROJ_DIR$\CLPWMuPSD.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\ProjetBolide.r51</file>
-      <file>$PROJ_DIR$\CLClavier.cpp</file>
-      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
-      <file>$PROJ_DIR$\..\Source\CLInclinometre.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\Laboratoire.r51</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLADCuPSD.h</file>
-      <file>$PROJ_DIR$\..\_Ver810_lnk51ew_DS89C450.xcl</file>
-      <file>$PROJ_DIR$\CLCapteurDistance.h</file>
-      <file>$PROJ_DIR$\CLInclinometre.h</file>
-      <file>$PROJ_DIR$\TypeCible.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLADCMAX1236.r51</file>
-      <file>$PROJ_DIR$\..\Source\CLCapteurDistance.cpp</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\ConversionKeilToIAR.h</file>
-      <file>$PROJ_DIR$\..\Source\CLEcran.cpp</file>
-      <file>$PROJ_DIR$\CLTest.h</file>
-      <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLPWMuPSD.pbi</file>
-      <file>$PROJ_DIR$\CLXBEE.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\ProjetBolide.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLVehicule.pbi</file>
-      <file>$PROJ_DIR$\CLADCuPSD.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLTelecommande.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLHorloge1307.r51</file>
-      <file>$PROJ_DIR$\..\Header\CLreception.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLInOutBase.pbi</file>
-      <file>$PROJ_DIR$\CLCommunicCom2.h</file>
-      <file>$PROJ_DIR$\CLLimiteVitesse.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\Conversions.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC7554.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLIOPCF8574.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Exe\DallasProjetBolide.hex</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLHorloge1307.pbi</file>
-      <file>$PROJ_DIR$\Laboratoire.h</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLInclinometre.h</file>
+      <file>$PROJ_DIR$\_Source\CANBUS.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLRoue.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLADCMAX1236.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLDAC6574.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLDAC7554.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLRS232.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLI2CBase.Cpp</file>
+      <file>$PROJ_DIR$\_Source\CLI2CPort.Cpp</file>
+      <file>$PROJ_DIR$\_Source\CLInOutBase.cpp</file>
       <file>$PROJ_DIR$\DS89C450\Obj\CLI2CPort.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\Station1.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLXBEE.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC6574.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLCommunicCom2.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLADCuPSD.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLTest.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLEcran.pbi</file>
-      <file>$PROJ_DIR$\CLCommunicCom2.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLPile.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-      <file>$PROJ_DIR$\CLHorloge1307.h</file>
-      <file>$PROJ_DIR$\DeclarationGenerale.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-      <file>$PROJ_DIR$\CLIOPCF8574.h</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLClavier.h</file>
-      <file>$PROJ_DIR$\..\Source\CLPWMuPSD.cpp</file>
-      <file>$PROJ_DIR$\CLSuiveurLigne.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLRoue.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLSerialPortInterface.pbi</file>
-      <file>$PROJ_DIR$\..\Source\CLReception.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC6574.pbi</file>
-      <file>$PROJ_DIR$\..\Source\CLDAC6574.cpp</file>
-      <file>$PROJ_DIR$\CLTelecommande.cpp</file>
-      <file>$PROJ_DIR$\CLEcran.h</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLInOutBase.h</file>
-      <file>$PROJ_DIR$\CLTelecommande.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLTelecommande.r51</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLCommunicCom2.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLSerialPortInterface.r51</file>
-      <file>$PROJ_DIR$\..\Source\CLSuiveurLigne.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLRS232.pbi</file>
-      <file>$PROJ_DIR$\..\Header\ConversionKeilToIAR.h</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLTelecommande.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLVehicule.cpp</file>
-      <file>$PROJ_DIR$\..\Source\ProjetBolide.cpp</file>
-      <file>$PROJ_DIR$\ioDS89C450.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLPWMuPSD.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLADCMAX1236.pbi</file>
-      <file>$PROJ_DIR$\CLI2CPort.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLCapteurDistance.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLRS232.r51</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLCommunicCom2.h</file>
-      <file>$PROJ_DIR$\CLInclinometre.cpp</file>
-      <file>$PROJ_DIR$\Laboratoire.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLEcran.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLMCP23S09.r51</file>
-      <file>$PROJ_DIR$\..\Source\CLI2CBase.Cpp</file>
-      <file>$PROJ_DIR$\CLTLV2544.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLTLV2544.pbi</file>
-      <file>$PROJ_DIR$\Station1.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLReception.pbi</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLXBEE.r51</file>
-      <file>$PROJ_DIR$\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\_Header\CLDAC6574.h</file>
+      <file>$PROJ_DIR$\_Header\CLRoue.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
       <file>$PROJ_DIR$\DS89C450\Obj\CLADCuPSD.r51</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLIOPCF8574.r51</file>
-      <file>$PROJ_DIR$\Conversions.h</file>
-      <file>$PROJ_DIR$\..\Source\CLTelecommande.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\CLPile.pbi</file>
-      <file>$PROJ_DIR$\..\_TEMP\CLComm2\CLTelecommande.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLCommunicCom2.r51</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$PROJ_DIR$\_Source\ProjetBolide.cpp</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\_Header\CLSuiveurLigne.h</file>
+      <file>$PROJ_DIR$\_Header\CLVehicule.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLPile.r51</file>
+      <file>$PROJ_DIR$\_Header\CLIOPCF8574.h</file>
+      <file>$PROJ_DIR$\_Header\CLADCMAX1236.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLInclinometre.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\ProjetBolide.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\_Source\CLCapteurDistance.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\_Source\CLInclinometre.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
       <file>$PROJ_DIR$\DS89C450\Obj\CLSuiveurLigne.r51</file>
-      <file>$PROJ_DIR$\CLTLV2544.cpp</file>
-      <file>$PROJ_DIR$\CLMCP23S09.cpp</file>
-      <file>$PROJ_DIR$\CLSerialPortInterface.cpp</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\Station1.r51</file>
-      <file>$PROJ_DIR$\CLRoue.cpp</file>
-      <file>$PROJ_DIR$\CLRS232.h</file>
-      <file>$PROJ_DIR$\CLVehicule.h</file>
-      <file>$PROJ_DIR$\CLIOPCF8574.cpp</file>
-      <file>$PROJ_DIR$\CLPile.cpp</file>
-      <file>$PROJ_DIR$\_Ver810_lnk51ew_DS89C450.xcl</file>
-      <file>$PROJ_DIR$\DS89C450\Obj\Laboratoire.pbi</file>
-      <file>$PROJ_DIR$\CLRS232.cpp</file>
-      <file>$PROJ_DIR$\CLSuiveurLigne.cpp</file>
-      <file>$PROJ_DIR$\CLVehicule.cpp</file>
-      <file>$PROJ_DIR$\CLXBEE.cpp</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLRoue.r51</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLSerialPortInterface.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLLimiteVitesse.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLCapteurDistance.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLRoue.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLEcran.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLVehicule.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLI2CBase.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\_Source\CLIOPCF8574.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLMCP23S09.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLXBEE.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLTest.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLSuiveurLigne.cpp</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLLimiteVitesse.r51</file>
+      <file>$PROJ_DIR$\_Source\CLTLV2544.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLVehicule.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLClavier.cpp</file>
+      <file>$PROJ_DIR$\_Source\Laboratoire.cpp</file>
+      <file>$PROJ_DIR$\_Source\Station1.cpp</file>
+      <file>$PROJ_DIR$\_Header\DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLCommunicCom2.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLInOutBase.h</file>
+      <file>$PROJ_DIR$\DS89C450\Exe\DallasProjetBolide.hex</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\ProjetBolide.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLADCMAX1236.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLTLV2544.pbi</file>
+      <file>$PROJ_DIR$\_Header\Laboratoire.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC7554.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLMCP23S09.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLMCP23S09.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLPile.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLTelecommande.r51</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\CLTest.cpp</file>
-      <file>$PROJ_DIR$\CLPWMuPSD.cpp</file>
-      <file>$PROJ_DIR$\Station1.cpp</file>
-      <file>$PROJ_DIR$\ProjetBolide.h</file>
-      <file>$PROJ_DIR$\ProjetBolide.cpp</file>
-      <file>$PROJ_DIR$\CLI2CBase.Cpp</file>
-      <file>$PROJ_DIR$\CLDAC7554.cpp</file>
-      <file>$PROJ_DIR$\CLEcran.cpp</file>
-      <file>$PROJ_DIR$\CLI2CPort.Cpp</file>
-      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
-      <file>$PROJ_DIR$\CLADCuPSD.cpp</file>
-      <file>$PROJ_DIR$\CANBUS.cpp</file>
-      <file>$PROJ_DIR$\CLADCMAX1236.cpp</file>
-      <file>$PROJ_DIR$\CLDAC6574.cpp</file>
-      <file>$PROJ_DIR$\CLHorloge1307.Cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\_Source\CLPile.cpp</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLI2CBase.r51</file>
+      <file>$PROJ_DIR$\_Header\CLEcran.h</file>
+      <file>$PROJ_DIR$\_Header\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\_Header\TypeCible.h</file>
+      <file>$PROJ_DIR$\_Header\CLI2CPort.H</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLTelecommande.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLIOPCF8574.r51</file>
+      <file>$PROJ_DIR$\_Header\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLClavier.h</file>
+      <file>$PROJ_DIR$\_Header\CLTest.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLCapteurDistance.r51</file>
+      <file>$PROJ_DIR$\_Header\CLDAC7554.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLInclinometre.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLTLV2544.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLPWMuPSD.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLMCP23S09.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC7554.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLVehicule.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\ProjetBolide.pbd</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\Laboratoire.r51</file>
+      <file>$PROJ_DIR$\_Source\CLCommunicCom2.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLLimiteVitesse.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLTelecommande.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLPWMuPSD.cpp</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLSuiveurLigne.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\Laboratoire.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLI2CPort.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLADCuPSD.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLSerialPortInterface.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLIOPCF8574.pbi</file>
+      <file>$PROJ_DIR$\_Source\CLADCuPSD.cpp</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLSerialPortInterface.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC6574.r51</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLDAC6574.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLTLV2544.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLADCMAX1236.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLADCuPSD.h</file>
+      <file>$PROJ_DIR$\_Header\MCP2515.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLClavier.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLPWMuPSD.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLClavier.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLRS232.h</file>
+      <file>$PROJ_DIR$\_Header\CLInclinometre.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CANBUS.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CANBUS.r51</file>
+      <file>$PROJ_DIR$\_Header\CLXBEE.h</file>
+      <file>$PROJ_DIR$\_Header\CLPWMuPSD.h</file>
+      <file>$PROJ_DIR$\_Header\CLCommunicCom2.h</file>
+      <file>$PROJ_DIR$\_Header\ProjetBolide.h</file>
+      <file>$PROJ_DIR$\_Header\CLTelecommande.h</file>
+      <file>$PROJ_DIR$\..\..\_Ver810_lnk51ew_DS89C450.xcl</file>
+      <file>$PROJ_DIR$\_Header\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\_Header\CANBUS.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLXBEE.r51</file>
+      <file>$PROJ_DIR$\_Header\Station1.h</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLXBEE.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\Station1.r51</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\Station1.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLRS232.pbi</file>
+      <file>$PROJ_DIR$\DS89C450\Obj\CLRS232.r51</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLADCMAX1236.cpp</name>
+      <name>$PROJ_DIR$\_Source\CANBUS.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 73</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 136</file>
+          <file> 123</file>
         </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLInOutBase.cpp</name>
-      <outputs>
         <tool>
           <name>ICC8051</name>
-          <file> 5</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 88</file>
+          <file> 124</file>
         </tool>
       </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLRoue.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 0</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 116</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\DS89C450\Exe\ProjetBolide.hex</name>
       <inputs>
         <tool>
-          <name>XLINK</name>
-          <file> 69 73 152 9 7 102 101 143 86 20 98 153 5 21 36 135 30 46 0 160 125 1 59 63 23</file>
+          <name>BICOMP</name>
+          <file> 56 77 31 76 132 104 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 56 77 31 76 132 104 116</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLI2CPort.Cpp</name>
+      <name>$PROJ_DIR$\_Source\CLRoue.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 98</file>
+          <name>BICOMP</name>
+          <file> 38</file>
         </tool>
         <tool>
+          <name>ICC8051</name>
+          <file> 33</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
           <name>BICOMP</name>
+          <file> 13 56 77 31 76 86 104 12 78 81</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 13 56 77 31 76 86 104 12 78 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 105</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75 56 77 31 76 58</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 75 56 77 31 76 58</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLADCMAX1236.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 113</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24 56 77 31 76 78 81</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 24 56 77 31 76 78 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLDAC6574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 111</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 109</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 56 77 31 76 78 81</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 12 56 77 31 76 78 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLDAC7554.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 86 56 77 31 76 104</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 86 56 77 31 76 104</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLRS232.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 138</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 139</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 56 77 31 76</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 121 56 77 31 76</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 114</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 131 78 56 77 31 76 81</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 131 78 56 77 31 76 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLI2CBase.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 81 56 77 31 76</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLI2CPort.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78 56 77 31 76 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58 56 77 31 76</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 58 56 77 31 76</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\ProjetBolide.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 128 56 77 31 76 17 68 40 71 34 29 14 110 72 70 129 75 58 122 126 115 83 127 131 78 81 21 13 86 104 12 20 65 23 84 112</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 128 56 77 31 76 17 68 40 71 34 29 14 110 72 70 129 75 58 122 126 115 83 127 131 78 81 21 13 86 104 12 20 65 23 84 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLCapteurDistance.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 85</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLInclinometre.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
           <file> 25</file>
         </tool>
       </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLLimiteVitesse.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLIOPCF8574.cpp</name>
       <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 36</file>
-        </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 49</file>
+          <file> 106</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23 56 77 31 76 78 81</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 23 56 77 31 76 78 81</file>
+        </tool>
+      </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\Conversions.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLMCP23S09.cpp</name>
       <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
         <tool>
           <name>ICC8051</name>
           <file> 91</file>
         </tool>
+      </outputs>
+      <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 18</file>
+          <file> 65 56 77 31 76 104</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 56 77 31 76 104</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 108</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104 56 77 31 76</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 104 56 77 31 76</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLXBEE.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 135</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 133</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56 77 31 76 125 121</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 56 77 31 76 125 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 87</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84 56 77 31 76 58 75 12 78 81 24 23 21 13 86 104 20 65</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 84 56 77 31 76 58 75 12 78 81 24 23 21 13 86 104 20 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLSuiveurLigne.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 56 77 31 76 65 104 23 78 81</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 20 56 77 31 76 65 104 23 78 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLTLV2544.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 89</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICC8051</name>
-          <file> 110 72 78 65 154</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 110 72 78 65 154</file>
+          <file> 112 56 77 31 76 104</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLTest.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLVehicule.cpp</name>
       <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 1</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 104</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLCapteurDistance.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 9</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 138</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 70 110 72 78 65 13 14 111 176 2 34 79 156 159 108 61 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 70 110 72 78 65 13 14 111 176 34 79 156 159 108 61 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLHorloge1307.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 86</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 95</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLClavier.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 52</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLIOPCF8574.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 153</file>
-        </tool>
         <tool>
           <name>BICOMP</name>
           <file> 93</file>
         </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLADCuPSD.cpp</name>
-      <outputs>
         <tool>
           <name>ICC8051</name>
-          <file> 152</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 103</file>
+          <file> 41</file>
         </tool>
       </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\DS89C450\Obj\ProjetBolide.pbd</name>
       <inputs>
         <tool>
-          <name>BILINK</name>
-          <file> 33 136 103 119 92 105 95 57 25 93 88 38 80 157 129 116 117 60 147 104 83 100 82 99</file>
+          <name>BICOMP</name>
+          <file> 21 56 77 31 76 75 58 13 86 104 12 78 81 20 65 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 21 56 77 31 76 75 58 13 86 104 12 78 81 20 65 23</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLCommunicCom2.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLClavier.cpp</name>
       <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117</file>
+        </tool>
         <tool>
           <name>ICC8051</name>
-          <file> 102</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43</file>
+          <file> 119</file>
         </tool>
       </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLClavier.cpp</name>
-      <outputs>
+      <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 52</file>
+          <file> 83 56 77 31 76 17 68 40 71 34 29 14 110 72 70 58</file>
         </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLInclinometre.cpp</name>
-      <outputs>
         <tool>
           <name>ICC8051</name>
-          <file> 21</file>
+          <file> 83 56 77 31 76 17 68 40 71 34 29 14 110 72 70 58</file>
         </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 50</file>
-        </tool>
-      </outputs>
+      </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLCapteurDistance.cpp</name>
+      <name>$PROJ_DIR$\_Source\Laboratoire.cpp</name>
       <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 101</file>
+        </tool>
         <tool>
           <name>ICC8051</name>
-          <file> 9</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 138</file>
+          <file> 95</file>
         </tool>
       </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLEcran.cpp</name>
-      <outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 56 77 31 76 84 58 75 12 78 81 24 23 21 13 86 104 20 65 128 134 125 121 131 132 116</file>
+        </tool>
         <tool>
           <name>ICC8051</name>
-          <file> 143</file>
+          <file> 63 56 77 31 76 84 58 75 12 78 81 24 23 21 13 86 104 20 65 128 134 125 121 131 132 116</file>
         </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 105</file>
-        </tool>
-      </outputs>
+      </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\CLLimiteVitesse.cpp</name>
+      <name>$PROJ_DIR$\_Source\Station1.cpp</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 49</file>
+          <file> 137</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 136</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56 77 31 76 134 125 121 75 58 131 78 81 132 104 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 56 77 31 76 134 125 121 75 58 131 78 81 132 104 116</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\DS89C450\Exe\DallasProjetBolide.hex</name>
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 170 54 73 152 101 28 143 86 20 98 153 5 144 135 30 139 0 127 160 26 1 59 150 63 164 23</file>
+          <file> 130 124 113 109 92 105 19 74 11 80 43 91 139 33 35 32 89 87 41 133 95 136 27</file>
         </tool>
       </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLPile.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 67</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLCommunicCom2.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLLimiteVitesse.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLTelecommande.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLPWMuPSD.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 118</file>
+        </tool>
+      </outputs>
     </file>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 94</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLCommunicCom2.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 102</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 89 110 72 78 65 13 14 111 176 2 34 79 156 159 108 122 19</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 89 110 72 78 65 13 14 111 176 34 79 156 159 108 122 19</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLPile.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 30</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 157</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLPWMuPSD.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 135</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 80</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLReception.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 46</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 149</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 53 44 78 130 13 14 111 176 2 34 79 156 159 108 87</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLDAC6574.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 101</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 119</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLTelecommande.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 85</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 124 110 72 78 65 13 14 111 176 2 34 79 156 159 108 122 19 71 62 84 41 89 109 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 124 110 72 78 65 13 14 111 176 34 79 156 159 108 122 19 71 62 84 41 89 109 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\_TEMP\CLComm2\CLCommunicCom2.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 102</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 140 35 11 15 75</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLSuiveurLigne.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 160</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 60</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\_TEMP\CLComm2\CLTelecommande.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 125</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 85</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 158 35 11 15 75 16 123 97 29 68 113 140</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLVehicule.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
           <file> 59</file>
         </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 83</file>
-        </tool>
       </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\ProjetBolide.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLADCuPSD.cpp</name>
       <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 63</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 82</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLInclinometre.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 21</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 50</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 110 72 78 65 13 14 111 176 2 34 79 156 159 108 71 62 122 19 84</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 110 72 78 65 13 14 111 176 34 79 156 159 108 71 62 122 19 84</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Laboratoire.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 67</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 171</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 96 110 72 78 65 13 14 111 176 2 34 79 156 159 108 77 19 122 37 42 146 56 167 24 12 137 151 115 112</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 96 110 72 78 65 13 14 111 176 34 79 156 159 108 77 19 122 37 42 146 56 167 24 12 137 151 115 112</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLI2CBase.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 20</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 57</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLTelecommande.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 125</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 85</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLTLV2544.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 26</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 147</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 146 110 72 134 65 42</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 146 110 72 134 65 42</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLMCP23S09.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 144</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 56 110 72 134 65 42</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 56 110 72 134 65 42</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLSerialPortInterface.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 127</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 117</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 42 110 72 134 65</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 42 110 72 134 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLRoue.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 0</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 116</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 24 110 72 134 65 37 42 12 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 24 110 72 134 65 37 42 12 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 153</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 93</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 112 110 72 134 65 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 112 110 72 134 65 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLPile.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 30</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 157</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 39 110 72 134 65 61 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 39 110 72 134 65 61 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLRS232.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 139</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 129</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 166 110 72 134 65</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 166 110 72 134 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLSuiveurLigne.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 160</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 60</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 115 110 72 134 65 56 42 112 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 115 110 72 134 65 56 42 112 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLVehicule.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 59</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 83</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 167 110 72 134 65 122 19 24 37 42 12 137 151 115 56 112</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 167 110 72 134 65 122 19 24 37 42 12 137 151 115 56 112</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLXBEE.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 150</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 100</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 110 72 134 65 81 166</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 110 72 134 65 81 166</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLTest.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 1</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 104</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 77 110 72 134 65 19 122 37 42 146 56 167 24 12 137 151 115 112</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 77 110 72 134 65 19 122 37 42 146 56 167 24 12 137 151 115 112</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLPWMuPSD.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 135</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 80</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 62 110 72 134 65 122 19</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 62 110 72 134 65 122 19</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Station1.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 164</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 99</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 110 72 134 65 148 81 166 122 19 109 137 151 10 42 45</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 110 72 134 65 148 81 166 122 19 109 137 151 10 42 45</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\ProjetBolide.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 63</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 82</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 72 134 180 110 65 167 122 19 24 37 42 12 137 151 115 56 112 77 146 81 166 148 109 10 45</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 72 134 180 110 65 167 122 19 24 37 42 12 137 151 115 56 112 77 146 81 166 148 109 10 45</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLI2CBase.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 20</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 57</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 151 110 72 134 65</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 151 110 72 134 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLDAC7554.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 28</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 92</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 37 110 72 134 65 42</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37 110 72 134 65 42</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLEcran.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 143</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 105</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 110 72 134 65 19</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 110 72 134 65 19</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLI2CPort.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 98</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 25</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 137 110 72 134 65 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 137 110 72 134 65 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 5</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 88</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 19 110 72 134 65</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 19 110 72 134 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLADCuPSD.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 152</file>
-        </tool>
         <tool>
           <name>BICOMP</name>
           <file> 103</file>
         </tool>
-      </outputs>
-      <inputs>
         <tool>
           <name>ICC8051</name>
-          <file> 84 110 72 134 65</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 84 110 72 134 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CANBUS.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 54</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 33</file>
+          <file> 15</file>
         </tool>
       </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 110 72 134 65 10 42 45</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 110 72 134 65 10 42 45</file>
-        </tool>
-      </inputs>
     </file>
-    <file>
-      <name>$PROJ_DIR$\CLADCMAX1236.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 73</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 136</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 61 110 72 134 65 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 61 110 72 134 65 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLDAC6574.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 101</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 119</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 12 110 72 134 65 137 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 12 110 72 134 65 137 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLHorloge1307.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 86</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 95</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 109 137 110 72 134 65 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 109 137 110 72 134 65 151</file>
-        </tool>
-      </inputs>
-    </file>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLADCMAX1236.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLInOutBase.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLRoue.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLI2CPort.Cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLLimiteVitesse.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLTest.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLHorloge1307.Cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLClavier.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLIOPCF8574.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLADCuPSD.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLCommunicCom2.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLInclinometre.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLCapteurDistance.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLEcran.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLPile.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLPWMuPSD.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLDAC6574.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLSuiveurLigne.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLVehicule.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\ProjetBolide.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLI2CBase.Cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\..\Source\CLTelecommande.cpp</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\main.cpp</file>
       <file>$PROJ_DIR$\Debug\Obj\main.r51</file>
+      <file>$PROJ_DIR$\main.cpp</file>
       <file>$PROJ_DIR$\Debug\Exe\ProjetBolide.d51</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
     </outputs>
-    <file>
-      <name>$PROJ_DIR$\main.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 2</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 0</file>
-        </tool>
-      </outputs>
-    </file>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>XLINK</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
           <file> 3</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0</file>
         </tool>
       </outputs>
     </file>
@@ -1409,231 +825,567 @@
   <configuration>
     <name>UPSD3254A</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
-      <file>$PROJ_DIR$\..\Source\CLADCMAX1236.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLInOutBase.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLRoue.cpp</file>
-      <file>$PROJ_DIR$\CANBUS.h</file>
-      <file>$PROJ_DIR$\CLDAC6574.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-      <file>$TOOLKIT_DIR$\inc\ioUPSD3254A.h</file>
-      <file>$PROJ_DIR$\..\Source\CLI2CPort.Cpp</file>
-      <file>$PROJ_DIR$\CLInOutBase.h</file>
-      <file>$PROJ_DIR$\..\Source\CLLimiteVitesse.cpp</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01.r51</file>
-      <file>$PROJ_DIR$\CLRoue.h</file>
-      <file>$PROJ_DIR$\..\Source\CLTest.cpp</file>
-      <file>$PROJ_DIR$\CLCapteurDistance.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\CLDAC7554.h</file>
-      <file>$PROJ_DIR$\CLPile.h</file>
-      <file>$PROJ_DIR$\..\Source\CLHorloge1307.Cpp</file>
-      <file>$PROJ_DIR$\CLClavier.h</file>
-      <file>$PROJ_DIR$\CLSerialPortInterface.h</file>
-      <file>$PROJ_DIR$\..\Header\TypeCible.h</file>
-      <file>$PROJ_DIR$\MCP2515.h</file>
-      <file>$PROJ_DIR$\..\Source\CLClavier.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLIOPCF8574.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLADCuPSD.cpp</file>
-      <file>$PROJ_DIR$\..\Header\DeclarationGenerale.h</file>
-      <file>$PROJ_DIR$\CLMCP23S09.h</file>
-      <file>$PROJ_DIR$\..\Source\CLCommunicCom2.cpp</file>
-      <file>$PROJ_DIR$\CLADCMAX1236.h</file>
-      <file>$PROJ_DIR$\CLPWMuPSD.h</file>
-      <file>$PROJ_DIR$\CLClavier.cpp</file>
-      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
-      <file>$PROJ_DIR$\..\Source\CLInclinometre.cpp</file>
-      <file>$PROJ_DIR$\CLCapteurDistance.h</file>
-      <file>$PROJ_DIR$\CLInclinometre.h</file>
-      <file>$PROJ_DIR$\TypeCible.h</file>
-      <file>$PROJ_DIR$\..\Source\CLCapteurDistance.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLEcran.cpp</file>
-      <file>$PROJ_DIR$\CLTest.h</file>
-      <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
+      <file>$PROJ_DIR$\_Source\CANBUS.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLRoue.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLADCMAX1236.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLDAC6574.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLDAC7554.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLRS232.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLHorloge1307.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLI2CBase.Cpp</file>
+      <file>$PROJ_DIR$\_Source\CLI2CPort.Cpp</file>
+      <file>$PROJ_DIR$\_Source\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\_Header\CLDAC6574.h</file>
+      <file>$PROJ_DIR$\_Header\CLRoue.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-      <file>$PROJ_DIR$\CLXBEE.h</file>
-      <file>$PROJ_DIR$\CLADCuPSD.h</file>
-      <file>$PROJ_DIR$\..\Header\CLreception.h</file>
-      <file>$PROJ_DIR$\CLCommunicCom2.h</file>
-      <file>$PROJ_DIR$\CLLimiteVitesse.cpp</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLClavier.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\ProjetBolide.r51</file>
-      <file>$PROJ_DIR$\..\Header\CLClavier.h</file>
-      <file>$PROJ_DIR$\..\Header\CLCapteurDistance.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLIOPCF8574.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLRoue.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLHorloge1307.pbi</file>
-      <file>$PROJ_DIR$\..\Header\CLTelecommande.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\ProjetBolide.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\ProjetBolide.pbd</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLADCMAX1236.pbi</file>
-      <file>$PROJ_DIR$\..\Header\CLCommunicCom2.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLClavier.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\Station1.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLRS232.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPWMuPSD.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLReception.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLLimiteVitesse.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLHorloge1307.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPWMuPSD.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLDAC7554.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPile.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Exe\uPSDProjetBolide.hex</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTLV2544.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\Station1.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCapteurDistance.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Exe\ProjetBolide.hex</file>
-      <file>$PROJ_DIR$\..\Header\CLSuiveurLigne.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CANBUS.pbi</file>
-      <file>$PROJ_DIR$\..\Header\CLTest.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLXBEE.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLSuiveurLigne.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLSerialPortInterface.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCapteurDistance.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLLimiteVitesse.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLRoue.r51</file>
-      <file>$PROJ_DIR$\..\Header\CLI2CBase.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTest.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLSerialPortInterface.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CBase.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTelecommande.pbi</file>
-      <file>$PROJ_DIR$\..\Header\CLDAC6574.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLMCP23S09.pbi</file>
-      <file>$PROJ_DIR$\..\Header\ProjetBolide.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$PROJ_DIR$\_Source\ProjetBolide.cpp</file>
+      <file>$PROJ_DIR$\_Header\CLSuiveurLigne.h</file>
+      <file>$PROJ_DIR$\_Header\CLVehicule.h</file>
+      <file>$PROJ_DIR$\_Header\CLIOPCF8574.h</file>
+      <file>$PROJ_DIR$\_Header\CLADCMAX1236.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\_Source\CLCapteurDistance.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\_Source\CLInclinometre.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl8051Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\_Source\CLIOPCF8574.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLMCP23S09.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLXBEE.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLTest.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLSuiveurLigne.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLTLV2544.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLVehicule.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLClavier.cpp</file>
+      <file>$PROJ_DIR$\_Source\Laboratoire.cpp</file>
+      <file>$PROJ_DIR$\_Source\Station1.cpp</file>
+      <file>$PROJ_DIR$\_Header\DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\_Header\CLInOutBase.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\_Source\CLPile.cpp</file>
+      <file>$PROJ_DIR$\_Header\CLEcran.h</file>
+      <file>$PROJ_DIR$\_Header\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\_Header\TypeCible.h</file>
+      <file>$PROJ_DIR$\_Header\CLI2CPort.H</file>
+      <file>$PROJ_DIR$\_Header\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\_Header\CLClavier.h</file>
+      <file>$PROJ_DIR$\_Header\CLTest.h</file>
+      <file>$PROJ_DIR$\_Source\CLCommunicCom2.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLLimiteVitesse.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLTelecommande.cpp</file>
+      <file>$PROJ_DIR$\_Source\CLPWMuPSD.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLADCMAX1236.r51</file>
+      <file>$PROJ_DIR$\_Source\CLADCuPSD.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\_Header\CLADCuPSD.h</file>
+      <file>$PROJ_DIR$\_Header\CLInclinometre.h</file>
+      <file>$PROJ_DIR$\_Header\CLPWMuPSD.h</file>
+      <file>$PROJ_DIR$\_Header\CLCommunicCom2.h</file>
+      <file>$PROJ_DIR$\_Header\ProjetBolide.h</file>
+      <file>$PROJ_DIR$\_Header\CLTelecommande.h</file>
+      <file>$PROJ_DIR$\_Header\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLReception.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLIOPCF8574.r51</file>
+      <file>$PROJ_DIR$\_Source\&lt;invalid loc&gt;</file>
+      <file>$PROJ_DIR$\CLTest.h</file>
       <file>$PROJ_DIR$\UPSD3254A\Obj\CLInclinometre.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTelecommande.r51</file>
+      <file>$PROJ_DIR$\..\Header\CLADCMAX1236.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Exe\uPSDProjetBolide.hex</file>
+      <file>$PROJ_DIR$\..\Header\CLLimiteVitesse.h</file>
+      <file>$PROJ_DIR$\..\_Ver810_lnk51ew_uPSD3254A.xcl</file>
+      <file>$PROJ_DIR$\..\Header\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLSuiveurLigne.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLEcran.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLLimiteVitesse.pbi</file>
+      <file>$PROJ_DIR$\..\Header\CLRoue.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\ProjetBolide.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCommunicCom2.r51</file>
       <file>$PROJ_DIR$\UPSD3254A\Obj\CLADCuPSD.r51</file>
       <file>$PROJ_DIR$\UPSD3254A\Obj\CLDAC6574.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCommunicCom2.r51</file>
-      <file>$PROJ_DIR$\..\Header\CLPile.h</file>
-      <file>$PROJ_DIR$\..\Header\CLIOPCF8574.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CBase.r51</file>
-      <file>$PROJ_DIR$\..\Header\CLLimiteVitesse.h</file>
-      <file>$PROJ_DIR$\..\Header\CLVehicule.h</file>
-      <file>$PROJ_DIR$\..\Header\CLI2CPort.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLDAC7554.pbi</file>
-      <file>$PROJ_DIR$\CLLimiteVitesse.H</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLADCuPSD.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLIOPCF8574.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CPort.r51</file>
-      <file>$PROJ_DIR$\..\Header\CLADCuPSD.h</file>
-      <file>$PROJ_DIR$\..\Header\CLPWMuPSD.h</file>
-      <file>$PROJ_DIR$\..\Header\CLRoue.h</file>
-      <file>$PROJ_DIR$\..\Header\CLInOutBase.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCommunicCom2.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLInOutBase.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTest.r51</file>
-      <file>$PROJ_DIR$\..\..\..\..\OLD\Hiver2014\Le Bolide\Programme\PROJET FINAL COMPILABLE\_Ver810_lnk51ew_uPSD3254A.xcl</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLEcran.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CANBUS.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLADCMAX1236.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLXBEE.r51</file>
-      <file>$PROJ_DIR$\..\Header\CLEcran.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLInclinometre.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLMCP23S09.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLReception.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLVehicule.pbi</file>
-      <file>$PROJ_DIR$\..\Header\CLInclinometre.h</file>
-      <file>$PROJ_DIR$\..\Header\CLHorloge1307.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLRS232.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLEcran.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPile.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLDAC6574.r51</file>
       <file>$PROJ_DIR$\UPSD3254A\Obj\CLSuiveurLigne.pbi</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CPort.pbi</file>
-      <file>$PROJ_DIR$\..\_Ver810_lnk51ew_uPSD3254A.xcl</file>
-      <file>$PROJ_DIR$\..\Header\CLADCMAX1236.h</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTLV2544.r51</file>
+      <file>$PROJ_DIR$\..\Header\CLADCuPSD.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Exe\ProjetBolide.hex</file>
       <file>$PROJ_DIR$\UPSD3254A\Obj\CLVehicule.r51</file>
-      <file>$PROJ_DIR$\UPSD3254A\Obj\CLInOutBase.r51</file>
-      <file>$PROJ_DIR$\CLCommunicCom2.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLPile.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-      <file>$PROJ_DIR$\CLHorloge1307.h</file>
-      <file>$PROJ_DIR$\DeclarationGenerale.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-      <file>$PROJ_DIR$\CLIOPCF8574.h</file>
-      <file>$PROJ_DIR$\..\Source\CLPWMuPSD.cpp</file>
-      <file>$PROJ_DIR$\CLSuiveurLigne.h</file>
-      <file>$PROJ_DIR$\..\Source\CLReception.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLDAC6574.cpp</file>
-      <file>$PROJ_DIR$\CLTelecommande.cpp</file>
-      <file>$PROJ_DIR$\CLEcran.h</file>
-      <file>$PROJ_DIR$\CLTelecommande.h</file>
-      <file>$PROJ_DIR$\..\Source\CLSuiveurLigne.cpp</file>
-      <file>$PROJ_DIR$\..\Header\ConversionKeilToIAR.h</file>
-      <file>$PROJ_DIR$\..\Source\CLVehicule.cpp</file>
-      <file>$PROJ_DIR$\..\Source\ProjetBolide.cpp</file>
-      <file>$PROJ_DIR$\ioDS89C450.h</file>
-      <file>$PROJ_DIR$\CLI2CPort.h</file>
-      <file>$PROJ_DIR$\CLInclinometre.cpp</file>
-      <file>$PROJ_DIR$\..\Source\CLI2CBase.Cpp</file>
-      <file>$PROJ_DIR$\CLTLV2544.h</file>
-      <file>$PROJ_DIR$\Station1.h</file>
-      <file>$PROJ_DIR$\CLI2CBase.h</file>
-      <file>$PROJ_DIR$\..\Source\CLTelecommande.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-      <file>$PROJ_DIR$\CLTLV2544.cpp</file>
-      <file>$PROJ_DIR$\CLMCP23S09.cpp</file>
-      <file>$PROJ_DIR$\CLSerialPortInterface.cpp</file>
-      <file>$PROJ_DIR$\CLRoue.cpp</file>
-      <file>$PROJ_DIR$\CLRS232.h</file>
-      <file>$PROJ_DIR$\CLVehicule.h</file>
-      <file>$PROJ_DIR$\CLIOPCF8574.cpp</file>
-      <file>$PROJ_DIR$\CLPile.cpp</file>
-      <file>$PROJ_DIR$\CLRS232.cpp</file>
-      <file>$PROJ_DIR$\CLSuiveurLigne.cpp</file>
-      <file>$PROJ_DIR$\CLVehicule.cpp</file>
-      <file>$PROJ_DIR$\CLXBEE.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\CLTest.cpp</file>
-      <file>$PROJ_DIR$\CLPWMuPSD.cpp</file>
-      <file>$PROJ_DIR$\Station1.cpp</file>
-      <file>$PROJ_DIR$\ProjetBolide.h</file>
-      <file>$PROJ_DIR$\ProjetBolide.cpp</file>
-      <file>$PROJ_DIR$\CLI2CBase.Cpp</file>
-      <file>$PROJ_DIR$\CLDAC7554.cpp</file>
-      <file>$PROJ_DIR$\CLEcran.cpp</file>
-      <file>$PROJ_DIR$\CLI2CPort.Cpp</file>
-      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
-      <file>$PROJ_DIR$\CLADCuPSD.cpp</file>
-      <file>$PROJ_DIR$\CANBUS.cpp</file>
-      <file>$PROJ_DIR$\CLADCMAX1236.cpp</file>
-      <file>$PROJ_DIR$\CLDAC6574.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCommunicCom2.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLClavier.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLRoue.pbi</file>
+      <file>$PROJ_DIR$\..\Header\ProjetBolide.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLHorloge1307.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CPort.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLIOPCF8574.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLInOutBase.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLADCuPSD.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLHorloge1307.pbi</file>
+      <file>$PROJ_DIR$\..\Header\CLCommunicCom2.h</file>
+      <file>$PROJ_DIR$\..\Header\CLPWMuPSD.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCapteurDistance.pbi</file>
+      <file>$PROJ_DIR$\..\Header\CLEcran.h</file>
+      <file>$PROJ_DIR$\..\Header\CLIOPCF8574.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\ProjetBolide.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPWMuPSD.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLDAC6574.r51</file>
       <file>$PROJ_DIR$\CLHorloge1307.Cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLInclinometre.pbi</file>
+      <file>$PROJ_DIR$\..\Header\CLDAC6574.h</file>
+      <file>$PROJ_DIR$\..\Header\CLCapteurDistance.h</file>
+      <file>$PROJ_DIR$\..\Header\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\..\Header\CLI2CPort.h</file>
+      <file>$PROJ_DIR$\..\Header\CLTest.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLVehicule.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTest.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLCapteurDistance.r51</file>
+      <file>$PROJ_DIR$\CLInOutBase.h</file>
+      <file>$PROJ_DIR$\CLDAC6574.h</file>
+      <file>$PROJ_DIR$\CLPile.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLClavier.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CBase.pbi</file>
+      <file>$PROJ_DIR$\..\Source\CLRoue.cpp</file>
+      <file>$PROJ_DIR$\..\Header\CLPile.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTest.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CBase.r51</file>
+      <file>$PROJ_DIR$\CLInclinometre.cpp</file>
+      <file>$PROJ_DIR$\..\Header\CLInOutBase.h</file>
+      <file>$PROJ_DIR$\CLClavier.h</file>
+      <file>$PROJ_DIR$\CLI2CBase.h</file>
+      <file>$PROJ_DIR$\..\Source\CLLimiteVitesse.cpp</file>
+      <file>$PROJ_DIR$\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\..\Source\CLI2CBase.Cpp</file>
+      <file>$PROJ_DIR$\CLCapteurDistance.h</file>
+      <file>$PROJ_DIR$\CLADCMAX1236.cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLClavier.cpp</file>
+      <file>$PROJ_DIR$\CLCapteurDistance.cpp</file>
+      <file>$PROJ_DIR$\CLClavier.cpp</file>
+      <file>$PROJ_DIR$\CLCommunicCom2.cpp</file>
+      <file>$PROJ_DIR$\..\Header\CLreception.h</file>
+      <file>$PROJ_DIR$\CLEcran.h</file>
+      <file>$PROJ_DIR$\CLVehicule.h</file>
+      <file>$PROJ_DIR$\TypeCible.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioUPSD3254A.h</file>
+      <file>$PROJ_DIR$\CLADCuPSD.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTelecommande.pbi</file>
+      <file>$PROJ_DIR$\CLPWMuPSD.h</file>
+      <file>$PROJ_DIR$\..\Source\CLHorloge1307.Cpp</file>
+      <file>$PROJ_DIR$\..\Header\DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\..\Source\CLInclinometre.cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLReception.cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLADCuPSD.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\Laboratoire.r51</file>
+      <file>$PROJ_DIR$\CLLimiteVitesse.cpp</file>
+      <file>$PROJ_DIR$\CLHorloge1307.h</file>
+      <file>$PROJ_DIR$\..\Source\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\..\Header\ConversionKeilToIAR.h</file>
+      <file>$PROJ_DIR$\..\Source\CLI2CPort.Cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLDAC6574.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLADCMAX1236.pbi</file>
+      <file>$PROJ_DIR$\CLDAC6574.cpp</file>
+      <file>$PROJ_DIR$\CLADCuPSD.h</file>
+      <file>$PROJ_DIR$\CLEcran.cpp</file>
+      <file>$PROJ_DIR$\CLI2CBase.Cpp</file>
+      <file>$PROJ_DIR$\CLI2CPort.Cpp</file>
+      <file>$PROJ_DIR$\CLRoue.h</file>
+      <file>$PROJ_DIR$\CLSuiveurLigne.h</file>
+      <file>$PROJ_DIR$\..\Source\CLPWMuPSD.cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLTelecommande.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLLimiteVitesse.r51</file>
+      <file>$PROJ_DIR$\..\Source\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLReception.r51</file>
+      <file>$PROJ_DIR$\..\Header\TypeCible.h</file>
+      <file>$PROJ_DIR$\CLCommunicCom2.h</file>
+      <file>$PROJ_DIR$\..\Header\CLVehicule.h</file>
+      <file>$PROJ_DIR$\CLADCMAX1236.h</file>
+      <file>$PROJ_DIR$\CLI2CPort.H</file>
+      <file>$PROJ_DIR$\CLIOPCF8574.h</file>
+      <file>$PROJ_DIR$\..\Source\ProjetBolide.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPWMuPSD.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPile.r51</file>
+      <file>$PROJ_DIR$\..\Header\CLClavier.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLSerialPortInterface.r51</file>
+      <file>$PROJ_DIR$\CLInclinometre.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLMCP23S09.pbi</file>
+      <file>$PROJ_DIR$\..\Source\CLIOPCF8574.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLPile.pbi</file>
+      <file>$PROJ_DIR$\..\Source\CLPile.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLEcran.pbi</file>
+      <file>$PROJ_DIR$\..\Source\CLTest.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLSerialPortInterface.pbi</file>
+      <file>$PROJ_DIR$\CLLimiteVitesse.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTLV2544.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLMCP23S09.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLDAC7554.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\Laboratoire.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLI2CPort.r51</file>
+      <file>$PROJ_DIR$\ProjetBolide.h</file>
+      <file>$PROJ_DIR$\..\Source\CLCapteurDistance.cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLCommunicCom2.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLDAC7554.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTLV2544.pbi</file>
+      <file>$PROJ_DIR$\_Header\CLPile.h</file>
+      <file>$PROJ_DIR$\..\Source\CLVehicule.cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLADCMAX1236.cpp</file>
+      <file>$PROJ_DIR$\..\Source\CLSuiveurLigne.cpp</file>
+      <file>$PROJ_DIR$\_Header\CLCapteurDistance.h</file>
+      <file>$PROJ_DIR$\..\Header\CLTelecommande.h</file>
+      <file>$PROJ_DIR$\_Ver810_lnk51ew_uPSD3254A.xcl</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLTelecommande.r51</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLInOutBase.r51</file>
+      <file>$PROJ_DIR$\..\Header\CLSuiveurLigne.h</file>
+      <file>$PROJ_DIR$\CLTelecommande.cpp</file>
+      <file>$PROJ_DIR$\_Header\CLLimiteVitesse.h</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLRoue.r51</file>
+      <file>$PROJ_DIR$\CLSuiveurLigne.cpp</file>
+      <file>$PROJ_DIR$\CLPile.cpp</file>
+      <file>$PROJ_DIR$\CLTest.cpp</file>
+      <file>$PROJ_DIR$\..\Header\CLInclinometre.h</file>
+      <file>$PROJ_DIR$\CLPWMuPSD.cpp</file>
+      <file>$PROJ_DIR$\ProjetBolide.cpp</file>
+      <file>$PROJ_DIR$\CLTelecommande.h</file>
+      <file>$PROJ_DIR$\CLRoue.cpp</file>
+      <file>$PROJ_DIR$\DeclarationGenerale.h</file>
+      <file>$PROJ_DIR$\CLVehicule.cpp</file>
+      <file>$PROJ_DIR$\CLIOPCF8574.cpp</file>
+      <file>$PROJ_DIR$\CLInOutBase.cpp</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\Station1.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLRS232.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CLXBEE.pbi</file>
+      <file>$PROJ_DIR$\UPSD3254A\Obj\CANBUS.pbi</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLADCMAX1236.cpp</name>
+      <name>$PROJ_DIR$\_Source\CANBUS.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 118</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 58</file>
+          <file> 229</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 134 27 22 8 153 6 7 143 178 0 16 42 164 165 140 102 84</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 134 27 22 8 153 6 7 143 178 16 42 164 165 140 102 84</file>
+          <file> 68</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLInOutBase.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLRoue.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 137</file>
+          <name>BICOMP</name>
+          <file> 90</file>
         </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLADCMAX1236.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 158</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLDAC6574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLDAC7554.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 199</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLRS232.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 227</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLHorloge1307.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLI2CBase.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLI2CPort.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\ProjetBolide.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 38 47 24 46 14 40 26 42 25 22 13 58 43 41 64 45 39 60 61 59 50 62 65 48 49 17 12 11 16 18 205 19 201 212 51</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 63 38 47 24 46 14 40 26 42 25 22 13 58 43 41 64 45 39 60 61 59 50 62 65 48 49 17 12 11 16 18 205 19 201 212 51</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLCapteurDistance.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 115</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 205 38 47 24 46 14 40 26 42 25 22 13 58 43 41 19 48 49</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 205 38 47 24 46 14 40 26 42 25 22 13 58 43 41 19 48 49</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLInclinometre.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38 47 24 46 14 40 26 42 25 22 13 58 43 41 60 61 45 39 59</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 38 47 24 46 14 40 26 42 25 22 13 58 43 41 60 61 45 39 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLIOPCF8574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLMCP23S09.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 183</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 189</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLXBEE.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 228</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLSuiveurLigne.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLTLV2544.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 200</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLVehicule.cpp</name>
+      <outputs>
         <tool>
           <name>BICOMP</name>
           <file> 113</file>
@@ -1641,366 +1393,176 @@
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 111 27 22 8 153 6 7 143 178 0 16 42 164 165 140</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 111 27 22 8 153 6 7 143 178 16 42 164 165 140</file>
+          <file> 68</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLRoue.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLClavier.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 83</file>
+          <name>BICOMP</name>
+          <file> 89</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 53</file>
+          <name>ICC8051</name>
+          <file> 119</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 110 27 22 8 153 6 7 143 178 0 16 42 164 165 140 89 102 84</file>
+          <name>BICOMP</name>
+          <file> 50 38 47 24 46 14 40 26 42 25 22 13 58 43 41 39</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 110 27 22 8 153 6 7 143 178 16 42 164 165 140 89 102 84</file>
+          <name>ICC8051</name>
+          <file> 50 38 47 24 46 14 40 26 42 25 22 13 58 43 41 39</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLI2CPort.Cpp</name>
+      <name>$PROJ_DIR$\_Source\Laboratoire.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 107</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 132</file>
+          <file> 194</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 102 27 22 8 153 6 7 143 178 0 16 42 164 165 140 84</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 102 27 22 8 153 6 7 143 178 16 42 164 165 140 84</file>
+          <file> 68</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLLimiteVitesse.cpp</name>
+      <name>$PROJ_DIR$\_Source\Station1.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 82</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 65</file>
+          <file> 226</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 100 27 22 8 153 6 7 143 178 0 16 42 164 165 140 134 102 84</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 100 27 22 8 153 6 7 143 178 16 42 164 165 140 134 102 84</file>
+          <file> 68</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLTest.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLPile.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 114</file>
+          <name>BICOMP</name>
+          <file> 185</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 85</file>
+          <name>ICC8051</name>
+          <file> 179</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 77 27 22 8 153 6 7 143 178 0 16 42 164 165 140 111 120 59 50 84 102 126 134 98 89 110 75 51 97 100 101 55 125 109 108</file>
+          <name>BICOMP</name>
+          <file> 201 38 47 24 46 14 40 26 42 25 22 13 58 43 41 19 48 49</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 77 27 22 8 153 6 7 143 178 16 42 164 165 140 111 120 59 50 84 102 126 134 98 89 110 75 51 97 100 101 55 125 109 108</file>
+          <name>ICC8051</name>
+          <file> 201 38 47 24 46 14 40 26 42 25 22 13 58 43 41 19 48 49</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\CLCapteurDistance.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLCommunicCom2.cpp</name>
       <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
         <tool>
           <name>ICC8051</name>
           <file> 81</file>
         </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 73</file>
-        </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 35 142 37 41 33 6 7 143 178 0 16 42 164 165 140 30 157 162</file>
+          <name>BICOMP</name>
+          <file> 62 38 47 24 46 14 40 26 42 25 22 13 58 43 41 45 39</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 35 142 37 41 33 6 7 143 178 16 42 164 165 140 30 157 162</file>
+          <name>ICC8051</name>
+          <file> 62 38 47 24 46 14 40 26 42 25 22 13 58 43 41 45 39</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLHorloge1307.Cpp</name>
+      <name>$PROJ_DIR$\_Source\CLLimiteVitesse.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 66</file>
+          <name>BICOMP</name>
+          <file> 78</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 54</file>
+          <name>ICC8051</name>
+          <file> 168</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 126 102 27 22 8 153 6 7 143 178 0 16 42 164 165 140 84</file>
+          <name>BICOMP</name>
+          <file> 212 38 47 24 46 14 40 26 42 25 22 13 58 43 41 19 48 49</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 126 102 27 22 8 153 6 7 143 178 16 42 164 165 140 84</file>
+          <name>ICC8051</name>
+          <file> 212 38 47 24 46 14 40 26 42 25 22 13 58 43 41 19 48 49</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLClavier.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLTelecommande.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 60</file>
+          <name>BICOMP</name>
+          <file> 144</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 48</file>
+          <name>ICC8051</name>
+          <file> 208</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 50 27 22 8 153 6 7 143 178 0 16 42 164 165 140 111</file>
+          <name>BICOMP</name>
+          <file> 64 38 47 24 46 14 40 26 42 25 22 13 58 43 41 45 39 60 61 59 50 62 65 48 49</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 50 27 22 8 153 6 7 143 178 16 42 164 165 140 111</file>
+          <name>ICC8051</name>
+          <file> 64 38 47 24 46 14 40 26 42 25 22 13 58 43 41 45 39 60 61 59 50 62 65 48 49</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\CLIOPCF8574.cpp</name>
+      <name>$PROJ_DIR$\_Source\CLPWMuPSD.cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 106</file>
+          <name>BICOMP</name>
+          <file> 104</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 52</file>
+          <name>ICC8051</name>
+          <file> 178</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 98 27 22 8 153 6 7 143 178 0 16 42 164 165 140 102 84</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 98 27 22 8 153 6 7 143 178 16 42 164 165 140 102 84</file>
+          <file> 61 38 47 24 46 14 40 26 42 25 22 13 58 43 41 45 39</file>
         </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLADCuPSD.cpp</name>
-      <outputs>
         <tool>
           <name>ICC8051</name>
-          <file> 94</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 105</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 108 27 22 8 153 6 7 143 178 0 16 42 164 165 140</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 108 27 22 8 153 6 7 143 178 16 42 164 165 140</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLCommunicCom2.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 96</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 112</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 59 27 22 8 153 6 7 143 178 0 16 42 164 165 140 120 111</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 59 27 22 8 153 6 7 143 178 16 42 164 165 140 120 111</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLClavier.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 60</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 48</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 20 142 37 41 33 6 7 143 178 0 16 42 164 165 140 10</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 20 142 37 41 33 6 7 143 178 16 42 164 165 140 10</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLInclinometre.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 92</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 121</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 27 22 8 153 6 7 143 178 0 16 42 164 165 140 125 109 120 111 108</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 27 22 8 153 6 7 143 178 16 42 164 165 140 125 109 120 111 108</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLCapteurDistance.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 81</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 73</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 51 27 22 8 153 6 7 143 178 0 16 42 164 165 140 134 102 84</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 51 27 22 8 153 6 7 143 178 16 42 164 165 140 134 102 84</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLEcran.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 116</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 128</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 120 27 22 8 153 6 7 143 178 0 16 42 164 165 140 111</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 120 27 22 8 153 6 7 143 178 16 42 164 165 140 111</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLLimiteVitesse.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 82</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 65</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 104 142 37 41 33 6 7 143 178 0 16 42 164 165 140 30 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 104 142 37 41 33 6 7 143 178 16 42 164 165 140 30 157 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\UPSD3254A\Obj\ProjetBolide.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 76 58 105 95 103 128 54 87 132 52 113 90 63 69 127 53 86 131 71 85 124 78 56 72</file>
+          <file> 61 38 47 24 46 14 40 26 42 25 22 13 58 43 41 45 39</file>
         </tool>
       </inputs>
     </file>
@@ -2009,16 +1571,39 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 70</file>
+          <file> 72</file>
         </tool>
       </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\_Source\CLADCuPSD.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 38 47 24 46 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 59 38 47 24 46 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\UPSD3254A\Exe\uPSDProjetBolide.hex</name>
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 115 117 118 94 130 68 116 66 99 107 106 137 122 67 129 62 83 80 79 135 114 136 119 49 61 12</file>
+          <file> 207 119 193 77 124 195 209 192 181 191 114 151 20</file>
         </tool>
       </inputs>
     </file>
@@ -2027,812 +1612,7 @@
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 133 118 94 81 60 96 130 116 66 99 107 106 137 92 82 67 129 64 83 79 93 114 136 49 12</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLCommunicCom2.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 96</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 112</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 46 142 37 41 33 6 7 143 178 0 16 42 164 165 140 150 10</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 46 142 37 41 33 6 7 143 178 16 42 164 165 140 150 10</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLPile.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 129</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 69</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 97 27 22 8 153 6 7 143 178 0 16 42 164 165 140 134 102 84</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 97 27 22 8 153 6 7 143 178 16 42 164 165 140 134 102 84</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLPWMuPSD.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 67</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 63</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 109 27 22 8 153 6 7 143 178 0 16 42 164 165 140 120 111</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 109 27 22 8 153 6 7 143 178 16 42 164 165 140 120 111</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLReception.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 64</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 123</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 27 22 8 153 6 7 143 178 0 16 42 164 165 140 45</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 27 22 8 153 6 7 143 178 16 42 164 165 140 45</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLDAC6574.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 130</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 95</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 89 27 22 8 153 6 7 143 178 0 16 42 164 165 140 102 84</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 89 27 22 8 153 6 7 143 178 16 42 164 165 140 102 84</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLTelecommande.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 93</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 88</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 151 142 37 41 33 6 7 143 178 0 16 42 164 165 140 150 10 36 31 44 20 46 141 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 151 142 37 41 33 6 7 143 178 16 42 164 165 140 150 10 36 31 44 20 46 141 157 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLSuiveurLigne.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 79</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 131</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 75 27 22 8 153 6 7 143 178 0 16 42 164 165 140 98 102 84</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 75 27 22 8 153 6 7 143 178 16 42 164 165 140 98 102 84</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLVehicule.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 136</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 124</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 101 27 22 8 153 6 7 143 178 0 16 42 164 165 140 120 111 59 110 89 102 84 75 98 51 134 97 100</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 101 27 22 8 153 6 7 143 178 16 42 164 165 140 120 111 59 110 89 102 84 75 98 51 134 97 100</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\ProjetBolide.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 49</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 56</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 91 27 22 8 153 6 7 143 178 0 16 42 164 165 140 111 120 126 102 84 77 59 50 134 98 89 110 75 51 97 100 101 55 125 109 108</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 91 27 22 8 153 6 7 143 178 16 42 164 165 140 111 120 126 102 84 77 59 50 134 98 89 110 75 51 97 100 101 55 125 109 108</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLInclinometre.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 92</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 121</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 142 37 41 33 6 7 143 178 0 16 42 164 165 140 36 31 150 10 44</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 142 37 41 33 6 7 143 178 16 42 164 165 140 36 31 150 10 44</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLI2CBase.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 99</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 87</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 84 27 22 8 153 6 7 143 178 0 16 42 164 165 140</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 84 27 22 8 153 6 7 143 178 16 42 164 165 140</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\CLTelecommande.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 93</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 88</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 55 27 22 8 153 6 7 143 178 0 16 42 164 165 140 120 111 125 109 108 50 59</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 55 27 22 8 153 6 7 143 178 16 42 164 165 140 120 111 125 109 108 50 59</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLTLV2544.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 135</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 71</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 160 142 37 156 33 21</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 160 142 37 156 33 21</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLMCP23S09.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 90</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 28 142 37 156 33 21</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 28 142 37 156 33 21</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLSerialPortInterface.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 80</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 86</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 21 142 37 156 33</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 21 142 37 156 33</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLRoue.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 83</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 53</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 13 142 37 156 33 17 21 5 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 13 142 37 156 33 17 21 5 157 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 106</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 52</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 144 142 37 156 33 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 144 142 37 156 33 157 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLPile.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 129</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 69</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 18 142 37 156 33 30 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 18 142 37 156 33 30 157 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLRS232.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 62</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 127</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 170 142 37 156 33</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 170 142 37 156 33</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLSuiveurLigne.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 79</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 131</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 146 142 37 156 33 28 21 144 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 146 142 37 156 33 28 21 144 157 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLVehicule.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 136</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 124</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 171 142 37 156 33 150 10 13 17 21 5 157 162 146 28 144</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 171 142 37 156 33 150 10 13 17 21 5 157 162 146 28 144</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLXBEE.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 119</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 78</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 142 37 156 33 43 170</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 142 37 156 33 43 170</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLTest.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 114</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 85</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 40 142 37 156 33 10 150 17 21 160 28 171 13 5 157 162 146 144</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 40 142 37 156 33 10 150 17 21 160 28 171 13 5 157 162 146 144</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLPWMuPSD.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 67</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 63</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 31 142 37 156 33 150 10</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31 142 37 156 33 150 10</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Station1.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 61</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 72</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 142 37 156 33 161 43 170 150 10 141 157 162 4 21 23</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 142 37 156 33 161 43 170 150 10 141 157 162 4 21 23</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\ProjetBolide.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 49</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 56</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 37 156 182 142 33 171 150 10 13 17 21 5 157 162 146 28 144 40 160 43 170 161 141 4 23</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37 156 182 142 33 171 150 10 13 17 21 5 157 162 146 28 144 40 160 43 170 161 141 4 23</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLI2CBase.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 99</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 87</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 162 142 37 156 33</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 162 142 37 156 33</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLDAC7554.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 68</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 103</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 17 142 37 156 33 21</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 17 142 37 156 33 21</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLEcran.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 116</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 128</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 150 142 37 156 33 10</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 150 142 37 156 33 10</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLI2CPort.Cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 107</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 132</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 157 142 37 156 33 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 157 142 37 156 33 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 137</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 113</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 10 142 37 156 33</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 10 142 37 156 33</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLADCuPSD.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 94</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 105</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 44 142 37 156 33</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44 142 37 156 33</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CANBUS.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 117</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 76</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 142 37 156 33 4 21 23</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 142 37 156 33 4 21 23</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLADCMAX1236.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 118</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 58</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 30 142 37 156 33 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 30 142 37 156 33 157 162</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CLDAC6574.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 130</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 95</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 5 142 37 156 33 157 162</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 5 142 37 156 33 157 162</file>
+          <file> 74 56 82 115 119 81 105 77 92 124 195 67 209 70 168 178 179 170 213 76 208 114 87 80 20</file>
         </tool>
       </inputs>
     </file>
@@ -2840,25 +1620,1041 @@
       <name>$PROJ_DIR$\CLHorloge1307.Cpp</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 66</file>
+          <name>BICOMP</name>
+          <file> 97</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 54</file>
+          <name>ICC8051</name>
+          <file> 92</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 141 157 142 37 156 33 162</file>
+          <name>BICOMP</name>
+          <file> 153 175 222 141 24 130 14 40 26 42 22 13 58 43 41 128</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 141 157 142 37 156 33 162</file>
+          <name>ICC8051</name>
+          <file> 153 175 222 141 24 130 14 40 26 42 25 22 13 58 43 41 128</file>
         </tool>
       </inputs>
     </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLRoue.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 213</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 147 171 142 155 14 40 26 42 22 13 58 43 41 108 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 79 147 171 142 155 14 40 26 42 25 22 13 58 43 41 108 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInclinometre.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 222 141 24 130 14 40 26 42 22 13 58 43 41 182 145 139 116 160</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 222 141 24 130 14 40 26 42 25 22 13 58 43 41 182 145 139 116 160</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLLimiteVitesse.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 168</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73 147 171 142 155 14 40 26 42 22 13 58 43 41 71 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 73 147 171 142 155 14 40 26 42 25 22 13 58 43 41 71 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLI2CBase.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75 147 171 142 155 14 40 26 42 22 13 58 43 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 75 147 171 142 155 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLADCMAX1236.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 158</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 174 222 141 24 130 14 40 26 42 22 13 58 43 41 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 174 222 141 24 130 14 40 26 42 25 22 13 58 43 41 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLClavier.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 119</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 180 147 171 142 155 14 40 26 42 22 13 58 43 41 126</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 180 147 171 142 155 14 40 26 42 25 22 13 58 43 41 126</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCapteurDistance.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 115</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 132 222 141 24 130 14 40 26 42 22 13 58 43 41 174 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 132 222 141 24 130 14 40 26 42 25 22 13 58 43 41 174 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLClavier.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 119</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 127 222 141 24 130 14 40 26 42 22 13 58 43 41 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 127 222 141 24 130 14 40 26 42 25 22 13 58 43 41 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLCommunicCom2.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172 222 141 24 130 14 40 26 42 22 13 58 43 41 139 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 172 222 141 24 130 14 40 26 42 25 22 13 58 43 41 139 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLADCuPSD.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160 222 141 24 130 14 40 26 42 22 13 58 43 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 160 222 141 24 130 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLHorloge1307.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 111 147 171 142 155 14 40 26 42 22 13 58 43 41 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 110 111 147 171 142 155 14 40 26 42 25 22 13 58 43 41 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLInclinometre.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 147 171 142 155 14 40 26 42 22 13 58 43 41 217 99 101 126 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 147 171 142 155 14 40 26 42 25 22 13 58 43 41 217 99 101 126 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLReception.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 170</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 147 171 142 155 14 40 26 42 22 13 58 43 41 138</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 147 171 142 155 14 40 26 42 25 22 13 58 43 41 138</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLADCuPSD.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85 147 171 142 155 14 40 26 42 22 13 58 43 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 85 147 171 142 155 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLLimiteVitesse.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 168</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 190 222 141 24 130 14 40 26 42 22 13 58 43 41 174 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 190 222 141 24 130 14 40 26 42 25 22 13 58 43 41 174 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 77</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 101 147 171 142 155 14 40 26 42 22 13 58 43 41 126</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 101 147 171 142 155 14 40 26 42 25 22 13 58 43 41 126</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLI2CPort.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 195</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 111 147 171 142 155 14 40 26 42 22 13 58 43 41 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 111 147 171 142 155 14 40 26 42 25 22 13 58 43 41 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLDAC6574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 105</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 108 147 171 142 155 14 40 26 42 22 13 58 43 41 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 108 147 171 142 155 14 40 26 42 25 22 13 58 43 41 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLDAC6574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 105</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117 222 141 24 130 14 40 26 42 22 13 58 43 41 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 117 222 141 24 130 14 40 26 42 25 22 13 58 43 41 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLEcran.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 77</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 139 222 141 24 130 14 40 26 42 22 13 58 43 41 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 139 222 141 24 130 14 40 26 42 25 22 13 58 43 41 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CBase.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 128 222 141 24 130 14 40 26 42 22 13 58 43 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 128 222 141 24 130 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLI2CPort.Cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 195</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 175 222 141 24 130 14 40 26 42 22 13 58 43 41 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 175 222 141 24 130 14 40 26 42 25 22 13 58 43 41 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLPWMuPSD.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 178</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 147 171 142 155 14 40 26 42 22 13 58 43 41 101 126</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 99 147 171 142 155 14 40 26 42 25 22 13 58 43 41 101 126</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLTelecommande.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 144</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 206 147 171 142 155 14 40 26 42 22 13 58 43 41 101 126 217 99 85 180 98</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 206 147 171 142 155 14 40 26 42 25 22 13 58 43 41 101 126 217 99 85 180 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 209</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 126 147 171 142 155 14 40 26 42 22 13 58 43 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 126 147 171 142 155 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\ProjetBolide.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 147 171 142 155 14 40 26 42 22 13 58 43 41 126 101 110 111 75 112 98 180 71 102 108 79 210 109 122 73 173 206 217 99 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 147 171 142 155 14 40 26 42 25 22 13 58 43 41 126 101 110 111 75 112 98 180 71 102 108 79 210 109 122 73 173 206 217 99 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLIOPCF8574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102 147 171 142 155 14 40 26 42 22 13 58 43 41 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 102 147 171 142 155 14 40 26 42 25 22 13 58 43 41 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLPile.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 185</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 179</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122 147 171 142 155 14 40 26 42 22 13 58 43 41 71 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 122 147 171 142 155 14 40 26 42 25 22 13 58 43 41 71 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 114</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112 147 171 142 155 14 40 26 42 22 13 58 43 41 126 101 98 180 75 111 110 71 102 108 79 210 109 122 73 173 206 217 99 85</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 112 147 171 142 155 14 40 26 42 25 22 13 58 43 41 126 101 98 180 75 111 110 71 102 108 79 210 109 122 73 173 206 217 99 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLCapteurDistance.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 115</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 109 147 171 142 155 14 40 26 42 22 13 58 43 41 71 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 109 147 171 142 155 14 40 26 42 25 22 13 58 43 41 71 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLCommunicCom2.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 98 147 171 142 155 14 40 26 42 22 13 58 43 41 101 126</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 98 147 171 142 155 14 40 26 42 25 22 13 58 43 41 101 126</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLVehicule.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 113</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 87</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 173 147 171 142 155 14 40 26 42 22 13 58 43 41 101 126 98 79 108 111 75 210 102 109 71 122 73</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 173 147 171 142 155 14 40 26 42 25 22 13 58 43 41 101 126 98 79 108 111 75 210 102 109 71 122 73</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLADCMAX1236.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 158</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71 147 171 142 155 14 40 26 42 22 13 58 43 41 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 71 147 171 142 155 14 40 26 42 25 22 13 58 43 41 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\CLSuiveurLigne.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 76</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 210 147 171 142 155 14 40 26 42 22 13 58 43 41 102 111 75</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 210 147 171 142 155 14 40 26 42 25 22 13 58 43 41 102 111 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLTelecommande.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 144</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 220 222 141 24 130 14 40 26 42 22 13 58 43 41 139 116 182 145 160 127 172 153 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 220 222 141 24 130 14 40 26 42 25 22 13 58 43 41 139 116 182 145 160 127 172 153 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLSuiveurLigne.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 76</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 165 222 141 24 130 14 40 26 42 22 13 58 43 41 176 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 165 222 141 24 130 14 40 26 42 25 22 13 58 43 41 176 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPile.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 185</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 179</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 118 222 141 24 130 14 40 26 42 22 13 58 43 41 174 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 118 222 141 24 130 14 40 26 42 25 22 13 58 43 41 174 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLTest.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 114</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69 222 141 24 130 14 40 26 42 22 13 58 43 41 116 139 172 127 128 175 153 174 176 117 164 165 132 118 190 140 220 182 145 160</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 69 222 141 24 130 14 40 26 42 25 22 13 58 43 41 116 139 172 127 128 175 153 174 176 117 164 165 132 118 190 140 220 182 145 160</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLPWMuPSD.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 178</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 145 222 141 24 130 14 40 26 42 22 13 58 43 41 139 116</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 145 222 141 24 130 14 40 26 42 25 22 13 58 43 41 139 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\ProjetBolide.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 196 222 141 24 130 14 40 26 42 22 13 58 43 41 220 139 116 182 145 160 127 172 153 175 128 140 164 117 165 176 132 174 118 190 69</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 196 222 141 24 130 14 40 26 42 25 22 13 58 43 41 220 139 116 182 145 160 127 172 153 175 128 140 164 117 165 176 132 174 118 190 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLRoue.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 213</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 222 141 24 130 14 40 26 42 22 13 58 43 41 117 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 164 222 141 24 130 14 40 26 42 25 22 13 58 43 41 117 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLVehicule.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 113</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 87</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 222 141 24 130 14 40 26 42 22 13 58 43 41 139 116 172 164 117 175 128 165 176 132 174 118 190 153</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 140 222 141 24 130 14 40 26 42 25 22 13 58 43 41 139 116 172 164 117 175 128 165 176 132 174 118 190 153</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 176 222 141 24 130 14 40 26 42 22 13 58 43 41 175 128</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 176 222 141 24 130 14 40 26 42 25 22 13 58 43 41 175 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CLInOutBase.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 209</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116 222 141 24 130 14 40 26 42 22 13 58 43 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 116 222 141 24 130 14 40 26 42 25 22 13 58 43 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
   </configuration>
 </project>
 

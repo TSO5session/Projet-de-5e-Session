@@ -1,0 +1,364 @@
+\fancyfoot[L]{ANNEXE 2}
+\section{ANNEXE 2: Code source du programme pour PC}
+\begin{lstlisting}
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+
+
+namespace Calcuatrice
+{
+    public partial class Calculatrice : Form
+    {
+      
+        string nombre, nombre2, TypeDeCalcul, EqualIsPressed;
+        double Result, stack;
+
+
+        public Calculatrice()
+        {
+            InitializeComponent();
+            nombre2 = "0";
+            nombre = "0";
+            EqualIsPressed = "0";
+            stack = 0;
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+
+
+            textBox.Text = textBox.Text + "1";
+            nombre = textBox.Text;
+            label.Text = label.Text + "1";
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "2";
+            nombre = textBox.Text;
+            label.Text = label.Text + "2";
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "3";
+            nombre = textBox.Text;
+            label.Text = label.Text + "3";
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "4";
+            nombre = textBox.Text;
+            label.Text = label.Text + "4";
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "5";
+            nombre = textBox.Text;
+            label.Text = label.Text + "5";
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "6";
+            nombre = textBox.Text;
+            label.Text = label.Text + "6";
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "7";
+            nombre = textBox.Text;
+            label.Text = label.Text + "7";
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "8";
+            nombre = textBox.Text;
+            label.Text = label.Text + "8";
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "9";
+            nombre = textBox.Text;
+            label.Text = label.Text + "9";
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+            textBox.Text = textBox.Text + "0";
+            nombre = textBox.Text;
+            label.Text = label.Text + "0";
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            textBox.Text = "";
+            label.Text = "";
+            nombre = "0";
+            nombre2 = "0";
+        }
+
+
+
+
+
+
+        private void btn_virg_Click(object sender, EventArgs e)
+        {
+            if (EqualIsPressed == "1")
+            {
+                EqualIsPressed = "0";
+                textBox.Text = "";
+                label.Text = "";
+                nombre = "0";
+                nombre2 = "0";
+            }
+
+            if (textBox.Text.Contains(","))
+            {
+                return;
+            }
+
+            textBox.Text = textBox.Text + ",";
+            nombre = textBox.Text;
+            label.Text = label.Text + ",";
+        }
+
+
+
+
+
+
+
+        private void btn_moins_Click(object sender, EventArgs e)
+        {
+            if (textBox.Text == "")
+            {
+                return;
+            }
+            label.Text = label.Text + " - ";
+            textBox.Text = "";
+            TypeDeCalcul = "-";
+            nombre2 = nombre;
+        }
+
+
+
+
+
+        private void btnx_Click(object sender, EventArgs e)
+        {
+            if (textBox.Text == "")
+            {
+                return;
+            }
+            label.Text = label.Text + " x ";
+            textBox.Text = "";
+            TypeDeCalcul = "x";
+            nombre2 = nombre;
+        }
+
+        private void btn_divide_Click(object sender, EventArgs e)
+        {
+            if (textBox.Text == "")
+            {
+                return;
+            }
+            label.Text = label.Text + " / ";
+            textBox.Text = "";
+            TypeDeCalcul = "/";
+            nombre2 = nombre;
+        }
+
+        private void btn_Sqrt_Click(object sender, EventArgs e)
+        {
+            if (textBox.Text == "")
+            {
+                return;
+            }
+            label.Text = " sqrt (" + label.Text + ")" ;
+            textBox.Text = "";
+            nombre2 = nombre;
+
+            Result = Math.Sqrt(Convert.ToDouble(nombre2));
+            textBox.Text = Convert.ToString(Result);
+
+            label.Text = label.Text + " = ";
+            label.Text = label.Text + textBox.Text;
+            EqualIsPressed = "1";
+        }
+
+        private void btn_surX_Click(object sender, EventArgs e)
+        {
+            if (textBox.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                label.Text = "1 / " + label.Text;
+                textBox.Text = "1/" + textBox.Text;
+                TypeDeCalcul = "1/x";
+                nombre2 = nombre;
+            }
+        }
+
+        private void btn_plus_Click(object sender, EventArgs e)
+        {
+            if(textBox.Text == "")
+            {
+                return;
+            }
+            label.Text = label.Text + " + ";
+            textBox.Text = "";
+            TypeDeCalcul = "+";
+            nombre2 = nombre;
+            stack = stack + Convert.ToDouble(nombre2);
+        }
+
+
+
+
+
+
+
+        private void btn_Equal_Click(object sender, EventArgs e)
+        {
+            EqualIsPressed = "1";
+
+            label.Text = label.Text + " = ";
+
+            switch (TypeDeCalcul)
+            {
+                case("+"):
+                   Result = Convert.ToDouble(nombre2) + Convert.ToDouble(nombre);
+                   textBox.Text = Convert.ToString(Result);
+                break;
+
+                case ("-"):
+                   Result = Convert.ToDouble(nombre2) - Convert.ToDouble(nombre);
+                   textBox.Text = Convert.ToString(Result);
+                break;
+
+                case ("x"):
+                   Result = Convert.ToDouble(nombre2) * Convert.ToDouble(nombre);
+                   textBox.Text = Convert.ToString(Result);
+                break;
+
+                case ("/"):
+
+                if (Convert.ToDouble(nombre) == 0)
+                {
+                    textBox.Text = "You created a Dark Hole!";
+                    Form2 frm = new Form2();
+                    frm.Show();
+                    return;
+                }
+                   Result = Convert.ToDouble(nombre2) / Convert.ToDouble(nombre);
+                   textBox.Text = Convert.ToString(Result);
+                break;
+
+                case ("1/x"):
+                   Result = 1 / Convert.ToDouble(nombre2);
+                   textBox.Text = Convert.ToString(Result);
+                break;
+            }
+            label.Text = label.Text + textBox.Text;
+        }
+
+    }
+}
+\end{lstlisting}
+

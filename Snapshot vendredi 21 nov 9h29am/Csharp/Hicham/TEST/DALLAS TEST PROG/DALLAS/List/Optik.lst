@@ -1,0 +1,348 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         14/Nov/2014  22:00:59 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\Optik.cpp                                     #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\Optik.cpp" -D DALLAS89C450 --preprocess=cl    #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux #
+#                          \Automne 2014\ProjetSession5\Csharp\TEST\DALLAS    #
+#                          TEST PROG\DALLAS\List\" -lA                        #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\Csharp\TEST\DALLAS     #
+#                          TEST PROG\DALLAS\Obj\" -e --no_cse --no_unroll     #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\List\Optik.lst                         #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\Csharp\TEST\DALLAS TEST        #
+#                          PROG\DALLAS\Obj\Optik.r51                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\TEST\DALLAS TEST PROG\Optik.cpp
+      1          // **************************Fichier.cpp
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         20 juillet 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     12          #include "Optik.h"               // Fichier de definitions du clavier
+     13          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     14          char Encodeur :: LastState = 'Z';      // Trame incomplete.
+   \                     ??LastState:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for LastState>`
+   \   000001                REQUIRE __INIT_XDATA_I
+     15          
+     16          
+     17          
+     18          //******************************************************************************
+     19          //                            LE CONSTRUCTEUR PAR DEFAUT
+     20          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     21          Encodeur :: Encodeur(void)
+   \                     ??Encodeur:
+     22          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     23          LastState = P1_7;
+   \   000004   A297         MOV     C,0x90.7
+   \   000006   E4           CLR     A
+   \   000007   33           RLC     A
+   \   000008   90....       MOV     DPTR,#??LastState
+   \   00000B   F0           MOVX    @DPTR,A
+     24          }
+   \   00000C   D083         POP     DPH
+   \   00000E   D082         POP     DPL
+   \   000010   22           RET
+   \   000011                REQUIRE _A_P1
+     25          
+     26          //******************************************************************************
+     27          //                            LE CONSTRUCTEUR PAR DEFAUT
+     28          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     29          Encodeur :: Encodeur(UC ucParametre)
+   \                     ??Encodeur_1:
+     30          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     31          
+     32          }
+   \   000000   22           RET
+     33          
+     34          // *****************************************************************************
+     35          //                            LE DESTRUCTEUR
+     36          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     37          Encodeur :: ~Encodeur(void)
+   \                     `?~Encodeur`:
+     38          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     39          
+     40          }
+   \   000000   22           RET
+     41          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     42          char Encodeur :: LogicAnalyser(void)
+   \                     ??LogicAnalyser:
+     43          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     44          char Code = 'Z'; 
+   \   000004   795A         MOV     R1,#0x5a
+     45          
+     46          UC ChanelA = P1_7;
+   \   000006   A297         MOV     C,0x90.7
+   \   000008   E4           CLR     A
+   \   000009   33           RLC     A
+   \   00000A   F8           MOV     R0,A
+     47          UC ChanelB = P1_6;
+   \   00000B   A296         MOV     C,0x90.6
+   \   00000D   E4           CLR     A
+   \   00000E   33           RLC     A
+   \   00000F   FA           MOV     R2,A
+     48          
+     49          if((LastState == 0) && (ChanelA == HIGH)) // Si il  a une montee sur P1_7
+   \   000010   90....       MOV     DPTR,#??LastState
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   700E         JNZ     ??LogicAnalyser_1
+   \   000016   7401         MOV     A,#0x1
+   \   000018   68           XRL     A,R0
+   \   000019   7009         JNZ     ??LogicAnalyser_1
+     50            {
+     51             if(ChanelB == LOW) // Est-ce que P1_6 est a LOW?
+   \   00001B   EA           MOV     A,R2
+   \   00001C   7004         JNZ     ??LogicAnalyser_2
+     52               {                // Si oui
+     53                Code = 'A';
+   \   00001E   7941         MOV     R1,#0x41
+   \   000020   8002         SJMP    ??LogicAnalyser_1
+     54               }
+     55             else               // Si non
+     56              {
+     57               Code = 'B';
+   \                     ??LogicAnalyser_2:
+   \   000022   7942         MOV     R1,#0x42
+     58              }
+     59          }
+     60          LastState = P1_7;
+   \                     ??LogicAnalyser_1:
+   \   000024   A297         MOV     C,0x90.7
+   \   000026   E4           CLR     A
+   \   000027   33           RLC     A
+   \   000028   90....       MOV     DPTR,#??LastState
+   \   00002B   F0           MOVX    @DPTR,A
+     61          return(Code);
+   \   00002C   D083         POP     DPH
+   \   00002E   D082         POP     DPL
+   \   000030   22           RET
+   \   000031                REQUIRE _A_P1
+     62          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for LastState>`:
+   \   000000   5A           DB 90
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant Encodeur &Encodeur::new Encodeur()
+   \                     `??new Encodeur`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new Encodeur_2`
+   \   00001B                ; Setup parameters for call to function Encodeur::Encodeur()
+   \   00001B   12....       LCALL   ??Encodeur
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new Encodeur_3`
+   \                     `??new Encodeur_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new Encodeur_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant Encodeur &Encodeur::new Encodeur(UC)
+   \                     `??new Encodeur_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A01         MOV     R2,#0x1
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new Encodeur_4`
+   \   00001E                ; Setup parameters for call to function Encodeur::Encodeur(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??Encodeur_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new Encodeur_5`
+   \                     `??new Encodeur_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new Encodeur_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void Encodeur::delete ~Encodeur(Encodeur *)
+   \                     `??delete ~Encodeur`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~Encodeur_1`
+   \   00000D                ; Setup parameters for call to function Encodeur::~Encodeur()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~Encodeur`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~Encodeur_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+     63          
+     64          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Encodeur::Encodeur()               2      0      0
+     Encodeur::Encodeur(UC)             0      0      9
+     Encodeur::LogicAnalyser()          2      0      0
+     Encodeur::delete ~Encodeur(Encodeur *)
+                                        0      0      8
+       -> Encodeur::~Encodeur()         0      0     16
+       -> operator delete(void *)       0      0     16
+     Encodeur::new Encodeur()           2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> Encodeur::Encodeur()          4      0      0
+     Encodeur::new Encodeur(UC)         0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> Encodeur::Encodeur(UC)        0      0     18
+     Encodeur::~Encodeur()              0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     _A_P1                             1
+     Encodeur::LastState               1
+     Encodeur::Encodeur()             17
+     Encodeur::Encodeur(UC)            1
+     Encodeur::~Encodeur()             1
+     Encodeur::LogicAnalyser()        49
+     ?<Initializer for LastState>      1
+     Encodeur::new Encodeur()         49
+     Encodeur::new Encodeur(UC)       54
+     Encodeur::delete ~Encodeur(Encodeur *)
+                                      32
+
+ 
+ 203 bytes in segment NEAR_CODE
+   1 byte  in segment SFR_AN
+   1 byte  in segment XDATA_I
+   1 byte  in segment XDATA_ID
+ 
+ 204 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 1 byte shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

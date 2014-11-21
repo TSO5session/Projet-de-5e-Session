@@ -154,8 +154,8 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>0</version>
-          <state>3</state>
+          <version>1</version>
+          <state>4</state>
         </option>
         <option>
           <name>Input description</name>
@@ -163,8 +163,8 @@
         </option>
         <option>
           <name>Output variant</name>
-          <version>0</version>
-          <state>4</state>
+          <version>1</version>
+          <state>5</state>
         </option>
         <option>
           <name>Output description</name>
@@ -254,9 +254,9 @@
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>4</archiveVersion>
+      <archiveVersion>5</archiveVersion>
       <data>
-        <version>9</version>
+        <version>10</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -497,7 +497,19 @@
           <state>1</state>
         </option>
         <option>
-          <name>IccRelaxedFpPrecision</name>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>NoSizeConstraints</name>
           <state>0</state>
         </option>
       </data>
@@ -506,7 +518,7 @@
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>5</version>
+        <version>6</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -577,10 +589,6 @@
         <option>
           <name>MultiLine</name>
           <state>0</state>
-        </option>
-        <option>
-          <name>NoStruct</name>
-          <state>1</state>
         </option>
         <option>
           <name>PageLengthCheck</name>
@@ -685,7 +693,7 @@
       <name>XLINK</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>17</version>
+        <version>18</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1000,6 +1008,11 @@
           <name>Linker Far22 Heap Size</name>
           <state>1</state>
         </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1185,8 +1198,8 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>0</version>
-          <state>3</state>
+          <version>1</version>
+          <state>4</state>
         </option>
         <option>
           <name>Input description</name>
@@ -1194,8 +1207,8 @@
         </option>
         <option>
           <name>Output variant</name>
-          <version>0</version>
-          <state>4</state>
+          <version>1</version>
+          <state>5</state>
         </option>
         <option>
           <name>Output description</name>
@@ -1285,9 +1298,9 @@
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>4</archiveVersion>
+      <archiveVersion>5</archiveVersion>
       <data>
-        <version>9</version>
+        <version>10</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1470,7 +1483,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDUBolide\LeBolide</state>
+          <state>C:\Users\1268241\Desktop\Bolide\IAR\_Header</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1528,7 +1541,19 @@
           <state>1</state>
         </option>
         <option>
-          <name>IccRelaxedFpPrecision</name>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>NoSizeConstraints</name>
           <state>0</state>
         </option>
       </data>
@@ -1537,7 +1562,7 @@
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>5</version>
+        <version>6</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1608,10 +1633,6 @@
         <option>
           <name>MultiLine</name>
           <state>0</state>
-        </option>
-        <option>
-          <name>NoStruct</name>
-          <state>1</state>
         </option>
         <option>
           <name>PageLengthCheck</name>
@@ -1716,7 +1737,7 @@
       <name>XLINK</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>17</version>
+        <version>18</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1799,7 +1820,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuBolide\LeBolide\_Ver810_lnk51ew_DS89C450.xcl</state>
+          <state>C:\Users\1268241\Desktop\_Ver810_lnk51ew_DS89C450.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -2030,6 +2051,11 @@
         <option>
           <name>Linker Far22 Heap Size</name>
           <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
         </option>
       </data>
     </settings>
@@ -2216,8 +2242,8 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>0</version>
-          <state>3</state>
+          <version>1</version>
+          <state>4</state>
         </option>
         <option>
           <name>Input description</name>
@@ -2225,8 +2251,8 @@
         </option>
         <option>
           <name>Output variant</name>
-          <version>0</version>
-          <state>4</state>
+          <version>1</version>
+          <state>5</state>
         </option>
         <option>
           <name>Output description</name>
@@ -2316,9 +2342,9 @@
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>4</archiveVersion>
+      <archiveVersion>5</archiveVersion>
       <data>
-        <version>9</version>
+        <version>10</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -2501,7 +2527,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuBolide\LeBolide</state>
+          <state>F:\Projet_Session5_LNAH\S1_11Nov2014\Bolide\IAR\_Header</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2559,7 +2585,19 @@
           <state>1</state>
         </option>
         <option>
-          <name>IccRelaxedFpPrecision</name>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>NoSizeConstraints</name>
           <state>0</state>
         </option>
       </data>
@@ -2568,7 +2606,7 @@
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>5</version>
+        <version>6</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -2639,10 +2677,6 @@
         <option>
           <name>MultiLine</name>
           <state>0</state>
-        </option>
-        <option>
-          <name>NoStruct</name>
-          <state>1</state>
         </option>
         <option>
           <name>PageLengthCheck</name>
@@ -2747,7 +2781,7 @@
       <name>XLINK</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>17</version>
+        <version>18</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -2830,7 +2864,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>C:\Synchro\Dropbox\Travaux\OLD\Hiver2014\Le Bolide\Programme\PROJET FINAL COMPILABLE\_Ver810_lnk51ew_uPSD3254A.xcl</state>
+          <state>C:\Users\1268241\Desktop\_Ver810_lnk51ew_uPSD3254A.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -3062,6 +3096,11 @@
           <name>Linker Far22 Heap Size</name>
           <state>1</state>
         </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -3096,76 +3135,67 @@
     </settings>
   </configuration>
   <file>
-    <name>$PROJ_DIR$\CANBUS.cpp</name>
+    <name>$PROJ_DIR$\_Source\CANBUS.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLADCMAX1236.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLADCMAX1236.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLADCuPSD.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLDAC6574.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLDAC6574.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLDAC7554.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLDAC7554.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLEcran.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLEcran.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLHorloge1307.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLHorloge1307.Cpp</name>
+    <name>$PROJ_DIR$\_Source\CLI2CBase.Cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLI2CBase.Cpp</name>
+    <name>$PROJ_DIR$\_Source\CLI2CPort.Cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLI2CPort.Cpp</name>
+    <name>$PROJ_DIR$\_Source\CLInOutBase.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLInOutBase.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLIOPCF8574.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLMCP23S09.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLMCP23S09.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLRoue.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLPile.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLRS232.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLPWMuPSD.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLRoue.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLSuiveurLigne.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLRS232.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLTest.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLSerialPortInterface.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLTLV2544.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLSuiveurLigne.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLVehicule.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLTest.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLXBEE.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLTLV2544.cpp</name>
+    <name>$PROJ_DIR$\_Source\Laboratoire.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLVehicule.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\CLXBEE.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\ProjetBolide.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\Station1.cpp</name>
+    <name>$PROJ_DIR$\_Source\Station1.cpp</name>
   </file>
 </project>
 

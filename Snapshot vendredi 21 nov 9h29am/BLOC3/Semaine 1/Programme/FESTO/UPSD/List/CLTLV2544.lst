@@ -1,0 +1,365 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Nov/2014  11:41:08 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\Libraire\CLTLV2544.cpp                 #
+#    Command line       =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\Libraire\CLTLV2544.cpp -D UPSD3254A    #
+#                          --preprocess=cl C:\Users\1230838\Desktop\PROJETSES #
+#                          SION5\BLOC3\Programme\FESTO\UPSD\List\ -lC         #
+#                          C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\List\ -lA                         #
+#                          C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\List\ -o                          #
+#                          C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\Obj\ -e --no_cse --no_unroll      #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files\IAR                #
+#                          Systems\Embedded Workbench                         #
+#                          6.4\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\List\CLTLV2544.lst                #
+#    Object file        =  C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Prog #
+#                          ramme\FESTO\UPSD\Obj\CLTLV2544.r51                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\1230838\Desktop\PROJETSESSION5\BLOC3\Programme\FESTO\Libraire\CLTLV2544.cpp
+      1          // ***************** FICHIER:CLI2CPort.cpp
+      2          //
+      3          //  Description:Contient les fonctions haut niveau pour communiquer avec 
+      4          //              l I2C.
+      5          //             
+      6          //
+      7          //  Application realisee avec IAR
+      8          //
+      9          //  AUTEUR : Gabriel Fortin-Belanger
+     10          //  DATE CREATION :    2014-02-07		 VERSION: 1.0
+     11          //  DATE MODIFICATION: ****-**-**
+     12          //
+     13          //******************************************************************************
+     14          #include "_DeclarationGenerale.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     15          #include "CLTLV2544.h"
+     16          #include "CLEcran.h"
+     17          
+     18          
+     19          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     20          CLTLV2544 :: CLTLV2544(void)
+   \                     ??CLTLV2544:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+     21          {
+   \   000008                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000008   AA82         MOV     R2,DPL
+   \   00000A   AB83         MOV     R3,DPH
+   \   00000C   12....       LCALL   ??CLSPI
+   \   00000F                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   12....       LCALL   ??CLEcran
+     22          
+     23             P1_5 =0;
+   \   000016   C295         CLR     0x90.5
+     24             ucSPITransfert( 0x00, 0xA8);
+   \   000018                ; Setup parameters for call to function CLSPI::ucSPITransfert(UC, UC)
+   \   000018   7CA8         MOV     R4,#-0x58
+   \   00001A   7900         MOV     R1,#0x0
+   \   00001C   AA82         MOV     R2,DPL
+   \   00001E   AB83         MOV     R3,DPH
+   \   000020   12....       LCALL   ??ucSPITransfert
+   \   000023   E9           MOV     A,R1
+     25             ucSPITransfert( 0x00, 0x04);
+   \   000024                ; Setup parameters for call to function CLSPI::ucSPITransfert(UC, UC)
+   \   000024   7C04         MOV     R4,#0x4
+   \   000026   7900         MOV     R1,#0x0
+   \   000028   AA82         MOV     R2,DPL
+   \   00002A   AB83         MOV     R3,DPH
+   \   00002C   12....       LCALL   ??ucSPITransfert
+   \   00002F   E9           MOV     A,R1
+     26             P1_5 =1;
+   \   000030   D295         SETB    0x90.5
+     27          }
+   \   000032   AA82         MOV     R2,DPL
+   \   000034   AB83         MOV     R3,DPH
+   \   000036   D083         POP     DPH
+   \   000038   D082         POP     DPL
+   \   00003A   22           RET
+   \   00003B                REQUIRE _A_P1
+     28          
+     29          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     30          CLTLV2544 :: ~CLTLV2544(void)
+   \                     `?~CLTLV2544`:
+     31          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+     32          
+     33          
+     34          }
+   \   000008                ; Setup parameters for call to function CLEcran::~CLEcran()
+   \   000008   AA82         MOV     R2,DPL
+   \   00000A   AB83         MOV     R3,DPH
+   \   00000C   12....       LCALL   `?~CLEcran`
+   \   00000F                ; Setup parameters for call to function CLSPI::~CLSPI()
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   12....       LCALL   `?~CLSPI`
+   \   000016   D083         POP     DPH
+   \   000018   D082         POP     DPL
+   \   00001A   22           RET
+     35          
+     36          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     37          UC CLTLV2544 :: ucConvAD(UC ucChanel)
+   \                     ??ucConvAD:
+     38          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   89..         MOV     ?V0 + 2,R1
+     39            int ucValue;
+     40            P1_5 =1;
+   \   00000B   D295         SETB    0x90.5
+     41            
+     42            
+     43            switch(ucChanel)
+   \   00000D   E5..         MOV     A,?V0 + 2
+   \   00000F   600B         JZ      ??ucConvAD_1
+   \   000011   14           DEC     A
+   \   000012   603F         JZ      ??ucConvAD_2
+   \   000014   14           DEC     A
+   \   000015   603C         JZ      ??ucConvAD_2
+   \   000017   14           DEC     A
+   \   000018   6039         JZ      ??ucConvAD_2
+   \   00001A   8037         SJMP    ??ucConvAD_2
+     44            {
+     45            case 0:
+     46             
+     47               
+     48              P1_5 =0;
+   \                     ??ucConvAD_1:
+   \   00001C   C295         CLR     0x90.5
+     49               
+     50             /*
+     51              clEcran.vLcdPoscurC0L1(0,1);
+     52              clEcran.vLcdAffCarHex(ucSPITransfert( 0x00, 0x00));
+     53               clEcran.vLcdPoscurC0L1(0,4);
+     54              clEcran.vLcdAffCarHex(ucSPITransfert( 0x00, 0x00));
+     55            */
+     56            
+     57             //ucValue = ucSPITransfert( 0x00, 0x00) << 8;
+     58             //ucValue = ucValue | ucSPITransfert( 0x00, 0x00);
+     59              ucVALH = ucSPITransfert( 0x00, 0x00) ;
+   \   00001E                ; Setup parameters for call to function CLSPI::ucSPITransfert(UC, UC)
+   \   00001E   7C00         MOV     R4,#0x0
+   \   000020   7900         MOV     R1,#0x0
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   12....       LCALL   ??ucSPITransfert
+   \   000029   E9           MOV     A,R1
+   \   00002A   85..82       MOV     DPL,?V0 + 0
+   \   00002D   85..83       MOV     DPH,?V0 + 1
+   \   000030   A3           INC     DPTR
+   \   000031   A3           INC     DPTR
+   \   000032   A3           INC     DPTR
+   \   000033   A3           INC     DPTR
+   \   000034   A3           INC     DPTR
+   \   000035   A3           INC     DPTR
+   \   000036   F0           MOVX    @DPTR,A
+     60              ucVALL =  ucSPITransfert( 0x00, 0x00);
+   \   000037                ; Setup parameters for call to function CLSPI::ucSPITransfert(UC, UC)
+   \   000037   7C00         MOV     R4,#0x0
+   \   000039   7900         MOV     R1,#0x0
+   \   00003B   AA..         MOV     R2,?V0 + 0
+   \   00003D   AB..         MOV     R3,?V0 + 1
+   \   00003F   12....       LCALL   ??ucSPITransfert
+   \   000042   E9           MOV     A,R1
+   \   000043   85..82       MOV     DPL,?V0 + 0
+   \   000046   85..83       MOV     DPH,?V0 + 1
+   \   000049   A3           INC     DPTR
+   \   00004A   A3           INC     DPTR
+   \   00004B   A3           INC     DPTR
+   \   00004C   A3           INC     DPTR
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   F0           MOVX    @DPTR,A
+     61              P1_5 =1;
+   \   000051   D295         SETB    0x90.5
+     62              break;
+     63              
+     64              
+     65              
+     66            case 1:
+     67          
+     68              break;
+     69            case 2:
+     70           
+     71              break;
+     72            case 3:
+     73          
+     74              break;
+     75              
+     76              
+     77            
+     78            }
+     79            return(ucValue);
+                          ^
+Warning[Pe549]: variable "ucValue" is used before its value is set
+   \                     ??ucConvAD_2:
+   \   000053   EE           MOV     A,R6
+   \   000054   F9           MOV     R1,A
+   \   000055   7F03         MOV     R7,#0x3
+   \   000057   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00005A                REQUIRE _A_P1
+     80          
+     81          }
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLTLV2544 &CLTLV2544::new CLTLV2544()
+   \                     `??new CLTLV2544`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A08         MOV     R2,#0x8
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLTLV2544_1`
+   \   00001B                ; Setup parameters for call to function CLTLV2544::CLTLV2544()
+   \   00001B   12....       LCALL   ??CLTLV2544
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLTLV2544_2`
+   \                     `??new CLTLV2544_1`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLTLV2544_2`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLTLV2544::delete ~CLTLV2544(CLTLV2544 *)
+   \                     `??delete ~CLTLV2544`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLTLV2544_1`
+   \   00000D                ; Setup parameters for call to function CLTLV2544::~CLTLV2544()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLTLV2544`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLTLV2544_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+     82          
+     83          
+     84          
+     85          
+     86          
+     87          
+     88          
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       2      0      0  CLTLV2544::CLTLV2544()
+                          2 0  0 -> CLEcran::CLEcran()
+                          2 0  0 -> CLSPI::CLSPI()
+                          2 0  0 -> CLSPI::ucSPITransfert(UC, UC)
+       0      0      8  CLTLV2544::delete ~CLTLV2544(CLTLV2544 *)
+                          0 0  8 -> CLTLV2544::~CLTLV2544()
+                          0 0  8 -> operator delete(void *)
+       2      0      0  CLTLV2544::new CLTLV2544()
+                          2 0  0 -> CLTLV2544::CLTLV2544()
+                          2 0  0 -> operator new(unsigned int)
+       1      0     10  CLTLV2544::ucConvAD(UC)
+                          0 0 10 -> CLSPI::ucSPITransfert(UC, UC)
+       2      0      8  CLTLV2544::~CLTLV2544()
+                          2 0  0 -> CLEcran::~CLEcran()
+                          2 0  0 -> CLSPI::~CLSPI()
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      59  CLTLV2544::CLTLV2544()
+      32  CLTLV2544::delete ~CLTLV2544(CLTLV2544 *)
+      49  CLTLV2544::new CLTLV2544()
+      90  CLTLV2544::ucConvAD(UC)
+      27  CLTLV2544::~CLTLV2544()
+       1  _A_P1
+
+ 
+ 257 bytes in segment NEAR_CODE
+   1 byte  in segment SFR_AN
+ 
+ 257 bytes of CODE memory
+   0 bytes of DATA memory (+ 1 byte shared)
+
+Errors: none
+Warnings: 1

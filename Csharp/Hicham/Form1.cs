@@ -19,6 +19,42 @@ namespace ICDIBasic
 {
     public partial class Form1 : Form
     {
+        #region CONSTANTE
+        const byte VEHICULE      = 0;
+          const byte ARRET       = 1;
+          const byte DEMARRE     = 0;
+
+
+        const byte ETAT_VEHICULE   = 1;
+          const byte ARRETE        = 0;
+          const byte EN_MARCHE     = 1;
+          const byte HORS_CIRCUIT  = 2;
+
+
+        const byte VITESSE      = 2;
+
+        const byte BATTERIE     = 3;
+
+        const byte COULEUR      = 4;
+          const byte METAL      = 0;
+          const byte ORANGE     = 1;
+          const byte NOIR       = 2;
+
+        const byte POID         = 00;
+
+        const byte NO_STATION   = 7;
+          const byte STATION_1  = 0;
+          const byte STATION_2  = 1;
+          const byte STATION_3  = 2;
+
+        const byte HISTO        = 192;
+
+        const byte SENS           = 8;
+           const byte HORAIRE     = 0;
+           const byte ANTIHORAIRE = 1;
+
+        const byte HORLOGE      = 06;
+        #endregion
 
         #region Unmodified RAW CAN STUFF
         #region Structures
@@ -1732,8 +1768,7 @@ namespace ICDIBasic
         #region Bouton Démarrer le véhicule
         private void button3_Click(object sender, EventArgs e)
         {
-            var bufferCAN_CRC16 = new byte[8];
-            TxCan2(20, 30);
+            TxCan2(VEHICULE, DEMARRE);
         }
         #endregion
 
@@ -1742,57 +1777,7 @@ namespace ICDIBasic
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                TPCANMsg CANMsg;
-                TPCANStatus stsResult;
-
-                CANMsg = new TPCANMsg();
-                CANMsg.DATA = new byte[8];
-
-                CANMsg.ID = 006; // 006 c'est pour faire des tests. Mettre 004 pour la version finale
-                CANMsg.LEN = 4;
-                CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
-
-                for (int i = 0; i < CANMsg.LEN; i++)
-                {
-                    if (i == 0) { CANMsg.DATA[0] = 00; }
-                    if (i == 1) { CANMsg.DATA[1] = 00; }
-                    if (i == 2) { CANMsg.DATA[2] = 00; }
-                    if (i == 3) { CANMsg.DATA[3] = 01; }
-                    if (i == 4) { CANMsg.DATA[4] = 00; }
-                    if (i == 5) { CANMsg.DATA[5] = 00; }
-                    if (i == 6) { CANMsg.DATA[6] = 00; }
-                    if (i == 7) { CANMsg.DATA[7] = 00; }
-                }
-
-                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg);
-
-                if (stsResult == TPCANStatus.PCAN_ERROR_OK)
-                {
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("STOP command successfully sent");   // Enregistre le log de la connexion
-                }
-                else
-                {
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("Error sending STOP command");   // Enregistre le log de la connexion
-                }
-            }
-            catch
-            {
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Error sending data on CAN bus (try catch error)");   // Enregistre le log de la connexion
-            }
+          TxCan2(VEHICULE, ARRET);
         }
         #endregion
 
@@ -1853,14 +1838,7 @@ namespace ICDIBasic
         #region Bouton Synchroniser les horloges
         private void button1_Click(object sender, EventArgs e) // Lorsque l'utilisateur veut synchroniser toutes les horloges
         {
-            try
-            {
-
-            }
-            catch
-            {
-
-            }
+            TxCan2(HORLOGE, 0);
         }
         #endregion
 

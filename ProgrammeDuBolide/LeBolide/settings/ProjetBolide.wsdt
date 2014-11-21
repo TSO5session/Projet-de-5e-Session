@@ -3,7 +3,7 @@
 <Workspace>
   <ConfigDictionary>
     
-  <CurrentConfigs><Project>ProjetBolide/UPSD3254A</Project></CurrentConfigs></ConfigDictionary>
+  <CurrentConfigs><Project>ProjetBolide/DS89C450</Project></CurrentConfigs></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
@@ -12,7 +12,7 @@
           
           
           
-        <Column0>186</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>262</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       <PreferedWindows><Position>1</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></Workspace>
       <Build>
         
@@ -20,11 +20,11 @@
         
         
       <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1395</ColumnWidth1><ColumnWidth2>372</ColumnWidth2><ColumnWidth3>93</ColumnWidth3></Build>
-    <TerminalIO/></Static>
+    <TerminalIO/><Find-All-Declarations><ColumnWidth0>664</ColumnWidth0><ColumnWidth1>94</ColumnWidth1><ColumnWidth2>1138</ColumnWidth2></Find-All-Declarations></Static>
     <Windows>
       
       
-    <Wnd0>
+    <Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-27688-21257</Identity>
@@ -32,22 +32,22 @@
             <Factory>Build</Factory>
             <Session/>
           </Tab>
-        </Tabs>
+        <Tab><Identity>TabID-1533-2113</Identity><TabName>Find All Declarations</TabName><Factory>Find-All-Declarations</Factory><Session/></Tab></Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd0><Wnd3><Tabs><Tab><Identity>TabID-12802-20537</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>ProjetBolide</ExpandedNode><ExpandedNode>ProjetBolide/Output</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd2><Tabs><Tab><Identity>TabID-12802-20537</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>ProjetBolide</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\ProjetBolide.cpp</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>1123</SelStart><SelEnd>1123</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TypeCible.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>259</SelStart><SelEnd>259</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLVehicule.cpp</Filename><XPos>0</XPos><YPos>167</YPos><SelStart>6668</SelStart><SelEnd>6668</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLVehicule.h</Filename><XPos>0</XPos><YPos>39</YPos><SelStart>794</SelStart><SelEnd>805</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Station1.cpp</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>1213</SelStart><SelEnd>1231</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Station1.h</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>1171</SelStart><SelEnd>1171</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLRoue.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>1947</SelStart><SelEnd>1947</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLRoue.h</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>751</SelStart><SelEnd>751</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLSuiveurLigne.cpp</Filename><XPos>0</XPos><YPos>62</YPos><SelStart>2171</SelStart><SelEnd>2171</SelEnd></Tab><ActiveTab>8</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLSuiveurLigne.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>489</SelStart><SelEnd>489</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\DeclarationGenerale.h</Filename><XPos>0</XPos><YPos>96</YPos><SelStart>2344</SelStart><SelEnd>2344</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLMCP23S09.cpp</Filename><XPos>0</XPos><YPos>115</YPos><SelStart>3862</SelStart><SelEnd>3862</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLSerialPortInterface.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>870</SelStart><SelEnd>870</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLSerialPortInterface.h</Filename><XPos>0</XPos><YPos>27</YPos><SelStart>683</SelStart><SelEnd>687</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLMCP23S09.h</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>703</SelStart><SelEnd>703</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\ProjetBolide.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLEcran.h</Filename><XPos>0</XPos><YPos>45</YPos><SelStart>1895</SelStart><SelEnd>1914</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\TypeCible.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>884</SelStart2><SelEnd2>884</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\Laboratoire.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>18</YPos2><SelStart2>1067</SelStart2><SelEnd2>1067</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLVehicule.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>12</YPos2><SelStart2>1756</SelStart2><SelEnd2>1756</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLSuiveurLigne.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>13</YPos2><SelStart2>1000</SelStart2><SelEnd2>1000</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLSuiveurLigne.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>91</YPos2><SelStart2>3011</SelStart2><SelEnd2>3022</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLHorloge1307.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>6</YPos2><SelStart2>1257</SelStart2><SelEnd2>1257</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLI2CPort.Cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>261</YPos2><SelStart2>8839</SelStart2><SelEnd2>8839</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLI2CPort.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>23</YPos2><SelStart2>1805</SelStart2><SelEnd2>1805</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLIOPCF8574.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>42</YPos2><SelStart2>1864</SelStart2><SelEnd2>1864</SelEnd2></Tab><ActiveTab>8</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLIOPCF8574.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>3</YPos2><SelStart2>878</SelStart2><SelEnd2>878</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-027d1d10><key>iaridepm.enu1</key></Toolbar-027d1d10></Sizes></Row0></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>767</Bottom><Right>260</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>104167</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>136458</sizeVertCX><sizeVertCY>771314</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>185</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>187</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>187563</sizeHorzCY><sizeVertCX>431250</sizeVertCX><sizeVertCY>187563</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-01c919c8><key>iaridepm.enu1</key></Toolbar-01c919c8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>823</Bottom><Right>336</Right><x>-2</x><y>-2</y><xscreen>224</xscreen><yscreen>83</yscreen><sizeHorzCX>116667</sizeHorzCX><sizeHorzCY>83166</sizeHorzCY><sizeVertCX>176042</sizeVertCX><sizeVertCY>826653</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>130</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>132</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>132265</sizeHorzCY><sizeVertCX>482813</sizeVertCX><sizeVertCY>78156</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

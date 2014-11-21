@@ -1,0 +1,1900 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        27/Oct/2014  20:17:42 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Prog\Labo6\Programme\CANBUS.cpp              /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\CANBUS.cpp" -D          /
+//                          UPSD3254A --preprocess=cl                         /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\List\" -lC         /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\List\" -lA         /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\List\" -o          /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Prog\Labo6\Programme\UPSD\Obj\" -e --no_cse  /
+//                          --no_unroll --no_inline --no_code_motion          /
+//                          --no_tbaa --debug --core=plain --dptr=16,1        /
+//                          --data_model=large --code_model=near              /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data --nr_virtual_regs 8        /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++     /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Prog\Labo6\Programme\UPSD\List\CANBUS.s51    /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CANBUS
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?L_ADD_X
+        EXTERN ?L_MOV_X
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?SS_SHR
+        EXTERN ?UL_GT
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC ??AcquitterInterruptionsMCP2515
+        FUNCTION ??AcquitterInterruptionsMCP2515,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??CanBus
+        FUNCTION ??CanBus,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??CanBus_1
+        FUNCTION ??CanBus_1,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??ChoisirIdentifiantTX0
+        FUNCTION ??ChoisirIdentifiantTX0,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??Delai
+        FUNCTION ??Delai,0203H
+        ARGFRAME XSTACK, 19, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 15, STACK
+        PUBLIC ??EcrireRegistreMCP2515
+        FUNCTION ??EcrireRegistreMCP2515,021203H
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??Longueur
+        FUNCTION ??Longueur,0203H
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??MCP24515_init
+        FUNCTION ??MCP24515_init,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC ??SendMCP2515
+        FUNCTION ??SendMCP2515,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 19, STACK
+        PUBLIC `??delete ~CanBus`
+        FUNCTION `??delete ~CanBus`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new CanBus`
+        FUNCTION `??new CanBus`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CanBus_1`
+        FUNCTION `??new CanBus_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~CanBus`
+        FUNCTION `?~CanBus`,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_1
+        PUBWEAK __Constant_3e8
+        PUBWEAK __Constant_a
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??CLSPI
+        FUNCTION ??CLSPI,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~CLSPI`
+        FUNCTION `?~CLSPI`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??WriteMPC2514
+        FUNCTION ??WriteMPC2514,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CanBus &CanBus::new CanBus()
+`??new CanBus`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new CanBus`
+        CODE
+        FUNCALL `??new CanBus`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CanBus`, ??CanBus
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CanBus_2`
+        ; Setup parameters for call to function CanBus::CanBus()
+        LCALL   ??CanBus
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CanBus_3`
+`??new CanBus_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CanBus_3`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CanBus &CanBus::new CanBus(UC)
+`??new CanBus_1`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??new CanBus_1`
+        CODE
+        FUNCALL `??new CanBus_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CanBus_1`, ??CanBus_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CanBus_4`
+        ; Setup parameters for call to function CanBus::CanBus(UC)
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??CanBus_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CanBus_5`
+`??new CanBus_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CanBus_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CanBus::delete ~CanBus(CanBus *)
+`??delete ~CanBus`:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function `??delete ~CanBus`
+        CODE
+        FUNCALL `??delete ~CanBus`, `?~CanBus`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CanBus`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CanBus_1`
+        ; Setup parameters for call to function CanBus::~CanBus()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CanBus`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CanBus_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+// C:\Synchro\Dropbox\Travaux\Automne 2014\Prog\Labo6\Programme\CANBUS.cpp
+//    1 // **************************CANBUS.cpp
+//    2 // Auteur:       Vincent Chouinard
+//    3 // Date:         20 juillet 2014
+//    4 // Version:      1.0
+//    5 // Modification: Aucune
+//    6 //
+//    7 // Compilateur:  IAR 8.1
+//    8 //
+//    9 // Description:
+//   10 // *****************************************************************************
+//   11 #include "_DeclarationGenerale.h" // Raccourcis de programmation & variables
+//   12 #include "CANBUS.h"               // Fichier de definitions du bus CAN
+//   13 #include "MCP2515.h"              // define des registres du MCP2515
+//   14 #include "CLSPI.h"                // Pour utiliser le bus SPI
+//   15 // *****************************************************************************
+//   16 #define MCP2415                   // Pour la compilation conditionnelle
+//   17 #define MCP2515_CS P1_7;
+//   18 #define MCP2515_CHOIX_IDENTIFIANT 0x0A0
+//   19 // *****************************************************************************
+//   20 
+//   21 //******************************************************************************
+//   22 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   23 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   24 CanBus :: CanBus(void)
+??CanBus:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ??CanBus
+        CODE
+        FUNCALL ??CanBus, ??CLSPI
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CanBus, ??CLSPI
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CanBus, ??MCP24515_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CanBus, ??ChoisirIdentifiantTX0
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CanBus, `?~CLSPI`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 9)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   25 {
+        ; Setup parameters for call to function CLSPI::CLSPI()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??CLSPI
+//   26 class CLSPI SPI;  // Initialise le SPI
+        ; Setup parameters for call to function CLSPI::CLSPI()
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??CLSPI
+//   27 MCP24515_init();  // Initialise le MCP2515
+        ; Setup parameters for call to function CanBus::MCP24515_init()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MCP24515_init
+//   28 ChoisirIdentifiantTX0(MCP2515_CHOIX_IDENTIFIANT); //
+        ; Setup parameters for call to function CanBus::ChoisirIdentifiantTX0(int)
+        MOV     R4,#-0x60
+        MOV     R5,#0x0
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??ChoisirIdentifiantTX0
+//   29 }
+        ; Setup parameters for call to function CLSPI::~CLSPI()
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `?~CLSPI`
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 8)
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//   30 
+//   31 //******************************************************************************
+//   32 //                            LE CONSTRUCTEUR INITIALISATEUR
+//   33 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   34 CanBus :: CanBus(UC ucParametre) // Initialisation du CAN via MCP2515
+??CanBus_1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??CanBus_1
+        CODE
+        FUNCALL ??CanBus_1, ??CLSPI
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//   35 {
+        ; Setup parameters for call to function CLSPI::CLSPI()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??CLSPI
+//   36 
+//   37 }
+        MOV     R2,DPL
+        MOV     R3,DPH
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock4
+//   38 
+//   39 // *****************************************************************************
+//   40 //                            LE DESTRUCTEUR
+//   41 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   42 CanBus :: ~CanBus(void)
+`?~CanBus`:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function `?~CanBus`
+        CODE
+//   43 {
+        FUNCALL `?~CanBus`, `?~CLSPI`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        ; Saved register size: 0
+        ; Auto size: 0
+//   44 
+//   45 }
+        ; Setup parameters for call to function CLSPI::~CLSPI()
+        LJMP    `?~CLSPI`
+        CFI EndBlock cfiBlock5
+//   46 
+//   47 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   48 void CanBus :: MCP24515_init(void)
+??MCP24515_init:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ??MCP24515_init
+        CODE
+//   49 {
+        FUNCALL ??MCP24515_init, ??WriteMPC2514
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??Delai
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??MCP24515_init, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   50 // Envoi de la commande de « RESET », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. 
+//   51    WriteMPC2514(1, MCP2515_RESET, 0x00, 0x00);
+        ; Setup parameters for call to function CLSPI::WriteMPC2514(UC, UC, UC, UC)
+        MOV     ?V0 + 0,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 9)
+        MOV     R5,#0x0
+        MOV     R4,#-0x40
+        MOV     R1,#0x1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??WriteMPC2514
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 8)
+        MOV     A,R1
+//   52    Delai(1000);   // Délai permettant de s'assurer que le MCP2515 soit bien réinitialisé.
+        ; Setup parameters for call to function CanBus::Delai(unsigned long)
+        MOV     DPTR,#__Constant_3e8
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        CFI CFA_XSP16 add(XSP16, 12)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??Delai
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 8)
+//   53         
+//   54 // Passage du circuit MCP2515 en « Configuration mode », nécéssaire 
+//   55 // pour pouvoir effectuer les opérations de configurations qui suivent 
+//   56 
+//   57    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x87);   /* Registre 0x0F.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#-0x79
+        MOV     R1,#0xf
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   58                              - REQOP2   = 1 :
+//   59                              - REQOP1   = 0 :
+//   60                              - REQOP0   = 0 : le circuit est passé en « Configuration mode »,
+//   61                              - ABAT     = 0 : ne pas annuler toutes les transmissons en attentes, si nécéssaire,
+//   62                              - OSM          : renvois des messages, si nécessaire,
+//   63                              - CLKEN    = 1 : la broche « CLKOUT » est activée,
+//   64                              - CLKPRE1  = 1 : 
+//   65                              - CLKPRE0  = 1 : réglage du prédiviseur de l'horloge de la broche « CLKOUT » à 8,
+//   66                              - F_CLKOUT = System Clock / 8 */        
+//   67              
+//   68    EcrireRegistreMCP2515(MCP2515_TX01_INT,  0x3C); /* Registre 0x0C */
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x3c
+        MOV     R1,#0xc
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   69    EcrireRegistreMCP2515(MCP2515_TXRTSCTRL, 0x00); /* Registre 0x0D.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0xd
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   70                            L'envoi d'un message - RTS - ne se fait pas sur le passage à « 0 » d'une broche,
+//   71                            mais après l'envoi de la commande « RTS », par l'intermédiaire du bus SPI */
+//   72    
+//   73 /* Initialisations des registres des compteurs d'erreurs */
+//   74    EcrireRegistreMCP2515(MCP2515_TEC, 0x00); /* Registre 0x1C.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x1c
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   75                           Mise à zéro du compteur d'erreurs en émission.*/
+//   76    EcrireRegistreMCP2515(MCP2515_REC, 0x00); /* Registre 0x1D.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x1d
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   77                           Mise à zéro du compteur d'erreurs en réception.*/
+//   78   
+//   79 /* Configurations du « Bit Timing » */                 
+//   80    EcrireRegistreMCP2515(MCP2515_CNF1, 0xC0); /* Registre 0xC0.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#-0x40
+        MOV     R1,#0x2a
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   81                             - SJW = 0 : 1 x TQ,
+//   82                             - BRP = 3. */
+//   83    EcrireRegistreMCP2515(MCP2515_CNF2, 0x9A); /* Registre 0x9A.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#-0x66
+        MOV     R1,#0x29
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   84                             - BTLMODE = 1,
+//   85                             - SAM = 0,
+//   86                             - PHSEG1 = 2,
+//   87                             - PRSEG  = 0. */
+//   88    EcrireRegistreMCP2515(MCP2515_CNF3, 0x07); /* Registre 0x07.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x7
+        MOV     R1,#0x28
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   89                             - SOF = 0 : Broche « CLKOUT » activée pour la fonction de répétition de l'horloge,
+//   90                             - WAKFIL = 0 : Wake-up filter désactivé,
+//   91                             - PHSEG : 2. */
+//   92 
+//   93 /* Configurations des interruptions du circuit MCP2515 */
+//   94    EcrireRegistreMCP2515(MCP2515_CANINTE, 0x01); /* Registre 0x2B.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x1
+        MOV     R1,#0x2b
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   95                             Autorisation des interruptions suite à la réception d'une donnée par le module « RXB0 ». */
+//   96    EcrireRegistreMCP2515(MCP2515_CANINTF, 0x00); /* Registre 0x2C.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x2c
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   97                              Acquittement des éventuelles interruptions qui seraient en attente .*/
+//   98    EcrireRegistreMCP2515(MCP2515_EFLG,     0x00); /* Registre 0x2D */
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x2d
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//   99    EcrireRegistreMCP2515(MCP2515_RXB0CTRL, 0x20); /* Registre 0x60 */
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x20
+        MOV     R1,#0x60
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  100    
+//  101 /* Configuration initiale du module « TXB0 » */
+//  102    EcrireRegistreMCP2515(MCP2515_TXB0CTRL, 0x03); /* Registre 0x30.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x3
+        MOV     R1,#0x30
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  103                               TXP = 0b11 : les messages ont la plus haute priorité. */
+//  104    EcrireRegistreMCP2515(MCP2515_TXB0DLC, 0x01); /* Registre 0x35.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x1
+        MOV     R1,#0x35
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  105                              Nombre d'octets occupés par les données à envoyer : 1 octet.*/
+//  106                       
+//  107 /* Configurations de l'identifiant en réception par le filtre 0 du circuit MCP2515 */    
+//  108    EcrireRegistreMCP2515(MCP2515_RXF0SIDH, 0x00);   /* Registre 0x00.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x0
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  109                               Identifiant initial de réception H. */
+//  110    EcrireRegistreMCP2515(MCP2515_RXF0SIDL, 0x20);   /* Registre 0x01.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x20
+        MOV     R1,#0x1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  111                               Identifiant initial de réception L + configurations initiales du mode de fonctionnement des identifiants en réceptions. */
+//  112 
+//  113 /* Configurations du masque de réception initial utilisé par le filtre 0 du circuit MCP2515 */
+//  114    EcrireRegistreMCP2515(MCP2515_RXM0SIDH, 0x00);   /* Registre 0x20.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x20
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  115                               Masque de réception initial H. */                              
+//  116    EcrireRegistreMCP2515(MCP2515_RXM0SIDL, 0x20);   /* Registre 0x21.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x20
+        MOV     R1,#0x21
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  117                               Masque de réception initial L. + configurations initiales du mode de fonctionnement des masque de réceptions. */
+//  118    
+//  119 /* Configurations de l'identifiant en émission par le module « TXB0 » du circuit MCP2515 */
+//  120    EcrireRegistreMCP2515(MCP2515_TXB0SIDH, 0x00);   /* Registre 0x31.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x31
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  121                               Identifiant initial d'émission H. */
+//  122    EcrireRegistreMCP2515(MCP2515_TXB0SIDL, 0x00);   /* Registre 0x32.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x32
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  123                               Identifiant initial d'émission L + configurations initiales du mode de fonctionnement des identifiants en émissions. */
+//  124   
+//  125 /* Passage du circuit MCP2515 en « Normal Operation mode » */
+//  126    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x07); /* Registre 0x0F.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x7
+        MOV     R1,#0xf
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  127                               - REQOP2 = 1,
+//  128                               - REQOP1 = 0,
+//  129                               - REQOP0 = 0 : le circuit est passé en « Normal Operation mode ». 
+//  130                               - Les réglages précédemment évoqués restent inchangés. */        
+//  131 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+//  132 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  133 void CanBus :: EcrireRegistreMCP2515(UC Address, UC Data)
+??EcrireRegistreMCP2515:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function ??EcrireRegistreMCP2515
+        CODE
+//  134 {
+        FUNCALL ??EcrireRegistreMCP2515, ??WriteMPC2514
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,R4
+        MOV     R6,A
+//  135     WriteMPC2514(3, MCP2515_WRITE, Address, Data);   /* Envoi de 3 octets :
+        ; Setup parameters for call to function CLSPI::WriteMPC2514(UC, UC, UC, UC)
+        MOV     ?V0 + 0,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 9)
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R4,#0x2
+        MOV     R1,#0x3
+        LCALL   ??WriteMPC2514
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 8)
+        MOV     A,R1
+//  136                                        - La commande d'écriture ;
+//  137                                        - L'adresse du registre dans lequel écrire ;
+//  138                                        - L'octet à écrire dans le registre. */ 
+//  139 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+//  140 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  141 void CanBus :: ChoisirIdentifiantTX0(int Identifiant)
+??ChoisirIdentifiantTX0:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??ChoisirIdentifiantTX0
+        CODE
+//  142 {
+        FUNCALL ??ChoisirIdentifiantTX0, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ChoisirIdentifiantTX0, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+//  143    unsigned char Contenu_MCP2515_TXB0SIDH = 0;
+        MOV     R4,#0x0
+//  144    unsigned char Contenu_MCP2515_TXB0SIDL = 0;
+        MOV     R6,#0x0
+//  145 
+//  146    // On récupère les 8 bits de poids fort de l'identifiant à configurer,
+//  147    // qui doivent être placés tels quels dans le registre « MCP2515_TXB0SIDH ». 
+//  148    Contenu_MCP2515_TXB0SIDH = (UC)(0x00FF & (Identifiant >> 3));   
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x3
+        MOV     R0,#?V0 + 0
+        LCALL   ?SS_SHR
+        MOV     A,?V0 + 0
+        MOV     R4,?V0 + 0
+//  149 
+//  150 // On récupère les 3 bits de poids faible de l'identifiant à configurer,
+//  151 // qui doivent être placés dans le registre « MCP2515_TXB0SIDL »,
+//  152 // aux bits « MCP2515_TXB0SIDL<5> », « MCP2515_TXB0SIDL<6> » et « MCP2515_TXB0SIDL<7> ».   
+//  153    Contenu_MCP2515_TXB0SIDL = (UC)(0x00E0 & (Identifiant << 5));   
+        MOV     A,R2
+        SWAP    A
+        RLC     A
+        ANL     A,#0xe0
+        MOV     R6,A
+//  154    
+//  155    //Identifiant Emission H 
+//  156    EcrireRegistreMCP2515(MCP2515_TXB0SIDH, Contenu_MCP2515_TXB0SIDH);   
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R1,#0x31
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??EcrireRegistreMCP2515
+//  157    // Identifiant Emission L + Configurations du mode de fonctionnement des identifiants */  
+//  158    EcrireRegistreMCP2515(MCP2515_TXB0SIDL, Contenu_MCP2515_TXB0SIDL);   
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     R1,#0x32
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??EcrireRegistreMCP2515
+//  159 }
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+//  160 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  161 void CanBus :: AcquitterInterruptionsMCP2515(void)
+??AcquitterInterruptionsMCP2515:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function ??AcquitterInterruptionsMCP2515
+        CODE
+//  162 {
+        FUNCALL ??AcquitterInterruptionsMCP2515, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??AcquitterInterruptionsMCP2515, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??AcquitterInterruptionsMCP2515, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//  163    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x87);   /* Registe 0x0F.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#-0x79
+        MOV     R1,#0xf
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??EcrireRegistreMCP2515
+//  164    Le circuit est passé en « Configuration mode ». */
+//  165    EcrireRegistreMCP2515(MCP2515_CANINTF, 0x00);   /* Registre 0x2C.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x2c
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??EcrireRegistreMCP2515
+//  166    Acquittement des interruptions du circuit MCP2515. */
+//  167    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x07);   /* Registe 0x0F.
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,#0x7
+        MOV     R1,#0xf
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??EcrireRegistreMCP2515
+//  168    Le circuit est passé en « Normal Operation mode ». */  
+//  169 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock9
+//  170 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  171 void CanBus :: SendMCP2515(const UC *Message)
+??SendMCP2515:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function ??SendMCP2515
+        CODE
+//  172 {
+        FUNCALL ??SendMCP2515, ??Longueur
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??SendMCP2515, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??SendMCP2515, ??EcrireRegistreMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??SendMCP2515, ??WriteMPC2514
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??SendMCP2515, ??Delai
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 19, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 19, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xf
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+//  173 UC TailleDuMessage = 0;
+        MOV     ?V0 + 0,#0x0
+//  174 UC k;
+//  175 UC PointeurRegistre = MCP2515_TXB0D0;
+        MOV     ?V0 + 4,#0x36
+//  176 
+//  177    /* Détermination du nombre d'octets de données à transmettre, et limitation à 8 octets au maximum. */
+//  178 TailleDuMessage = Longueur(Message);
+        ; Setup parameters for call to function CanBus::Longueur(UC const *)
+        MOV     R4,?V0 + 6
+        MOV     R5,?V0 + 7
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??Longueur
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//  179 
+//  180 if(TailleDuMessage > 8)   /* Si le nombre d'octets de données à transmettre dépasse le nombre maximal d'octets possible. */
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x9
+        JC      ??SendMCP2515_1
+//  181   {
+//  182    TailleDuMessage = 8;   /* Le nombre maximal d'octets possible sera tranmis par le circuit MCP2515. */
+        MOV     ?V0 + 0,#0x8
+//  183   }
+//  184 
+//  185 EcrireRegistreMCP2515(MCP2515_TXB0DLC, TailleDuMessage);   /* Le MCP2515 est informé du nombre d'octets de données qu'il aura à tranmettre. */
+??SendMCP2515_1:
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     R4,?V0 + 0
+        MOV     R1,#0x35
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  186 
+//  187    /* Chargement du message dans le MCP2515 */
+//  188 for(k = 0; k < TailleDuMessage; k++)
+        MOV     ?V0 + 1,#0x0
+        SJMP    ??SendMCP2515_2
+//  189   {
+//  190    EcrireRegistreMCP2515(PointeurRegistre, Message[k]);   /* Les registres de données du module « TXB0 »,
+??SendMCP2515_3:
+        ; Setup parameters for call to function CanBus::EcrireRegistreMCP2515(UC, UC)
+        MOV     ?V0 + 2,?V0 + 1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,?V0 + 6
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,?V0 + 7
+        ADDC    A,?V0 + 3
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     R1,?V0 + 4
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??EcrireRegistreMCP2515
+//  191    dont les adresses sont consécutives, sont remplis,
+//  192    en commencant par le registre « MCP2515_TXB0D0 », d'adresse 0x36. */
+//  193    PointeurRegistre++;
+        INC     ?V0 + 4
+//  194    }
+        INC     ?V0 + 1
+??SendMCP2515_2:
+        MOV     A,?V0 + 1
+        CLR     C
+        SUBB    A,?V0 + 0
+        JC      ??SendMCP2515_3
+//  195 
+//  196 /* Envoi de la commande « RTS », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. */
+//  197 WriteMPC2514(1, MCP2515_RTS_TX0, 0x00, 0x00);
+        ; Setup parameters for call to function CLSPI::WriteMPC2514(UC, UC, UC, UC)
+        MOV     ?V0 + 0,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 16)
+        MOV     R5,#0x0
+        MOV     R4,#-0x7f
+        MOV     R1,#0x1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??WriteMPC2514
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 15)
+        MOV     A,R1
+//  198 Delai(10);  
+        ; Setup parameters for call to function CanBus::Delai(unsigned long)
+        MOV     DPTR,#__Constant_a
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        CFI CFA_XSP16 add(XSP16, 19)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??Delai
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 15)
+//  199 }
+        MOV     R7,#0x8
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+//  200 
+//  201 
+//  202 
+//  203 
+//  204 
+//  205 
+//  206 
+//  207 
+//  208 
+//  209 
+//  210 
+//  211 
+//  212 
+//  213 
+//  214 
+//  215 
+//  216 
+//  217 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  218 UC CanBus :: Longueur(const UC *Contenu)
+??Longueur:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function ??Longueur
+        CODE
+//  219 {
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  220 UC Compteur = 0;
+        MOV     R1,#0x0
+        SJMP    ??Longueur_1
+//  221 
+//  222 while(Contenu[Compteur] != '\0')
+//  223   {
+//  224    Compteur++;
+??Longueur_2:
+        INC     R1
+//  225   }
+??Longueur_1:
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R4
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R5
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        JNZ     ??Longueur_2
+//  226 return(Compteur);  
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock11
+//  227 }
+//  228 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  229 void CanBus :: Delai(unsigned long Temps)
+??Delai:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function ??Delai
+        CODE
+//  230 {
+        MOV     A,#-0xf
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+//  231 unsigned long k;
+//  232 for(k = 0; k < Temps; k++);  
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        SJMP    ??Delai_1
+??Delai_2:
+        MOV     DPTR,#__Constant_1
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_ADD_X
+??Delai_1:
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JC      ??Delai_2
+//  233 }
+        MOV     R7,#0x8
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock12
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_3e8:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_3e8>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_3e8>`:
+        DATA32
+        DD 1000
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_a:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_a>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_a>`:
+        DATA32
+        DD 10
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_0:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_0>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_0>`:
+        DATA32
+        DD 0
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_1:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_1>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_1>`:
+        DATA32
+        DD 1
+
+        END
+//  234 
+//  235 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+// 905 bytes in segment NEAR_CODE
+//  16 bytes in segment XDATA_I
+//  16 bytes in segment XDATA_ID
+// 
+// 905 bytes of CODE  memory (+ 16 bytes shared)
+//   0 bytes of XDATA memory (+ 16 bytes shared)
+//
+//Errors: none
+//Warnings: none
