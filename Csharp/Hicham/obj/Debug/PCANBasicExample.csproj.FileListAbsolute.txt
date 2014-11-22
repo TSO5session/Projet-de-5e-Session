@@ -41,3 +41,12 @@ C:\Users\1240249\Desktop\Csharp\obj\Debug\PCANBasicExample.csprojResolveAssembly
 C:\Users\1240249\Desktop\Csharp\obj\Debug\ICDIBasic.Form1.resources
 C:\Users\1240249\Desktop\Csharp\obj\Debug\PCANBasicExample.Properties.Resources.resources
 C:\Users\1240249\Desktop\Csharp\obj\Debug\PCANBasicExample.csproj.GenerateResource.Cache
+C:\Users\1240249\Desktop\Hicham\bin\Debug\CAN Opener.exe.config
+C:\Users\1240249\Desktop\Hicham\obj\Debug\CAN Opener.exe
+C:\Users\1240249\Desktop\Hicham\obj\Debug\CAN Opener.pdb
+C:\Users\1240249\Desktop\Hicham\bin\Debug\CAN Opener.exe
+C:\Users\1240249\Desktop\Hicham\bin\Debug\CAN Opener.pdb
+C:\Users\1240249\Desktop\Hicham\obj\Debug\PCANBasicExample.csprojResolveAssemblyReference.cache
+C:\Users\1240249\Desktop\Hicham\obj\Debug\ICDIBasic.Form1.resources
+C:\Users\1240249\Desktop\Hicham\obj\Debug\PCANBasicExample.Properties.Resources.resources
+C:\Users\1240249\Desktop\Hicham\obj\Debug\PCANBasicExample.csproj.GenerateResource.Cache

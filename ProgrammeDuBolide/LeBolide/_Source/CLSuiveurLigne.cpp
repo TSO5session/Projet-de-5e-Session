@@ -41,9 +41,9 @@ CLSuiveurLigne :: CLSuiveurLigne(UC ucAdresse)
 //                            LE DESTRUCTEUR
 // *****************************************************************************
 CLSuiveurLigne :: ~CLSuiveurLigne(void)
- {
+{
    
- }
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // UC CLSuiveurLigne :: ucSuivreLigne(void)
@@ -63,7 +63,6 @@ CLSuiveurLigne :: ~CLSuiveurLigne(void)
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
-
 UC CLSuiveurLigne :: ucSuivreLigne(void)
  {
    #ifdef SPI_DALLAS
@@ -80,7 +79,7 @@ UC CLSuiveurLigne :: ucSuivreLigne(void)
       ucDirection = DROITDEVANT;
     }   
    else
-  
+ 
    if(unSuiveurLigne.stChampBit.bBit5 == 0)
      {
       ucDirection = DROITE;
@@ -90,8 +89,6 @@ UC CLSuiveurLigne :: ucSuivreLigne(void)
      { 
       ucDirection = GAUCHE;
      }
-     
-
    return(ucDirection);
    #endif
    
@@ -121,24 +118,24 @@ UC CLSuiveurLigne :: ucSuivreLigne(void)
       return(ucDirection);
    #endif
      */ 
- //  #ifdef PCF_3_CAPTEURS         
-       if((unSuiveurLigne.ucOctet == 0xFF) || // Tous les senseurs sont ouverts.
-          (unSuiveurLigne.ucOctet == 0xBF))   // Le senseur central est actif.
-         {
-          ucDirection = DROITDEVANT;
-         }               
-       else
-         {
-          if(unSuiveurLigne.stChampBit.bBit5 == 1)
-            {
-             ucDirection = GAUCHE;
-            }
-          
-          if(unSuiveurLigne.stChampBit.bBit7 == 1)
-            { 
-             ucDirection = DROITE;
-            }
-         } 
+ //  #ifdef PCF_3_CAPTEURS  
+       
+   if((unSuiveurLigne.stChampBit.bBit5 == 1) & //Tous les senseurs sont ouverts.
+      (unSuiveurLigne.stChampBit.bBit7 == 1))   //Le senseur central est actif.
+    {
+      ucDirection = DROITDEVANT;
+    }          
+   else        
+    {
+     if(unSuiveurLigne.stChampBit.bBit5 == 0)
+       {
+        ucDirection = GAUCHE;
+       }       
+     if(unSuiveurLigne.stChampBit.bBit7 == 0)
+       { 
+        ucDirection = DROITE;
+       }
+    } 
       return(ucDirection);
  //  #endif
    #endif   

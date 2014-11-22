@@ -27,7 +27,10 @@
 class CLPile : public CLADCMAX1236
 {
 public:
-
+   CLPile(void);             // ***Constructeur par defaut
+   CLPile(UC ucParametre);   // ***Constructeur initialisateur
+  ~CLPile(void);             // ***Destructeur
+  
    float fLirePile(void);       // pour lire la tension de la pile
 
 protected:

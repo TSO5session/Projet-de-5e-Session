@@ -24,12 +24,12 @@ public:
   CLStation1(UC ucParametre);   // ***Constructeur initialisateur
  ~CLStation1(void);             // ***Destructeur
   
-  void WriteClockStation3(UC AAAA, UC Mo, UC JJ, UC HH, UC MI, UC SS);
+  void WriteClock     (UC AAAA, UC Mo, UC JJ, UC HH, UC MI, UC SS);
   void ReadClock      (void);
   
   void SendToPC       (const UC   *Message);
   void SendToPIC      (const UC   *Message);
-  void SendToSOC      (const UC   *Message);
+  void SendToSOC8200  (const UC   *Message);
   void SendToBolide   (const char *Message);
   void SendToFesto    (const char *Message);
   

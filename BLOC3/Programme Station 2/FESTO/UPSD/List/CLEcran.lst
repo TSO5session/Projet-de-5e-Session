@@ -1,0 +1,1432 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             19/Nov/2014  10:59:09 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme     #
+#                          Station 2\FESTO\Libraire\CLEcran.cpp               #
+#    Command line       =  "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\Libraire\CLEcran.cpp" -D           #
+#                          UPSD3254A --preprocess=cl                          #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\List\" -lC                    #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\List\" -lA                    #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\List\" -o                     #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\Obj\" -e --no_cse             #
+#                          --no_unroll --no_inline --no_code_motion           #
+#                          --no_tbaa --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=near               #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files\IAR                #
+#                          Systems\Embedded Workbench                         #
+#                          6.4\8051\LIB\DLIB\dl8051Normal.h" -I               #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\Libraire\" -Ol --eec++             #
+#    List file          =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme     #
+#                          Station 2\FESTO\UPSD\List\CLEcran.lst              #
+#    Object file        =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme     #
+#                          Station 2\FESTO\UPSD\Obj\CLEcran.r51               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+J:\Projet_Session5_LNAH\S2_18Nov2014\Programme Station 2\FESTO\Libraire\CLEcran.cpp
+      1          // ***************** FICHIER:CLEcran.cpp
+      2          //
+      3          //  Description: 
+      4          //  
+      5          //
+      6          //  Application realisee avec IAR
+      7          //
+      8          //  AUTEUR : Gabriel Fortin-Belanger
+      9          //  DATE CREATION :    2014-02-07		 VERSION: 1.0
+     10          //  DATE MODIFICATION: ****-**-**
+     11          //
+     12          //******************************************************************************
+     13          
+     14          #include "CLEcran.h"
+     15          #include "CLInOutBase.h"
+     16          #include "_DeclarationGenerale.h"
+     17          
+     18          //*******************************Constantes************************************
+     19            //#define LCD_CONTROL   0xF800          //registre de controle
+     20            #define LCD_FLAG      usiAdresseEcran + 1 //Busy Flag
+     21            #define LCD_WR_DATA   usiAdresseEcran + 2 //Ecriture des donnees
+     22            #define LCD_RD_DATA   usiAdresseEcran + 3 //Lecture des donnees
+     23          //******************************************************************************
+     24          
+     25          
+     26          
+     27          //***********************CLEcran(void)
+     28          //
+     29          //Description:Constructeur par defaut initialise l ecran a l addresse  
+     30          //            0xF800.
+     31          //           
+     32          // NOM: CLEcran :: CLEcran(void)
+     33          //           
+     34          // PARAMETRE D'ENTREE: Aucun
+     35          //                   
+     36          // 
+     37          //
+     38          // PARAMETRE DE SORTIE: Aucun              
+     39          //
+     40          //    
+     41          // Membre Utilise:
+     42          //     Fonction: vLcdInit()
+     43          //     Memmbre:  usiAdresseEcran
+     44          //
+     45          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+     46          // DATE DE MODIFICATION:	
+     47          //*****************************************************************************
+     48          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     49            CLEcran :: CLEcran(void)                        //constructeur defaut
+   \                     ??CLEcran:
+     50             {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     51               usiAdresseEcran = 0xF800;                    //addresse par defaut
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   A3           INC     DPTR
+   \   000010   A3           INC     DPTR
+   \   000011   7400         MOV     A,#0x0
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   A3           INC     DPTR
+   \   000015   74F8         MOV     A,#-0x8
+   \   000017   F0           MOVX    @DPTR,A
+     52               vLcdInit();                                  //initialise ecran
+   \   000018                ; Setup parameters for call to function CLEcran::vLcdInit()
+   \   000018   EE           MOV     A,R6
+   \   000019   FA           MOV     R2,A
+   \   00001A   EF           MOV     A,R7
+   \   00001B   FB           MOV     R3,A
+   \   00001C   12....       LCALL   ??vLcdInit
+     53             
+     54             }
+   \   00001F   EE           MOV     A,R6
+   \   000020   FA           MOV     R2,A
+   \   000021   EF           MOV     A,R7
+   \   000022   FB           MOV     R3,A
+   \   000023   7F01         MOV     R7,#0x1
+   \   000025   02....       LJMP    ?FUNC_LEAVE_XDATA
+     55          
+     56          //***********************CLEcran(void)
+     57          //
+     58          //Description:Constructeur initialisateur permet de choisir l addresse 
+     59          //            ou se situe l ecran.
+     60          //           
+     61          // NOM: CLEcran :: CLEcran(void)
+     62          //           
+     63          // PARAMETRE D'ENTREE: USI usiAdresse
+     64          //                   
+     65          // 
+     66          //
+     67          // PARAMETRE DE SORTIE: Aucun              
+     68          //
+     69          //    
+     70          // Membre Utilise:
+     71          //     Fonction: vLcdInit()
+     72          //     Memmbre:  usiAdresseEcran
+     73          //
+     74          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+     75          // DATE DE MODIFICATION:	
+     76          //*****************************************************************************  
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     77            CLEcran :: CLEcran(unsigned short int usiAdresse)//constructeur initialisateur
+   \                     ??CLEcran_1:
+     78            {                                                //pour changer addresse
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     79              usiAdresseEcran = usiAdresse;                  //Nouvel addresse          
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   A3           INC     DPTR
+   \   000010   A3           INC     DPTR
+   \   000011   EC           MOV     A,R4
+   \   000012   F0           MOVX    @DPTR,A
+   \   000013   A3           INC     DPTR
+   \   000014   ED           MOV     A,R5
+   \   000015   F0           MOVX    @DPTR,A
+     80              vLcdInit();                                    //initialise ecran
+   \   000016                ; Setup parameters for call to function CLEcran::vLcdInit()
+   \   000016   EE           MOV     A,R6
+   \   000017   FA           MOV     R2,A
+   \   000018   EF           MOV     A,R7
+   \   000019   FB           MOV     R3,A
+   \   00001A   12....       LCALL   ??vLcdInit
+     81            }
+   \   00001D   EE           MOV     A,R6
+   \   00001E   FA           MOV     R2,A
+   \   00001F   EF           MOV     A,R7
+   \   000020   FB           MOV     R3,A
+   \   000021   7F01         MOV     R7,#0x1
+   \   000023   02....       LJMP    ?FUNC_LEAVE_XDATA
+     82          
+     83          
+     84          //***********************~CLEcran(void)
+     85          //
+     86          //Description:Destructeur  qui efface ecran
+     87          //           
+     88          //           
+     89          // NOM: CLEcran :: ~CLEcran(void)
+     90          //           
+     91          // PARAMETRE D'ENTREE: Aucun
+     92          //                   
+     93          // 
+     94          //
+     95          // PARAMETRE DE SORTIE: Aucun              
+     96          //
+     97          //    
+     98          // Membre Utilise:
+     99          //     Fonction: vLcdClr()
+    100          //     Memmbre:  
+    101          //
+    102          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    103          // DATE DE MODIFICATION:	
+    104          //*****************************************************************************  
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    105            CLEcran :: ~CLEcran(void) //destructeur 
+   \                     `?~CLEcran`:
+    106            {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    107             vLcdClr();               //efface l ecran
+   \   000000                ; Setup parameters for call to function CLEcran::vLcdClr()
+   \   000000   02....       LJMP    ??vLcdClr
+    108              
+    109            }
+    110          
+    111          //***********************vLcdAffCar
+    112          //
+    113          //Description:Cette fonction permet d'afficher un caractere
+    114          // 
+    115          //           
+    116          // NOM:void CLEcran :: vLcdAffCar(UC ucCarac)
+    117          //           
+    118          // PARAMETRE D'ENTREE: ucCarac: Code ascii du caractere a entrer
+    119          //                   
+    120          // 
+    121          //
+    122          // PARAMETRE DE SORTIE: Aucun              
+    123          //
+    124          //    
+    125          // Membre Utilise:
+    126          //
+    127          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    128          // DATE DE MODIFICATION:	
+    129          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    130            void CLEcran :: vLcdAffCar(UC ucCarac)
+   \                     ??vLcdAffCar:
+    131            {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+    132             vLcdBusy(); 
+   \   00000B                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   00000B   EE           MOV     A,R6
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   FB           MOV     R3,A
+   \   00000F   12....       LCALL   ??vLcdBusy
+    133             vOut(LCD_WR_DATA,ucCarac); //Cursor at home  
+   \   000012                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000012   A9..         MOV     R1,?V0 + 0
+   \   000014   8E82         MOV     DPL,R6
+   \   000016   8F83         MOV     DPH,R7
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   A3           INC     DPTR
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   2402         ADD     A,#0x2
+   \   00001F   FC           MOV     R4,A
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   3400         ADDC    A,#0x0
+   \   000024   FD           MOV     R5,A
+   \   000025   EE           MOV     A,R6
+   \   000026   FA           MOV     R2,A
+   \   000027   EF           MOV     A,R7
+   \   000028   FB           MOV     R3,A
+   \   000029   12....       LCALL   ??vOut
+    134            }
+   \   00002C   7F01         MOV     R7,#0x1
+   \   00002E   02....       LJMP    ?FUNC_LEAVE_XDATA
+    135            
+    136          //***********************vLcdClr
+    137          //
+    138          //Description:Cette fonction permet d'effacerl'ecran
+    139          // 
+    140          //           
+    141          // NOM:void CLEcran :: vLcdClr(void)
+    142          //           
+    143          // PARAMETRE D'ENTREE: Aucun
+    144          //                   
+    145          // 
+    146          //
+    147          // PARAMETRE DE SORTIE: Aucun              
+    148          //
+    149          //    
+    150          // Methode utilise:
+    151          //
+    152          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    153          // DATE DE MODIFICATION:	
+    154          //*****************************************************************************  
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    155            void CLEcran :: vLcdClr(void)
+   \                     ??vLcdClr:
+    156            {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    157             vLcdBusy();                   //
+   \   000009                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??vLcdBusy
+    158             vOut(usiAdresseEcran, 0x01); //Clr display et retourne a adresse 0   
+   \   000010                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000010   7901         MOV     R1,#0x1
+   \   000012   8E82         MOV     DPL,R6
+   \   000014   8F83         MOV     DPH,R7
+   \   000016   A3           INC     DPTR
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   FC           MOV     R4,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   FD           MOV     R5,A
+   \   00001F   EE           MOV     A,R6
+   \   000020   FA           MOV     R2,A
+   \   000021   EF           MOV     A,R7
+   \   000022   FB           MOV     R3,A
+   \   000023   12....       LCALL   ??vOut
+    159            } 
+   \   000026   7F01         MOV     R7,#0x1
+   \   000028   02....       LJMP    ?FUNC_LEAVE_XDATA
+    160          
+    161          //***********************vLcdPoscurC0L1
+    162          //
+    163          //Description:Cette fonction permet de positionner le curseur
+    164          // 
+    165          //           
+    166          // NOM:void CLEcran :: vLcdPoscurC0L1(UC col,UC ligne)
+    167          //           
+    168          // PARAMETRE D'ENTREE: UC col: colonne de depart
+    169          //                     UC ligne: ligne de depart
+    170          // 
+    171          //
+    172          // PARAMETRE DE SORTIE: Aucun              
+    173          //
+    174          //   
+    175          // Methode utilise:
+    176          //
+    177          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    178          // DATE DE MODIFICATION:	
+    179          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    180            void CLEcran :: vLcdPoscurC0L1(UC col,UC ligne)
+   \                     ??vLcdPoscurC0L1:
+    181            {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+   \   00000B   8C..         MOV     ?V0 + 1,R4
+    182             switch(ligne)
+   \   00000D   E5..         MOV     A,?V0 + 1
+   \   00000F   14           DEC     A
+   \   000010   600C         JZ      ??vLcdPoscurC0L1_1
+   \   000012   14           DEC     A
+   \   000013   602B         JZ      ??vLcdPoscurC0L1_2
+   \   000015   14           DEC     A
+   \   000016   604C         JZ      ??vLcdPoscurC0L1_3
+   \   000018   14           DEC     A
+   \   000019   606D         JZ      ??vLcdPoscurC0L1_4
+   \   00001B   02....       LJMP    ??vLcdPoscurC0L1_5
+    183              {
+    184                case 1:                                        //SI Ligne 1
+    185                   vLcdBusy();                                 //Attendre flag baisser
+   \                     ??vLcdPoscurC0L1_1:
+   \   00001E                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   00001E   EE           MOV     A,R6
+   \   00001F   FA           MOV     R2,A
+   \   000020   EF           MOV     A,R7
+   \   000021   FB           MOV     R3,A
+   \   000022   12....       LCALL   ??vLcdBusy
+    186                   vOut(usiAdresseEcran,(0x80 |(0x00 + col)));//Bit 7=1,add ligne1 + pos       
+   \   000025                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000025   7480         MOV     A,#-0x80
+   \   000027   45..         ORL     A,?V0 + 0
+   \   000029   F9           MOV     R1,A
+   \   00002A   8E82         MOV     DPL,R6
+   \   00002C   8F83         MOV     DPH,R7
+   \   00002E   A3           INC     DPTR
+   \   00002F   A3           INC     DPTR
+   \   000030   A3           INC     DPTR
+   \   000031   A3           INC     DPTR
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   FC           MOV     R4,A
+   \   000034   A3           INC     DPTR
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   FD           MOV     R5,A
+   \   000037   EE           MOV     A,R6
+   \   000038   FA           MOV     R2,A
+   \   000039   EF           MOV     A,R7
+   \   00003A   FB           MOV     R3,A
+   \   00003B   12....       LCALL   ??vOut
+    187                   break;
+   \   00003E   806A         SJMP    ??vLcdPoscurC0L1_5
+    188                case 2:                                        //SI Ligne 2
+    189                   vLcdBusy();                                 //Attendre flag baisser
+   \                     ??vLcdPoscurC0L1_2:
+   \   000040                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   000040   EE           MOV     A,R6
+   \   000041   FA           MOV     R2,A
+   \   000042   EF           MOV     A,R7
+   \   000043   FB           MOV     R3,A
+   \   000044   12....       LCALL   ??vLcdBusy
+    190                   vOut(usiAdresseEcran,(0x80 |(0x40 + col)));//Bit 7=1,add ligne2 + pos     
+   \   000047                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000047   7440         MOV     A,#0x40
+   \   000049   25..         ADD     A,?V0 + 0
+   \   00004B   4480         ORL     A,#0x80
+   \   00004D   F9           MOV     R1,A
+   \   00004E   8E82         MOV     DPL,R6
+   \   000050   8F83         MOV     DPH,R7
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   A3           INC     DPTR
+   \   000056   E0           MOVX    A,@DPTR
+   \   000057   FC           MOV     R4,A
+   \   000058   A3           INC     DPTR
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   FD           MOV     R5,A
+   \   00005B   EE           MOV     A,R6
+   \   00005C   FA           MOV     R2,A
+   \   00005D   EF           MOV     A,R7
+   \   00005E   FB           MOV     R3,A
+   \   00005F   12....       LCALL   ??vOut
+    191                   break;
+   \   000062   8046         SJMP    ??vLcdPoscurC0L1_5
+    192                
+    193                case 3:                                         //SI Ligne 3
+    194                   vLcdBusy();                                  //Attendre flag baisser
+   \                     ??vLcdPoscurC0L1_3:
+   \   000064                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   000064   EE           MOV     A,R6
+   \   000065   FA           MOV     R2,A
+   \   000066   EF           MOV     A,R7
+   \   000067   FB           MOV     R3,A
+   \   000068   12....       LCALL   ??vLcdBusy
+    195                   vOut(usiAdresseEcran,(0x80 |(0x14 + col)));//Bit 7=1,add ligne3 + pos        
+   \   00006B                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   00006B   7414         MOV     A,#0x14
+   \   00006D   25..         ADD     A,?V0 + 0
+   \   00006F   4480         ORL     A,#0x80
+   \   000071   F9           MOV     R1,A
+   \   000072   8E82         MOV     DPL,R6
+   \   000074   8F83         MOV     DPH,R7
+   \   000076   A3           INC     DPTR
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   A3           INC     DPTR
+   \   00007A   E0           MOVX    A,@DPTR
+   \   00007B   FC           MOV     R4,A
+   \   00007C   A3           INC     DPTR
+   \   00007D   E0           MOVX    A,@DPTR
+   \   00007E   FD           MOV     R5,A
+   \   00007F   EE           MOV     A,R6
+   \   000080   FA           MOV     R2,A
+   \   000081   EF           MOV     A,R7
+   \   000082   FB           MOV     R3,A
+   \   000083   12....       LCALL   ??vOut
+    196                   break;
+   \   000086   8022         SJMP    ??vLcdPoscurC0L1_5
+    197                
+    198                case 4:                                         //SI Ligne 4
+    199                   vLcdBusy();                                  //Attendre flag baisser
+   \                     ??vLcdPoscurC0L1_4:
+   \   000088                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   000088   EE           MOV     A,R6
+   \   000089   FA           MOV     R2,A
+   \   00008A   EF           MOV     A,R7
+   \   00008B   FB           MOV     R3,A
+   \   00008C   12....       LCALL   ??vLcdBusy
+    200                   vOut(usiAdresseEcran,(0x80 |(0x54 + col)));//Bit 7=1,add ligne4 + pos        
+   \   00008F                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   00008F   7454         MOV     A,#0x54
+   \   000091   25..         ADD     A,?V0 + 0
+   \   000093   4480         ORL     A,#0x80
+   \   000095   F9           MOV     R1,A
+   \   000096   8E82         MOV     DPL,R6
+   \   000098   8F83         MOV     DPH,R7
+   \   00009A   A3           INC     DPTR
+   \   00009B   A3           INC     DPTR
+   \   00009C   A3           INC     DPTR
+   \   00009D   A3           INC     DPTR
+   \   00009E   E0           MOVX    A,@DPTR
+   \   00009F   FC           MOV     R4,A
+   \   0000A0   A3           INC     DPTR
+   \   0000A1   E0           MOVX    A,@DPTR
+   \   0000A2   FD           MOV     R5,A
+   \   0000A3   EE           MOV     A,R6
+   \   0000A4   FA           MOV     R2,A
+   \   0000A5   EF           MOV     A,R7
+   \   0000A6   FB           MOV     R3,A
+   \   0000A7   12....       LCALL   ??vOut
+    201                   break;
+    202                
+    203              }
+    204            } 
+   \                     ??vLcdPoscurC0L1_5:
+   \   0000AA   7F02         MOV     R7,#0x2
+   \   0000AC   02....       LJMP    ?FUNC_LEAVE_XDATA
+    205            
+    206          //***********************vLcdInit
+    207          //
+    208          //Description:Cette fonction permet d'iinitialiser l'ecran LCD en mode 8 bit
+    209          //            2 lignes, metrice 5*7, curseur off, blink off 
+    210          //           
+    211          // NOM:void CLEcran :: vLcdInit(void)          
+    212          // PARAMETRE D'ENTREE:Aucun
+    213          //                   
+    214          // 
+    215          //
+    216          // PARAMETRE DE SORTIE: Aucun              
+    217          //
+    218          //    
+    219          // Membre Utilise:
+    220          //
+    221          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    222          // DATE DE MODIFICATION:	
+    223          //*****************************************************************************  
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    224          void CLEcran :: vLcdInit(void)
+   \                     ??vLcdInit:
+    225            {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    226              unsigned int i;         //indice pour la boucle
+    227            
+    228              for(i=0;i<3;i++)        //Faire 3 fois
+   \   000009   75..00       MOV     ?V0 + 0,#0x0
+   \   00000C   75..00       MOV     ?V0 + 1,#0x0
+   \   00000F   802D         SJMP    ??vLcdInit_1
+    229              {
+    230                vOut(usiAdresseEcran, 0x38);//Function set:8bit,2lignes,5*7,cureur off
+   \                     ??vLcdInit_2:
+   \   000011                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000011   7938         MOV     R1,#0x38
+   \   000013   8E82         MOV     DPL,R6
+   \   000015   8F83         MOV     DPH,R7
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   FC           MOV     R4,A
+   \   00001D   A3           INC     DPTR
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   FD           MOV     R5,A
+   \   000020   EE           MOV     A,R6
+   \   000021   FA           MOV     R2,A
+   \   000022   EF           MOV     A,R7
+   \   000023   FB           MOV     R3,A
+   \   000024   12....       LCALL   ??vOut
+    231                vDelaisEcran(10000);         //Delai  
+   \   000027                ; Setup parameters for call to function CLEcran::vDelaisEcran(UINT16)
+   \   000027   7C10         MOV     R4,#0x10
+   \   000029   7D27         MOV     R5,#0x27
+   \   00002B   EE           MOV     A,R6
+   \   00002C   FA           MOV     R2,A
+   \   00002D   EF           MOV     A,R7
+   \   00002E   FB           MOV     R3,A
+   \   00002F   12....       LCALL   ??vDelaisEcran
+    232              }
+   \   000032   E5..         MOV     A,?V0 + 0
+   \   000034   2401         ADD     A,#0x1
+   \   000036   F5..         MOV     ?V0 + 0,A
+   \   000038   E5..         MOV     A,?V0 + 1
+   \   00003A   3400         ADDC    A,#0x0
+   \   00003C   F5..         MOV     ?V0 + 1,A
+   \                     ??vLcdInit_1:
+   \   00003E   C3           CLR     C
+   \   00003F   E5..         MOV     A,?V0 + 0
+   \   000041   9403         SUBB    A,#0x3
+   \   000043   E5..         MOV     A,?V0 + 1
+   \   000045   9400         SUBB    A,#0x0
+   \   000047   40C8         JC      ??vLcdInit_2
+    233          
+    234              vLcdBusy();  
+   \   000049                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   000049   EE           MOV     A,R6
+   \   00004A   FA           MOV     R2,A
+   \   00004B   EF           MOV     A,R7
+   \   00004C   FB           MOV     R3,A
+   \   00004D   12....       LCALL   ??vLcdBusy
+    235              vOut(usiAdresseEcran, 0x38);// Display ON, cursor off, blink off
+   \   000050                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000050   7938         MOV     R1,#0x38
+   \   000052   8E82         MOV     DPL,R6
+   \   000054   8F83         MOV     DPH,R7
+   \   000056   A3           INC     DPTR
+   \   000057   A3           INC     DPTR
+   \   000058   A3           INC     DPTR
+   \   000059   A3           INC     DPTR
+   \   00005A   E0           MOVX    A,@DPTR
+   \   00005B   FC           MOV     R4,A
+   \   00005C   A3           INC     DPTR
+   \   00005D   E0           MOVX    A,@DPTR
+   \   00005E   FD           MOV     R5,A
+   \   00005F   EE           MOV     A,R6
+   \   000060   FA           MOV     R2,A
+   \   000061   EF           MOV     A,R7
+   \   000062   FB           MOV     R3,A
+   \   000063   12....       LCALL   ??vOut
+    236              vLcdBusy();                   //Attend la fin de l'instruction
+   \   000066                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   000066   EE           MOV     A,R6
+   \   000067   FA           MOV     R2,A
+   \   000068   EF           MOV     A,R7
+   \   000069   FB           MOV     R3,A
+   \   00006A   12....       LCALL   ??vLcdBusy
+    237              vOut(usiAdresseEcran, 0x0D); //Cursor shift a droite 
+   \   00006D                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   00006D   790D         MOV     R1,#0xd
+   \   00006F   8E82         MOV     DPL,R6
+   \   000071   8F83         MOV     DPH,R7
+   \   000073   A3           INC     DPTR
+   \   000074   A3           INC     DPTR
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   FC           MOV     R4,A
+   \   000079   A3           INC     DPTR
+   \   00007A   E0           MOVX    A,@DPTR
+   \   00007B   FD           MOV     R5,A
+   \   00007C   EE           MOV     A,R6
+   \   00007D   FA           MOV     R2,A
+   \   00007E   EF           MOV     A,R7
+   \   00007F   FB           MOV     R3,A
+   \   000080   12....       LCALL   ??vOut
+    238              vLcdBusy();                    //Attend la fin de l'instruction    
+   \   000083                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   000083   EE           MOV     A,R6
+   \   000084   FA           MOV     R2,A
+   \   000085   EF           MOV     A,R7
+   \   000086   FB           MOV     R3,A
+   \   000087   12....       LCALL   ??vLcdBusy
+    239              vOut(usiAdresseEcran, 0x01); //Clr display et retourne a adresse 0
+   \   00008A                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   00008A   7901         MOV     R1,#0x1
+   \   00008C   8E82         MOV     DPL,R6
+   \   00008E   8F83         MOV     DPH,R7
+   \   000090   A3           INC     DPTR
+   \   000091   A3           INC     DPTR
+   \   000092   A3           INC     DPTR
+   \   000093   A3           INC     DPTR
+   \   000094   E0           MOVX    A,@DPTR
+   \   000095   FC           MOV     R4,A
+   \   000096   A3           INC     DPTR
+   \   000097   E0           MOVX    A,@DPTR
+   \   000098   FD           MOV     R5,A
+   \   000099   EE           MOV     A,R6
+   \   00009A   FA           MOV     R2,A
+   \   00009B   EF           MOV     A,R7
+   \   00009C   FB           MOV     R3,A
+   \   00009D   12....       LCALL   ??vOut
+    240              vLcdBusy();                   //Attend la fin de l'instruction
+   \   0000A0                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   0000A0   EE           MOV     A,R6
+   \   0000A1   FA           MOV     R2,A
+   \   0000A2   EF           MOV     A,R7
+   \   0000A3   FB           MOV     R3,A
+   \   0000A4   12....       LCALL   ??vLcdBusy
+    241              vOut(usiAdresseEcran, 0x06);    
+   \   0000A7                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   0000A7   7906         MOV     R1,#0x6
+   \   0000A9   8E82         MOV     DPL,R6
+   \   0000AB   8F83         MOV     DPH,R7
+   \   0000AD   A3           INC     DPTR
+   \   0000AE   A3           INC     DPTR
+   \   0000AF   A3           INC     DPTR
+   \   0000B0   A3           INC     DPTR
+   \   0000B1   E0           MOVX    A,@DPTR
+   \   0000B2   FC           MOV     R4,A
+   \   0000B3   A3           INC     DPTR
+   \   0000B4   E0           MOVX    A,@DPTR
+   \   0000B5   FD           MOV     R5,A
+   \   0000B6   EE           MOV     A,R6
+   \   0000B7   FA           MOV     R2,A
+   \   0000B8   EF           MOV     A,R7
+   \   0000B9   FB           MOV     R3,A
+   \   0000BA   12....       LCALL   ??vOut
+    242              vLcdBusy(); 
+   \   0000BD                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   0000BD   EE           MOV     A,R6
+   \   0000BE   FA           MOV     R2,A
+   \   0000BF   EF           MOV     A,R7
+   \   0000C0   FB           MOV     R3,A
+   \   0000C1   12....       LCALL   ??vLcdBusy
+    243          
+    244            
+    245            }
+   \   0000C4   7F02         MOV     R7,#0x2
+   \   0000C6   02....       LJMP    ?FUNC_LEAVE_XDATA
+    246          
+    247          //***********************vLcdAffChaine
+    248          //
+    249          //Description:Cette fonction permet d'afficher une chaine de caractere 
+    250          // 
+    251          //           
+    252          // Nom: void CLEcran :: vLcdAffChaine(UC const *ucpMessage) 
+    253          //           
+    254          // PARAMETRE D'ENTREE:UC *ucpMessage: Pointe vers la chaine de caractere
+    255          //                     
+    256          // 
+    257          //
+    258          // PARAMETRE DE SORTIE: Aucun              
+    259          //
+    260          //    
+    261          // methode utilise:
+    262          //
+    263          // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+    264          // DATE DE MODIFICATION:	
+    265          //*****************************************************************************  
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    266            void CLEcran :: vLcdAffChaine(char *ucpMessage)
+   \                     ??vLcdAffChaine:
+    267            {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 2,R2
+   \   000007   8B..         MOV     ?V0 + 3,R3
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+    268             int i = 0;
+   \   00000D   7E00         MOV     R6,#0x0
+   \   00000F   7F00         MOV     R7,#0x0
+   \   000011   801B         SJMP    ??vLcdAffChaine_1
+    269             while(ucpMessage[i]!= 0x00)      //tant que pas a fin ligne
+    270              {
+    271                vLcdAffCar(ucpMessage[i]); //Affiche un caractere de la chaine
+   \                     ??vLcdAffChaine_2:
+   \   000013                ; Setup parameters for call to function CLEcran::vLcdAffCar(UC)
+   \   000013   E5..         MOV     A,?V0 + 0
+   \   000015   2E           ADD     A,R6
+   \   000016   F582         MOV     DPL,A
+   \   000018   E5..         MOV     A,?V0 + 1
+   \   00001A   3F           ADDC    A,R7
+   \   00001B   F583         MOV     DPH,A
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   F9           MOV     R1,A
+   \   00001F   AA..         MOV     R2,?V0 + 2
+   \   000021   AB..         MOV     R3,?V0 + 3
+   \   000023   12....       LCALL   ??vLcdAffCar
+    272                i++;                       //prochain caractere
+   \   000026   EE           MOV     A,R6
+   \   000027   2401         ADD     A,#0x1
+   \   000029   FE           MOV     R6,A
+   \   00002A   EF           MOV     A,R7
+   \   00002B   3400         ADDC    A,#0x0
+   \   00002D   FF           MOV     R7,A
+    273              }   
+   \                     ??vLcdAffChaine_1:
+   \   00002E   E5..         MOV     A,?V0 + 0
+   \   000030   2E           ADD     A,R6
+   \   000031   F582         MOV     DPL,A
+   \   000033   E5..         MOV     A,?V0 + 1
+   \   000035   3F           ADDC    A,R7
+   \   000036   F583         MOV     DPH,A
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   70D8         JNZ     ??vLcdAffChaine_2
+    274            }
+   \   00003B   7F04         MOV     R7,#0x4
+   \   00003D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    275          
+    276          //***********************vLcdAffEcran
+    277          //
+    278          //Description:Cette fonction permet d'afficher un Ecran pre enregistre 
+    279          // 
+    280          //           
+    281          // Nom:void CLEcran :: vLcdAffEcran(UC const *ucpEcran)
+    282          //           
+    283          // PARAMETRE D'ENTREE:UC *ucpEcran: Pointe vers le tableau qui contien l ecran
+    284          //                     
+    285          // 
+    286          //
+    287          // PARAMETRE DE SORTIE: Aucun              
+    288          //
+    289          //    
+    290          // Methode utilise:
+    291          //
+    292          // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+    293          // DATE DE MODIFICATION:	
+    294          //*****************************************************************************  
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    295            void CLEcran :: vLcdAffEcran(char *ucpEcran)
+   \                     ??vLcdAffEcran:
+    296            {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FF           MOV     R7,A
+    297             UC i;                      // indice pour la boucle
+    298             for(i=1;i<=4;i++)          //faire pour le nombre de ligne
+   \   00000D   75..01       MOV     ?V0 + 0,#0x1
+   \   000010   8020         SJMP    ??vLcdAffEcran_1
+    299              {
+    300                vLcdPoscurC0L1(0,i);    //positionne curseur
+   \                     ??vLcdAffEcran_2:
+   \   000012                ; Setup parameters for call to function CLEcran::vLcdPoscurC0L1(UC, UC)
+   \   000012   AC..         MOV     R4,?V0 + 0
+   \   000014   7900         MOV     R1,#0x0
+   \   000016   AA82         MOV     R2,DPL
+   \   000018   AB83         MOV     R3,DPH
+   \   00001A   12....       LCALL   ??vLcdPoscurC0L1
+    301                vLcdAffChaine(ucpEcran);//Affiche la chaine
+   \   00001D                ; Setup parameters for call to function CLEcran::vLcdAffChaine(char *)
+   \   00001D   EE           MOV     A,R6
+   \   00001E   FC           MOV     R4,A
+   \   00001F   EF           MOV     A,R7
+   \   000020   FD           MOV     R5,A
+   \   000021   AA82         MOV     R2,DPL
+   \   000023   AB83         MOV     R3,DPH
+   \   000025   12....       LCALL   ??vLcdAffChaine
+    302                ucpEcran = ucpEcran + 20;//deplace le pointeur
+   \   000028   EE           MOV     A,R6
+   \   000029   2414         ADD     A,#0x14
+   \   00002B   FE           MOV     R6,A
+   \   00002C   EF           MOV     A,R7
+   \   00002D   3400         ADDC    A,#0x0
+   \   00002F   FF           MOV     R7,A
+    303             
+    304              }   
+   \   000030   05..         INC     ?V0 + 0
+   \                     ??vLcdAffEcran_1:
+   \   000032   E5..         MOV     A,?V0 + 0
+   \   000034   C3           CLR     C
+   \   000035   9405         SUBB    A,#0x5
+   \   000037   40D9         JC      ??vLcdAffEcran_2
+    305                
+    306            }
+   \   000039   7F01         MOV     R7,#0x1
+   \   00003B   02....       LJMP    ?FUNC_LEAVE_XDATA
+    307          
+    308           
+    309          //***********************vLcdAffCarHex
+    310          //
+    311          //Description:Cette fonction permet d'afficher un octet en hexa a l'ecran 
+    312          // 
+    313          //           
+    314          // Nom:void CLEcran :: vLcdAffCarHex(UC ucCarac)
+    315          //           
+    316          // PARAMETRE D'ENTREE:UC ucCarac:Octet Hexa a afficher
+    317          // 
+    318          //
+    319          // PARAMETRE DE SORTIE: Aucun              
+    320          //
+    321          //    
+    322          // Methode:
+    323          //
+    324          // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+    325          // DATE DE MODIFICATION:	
+    326          //*****************************************************************************
+    327          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    328            void CLEcran :: vLcdAffCarHex(UC ucCarac)
+   \                     ??vLcdAffCarHex:
+    329            {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FF           MOV     R7,A
+    330             UC ucHi;                       //Variable Partie haute 
+    331             UC ucLo;                       //Variable Partie basse
+    332          
+    333             ucHi = (ucCarac & 0xF0) >> 4;  //isole la partie Haute
+   \   00000B   EF           MOV     A,R7
+   \   00000C   C4           SWAP    A
+   \   00000D   540F         ANL     A,#0xf
+   \   00000F   F9           MOV     R1,A
+    334             ucLo = (ucCarac & 0x0F);       //isole la partie basse
+   \   000010   740F         MOV     A,#0xf
+   \   000012   5F           ANL     A,R7
+   \   000013   FE           MOV     R6,A
+    335          
+    336             if(ucHi >= 0 && ucHi <= 9)     //Si partie haute est un chiffre
+                            ^
+Warning[Pe186]: pointless comparison of unsigned integer with zero
+   \   000014   E9           MOV     A,R1
+   \   000015   C3           CLR     C
+   \   000016   9400         SUBB    A,#0x0
+   \   000018   C3           CLR     C
+   \   000019   940A         SUBB    A,#0xa
+   \   00001B   5004         JNC     ??vLcdAffCarHex_1
+    337              {
+    338                ucHi = ucHi + 0x30;         //Ajoute 0x30 pour Ascii
+   \   00001D   7430         MOV     A,#0x30
+   \   00001F   29           ADD     A,R1
+   \   000020   F9           MOV     R1,A
+    339              }
+    340          
+    341             if(ucHi >= 0x0A && ucHi <= 0x0F)//Si partie haute une lettre
+   \                     ??vLcdAffCarHex_1:
+   \   000021   E9           MOV     A,R1
+   \   000022   C3           CLR     C
+   \   000023   940A         SUBB    A,#0xa
+   \   000025   C3           CLR     C
+   \   000026   9406         SUBB    A,#0x6
+   \   000028   5004         JNC     ??vLcdAffCarHex_2
+    342              {
+    343                ucHi = ucHi + 0x37;         //Ajoute 0x37 Pour Ascii
+   \   00002A   7437         MOV     A,#0x37
+   \   00002C   29           ADD     A,R1
+   \   00002D   F9           MOV     R1,A
+    344              }
+    345             
+    346          
+    347             if(ucLo >= 0 && ucLo <= 9)    //Si partie basse est un chiffre
+                            ^
+Warning[Pe186]: pointless comparison of unsigned integer with zero
+   \                     ??vLcdAffCarHex_2:
+   \   00002E   EE           MOV     A,R6
+   \   00002F   C3           CLR     C
+   \   000030   9400         SUBB    A,#0x0
+   \   000032   C3           CLR     C
+   \   000033   940A         SUBB    A,#0xa
+   \   000035   5004         JNC     ??vLcdAffCarHex_3
+    348              {
+    349                ucLo = ucLo + 0x30;        //Ajoute 0x30 pour Ascii
+   \   000037   7430         MOV     A,#0x30
+   \   000039   2E           ADD     A,R6
+   \   00003A   FE           MOV     R6,A
+    350              }
+    351          
+    352             if(ucLo >= 0x0A && ucLo <= 0x0F)//Si partie basse une lettre
+   \                     ??vLcdAffCarHex_3:
+   \   00003B   EE           MOV     A,R6
+   \   00003C   C3           CLR     C
+   \   00003D   940A         SUBB    A,#0xa
+   \   00003F   C3           CLR     C
+   \   000040   9406         SUBB    A,#0x6
+   \   000042   5004         JNC     ??vLcdAffCarHex_4
+    353              {
+    354                ucLo = ucLo + 0x37;          //Ajoute 0x37 Pour Ascii
+   \   000044   7437         MOV     A,#0x37
+   \   000046   2E           ADD     A,R6
+   \   000047   FE           MOV     R6,A
+    355              }
+    356          
+    357             vLcdAffCar(ucHi);              //Affiche partie haute
+   \                     ??vLcdAffCarHex_4:
+   \   000048                ; Setup parameters for call to function CLEcran::vLcdAffCar(UC)
+   \   000048   AA82         MOV     R2,DPL
+   \   00004A   AB83         MOV     R3,DPH
+   \   00004C   12....       LCALL   ??vLcdAffCar
+    358             vLcdAffCar(ucLo);              //Affiche partie basse
+   \   00004F                ; Setup parameters for call to function CLEcran::vLcdAffCar(UC)
+   \   00004F   EE           MOV     A,R6
+   \   000050   F9           MOV     R1,A
+   \   000051   AA82         MOV     R2,DPL
+   \   000053   AB83         MOV     R3,DPH
+   \   000055   12....       LCALL   ??vLcdAffCar
+    359            }
+   \   000058   7F01         MOV     R7,#0x1
+   \   00005A   02....       LJMP    ?FUNC_LEAVE_XDATA
+    360          
+    361          //***********************vLcdCarGen
+    362          //
+    363          //Description:Cette fonction permet de creer un caractere personalisée  
+    364          // 
+    365          //           
+    366          // Nom:void CLEcran :: vLcdCarGen(UC *ucTabCarac
+    367          //           
+    368          // PARAMETRE D'ENTREE:UC *ucTabCarac:Code du nouveau caracter 
+    369          // 
+    370          //
+    371          // PARAMETRE DE SORTIE: Aucun              
+    372          //
+    373          //    
+    374          //  Methode Utilise:
+    375          //
+    376          // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+    377          // DATE DE MODIFICATION:	
+    378          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    379            void CLEcran :: vLcdCarGen(UC *ucTabCarac)
+   \                     ??vLcdCarGen:
+    380            {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 2,R4
+   \   00000B   8D..         MOV     ?V0 + 3,R5
+    381          
+    382             UC i;
+    383             vLcdBusy(); 
+   \   00000D                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   ??vLcdBusy
+    384             vOut(usiAdresseEcran,0x40);
+   \   000014                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000014   7940         MOV     R1,#0x40
+   \   000016   8E82         MOV     DPL,R6
+   \   000018   8F83         MOV     DPH,R7
+   \   00001A   A3           INC     DPTR
+   \   00001B   A3           INC     DPTR
+   \   00001C   A3           INC     DPTR
+   \   00001D   A3           INC     DPTR
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   FC           MOV     R4,A
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FD           MOV     R5,A
+   \   000023   EE           MOV     A,R6
+   \   000024   FA           MOV     R2,A
+   \   000025   EF           MOV     A,R7
+   \   000026   FB           MOV     R3,A
+   \   000027   12....       LCALL   ??vOut
+    385             for(i=0;i<8;i++)
+   \   00002A   75..00       MOV     ?V0 + 0,#0x0
+   \   00002D   8035         SJMP    ??vLcdCarGen_1
+    386              {
+    387                vLcdBusy(); 
+   \                     ??vLcdCarGen_2:
+   \   00002F                ; Setup parameters for call to function CLEcran::vLcdBusy()
+   \   00002F   EE           MOV     A,R6
+   \   000030   FA           MOV     R2,A
+   \   000031   EF           MOV     A,R7
+   \   000032   FB           MOV     R3,A
+   \   000033   12....       LCALL   ??vLcdBusy
+    388                vOut(LCD_WR_DATA,ucTabCarac[i]);
+   \   000036                ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+   \   000036   85....       MOV     ?V0 + 4,?V0 + 0
+   \   000039   75..00       MOV     ?V0 + 5,#0x0
+   \   00003C   E5..         MOV     A,?V0 + 2
+   \   00003E   25..         ADD     A,?V0 + 4
+   \   000040   F582         MOV     DPL,A
+   \   000042   E5..         MOV     A,?V0 + 3
+   \   000044   35..         ADDC    A,?V0 + 5
+   \   000046   F583         MOV     DPH,A
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   F9           MOV     R1,A
+   \   00004A   8E82         MOV     DPL,R6
+   \   00004C   8F83         MOV     DPH,R7
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   E0           MOVX    A,@DPTR
+   \   000053   2402         ADD     A,#0x2
+   \   000055   FC           MOV     R4,A
+   \   000056   A3           INC     DPTR
+   \   000057   E0           MOVX    A,@DPTR
+   \   000058   3400         ADDC    A,#0x0
+   \   00005A   FD           MOV     R5,A
+   \   00005B   EE           MOV     A,R6
+   \   00005C   FA           MOV     R2,A
+   \   00005D   EF           MOV     A,R7
+   \   00005E   FB           MOV     R3,A
+   \   00005F   12....       LCALL   ??vOut
+    389              }
+   \   000062   05..         INC     ?V0 + 0
+   \                     ??vLcdCarGen_1:
+   \   000064   E5..         MOV     A,?V0 + 0
+   \   000066   C3           CLR     C
+   \   000067   9408         SUBB    A,#0x8
+   \   000069   40C4         JC      ??vLcdCarGen_2
+    390            }
+   \   00006B   7F06         MOV     R7,#0x6
+   \   00006D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    391          
+    392          //***********************vLcdBusy
+    393          //
+    394          //Description:Cette fonction permet d'attendre la fin d'une instruction 
+    395          //            sur l'ecran LCD en fesant du polling sur le bit busyflag
+    396          //           
+    397          //
+    398          // NOM:void CLEcran :: vLcdBusy(void)
+    399          //           
+    400          // PARAMETRE D'ENTREE:Aucun
+    401          //                   
+    402          // 
+    403          //
+    404          // PARAMETRE DE SORTIE: Aucun              
+    405          //
+    406          //    
+    407          // Membre utilise:
+    408          //
+    409          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    410          // DATE DE MODIFICATION:	
+    411          //***************************************************************************** 
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    412            void CLEcran :: vLcdBusy(void)
+   \                     ??vLcdBusy:
+    413            {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    414              while((ucIn(LCD_FLAG) & 0x80)); //Lit le Busy flag et ne fait rien
+   \                     ??vLcdBusy_1:
+   \   000009                ; Setup parameters for call to function CLInOutBase::ucIn(unsigned short)
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   A3           INC     DPTR
+   \   000010   A3           INC     DPTR
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   2401         ADD     A,#0x1
+   \   000014   FC           MOV     R4,A
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   3400         ADDC    A,#0x0
+   \   000019   FD           MOV     R5,A
+   \   00001A   EE           MOV     A,R6
+   \   00001B   FA           MOV     R2,A
+   \   00001C   EF           MOV     A,R7
+   \   00001D   FB           MOV     R3,A
+   \   00001E   12....       LCALL   ??ucIn
+   \   000021   E9           MOV     A,R1
+   \   000022   F8           MOV     R0,A
+   \   000023   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000025   40E2         JC      ??vLcdBusy_1
+    415                                                    //Tant qu'il est a 1
+    416            }
+   \   000027   7F01         MOV     R7,#0x1
+   \   000029   02....       LJMP    ?FUNC_LEAVE_XDATA
+    417            
+    418          
+    419          
+    420          //***********************vDelaisEcran
+    421          //
+    422          //Description:Cette fonction permet de faire un delais 
+    423          // 
+    424          //           
+    425          // NOM: void CLEcran :: vDelaisEcran(UINT16 usiTemps)
+    426          //            
+    427          // PARAMETRE D'ENTREE:usiTemps: Grandeur du delai
+    428          //                   
+    429          // 
+    430          //
+    431          // PARAMETRE DE SORTIE: Aucun              
+    432          //
+    433          //    
+    434          // Membre utilise:
+    435          //
+    436          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    437          // DATE DE MODIFICATION:	
+    438          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    439          void CLEcran :: vDelaisEcran(UINT16 usiTemps)
+   \                     ??vDelaisEcran:
+    440            {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    441              UINT16 i;   //indice pour conter le delais
+    442              for(i=0;i<usiTemps;i++);//Boucle pour faire un delais choisi   
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??vDelaisEcran_1
+   \                     ??vDelaisEcran_2:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   F8           MOV     R0,A
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??vDelaisEcran_1:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   9C           SUBB    A,R4
+   \   000011   E9           MOV     A,R1
+   \   000012   9D           SUBB    A,R5
+   \   000013   40F1         JC      ??vDelaisEcran_2
+    443            }
+   \   000015   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran()
+   \                     `??new CLEcran`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A06         MOV     R2,#0x6
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLEcran_2`
+   \   00001B                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   00001B   12....       LCALL   ??CLEcran
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLEcran_3`
+   \                     `??new CLEcran_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLEcran_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran(unsigned short)
+   \                     `??new CLEcran_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009                ; Setup parameters for call to function operator new(unsigned int)
+   \   000009   7A06         MOV     R2,#0x6
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   `??operator new`
+   \   000010   8A..         MOV     ?V0 + 0,R2
+   \   000012   8B..         MOV     ?V0 + 1,R3
+   \   000014   A8..         MOV     R0,?V0 + 0
+   \   000016   A9..         MOV     R1,?V0 + 1
+   \   000018   E8           MOV     A,R0
+   \   000019   FA           MOV     R2,A
+   \   00001A   E9           MOV     A,R1
+   \   00001B   FB           MOV     R3,A
+   \   00001C   E8           MOV     A,R0
+   \   00001D   49           ORL     A,R1
+   \   00001E   6011         JZ      `??new CLEcran_4`
+   \   000020                ; Setup parameters for call to function CLEcran::CLEcran(unsigned short)
+   \   000020   EE           MOV     A,R6
+   \   000021   FC           MOV     R4,A
+   \   000022   EF           MOV     A,R7
+   \   000023   FD           MOV     R5,A
+   \   000024   12....       LCALL   ??CLEcran_1
+   \   000027   8A..         MOV     ?V0 + 0,R2
+   \   000029   8B..         MOV     ?V0 + 1,R3
+   \   00002B   AA..         MOV     R2,?V0 + 0
+   \   00002D   AB..         MOV     R3,?V0 + 1
+   \   00002F   8004         SJMP    `??new CLEcran_5`
+   \                     `??new CLEcran_4`:
+   \   000031   7A00         MOV     R2,#0x0
+   \   000033   7B00         MOV     R3,#0x0
+   \                     `??new CLEcran_5`:
+   \   000035   7F02         MOV     R7,#0x2
+   \   000037   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLEcran::delete ~CLEcran(CLEcran *)
+   \                     `??delete ~CLEcran`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLEcran_1`
+   \   00000D                ; Setup parameters for call to function CLEcran::~CLEcran()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLEcran`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLEcran_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    444          
+    445          
+    446          //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      8  CLEcran::CLEcran()
+                          0 0  8 -> CLEcran::vLcdInit()
+       0      0     17  CLEcran::CLEcran(unsigned short)
+                          0 0  8 -> CLEcran::vLcdInit()
+       0      0      8  CLEcran::delete ~CLEcran(CLEcran *)
+                          0 0  8 -> CLEcran::~CLEcran()
+                          0 0  8 -> operator delete(void *)
+       2      0      0  CLEcran::new CLEcran()
+                          2 0  0 -> CLEcran::CLEcran()
+                          2 0  0 -> operator new(unsigned int)
+       0      0      9  CLEcran::new CLEcran(unsigned short)
+                          0 0  9 -> CLEcran::CLEcran(unsigned short)
+                          0 0  9 -> operator new(unsigned int)
+       0      0      9  CLEcran::vDelaisEcran(UINT16)
+       0      0     19  CLEcran::vLcdAffCar(UC)
+                          0 0  8 -> CLEcran::vLcdBusy()
+                          0 0  8 -> CLInOutBase::vOut(unsigned short, unsigned char)
+       0      0      8  CLEcran::vLcdAffCarHex(UC)
+                          0 0  8 -> CLEcran::vLcdAffCar(UC)
+       0      0     19  CLEcran::vLcdAffChaine(char *)
+                          0 0 11 -> CLEcran::vLcdAffCar(UC)
+       0      0      8  CLEcran::vLcdAffEcran(char *)
+                          0 0  8 -> CLEcran::vLcdAffChaine(char *)
+                          0 0  8 -> CLEcran::vLcdPoscurC0L1(UC, UC)
+       0      0     21  CLEcran::vLcdBusy()
+                          0 0  8 -> CLInOutBase::ucIn(unsigned short)
+       0      0     13  CLEcran::vLcdCarGen(UC *)
+                          0 0 13 -> CLEcran::vLcdBusy()
+                          0 0 13 -> CLInOutBase::vOut(unsigned short, unsigned char)
+       0      0      8  CLEcran::vLcdClr()
+                          0 0  8 -> CLEcran::vLcdBusy()
+                          0 0  8 -> CLInOutBase::vOut(unsigned short, unsigned char)
+       0      0     17  CLEcran::vLcdInit()
+                          0 0  9 -> CLEcran::vDelaisEcran(UINT16)
+                          0 0  9 -> CLEcran::vLcdBusy()
+                          0 0  9 -> CLInOutBase::vOut(unsigned short, unsigned char)
+       0      0     17  CLEcran::vLcdPoscurC0L1(UC, UC)
+                          0 0  9 -> CLEcran::vLcdBusy()
+                          0 0  9 -> CLInOutBase::vOut(unsigned short, unsigned char)
+       0      0      8  CLEcran::~CLEcran()
+                          0 0  0 -> CLEcran::vLcdClr()
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      40  CLEcran::CLEcran()
+      38  CLEcran::CLEcran(unsigned short)
+      32  CLEcran::delete ~CLEcran(CLEcran *)
+      49  CLEcran::new CLEcran()
+      58  CLEcran::new CLEcran(unsigned short)
+      22  CLEcran::vDelaisEcran(UINT16)
+      49  CLEcran::vLcdAffCar(UC)
+      93  CLEcran::vLcdAffCarHex(UC)
+      64  CLEcran::vLcdAffChaine(char *)
+      62  CLEcran::vLcdAffEcran(char *)
+      44  CLEcran::vLcdBusy()
+     112  CLEcran::vLcdCarGen(UC *)
+      43  CLEcran::vLcdClr()
+     201  CLEcran::vLcdInit()
+     175  CLEcran::vLcdPoscurC0L1(UC, UC)
+       3  CLEcran::~CLEcran()
+
+ 
+ 1 085 bytes in segment NEAR_CODE
+ 
+ 1 085 bytes of CODE memory
+
+Errors: none
+Warnings: 2

@@ -1,0 +1,164 @@
+Create Export File: C:\Travail\Carte IO-I2C\LAYOUT\Louis.LMD
+---------------------------------------------------------------------------------------------------
+Layer = InsulateTop, Phase = MillingTop
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+1	0	1459	    20510		3843		 "Universal Cutter 0.2 mm (8 mil)"
+10	0	390	    7276		2614		 "End Mill 1.0 mm (39 mil)"
+---------------------------------------------------------------------------------------------------
+Layer = BoardOutline, Phase = MillingTop
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = TextTop, Phase = MillingTop
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = InsulateBottom, Phase = MillingBottom
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+1	0	1046	    14747		2834		 "Universal Cutter 0.2 mm (8 mil)"
+10	0	296	    7763		2058		 "End Mill 1.0 mm (39 mil)"
+---------------------------------------------------------------------------------------------------
+Layer = BoardOutline, Phase = MillingBottom
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = TextBottom, Phase = MillingBottom
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = DrillPlated, Phase = DrillingPlated
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = DrillUnplated, Phase = DrillingUnplated
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+6	66	0	    0		746		 "Spiral Drill 0.7 mm"
+7	154	0	    0		537		 "Spiral Drill 0.8 mm"
+9	18	0	    0		178		 "Spiral Drill 1.0 mm"
+10	34	0	    0		217		 "Spiral Drill 1.1 mm"
+24	0	4	    12		425		 "Contour Router 2.0 mm (79 mil)"
+---------------------------------------------------------------------------------------------------
+Layer = DrillPlated, Phase = Dispense
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = DrillPlated, Phase = Vacuum
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = DrillPlated, Phase = DrillingBacking
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = CuttingOutside, Phase = CuttingOutside
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+3	0	1	    495		189		 "Contour Router 2.0 mm (79 mil)"
+---------------------------------------------------------------------------------------------------
+Layer = CuttingInside, Phase = CuttingInside
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = SolderMaskTop, Phase = CuttingSoldStopTop
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = SolderMaskBottom, Phase = CuttingSoldStopBottom
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = DrillPlated, Phase = MarkingDrills
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = DrillUnplated, Phase = MarkingDrills
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+1	276	0	    0		1512		 "Universal Cutter 0.2 mm marking"
+---------------------------------------------------------------------------------------------------
+Layer = SolderPasteTop, Phase = DispenseSolderPasteTop
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture
+---------------------------------------------------------------------------------------------------
+Layer = SolderPasteBottom, Phase = DispenseSolderPasteBottom
+Directly realized objects: Closed Shapes, Rectangles, Circles (no usage of any tool)
+No. of objects 0
+	Perimeter [mm]	= 0
+	Moves [mm]	= 0
+Tool usage
+No.	Flashes	Paths	Length [mm]	Moves [mm]	Tool/Aperture

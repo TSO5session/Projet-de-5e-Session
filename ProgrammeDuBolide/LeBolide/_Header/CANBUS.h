@@ -30,6 +30,7 @@ protected:
 private:
    class CLSerialPortInterface SPI;
    
+   void ModeLoopbackInit               (void)               ; // Mode loopback
    void AcquitterInterruptionsMCP2515  (void)               ; // Gestion des interrupts
    void MCP24515_init                  (void)               ; // Initialisation du MCP
    void ChoisirIdentifiantTX0          (int Identifiant)    ; // Choisie un registre CAN   

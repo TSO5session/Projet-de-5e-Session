@@ -54,12 +54,12 @@ CLI2CBase :: ~CLI2CBase(void)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-void CLI2CBase :: vI2CStart(void)     	       
+void CLI2CBase :: vI2CStart(void)               
  {
     SDA = HAUT;                              //Met SDA a 1
     SCL = HAUT;                              //Met SCL a 1
@@ -84,7 +84,7 @@ void CLI2CBase :: vI2CStart(void)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -114,7 +114,7 @@ void CLI2CBase :: vI2CStop(void)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -147,7 +147,7 @@ UC   CLI2CBase :: ucI2CLireBit(void)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -176,7 +176,7 @@ void CLI2CBase :: vI2CEcrireBit(UC ucBit)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -188,13 +188,13 @@ UC CLI2CBase :: ucI2CLireOctet(UC ucAck)
     for (UC i=0; i < 8; i++)                   //Repeter 8 fois 
      {
        if(ucI2CLireBit() == 1)                //Si lecture retourne 1
-	{
-	  ucLecture = ucLecture + 1;     //Additionne 1 a LireOctet
-	}   
-       if(i != 7) ucLecture = ucLecture << 1; //Decale LireOctet 1 vers gauche                                                     	                  
-     }	      
+   {
+     ucLecture = ucLecture + 1;     //Additionne 1 a LireOctet
+   }   
+       if(i != 7) ucLecture = ucLecture << 1; //Decale LireOctet 1 vers gauche                                                                          
+     }         
    vI2CEcrireBit(ucAck);
-   return (ucLecture); 		               //Retourne l'octet lue  
+   return (ucLecture);                      //Retourne l'octet lue  
  }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -211,7 +211,7 @@ UC CLI2CBase :: ucI2CLireOctet(UC ucAck)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -219,12 +219,12 @@ UC CLI2CBase :: ucI2CLireOctet(UC ucAck)
 UC CLI2CBase :: ucI2CEcrireOctet(UC ucOctet)
  {
     for (UC i=0; i<8; i++)                 
-     {	
+     {   
       if((ucOctet & 0x80) == 0) vI2CEcrireBit(0);
       else                      vI2CEcrireBit(1);
       ucOctet = ucOctet << 1;         
      }                               
-    return (ucI2CLireBit());		     
+    return (ucI2CLireBit());           
  }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -241,7 +241,7 @@ UC CLI2CBase :: ucI2CEcrireOctet(UC ucOctet)
 //
 // Cree le  4 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////

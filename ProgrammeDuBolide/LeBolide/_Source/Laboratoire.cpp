@@ -23,6 +23,7 @@
 #include "TypeCible.h"
 #include "ProjetBolide.h"
 #include "Station1.h"     // Fichier de definitions de la station uPSD
+#include "CLXBEE.h"
 
 void main(void)
  { 
@@ -30,11 +31,13 @@ void main(void)
      
 #ifdef DALLAS89C450   
    class CLVehicule Vehicule;
-   class CLStation1 StationUPSD;
-   
+  // class CLXbee     Xbee;
+
    while(1)
     {      
-      Vehicule.vControleBolide();
+      //Vehicule.vControleBolide();
+      //Xbee.SendString("Hello ");
+      Vehicule.BattryInfo();
     }  
 #endif
    

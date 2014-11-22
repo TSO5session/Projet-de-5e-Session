@@ -1,0 +1,519 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             19/Nov/2014  10:59:20 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme     #
+#                          Station 2\FESTO\Libraire\CLMaison.cpp              #
+#    Command line       =  "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\Libraire\CLMaison.cpp" -D          #
+#                          UPSD3254A --preprocess=cl                          #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\List\" -lC                    #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\List\" -lA                    #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\List\" -o                     #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\UPSD\Obj\" -e --no_cse             #
+#                          --no_unroll --no_inline --no_code_motion           #
+#                          --no_tbaa --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=near               #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files\IAR                #
+#                          Systems\Embedded Workbench                         #
+#                          6.4\8051\LIB\DLIB\dl8051Normal.h" -I               #
+#                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    #
+#                          Station 2\FESTO\Libraire\" -Ol --eec++             #
+#    List file          =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme     #
+#                          Station 2\FESTO\UPSD\List\CLMaison.lst             #
+#    Object file        =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme     #
+#                          Station 2\FESTO\UPSD\Obj\CLMaison.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+J:\Projet_Session5_LNAH\S2_18Nov2014\Programme Station 2\FESTO\Libraire\CLMaison.cpp
+      1          // ***************** FICHIER:CLEcran.cpp
+      2          //
+      3          //  Description: 
+      4          //  
+      5          //
+      6          //  Application realisee avec IAR
+      7          //
+      8          //  AUTEUR : Gabriel Fortin-Belanger
+      9          //  DATE CREATION :    2014-02-07		 VERSION: 1.0
+     10          //  DATE MODIFICATION: ****-**-**
+     11          //
+     12          //******************************************************************************
+     13          
+     14          #include "_DeclarationGenerale.h"
+     15          #include "CLMaison.h"
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLHorloge::~CLHorloge()
+   \                     `?~CLHorloge`:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000                ; Setup parameters for call to function CLHorlogeIO::~CLHorlogeIO()
+   \   000000   02....       LJMP    `?~CLHorlogeIO`
+     16          
+     17          
+     18          //***********************CLMaison(void)
+     19          //
+     20          //Description:Ce constructeur met l addresse de la maison a 0xFA00 par defaut
+     21          //            lors de la creation d un objet 
+     22          //
+     23          // Nom:CLPiece :: CLMaison(void)
+     24          //           
+     25          // PARAMETRE D'ENTREE: -
+     26          //                  
+     27          // 
+     28          //
+     29          // PARAMETRE DE SORTIE: -             
+     30          //
+     31          //    
+     32          // Membre utilise: usiAdresseMaison
+     33          //
+     34          //
+     35          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+     36          // DATE DE MODIFICATION:	
+     37          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     38          CLMaison :: CLMaison(void)
+   \                     ??CLMaison:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     39          {
+   \   000009                ; Setup parameters for call to function CLPiece::CLPiece()
+   \   000009   EE           MOV     A,R6
+   \   00000A   2402         ADD     A,#0x2
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   ??CLPiece
+   \   000014                ; Setup parameters for call to function CLPiece::CLPiece()
+   \   000014   EE           MOV     A,R6
+   \   000015   240A         ADD     A,#0xa
+   \   000017   FA           MOV     R2,A
+   \   000018   EF           MOV     A,R7
+   \   000019   3400         ADDC    A,#0x0
+   \   00001B   FB           MOV     R3,A
+   \   00001C   12....       LCALL   ??CLPiece
+   \   00001F                ; Setup parameters for call to function CLPiece::CLPiece()
+   \   00001F   EE           MOV     A,R6
+   \   000020   2412         ADD     A,#0x12
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   3400         ADDC    A,#0x0
+   \   000026   FB           MOV     R3,A
+   \   000027   12....       LCALL   ??CLPiece
+   \   00002A                ; Setup parameters for call to function CLPiece::CLPiece()
+   \   00002A   EE           MOV     A,R6
+   \   00002B   241A         ADD     A,#0x1a
+   \   00002D   FA           MOV     R2,A
+   \   00002E   EF           MOV     A,R7
+   \   00002F   3400         ADDC    A,#0x0
+   \   000031   FB           MOV     R3,A
+   \   000032   12....       LCALL   ??CLPiece
+   \   000035                ; Setup parameters for call to function CLHorloge::CLHorloge()
+   \   000035   EE           MOV     A,R6
+   \   000036   2422         ADD     A,#0x22
+   \   000038   FA           MOV     R2,A
+   \   000039   EF           MOV     A,R7
+   \   00003A   3400         ADDC    A,#0x0
+   \   00003C   FB           MOV     R3,A
+   \   00003D   12....       LCALL   ??CLHorloge
+     40            usiAdresseMaison = 0xFA00;
+   \   000040   8E82         MOV     DPL,R6
+   \   000042   8F83         MOV     DPH,R7
+   \   000044   7400         MOV     A,#0x0
+   \   000046   F0           MOVX    @DPTR,A
+   \   000047   A3           INC     DPTR
+   \   000048   74FA         MOV     A,#-0x6
+   \   00004A   F0           MOVX    @DPTR,A
+     41          
+     42          }
+   \   00004B   EE           MOV     A,R6
+   \   00004C   FA           MOV     R2,A
+   \   00004D   EF           MOV     A,R7
+   \   00004E   FB           MOV     R3,A
+   \   00004F   7F01         MOV     R7,#0x1
+   \   000051   02....       LJMP    ?FUNC_LEAVE_XDATA
+     43          
+     44          
+     45          //***********************CLMaison(USI usiAdresse)
+     46          //
+     47          //Description:Ce constructeur met l addresse de la maison ainsi que les 4 pieces
+     48          //             et l horloge.
+     49          //
+     50          // Nom:CLPiece :: CLMaison :: CLMaison(USI usiAdresse): clPiece1(usiAdresse),
+     51          //                                     clPiece2(usiAdresse + 1),
+     52          //                                     clPiece3(usiAdresse + 0x0100) , 
+     53          //                                    clPiece4(usiAdresse + 0x0101), clHorloge()
+     54          //           
+     55          // PARAMETRE D'ENTREE: usiAdresse
+     56          //                  
+     57          // 
+     58          //
+     59          // PARAMETRE DE SORTIE: -             
+     60          //
+     61          //    
+     62          // Membre utilise: usiAdresseMaison
+     63          //                 clPiece1(usiAdresse)
+     64          //                 clPiece2(usiAdresse + 1)
+     65          //                 clPiece3(usiAdresse + 0x0100)
+     66          //                 clPiece4(usiAdresse + 0x0101)
+     67          //                 clHorloge()
+     68          //
+     69          //
+     70          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+     71          // DATE DE MODIFICATION:	
+     72          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     73          CLMaison :: CLMaison(USI usiAdresse): clPiece1(usiAdresse),
+   \                     ??CLMaison_1:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+     74                                                clPiece2(usiAdresse + 1),
+     75                                                clPiece3(usiAdresse + 0x0100) , 
+     76                                                clPiece4(usiAdresse + 0x0101), clHorloge()
+     77          {
+   \   00000D                ; Setup parameters for call to function CLPiece::CLPiece(USI)
+   \   00000D   AC..         MOV     R4,?V0 + 0
+   \   00000F   AD..         MOV     R5,?V0 + 1
+   \   000011   EE           MOV     A,R6
+   \   000012   2402         ADD     A,#0x2
+   \   000014   FA           MOV     R2,A
+   \   000015   EF           MOV     A,R7
+   \   000016   3400         ADDC    A,#0x0
+   \   000018   FB           MOV     R3,A
+   \   000019   12....       LCALL   ??CLPiece_1
+   \   00001C                ; Setup parameters for call to function CLPiece::CLPiece(USI)
+   \   00001C   E5..         MOV     A,?V0 + 0
+   \   00001E   2401         ADD     A,#0x1
+   \   000020   FC           MOV     R4,A
+   \   000021   E5..         MOV     A,?V0 + 1
+   \   000023   3400         ADDC    A,#0x0
+   \   000025   FD           MOV     R5,A
+   \   000026   EE           MOV     A,R6
+   \   000027   240A         ADD     A,#0xa
+   \   000029   FA           MOV     R2,A
+   \   00002A   EF           MOV     A,R7
+   \   00002B   3400         ADDC    A,#0x0
+   \   00002D   FB           MOV     R3,A
+   \   00002E   12....       LCALL   ??CLPiece_1
+   \   000031                ; Setup parameters for call to function CLPiece::CLPiece(USI)
+   \   000031   E5..         MOV     A,?V0 + 0
+   \   000033   2400         ADD     A,#0x0
+   \   000035   FC           MOV     R4,A
+   \   000036   E5..         MOV     A,?V0 + 1
+   \   000038   3401         ADDC    A,#0x1
+   \   00003A   FD           MOV     R5,A
+   \   00003B   EE           MOV     A,R6
+   \   00003C   2412         ADD     A,#0x12
+   \   00003E   FA           MOV     R2,A
+   \   00003F   EF           MOV     A,R7
+   \   000040   3400         ADDC    A,#0x0
+   \   000042   FB           MOV     R3,A
+   \   000043   12....       LCALL   ??CLPiece_1
+   \   000046                ; Setup parameters for call to function CLPiece::CLPiece(USI)
+   \   000046   E5..         MOV     A,?V0 + 0
+   \   000048   2401         ADD     A,#0x1
+   \   00004A   FC           MOV     R4,A
+   \   00004B   E5..         MOV     A,?V0 + 1
+   \   00004D   3401         ADDC    A,#0x1
+   \   00004F   FD           MOV     R5,A
+   \   000050   EE           MOV     A,R6
+   \   000051   241A         ADD     A,#0x1a
+   \   000053   FA           MOV     R2,A
+   \   000054   EF           MOV     A,R7
+   \   000055   3400         ADDC    A,#0x0
+   \   000057   FB           MOV     R3,A
+   \   000058   12....       LCALL   ??CLPiece_1
+   \   00005B                ; Setup parameters for call to function CLHorloge::CLHorloge()
+   \   00005B   EE           MOV     A,R6
+   \   00005C   2422         ADD     A,#0x22
+   \   00005E   FA           MOV     R2,A
+   \   00005F   EF           MOV     A,R7
+   \   000060   3400         ADDC    A,#0x0
+   \   000062   FB           MOV     R3,A
+   \   000063   12....       LCALL   ??CLHorloge
+     78            usiAdresseMaison = usiAdresse;
+   \   000066   8E82         MOV     DPL,R6
+   \   000068   8F83         MOV     DPH,R7
+   \   00006A   E5..         MOV     A,?V0 + 0
+   \   00006C   F0           MOVX    @DPTR,A
+   \   00006D   A3           INC     DPTR
+   \   00006E   E5..         MOV     A,?V0 + 1
+   \   000070   F0           MOVX    @DPTR,A
+     79          
+     80          }
+   \   000071   EE           MOV     A,R6
+   \   000072   FA           MOV     R2,A
+   \   000073   EF           MOV     A,R7
+   \   000074   FB           MOV     R3,A
+   \   000075   7F02         MOV     R7,#0x2
+   \   000077   02....       LJMP    ?FUNC_LEAVE_XDATA
+     81          
+     82          //***********************~CLMaison(void)
+     83          //
+     84          //Description:Destructeur ne fait rien
+     85          //            
+     86          //
+     87          // Nom:CLPiece :: CLMaison(void)
+     88          //           
+     89          // PARAMETRE D'ENTREE: -
+     90          //                  
+     91          // 
+     92          //
+     93          // PARAMETRE DE SORTIE: -             
+     94          //
+     95          //    
+     96          // Membre utilise: -
+     97          //
+     98          //
+     99          // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+    100          // DATE DE MODIFICATION:	
+    101          //*****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    102          CLMaison :: ~CLMaison(void)
+   \                     `?~CLMaison`:
+    103          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    104          
+    105          }
+   \   000009                ; Setup parameters for call to function CLHorloge::~CLHorloge()
+   \   000009   EE           MOV     A,R6
+   \   00000A   2422         ADD     A,#0x22
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLHorloge`
+   \   000014                ; Setup parameters for call to function CLPiece::~CLPiece()
+   \   000014   EE           MOV     A,R6
+   \   000015   241A         ADD     A,#0x1a
+   \   000017   FA           MOV     R2,A
+   \   000018   EF           MOV     A,R7
+   \   000019   3400         ADDC    A,#0x0
+   \   00001B   FB           MOV     R3,A
+   \   00001C   12....       LCALL   `?~CLPiece`
+   \   00001F                ; Setup parameters for call to function CLPiece::~CLPiece()
+   \   00001F   EE           MOV     A,R6
+   \   000020   2412         ADD     A,#0x12
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   3400         ADDC    A,#0x0
+   \   000026   FB           MOV     R3,A
+   \   000027   12....       LCALL   `?~CLPiece`
+   \   00002A                ; Setup parameters for call to function CLPiece::~CLPiece()
+   \   00002A   EE           MOV     A,R6
+   \   00002B   240A         ADD     A,#0xa
+   \   00002D   FA           MOV     R2,A
+   \   00002E   EF           MOV     A,R7
+   \   00002F   3400         ADDC    A,#0x0
+   \   000031   FB           MOV     R3,A
+   \   000032   12....       LCALL   `?~CLPiece`
+   \   000035                ; Setup parameters for call to function CLPiece::~CLPiece()
+   \   000035   EE           MOV     A,R6
+   \   000036   2402         ADD     A,#0x2
+   \   000038   FA           MOV     R2,A
+   \   000039   EF           MOV     A,R7
+   \   00003A   3400         ADDC    A,#0x0
+   \   00003C   FB           MOV     R3,A
+   \   00003D   12....       LCALL   `?~CLPiece`
+   \   000040   7F01         MOV     R7,#0x1
+   \   000042   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLMaison &CLMaison::new CLMaison()
+   \                     `??new CLMaison`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A2B         MOV     R2,#0x2b
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLMaison_2`
+   \   00001B                ; Setup parameters for call to function CLMaison::CLMaison()
+   \   00001B   12....       LCALL   ??CLMaison
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLMaison_3`
+   \                     `??new CLMaison_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLMaison_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLMaison &CLMaison::new CLMaison(USI)
+   \                     `??new CLMaison_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009                ; Setup parameters for call to function operator new(unsigned int)
+   \   000009   7A2B         MOV     R2,#0x2b
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   `??operator new`
+   \   000010   8A..         MOV     ?V0 + 0,R2
+   \   000012   8B..         MOV     ?V0 + 1,R3
+   \   000014   A8..         MOV     R0,?V0 + 0
+   \   000016   A9..         MOV     R1,?V0 + 1
+   \   000018   E8           MOV     A,R0
+   \   000019   FA           MOV     R2,A
+   \   00001A   E9           MOV     A,R1
+   \   00001B   FB           MOV     R3,A
+   \   00001C   E8           MOV     A,R0
+   \   00001D   49           ORL     A,R1
+   \   00001E   6011         JZ      `??new CLMaison_4`
+   \   000020                ; Setup parameters for call to function CLMaison::CLMaison(USI)
+   \   000020   EE           MOV     A,R6
+   \   000021   FC           MOV     R4,A
+   \   000022   EF           MOV     A,R7
+   \   000023   FD           MOV     R5,A
+   \   000024   12....       LCALL   ??CLMaison_1
+   \   000027   8A..         MOV     ?V0 + 0,R2
+   \   000029   8B..         MOV     ?V0 + 1,R3
+   \   00002B   AA..         MOV     R2,?V0 + 0
+   \   00002D   AB..         MOV     R3,?V0 + 1
+   \   00002F   8004         SJMP    `??new CLMaison_5`
+   \                     `??new CLMaison_4`:
+   \   000031   7A00         MOV     R2,#0x0
+   \   000033   7B00         MOV     R3,#0x0
+   \                     `??new CLMaison_5`:
+   \   000035   7F02         MOV     R7,#0x2
+   \   000037   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLMaison::delete ~CLMaison(CLMaison *)
+   \                     `??delete ~CLMaison`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLMaison_1`
+   \   00000D                ; Setup parameters for call to function CLMaison::~CLMaison()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLMaison`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLMaison_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    106          
+    107          //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      8  CLHorloge::~CLHorloge()
+                          0 0 0 -> CLHorlogeIO::~CLHorlogeIO()
+       0      0      8  CLMaison::CLMaison()
+                          0 0 8 -> CLHorloge::CLHorloge()
+                          0 0 8 -> CLPiece::CLPiece()
+       0      0     18  CLMaison::CLMaison(USI)
+                          0 0 9 -> CLHorloge::CLHorloge()
+                          0 0 9 -> CLPiece::CLPiece(USI)
+       0      0      8  CLMaison::delete ~CLMaison(CLMaison *)
+                          0 0 8 -> CLMaison::~CLMaison()
+                          0 0 8 -> operator delete(void *)
+       2      0      0  CLMaison::new CLMaison()
+                          2 0 0 -> CLMaison::CLMaison()
+                          2 0 0 -> operator new(unsigned int)
+       0      0      9  CLMaison::new CLMaison(USI)
+                          0 0 9 -> CLMaison::CLMaison(USI)
+                          0 0 9 -> operator new(unsigned int)
+       0      0     16  CLMaison::~CLMaison()
+                          0 0 8 -> CLHorloge::~CLHorloge()
+                          0 0 8 -> CLPiece::~CLPiece()
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       3  CLHorloge::~CLHorloge()
+      84  CLMaison::CLMaison()
+     122  CLMaison::CLMaison(USI)
+      32  CLMaison::delete ~CLMaison(CLMaison *)
+      49  CLMaison::new CLMaison()
+      58  CLMaison::new CLMaison(USI)
+      69  CLMaison::~CLMaison()
+
+ 
+ 417 bytes in segment NEAR_CODE
+ 
+ 414 bytes of CODE memory (+ 3 bytes shared)
+
+Errors: none
+Warnings: none

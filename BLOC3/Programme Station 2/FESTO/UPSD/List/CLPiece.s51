@@ -1,0 +1,1703 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.2.41139 for 8051            19/Nov/2014  10:59:21 /
+// Copyright 2004-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    /
+//                          Station 2\FESTO\Libraire\CLPiece.cpp              /
+//    Command line       =  "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\Libraire\CLPiece.cpp" -D          /
+//                          UPSD3254A --preprocess=cl                         /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -lC                   /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -lA                   /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -o                    /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\Obj\" -e --no_cse            /
+//                          --no_unroll --no_inline --no_code_motion          /
+//                          --no_tbaa --debug --core=plain --dptr=16,1        /
+//                          --data_model=large --code_model=near              /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data --nr_virtual_regs 8        /
+//                          --dlib_config "C:\Program Files\IAR               /
+//                          Systems\Embedded Workbench                        /
+//                          6.4\8051\LIB\DLIB\dl8051Normal.h" -I              /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\Libraire\" -Ol --eec++            /
+//    List file          =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    /
+//                          Station 2\FESTO\UPSD\List\CLPiece.s51             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CLPiece
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FLT_ADD
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?L_MOV_X
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?UL_TO_FLT
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC ??CLPiece
+        FUNCTION ??CLPiece,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??CLPiece_1
+        FUNCTION ??CLPiece_1,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??delete ~CLPiece`
+        FUNCTION `??delete ~CLPiece`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??fEtatTemperature
+        FUNCTION ??fEtatTemperature,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        PUBLIC ??fGetTemperatureConsigne
+        FUNCTION ??fGetTemperatureConsigne,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC `??new CLPiece`
+        FUNCTION `??new CLPiece`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CLPiece_1`
+        FUNCTION `??new CLPiece_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??ucEtatChauffage
+        FUNCTION ??ucEtatChauffage,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??ucEtatLumiere
+        FUNCTION ??ucEtatLumiere,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vEcrirePiece
+        FUNCTION ??vEcrirePiece,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??vLirePiece
+        FUNCTION ??vLirePiece,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 3, STACK
+        PUBLIC ??vSetLumiere
+        FUNCTION ??vSetLumiere,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~CLPiece`
+        FUNCTION `?~CLPiece`,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBWEAK __Constant_41700000
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??ucIn
+        FUNCTION ??ucIn,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??vOut
+        FUNCTION ??vOut,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLPiece &CLPiece::new CLPiece()
+`??new CLPiece`:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function `??new CLPiece`
+        CODE
+        FUNCALL `??new CLPiece`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLPiece`, ??CLPiece
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+          CFI V0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+          CFI V1 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLPiece_2`
+        ; Setup parameters for call to function CLPiece::CLPiece()
+        LCALL   ??CLPiece
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLPiece_3`
+`??new CLPiece_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLPiece_3`:
+        POP     ?V0 + 1
+          CFI V1 SameValue
+          CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+          CFI V0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLPiece &CLPiece::new CLPiece(USI)
+`??new CLPiece_1`:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function `??new CLPiece_1`
+        CODE
+        FUNCALL `??new CLPiece_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLPiece_1`, ??CLPiece_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLPiece_4`
+        ; Setup parameters for call to function CLPiece::CLPiece(USI)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        LCALL   ??CLPiece_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLPiece_5`
+`??new CLPiece_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLPiece_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CLPiece::delete ~CLPiece(CLPiece *)
+`??delete ~CLPiece`:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function `??delete ~CLPiece`
+        CODE
+        FUNCALL `??delete ~CLPiece`, `?~CLPiece`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CLPiece`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CLPiece_1`
+        ; Setup parameters for call to function CLPiece::~CLPiece()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLPiece`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CLPiece_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock2
+// J:\Projet_Session5_LNAH\S2_18Nov2014\Programme Station 2\FESTO\Libraire\CLPiece.cpp
+//    1 // ***************** FICHIER:CLPiece.cpp
+//    2 //
+//    3 //  Description:Ce fichier contient la definition des differentes fonction 
+//    4 //              pour controler les pieces
+//    5 //
+//    6 //  Application realisee avec IAR
+//    7 //
+//    8 //  AUTEUR : Gabriel Fortin-Belanger
+//    9 //  DATE CREATION :    2014-02-07		 VERSION: 1.0
+//   10 //  DATE MODIFICATION: ****-**-**
+//   11 //
+//   12 //******************************************************************************
+//   13 #include "CLInOutBase.h"
+//   14 #include "_DeclarationGenerale.h"
+//   15 #include "CLPiece.h"
+//   16 
+//   17 
+//   18 
+//   19 //***********************CLPiece(void)
+//   20 //
+//   21 //Description:Ce constructeur met l addresse de la piece a 0xFA00 par defaut
+//   22 //            lors de la creation d un objet 
+//   23 //
+//   24 // Nom:CLPiece :: CLPiece(void)
+//   25 //           
+//   26 // PARAMETRE D'ENTREE: -
+//   27 //                  
+//   28 // 
+//   29 //
+//   30 // PARAMETRE DE SORTIE: -             
+//   31 //
+//   32 //    
+//   33 // Membre utilise: usiAdresseMaison
+//   34 //
+//   35 //
+//   36 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   37 // DATE DE MODIFICATION:	
+//   38 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   39 CLPiece :: CLPiece(void)   //Constructeur defaut
+??CLPiece:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function ??CLPiece
+        CODE
+//   40 {
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//   41   usiAdresseMaison = 0xFA00;//Adresse par defaut 
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#-0x6
+        MOVX    @DPTR,A
+//   42 }
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-3
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock3
+//   43 
+//   44 //***********************CLPiece(USI usiAddresse
+//   45 //
+//   46 //Description:Ce constructeur met l addresse de la piece a l adresse passer
+//   47 //            en parametre.
+//   48 //
+//   49 // Nom:CLPiece :: CLPiece(USI usiAddresse
+//   50 //           
+//   51 // PARAMETRE D'ENTREE: usiAddresse : Adresse choisit en fonction du systeme
+//   52 //                                   utiliser avec le simulateur de maison.
+//   53 //                  
+//   54 // 
+//   55 //
+//   56 // PARAMETRE DE SORTIE: -             
+//   57 //
+//   58 //    
+//   59 // Membre utilise: usiAdresseMaison
+//   60 //
+//   61 //
+//   62 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   63 // DATE DE MODIFICATION:	
+//   64 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   65 CLPiece :: CLPiece(USI usiAddresse)//Constructeur initialisateur
+??CLPiece_1:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function ??CLPiece_1
+        CODE
+//   66 {
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//   67  usiAdresseMaison = usiAddresse;//Adresse de la piece est celle que l on choisit
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//   68 }
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-3
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock4
+//   69 
+//   70 //***********************~CLPiece(void)
+//   71 //
+//   72 //Description:Ce constructeur met l addresse de la piece a l adresse passer
+//   73 //            en parametre.
+//   74 //
+//   75 // Nom:CLPiece :: ~CLPiece(void)
+//   76 //           
+//   77 // PARAMETRE D'ENTREE:  -
+//   78 //                        
+//   79 //                  
+//   80 // 
+//   81 //
+//   82 // PARAMETRE DE SORTIE: -             
+//   83 //
+//   84 //    
+//   85 // Membre utilise: vSetLumiere();
+//   86 //
+//   87 //
+//   88 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   89 // DATE DE MODIFICATION:	
+//   90 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   91 CLPiece :: ~CLPiece(void)//destructeur qui reinitialise la piece
+`?~CLPiece`:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function `?~CLPiece`
+        CODE
+//   92 {
+        FUNCALL `?~CLPiece`, ??vSetLumiere
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+//   93   vSetLumiere(0 , 0xFA00,0x00);
+        ; Setup parameters for call to function CLPiece::vSetLumiere(UC, USI, UC)
+        MOV     ?V0 + 0,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 9)
+        MOV     R4,#0x0
+        MOV     R5,#-0x6
+        MOV     R1,#0x0
+        LCALL   ??vSetLumiere
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 8)
+//   94 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock5
+//   95 
+//   96 
+//   97 //***********************fEtatTemperature
+//   98 //
+//   99 //Description:Cette fonction permet de lire la temperature de la piece.
+//  100 //            
+//  101 //
+//  102 // Nom:CLPiece :: fEtatTemperature(void)
+//  103 //           
+//  104 // PARAMETRE D'ENTREE: -
+//  105 //                        
+//  106 //                  
+//  107 // 
+//  108 //
+//  109 // PARAMETRE DE SORTIE: fTemperature             
+//  110 //
+//  111 //    
+//  112 // Membre utilise: vLirePiece();
+//  113 //                 unPiece.stPiece.ucTemperature;
+//  114 //                 unPiece.stPiece.ucTemperaturePrecis
+//  115 //
+//  116 //
+//  117 //
+//  118 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  119 // DATE DE MODIFICATION:	
+//  120 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  121 float CLPiece :: fEtatTemperature(void)
+??fEtatTemperature:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function ??fEtatTemperature
+        CODE
+//  122 {
+        FUNCALL ??fEtatTemperature, ??vLirePiece
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xf
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  123   float fTemperature; 
+//  124   
+//  125   vLirePiece(usiAdresseMaison);//Lit A l adresse de la piece
+        ; Setup parameters for call to function CLPiece::vLirePiece(USI)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLirePiece
+//  126   fTemperature = (float)unPiece.stPiece.ucTemperature;//Temperature lu
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        CLR     C
+        RRC     A
+        ANL     A,#0x1f
+        MOV     ?V0 + 0,A
+        CLR     A
+        MOV     ?V0 + 1,A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+//  127   if(unPiece.stPiece.ucTemperaturePrecis == 1)// Si LSB a 1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+//  128   {
+//  129     fTemperature = fTemperature + 0,5;       //Ajoute 0,5 pour plus de pecision
+//  130   }
+//  131   else
+//  132   {
+//  133     fTemperature = fTemperature + 0,0;       //Sinon ajoute rien
+//  134   }
+//  135   return(fTemperature + 15);                // plus 15 car c est la reference
+        MOV     DPTR,#__Constant_41700000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_ADD
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0x8
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock6
+//  136 }
+//  137 
+//  138 
+//  139 //***********************ucEtatChauffage
+//  140 //
+//  141 //Description:Cette fonction permet de lire l etat ON ou OFF du chauffage dans
+//  142 //            une des pieces de la maison
+//  143 //
+//  144 // Nom:CLPiece :: ucEtatChauffage(void)
+//  145 //           
+//  146 // PARAMETRE D'ENTREE:  -
+//  147 //                        
+//  148 //                  
+//  149 // 
+//  150 //
+//  151 // PARAMETRE DE SORTIE: unPiece.stPiece.ucEtatChauffage            
+//  152 //
+//  153 //    
+//  154 // Membre utilise: vLirePiece(usiAdresseMaison)
+//  155 //                 unPiece.stPiece.ucEtatChauffage
+//  156 //
+//  157 //
+//  158 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  159 // DATE DE MODIFICATION:	
+//  160 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  161 UC CLPiece :: ucEtatChauffage(void)
+??ucEtatChauffage:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function ??ucEtatChauffage
+        CODE
+//  162 {
+        FUNCALL ??ucEtatChauffage, ??vLirePiece
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  163   vLirePiece(usiAdresseMaison);
+        ; Setup parameters for call to function CLPiece::vLirePiece(USI)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLirePiece
+//  164   return(unPiece.stPiece.ucEtatChauffage);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.6
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock7
+//  165 }
+//  166 
+//  167 
+//  168 
+//  169 //***********************ucEtatLumiere
+//  170 //
+//  171 //Description:Cette fonction permet de lire l etat ON ou OFF de la lumiere dans
+//  172 //            une des pieces de la maison
+//  173 //
+//  174 // Nom:CLPiece :: ucEtatLumiere(void)
+//  175 //           
+//  176 // PARAMETRE D'ENTREE: -
+//  177 //                        
+//  178 //                  
+//  179 // 
+//  180 //
+//  181 // PARAMETRE DE SORTIE: unPiece.stPiece.ucEtatLumiere            
+//  182 //
+//  183 //    
+//  184 // Membre utilise: vLirePiece(usiAdresseMaison)
+//  185 //                 unPiece.stPiece.ucEtatLumiere
+//  186 //
+//  187 //
+//  188 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  189 // DATE DE MODIFICATION:	
+//  190 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  191 UC CLPiece :: ucEtatLumiere(void)
+??ucEtatLumiere:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function ??ucEtatLumiere
+        CODE
+//  192 {
+        FUNCALL ??ucEtatLumiere, ??vLirePiece
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  193   vLirePiece(usiAdresseMaison);
+        ; Setup parameters for call to function CLPiece::vLirePiece(USI)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLirePiece
+//  194   return(unPiece.stPiece.ucEtatLumiere);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock8
+//  195 }
+//  196 
+//  197 
+//  198 //***********************vSetLumiere
+//  199 //
+//  200 //Description:Cette fonction permet d allumer ou d eteindre les lumieres sans
+//  201 //            toucher au chauffage.
+//  202 //
+//  203 // Nom:CLPiece :: vSetLumiere(UC ucLumiere,USI usiAdresseConsigne, UC ucPiece)
+//  204 //           
+//  205 // PARAMETRE D'ENTREE: ucLumiere: Etat ON ou OFF
+//  206 //                     usiAdresseConsigne: adresseou se situe la consigne 
+//  207 //                     ucPiece:0x00 = Piece 1
+//  208 //                             0x01 = Piece 2
+//  209 //                             0x10 = Piece 3
+//  210 //                             0x11 = Piece 4
+//  211 // 
+//  212 //
+//  213 // PARAMETRE DE SORTIE: -             
+//  214 //
+//  215 //    
+//  216 // Membre utilise: fGetTemperatureConsigne(usiAdresseConsigne,ucPiece)
+//  217 //                 Va lire la temperature de consigne
+//  218 //
+//  219 //                 unPiece.stPiece.ucEtatChauffage
+//  220 //                 unPiece.stPiece.ucEtatLumiere
+//  221 //                 unPiece.stPiece.ucTemperaturePrecis
+//  222 //                 unPiece.stPiece.ucTemperature
+//  223 //                 ucTemperatureHexa
+//  224 //                 vEcrirePiece(usiAdresseMaison);
+//  225 //
+//  226 //
+//  227 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  228 // DATE DE MODIFICATION:	
+//  229 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  230 void CLPiece :: vSetLumiere(UC ucLumiere,USI usiAdresseConsigne, UC ucPiece)
+??vSetLumiere:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function ??vSetLumiere
+        CODE
+//  231 {
+        FUNCALL ??vSetLumiere, ??fGetTemperatureConsigne
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vSetLumiere, ??vEcrirePiece
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+//  232   
+//  233   fGetTemperatureConsigne(usiAdresseConsigne,ucPiece);
+        ; Setup parameters for call to function CLPiece::fGetTemperatureConsigne(USI, UC)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??fGetTemperatureConsigne
+//  234   unPiece.stPiece.ucEtatChauffage = 0;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.6
+        MOVX    @DPTR,A
+//  235   unPiece.stPiece.ucEtatLumiere = ucLumiere;
+        MOV     ?V0 + 1,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.0
+        MOVX    A,@DPTR
+        MOV     0xE0 /* A   */.7,C
+        MOVX    @DPTR,A
+//  236   unPiece.stPiece.ucTemperaturePrecis = ucTemperatureHexa & 0x01;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        RLC     A
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     C,0xE0 /* A   */.0
+        MOVX    A,@DPTR
+        MOV     0xE0 /* A   */.0,C
+        MOVX    @DPTR,A
+//  237   unPiece.stPiece.ucTemperature = ucTemperatureHexa & 0x3C;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x3c
+        CLR     C
+        RLC     A
+        ANL     A,#0x3e
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0xc1
+        ORL     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  238   vEcrirePiece(usiAdresseMaison);
+        ; Setup parameters for call to function CLPiece::vEcrirePiece(USI)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vEcrirePiece
+//  239 
+//  240 }
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock9
+//  241 
+//  242 //***********************fGetTemperatureConsigne
+//  243 //
+//  244 //Description:Cette fonction permet de lire la temperature de consigne
+//  245 //            
+//  246 //
+//  247 // Nom:CLPiece :: fGetTemperatureConsigne(USI usiAdresseConsigne, UC ucPiece)
+//  248 //           
+//  249 // PARAMETRE D'ENTREE: usiAdresseConsigne: adresse ou se situe la consigne 
+//  250 //                     ucPiece:0x00 = Piece 1
+//  251 //                             0x01 = Piece 2
+//  252 //                             0x10 = Piece 3
+//  253 //                             0x11 = Piece 4
+//  254 // 
+//  255 //
+//  256 // PARAMETRE DE SORTIE: fTemperature             
+//  257 //
+//  258 //    
+//  259 // Membre utilise: unPiece.stPiece.ucEtatChauffage
+//  260 //                 unPiece.stPiece.ucEtatLumiere
+//  261 //                 vEcrirePiece( usiAdresseConsigne)
+//  262 //                 ucTemperatureHexa
+//  263 //                 vLirePiece(usiAdresseConsigne)
+//  264 //                 unPiece.stPiece.ucTemperature
+//  265 //                 unPiece.stPiece.ucTemperaturePrecis
+//  266 //
+//  267 //
+//  268 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  269 // DATE DE MODIFICATION:	
+//  270 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  271 float CLPiece :: fGetTemperatureConsigne(USI usiAdresseConsigne, UC ucPiece)
+??fGetTemperatureConsigne:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function ??fGetTemperatureConsigne
+        CODE
+//  272 {
+        FUNCALL ??fGetTemperatureConsigne, ??vEcrirePiece
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??fGetTemperatureConsigne, ??vLirePiece
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xf
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+//  273   float fTemperature;
+//  274   
+//  275   unPiece.stPiece.ucEtatChauffage = ucPiece & 0x01; 
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        RLC     A
+        MOV     ?V0 + 5,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        PUSH    DPL
+          CFI CFA_SP SP+-1
+        PUSH    DPH
+          CFI CFA_SP SP+-2
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        POP     DPH
+          CFI CFA_SP SP+-1
+        POP     DPL
+          CFI CFA_SP SP+0
+        MOVX    A,@DPTR
+        MOV     0xE0 /* A   */.6,C
+        MOVX    @DPTR,A
+//  276   unPiece.stPiece.ucEtatLumiere = ucPiece & 0x10;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ANL     A,#0x10
+        MOV     ?V0 + 4,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.7
+        MOVX    @DPTR,A
+//  277   vEcrirePiece( usiAdresseConsigne);
+        ; Setup parameters for call to function CLPiece::vEcrirePiece(USI)
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vEcrirePiece
+//  278   
+//  279   
+//  280   vLirePiece(usiAdresseConsigne);
+        ; Setup parameters for call to function CLPiece::vLirePiece(USI)
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLirePiece
+//  281   ucTemperatureHexa = (unPiece.stPiece.ucTemperature << 1) + 
+//  282                       (unPiece.stPiece.ucTemperaturePrecis);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        RLC     A
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        CLR     C
+        RRC     A
+        ANL     A,#0x1f
+        CLR     C
+        RLC     A
+        ADD     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  283   
+//  284   fTemperature = (float)unPiece.stPiece.ucTemperature;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        CLR     C
+        RRC     A
+        ANL     A,#0x1f
+        MOV     ?V0 + 0,A
+        CLR     A
+        MOV     ?V0 + 1,A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+//  285   if(unPiece.stPiece.ucTemperaturePrecis == 1)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+//  286   {
+//  287     fTemperature = fTemperature + 0,5;
+//  288   }
+//  289   else
+//  290   {
+//  291     fTemperature = fTemperature + 0,0;
+//  292   }
+//  293   return(fTemperature + 15);
+        MOV     DPTR,#__Constant_41700000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_ADD
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+        MOV     R7,#0x8
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock10
+//  294 
+//  295 }
+//  296 
+//  297 
+//  298 //***********************vLirePiece
+//  299 //
+//  300 //Description:Cette fonction permet de lire l etat de la piece
+//  301 //            
+//  302 //
+//  303 // Nom:CLPiece :: vLirePiece(USI usiAdresse)
+//  304 //           
+//  305 // PARAMETRE D'ENTREE: usiAddresse
+//  306 //                        
+//  307 //                  
+//  308 // 
+//  309 //
+//  310 // PARAMETRE DE SORTIE: -             
+//  311 //
+//  312 //    
+//  313 // Membre utilise: ucIn(usiAdresse)
+//  314 //                 unPiece.ucPiece
+//  315 //                 
+//  316 //
+//  317 //
+//  318 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  319 // DATE DE MODIFICATION:	
+//  320 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  321 void CLPiece :: vLirePiece(USI usiAdresse)
+??vLirePiece:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function ??vLirePiece
+        CODE
+//  322 {
+        FUNCALL ??vLirePiece, ??ucIn
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//  323 
+//  324   unPiece.ucPiece = ucIn(usiAdresse); // Lecture direct sur le materiel
+        ; Setup parameters for call to function CLInOutBase::ucIn(unsigned short)
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ucIn
+        MOV     A,R1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  325   for(unsigned int i = 0; i<60000;i++);
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        SJMP    ??vLirePiece_1
+??vLirePiece_2:
+        MOV     A,R0
+        ADD     A,#0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??vLirePiece_1:
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x60
+        MOV     A,R1
+        SUBB    A,#-0x16
+        JC      ??vLirePiece_2
+//  326 
+//  327 }
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-3
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock11
+//  328 
+//  329 
+//  330 //***********************vEcrirePiece
+//  331 //
+//  332 //Description:Cette fonction permet d ecrire l etat de la piece.
+//  333 //            
+//  334 //
+//  335 // Nom:CLPiece :: vEcrirePiece(USI usiAdresse)
+//  336 //           
+//  337 // PARAMETRE D'ENTREE: usiAddresse
+//  338 //                        
+//  339 //                  
+//  340 // 
+//  341 //
+//  342 // PARAMETRE DE SORTIE: -             
+//  343 //
+//  344 //    
+//  345 // Membre utilise: vOut();
+//  346 //                 unPiece.ucPiece
+//  347 //                 
+//  348 //
+//  349 //
+//  350 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  351 // DATE DE MODIFICATION:	
+//  352 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  353 void CLPiece :: vEcrirePiece(USI usiAdresse)
+??vEcrirePiece:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function ??vEcrirePiece
+        CODE
+//  354 {
+        FUNCALL ??vEcrirePiece, ??vOut
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//  355   vOut(usiAdresse,unPiece.ucPiece);// Ecriture direct sur le materiel
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??vOut
+//  356   for(unsigned int i = 0; i<60000;i++);
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        SJMP    ??vEcrirePiece_1
+??vEcrirePiece_2:
+        MOV     A,R0
+        ADD     A,#0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??vEcrirePiece_1:
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x60
+        MOV     A,R1
+        SUBB    A,#-0x16
+        JC      ??vEcrirePiece_2
+//  357 
+//  358 }
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-3
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock12
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_41700000:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_41700000>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_41700000>`:
+        DATA32
+        DD 41700000H
+
+        END
+//  359 
+//  360 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// 
+// 914 bytes in segment NEAR_CODE
+//   4 bytes in segment XDATA_I
+//   4 bytes in segment XDATA_ID
+// 
+// 914 bytes of CODE  memory (+ 4 bytes shared)
+//   0 bytes of XDATA memory (+ 4 bytes shared)
+//
+//Errors: none
+//Warnings: none

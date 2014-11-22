@@ -13,6 +13,8 @@
 #include "CLEcran.h"
 #include "CLRoue.h"
 #include "CLSuiveurLigne.h"
+#include "CLPile.h"
+#include "CLXBEE.h"           
 
 #ifndef CLVEHICULEH
    #define CLVEHICULEH
@@ -21,13 +23,13 @@
 #define MODESUIVEUR 1
 
 #ifdef SPI_DALLAS
-#define VITESSEINIT       0x0800
-#define VITESSEINITTOURNE 0x0300
+  #define VITESSEINIT       0x0800
+  #define VITESSEINITTOURNE 0x0300
 #endif
 
 #ifdef I2C_DALLAS
-#define VITESSEINIT       0x40
-#define VITESSEINITTOURNE 0x30
+  #define VITESSEINIT       0x40
+  #define VITESSEINITTOURNE 0x30
 #endif
 
 #define DROITE        0
@@ -43,9 +45,12 @@ public:
    CLVehicule(USI uiVit, USI uiVitTourne);
   ~CLVehicule(void);
 
-   void vControleBolide    (void);
-   void vAvancer           (UC ucDirection);
-   void vSuivreLigne       (void);
+   void  vControleBolide    (void);
+   void  vAvancer           (UC ucDirection);
+   void  vSuivreLigne       (void);
+   void  BattryInfo         (void);
+   void  SpeedInfo          (void);
+   void  GetPosition        (void);
 
 protected:
 
@@ -55,7 +60,9 @@ private:
    class CLRoue            clRoueAvantG;
    class CLRoue            clRoueArriereD;
    class CLRoue            clRoueArriereG;
-   class CLSuiveurLigne    clSuiveurLigne;  
+   class CLSuiveurLigne    clSuiveurLigne; 
+   class CLPile            Battry;
+   class CLXbee            Xbee;
    
    UC ucMode;
    

@@ -1,0 +1,144 @@
+Post Processor Report
+OrCAD FILE: C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Fri Nov 21 08:29:02 2014
+
+*********************************************************
+
+Output file: C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.TOP
+
+Aperture totals for C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.TOP:
+---------------------------------------------------------
+D10:  0.0650 x 0.1000 RECTANGLE -----      14 Flashes
+D11:  0.0700 ROUND  --       0 Draws,      17 Flashes
+D12:  0.0700 SQUARE --       0 Draws,       1 Flashes
+D13:  0.1000 ROUND  --       0 Draws,      34 Flashes
+D14:  0.2500 ROUND  --       0 Draws,       4 Flashes
+D15:  0.0500 x 0.1000 OBLONG    -----      32 Flashes
+D16:  0.0500 x 0.1000 RECTANGLE -----      16 Flashes
+D17:  0.0650 SQUARE --       0 Draws,     100 Flashes
+D18:  0.1000 x 0.0500 OBLONG    -----      99 Flashes
+D19:  0.1000 x 0.0500 RECTANGLE -----       7 Flashes
+D20:  0.0200 ROUND  --    5743 Draws,       0 Flashes
+D21:  0.0300 ROUND  --     165 Draws,       0 Flashes
+D22:  0.0750 ROUND  --       0 Draws,      66 Flashes
+D23:  0.0100 ROUND  --      66 Draws,       0 Flashes
+---------------------------------------------------------
+ 14 D-Codes      -----    5974 Draws,     390 Flashes
+
+*********************************************************
+
+Output file: C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.BOT
+
+Aperture totals for C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.BOT:
+---------------------------------------------------------
+D11:  0.0700 ROUND  --       0 Draws,      17 Flashes
+D12:  0.0700 SQUARE --       0 Draws,       1 Flashes
+D13:  0.1000 ROUND  --       0 Draws,      34 Flashes
+D14:  0.2500 ROUND  --       0 Draws,       4 Flashes
+D15:  0.0500 x 0.1000 OBLONG    -----      32 Flashes
+D16:  0.0500 x 0.1000 RECTANGLE -----      16 Flashes
+D18:  0.1000 x 0.0500 OBLONG    -----      99 Flashes
+D19:  0.1000 x 0.0500 RECTANGLE -----       7 Flashes
+D20:  0.0200 ROUND  --    4185 Draws,       0 Flashes
+D21:  0.0300 ROUND  --     112 Draws,       0 Flashes
+D22:  0.0750 ROUND  --       0 Draws,      65 Flashes
+D24:  0.0750 ROUND  --       0 Draws,       1 Flashes
+---------------------------------------------------------
+ 12 D-Codes      -----    4297 Draws,     276 Flashes
+
+*********************************************************
+
+Output file: C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.SMT
+
+Aperture totals for C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.SMT:
+---------------------------------------------------------
+D12:  0.0700 SQUARE --       0 Draws,     100 Flashes
+D25:  0.0700 x 0.1050 RECTANGLE -----      14 Flashes
+D26:  0.0800 ROUND  --       0 Draws,      17 Flashes
+D27:  0.0800 SQUARE --       0 Draws,       1 Flashes
+D28:  0.1100 ROUND  --       0 Draws,      34 Flashes
+D29:  0.2600 ROUND  --       0 Draws,       4 Flashes
+D30:  0.0600 x 0.1100 OBLONG    -----      32 Flashes
+D31:  0.0600 x 0.1100 RECTANGLE -----      16 Flashes
+D32:  0.1100 x 0.0600 OBLONG    -----      99 Flashes
+D33:  0.1100 x 0.0600 RECTANGLE -----       7 Flashes
+D34:  0.0850 ROUND  --       0 Draws,      66 Flashes
+---------------------------------------------------------
+ 11 D-Codes      -----       0 Draws,     390 Flashes
+
+*********************************************************
+
+Output file: C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.SMB
+
+Aperture totals for C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.SMB:
+---------------------------------------------------------
+D26:  0.0800 ROUND  --       0 Draws,      17 Flashes
+D27:  0.0800 SQUARE --       0 Draws,       1 Flashes
+D28:  0.1100 ROUND  --       0 Draws,      34 Flashes
+D29:  0.2600 ROUND  --       0 Draws,       4 Flashes
+D30:  0.0600 x 0.1100 OBLONG    -----      32 Flashes
+D31:  0.0600 x 0.1100 RECTANGLE -----      16 Flashes
+D32:  0.1100 x 0.0600 OBLONG    -----      99 Flashes
+D33:  0.1100 x 0.0600 RECTANGLE -----       7 Flashes
+D34:  0.0850 ROUND  --       0 Draws,      66 Flashes
+---------------------------------------------------------
+  9 D-Codes      -----       0 Draws,     276 Flashes
+
+*********************************************************
+
+Output file: C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.SST
+
+Aperture totals for C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.SST:
+---------------------------------------------------------
+D20:  0.0200 ROUND  --      15 Draws,       0 Flashes
+D23:  0.0100 ROUND  --    2161 Draws,       0 Flashes
+---------------------------------------------------------
+  2 D-Codes      -----    2176 Draws,       0 Flashes
+
+*********************************************************
+
+Output file: C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.DRD
+
+Aperture totals for C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.DRD:
+---------------------------------------------------------
+D23:  0.0100 ROUND  --    1952 Draws,       0 Flashes
+D35:  0.0500 ROUND  --       7 Draws,       0 Flashes
+---------------------------------------------------------
+  2 D-Codes      -----    1959 Draws,       0 Flashes
+
+
+*********************************************************
+
+Aperture totals for entire project:
+---------------------------------------------------------
+D10:  0.0650 x 0.1000 RECTANGLE -----      14 Flashes
+D11:  0.0700 ROUND  --       0 Draws,      34 Flashes
+D12:  0.0700 SQUARE --       0 Draws,     102 Flashes
+D13:  0.1000 ROUND  --       0 Draws,      68 Flashes
+D14:  0.2500 ROUND  --       0 Draws,       8 Flashes
+D15:  0.0500 x 0.1000 OBLONG    -----      64 Flashes
+D16:  0.0500 x 0.1000 RECTANGLE -----      32 Flashes
+D17:  0.0650 SQUARE --       0 Draws,     100 Flashes
+D18:  0.1000 x 0.0500 OBLONG    -----     198 Flashes
+D19:  0.1000 x 0.0500 RECTANGLE -----      14 Flashes
+D20:  0.0200 ROUND  --    9943 Draws,       0 Flashes
+D21:  0.0300 ROUND  --     277 Draws,       0 Flashes
+D22:  0.0750 ROUND  --       0 Draws,     131 Flashes
+D23:  0.0100 ROUND  --    4179 Draws,       0 Flashes
+D24:  0.0750 ROUND  --       0 Draws,       1 Flashes
+D25:  0.0700 x 0.1050 RECTANGLE -----      14 Flashes
+D26:  0.0800 ROUND  --       0 Draws,      34 Flashes
+D27:  0.0800 SQUARE --       0 Draws,       2 Flashes
+D28:  0.1100 ROUND  --       0 Draws,      68 Flashes
+D29:  0.2600 ROUND  --       0 Draws,       8 Flashes
+D30:  0.0600 x 0.1100 OBLONG    -----      64 Flashes
+D31:  0.0600 x 0.1100 RECTANGLE -----      32 Flashes
+D32:  0.1100 x 0.0600 OBLONG    -----     198 Flashes
+D33:  0.1100 x 0.0600 RECTANGLE -----      14 Flashes
+D34:  0.0850 ROUND  --       0 Draws,     132 Flashes
+D35:  0.0500 ROUND  --       7 Draws,       0 Flashes
+---------------------------------------------------------
+ 26 D-Codes      -----   14406 Draws,    1332 Flashes
+
+
+No warnings or errors.

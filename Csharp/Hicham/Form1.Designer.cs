@@ -186,6 +186,8 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4RealTimeCAN = new System.Windows.Forms.Timer(this.components);
+            this.label20 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -1360,6 +1362,8 @@
             // 
             // groupBox17
             // 
+            this.groupBox17.Controls.Add(this.label20);
+            this.groupBox17.Controls.Add(this.label29);
             this.groupBox17.Controls.Add(this.groupBox20);
             this.groupBox17.Controls.Add(this.pictureBox1);
             this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1986,6 +1990,25 @@
             this.timer4RealTimeCAN.Interval = 50;
             this.timer4RealTimeCAN.Tick += new System.EventHandler(this.timer4RealTimeCAN_Tick);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(123, 337);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(60, 20);
+            this.label20.TabIndex = 56;
+            this.label20.Text = "label20";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(36, 337);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 20);
+            this.label29.TabIndex = 57;
+            this.label29.Text = "Ping";
+          //  this.label29.Click += new System.EventHandler(this.label29_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2031,6 +2054,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2215,6 +2239,8 @@
         private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.Label lblDirection;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label29;
     }
 }
 

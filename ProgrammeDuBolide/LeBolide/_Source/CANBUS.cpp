@@ -45,9 +45,9 @@ CanBus :: ~CanBus(void)
 
 UC CanBus :: ReadMCP(void) // Cette Fonction n'est pas encore fonctionnelle
 {
-bool gotMessage;
+bool gotMessage;  // Note: fonction non fonctionnelle
 UC   val = 0;
-
+/*
 val = SPI.WriteMPC(MCP2515_CANINTF);                 // Obtention de la longueur
 
 if(LireRegistreMCP2515(val, MCP2515_RX0IF) == 1) // Si une data est availible
@@ -59,6 +59,8 @@ if(gotMessage == true)
   {
 
   }
+*/
+
 return(val);
 }
 
@@ -237,5 +239,10 @@ void CanBus :: Delai(unsigned long Temps)
 {
 unsigned long k;
 for(k = 0; k < Temps; k++);  
+}
+ 
+void CanBus :: ModeLoopbackInit(void)
+{
+ EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x47); 
 }
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

@@ -13,6 +13,7 @@ using System.IO;             // Pour ouvrir un fichier
 using System.Text.RegularExpressions;
 using Peak.Can.Basic;
 using TPCANHandle = System.Byte;
+using System.Net.NetworkInformation;
 #endregion
 
 namespace ICDIBasic
@@ -1604,6 +1605,7 @@ namespace ICDIBasic
         #region Envoi du HeartBeat
         private void timer1_Tick(object sender, EventArgs e) // À toutes les secondes
         {
+            PingSend();
             if (serialPort1.IsOpen == true) // Envoie du heartbeat à toutes les secondes
             {
                 try  // Esaie de...
@@ -1771,7 +1773,6 @@ namespace ICDIBasic
             TxCan2(VEHICULE, DEMARRE);
         }
         #endregion
-
 
         #region Bouton Arrêter le véhicule
 
@@ -2192,5 +2193,29 @@ namespace ICDIBasic
                 Historique.AppendText("Error sending START command");   // Enregistre le log de la connexion
             }
         }
+        void PingSend()
+        {
+            Ping pingSender = new Ping();
+            PingOptions options = new PingOptions();
+
+            // Use the default Ttl value which is 128,
+            // but change the fragmentation behavior.
+            options.DontFragment = true;
+
+            // Create a buffer of 32 bytes of data to be transmitted.
+            string data = "Allo";
+            byte[] buffer = Encoding.ASCII.GetBytes(data);
+            int timeout = 120;
+            string Adresse = "172.18.42.25";
+
+            PingReply reply = pingSender.Send(Adresse, timeout, buffer, options);
+            if (reply.Status == IPStatus.Success)
+            {
+                label20.Text = "OK";
+            }
+            else label20.Text = "Fail";
+        }
+    
     }
+
 }

@@ -452,10 +452,10 @@
 <L>C:\Users\1268241\Desktop\Bolide\IAR\_Source\CLMCP23S09.cpp:22:1: inclusion directive=CLMCP23S09.h <US><UE> <DS><DE> <IS>C:\Users\1268241\Desktop\Bolide\IAR\_Header\CLMCP23S09.h<IE>  Extent=<ES>22:1 - 22:24<EE>
 <L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\CLMCP23S09.h:20:1: inclusion directive=DeclarationGenerale.h <US><UE> <DS><DE> <IS>C:\Users\1268241\Desktop\Bolide\IAR\_Header\DeclarationGenerale.h<IE>  Extent=<ES>20:1 - 20:33<EE>
 <L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\DeclarationGenerale.h:15:1: inclusion directive=TypeCible.h <US><UE> <DS><DE> <IS>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h<IE>  [multi-include guarded] Extent=<ES>15:1 - 15:23<EE>
-<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:15:11: macro definition=TYPECIBLEH <US>c:macro@TYPECIBLEH<UE> <DS>TYPECIBLEH<DE> Extent=<ES>15:11 - 15:21<EE>
-<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:20:11: macro definition=DALLAS89C450 <US>c:macro@DALLAS89C450<UE> <DS>DALLAS89C450<DE> Extent=<ES>20:11 - 20:23<EE>
-<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:22:11: macro definition=I2C_DALLAS <US>c:macro@I2C_DALLAS<UE> <DS>I2C_DALLAS<DE> Extent=<ES>22:11 - 22:21<EE>
-<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:28:5: inclusion directive=ioDS89C450.h <US><UE> <DS><DE> <IS>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioDS89C450.h<IE>  [multi-include guarded] Extent=<ES>28:5 - 28:15<EE>
+<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:14:11: macro definition=TYPECIBLEH <US>c:macro@TYPECIBLEH<UE> <DS>TYPECIBLEH<DE> Extent=<ES>14:11 - 14:21<EE>
+<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:19:9: macro definition=DALLAS89C450 <US>c:macro@DALLAS89C450<UE> <DS>DALLAS89C450<DE> Extent=<ES>19:9 - 19:21<EE>
+<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:20:9: macro definition=SPI_DALLAS <US>c:macro@SPI_DALLAS<UE> <DS>SPI_DALLAS<DE> Extent=<ES>20:9 - 20:19<EE>
+<L>C:\Users\1268241\Desktop\Bolide\IAR\_Header\TypeCible.h:26:5: inclusion directive=ioDS89C450.h <US><UE> <DS><DE> <IS>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioDS89C450.h<IE>  [multi-include guarded] Extent=<ES>26:5 - 26:15<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioDS89C450.h:9:9: macro definition=IODS89C450_H <US>c:macro@IODS89C450_H<UE> <DS>IODS89C450_H<DE> Extent=<ES>9:9 - 9:21<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioDS89C450.h:10:9: macro definition=__DS89C450__ <US>c:macro@__DS89C450__<UE> <DS>__DS89C450__<DE> Extent=<ES>10:9 - 10:21<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioDS89C450.h:21:1: macro expansion=__sfr|<invalid loc>:72:9 <US>c:macro@__sfr<UE> <DS>__sfr<DE> Extent=<ES>21:1 - 21:6<EE>

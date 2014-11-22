@@ -1,0 +1,2251 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.2.41139 for 8051            19/Nov/2014  10:59:08 /
+// Copyright 2004-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    /
+//                          Station 2\FESTO\Libraire\CLEcran.cpp              /
+//    Command line       =  "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\Libraire\CLEcran.cpp" -D          /
+//                          UPSD3254A --preprocess=cl                         /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -lC                   /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -lA                   /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -o                    /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\Obj\" -e --no_cse            /
+//                          --no_unroll --no_inline --no_code_motion          /
+//                          --no_tbaa --debug --core=plain --dptr=16,1        /
+//                          --data_model=large --code_model=near              /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data --nr_virtual_regs 8        /
+//                          --dlib_config "C:\Program Files\IAR               /
+//                          Systems\Embedded Workbench                        /
+//                          6.4\8051\LIB\DLIB\dl8051Normal.h" -I              /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\Libraire\" -Ol --eec++            /
+//    List file          =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    /
+//                          Station 2\FESTO\UPSD\List\CLEcran.s51             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CLEcran
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?V0
+
+        PUBLIC ??CLEcran
+        FUNCTION ??CLEcran,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??CLEcran_1
+        FUNCTION ??CLEcran_1,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??delete ~CLEcran`
+        FUNCTION `??delete ~CLEcran`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new CLEcran`
+        FUNCTION `??new CLEcran`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CLEcran_1`
+        FUNCTION `??new CLEcran_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??vDelaisEcran
+        FUNCTION ??vDelaisEcran,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??vLcdAffCar
+        FUNCTION ??vLcdAffCar,021203H
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLcdAffCarHex
+        FUNCTION ??vLcdAffCarHex,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLcdAffChaine
+        FUNCTION ??vLcdAffChaine,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 11, STACK
+        PUBLIC ??vLcdAffEcran
+        FUNCTION ??vLcdAffEcran,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLcdBusy
+        FUNCTION ??vLcdBusy,021203H
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLcdCarGen
+        FUNCTION ??vLcdCarGen,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        PUBLIC ??vLcdClr
+        FUNCTION ??vLcdClr,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLcdInit
+        FUNCTION ??vLcdInit,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??vLcdPoscurC0L1
+        FUNCTION ??vLcdPoscurC0L1,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~CLEcran`
+        FUNCTION `?~CLEcran`,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??ucIn
+        FUNCTION ??ucIn,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??vOut
+        FUNCTION ??vOut,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran()
+`??new CLEcran`:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function `??new CLEcran`
+        CODE
+        FUNCALL `??new CLEcran`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLEcran`, ??CLEcran
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+          CFI V0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+          CFI V1 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLEcran_2`
+        ; Setup parameters for call to function CLEcran::CLEcran()
+        LCALL   ??CLEcran
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLEcran_3`
+`??new CLEcran_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLEcran_3`:
+        POP     ?V0 + 1
+          CFI V1 SameValue
+          CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+          CFI V0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran(unsigned short)
+`??new CLEcran_1`:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function `??new CLEcran_1`
+        CODE
+        FUNCALL `??new CLEcran_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLEcran_1`, ??CLEcran_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLEcran_4`
+        ; Setup parameters for call to function CLEcran::CLEcran(unsigned short)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        LCALL   ??CLEcran_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLEcran_5`
+`??new CLEcran_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLEcran_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CLEcran::delete ~CLEcran(CLEcran *)
+`??delete ~CLEcran`:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function `??delete ~CLEcran`
+        CODE
+        FUNCALL `??delete ~CLEcran`, `?~CLEcran`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CLEcran`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CLEcran_1`
+        ; Setup parameters for call to function CLEcran::~CLEcran()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLEcran`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CLEcran_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock2
+// J:\Projet_Session5_LNAH\S2_18Nov2014\Programme Station 2\FESTO\Libraire\CLEcran.cpp
+//    1 // ***************** FICHIER:CLEcran.cpp
+//    2 //
+//    3 //  Description: 
+//    4 //  
+//    5 //
+//    6 //  Application realisee avec IAR
+//    7 //
+//    8 //  AUTEUR : Gabriel Fortin-Belanger
+//    9 //  DATE CREATION :    2014-02-07		 VERSION: 1.0
+//   10 //  DATE MODIFICATION: ****-**-**
+//   11 //
+//   12 //******************************************************************************
+//   13 
+//   14 #include "CLEcran.h"
+//   15 #include "CLInOutBase.h"
+//   16 #include "_DeclarationGenerale.h"
+//   17 
+//   18 //*******************************Constantes************************************
+//   19   //#define LCD_CONTROL   0xF800          //registre de controle
+//   20   #define LCD_FLAG      usiAdresseEcran + 1 //Busy Flag
+//   21   #define LCD_WR_DATA   usiAdresseEcran + 2 //Ecriture des donnees
+//   22   #define LCD_RD_DATA   usiAdresseEcran + 3 //Lecture des donnees
+//   23 //******************************************************************************
+//   24 
+//   25 
+//   26 
+//   27 //***********************CLEcran(void)
+//   28 //
+//   29 //Description:Constructeur par defaut initialise l ecran a l addresse  
+//   30 //            0xF800.
+//   31 //           
+//   32 // NOM: CLEcran :: CLEcran(void)
+//   33 //           
+//   34 // PARAMETRE D'ENTREE: Aucun
+//   35 //                   
+//   36 // 
+//   37 //
+//   38 // PARAMETRE DE SORTIE: Aucun              
+//   39 //
+//   40 //    
+//   41 // Membre Utilise:
+//   42 //     Fonction: vLcdInit()
+//   43 //     Memmbre:  usiAdresseEcran
+//   44 //
+//   45 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   46 // DATE DE MODIFICATION:	
+//   47 //*****************************************************************************
+//   48 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   49   CLEcran :: CLEcran(void)                        //constructeur defaut
+??CLEcran:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function ??CLEcran
+        CODE
+//   50    {
+        FUNCALL ??CLEcran, ??vLcdInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   51      usiAdresseEcran = 0xF800;                    //addresse par defaut
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#-0x8
+        MOVX    @DPTR,A
+//   52      vLcdInit();                                  //initialise ecran
+        ; Setup parameters for call to function CLEcran::vLcdInit()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdInit
+//   53    
+//   54    }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock3
+//   55 
+//   56 //***********************CLEcran(void)
+//   57 //
+//   58 //Description:Constructeur initialisateur permet de choisir l addresse 
+//   59 //            ou se situe l ecran.
+//   60 //           
+//   61 // NOM: CLEcran :: CLEcran(void)
+//   62 //           
+//   63 // PARAMETRE D'ENTREE: USI usiAdresse
+//   64 //                   
+//   65 // 
+//   66 //
+//   67 // PARAMETRE DE SORTIE: Aucun              
+//   68 //
+//   69 //    
+//   70 // Membre Utilise:
+//   71 //     Fonction: vLcdInit()
+//   72 //     Memmbre:  usiAdresseEcran
+//   73 //
+//   74 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   75 // DATE DE MODIFICATION:	
+//   76 //*****************************************************************************  
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   77   CLEcran :: CLEcran(unsigned short int usiAdresse)//constructeur initialisateur
+??CLEcran_1:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function ??CLEcran_1
+        CODE
+//   78   {                                                //pour changer addresse
+        FUNCALL ??CLEcran_1, ??vLcdInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   79     usiAdresseEcran = usiAdresse;                  //Nouvel addresse          
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//   80     vLcdInit();                                    //initialise ecran
+        ; Setup parameters for call to function CLEcran::vLcdInit()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdInit
+//   81   }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock4
+//   82 
+//   83 
+//   84 //***********************~CLEcran(void)
+//   85 //
+//   86 //Description:Destructeur  qui efface ecran
+//   87 //           
+//   88 //           
+//   89 // NOM: CLEcran :: ~CLEcran(void)
+//   90 //           
+//   91 // PARAMETRE D'ENTREE: Aucun
+//   92 //                   
+//   93 // 
+//   94 //
+//   95 // PARAMETRE DE SORTIE: Aucun              
+//   96 //
+//   97 //    
+//   98 // Membre Utilise:
+//   99 //     Fonction: vLcdClr()
+//  100 //     Memmbre:  
+//  101 //
+//  102 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  103 // DATE DE MODIFICATION:	
+//  104 //*****************************************************************************  
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  105   CLEcran :: ~CLEcran(void) //destructeur 
+`?~CLEcran`:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function `?~CLEcran`
+        CODE
+//  106   {
+        FUNCALL `?~CLEcran`, ??vLcdClr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        ; Saved register size: 0
+        ; Auto size: 0
+//  107    vLcdClr();               //efface l ecran
+        ; Setup parameters for call to function CLEcran::vLcdClr()
+        LJMP    ??vLcdClr
+          CFI EndBlock cfiBlock5
+//  108     
+//  109   }
+//  110 
+//  111 //***********************vLcdAffCar
+//  112 //
+//  113 //Description:Cette fonction permet d'afficher un caractere
+//  114 // 
+//  115 //           
+//  116 // NOM:void CLEcran :: vLcdAffCar(UC ucCarac)
+//  117 //           
+//  118 // PARAMETRE D'ENTREE: ucCarac: Code ascii du caractere a entrer
+//  119 //                   
+//  120 // 
+//  121 //
+//  122 // PARAMETRE DE SORTIE: Aucun              
+//  123 //
+//  124 //    
+//  125 // Membre Utilise:
+//  126 //
+//  127 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  128 // DATE DE MODIFICATION:	
+//  129 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  130   void CLEcran :: vLcdAffCar(UC ucCarac)
+??vLcdAffCar:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function ??vLcdAffCar
+        CODE
+//  131   {
+        FUNCALL ??vLcdAffCar, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdAffCar, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  132    vLcdBusy(); 
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  133    vOut(LCD_WR_DATA,ucCarac); //Cursor at home  
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  134   }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock6
+//  135   
+//  136 //***********************vLcdClr
+//  137 //
+//  138 //Description:Cette fonction permet d'effacerl'ecran
+//  139 // 
+//  140 //           
+//  141 // NOM:void CLEcran :: vLcdClr(void)
+//  142 //           
+//  143 // PARAMETRE D'ENTREE: Aucun
+//  144 //                   
+//  145 // 
+//  146 //
+//  147 // PARAMETRE DE SORTIE: Aucun              
+//  148 //
+//  149 //    
+//  150 // Methode utilise:
+//  151 //
+//  152 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  153 // DATE DE MODIFICATION:	
+//  154 //*****************************************************************************  
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  155   void CLEcran :: vLcdClr(void)
+??vLcdClr:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function ??vLcdClr
+        CODE
+//  156   {
+        FUNCALL ??vLcdClr, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdClr, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  157    vLcdBusy();                   //
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  158    vOut(usiAdresseEcran, 0x01); //Clr display et retourne a adresse 0   
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,#0x1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  159   } 
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock7
+//  160 
+//  161 //***********************vLcdPoscurC0L1
+//  162 //
+//  163 //Description:Cette fonction permet de positionner le curseur
+//  164 // 
+//  165 //           
+//  166 // NOM:void CLEcran :: vLcdPoscurC0L1(UC col,UC ligne)
+//  167 //           
+//  168 // PARAMETRE D'ENTREE: UC col: colonne de depart
+//  169 //                     UC ligne: ligne de depart
+//  170 // 
+//  171 //
+//  172 // PARAMETRE DE SORTIE: Aucun              
+//  173 //
+//  174 //   
+//  175 // Methode utilise:
+//  176 //
+//  177 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  178 // DATE DE MODIFICATION:	
+//  179 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  180   void CLEcran :: vLcdPoscurC0L1(UC col,UC ligne)
+??vLcdPoscurC0L1:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function ??vLcdPoscurC0L1
+        CODE
+//  181   {
+        FUNCALL ??vLcdPoscurC0L1, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdPoscurC0L1, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdPoscurC0L1, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdPoscurC0L1, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdPoscurC0L1, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdPoscurC0L1, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdPoscurC0L1, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdPoscurC0L1, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 1,R4
+//  182    switch(ligne)
+        MOV     A,?V0 + 1
+        DEC     A
+        JZ      ??vLcdPoscurC0L1_1
+        DEC     A
+        JZ      ??vLcdPoscurC0L1_2
+        DEC     A
+        JZ      ??vLcdPoscurC0L1_3
+        DEC     A
+        JZ      ??vLcdPoscurC0L1_4
+        LJMP    ??vLcdPoscurC0L1_5
+//  183     {
+//  184       case 1:                                        //SI Ligne 1
+//  185          vLcdBusy();                                 //Attendre flag baisser
+??vLcdPoscurC0L1_1:
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  186          vOut(usiAdresseEcran,(0x80 |(0x00 + col)));//Bit 7=1,add ligne1 + pos       
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     A,#-0x80
+        ORL     A,?V0 + 0
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  187          break;
+        SJMP    ??vLcdPoscurC0L1_5
+//  188       case 2:                                        //SI Ligne 2
+//  189          vLcdBusy();                                 //Attendre flag baisser
+??vLcdPoscurC0L1_2:
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  190          vOut(usiAdresseEcran,(0x80 |(0x40 + col)));//Bit 7=1,add ligne2 + pos     
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     A,#0x40
+        ADD     A,?V0 + 0
+        ORL     A,#0x80
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  191          break;
+        SJMP    ??vLcdPoscurC0L1_5
+//  192       
+//  193       case 3:                                         //SI Ligne 3
+//  194          vLcdBusy();                                  //Attendre flag baisser
+??vLcdPoscurC0L1_3:
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  195          vOut(usiAdresseEcran,(0x80 |(0x14 + col)));//Bit 7=1,add ligne3 + pos        
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     A,#0x14
+        ADD     A,?V0 + 0
+        ORL     A,#0x80
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  196          break;
+        SJMP    ??vLcdPoscurC0L1_5
+//  197       
+//  198       case 4:                                         //SI Ligne 4
+//  199          vLcdBusy();                                  //Attendre flag baisser
+??vLcdPoscurC0L1_4:
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  200          vOut(usiAdresseEcran,(0x80 |(0x54 + col)));//Bit 7=1,add ligne4 + pos        
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     A,#0x54
+        ADD     A,?V0 + 0
+        ORL     A,#0x80
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  201          break;
+//  202       
+//  203     }
+//  204   } 
+??vLcdPoscurC0L1_5:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock8
+//  205   
+//  206 //***********************vLcdInit
+//  207 //
+//  208 //Description:Cette fonction permet d'iinitialiser l'ecran LCD en mode 8 bit
+//  209 //            2 lignes, metrice 5*7, curseur off, blink off 
+//  210 //           
+//  211 // NOM:void CLEcran :: vLcdInit(void)          
+//  212 // PARAMETRE D'ENTREE:Aucun
+//  213 //                   
+//  214 // 
+//  215 //
+//  216 // PARAMETRE DE SORTIE: Aucun              
+//  217 //
+//  218 //    
+//  219 // Membre Utilise:
+//  220 //
+//  221 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  222 // DATE DE MODIFICATION:	
+//  223 //*****************************************************************************  
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  224 void CLEcran :: vLcdInit(void)
+??vLcdInit:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function ??vLcdInit
+        CODE
+//  225   {
+        FUNCALL ??vLcdInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vDelaisEcran
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdInit, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  226     unsigned int i;         //indice pour la boucle
+//  227   
+//  228     for(i=0;i<3;i++)        //Faire 3 fois
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        SJMP    ??vLcdInit_1
+//  229     {
+//  230       vOut(usiAdresseEcran, 0x38);//Function set:8bit,2lignes,5*7,cureur off
+??vLcdInit_2:
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,#0x38
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  231       vDelaisEcran(10000);         //Delai  
+        ; Setup parameters for call to function CLEcran::vDelaisEcran(UINT16)
+        MOV     R4,#0x10
+        MOV     R5,#0x27
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vDelaisEcran
+//  232     }
+        MOV     A,?V0 + 0
+        ADD     A,#0x1
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+??vLcdInit_1:
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,#0x3
+        MOV     A,?V0 + 1
+        SUBB    A,#0x0
+        JC      ??vLcdInit_2
+//  233 
+//  234     vLcdBusy();  
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  235     vOut(usiAdresseEcran, 0x38);// Display ON, cursor off, blink off
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,#0x38
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  236     vLcdBusy();                   //Attend la fin de l'instruction
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  237     vOut(usiAdresseEcran, 0x0D); //Cursor shift a droite 
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,#0xd
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  238     vLcdBusy();                    //Attend la fin de l'instruction    
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  239     vOut(usiAdresseEcran, 0x01); //Clr display et retourne a adresse 0
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,#0x1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  240     vLcdBusy();                   //Attend la fin de l'instruction
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  241     vOut(usiAdresseEcran, 0x06);    
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,#0x6
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  242     vLcdBusy(); 
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  243 
+//  244   
+//  245   }
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock9
+//  246 
+//  247 //***********************vLcdAffChaine
+//  248 //
+//  249 //Description:Cette fonction permet d'afficher une chaine de caractere 
+//  250 // 
+//  251 //           
+//  252 // Nom: void CLEcran :: vLcdAffChaine(UC const *ucpMessage) 
+//  253 //           
+//  254 // PARAMETRE D'ENTREE:UC *ucpMessage: Pointe vers la chaine de caractere
+//  255 //                     
+//  256 // 
+//  257 //
+//  258 // PARAMETRE DE SORTIE: Aucun              
+//  259 //
+//  260 //    
+//  261 // methode utilise:
+//  262 //
+//  263 // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  264 // DATE DE MODIFICATION:	
+//  265 //*****************************************************************************  
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  266   void CLEcran :: vLcdAffChaine(char *ucpMessage)
+??vLcdAffChaine:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function ??vLcdAffChaine
+        CODE
+//  267   {
+        FUNCALL ??vLcdAffChaine, ??vLcdAffCar
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xb
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+//  268    int i = 0;
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        SJMP    ??vLcdAffChaine_1
+//  269    while(ucpMessage[i]!= 0x00)      //tant que pas a fin ligne
+//  270     {
+//  271       vLcdAffCar(ucpMessage[i]); //Affiche un caractere de la chaine
+??vLcdAffChaine_2:
+        ; Setup parameters for call to function CLEcran::vLcdAffCar(UC)
+        MOV     A,?V0 + 0
+        ADD     A,R6
+        MOV     DPL,A
+        MOV     A,?V0 + 1
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        LCALL   ??vLcdAffCar
+//  272       i++;                       //prochain caractere
+        MOV     A,R6
+        ADD     A,#0x1
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  273     }   
+??vLcdAffChaine_1:
+        MOV     A,?V0 + 0
+        ADD     A,R6
+        MOV     DPL,A
+        MOV     A,?V0 + 1
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        JNZ     ??vLcdAffChaine_2
+//  274   }
+        MOV     R7,#0x4
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock10
+//  275 
+//  276 //***********************vLcdAffEcran
+//  277 //
+//  278 //Description:Cette fonction permet d'afficher un Ecran pre enregistre 
+//  279 // 
+//  280 //           
+//  281 // Nom:void CLEcran :: vLcdAffEcran(UC const *ucpEcran)
+//  282 //           
+//  283 // PARAMETRE D'ENTREE:UC *ucpEcran: Pointe vers le tableau qui contien l ecran
+//  284 //                     
+//  285 // 
+//  286 //
+//  287 // PARAMETRE DE SORTIE: Aucun              
+//  288 //
+//  289 //    
+//  290 // Methode utilise:
+//  291 //
+//  292 // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  293 // DATE DE MODIFICATION:	
+//  294 //*****************************************************************************  
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  295   void CLEcran :: vLcdAffEcran(char *ucpEcran)
+??vLcdAffEcran:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function ??vLcdAffEcran
+        CODE
+//  296   {
+        FUNCALL ??vLcdAffEcran, ??vLcdPoscurC0L1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdAffEcran, ??vLcdAffChaine
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+//  297    UC i;                      // indice pour la boucle
+//  298    for(i=1;i<=4;i++)          //faire pour le nombre de ligne
+        MOV     ?V0 + 0,#0x1
+        SJMP    ??vLcdAffEcran_1
+//  299     {
+//  300       vLcdPoscurC0L1(0,i);    //positionne curseur
+??vLcdAffEcran_2:
+        ; Setup parameters for call to function CLEcran::vLcdPoscurC0L1(UC, UC)
+        MOV     R4,?V0 + 0
+        MOV     R1,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vLcdPoscurC0L1
+//  301       vLcdAffChaine(ucpEcran);//Affiche la chaine
+        ; Setup parameters for call to function CLEcran::vLcdAffChaine(char *)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vLcdAffChaine
+//  302       ucpEcran = ucpEcran + 20;//deplace le pointeur
+        MOV     A,R6
+        ADD     A,#0x14
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  303    
+//  304     }   
+        INC     ?V0 + 0
+??vLcdAffEcran_1:
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x5
+        JC      ??vLcdAffEcran_2
+//  305       
+//  306   }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock11
+//  307 
+//  308  
+//  309 //***********************vLcdAffCarHex
+//  310 //
+//  311 //Description:Cette fonction permet d'afficher un octet en hexa a l'ecran 
+//  312 // 
+//  313 //           
+//  314 // Nom:void CLEcran :: vLcdAffCarHex(UC ucCarac)
+//  315 //           
+//  316 // PARAMETRE D'ENTREE:UC ucCarac:Octet Hexa a afficher
+//  317 // 
+//  318 //
+//  319 // PARAMETRE DE SORTIE: Aucun              
+//  320 //
+//  321 //    
+//  322 // Methode:
+//  323 //
+//  324 // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  325 // DATE DE MODIFICATION:	
+//  326 //*****************************************************************************
+//  327 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  328   void CLEcran :: vLcdAffCarHex(UC ucCarac)
+??vLcdAffCarHex:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function ??vLcdAffCarHex
+        CODE
+//  329   {
+        FUNCALL ??vLcdAffCarHex, ??vLcdAffCar
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdAffCarHex, ??vLcdAffCar
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R7,A
+//  330    UC ucHi;                       //Variable Partie haute 
+//  331    UC ucLo;                       //Variable Partie basse
+//  332 
+//  333    ucHi = (ucCarac & 0xF0) >> 4;  //isole la partie Haute
+        MOV     A,R7
+        SWAP    A
+        ANL     A,#0xf
+        MOV     R1,A
+//  334    ucLo = (ucCarac & 0x0F);       //isole la partie basse
+        MOV     A,#0xf
+        ANL     A,R7
+        MOV     R6,A
+//  335 
+//  336    if(ucHi >= 0 && ucHi <= 9)     //Si partie haute est un chiffre
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x0
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vLcdAffCarHex_1
+//  337     {
+//  338       ucHi = ucHi + 0x30;         //Ajoute 0x30 pour Ascii
+        MOV     A,#0x30
+        ADD     A,R1
+        MOV     R1,A
+//  339     }
+//  340 
+//  341    if(ucHi >= 0x0A && ucHi <= 0x0F)//Si partie haute une lettre
+??vLcdAffCarHex_1:
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0xa
+        CLR     C
+        SUBB    A,#0x6
+        JNC     ??vLcdAffCarHex_2
+//  342     {
+//  343       ucHi = ucHi + 0x37;         //Ajoute 0x37 Pour Ascii
+        MOV     A,#0x37
+        ADD     A,R1
+        MOV     R1,A
+//  344     }
+//  345    
+//  346 
+//  347    if(ucLo >= 0 && ucLo <= 9)    //Si partie basse est un chiffre
+??vLcdAffCarHex_2:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x0
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vLcdAffCarHex_3
+//  348     {
+//  349       ucLo = ucLo + 0x30;        //Ajoute 0x30 pour Ascii
+        MOV     A,#0x30
+        ADD     A,R6
+        MOV     R6,A
+//  350     }
+//  351 
+//  352    if(ucLo >= 0x0A && ucLo <= 0x0F)//Si partie basse une lettre
+??vLcdAffCarHex_3:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0xa
+        CLR     C
+        SUBB    A,#0x6
+        JNC     ??vLcdAffCarHex_4
+//  353     {
+//  354       ucLo = ucLo + 0x37;          //Ajoute 0x37 Pour Ascii
+        MOV     A,#0x37
+        ADD     A,R6
+        MOV     R6,A
+//  355     }
+//  356 
+//  357    vLcdAffCar(ucHi);              //Affiche partie haute
+??vLcdAffCarHex_4:
+        ; Setup parameters for call to function CLEcran::vLcdAffCar(UC)
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vLcdAffCar
+//  358    vLcdAffCar(ucLo);              //Affiche partie basse
+        ; Setup parameters for call to function CLEcran::vLcdAffCar(UC)
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vLcdAffCar
+//  359   }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock12
+//  360 
+//  361 //***********************vLcdCarGen
+//  362 //
+//  363 //Description:Cette fonction permet de creer un caractere personalisée  
+//  364 // 
+//  365 //           
+//  366 // Nom:void CLEcran :: vLcdCarGen(UC *ucTabCarac
+//  367 //           
+//  368 // PARAMETRE D'ENTREE:UC *ucTabCarac:Code du nouveau caracter 
+//  369 // 
+//  370 //
+//  371 // PARAMETRE DE SORTIE: Aucun              
+//  372 //
+//  373 //    
+//  374 //  Methode Utilise:
+//  375 //
+//  376 // DATE DE CREATION: 16 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  377 // DATE DE MODIFICATION:	
+//  378 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  379   void CLEcran :: vLcdCarGen(UC *ucTabCarac)
+??vLcdCarGen:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function ??vLcdCarGen
+        CODE
+//  380   {
+        FUNCALL ??vLcdCarGen, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdCarGen, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdCarGen, ??vLcdBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLcdCarGen, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xd
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 13)
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+//  381 
+//  382    UC i;
+//  383    vLcdBusy(); 
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  384    vOut(usiAdresseEcran,0x40);
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     R1,#0x40
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  385    for(i=0;i<8;i++)
+        MOV     ?V0 + 0,#0x0
+        SJMP    ??vLcdCarGen_1
+//  386     {
+//  387       vLcdBusy(); 
+??vLcdCarGen_2:
+        ; Setup parameters for call to function CLEcran::vLcdBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLcdBusy
+//  388       vOut(LCD_WR_DATA,ucTabCarac[i]);
+        ; Setup parameters for call to function CLInOutBase::vOut(unsigned short, unsigned char)
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 5,#0x0
+        MOV     A,?V0 + 2
+        ADD     A,?V0 + 4
+        MOV     DPL,A
+        MOV     A,?V0 + 3
+        ADDC    A,?V0 + 5
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  389     }
+        INC     ?V0 + 0
+??vLcdCarGen_1:
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x8
+        JC      ??vLcdCarGen_2
+//  390   }
+        MOV     R7,#0x6
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock13
+//  391 
+//  392 //***********************vLcdBusy
+//  393 //
+//  394 //Description:Cette fonction permet d'attendre la fin d'une instruction 
+//  395 //            sur l'ecran LCD en fesant du polling sur le bit busyflag
+//  396 //           
+//  397 //
+//  398 // NOM:void CLEcran :: vLcdBusy(void)
+//  399 //           
+//  400 // PARAMETRE D'ENTREE:Aucun
+//  401 //                   
+//  402 // 
+//  403 //
+//  404 // PARAMETRE DE SORTIE: Aucun              
+//  405 //
+//  406 //    
+//  407 // Membre utilise:
+//  408 //
+//  409 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  410 // DATE DE MODIFICATION:	
+//  411 //***************************************************************************** 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  412   void CLEcran :: vLcdBusy(void)
+??vLcdBusy:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function ??vLcdBusy
+        CODE
+//  413   {
+        FUNCALL ??vLcdBusy, ??ucIn
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  414     while((ucIn(LCD_FLAG) & 0x80)); //Lit le Busy flag et ne fait rien
+??vLcdBusy_1:
+        ; Setup parameters for call to function CLInOutBase::ucIn(unsigned short)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??ucIn
+        MOV     A,R1
+        MOV     R0,A
+        MOV     C,0xE0 /* A   */.7
+        JC      ??vLcdBusy_1
+//  415                                           //Tant qu'il est a 1
+//  416   }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock14
+//  417   
+//  418 
+//  419 
+//  420 //***********************vDelaisEcran
+//  421 //
+//  422 //Description:Cette fonction permet de faire un delais 
+//  423 // 
+//  424 //           
+//  425 // NOM: void CLEcran :: vDelaisEcran(UINT16 usiTemps)
+//  426 //            
+//  427 // PARAMETRE D'ENTREE:usiTemps: Grandeur du delai
+//  428 //                   
+//  429 // 
+//  430 //
+//  431 // PARAMETRE DE SORTIE: Aucun              
+//  432 //
+//  433 //    
+//  434 // Membre utilise:
+//  435 //
+//  436 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  437 // DATE DE MODIFICATION:	
+//  438 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  439 void CLEcran :: vDelaisEcran(UINT16 usiTemps)
+??vDelaisEcran:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function ??vDelaisEcran
+        CODE
+//  440   {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  441     UINT16 i;   //indice pour conter le delais
+//  442     for(i=0;i<usiTemps;i++);//Boucle pour faire un delais choisi   
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        SJMP    ??vDelaisEcran_1
+??vDelaisEcran_2:
+        MOV     A,R0
+        ADD     A,#0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??vDelaisEcran_1:
+        CLR     C
+        MOV     A,R0
+        SUBB    A,R4
+        MOV     A,R1
+        SUBB    A,R5
+        JC      ??vDelaisEcran_2
+//  443   }
+        RET
+          CFI EndBlock cfiBlock15
+
+        END
+//  444 
+//  445 
+//  446 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// 
+// 1 085 bytes in segment NEAR_CODE
+// 
+// 1 085 bytes of CODE memory
+//
+//Errors: none
+//Warnings: 2

@@ -68,5 +68,7 @@
 \contentsline {subsubsection}{\numberline {8.3.3}Gabriel Fortin-B\IeC {\'e}langer}{20}
 \contentsline {subsubsection}{\numberline {8.3.4}Louis-Norman Ang-Houle}{20}
 \contentsline {section}{\numberline {9}ANNEXE 1: Code source du Bolide et de la station no.1}{21}
-\contentsline {section}{\numberline {10}ANNEXE 2: Code source du programme pour PC}{41}
-\contentsline {section}{\numberline {11}ANNEXE 6: Code source du programme PIC}{46}
+\contentsline {section}{\numberline {10}ANNEXE 2: Code source du programme pour PC}{22}
+\contentsline {section}{\numberline {11}ANNEXE 6: Code source du programme PIC}{23}
+\contentsline {section}{\numberline {12}ANNEXE 3: Code source du programme du SOC8200}{24}
+\contentsline {section}{\numberline {13}ANNEXE 5: Code source de la table FESTO}{25}

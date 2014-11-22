@@ -19,6 +19,30 @@
 #include "CLADCMAX1236.h"
 #include "DeclarationGenerale.h"
 
+//******************************************************************************
+//                            LE CONSTRUCTEUR PAR DEFAUT
+// *****************************************************************************
+CLPile :: CLPile(void)
+{
+
+}
+
+//******************************************************************************
+//                            LE CONSTRUCTEUR INITIALISATEUR
+// *****************************************************************************
+CLPile :: CLPile(UC ucParametre)
+{
+
+}
+
+// *****************************************************************************
+//                            LE DESTRUCTEUR
+// *****************************************************************************
+CLPile :: ~CLPile(void)
+{
+
+}
+
 // **********************FONCTION: ucLirePile()
 //
 // DESCRIPTION: Lit la valeur de la pile sur le MAX1236, converti cette valeur 
@@ -45,10 +69,20 @@ float CLPile :: fLirePile(void)
 // 0xFFF = 10.8v
 // 0x000 = 0v
 // Chaque pas vaut 2.64mV  
-  
+
+#ifdef I2C_DALLAS 
 float fTensionPile = uiLireValeur(PILE);// Met le MAX1236 en mode "Lire Pile"
                                         // et lit les 2 octets transmis
 return(fTensionPile * CONVPILE);        // Retourne une valeur decimale 
-}                                       // correspondant a la tension de la pile
+#endif                                  // correspondant a la tension de la pile
+
+#ifdef SPI_DALLAS 
+// Il faut écrire la version SPI du CODE
+return(Hicham);                      
+#endif                                  
+}
+
+
+
 
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

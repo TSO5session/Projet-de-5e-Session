@@ -153,8 +153,8 @@ void CLVehicule :: vAvancer(UC ucDirection)
     if(ucDirection == ARRET)
      {
        clEcranVehicule.vLCDDisplayCaracChain("STP");
-       clRoueAvantD.vArret();       
-       clRoueAvantG.vArret();
+       clRoueAvantD.vArret  ();       
+       clRoueAvantG.vArret  ();
        clRoueArriereD.vArret();
        clRoueArriereG.vArret();      
      } 
@@ -162,8 +162,8 @@ void CLVehicule :: vAvancer(UC ucDirection)
     if (ucDirection == MARCHEARRIERE)
      {
        clEcranVehicule.vLCDDisplayCaracChain("ARR");
-       clRoueAvantD.vMarcheArriere(uiVitesse);       
-       clRoueAvantG.vMarcheArriere(uiVitesse);
+       clRoueAvantD.vMarcheArriere  (uiVitesse);       
+       clRoueAvantG.vMarcheArriere  (uiVitesse);
        clRoueArriereD.vMarcheArriere(uiVitesse);
        clRoueArriereG.vMarcheArriere(uiVitesse);  
      }       
@@ -200,8 +200,8 @@ void CLVehicule :: vAvancer(UC ucDirection)
     if(ucDirection == ARRET)
      {
        clEcranVehicule.vLCDDisplayCaracChain("STP");
-       clRoueAvantD.vArret();       
-       clRoueAvantG.vArret();
+       clRoueAvantD.vArret  ();       
+       clRoueAvantG.vArret  ();
        clRoueArriereD.vArret();
        clRoueArriereG.vArret();      
      } 
@@ -209,8 +209,8 @@ void CLVehicule :: vAvancer(UC ucDirection)
     if (ucDirection == MARCHEARRIERE)
      {
        clEcranVehicule.vLCDDisplayCaracChain("ARR");
-       clRoueAvantD.vMarcheArriere(ucVitesse);       
-       clRoueAvantG.vMarcheArriere(ucVitesse);
+       clRoueAvantD.vMarcheArriere  (ucVitesse);       
+       clRoueAvantG.vMarcheArriere  (ucVitesse);
        clRoueArriereD.vMarcheArriere(ucVitesse);
        clRoueArriereG.vMarcheArriere(ucVitesse);  
      }
@@ -241,7 +241,7 @@ void CLVehicule :: vSuivreLigne(void)
    clEcranVehicule.vLCDCursor(0,1);
    clEcranVehicule.vLCDDisplayCaracChain("****SUIVIE LIGNE****");   
 
-   uiVitesse       = 0x0280; 
+   uiVitesse          = 0x0280; 
 
    switch(clSuiveurLigne.ucSuivreLigne())
     {
@@ -299,5 +299,82 @@ void CLVehicule :: vSuivreLigne(void)
     break;
     }
 #endif
+ }
+ 
+// ********************** FONCTION: BattryInfo()
+//
+// DESCRIPTION:         Fonction pour lire l'énergie de la pile et l'envoyer sur Xbee
+//
+// INCLUDE:             "clVehicule.h"
+//
+// PROTOTYPE:           void BattryInfo(void)
+//
+// PROCEDURE D'APPEL:   BattryInfo()
+//
+// PARAMETRE D'ENTREE:  AUCUN
+//
+// PARAMETRE DE SORTIE: AUCUN
+//
+// Auteur:              Vincent Chouinard
+// Date:                21 novembre 2014 (Version 1.0)
+// *****************************************************************************
+ void CLVehicule :: BattryInfo (void)
+ {
+  Xbee.SendNumber((int)Battry.fLirePile());
+ }
+ 
+// ********************** FONCTION: SpeedInfo()
+//
+// DESCRIPTION:         Fonction pour lire la vitesse du bolide et l'envoyer sur Xbee
+//
+// INCLUDE:             "clVehicule.h"
+//
+// PROTOTYPE:           void SpeedInfo(void)
+//
+// PROCEDURE D'APPEL:   SpeedInfo()
+//
+// PARAMETRE D'ENTREE:  AUCUN
+//
+// PARAMETRE DE SORTIE: AUCUN
+//
+// Auteur:              Vincent Chouinard
+// Date:                21 novembre 2014 (Version 1.0)
+// *****************************************************************************
+  void CLVehicule :: SpeedInfo (void)
+ {
+  Xbee.SendNumber(NULL); // Code à écrire 
+ }
+ 
+// ********************** FONCTION: GetPosition()
+//
+// DESCRIPTION:         Fonction pour lire la position du bolide et l'envoyer sur Xbee
+//
+// INCLUDE:             "clVehicule.h"
+//
+// PROTOTYPE:           void GetPosition(void)
+//
+// PROCEDURE D'APPEL:   GetPosition()
+//
+// PARAMETRE D'ENTREE:  AUCUN
+//
+// PARAMETRE DE SORTIE: AUCUN
+//
+// Auteur:              Vincent Chouinard
+// Date:                21 novembre 2014 (Version 1.0)
+// *****************************************************************************
+ void CLVehicule :: GetPosition (void)
+ {  
+ UC ucPosition = Xbee.GetChar(); // Hmmm... Qui envoie la position du véhicule, le véhicule lui-même ou le poste actif?
+  
+ switch(ucPosition)
+  { 
+   case 1:
+      Xbee.SendString("Je suis à la table FESTO");
+   break;
+
+   case 2:
+      Xbee.SendString("Je suis à la tstation de pesée");
+   break;
+  }  
  }
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

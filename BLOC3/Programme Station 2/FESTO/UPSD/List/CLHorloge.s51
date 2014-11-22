@@ -1,0 +1,756 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.2.41139 for 8051            19/Nov/2014  10:59:04 /
+// Copyright 2004-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    /
+//                          Station 2\FESTO\Libraire\CLHorloge.cpp            /
+//    Command line       =  "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\Libraire\CLHorloge.cpp" -D        /
+//                          UPSD3254A --preprocess=cl                         /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -lC                   /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -lA                   /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\List\" -o                    /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\UPSD\Obj\" -e --no_cse            /
+//                          --no_unroll --no_inline --no_code_motion          /
+//                          --no_tbaa --debug --core=plain --dptr=16,1        /
+//                          --data_model=large --code_model=near              /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data --nr_virtual_regs 8        /
+//                          --dlib_config "C:\Program Files\IAR               /
+//                          Systems\Embedded Workbench                        /
+//                          6.4\8051\LIB\DLIB\dl8051Normal.h" -I              /
+//                          "J:\Projet_Session5_LNAH\S2_18Nov2014\Programme   /
+//                          Station 2\FESTO\Libraire\" -Ol --eec++            /
+//    List file          =  J:\Projet_Session5_LNAH\S2_18Nov2014\Programme    /
+//                          Station 2\FESTO\UPSD\List\CLHorloge.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CLHorloge
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?V0
+
+        PUBLIC ??CLHorloge
+        FUNCTION ??CLHorloge,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??CLHorloge_1
+        FUNCTION ??CLHorloge_1,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `??new CLHorloge`
+        FUNCTION `??new CLHorloge`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CLHorloge_1`
+        FUNCTION `??new CLHorloge_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??stpGetHeureHMS
+        FUNCTION ??stpGetHeureHMS,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??vSetHeureHMS
+        FUNCTION ??vSetHeureHMS,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 8, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        EXTERN ??CLHorlogeIO
+        FUNCTION ??CLHorlogeIO,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??vReadTime
+        FUNCTION ??vReadTime,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??vWriteTime
+        FUNCTION ??vWriteTime,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLHorloge &CLHorloge::new CLHorloge()
+`??new CLHorloge`:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function `??new CLHorloge`
+        CODE
+        FUNCALL `??new CLHorloge`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLHorloge`, ??CLHorloge
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+          CFI V0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+          CFI V1 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x9
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLHorloge_2`
+        ; Setup parameters for call to function CLHorloge::CLHorloge()
+        LCALL   ??CLHorloge
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLHorloge_3`
+`??new CLHorloge_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLHorloge_3`:
+        POP     ?V0 + 1
+          CFI V1 SameValue
+          CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+          CFI V0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLHorloge &CLHorloge::new CLHorloge(USI)
+`??new CLHorloge_1`:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function `??new CLHorloge_1`
+        CODE
+        FUNCALL `??new CLHorloge_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLHorloge_1`, ??CLHorloge_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x9
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLHorloge_4`
+        ; Setup parameters for call to function CLHorloge::CLHorloge(USI)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        LCALL   ??CLHorloge_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLHorloge_5`
+`??new CLHorloge_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLHorloge_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock1
+// J:\Projet_Session5_LNAH\S2_18Nov2014\Programme Station 2\FESTO\Libraire\CLHorloge.cpp
+//    1 // ***************** FICHIER:CLHorloge.cpp
+//    2 //
+//    3 //  Description: Contient les definitions de fonction pour communiquer avec 
+//    4 //               l horloge du simulateur de maison
+//    5 //
+//    6 //  Application realisee avec IAR
+//    7 //
+//    8 //  AUTEUR : Gabriel Fortin-Belanger
+//    9 //  DATE CREATION :    2014-02-07		 VERSION: 1.0
+//   10 //  DATE MODIFICATION: ****-**-**
+//   11 //
+//   12 //******************************************************************************
+//   13 #include "CLInOutBase.h"
+//   14 #include "_DeclarationGenerale.h"
+//   15 #include "CLHorloge.h"
+//   16 
+//   17 
+//   18 
+//   19 
+//   20     
+//   21     
+//   22 //***********************CLHorloge(void)
+//   23 //
+//   24 //Description:Ce constructeur met l addresse de l horlogr a 0xFC00 par defaut
+//   25 //            lors de la creation d un objet 
+//   26 //
+//   27 // Nom:CLPiece :: CLHorloge(void)
+//   28 //           
+//   29 // PARAMETRE D'ENTREE: -
+//   30 //                  
+//   31 // 
+//   32 //
+//   33 // PARAMETRE DE SORTIE: -             
+//   34 //
+//   35 //    
+//   36 // Membre utilise:  usiAdresseHorloge
+//   37 //
+//   38 //
+//   39 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   40 // DATE DE MODIFICATION:	
+//   41 //*****************************************************************************    
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   42 CLHorloge :: CLHorloge(void)
+??CLHorloge:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function ??CLHorloge
+        CODE
+        FUNCALL ??CLHorloge, ??CLHorlogeIO
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   43 {
+        ; Setup parameters for call to function CLHorlogeIO::CLHorlogeIO()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??CLHorlogeIO
+//   44    usiAdresseHorloge = 0xFC00;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#-0x4
+        MOVX    @DPTR,A
+//   45 
+//   46 }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock2
+//   47 
+//   48 //***********************CLHorloge(USI usiAdresse)
+//   49 //
+//   50 //Description:Ce constructeur met l addresse de l horloge choisit 
+//   51 //            par utilisateur lors de la creation d un objet 
+//   52 //
+//   53 // Nom:CLPiece :: CLHorloge(void)
+//   54 //           
+//   55 // PARAMETRE D'ENTREE: usiAdresse
+//   56 //                  
+//   57 // 
+//   58 //
+//   59 // PARAMETRE DE SORTIE: -             
+//   60 //
+//   61 //    
+//   62 // Membre utilise:  usiAdresseHorloge
+//   63 //
+//   64 //
+//   65 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   66 // DATE DE MODIFICATION:	
+//   67 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   68 CLHorloge :: CLHorloge(USI usiAdresse)
+??CLHorloge_1:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function ??CLHorloge_1
+        CODE
+        FUNCALL ??CLHorloge_1, ??CLHorlogeIO
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+//   69 {
+        ; Setup parameters for call to function CLHorlogeIO::CLHorlogeIO()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??CLHorlogeIO
+//   70 
+//   71   usiAdresseHorloge = usiAdresse;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+//   72   
+//   73 }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock3
+//   74 
+//   75 
+//   76 
+//   77 //***********************vSetHeureHMS
+//   78 //
+//   79 //Description:Cette fonction permet de choisir l heure de l horloge 
+//   80 //            du simulateur de maison
+//   81 //           
+//   82 //
+//   83 // Nom:CLPiece :: vSetHeureHMS(UC ucHeure, UC ucMinute, UC ucSeconde)
+//   84 //           
+//   85 // PARAMETRE D'ENTREE: ucHeure
+//   86 //                     ucMinute
+//   87 //                     ucSeconde
+//   88 //
+//   89 // PARAMETRE DE SORTIE: -             
+//   90 //
+//   91 //    
+//   92 // Membre utilise: stHorlogeHMS.ucHeure
+//   93 //                 stHorlogeHMS.ucMinute
+//   94 //                 stHorlogeHMS.ucSeconde
+//   95 //                 vWriteTime()
+//   96 //
+//   97 //
+//   98 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//   99 // DATE DE MODIFICATION:	
+//  100 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  101 void CLHorloge :: vSetHeureHMS(UC ucHeure, UC ucMinute, UC ucSeconde)
+??vSetHeureHMS:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function ??vSetHeureHMS
+        CODE
+//  102 {
+        FUNCALL ??vSetHeureHMS, ??vWriteTime
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R4
+        MOV     R7,A
+        MOV     ?V0 + 0,R5
+//  103   stHorlogeHMS.ucHeure = ucHeure;
+        MOV     A,R6
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  104   stHorlogeHMS.ucMinute = ucMinute;
+        MOV     A,R7
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  105   stHorlogeHMS.ucSeconde = ucSeconde;
+        MOV     A,?V0 + 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+//  106   
+//  107   vWriteTime();
+        ; Setup parameters for call to function CLHorlogeIO::vWriteTime()
+        LCALL   ??vWriteTime
+//  108 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+          CFI EndBlock cfiBlock4
+//  109 
+//  110 
+//  111 
+//  112 //*********************** stpGetHeureHMS
+//  113 //
+//  114 //Description:Ce constructeur met l addresse de l horloge choisit 
+//  115 //            par utilisateur lors de la creation d un objet 
+//  116 //
+//  117 // Nom:struct  STHorlogeHMS * CLHorloge :: stpGetHeureHMS(void)
+//  118 //           
+//  119 // PARAMETRE D'ENTREE: -
+//  120 //                  
+//  121 // 
+//  122 //
+//  123 // PARAMETRE DE SORTIE: stpHorlogeHMS            
+//  124 //
+//  125 //    
+//  126 // Membre utilise:  stHorlogeHMS
+//  127 //                  vReadTime()
+//  128 //
+//  129 //
+//  130 // DATE DE CREATION: 10 octobre 2013    AUTEUR: Gabriel Fortin-B
+//  131 // DATE DE MODIFICATION:	
+//  132 //*****************************************************************************
+//  133 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  134 struct  STHorlogeHMS * CLHorloge :: stpGetHeureHMS(void)
+??stpGetHeureHMS:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function ??stpGetHeureHMS
+        CODE
+//  135 {
+        FUNCALL ??stpGetHeureHMS, ??vReadTime
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//  136    STHorlogeHMS *stpHorlogeHMS;
+//  137    stpHorlogeHMS = &stHorlogeHMS;
+        MOV     A,R2
+        ADD     A,#0x6
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     DPH,A
+//  138    
+//  139    vReadTime();
+        ; Setup parameters for call to function CLHorlogeIO::vReadTime()
+        LCALL   ??vReadTime
+//  140    
+//  141    return(stpHorlogeHMS);
+        MOV     R2,DPL
+        MOV     R3,DPH
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-3
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-2
+        RET
+          CFI EndBlock cfiBlock5
+//  142 }
+
+        END
+//  143 
+//  144 
+//  145 
+//  146 
+//  147 
+//  148 
+//  149 
+//  150 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// 
+// 278 bytes in segment NEAR_CODE
+// 
+// 278 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

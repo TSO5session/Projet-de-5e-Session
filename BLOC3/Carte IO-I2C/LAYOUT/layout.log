@@ -1,0 +1,2233 @@
+Mon Nov 17 16:05:17 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:05:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\data\template.imp
+Mon Nov 17 16:05:18 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\data\template.imp
+Mon Nov 17 16:05:18 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\data\template.imp
+Mon Nov 17 16:05:48 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\data\template.imp
+Mon Nov 17 16:08:14 UserDiv from Layout.INI for AutoECO: 60
+Mon Nov 17 16:08:14 Loaded file C:\ORCAD\ORCAD_16.2\TOOLS\LAYOUT\DATA\_DEFAULT.TCH
+Mon Nov 17 16:08:14 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BCON100T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BCON156T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BGA.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\CLCC.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DCON050T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DCON085T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIMM050F.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIMM050T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIN.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIP100B.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIP100T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DSUBT.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DSUBT_HD.LLB
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\ECON100T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\FBUS.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\ISA.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\JUMPER.LLB
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\LAYOUT.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\LCON100T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PC104.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PCI.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PCON100T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PCON156T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PGA.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PLCC.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\QUAD.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\QUADB.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\RELAY.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\RF.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SBUS.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM050F.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM050T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM100F.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM100T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIP.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SM.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SOG.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SOJ.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\STIFF.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TELE.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_AXIAL.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_CAP_P.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_CYLND.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_DIODE.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_DISC.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_RAD.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TO.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TRAINING.LLB
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\VRES.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\WCON100T.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\XT.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\ZIGZAG.llb
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\LAYOUT.llb
+Mon Nov 17 16:08:14 Library file not found:USER.PRT
+Mon Nov 17 16:08:14 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIP100T.llb
+Mon Nov 17 16:08:14 Library file not found:USER.PRT
+Mon Nov 17 16:08:14 Library file not found:USER.PRT
+Mon Nov 17 16:08:14 Library file not found:USER.PRT
+Mon Nov 17 16:08:24 Loaded file C:\ORCAD\ORCAD_16.2\TOOLS\LAYOUT\data\template.imp
+Mon Nov 17 16:08:24 Loaded file C:\ORCAD\ORCAD_16.2\TOOLS\LAYOUT\data\template.imp
+Mon Nov 17 16:08:27 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BCON100T.llb
+Mon Nov 17 16:08:27 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BCON156T.llb
+Mon Nov 17 16:08:28 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:08:34 Library file not found:USER.PRT
+Mon Nov 17 16:08:34 Library file not found:USER.PRT
+Mon Nov 17 16:08:36 Library file not found:USER.PRT
+Mon Nov 17 16:08:36 Library file not found:USER.PRT
+Mon Nov 17 16:08:36 Library file not found:USER.PRT
+Mon Nov 17 16:08:36 Library file not found:USER.PRT
+Mon Nov 17 16:08:36 Library file not found:USER.PRT
+Mon Nov 17 16:08:36 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:37 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:38 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:39 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:40 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:41 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:42 Library file not found:USER.PRT
+Mon Nov 17 16:08:43 Library file not found:USER.PRT
+Mon Nov 17 16:08:43 Library file not found:USER.PRT
+Mon Nov 17 16:08:43 Library file not found:USER.PRT
+Mon Nov 17 16:08:43 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:45 Library file not found:USER.PRT
+Mon Nov 17 16:08:46 Loaded file C:\ORCAD\ORCAD_16.2\TOOLS\LAYOUT\DATA\_DEFAULT.TCH
+Mon Nov 17 16:08:46 Saved as file C:\ORCAD\ORCAD_16.2\TOOLS\LAYOUT\DATA\_DEFAULT.TCH
+Mon Nov 17 16:08:46 Loaded file C:\ORCAD\ORCAD_16.2\TOOLS\LAYOUT\DATA\_DEFAULT.TCH
+Mon Nov 17 16:11:17 UserDiv from Layout.INI for AutoECO: 60
+Mon Nov 17 16:11:17 Loaded file C:\ORCAD\ORCAD_16.2\TOOLS\LAYOUT\DATA\_DEFAULT.TCH
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET01.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET02.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET03.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET04.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET05.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET06.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET08.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET09.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET10.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET11.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET12.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET13.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET14.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET15.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET16.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET17.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET18.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET19.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET20.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET21.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET22.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET23.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET24.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET25.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET26.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET27.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET28.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET29.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET30.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET31.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET32.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET33.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET34.LLB
+Mon Nov 17 16:11:17 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BCON100T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BCON156T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\BGA.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\CLCC.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DCON050T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DCON085T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIMM050F.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIMM050T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIN.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIP100B.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DIP100T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DSUBT.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\DSUBT_HD.LLB
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\ECON100T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\FBUS.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\ISA.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\JUMPER.LLB
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\LAYOUT.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\LCON100T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PC104.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PCI.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PCON100T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PCON156T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PGA.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\PLCC.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\QUAD.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\QUADB.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\RELAY.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\RF.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SBUS.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM050F.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM050T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM100F.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIMM100T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SIP.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SM.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SOG.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\SOJ.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\STIFF.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TELE.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_AXIAL.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_CAP_P.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_CYLND.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_DIODE.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_DISC.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TM_RAD.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TO.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\TRAINING.LLB
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\VRES.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\WCON100T.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\XT.llb
+Mon Nov 17 16:11:17 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\ZIGZAG.llb
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET23.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET01.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET09.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET25.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET08.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET25.LLB
+Mon Nov 17 16:11:17 Loaded file P:\243-TECHNOLOGIE DU GENIE ELECTRIQUE\ALAIN.CHAMPAGNE\PARTAGE\SHEETS\SHEET01.LLB
+Mon Nov 17 16:11:17 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:11:17 Loaded file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\PROJET5ESESS.LLB
+Mon Nov 17 16:11:19 Saved as file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\CARTEIOI2C-1.MAX
+Mon Nov 17 16:11:20 Saved as file Backup0.max
+Mon Nov 17 16:11:20 Windows which were open at time of error:
+Mon Nov 17 16:11:20 End-of-list
+Mon Nov 17 16:11:21 Loaded file BACKUP0.MAX
+Mon Nov 17 16:15:25 Saved as file ~undo.max
+Mon Nov 17 16:15:27 Saved as file ~undo.max
+Mon Nov 17 16:15:35 Saved as file ~undo.max
+Mon Nov 17 16:15:53 Saved as file ~undo.max
+Mon Nov 17 16:16:51 Saved as file ~undo.max
+Mon Nov 17 16:17:42 Saved as file ~undo.max
+Mon Nov 17 16:17:55 Saved as file ~undo.max
+Mon Nov 17 16:17:59 Saved as file ~undo.max
+Mon Nov 17 16:18:19 Saved as file ~undo.max
+Mon Nov 17 16:18:26 Saved as file ~undo.max
+Mon Nov 17 16:18:40 Saved as file ~undo.max
+Mon Nov 17 16:18:47 Saved as file ~undo.max
+Mon Nov 17 16:19:04 Saved as file ~undo.max
+Mon Nov 17 16:19:12 Saved as file ~undo.max
+Mon Nov 17 16:19:18 Saved as file ~undo.max
+Mon Nov 17 16:19:27 Saved as file ~undo.max
+Mon Nov 17 16:19:30 Saved as file ~undo.max
+Mon Nov 17 16:19:32 Saved as file ~undo.max
+Mon Nov 17 16:19:35 Saved as file ~undo.max
+Mon Nov 17 16:19:37 Saved as file ~undo.max
+Mon Nov 17 16:19:42 Saved as file ~undo.max
+Mon Nov 17 16:19:44 Saved as file ~undo.max
+Mon Nov 17 16:19:47 Saved as file ~undo.max
+Mon Nov 17 16:19:49 Saved as file ~undo.max
+Mon Nov 17 16:19:51 Saved as file ~undo.max
+Mon Nov 17 16:19:56 Saved as file ~undo.max
+Mon Nov 17 16:21:21 Saved as file BACKUP1.MAX
+Mon Nov 17 16:22:25 Saved as file ~undo.max
+Mon Nov 17 16:22:27 Saved as file ~undo.max
+Mon Nov 17 16:22:31 Saved as file ~undo.max
+Mon Nov 17 16:22:40 Saved as file ~undo.max
+Mon Nov 17 16:22:45 Saved as file ~undo.max
+Mon Nov 17 16:22:56 Saved as file ~undo.max
+Mon Nov 17 16:23:10 Saved as file ~undo.max
+Mon Nov 17 16:23:16 Saved as file ~undo.max
+Mon Nov 17 16:23:21 Saved as file ~undo.max
+Mon Nov 17 16:23:29 Saved as file ~undo.max
+Mon Nov 17 16:23:33 Saved as file ~undo.max
+Mon Nov 17 16:23:35 Saved as file ~undo.max
+Mon Nov 17 16:23:46 Saved as file ~undo.max
+Mon Nov 17 16:23:51 Saved as file ~undo.max
+Mon Nov 17 16:23:57 Saved as file ~undo.max
+Mon Nov 17 16:23:59 Saved as file ~undo.max
+Mon Nov 17 16:24:02 Saved as file ~undo.max
+Mon Nov 17 16:24:05 Saved as file ~undo.max
+Mon Nov 17 16:24:07 Saved as file ~undo.max
+Mon Nov 17 16:24:10 Saved as file ~undo.max
+Mon Nov 17 16:24:13 Saved as file ~undo.max
+Mon Nov 17 16:24:15 Saved as file ~undo.max
+Mon Nov 17 16:24:20 Saved as file ~undo.max
+Mon Nov 17 16:24:23 Saved as file ~undo.max
+Mon Nov 17 16:24:25 Saved as file ~undo.max
+Mon Nov 17 16:24:27 Saved as file ~undo.max
+Mon Nov 17 16:24:29 Saved as file ~undo.max
+Mon Nov 17 16:24:30 Saved as file ~undo.max
+Mon Nov 17 16:24:33 Saved as file ~undo.max
+Mon Nov 17 16:24:34 Saved as file ~undo.max
+Mon Nov 17 16:24:36 Saved as file ~undo.max
+Mon Nov 17 16:24:38 Saved as file ~undo.max
+Mon Nov 17 16:24:42 Saved as file ~undo.max
+Mon Nov 17 16:24:43 Saved as file ~undo.max
+Mon Nov 17 16:24:45 Saved as file ~undo.max
+Mon Nov 17 16:24:46 Saved as file ~undo.max
+Mon Nov 17 16:24:48 Saved as file ~undo.max
+Mon Nov 17 16:24:50 Saved as file ~undo.max
+Mon Nov 17 16:24:52 Saved as file ~undo.max
+Mon Nov 17 16:24:54 Saved as file ~undo.max
+Mon Nov 17 16:24:55 Saved as file ~undo.max
+Mon Nov 17 16:24:57 Saved as file ~undo.max
+Mon Nov 17 16:25:04 Saved as file ~undo.max
+Mon Nov 17 16:25:06 Saved as file ~undo.max
+Mon Nov 17 16:25:08 Saved as file ~undo.max
+Mon Nov 17 16:25:10 Saved as file ~undo.max
+Mon Nov 17 16:25:12 Saved as file ~undo.max
+Mon Nov 17 16:25:15 Saved as file ~undo.max
+Mon Nov 17 16:25:17 Saved as file ~undo.max
+Mon Nov 17 16:25:18 Saved as file ~undo.max
+Mon Nov 17 16:25:20 Saved as file ~undo.max
+Mon Nov 17 16:25:22 Saved as file ~undo.max
+Mon Nov 17 16:25:23 Saved as file ~undo.max
+Mon Nov 17 16:25:25 Saved as file ~undo.max
+Mon Nov 17 16:25:27 Saved as file ~undo.max
+Mon Nov 17 16:25:29 Saved as file ~undo.max
+Mon Nov 17 16:25:31 Saved as file ~undo.max
+Mon Nov 17 16:25:33 Saved as file ~undo.max
+Mon Nov 17 16:25:35 Saved as file ~undo.max
+Mon Nov 17 16:25:37 Saved as file ~undo.max
+Mon Nov 17 16:25:39 Saved as file ~undo.max
+Mon Nov 17 16:25:42 Saved as file ~undo.max
+Mon Nov 17 16:25:44 Saved as file ~undo.max
+Mon Nov 17 16:25:53 Saved as file ~undo.max
+Mon Nov 17 16:25:59 Saved as file ~undo.max
+Mon Nov 17 16:26:02 Saved as file ~undo.max
+Mon Nov 17 16:26:04 Saved as file ~undo.max
+Mon Nov 17 16:26:06 Saved as file ~undo.max
+Mon Nov 17 16:26:09 Saved as file ~undo.max
+Mon Nov 17 16:26:11 Saved as file ~undo.max
+Mon Nov 17 16:26:14 Saved as file ~undo.max
+Mon Nov 17 16:26:26 Saved as file ~undo.max
+Mon Nov 17 16:26:29 Saved as file ~undo.max
+Mon Nov 17 16:26:47 Saved as file ~undo.max
+Mon Nov 17 16:26:49 Saved as file ~undo.max
+Mon Nov 17 16:26:51 Saved as file ~undo.max
+Mon Nov 17 16:27:00 Saved as file ~undo.max
+Mon Nov 17 16:28:27 Saved as file ~undo.max
+Mon Nov 17 16:28:33 Saved as file ~undo.max
+Mon Nov 17 16:28:37 Saved as file ~undo.max
+Mon Nov 17 16:28:41 Saved as file ~undo.max
+Mon Nov 17 16:28:45 Saved as file ~undo.max
+Mon Nov 17 16:28:51 Saved as file ~undo.max
+Mon Nov 17 16:28:59 Saved as file ~undo.max
+Mon Nov 17 16:29:04 Saved as file ~undo.max
+Mon Nov 17 16:29:08 Saved as file ~undo.max
+Mon Nov 17 16:29:11 Saved as file ~undo.max
+Mon Nov 17 16:29:15 Saved as file ~undo.max
+Mon Nov 17 16:30:06 Saved as file ~undo.max
+Mon Nov 17 16:30:09 Saved as file ~undo.max
+Mon Nov 17 16:30:12 Saved as file ~undo.max
+Mon Nov 17 16:30:15 Saved as file ~undo.max
+Mon Nov 17 16:30:19 Saved as file ~undo.max
+Mon Nov 17 16:30:44 Saved as file ~undo.max
+Mon Nov 17 16:30:48 Saved as file ~undo.max
+Mon Nov 17 16:30:50 Saved as file ~undo.max
+Mon Nov 17 16:30:51 Saved as file ~undo.max
+Mon Nov 17 16:30:53 Saved as file ~undo.max
+Mon Nov 17 16:30:54 Saved as file ~undo.max
+Mon Nov 17 16:30:56 Saved as file ~undo.max
+Mon Nov 17 16:30:58 Saved as file ~undo.max
+Mon Nov 17 16:30:59 Saved as file ~undo.max
+Mon Nov 17 16:31:02 Saved as file ~undo.max
+Mon Nov 17 16:31:04 Saved as file ~undo.max
+Mon Nov 17 16:31:06 Saved as file ~undo.max
+Mon Nov 17 16:31:08 Saved as file ~undo.max
+Mon Nov 17 16:31:10 Saved as file ~undo.max
+Mon Nov 17 16:31:13 Saved as file ~undo.max
+Mon Nov 17 16:31:16 Saved as file ~undo.max
+Mon Nov 17 16:31:22 Saved as file BACKUP1.MAX
+Mon Nov 17 16:31:30 Saved as file ~undo.max
+Mon Nov 17 16:31:34 Saved as file ~undo.max
+Mon Nov 17 16:31:37 Saved as file ~undo.max
+Mon Nov 17 16:31:40 Saved as file ~undo.max
+Mon Nov 17 16:31:46 Saved as file ~undo.max
+Mon Nov 17 16:31:48 Saved as file ~undo.max
+Mon Nov 17 16:31:51 Saved as file ~undo.max
+Mon Nov 17 16:32:01 Saved as file ~undo.max
+Mon Nov 17 16:32:03 Saved as file ~undo.max
+Mon Nov 17 16:32:11 Saved as file ~undo.max
+Mon Nov 17 16:32:12 Saved as file ~undo.max
+Mon Nov 17 16:32:15 Saved as file ~undo.max
+Mon Nov 17 16:32:19 Saved as file ~undo.max
+Mon Nov 17 16:32:27 Saved as file ~undo.max
+Mon Nov 17 16:32:31 Saved as file ~undo.max
+Mon Nov 17 16:32:37 Saved as file ~undo.max
+Mon Nov 17 16:35:57 Saved as file ~undo.max
+Mon Nov 17 16:39:43 Saved as file ~undo.max
+Mon Nov 17 16:40:39 Saved as file ~undo.max
+Mon Nov 17 16:40:58 Saved as file ~undo.max
+Mon Nov 17 16:41:04 Saved as file ~undo.max
+Mon Nov 17 16:41:08 Saved as file ~undo.max
+Mon Nov 17 16:41:10 Saved as file ~undo.max
+Mon Nov 17 16:41:13 Saved as file ~undo2.max
+Mon Nov 17 16:41:13 Loaded file ~undo.max
+Mon Nov 17 16:41:14 Saved as file ~undo2.max
+Mon Nov 17 16:41:14 Loaded file ~undo.max
+Mon Nov 17 16:41:15 Saved as file ~undo2.max
+Mon Nov 17 16:41:15 Loaded file ~undo.max
+Mon Nov 17 16:41:16 Saved as file ~undo2.max
+Mon Nov 17 16:41:16 Loaded file ~undo.max
+Mon Nov 17 16:41:17 Saved as file ~undo2.max
+Mon Nov 17 16:41:17 Loaded file ~undo.max
+Mon Nov 17 16:41:19 Saved as file ~undo2.max
+Mon Nov 17 16:41:19 Loaded file ~undo.max
+Mon Nov 17 16:41:20 Saved as file ~undo2.max
+Mon Nov 17 16:41:20 Loaded file ~undo.max
+Mon Nov 17 16:41:22 Saved as file BACKUP1.MAX
+Mon Nov 17 16:41:22 Saved as file ~undo.max
+Mon Nov 17 16:41:29 Saved as file ~undo.max
+Mon Nov 17 16:41:31 Saved as file ~undo.max
+Mon Nov 17 16:41:48 Saved as file ~undo.max
+Mon Nov 17 16:41:51 Saved as file ~undo.max
+Mon Nov 17 16:41:56 Saved as file ~undo.max
+Mon Nov 17 16:42:02 Saved as file ~undo.max
+Mon Nov 17 16:42:06 Saved as file ~undo.max
+Mon Nov 17 16:42:09 Saved as file ~undo.max
+Mon Nov 17 16:42:11 Saved as file ~undo.max
+Mon Nov 17 16:42:14 Saved as file ~undo.max
+Mon Nov 17 16:42:16 Saved as file ~undo.max
+Mon Nov 17 16:42:17 Saved as file ~undo.max
+Mon Nov 17 16:42:23 Saved as file ~undo.max
+Mon Nov 17 16:42:25 Saved as file ~undo.max
+Mon Nov 17 16:42:28 Saved as file ~undo.max
+Mon Nov 17 16:42:30 Saved as file ~undo.max
+Mon Nov 17 16:42:33 Saved as file ~undo.max
+Mon Nov 17 16:42:35 Saved as file ~undo.max
+Mon Nov 17 16:42:39 Saved as file ~undo.max
+Mon Nov 17 16:42:40 Saved as file ~undo.max
+Mon Nov 17 16:42:46 Saved as file ~undo.max
+Mon Nov 17 16:42:47 Saved as file ~undo.max
+Mon Nov 17 16:42:59 Saved as file ~undo.max
+Mon Nov 17 16:43:00 Saved as file ~undo.max
+Mon Nov 17 16:43:03 Saved as file ~undo.max
+Mon Nov 17 16:43:05 Saved as file ~undo.max
+Mon Nov 17 16:43:07 Saved as file ~undo.max
+Mon Nov 17 16:43:09 Saved as file ~undo.max
+Mon Nov 17 16:43:10 Saved as file ~undo.max
+Mon Nov 17 16:43:15 Saved as file ~undo.max
+Mon Nov 17 16:43:17 Saved as file ~undo.max
+Mon Nov 17 16:43:19 Saved as file ~undo.max
+Mon Nov 17 16:43:20 Saved as file ~undo.max
+Mon Nov 17 16:43:27 Saved as file ~undo.max
+Mon Nov 17 16:43:30 Saved as file ~undo.max
+Mon Nov 17 16:43:31 Saved as file ~undo.max
+Mon Nov 17 16:43:34 Saved as file ~undo.max
+Mon Nov 17 16:43:37 Saved as file ~undo.max
+Mon Nov 17 16:43:39 Saved as file ~undo.max
+Mon Nov 17 16:43:40 Saved as file ~undo.max
+Mon Nov 17 16:43:42 Saved as file ~undo.max
+Mon Nov 17 16:43:45 Saved as file ~undo.max
+Mon Nov 17 16:43:50 Saved as file ~undo.max
+Mon Nov 17 16:43:52 Saved as file ~undo.max
+Mon Nov 17 16:43:53 Saved as file ~undo.max
+Mon Nov 17 16:43:54 Saved as file ~undo.max
+Mon Nov 17 16:43:56 Saved as file ~undo.max
+Mon Nov 17 16:43:58 Saved as file ~undo.max
+Mon Nov 17 16:44:01 Saved as file ~undo.max
+Mon Nov 17 16:44:03 Saved as file ~undo.max
+Mon Nov 17 16:44:06 Saved as file ~undo.max
+Mon Nov 17 16:44:10 Saved as file ~undo.max
+Mon Nov 17 16:44:11 Saved as file ~undo.max
+Mon Nov 17 16:44:13 Saved as file ~undo.max
+Mon Nov 17 16:44:14 Saved as file ~undo.max
+Mon Nov 17 16:44:17 Saved as file ~undo.max
+Mon Nov 17 16:44:18 Saved as file ~undo.max
+Mon Nov 17 16:44:19 Saved as file ~undo.max
+Mon Nov 17 16:44:22 Saved as file ~undo.max
+Mon Nov 17 16:44:23 Saved as file ~undo.max
+Mon Nov 17 16:44:30 Saved as file ~undo.max
+Mon Nov 17 16:44:32 Saved as file ~undo.max
+Mon Nov 17 16:44:40 Saved as file ~undo.max
+Mon Nov 17 16:44:42 Saved as file ~undo.max
+Mon Nov 17 16:44:50 Saved as file ~undo.max
+Mon Nov 17 16:44:52 Saved as file ~undo.max
+Mon Nov 17 16:44:57 Saved as file ~undo.max
+Mon Nov 17 16:44:59 Saved as file ~undo.max
+Mon Nov 17 16:45:00 Saved as file ~undo.max
+Mon Nov 17 16:45:03 Saved as file ~undo.max
+Mon Nov 17 16:45:06 Saved as file ~undo.max
+Mon Nov 17 16:45:45 Saved as file ~undo.max
+Mon Nov 17 16:45:50 Saved as file ~undo.max
+Mon Nov 17 16:46:01 Saved as file ~undo.max
+Mon Nov 17 16:46:02 Saved as file ~undo.max
+Mon Nov 17 16:46:06 Saved as file ~undo.max
+Mon Nov 17 16:46:08 Saved as file ~undo.max
+Mon Nov 17 16:46:12 Saved as file ~undo.max
+Mon Nov 17 16:46:14 Saved as file ~undo.max
+Mon Nov 17 16:46:20 Saved as file ~undo.max
+Mon Nov 17 16:46:22 Saved as file ~undo.max
+Mon Nov 17 16:46:25 Saved as file ~undo.max
+Mon Nov 17 16:46:27 Saved as file ~undo.max
+Mon Nov 17 16:46:29 Saved as file ~undo.max
+Mon Nov 17 16:46:32 Saved as file ~undo.max
+Mon Nov 17 16:46:34 Saved as file ~undo.max
+Mon Nov 17 16:46:37 Saved as file ~undo.max
+Mon Nov 17 16:46:41 Saved as file ~undo.max
+Mon Nov 17 16:46:44 Saved as file ~undo.max
+Mon Nov 17 16:46:46 Saved as file ~undo.max
+Mon Nov 17 16:46:50 Saved as file ~undo.max
+Mon Nov 17 16:46:51 Saved as file ~undo.max
+Mon Nov 17 16:46:54 Saved as file ~undo.max
+Mon Nov 17 16:46:57 Saved as file ~undo.max
+Mon Nov 17 16:47:00 Saved as file ~undo.max
+Mon Nov 17 16:47:07 Saved as file ~undo.max
+Mon Nov 17 16:47:10 Saved as file ~undo.max
+Mon Nov 17 16:47:12 Saved as file ~undo.max
+Mon Nov 17 16:47:14 Saved as file ~undo.max
+Mon Nov 17 16:47:16 Saved as file ~undo.max
+Mon Nov 17 16:47:19 Saved as file ~undo.max
+Mon Nov 17 16:47:21 Saved as file ~undo.max
+Mon Nov 17 16:47:23 Saved as file ~undo.max
+Mon Nov 17 16:47:25 Saved as file ~undo.max
+Mon Nov 17 16:47:30 Saved as file ~undo.max
+Mon Nov 17 16:47:32 Saved as file ~undo.max
+Mon Nov 17 16:47:34 Saved as file ~undo.max
+Mon Nov 17 16:47:36 Saved as file ~undo.max
+Mon Nov 17 16:47:38 Saved as file ~undo.max
+Mon Nov 17 16:47:42 Saved as file ~undo.max
+Mon Nov 17 16:47:51 Saved as file ~undo.max
+Mon Nov 17 16:48:12 Saved as file ~undo.max
+Mon Nov 17 16:48:22 Saved as file ~undo.max
+Mon Nov 17 16:48:26 Saved as file ~undo.max
+Mon Nov 17 16:48:30 Saved as file ~undo.max
+Mon Nov 17 16:48:34 Saved as file ~undo.max
+Mon Nov 17 16:48:41 Saved as file ~undo.max
+Mon Nov 17 16:48:49 Saved as file ~undo.max
+Mon Nov 17 16:48:54 Saved as file ~undo.max
+Mon Nov 17 16:48:58 Saved as file ~undo.max
+Mon Nov 17 16:49:00 Saved as file ~undo.max
+Mon Nov 17 16:49:02 Saved as file ~undo.max
+Mon Nov 17 16:49:25 Saved as file ~undo.max
+Mon Nov 17 16:49:40 Saved as file ~undo.max
+Mon Nov 17 16:49:43 Saved as file ~undo.max
+Mon Nov 17 16:49:48 Saved as file ~undo.max
+Mon Nov 17 16:49:57 Saved as file ~undo.max
+Mon Nov 17 16:50:01 Saved as file ~undo.max
+Mon Nov 17 16:50:08 Saved as file ~undo.max
+Mon Nov 17 16:50:19 Saved as file ~undo.max
+Mon Nov 17 16:50:34 Saved as file ~undo.max
+Mon Nov 17 16:51:52 Saved as file BACKUP1.MAX
+Mon Nov 17 16:52:35 Saved as file ~undo.max
+Mon Nov 17 16:52:52 Saved as file ~undo.max
+Mon Nov 17 16:52:57 Saved as file ~undo.max
+Mon Nov 17 16:53:05 Saved as file ~undo.max
+Mon Nov 17 16:53:11 Saved as file ~undo.max
+Mon Nov 17 16:53:15 Saved as file ~undo.max
+Mon Nov 17 16:57:53 Saved as file ~undo.max
+Mon Nov 17 16:57:58 Saved as file ~undo.max
+Mon Nov 17 16:58:11 Saved as file ~undo.max
+Mon Nov 17 16:58:17 Saved as file ~undo.max
+Mon Nov 17 16:58:29 Saved as file ~undo.max
+Mon Nov 17 16:58:42 Saved as file ~undo.max
+Mon Nov 17 16:58:46 Saved as file ~undo.max
+Mon Nov 17 16:58:49 Saved as file ~undo.max
+Mon Nov 17 16:58:55 Saved as file ~undo.max
+Mon Nov 17 16:58:58 Saved as file ~undo.max
+Mon Nov 17 16:59:16 Saved as file ~undo.max
+Mon Nov 17 16:59:33 Saved as file ~undo.max
+Mon Nov 17 16:59:35 Saved as file ~undo.max
+Mon Nov 17 16:59:40 Saved as file ~undo.max
+Mon Nov 17 16:59:54 Saved as file ~undo.max
+Mon Nov 17 17:00:01 Saved as file ~undo.max
+Mon Nov 17 17:00:04 Saved as file ~undo.max
+Mon Nov 17 17:00:38 Saved as file ~undo.max
+Mon Nov 17 17:00:55 Saved as file ~undo.max
+Mon Nov 17 17:01:29 Saved as file ~undo.max
+Mon Nov 17 17:01:32 Saved as file ~undo.max
+Mon Nov 17 17:01:45 Saved as file ~undo.max
+Mon Nov 17 17:01:51 Saved as file ~undo.max
+Mon Nov 17 17:01:53 Saved as file BACKUP1.MAX
+Mon Nov 17 17:03:45 Saved as file ~undo.max
+Mon Nov 17 17:04:01 Saved as file ~undo.max
+Mon Nov 17 17:04:25 Saved as file ~undo.max
+Mon Nov 17 17:04:34 Saved as file ~undo.max
+Mon Nov 17 17:04:44 Saved as file ~undo.max
+Mon Nov 17 17:04:57 Saved as file ~undo.max
+Mon Nov 17 17:05:00 Saved as file ~undo.max
+Mon Nov 17 17:05:11 Saved as file ~undo.max
+Mon Nov 17 17:05:31 Saved as file ~undo.max
+Mon Nov 17 17:05:38 Saved as file ~undo.max
+Mon Nov 17 17:05:45 Saved as file ~undo.max
+Mon Nov 17 17:05:53 Saved as file ~undo.max
+Mon Nov 17 17:06:04 Saved as file ~undo.max
+Mon Nov 17 17:06:13 Saved as file ~undo.max
+Mon Nov 17 17:06:40 Saved as file ~undo.max
+Mon Nov 17 17:07:14 Saved as file ~undo.max
+Mon Nov 17 17:07:16 Saved as file ~undo.max
+Mon Nov 17 17:08:58 Saved as file ~undo.max
+Mon Nov 17 17:09:00 Saved as file ~undo.max
+Mon Nov 17 17:09:07 Saved as file ~undo.max
+Mon Nov 17 17:09:27 Saved as file ~undo.max
+Mon Nov 17 17:09:37 Saved as file ~undo.max
+Mon Nov 17 17:09:45 Saved as file ~undo.max
+Mon Nov 17 17:09:51 Saved as file ~undo.max
+Mon Nov 17 17:09:58 Saved as file ~undo.max
+Mon Nov 17 17:10:12 Saved as file ~undo.max
+Mon Nov 17 17:10:16 Saved as file ~undo.max
+Mon Nov 17 17:10:29 Saved as file ~undo.max
+Mon Nov 17 17:10:42 Saved as file ~undo.max
+Mon Nov 17 17:10:50 Saved as file ~undo.max
+Mon Nov 17 17:10:57 Saved as file ~undo.max
+Mon Nov 17 17:11:00 Saved as file ~undo.max
+Mon Nov 17 17:11:04 Saved as file ~undo.max
+Mon Nov 17 17:11:08 Saved as file ~undo.max
+Mon Nov 17 17:11:10 Saved as file ~undo.max
+Mon Nov 17 17:11:13 Saved as file ~undo.max
+Mon Nov 17 17:11:30 Saved as file ~undo.max
+Mon Nov 17 17:11:53 Saved as file BACKUP1.MAX
+Mon Nov 17 17:12:52 Saved as file ~undo.max
+Mon Nov 17 17:13:05 Saved as file ~undo.max
+Mon Nov 17 17:13:09 Saved as file ~undo.max
+Mon Nov 17 17:13:11 Saved as file ~undo.max
+Mon Nov 17 17:13:14 Saved as file ~undo.max
+Mon Nov 17 17:13:15 Saved as file ~undo.max
+Mon Nov 17 17:13:18 Saved as file ~undo.max
+Mon Nov 17 17:13:19 Saved as file ~undo.max
+Mon Nov 17 17:13:21 Saved as file ~undo.max
+Mon Nov 17 17:13:23 Saved as file ~undo.max
+Mon Nov 17 17:13:25 Saved as file ~undo.max
+Mon Nov 17 17:13:27 Saved as file ~undo.max
+Mon Nov 17 17:13:41 Saved as file ~undo.max
+Mon Nov 17 17:13:53 Saved as file ~undo.max
+Mon Nov 17 17:13:57 Saved as file ~undo.max
+Mon Nov 17 17:14:03 Saved as file ~undo.max
+Mon Nov 17 17:14:33 Saved as file ~undo.max
+Mon Nov 17 17:14:36 Saved as file ~undo.max
+Mon Nov 17 17:14:42 Saved as file ~undo.max
+Mon Nov 17 17:15:01 Saved as file ~undo.max
+Mon Nov 17 17:15:04 Saved as file ~undo.max
+Mon Nov 17 17:15:08 Saved as file ~undo.max
+Mon Nov 17 17:15:25 Saved as file ~undo.max
+Mon Nov 17 17:15:33 Saved as file ~undo.max
+Mon Nov 17 17:15:43 Saved as file ~undo.max
+Mon Nov 17 17:15:49 Saved as file ~undo.max
+Mon Nov 17 17:15:55 Saved as file ~undo.max
+Mon Nov 17 17:16:01 Saved as file ~undo.max
+Mon Nov 17 17:17:40 Saved as file ~undo.max
+Mon Nov 17 17:17:49 Saved as file ~undo.max
+Mon Nov 17 17:17:51 Saved as file ~undo.max
+Mon Nov 17 17:18:23 Saved as file ~undo.max
+Mon Nov 17 17:18:24 Saved as file ~undo.max
+Mon Nov 17 17:18:31 Saved as file ~undo.max
+Mon Nov 17 17:18:33 Saved as file ~undo.max
+Mon Nov 17 17:19:36 Saved as file ~undo.max
+Mon Nov 17 17:19:40 Saved as file ~undo.max
+Mon Nov 17 17:19:42 Saved as file ~undo.max
+Mon Nov 17 17:19:47 Saved as file ~undo.max
+Mon Nov 17 17:19:50 Saved as file ~undo.max
+Mon Nov 17 17:20:19 Saved as file ~undo.max
+Mon Nov 17 17:20:33 Saved as file ~undo.max
+Mon Nov 17 17:20:57 Saved as file ~undo.max
+Mon Nov 17 17:21:02 Saved as file ~undo.max
+Mon Nov 17 17:21:04 Saved as file ~undo.max
+Mon Nov 17 17:21:11 Saved as file ~undo.max
+Mon Nov 17 17:21:13 Saved as file ~undo.max
+Mon Nov 17 17:21:20 Saved as file ~undo.max
+Mon Nov 17 17:21:23 Saved as file ~undo.max
+Mon Nov 17 17:21:29 Saved as file ~undo.max
+Mon Nov 17 17:21:34 Saved as file ~undo.max
+Mon Nov 17 17:21:40 Saved as file ~undo.max
+Mon Nov 17 17:21:42 Saved as file ~undo.max
+Mon Nov 17 17:21:44 Saved as file ~undo.max
+Mon Nov 17 17:21:59 Saved as file ~undo.max
+Mon Nov 17 17:22:02 Saved as file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\CARTEIOI2C-1.MAX
+Mon Nov 17 17:22:23 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:29 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:29 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:29 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:29 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:29 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:29 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:30 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:30 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:30 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:30 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:30 Routed 34 connections in 1 seconds.
+Mon Nov 17 17:22:30 Total is now 34 out of 223 (15%).
+Mon Nov 17 17:22:30 Saved as file SWEEP1.MAX
+Mon Nov 17 17:22:32 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:32 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:32 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:32 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:32 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:32 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:33 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:33 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:34 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:34 Saved as file BACKUP1.MAX
+Mon Nov 17 17:22:34 Routed 218 connections in 3 seconds.
+Mon Nov 17 17:22:34 Total is now 223 out of 223 (100%).
+Mon Nov 17 17:22:34 Saved as file SWEEP2.MAX
+Mon Nov 17 17:22:34 No new connections routed.
+Mon Nov 17 17:22:34 Total is now 223 out of 223 (100%).
+Mon Nov 17 17:22:34 Saved as file SWEEP3.MAX
+Mon Nov 17 17:22:34 No new connections routed.
+Mon Nov 17 17:22:34 Total is now 223 out of 223 (100%).
+Mon Nov 17 17:22:34 Saved as file SWEEP4.MAX
+Mon Nov 17 17:22:35 No new connections routed.
+Mon Nov 17 17:22:35 Total is now 223 out of 223 (100%).
+Mon Nov 17 17:22:35 Saved as file SWEEP5.MAX
+Mon Nov 17 17:25:20 Saved as file C:\USERS\1230838\DESKTOP\PROJET-DE-5E-SESSION\BLOC3\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 12:15:36 Saved as file ~undo.max
+Tue Nov 18 12:21:04 Saved as file ~undo.max
+Tue Nov 18 12:21:24 Saved as file ~undo.max
+Tue Nov 18 12:24:26 Saved as file ~undo.max
+Tue Nov 18 12:24:37 Saved as file BACKUP1.MAX
+Tue Nov 18 12:28:32 Saved as file ~undo.max
+Tue Nov 18 12:29:06 Saved as file ~undo.max
+Tue Nov 18 12:34:37 Saved as file BACKUP1.MAX
+Tue Nov 18 12:43:29 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 12:43:54 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 12:43:56 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 12:44:43 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 12:44:57 Saved as file ~undo.max
+Tue Nov 18 12:45:00 Saved as file ~undo.max
+Tue Nov 18 12:45:24 Saved as file ~undo.max
+Tue Nov 18 12:45:31 Saved as file ~undo.max
+Tue Nov 18 12:45:37 Saved as file BACKUP1.MAX
+Tue Nov 18 12:45:45 Saved as file ~undo.max
+Tue Nov 18 12:45:47 Saved as file ~undo.max
+Tue Nov 18 12:45:51 Saved as file ~undo.max
+Tue Nov 18 12:45:55 Saved as file ~undo.max
+Tue Nov 18 12:45:57 Saved as file ~undo.max
+Tue Nov 18 12:46:06 Saved as file ~undo.max
+Tue Nov 18 12:46:09 Saved as file ~undo.max
+Tue Nov 18 12:46:11 Saved as file ~undo.max
+Tue Nov 18 12:46:16 Saved as file ~undo.max
+Tue Nov 18 12:46:18 Saved as file ~undo.max
+Tue Nov 18 12:46:20 Saved as file ~undo.max
+Tue Nov 18 12:46:53 Saved as file BACKUP1.MAX
+Tue Nov 18 12:46:54 Saved as file BACKUP1.MAX
+Tue Nov 18 12:46:54 Saved as file BACKUP1.MAX
+Tue Nov 18 12:46:54 Routed 20 connections in 1 seconds.
+Tue Nov 18 12:46:54 Total is now 60 out of 226 (26%).
+Tue Nov 18 12:46:54 Saved as file SWEEP1.MAX
+Tue Nov 18 12:46:58 Routed 70 connections in 4 seconds.
+Tue Nov 18 12:46:58 Total is now 126 out of 226 (55%).
+Tue Nov 18 12:47:15 Saved as file BACKUP1.MAX
+Tue Nov 18 12:47:15 Saved as file BACKUP1.MAX
+Tue Nov 18 12:47:15 Saved as file BACKUP1.MAX
+Tue Nov 18 12:47:15 Routed 20 connections in 1 seconds.
+Tue Nov 18 12:47:15 Total is now 71 out of 226 (31%).
+Tue Nov 18 12:47:15 Saved as file SWEEP1.MAX
+Tue Nov 18 12:47:19 Routed 84 connections in 3 seconds.
+Tue Nov 18 12:47:19 Total is now 153 out of 226 (67%).
+Tue Nov 18 12:47:32 Saved as file ~undo.max
+Tue Nov 18 12:47:35 Saved as file ~undo.max
+Tue Nov 18 12:47:41 Saved as file ~undo.max
+Tue Nov 18 12:47:44 Saved as file ~undo.max
+Tue Nov 18 12:47:47 Saved as file ~undo.max
+Tue Nov 18 12:47:55 Saved as file ~undo.max
+Tue Nov 18 12:47:58 Saved as file ~undo.max
+Tue Nov 18 12:48:03 Saved as file ~undo.max
+Tue Nov 18 12:48:08 Saved as file ~undo.max
+Tue Nov 18 12:48:09 Saved as file ~undo.max
+Tue Nov 18 12:48:19 Saved as file ~undo.max
+Tue Nov 18 12:48:22 Saved as file ~undo.max
+Tue Nov 18 12:48:27 Saved as file ~undo.max
+Tue Nov 18 12:48:29 Saved as file ~undo.max
+Tue Nov 18 12:48:33 Saved as file ~undo.max
+Tue Nov 18 12:48:39 Saved as file ~undo.max
+Tue Nov 18 12:48:42 Saved as file ~undo.max
+Tue Nov 18 12:48:52 Saved as file ~undo.max
+Tue Nov 18 12:48:53 Saved as file ~undo.max
+Tue Nov 18 12:49:22 Saved as file ~undo.max
+Tue Nov 18 12:49:37 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 12:55:38 Saved as file BACKUP1.MAX
+Tue Nov 18 13:05:38 Saved as file BACKUP1.MAX
+Tue Nov 18 13:15:38 Saved as file BACKUP1.MAX
+Tue Nov 18 13:21:59 Saved as file ~undo.max
+Tue Nov 18 13:22:02 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:22:24 Saved as file ~undo.max
+Tue Nov 18 13:22:27 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:22:44 Saved as file ~undo.max
+Tue Nov 18 13:22:45 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:26:38 Saved as file BACKUP1.MAX
+Tue Nov 18 13:29:44 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 13:32:10 Saved as file BACKUP1.MAX
+Tue Nov 18 13:32:10 Saved as file BACKUP1.MAX
+Tue Nov 18 13:32:11 Saved as file BACKUP1.MAX
+Tue Nov 18 13:32:11 Routed 23 connections in 1 seconds.
+Tue Nov 18 13:32:11 Total is now 68 out of 226 (30%).
+Tue Nov 18 13:32:11 Saved as file SWEEP1.MAX
+Tue Nov 18 13:32:14 Routed 40 connections in 3 seconds.
+Tue Nov 18 13:32:14 Total is now 106 out of 226 (46%).
+Tue Nov 18 13:33:11 Saved as file ~undo.max
+Tue Nov 18 13:41:04 Saved as file ~undo.max
+Tue Nov 18 13:41:10 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:41:25 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:41:46 Saved as file ~undo.max
+Tue Nov 18 13:41:50 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:42:49 Saved as file BACKUP1.MAX
+Tue Nov 18 13:43:44 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:44:37 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:45:26 Saved as file ~undo.max
+Tue Nov 18 13:45:36 Saved as file ~undo.max
+Tue Nov 18 13:45:38 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:45:43 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:49:37 Saved as file ~undo.max
+Tue Nov 18 13:49:41 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:49:51 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:50:08 Saved as file ~undo.max
+Tue Nov 18 13:50:48 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:51:27 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:52:07 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 13:52:18 Saved as file ~undo.max
+Tue Nov 18 13:52:23 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 13:52:47 Saved as file BACKUP1.MAX
+Tue Nov 18 13:52:47 Saved as file BACKUP1.MAX
+Tue Nov 18 13:52:48 Saved as file BACKUP1.MAX
+Tue Nov 18 13:52:48 Routed 23 connections in 0 seconds.
+Tue Nov 18 13:52:48 Total is now 23 out of 223 (10%).
+Tue Nov 18 13:52:48 Saved as file SWEEP1.MAX
+Tue Nov 18 13:52:55 Saved as file BACKUP1.MAX
+Tue Nov 18 13:52:55 Saved as file BACKUP1.MAX
+Tue Nov 18 13:52:56 Saved as file BACKUP1.MAX
+Tue Nov 18 13:52:56 Routed 199 connections in 8 seconds.
+Tue Nov 18 13:52:56 Total is now 211 out of 223 (94%).
+Tue Nov 18 13:52:56 Saved as file SWEEP2.MAX
+Tue Nov 18 13:53:02 Routed 1 connections in 6 seconds.
+Tue Nov 18 13:53:02 Total is now 212 out of 223 (95%).
+Tue Nov 18 13:53:02 Saved as file SWEEP3.MAX
+Tue Nov 18 13:53:08 Routed 2 connections in 5 seconds.
+Tue Nov 18 13:53:08 Total is now 212 out of 223 (95%).
+Tue Nov 18 13:53:08 Saved as file SWEEP4.MAX
+Tue Nov 18 13:53:39 Routed 2 connections in 8 seconds.
+Tue Nov 18 13:53:39 Total is now 214 out of 223 (95%).
+Tue Nov 18 13:53:39 Saved as file SWEEP5.MAX
+Tue Nov 18 13:53:52 Saved as file BACKUP1.MAX
+Tue Nov 18 13:53:53 Saved as file BACKUP1.MAX
+Tue Nov 18 13:53:53 Routed 33 connections in 0 seconds.
+Tue Nov 18 13:53:53 Total is now 57 out of 223 (25%).
+Tue Nov 18 13:53:53 Saved as file SWEEP1.MAX
+Tue Nov 18 13:53:54 Saved as file BACKUP1.MAX
+Tue Nov 18 13:54:00 Saved as file BACKUP1.MAX
+Tue Nov 18 13:54:00 Routed 184 connections in 7 seconds.
+Tue Nov 18 13:54:00 Total is now 218 out of 223 (97%).
+Tue Nov 18 13:54:00 Saved as file SWEEP2.MAX
+Tue Nov 18 13:54:05 Routed 1 connections in 4 seconds.
+Tue Nov 18 13:54:05 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:54:05 Saved as file SWEEP3.MAX
+Tue Nov 18 13:54:09 Routed 1 connections in 4 seconds.
+Tue Nov 18 13:54:09 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:54:09 Saved as file SWEEP4.MAX
+Tue Nov 18 13:54:13 Routed 3 connections in 3 seconds.
+Tue Nov 18 13:54:13 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:54:13 Saved as file SWEEP5.MAX
+Tue Nov 18 13:54:39 Removed unused net: VSYNC
+Tue Nov 18 13:54:39 Removed unused net: SDA1
+Tue Nov 18 13:54:39 Removed unused net: SCL1
+Tue Nov 18 13:54:39 Removed unused net: PWM4
+Tue Nov 18 13:54:39 Removed unused net: PWM3
+Tue Nov 18 13:54:39 Removed unused net: PWM2
+Tue Nov 18 13:54:39 Removed unused net: PWM1
+Tue Nov 18 13:54:39 Removed unused net: PWM0
+Tue Nov 18 13:54:39 Removed unused net: PD2
+Tue Nov 18 13:54:39 Removed unused net: PD1
+Tue Nov 18 13:54:40 Removed unused footprint: DEFAULT
+Tue Nov 18 13:54:42 Removed unused padstack: 65X65-S-M
+Tue Nov 18 13:54:42 Removed unused padstack: T7
+Tue Nov 18 13:54:42 Removed unused padstack: T2
+Tue Nov 18 13:54:42 Removed unused padstack: T1
+Tue Nov 18 13:54:45 Saved as file BACKUP1.MAX
+Tue Nov 18 13:54:56 Saved as file BACKUP1.MAX
+Tue Nov 18 13:54:56 Routed 71 connections in 20 seconds.
+Tue Nov 18 13:54:56 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:54:56 Saved as file SWEEP6.MAX
+Tue Nov 18 13:55:43 Saved as file BACKUP1.MAX
+Tue Nov 18 13:55:57 Saved as file BACKUP1.MAX
+Tue Nov 18 13:55:57 Routed 46 connections in 24 seconds.
+Tue Nov 18 13:55:57 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:55:57 Saved as file SWEEP6.MAX
+Tue Nov 18 13:56:19 Saved as file BACKUP1.MAX
+Tue Nov 18 13:57:32 Saved as file BACKUP1.MAX
+Tue Nov 18 13:57:38 Saved as file BACKUP1.MAX
+Tue Nov 18 13:57:38 Routed 49 connections in 15 seconds.
+Tue Nov 18 13:57:38 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:57:38 Saved as file SWEEP6.MAX
+Tue Nov 18 13:57:51 Saved as file BACKUP1.MAX
+Tue Nov 18 13:57:55 Saved as file BACKUP1.MAX
+Tue Nov 18 13:57:55 Routed 35 connections in 8 seconds.
+Tue Nov 18 13:57:55 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:57:55 Saved as file SWEEP6.MAX
+Tue Nov 18 13:58:16 Saved as file BACKUP1.MAX
+Tue Nov 18 13:58:21 Saved as file BACKUP1.MAX
+Tue Nov 18 13:58:21 Routed 35 connections in 8 seconds.
+Tue Nov 18 13:58:21 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:58:21 Saved as file SWEEP6.MAX
+Tue Nov 18 13:58:34 Saved as file BACKUP1.MAX
+Tue Nov 18 13:58:46 Saved as file BACKUP1.MAX
+Tue Nov 18 13:58:46 Routed 40 connections in 15 seconds.
+Tue Nov 18 13:58:46 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:58:46 Saved as file SWEEP6.MAX
+Tue Nov 18 13:59:09 Saved as file BACKUP1.MAX
+Tue Nov 18 13:59:15 Saved as file BACKUP1.MAX
+Tue Nov 18 13:59:15 Routed 39 connections in 9 seconds.
+Tue Nov 18 13:59:15 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:59:15 Saved as file SWEEP6.MAX
+Tue Nov 18 13:59:25 Saved as file BACKUP1.MAX
+Tue Nov 18 13:59:30 Saved as file BACKUP1.MAX
+Tue Nov 18 13:59:30 Routed 39 connections in 8 seconds.
+Tue Nov 18 13:59:30 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:59:30 Saved as file SWEEP6.MAX
+Tue Nov 18 13:59:41 Saved as file BACKUP1.MAX
+Tue Nov 18 13:59:45 Saved as file BACKUP1.MAX
+Tue Nov 18 13:59:45 Routed 39 connections in 6 seconds.
+Tue Nov 18 13:59:45 Total is now 219 out of 223 (98%).
+Tue Nov 18 13:59:45 Saved as file SWEEP6.MAX
+Tue Nov 18 13:59:55 Saved as file BACKUP1.MAX
+Tue Nov 18 14:00:00 Saved as file BACKUP1.MAX
+Tue Nov 18 14:00:00 Routed 39 connections in 7 seconds.
+Tue Nov 18 14:00:00 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:00:00 Saved as file SWEEP6.MAX
+Tue Nov 18 14:00:23 Saved as file BACKUP1.MAX
+Tue Nov 18 14:00:28 Saved as file BACKUP1.MAX
+Tue Nov 18 14:00:28 Routed 38 connections in 7 seconds.
+Tue Nov 18 14:00:28 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:00:28 Saved as file SWEEP6.MAX
+Tue Nov 18 14:00:42 Saved as file BACKUP1.MAX
+Tue Nov 18 14:00:47 Saved as file BACKUP1.MAX
+Tue Nov 18 14:00:47 Routed 39 connections in 7 seconds.
+Tue Nov 18 14:00:47 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:00:47 Saved as file SWEEP6.MAX
+Tue Nov 18 14:01:30 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 14:01:58 Saved as file BACKUP1.MAX
+Tue Nov 18 14:02:02 Saved as file BACKUP1.MAX
+Tue Nov 18 14:02:02 Routed 40 connections in 9 seconds.
+Tue Nov 18 14:02:02 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:02:02 Saved as file SWEEP6.MAX
+Tue Nov 18 14:02:16 Saved as file BACKUP1.MAX
+Tue Nov 18 14:02:20 Saved as file BACKUP1.MAX
+Tue Nov 18 14:02:20 Routed 36 connections in 8 seconds.
+Tue Nov 18 14:02:20 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:02:20 Saved as file SWEEP6.MAX
+Tue Nov 18 14:03:34 No new connections routed.
+Tue Nov 18 14:03:34 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:03:34 Saved as file SWEEP1.MAX
+Tue Nov 18 14:03:34 Saved as file BACKUP1.MAX
+Tue Nov 18 14:03:34 Saved as file BACKUP1.MAX
+Tue Nov 18 14:03:34 No new connections routed.
+Tue Nov 18 14:03:34 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:03:34 Saved as file SWEEP2.MAX
+Tue Nov 18 14:03:36 No new connections routed.
+Tue Nov 18 14:03:36 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:03:36 Saved as file SWEEP3.MAX
+Tue Nov 18 14:03:39 Routed 2 connections in 2 seconds.
+Tue Nov 18 14:03:39 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:03:39 Saved as file SWEEP4.MAX
+Tue Nov 18 14:03:42 Routed 1 connections in 3 seconds.
+Tue Nov 18 14:03:42 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:03:42 Saved as file SWEEP5.MAX
+Tue Nov 18 14:04:27 Saved as file BACKUP1.MAX
+Tue Nov 18 14:04:27 Saved as file BACKUP1.MAX
+Tue Nov 18 14:04:27 Routed 22 connections in 0 seconds.
+Tue Nov 18 14:04:27 Total is now 116 out of 223 (52%).
+Tue Nov 18 14:04:27 Saved as file SWEEP1.MAX
+Tue Nov 18 14:04:28 Saved as file BACKUP1.MAX
+Tue Nov 18 14:04:31 Saved as file BACKUP1.MAX
+Tue Nov 18 14:04:31 Routed 124 connections in 3 seconds.
+Tue Nov 18 14:04:31 Total is now 217 out of 223 (97%).
+Tue Nov 18 14:04:31 Saved as file SWEEP2.MAX
+Tue Nov 18 14:04:33 Routed 2 connections in 2 seconds.
+Tue Nov 18 14:04:33 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:04:33 Saved as file SWEEP3.MAX
+Tue Nov 18 14:04:35 No new connections routed.
+Tue Nov 18 14:04:35 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:04:35 Saved as file SWEEP4.MAX
+Tue Nov 18 14:04:38 No new connections routed.
+Tue Nov 18 14:04:38 Total is now 219 out of 223 (98%).
+Tue Nov 18 14:04:38 Saved as file SWEEP5.MAX
+Tue Nov 18 14:08:20 Saved as file BACKUP1.MAX
+Tue Nov 18 14:08:52 Saved as file ~undo.max
+Tue Nov 18 14:09:49 Saved as file ~undo.max
+Tue Nov 18 14:09:55 Saved as file ~undo.max
+Tue Nov 18 14:09:57 Saved as file ~undo.max
+Tue Nov 18 14:10:14 Saved as file BACKUP1.MAX
+Tue Nov 18 14:10:14 Saved as file BACKUP1.MAX
+Tue Nov 18 14:10:14 Routed 20 connections in 0 seconds.
+Tue Nov 18 14:10:14 Total is now 115 out of 223 (51%).
+Tue Nov 18 14:10:14 Saved as file SWEEP1.MAX
+Tue Nov 18 14:10:16 Saved as file BACKUP1.MAX
+Tue Nov 18 14:10:18 Routed 100 connections in 3 seconds.
+Tue Nov 18 14:10:18 Total is now 193 out of 223 (86%).
+Tue Nov 18 14:13:03 Saved as file ~undo.max
+Tue Nov 18 14:13:12 Saved as file BACKUP1.MAX
+Tue Nov 18 14:13:13 Saved as file BACKUP1.MAX
+Tue Nov 18 14:13:13 Routed 25 connections in 0 seconds.
+Tue Nov 18 14:13:13 Total is now 25 out of 223 (11%).
+Tue Nov 18 14:13:13 Saved as file SWEEP1.MAX
+Tue Nov 18 14:13:14 Saved as file BACKUP1.MAX
+Tue Nov 18 14:13:19 Saved as file BACKUP1.MAX
+Tue Nov 18 14:13:19 Routed 216 connections in 6 seconds.
+Tue Nov 18 14:13:19 Total is now 220 out of 223 (98%).
+Tue Nov 18 14:13:19 Saved as file SWEEP2.MAX
+Tue Nov 18 14:13:21 No new connections routed.
+Tue Nov 18 14:13:21 Total is now 220 out of 223 (98%).
+Tue Nov 18 14:13:21 Saved as file SWEEP3.MAX
+Tue Nov 18 14:13:23 No new connections routed.
+Tue Nov 18 14:13:23 Total is now 220 out of 223 (98%).
+Tue Nov 18 14:13:23 Saved as file SWEEP4.MAX
+Tue Nov 18 14:13:26 No new connections routed.
+Tue Nov 18 14:13:26 Total is now 220 out of 223 (98%).
+Tue Nov 18 14:13:26 Saved as file SWEEP5.MAX
+Tue Nov 18 14:14:09 Saved as file ~undo.max
+Tue Nov 18 14:14:19 Saved as file BACKUP1.MAX
+Tue Nov 18 14:14:19 Saved as file BACKUP1.MAX
+Tue Nov 18 14:14:19 Routed 22 connections in 0 seconds.
+Tue Nov 18 14:14:19 Total is now 124 out of 225 (55%).
+Tue Nov 18 14:14:19 Saved as file SWEEP1.MAX
+Tue Nov 18 14:14:20 Saved as file BACKUP1.MAX
+Tue Nov 18 14:14:23 Saved as file BACKUP1.MAX
+Tue Nov 18 14:14:23 Routed 117 connections in 3 seconds.
+Tue Nov 18 14:14:23 Total is now 221 out of 225 (98%).
+Tue Nov 18 14:14:23 Saved as file SWEEP2.MAX
+Tue Nov 18 14:14:24 No new connections routed.
+Tue Nov 18 14:14:24 Total is now 221 out of 225 (98%).
+Tue Nov 18 14:14:24 Saved as file SWEEP3.MAX
+Tue Nov 18 14:14:25 No new connections routed.
+Tue Nov 18 14:14:25 Total is now 221 out of 225 (98%).
+Tue Nov 18 14:14:25 Saved as file SWEEP4.MAX
+Tue Nov 18 14:14:27 No new connections routed.
+Tue Nov 18 14:14:27 Total is now 221 out of 225 (98%).
+Tue Nov 18 14:14:27 Saved as file SWEEP5.MAX
+Tue Nov 18 14:17:03 Saved as file ~undo.max
+Tue Nov 18 14:17:25 Saved as file BACKUP1.MAX
+Tue Nov 18 14:17:25 Saved as file BACKUP1.MAX
+Tue Nov 18 14:17:25 Routed 21 connections in 0 seconds.
+Tue Nov 18 14:17:25 Total is now 115 out of 225 (51%).
+Tue Nov 18 14:17:25 Saved as file SWEEP1.MAX
+Tue Nov 18 14:17:27 Saved as file BACKUP1.MAX
+Tue Nov 18 14:17:31 Saved as file BACKUP1.MAX
+Tue Nov 18 14:17:31 Routed 126 connections in 5 seconds.
+Tue Nov 18 14:17:31 Total is now 221 out of 225 (98%).
+Tue Nov 18 14:17:31 Saved as file SWEEP2.MAX
+Tue Nov 18 14:17:35 No new connections routed.
+Tue Nov 18 14:17:35 Total is now 221 out of 225 (98%).
+Tue Nov 18 14:17:35 Saved as file SWEEP3.MAX
+Tue Nov 18 14:17:42 Routed 1 connections in 6 seconds.
+Tue Nov 18 14:17:42 Total is now 222 out of 225 (98%).
+Tue Nov 18 14:17:42 Saved as file SWEEP4.MAX
+Tue Nov 18 14:17:43 Routed 1 connections in 1 seconds.
+Tue Nov 18 14:17:43 Total is now 222 out of 225 (98%).
+Tue Nov 18 14:17:43 Saved as file SWEEP5.MAX
+Tue Nov 18 14:18:20 Saved as file BACKUP1.MAX
+Tue Nov 18 14:20:21 Saved as file ~undo.max
+Tue Nov 18 14:20:44 Saved as file ~undo.max
+Tue Nov 18 14:20:47 Saved as file ~undo.max
+Tue Nov 18 14:20:49 Saved as file ~undo.max
+Tue Nov 18 14:21:02 Saved as file ~undo.max
+Tue Nov 18 14:21:58 Saved as file BACKUP1.MAX
+Tue Nov 18 14:21:58 Saved as file BACKUP1.MAX
+Tue Nov 18 14:21:58 Routed 21 connections in 0 seconds.
+Tue Nov 18 14:21:58 Total is now 115 out of 224 (51%).
+Tue Nov 18 14:21:58 Saved as file SWEEP1.MAX
+Tue Nov 18 14:22:00 Saved as file BACKUP1.MAX
+Tue Nov 18 14:22:03 Saved as file BACKUP1.MAX
+Tue Nov 18 14:22:03 Routed 128 connections in 4 seconds.
+Tue Nov 18 14:22:03 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:22:03 Saved as file SWEEP2.MAX
+Tue Nov 18 14:22:04 No new connections routed.
+Tue Nov 18 14:22:04 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:22:04 Saved as file SWEEP3.MAX
+Tue Nov 18 14:22:05 Routed 1 connections in 1 seconds.
+Tue Nov 18 14:22:05 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:22:05 Saved as file SWEEP4.MAX
+Tue Nov 18 14:22:07 No new connections routed.
+Tue Nov 18 14:22:07 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:22:07 Saved as file SWEEP5.MAX
+Tue Nov 18 14:22:51 Saved as file BACKUP1.MAX
+Tue Nov 18 14:22:52 Saved as file BACKUP1.MAX
+Tue Nov 18 14:22:52 Routed 36 connections in 0 seconds.
+Tue Nov 18 14:22:52 Total is now 36 out of 224 (16%).
+Tue Nov 18 14:22:52 Saved as file SWEEP1.MAX
+Tue Nov 18 14:22:54 Saved as file BACKUP1.MAX
+Tue Nov 18 14:22:59 Saved as file BACKUP1.MAX
+Tue Nov 18 14:22:59 Routed 205 connections in 7 seconds.
+Tue Nov 18 14:22:59 Total is now 220 out of 224 (98%).
+Tue Nov 18 14:22:59 Saved as file SWEEP2.MAX
+Tue Nov 18 14:23:01 Routed 1 connections in 1 seconds.
+Tue Nov 18 14:23:01 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:23:01 Saved as file SWEEP3.MAX
+Tue Nov 18 14:23:02 Routed 1 connections in 1 seconds.
+Tue Nov 18 14:23:02 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:23:02 Saved as file SWEEP4.MAX
+Tue Nov 18 14:23:04 No new connections routed.
+Tue Nov 18 14:23:04 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:23:04 Saved as file SWEEP5.MAX
+Tue Nov 18 14:26:34 Saved as file BACKUP1.MAX
+Tue Nov 18 14:26:34 Saved as file BACKUP1.MAX
+Tue Nov 18 14:26:34 Routed 36 connections in 0 seconds.
+Tue Nov 18 14:26:34 Total is now 38 out of 224 (16%).
+Tue Nov 18 14:26:34 Saved as file SWEEP1.MAX
+Tue Nov 18 14:26:36 Saved as file BACKUP1.MAX
+Tue Nov 18 14:26:42 Saved as file BACKUP1.MAX
+Tue Nov 18 14:26:42 Routed 204 connections in 7 seconds.
+Tue Nov 18 14:26:42 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:26:42 Saved as file SWEEP2.MAX
+Tue Nov 18 14:26:43 Routed 1 connections in 1 seconds.
+Tue Nov 18 14:26:43 Total is now 222 out of 224 (99%).
+Tue Nov 18 14:26:43 Saved as file SWEEP3.MAX
+Tue Nov 18 14:26:44 No new connections routed.
+Tue Nov 18 14:26:44 Total is now 222 out of 224 (99%).
+Tue Nov 18 14:26:44 Saved as file SWEEP4.MAX
+Tue Nov 18 14:26:44 No new connections routed.
+Tue Nov 18 14:26:44 Total is now 222 out of 224 (99%).
+Tue Nov 18 14:26:44 Saved as file SWEEP5.MAX
+Tue Nov 18 14:27:01 Saved as file BACKUP1.MAX
+Tue Nov 18 14:27:07 Saved as file BACKUP1.MAX
+Tue Nov 18 14:27:07 Routed 69 connections in 11 seconds.
+Tue Nov 18 14:27:07 Total is now 222 out of 224 (99%).
+Tue Nov 18 14:27:07 Saved as file SWEEP6.MAX
+Tue Nov 18 14:55:05 Saved as file BACKUP1.MAX
+Tue Nov 18 14:55:05 Saved as file BACKUP1.MAX
+Tue Nov 18 14:55:05 Routed 38 connections in 0 seconds.
+Tue Nov 18 14:55:05 Total is now 38 out of 224 (16%).
+Tue Nov 18 14:55:05 Saved as file SWEEP1.MAX
+Tue Nov 18 14:55:07 Saved as file BACKUP1.MAX
+Tue Nov 18 14:55:12 Saved as file BACKUP1.MAX
+Tue Nov 18 14:55:12 Routed 203 connections in 6 seconds.
+Tue Nov 18 14:55:12 Total is now 220 out of 224 (98%).
+Tue Nov 18 14:55:12 Saved as file SWEEP2.MAX
+Tue Nov 18 14:55:14 Routed 2 connections in 1 seconds.
+Tue Nov 18 14:55:14 Total is now 222 out of 224 (99%).
+Tue Nov 18 14:55:14 Saved as file SWEEP3.MAX
+Tue Nov 18 14:55:15 Routed 2 connections in 1 seconds.
+Tue Nov 18 14:55:15 Total is now 223 out of 224 (99%).
+Tue Nov 18 14:55:15 Saved as file SWEEP4.MAX
+Tue Nov 18 14:55:16 No new connections routed.
+Tue Nov 18 14:55:16 Total is now 223 out of 224 (99%).
+Tue Nov 18 14:55:16 Saved as file SWEEP5.MAX
+Tue Nov 18 14:56:05 Loaded file C:\OrCAD\OrCAD_16.2\tools\Layout\library\padstack.llb
+Tue Nov 18 14:56:19 Saved as file BACKUP1.MAX
+Tue Nov 18 14:56:19 Saved as file BACKUP1.MAX
+Tue Nov 18 14:56:19 Routed 39 connections in 0 seconds.
+Tue Nov 18 14:56:19 Total is now 39 out of 224 (17%).
+Tue Nov 18 14:56:19 Saved as file SWEEP1.MAX
+Tue Nov 18 14:56:21 Saved as file BACKUP1.MAX
+Tue Nov 18 14:56:25 Saved as file BACKUP1.MAX
+Tue Nov 18 14:56:25 Routed 208 connections in 5 seconds.
+Tue Nov 18 14:56:25 Total is now 221 out of 224 (98%).
+Tue Nov 18 14:56:25 Saved as file SWEEP2.MAX
+Tue Nov 18 14:56:26 Routed 3 connections in 1 seconds.
+Tue Nov 18 14:56:26 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:56:26 Saved as file SWEEP3.MAX
+Tue Nov 18 14:56:26 No new connections routed.
+Tue Nov 18 14:56:26 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:56:26 Saved as file SWEEP4.MAX
+Tue Nov 18 14:56:26 No new connections routed.
+Tue Nov 18 14:56:26 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:56:26 Saved as file SWEEP5.MAX
+Tue Nov 18 14:56:43 Saved as file BACKUP1.MAX
+Tue Nov 18 14:56:50 Saved as file BACKUP1.MAX
+Tue Nov 18 14:56:50 Routed 68 connections in 10 seconds.
+Tue Nov 18 14:56:50 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:56:50 Saved as file SWEEP6.MAX
+Tue Nov 18 14:57:01 Saved as file BACKUP1.MAX
+Tue Nov 18 14:57:07 Saved as file BACKUP1.MAX
+Tue Nov 18 14:57:07 Routed 51 connections in 9 seconds.
+Tue Nov 18 14:57:07 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:57:07 Saved as file SWEEP6.MAX
+Tue Nov 18 14:57:27 Saved as file BACKUP1.MAX
+Tue Nov 18 14:57:32 Saved as file BACKUP1.MAX
+Tue Nov 18 14:57:32 Routed 52 connections in 8 seconds.
+Tue Nov 18 14:57:32 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:57:32 Saved as file SWEEP6.MAX
+Tue Nov 18 14:57:47 Saved as file BACKUP1.MAX
+Tue Nov 18 14:57:53 Saved as file BACKUP1.MAX
+Tue Nov 18 14:57:53 Routed 49 connections in 8 seconds.
+Tue Nov 18 14:57:53 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:57:53 Saved as file SWEEP6.MAX
+Tue Nov 18 14:58:33 Saved as file BACKUP1.MAX
+Tue Nov 18 14:58:39 Saved as file BACKUP1.MAX
+Tue Nov 18 14:58:39 Routed 49 connections in 9 seconds.
+Tue Nov 18 14:58:39 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:58:39 Saved as file SWEEP6.MAX
+Tue Nov 18 14:59:04 No new connections routed.
+Tue Nov 18 14:59:04 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:59:04 Saved as file SWEEP1.MAX
+Tue Nov 18 14:59:05 No new connections routed.
+Tue Nov 18 14:59:05 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:59:05 Saved as file SWEEP2.MAX
+Tue Nov 18 14:59:05 No new connections routed.
+Tue Nov 18 14:59:05 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:59:05 Saved as file SWEEP3.MAX
+Tue Nov 18 14:59:06 No new connections routed.
+Tue Nov 18 14:59:06 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:59:06 Saved as file SWEEP4.MAX
+Tue Nov 18 14:59:06 No new connections routed.
+Tue Nov 18 14:59:06 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:59:06 Saved as file SWEEP5.MAX
+Tue Nov 18 14:59:21 Saved as file BACKUP1.MAX
+Tue Nov 18 14:59:27 Saved as file BACKUP1.MAX
+Tue Nov 18 14:59:27 Routed 51 connections in 9 seconds.
+Tue Nov 18 14:59:27 Total is now 224 out of 224 (100%).
+Tue Nov 18 14:59:27 Saved as file SWEEP6.MAX
+Tue Nov 18 15:00:06 Saved as file BACKUP1.MAX
+Tue Nov 18 15:00:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:00:12 Routed 49 connections in 8 seconds.
+Tue Nov 18 15:00:12 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:00:12 Saved as file SWEEP6.MAX
+Tue Nov 18 15:00:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:01:12 Saved as file ~undo.max
+Tue Nov 18 15:02:06 Saved as file BACKUP1.MAX
+Tue Nov 18 15:02:14 Saved as file BACKUP1.MAX
+Tue Nov 18 15:02:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:02:31 Saved as file BACKUP1.MAX
+Tue Nov 18 15:02:41 Saved as file BACKUP1.MAX
+Tue Nov 18 15:02:52 Saved as file BACKUP1.MAX
+Tue Nov 18 15:02:52 Routed 109 connections in 56 seconds.
+Tue Nov 18 15:02:52 Total is now 222 out of 223 (99%).
+Tue Nov 18 15:02:52 Saved as file SWEEP6.MAX
+Tue Nov 18 15:03:06 No new connections routed.
+Tue Nov 18 15:03:06 Total is now 222 out of 223 (99%).
+Tue Nov 18 15:03:06 Saved as file SWEEP1.MAX
+Tue Nov 18 15:03:07 Saved as file BACKUP1.MAX
+Tue Nov 18 15:03:07 Saved as file BACKUP1.MAX
+Tue Nov 18 15:03:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:03:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:03:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:03:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:03:08 Routed 1 connections in 1 seconds.
+Tue Nov 18 15:03:08 Total is now 223 out of 223 (100%).
+Tue Nov 18 15:03:08 Saved as file SWEEP2.MAX
+Tue Nov 18 15:03:09 No new connections routed.
+Tue Nov 18 15:03:09 Total is now 223 out of 223 (100%).
+Tue Nov 18 15:03:09 Saved as file SWEEP3.MAX
+Tue Nov 18 15:03:09 No new connections routed.
+Tue Nov 18 15:03:09 Total is now 223 out of 223 (100%).
+Tue Nov 18 15:03:09 Saved as file SWEEP4.MAX
+Tue Nov 18 15:03:10 No new connections routed.
+Tue Nov 18 15:03:10 Total is now 223 out of 223 (100%).
+Tue Nov 18 15:03:10 Saved as file SWEEP5.MAX
+Tue Nov 18 15:03:47 Saved as file BACKUP1.MAX
+Tue Nov 18 15:03:56 Saved as file BACKUP1.MAX
+Tue Nov 18 15:04:03 Saved as file BACKUP1.MAX
+Tue Nov 18 15:04:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:04:20 Saved as file BACKUP1.MAX
+Tue Nov 18 15:06:48 Saved as file BACKUP1.MAX
+Tue Nov 18 15:06:48 Routed 91 connections in  3.2 minutes.
+Tue Nov 18 15:06:48 Total is now 223 out of 223 (100%).
+Tue Nov 18 15:06:48 Saved as file SWEEP6.MAX
+Tue Nov 18 15:07:59 Saved as file ~undo.max
+Tue Nov 18 15:09:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:09:19 Saved as file BACKUP1.MAX
+Tue Nov 18 15:09:27 Saved as file BACKUP1.MAX
+Tue Nov 18 15:09:27 Routed 66 connections in 25 seconds.
+Tue Nov 18 15:09:27 Total is now 223 out of 223 (100%).
+Tue Nov 18 15:09:27 Saved as file SWEEP6.MAX
+Tue Nov 18 15:10:05 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 15:11:06 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 15:11:07 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 15:11:31 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 15:11:50 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 15:12:51 Saved as file BACKUP1.MAX
+Tue Nov 18 15:15:30 Saved as file ~undo.max
+Tue Nov 18 15:16:46 No new connections routed.
+Tue Nov 18 15:16:46 Total is now 222 out of 224 (99%).
+Tue Nov 18 15:16:46 Saved as file SWEEP1.MAX
+Tue Nov 18 15:16:46 Saved as file BACKUP1.MAX
+Tue Nov 18 15:16:47 Saved as file BACKUP1.MAX
+Tue Nov 18 15:16:47 Routed 2 connections in 0 seconds.
+Tue Nov 18 15:16:47 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:16:47 Saved as file SWEEP2.MAX
+Tue Nov 18 15:16:47 No new connections routed.
+Tue Nov 18 15:16:47 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:16:47 Saved as file SWEEP3.MAX
+Tue Nov 18 15:16:47 No new connections routed.
+Tue Nov 18 15:16:47 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:16:47 Saved as file SWEEP4.MAX
+Tue Nov 18 15:16:48 No new connections routed.
+Tue Nov 18 15:16:48 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:16:48 Saved as file SWEEP5.MAX
+Tue Nov 18 15:17:42 Saved as file BACKUP1.MAX
+Tue Nov 18 15:17:43 Saved as file BACKUP1.MAX
+Tue Nov 18 15:17:43 Routed 21 connections in 0 seconds.
+Tue Nov 18 15:17:43 Total is now 114 out of 224 (50%).
+Tue Nov 18 15:17:43 Saved as file SWEEP1.MAX
+Tue Nov 18 15:17:44 Saved as file BACKUP1.MAX
+Tue Nov 18 15:17:47 Saved as file BACKUP1.MAX
+Tue Nov 18 15:17:47 Routed 130 connections in 4 seconds.
+Tue Nov 18 15:17:47 Total is now 222 out of 224 (99%).
+Tue Nov 18 15:17:47 Saved as file SWEEP2.MAX
+Tue Nov 18 15:17:49 Routed 2 connections in 1 seconds.
+Tue Nov 18 15:17:49 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:17:49 Saved as file SWEEP3.MAX
+Tue Nov 18 15:17:49 No new connections routed.
+Tue Nov 18 15:17:49 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:17:49 Saved as file SWEEP4.MAX
+Tue Nov 18 15:17:49 No new connections routed.
+Tue Nov 18 15:17:49 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:17:49 Saved as file SWEEP5.MAX
+Tue Nov 18 15:18:38 Saved as file BACKUP1.MAX
+Tue Nov 18 15:18:39 Saved as file BACKUP1.MAX
+Tue Nov 18 15:18:39 Routed 26 connections in 0 seconds.
+Tue Nov 18 15:18:39 Total is now 50 out of 224 (22%).
+Tue Nov 18 15:18:39 Saved as file SWEEP1.MAX
+Tue Nov 18 15:18:42 Saved as file BACKUP1.MAX
+Tue Nov 18 15:18:56 Saved as file BACKUP1.MAX
+Tue Nov 18 15:18:56 Routed 182 connections in 17 seconds.
+Tue Nov 18 15:18:56 Total is now 208 out of 224 (92%).
+Tue Nov 18 15:18:56 Saved as file SWEEP2.MAX
+Tue Nov 18 15:19:12 Routed 2 connections in 15 seconds.
+Tue Nov 18 15:19:12 Total is now 210 out of 224 (93%).
+Tue Nov 18 15:19:12 Saved as file SWEEP3.MAX
+Tue Nov 18 15:19:29 No new connections routed.
+Tue Nov 18 15:19:29 Total is now 210 out of 224 (93%).
+Tue Nov 18 15:19:29 Saved as file SWEEP1.MAX
+Tue Nov 18 15:19:36 Saved as file BACKUP1.MAX
+Tue Nov 18 15:19:37 Saved as file BACKUP1.MAX
+Tue Nov 18 15:19:37 Saved as file BACKUP1.MAX
+Tue Nov 18 15:19:37 Routed 9 connections in 8 seconds.
+Tue Nov 18 15:19:37 Total is now 211 out of 224 (94%).
+Tue Nov 18 15:19:37 Saved as file SWEEP2.MAX
+Tue Nov 18 15:19:48 Routed 5 connections in 10 seconds.
+Tue Nov 18 15:19:48 Total is now 216 out of 224 (96%).
+Tue Nov 18 15:19:48 Saved as file SWEEP3.MAX
+Tue Nov 18 15:20:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:20:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:20:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:20:21 Routed 43 connections in 0 seconds.
+Tue Nov 18 15:20:21 Total is now 43 out of 224 (19%).
+Tue Nov 18 15:20:21 Saved as file SWEEP1.MAX
+Tue Nov 18 15:20:37 Saved as file BACKUP1.MAX
+Tue Nov 18 15:20:45 Saved as file BACKUP1.MAX
+Tue Nov 18 15:20:45 Saved as file BACKUP1.MAX
+Tue Nov 18 15:20:45 Routed 181 connections in 23 seconds.
+Tue Nov 18 15:20:45 Total is now 207 out of 224 (92%).
+Tue Nov 18 15:20:45 Saved as file SWEEP2.MAX
+Tue Nov 18 15:21:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:21:27 Saved as file BACKUP1.MAX
+Tue Nov 18 15:21:29 Saved as file BACKUP1.MAX
+Tue Nov 18 15:21:29 Routed 71 connections in 14 seconds.
+Tue Nov 18 15:21:29 Total is now 211 out of 224 (94%).
+Tue Nov 18 15:21:29 Saved as file SWEEP6.MAX
+Tue Nov 18 15:21:45 Saved as file BACKUP1.MAX
+Tue Nov 18 15:21:51 Saved as file BACKUP1.MAX
+Tue Nov 18 15:21:52 Saved as file BACKUP1.MAX
+Tue Nov 18 15:21:52 Routed 47 connections in 13 seconds.
+Tue Nov 18 15:21:52 Total is now 211 out of 224 (94%).
+Tue Nov 18 15:21:52 Saved as file SWEEP6.MAX
+Tue Nov 18 15:22:04 No new connections routed.
+Tue Nov 18 15:22:04 Total is now 211 out of 224 (94%).
+Tue Nov 18 15:22:04 Saved as file SWEEP1.MAX
+Tue Nov 18 15:22:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:22:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:22:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:22:12 Routed 3 connections in 7 seconds.
+Tue Nov 18 15:22:12 Total is now 214 out of 224 (95%).
+Tue Nov 18 15:22:12 Saved as file SWEEP2.MAX
+Tue Nov 18 15:22:41 Saved as file BACKUP1.MAX
+Tue Nov 18 15:22:41 Saved as file BACKUP1.MAX
+Tue Nov 18 15:22:41 Routed 25 connections in 0 seconds.
+Tue Nov 18 15:22:41 Total is now 26 out of 224 (11%).
+Tue Nov 18 15:22:41 Saved as file SWEEP1.MAX
+Tue Nov 18 15:22:53 Saved as file BACKUP1.MAX
+Tue Nov 18 15:23:05 Saved as file BACKUP1.MAX
+Tue Nov 18 15:23:05 Routed 202 connections in 23 seconds.
+Tue Nov 18 15:23:05 Total is now 204 out of 224 (91%).
+Tue Nov 18 15:23:05 Saved as file SWEEP2.MAX
+Tue Nov 18 15:23:52 Saved as file BACKUP1.MAX
+Tue Nov 18 15:23:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:23:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:23:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:23:58 Routed 44 connections in 0 seconds.
+Tue Nov 18 15:23:58 Total is now 44 out of 224 (19%).
+Tue Nov 18 15:23:58 Saved as file SWEEP1.MAX
+Tue Nov 18 15:24:04 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:05 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:05 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:05 Routed 190 connections in 6 seconds.
+Tue Nov 18 15:24:05 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:24:05 Saved as file SWEEP2.MAX
+Tue Nov 18 15:24:06 No new connections routed.
+Tue Nov 18 15:24:06 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:24:06 Saved as file SWEEP3.MAX
+Tue Nov 18 15:24:06 No new connections routed.
+Tue Nov 18 15:24:06 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:24:06 Saved as file SWEEP4.MAX
+Tue Nov 18 15:24:06 No new connections routed.
+Tue Nov 18 15:24:06 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:24:06 Saved as file SWEEP5.MAX
+Tue Nov 18 15:24:27 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:30 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:36 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:36 Routed 71 connections in 16 seconds.
+Tue Nov 18 15:24:36 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:24:36 Saved as file SWEEP6.MAX
+Tue Nov 18 15:24:53 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:55 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:24:58 Routed 49 connections in 11 seconds.
+Tue Nov 18 15:24:58 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:24:58 Saved as file SWEEP6.MAX
+Tue Nov 18 15:25:18 Saved as file BACKUP1.MAX
+Tue Nov 18 15:25:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:25:23 Saved as file BACKUP1.MAX
+Tue Nov 18 15:25:23 Routed 48 connections in 11 seconds.
+Tue Nov 18 15:25:23 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:25:23 Saved as file SWEEP6.MAX
+Tue Nov 18 15:26:22 Saved as file BACKUP1.MAX
+Tue Nov 18 15:26:23 Saved as file BACKUP1.MAX
+Tue Nov 18 15:26:28 Saved as file BACKUP1.MAX
+Tue Nov 18 15:26:30 Saved as file BACKUP1.MAX
+Tue Nov 18 15:26:30 Routed 61 connections in 11 seconds.
+Tue Nov 18 15:26:30 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:26:30 Saved as file SWEEP6.MAX
+Tue Nov 18 15:27:47 No new connections routed.
+Tue Nov 18 15:27:47 Total is now 219 out of 224 (97%).
+Tue Nov 18 15:27:47 Saved as file SWEEP1.MAX
+Tue Nov 18 15:27:48 Saved as file BACKUP1.MAX
+Tue Nov 18 15:27:48 Saved as file BACKUP1.MAX
+Tue Nov 18 15:27:48 Routed 6 connections in 0 seconds.
+Tue Nov 18 15:27:48 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:27:48 Saved as file SWEEP2.MAX
+Tue Nov 18 15:27:48 No new connections routed.
+Tue Nov 18 15:27:48 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:27:48 Saved as file SWEEP3.MAX
+Tue Nov 18 15:27:49 No new connections routed.
+Tue Nov 18 15:27:49 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:27:49 Saved as file SWEEP4.MAX
+Tue Nov 18 15:27:49 No new connections routed.
+Tue Nov 18 15:27:49 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:27:49 Saved as file SWEEP5.MAX
+Tue Nov 18 15:28:34 Saved as file BACKUP1.MAX
+Tue Nov 18 15:28:35 Saved as file BACKUP1.MAX
+Tue Nov 18 15:28:35 Routed 28 connections in 0 seconds.
+Tue Nov 18 15:28:35 Total is now 61 out of 224 (27%).
+Tue Nov 18 15:28:35 Saved as file SWEEP1.MAX
+Tue Nov 18 15:28:36 Saved as file BACKUP1.MAX
+Tue Nov 18 15:28:42 Saved as file BACKUP1.MAX
+Tue Nov 18 15:28:42 Routed 182 connections in 6 seconds.
+Tue Nov 18 15:28:42 Total is now 223 out of 224 (99%).
+Tue Nov 18 15:28:42 Saved as file SWEEP2.MAX
+Tue Nov 18 15:28:44 No new connections routed.
+Tue Nov 18 15:28:44 Total is now 223 out of 224 (99%).
+Tue Nov 18 15:28:44 Saved as file SWEEP3.MAX
+Tue Nov 18 15:28:48 Routed 1 connections in 4 seconds.
+Tue Nov 18 15:28:48 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:28:48 Saved as file SWEEP4.MAX
+Tue Nov 18 15:28:49 No new connections routed.
+Tue Nov 18 15:28:49 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:28:49 Saved as file SWEEP5.MAX
+Tue Nov 18 15:30:07 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:07 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:07 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:07 Routed 4 connections in 1 seconds.
+Tue Nov 18 15:30:07 Total is now 196 out of 224 (87%).
+Tue Nov 18 15:30:07 Saved as file SWEEP1.MAX
+Tue Nov 18 15:30:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:09 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:09 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:09 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:09 Routed 29 connections in 2 seconds.
+Tue Nov 18 15:30:09 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:30:09 Saved as file SWEEP2.MAX
+Tue Nov 18 15:30:10 No new connections routed.
+Tue Nov 18 15:30:10 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:30:10 Saved as file SWEEP3.MAX
+Tue Nov 18 15:30:10 No new connections routed.
+Tue Nov 18 15:30:10 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:30:10 Saved as file SWEEP4.MAX
+Tue Nov 18 15:30:11 No new connections routed.
+Tue Nov 18 15:30:11 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:30:11 Saved as file SWEEP5.MAX
+Tue Nov 18 15:30:36 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:40 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:42 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:45 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:50 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:50 Saved as file BACKUP1.MAX
+Tue Nov 18 15:30:50 Routed 115 connections in 20 seconds.
+Tue Nov 18 15:30:50 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:30:50 Saved as file SWEEP6.MAX
+Tue Nov 18 15:31:10 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:14 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:16 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:20 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:23 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:24 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:24 Routed 113 connections in 19 seconds.
+Tue Nov 18 15:31:24 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:31:24 Saved as file SWEEP6.MAX
+Tue Nov 18 15:31:55 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:31:59 Saved as file BACKUP1.MAX
+Tue Nov 18 15:32:03 Saved as file BACKUP1.MAX
+Tue Nov 18 15:32:06 Saved as file BACKUP1.MAX
+Tue Nov 18 15:32:06 Saved as file BACKUP1.MAX
+Tue Nov 18 15:32:06 Routed 113 connections in 18 seconds.
+Tue Nov 18 15:32:06 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:32:06 Saved as file SWEEP6.MAX
+Tue Nov 18 15:32:34 Saved as file BACKUP1.MAX
+Tue Nov 18 15:32:34 No new connections routed.
+Tue Nov 18 15:32:34 Total is now 0 out of 224 (0%).
+Tue Nov 18 15:32:34 Saved as file SWEEP6.MAX
+Tue Nov 18 15:32:42 Saved as file BACKUP1.MAX
+Tue Nov 18 15:32:42 Routed 24 connections in 0 seconds.
+Tue Nov 18 15:32:42 Total is now 24 out of 224 (10%).
+Tue Nov 18 15:32:42 Saved as file SWEEP1.MAX
+Tue Nov 18 15:32:45 Saved as file BACKUP1.MAX
+Tue Nov 18 15:32:45 Routed 159 connections in 2 seconds.
+Tue Nov 18 15:32:45 Total is now 183 out of 224 (81%).
+Tue Nov 18 15:32:45 Saved as file SWEEP2.MAX
+Tue Nov 18 15:32:58 Routed 1 connections in 13 seconds.
+Tue Nov 18 15:32:58 Total is now 184 out of 224 (82%).
+Tue Nov 18 15:32:58 Saved as file SWEEP3.MAX
+Tue Nov 18 15:33:48 Routed 40 connections in 24 seconds.
+Tue Nov 18 15:33:48 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:33:48 Saved as file SWEEP4.MAX
+Tue Nov 18 15:33:48 No new connections routed.
+Tue Nov 18 15:33:48 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:33:48 Saved as file SWEEP5.MAX
+Tue Nov 18 15:34:29 Saved as file BACKUP1.MAX
+Tue Nov 18 15:34:29 Routed 33 connections in 7 seconds.
+Tue Nov 18 15:34:29 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:34:45 Saved as file BACKUP1.MAX
+Tue Nov 18 15:34:51 Saved as file BACKUP1.MAX
+Tue Nov 18 15:34:55 Saved as file BACKUP1.MAX
+Tue Nov 18 15:34:55 Routed 48 connections in 13 seconds.
+Tue Nov 18 15:34:55 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:34:55 Saved as file SWEEP6.MAX
+Tue Nov 18 15:35:09 Saved as file BACKUP1.MAX
+Tue Nov 18 15:35:16 Saved as file BACKUP1.MAX
+Tue Nov 18 15:35:19 Saved as file BACKUP1.MAX
+Tue Nov 18 15:35:19 Routed 45 connections in 13 seconds.
+Tue Nov 18 15:35:19 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:35:19 Saved as file SWEEP6.MAX
+Tue Nov 18 15:35:31 Saved as file BACKUP1.MAX
+Tue Nov 18 15:35:37 Saved as file BACKUP1.MAX
+Tue Nov 18 15:35:40 Saved as file BACKUP1.MAX
+Tue Nov 18 15:35:40 Routed 45 connections in 12 seconds.
+Tue Nov 18 15:35:40 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:35:40 Saved as file SWEEP6.MAX
+Tue Nov 18 15:35:52 Saved as file BACKUP1.MAX
+Tue Nov 18 15:35:56 Saved as file BACKUP1.MAX
+Tue Nov 18 15:36:02 Saved as file BACKUP1.MAX
+Tue Nov 18 15:36:05 Saved as file BACKUP1.MAX
+Tue Nov 18 15:36:05 Routed 44 connections in 11 seconds.
+Tue Nov 18 15:36:05 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:36:05 Saved as file SWEEP6.MAX
+Tue Nov 18 15:36:54 Saved as file BACKUP1.MAX
+Tue Nov 18 15:36:55 Saved as file BACKUP1.MAX
+Tue Nov 18 15:36:57 Saved as file BACKUP1.MAX
+Tue Nov 18 15:36:59 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:00 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:01 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:02 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:03 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:03 Routed 4 connections in 12 seconds.
+Tue Nov 18 15:37:03 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:37:03 Saved as file SWEEP6.MAX
+Tue Nov 18 15:37:14 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:15 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:17 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:18 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:20 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:21 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:22 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:24 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:24 Routed 1 connections in 12 seconds.
+Tue Nov 18 15:37:24 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:37:24 Saved as file SWEEP6.MAX
+Tue Nov 18 15:37:35 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:36 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:38 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:39 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:41 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:42 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:43 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:44 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:44 No new connections routed.
+Tue Nov 18 15:37:44 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:37:44 Saved as file SWEEP6.MAX
+Tue Nov 18 15:37:56 Saved as file BACKUP1.MAX
+Tue Nov 18 15:37:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:38:01 Saved as file BACKUP1.MAX
+Tue Nov 18 15:38:02 Saved as file BACKUP1.MAX
+Tue Nov 18 15:38:03 Saved as file BACKUP1.MAX
+Tue Nov 18 15:38:04 Saved as file BACKUP1.MAX
+Tue Nov 18 15:38:05 Saved as file BACKUP1.MAX
+Tue Nov 18 15:38:06 Saved as file BACKUP1.MAX
+Tue Nov 18 15:38:06 Routed 1 connections in 13 seconds.
+Tue Nov 18 15:38:06 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:38:06 Saved as file SWEEP6.MAX
+Tue Nov 18 15:43:30 Saved as file BACKUP1.MAX
+Tue Nov 18 15:43:30 Saved as file BACKUP1.MAX
+Tue Nov 18 15:43:30 Saved as file BACKUP1.MAX
+Tue Nov 18 15:43:30 Routed 23 connections in 0 seconds.
+Tue Nov 18 15:43:30 Total is now 111 out of 224 (49%).
+Tue Nov 18 15:43:30 Saved as file SWEEP1.MAX
+Tue Nov 18 15:43:34 Saved as file BACKUP1.MAX
+Tue Nov 18 15:43:37 Saved as file BACKUP1.MAX
+Tue Nov 18 15:43:37 Saved as file BACKUP1.MAX
+Tue Nov 18 15:43:37 Routed 122 connections in 6 seconds.
+Tue Nov 18 15:43:37 Total is now 222 out of 224 (99%).
+Tue Nov 18 15:43:37 Saved as file SWEEP2.MAX
+Tue Nov 18 15:43:40 Routed 2 connections in 2 seconds.
+Tue Nov 18 15:43:40 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:43:40 Saved as file SWEEP3.MAX
+Tue Nov 18 15:43:41 No new connections routed.
+Tue Nov 18 15:43:41 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:43:41 Saved as file SWEEP4.MAX
+Tue Nov 18 15:43:41 No new connections routed.
+Tue Nov 18 15:43:41 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:43:41 Saved as file SWEEP5.MAX
+Tue Nov 18 15:44:31 Saved as file BACKUP1.MAX
+Tue Nov 18 15:44:35 Saved as file BACKUP1.MAX
+Tue Nov 18 15:44:36 Saved as file BACKUP1.MAX
+Tue Nov 18 15:44:36 Routed 68 connections in 12 seconds.
+Tue Nov 18 15:44:36 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:44:36 Saved as file SWEEP6.MAX
+Tue Nov 18 15:45:00 Saved as file BACKUP1.MAX
+Tue Nov 18 15:45:04 Saved as file BACKUP1.MAX
+Tue Nov 18 15:45:05 Saved as file BACKUP1.MAX
+Tue Nov 18 15:45:05 Routed 51 connections in 11 seconds.
+Tue Nov 18 15:45:05 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:45:05 Saved as file SWEEP6.MAX
+Tue Nov 18 15:45:26 Saved as file BACKUP1.MAX
+Tue Nov 18 15:45:30 Saved as file BACKUP1.MAX
+Tue Nov 18 15:45:36 Saved as file BACKUP1.MAX
+Tue Nov 18 15:45:36 Routed 56 connections in 16 seconds.
+Tue Nov 18 15:45:36 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:45:36 Saved as file SWEEP6.MAX
+Tue Nov 18 15:45:55 Saved as file BACKUP1.MAX
+Tue Nov 18 15:45:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:46:00 Saved as file BACKUP1.MAX
+Tue Nov 18 15:46:00 Routed 49 connections in 9 seconds.
+Tue Nov 18 15:46:00 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:46:00 Saved as file SWEEP6.MAX
+Tue Nov 18 15:46:43 No new connections routed.
+Tue Nov 18 15:46:43 Total is now 212 out of 224 (94%).
+Tue Nov 18 15:46:43 Saved as file SWEEP1.MAX
+Tue Nov 18 15:46:43 Saved as file BACKUP1.MAX
+Tue Nov 18 15:46:44 Saved as file BACKUP1.MAX
+Tue Nov 18 15:46:44 Routed 12 connections in 0 seconds.
+Tue Nov 18 15:46:44 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:46:44 Saved as file SWEEP2.MAX
+Tue Nov 18 15:46:44 No new connections routed.
+Tue Nov 18 15:46:44 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:46:44 Saved as file SWEEP3.MAX
+Tue Nov 18 15:46:45 No new connections routed.
+Tue Nov 18 15:46:45 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:46:45 Saved as file SWEEP4.MAX
+Tue Nov 18 15:46:45 No new connections routed.
+Tue Nov 18 15:46:45 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:46:45 Saved as file SWEEP5.MAX
+Tue Nov 18 15:47:56 Saved as file BACKUP1.MAX
+Tue Nov 18 15:47:57 Saved as file BACKUP1.MAX
+Tue Nov 18 15:47:57 Saved as file BACKUP1.MAX
+Tue Nov 18 15:47:57 Routed 8 connections in 1 seconds.
+Tue Nov 18 15:47:57 Total is now 200 out of 224 (89%).
+Tue Nov 18 15:47:57 Saved as file SWEEP1.MAX
+Tue Nov 18 15:47:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:47:58 Saved as file BACKUP1.MAX
+Tue Nov 18 15:47:59 Saved as file BACKUP1.MAX
+Tue Nov 18 15:47:59 Routed 25 connections in 1 seconds.
+Tue Nov 18 15:47:59 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:47:59 Saved as file SWEEP2.MAX
+Tue Nov 18 15:47:59 No new connections routed.
+Tue Nov 18 15:47:59 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:47:59 Saved as file SWEEP3.MAX
+Tue Nov 18 15:47:59 No new connections routed.
+Tue Nov 18 15:47:59 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:47:59 Saved as file SWEEP4.MAX
+Tue Nov 18 15:48:00 No new connections routed.
+Tue Nov 18 15:48:00 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:48:00 Saved as file SWEEP5.MAX
+Tue Nov 18 15:48:20 Saved as file BACKUP1.MAX
+Tue Nov 18 15:48:24 Saved as file BACKUP1.MAX
+Tue Nov 18 15:48:26 Saved as file BACKUP1.MAX
+Tue Nov 18 15:48:26 Routed 54 connections in 10 seconds.
+Tue Nov 18 15:48:26 Total is now 224 out of 224 (100%).
+Tue Nov 18 15:48:26 Saved as file SWEEP6.MAX
+Tue Nov 18 15:48:54 Saved as file BACKUP1.MAX
+Tue Nov 18 15:51:38 No new connections routed.
+Tue Nov 18 15:51:38 Total is now 222 out of 225 (98%).
+Tue Nov 18 15:51:38 Saved as file SWEEP1.MAX
+Tue Nov 18 15:51:38 Saved as file BACKUP1.MAX
+Tue Nov 18 15:51:38 Saved as file BACKUP1.MAX
+Tue Nov 18 15:51:38 Routed 3 connections in 0 seconds.
+Tue Nov 18 15:51:38 Total is now 225 out of 225 (100%).
+Tue Nov 18 15:51:38 Saved as file SWEEP2.MAX
+Tue Nov 18 15:51:39 No new connections routed.
+Tue Nov 18 15:51:39 Total is now 225 out of 225 (100%).
+Tue Nov 18 15:51:39 Saved as file SWEEP3.MAX
+Tue Nov 18 15:51:39 No new connections routed.
+Tue Nov 18 15:51:39 Total is now 225 out of 225 (100%).
+Tue Nov 18 15:51:39 Saved as file SWEEP4.MAX
+Tue Nov 18 15:51:39 No new connections routed.
+Tue Nov 18 15:51:39 Total is now 225 out of 225 (100%).
+Tue Nov 18 15:51:39 Saved as file SWEEP5.MAX
+Tue Nov 18 15:52:23 Saved as file BACKUP1.MAX
+Tue Nov 18 15:52:28 Saved as file BACKUP1.MAX
+Tue Nov 18 15:52:28 Routed 49 connections in 7 seconds.
+Tue Nov 18 15:52:28 Total is now 225 out of 225 (100%).
+Tue Nov 18 15:52:28 Saved as file SWEEP6.MAX
+Tue Nov 18 15:54:02 Saved as file ~undo.max
+Tue Nov 18 15:55:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:12 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:12 Routed 28 connections in 0 seconds.
+Tue Nov 18 15:55:12 Total is now 28 out of 176 (15%).
+Tue Nov 18 15:55:12 Saved as file SWEEP1.MAX
+Tue Nov 18 15:55:16 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:17 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:22 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:22 Routed 169 connections in 10 seconds.
+Tue Nov 18 15:55:22 Total is now 173 out of 176 (98%).
+Tue Nov 18 15:55:22 Saved as file SWEEP2.MAX
+Tue Nov 18 15:55:26 Routed 3 connections in 3 seconds.
+Tue Nov 18 15:55:26 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:55:26 Saved as file SWEEP3.MAX
+Tue Nov 18 15:55:27 No new connections routed.
+Tue Nov 18 15:55:27 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:55:27 Saved as file SWEEP4.MAX
+Tue Nov 18 15:55:27 No new connections routed.
+Tue Nov 18 15:55:27 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:55:27 Saved as file SWEEP5.MAX
+Tue Nov 18 15:55:47 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:49 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:53 Saved as file BACKUP1.MAX
+Tue Nov 18 15:55:53 Routed 75 connections in 12 seconds.
+Tue Nov 18 15:55:53 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:55:53 Saved as file SWEEP6.MAX
+Tue Nov 18 15:56:39 Saved as file BACKUP1.MAX
+Tue Nov 18 15:56:41 Saved as file BACKUP1.MAX
+Tue Nov 18 15:56:44 Saved as file BACKUP1.MAX
+Tue Nov 18 15:56:44 Routed 46 connections in 9 seconds.
+Tue Nov 18 15:56:44 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:56:44 Saved as file SWEEP6.MAX
+Tue Nov 18 15:57:13 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:14 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:17 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:17 Routed 39 connections in 8 seconds.
+Tue Nov 18 15:57:17 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:57:17 Saved as file SWEEP6.MAX
+Tue Nov 18 15:57:29 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:31 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:34 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:34 Routed 34 connections in 9 seconds.
+Tue Nov 18 15:57:34 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:57:34 Saved as file SWEEP6.MAX
+Tue Nov 18 15:57:47 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:49 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:53 Saved as file BACKUP1.MAX
+Tue Nov 18 15:57:53 Routed 35 connections in 8 seconds.
+Tue Nov 18 15:57:53 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:57:53 Saved as file SWEEP6.MAX
+Tue Nov 18 15:58:04 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:05 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:08 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:08 Routed 37 connections in 7 seconds.
+Tue Nov 18 15:58:08 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:58:08 Saved as file SWEEP6.MAX
+Tue Nov 18 15:58:28 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:30 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:33 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:33 Routed 35 connections in 7 seconds.
+Tue Nov 18 15:58:33 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:58:33 Saved as file SWEEP6.MAX
+Tue Nov 18 15:58:42 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:44 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:46 Saved as file BACKUP1.MAX
+Tue Nov 18 15:58:46 Routed 30 connections in 7 seconds.
+Tue Nov 18 15:58:46 Total is now 176 out of 176 (100%).
+Tue Nov 18 15:58:46 Saved as file SWEEP6.MAX
+Tue Nov 18 16:23:32 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:24:30 No new connections routed.
+Tue Nov 18 16:24:30 Total is now 179 out of 179 (100%).
+Tue Nov 18 16:24:30 Saved as file SWEEP1.MAX
+Tue Nov 18 16:24:31 No new connections routed.
+Tue Nov 18 16:24:31 Total is now 179 out of 179 (100%).
+Tue Nov 18 16:24:31 Saved as file SWEEP2.MAX
+Tue Nov 18 16:24:31 No new connections routed.
+Tue Nov 18 16:24:31 Total is now 179 out of 179 (100%).
+Tue Nov 18 16:24:31 Saved as file SWEEP3.MAX
+Tue Nov 18 16:24:32 No new connections routed.
+Tue Nov 18 16:24:32 Total is now 179 out of 179 (100%).
+Tue Nov 18 16:24:32 Saved as file SWEEP4.MAX
+Tue Nov 18 16:24:32 No new connections routed.
+Tue Nov 18 16:24:32 Total is now 179 out of 179 (100%).
+Tue Nov 18 16:24:32 Saved as file SWEEP5.MAX
+Tue Nov 18 16:24:41 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\SpecctraWithinLayout.max
+Tue Nov 18 16:24:54 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\SpecctraWithinLayout.max
+Tue Nov 18 16:28:02 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:30:31 Saved as file BACKUP1.MAX
+Tue Nov 18 16:30:31 Saved as file BACKUP1.MAX
+Tue Nov 18 16:30:32 Saved as file BACKUP1.MAX
+Tue Nov 18 16:30:32 Routed 36 connections in 0 seconds.
+Tue Nov 18 16:30:32 Total is now 37 out of 176 (21%).
+Tue Nov 18 16:30:32 Saved as file SWEEP1.MAX
+Tue Nov 18 16:30:34 Saved as file BACKUP1.MAX
+Tue Nov 18 16:30:34 Saved as file BACKUP1.MAX
+Tue Nov 18 16:30:35 Saved as file BACKUP1.MAX
+Tue Nov 18 16:30:35 Routed 161 connections in 3 seconds.
+Tue Nov 18 16:30:35 Total is now 176 out of 176 (100%).
+Tue Nov 18 16:30:35 Saved as file SWEEP2.MAX
+Tue Nov 18 16:30:35 No new connections routed.
+Tue Nov 18 16:30:35 Total is now 176 out of 176 (100%).
+Tue Nov 18 16:30:35 Saved as file SWEEP3.MAX
+Tue Nov 18 16:30:36 No new connections routed.
+Tue Nov 18 16:30:36 Total is now 176 out of 176 (100%).
+Tue Nov 18 16:30:36 Saved as file SWEEP4.MAX
+Tue Nov 18 16:30:36 No new connections routed.
+Tue Nov 18 16:30:36 Total is now 176 out of 176 (100%).
+Tue Nov 18 16:30:36 Saved as file SWEEP5.MAX
+Tue Nov 18 16:31:11 Saved as file BACKUP1.MAX
+Tue Nov 18 16:31:13 Saved as file BACKUP1.MAX
+Tue Nov 18 16:31:22 Saved as file BACKUP1.MAX
+Tue Nov 18 16:31:22 Routed 59 connections in 15 seconds.
+Tue Nov 18 16:31:22 Total is now 176 out of 176 (100%).
+Tue Nov 18 16:31:22 Saved as file SWEEP6.MAX
+Tue Nov 18 16:31:49 Saved as file BACKUP1.MAX
+Tue Nov 18 16:31:50 Saved as file BACKUP1.MAX
+Tue Nov 18 16:31:52 Saved as file BACKUP1.MAX
+Tue Nov 18 16:31:52 Routed 43 connections in 7 seconds.
+Tue Nov 18 16:31:52 Total is now 176 out of 176 (100%).
+Tue Nov 18 16:31:52 Saved as file SWEEP6.MAX
+Tue Nov 18 16:32:56 Saved as file BACKUP1.MAX
+Tue Nov 18 16:32:57 Saved as file BACKUP1.MAX
+Tue Nov 18 16:32:59 Saved as file BACKUP1.MAX
+Tue Nov 18 16:32:59 Routed 33 connections in 7 seconds.
+Tue Nov 18 16:32:59 Total is now 176 out of 176 (100%).
+Tue Nov 18 16:32:59 Saved as file SWEEP6.MAX
+Tue Nov 18 16:33:18 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:35:49 Saved as file BACKUP1.MAX
+Tue Nov 18 16:36:56 Saved as file BACKUP1.MAX
+Tue Nov 18 16:36:56 Saved as file BACKUP1.MAX
+Tue Nov 18 16:36:57 Saved as file BACKUP1.MAX
+Tue Nov 18 16:36:57 Routed 3 connections in 1 seconds.
+Tue Nov 18 16:36:57 Total is now 179 out of 226 (79%).
+Tue Nov 18 16:36:57 Saved as file SWEEP1.MAX
+Tue Nov 18 16:36:59 Saved as file BACKUP1.MAX
+Tue Nov 18 16:36:59 Saved as file BACKUP1.MAX
+Tue Nov 18 16:37:00 Saved as file BACKUP1.MAX
+Tue Nov 18 16:37:00 Routed 48 connections in 3 seconds.
+Tue Nov 18 16:37:00 Total is now 226 out of 226 (100%).
+Tue Nov 18 16:37:00 Saved as file SWEEP2.MAX
+Tue Nov 18 16:37:00 No new connections routed.
+Tue Nov 18 16:37:00 Total is now 226 out of 226 (100%).
+Tue Nov 18 16:37:00 Saved as file SWEEP3.MAX
+Tue Nov 18 16:37:00 No new connections routed.
+Tue Nov 18 16:37:00 Total is now 226 out of 226 (100%).
+Tue Nov 18 16:37:00 Saved as file SWEEP4.MAX
+Tue Nov 18 16:37:01 No new connections routed.
+Tue Nov 18 16:37:01 Total is now 226 out of 226 (100%).
+Tue Nov 18 16:37:01 Saved as file SWEEP5.MAX
+Tue Nov 18 16:37:13 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:37:14 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:37:16 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:37:58 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:39:46 Saved as file ~undo.max
+Tue Nov 18 16:39:58 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:42:22 Saved as file ~undo.max
+Tue Nov 18 16:42:32 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:43:35 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:44:40 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Tue Nov 18 16:45:18 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Fri Nov 21 08:10:02 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:02 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:02 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:02 Routed 32 connections in 1 seconds.
+Fri Nov 21 08:10:02 Total is now 32 out of 228 (14%).
+Fri Nov 21 08:10:02 Saved as file SWEEP1.MAX
+Fri Nov 21 08:10:11 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:12 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:12 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:12 Routed 204 connections in 10 seconds.
+Fri Nov 21 08:10:12 Total is now 226 out of 228 (99%).
+Fri Nov 21 08:10:12 Saved as file SWEEP2.MAX
+Fri Nov 21 08:10:14 Routed 1 connections in 1 seconds.
+Fri Nov 21 08:10:14 Total is now 227 out of 228 (99%).
+Fri Nov 21 08:10:14 Saved as file SWEEP3.MAX
+Fri Nov 21 08:10:15 Routed 1 connections in 0 seconds.
+Fri Nov 21 08:10:15 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:10:15 Saved as file SWEEP4.MAX
+Fri Nov 21 08:10:15 No new connections routed.
+Fri Nov 21 08:10:15 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:10:15 Saved as file SWEEP5.MAX
+Fri Nov 21 08:10:48 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:48 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:48 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:48 Routed 37 connections in 0 seconds.
+Fri Nov 21 08:10:48 Total is now 37 out of 228 (16%).
+Fri Nov 21 08:10:48 Saved as file SWEEP1.MAX
+Fri Nov 21 08:10:53 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:55 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:55 Saved as file BACKUP1.MAX
+Fri Nov 21 08:10:55 Routed 201 connections in 7 seconds.
+Fri Nov 21 08:10:55 Total is now 226 out of 228 (99%).
+Fri Nov 21 08:10:55 Saved as file SWEEP2.MAX
+Fri Nov 21 08:10:57 Routed 2 connections in 2 seconds.
+Fri Nov 21 08:10:57 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:10:57 Saved as file SWEEP3.MAX
+Fri Nov 21 08:10:58 No new connections routed.
+Fri Nov 21 08:10:58 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:10:58 Saved as file SWEEP4.MAX
+Fri Nov 21 08:10:58 No new connections routed.
+Fri Nov 21 08:10:58 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:10:58 Saved as file SWEEP5.MAX
+Fri Nov 21 08:11:34 Saved as file BACKUP1.MAX
+Fri Nov 21 08:11:34 Saved as file BACKUP1.MAX
+Fri Nov 21 08:11:35 Saved as file BACKUP1.MAX
+Fri Nov 21 08:11:35 Routed 41 connections in 0 seconds.
+Fri Nov 21 08:11:35 Total is now 41 out of 228 (17%).
+Fri Nov 21 08:11:35 Saved as file SWEEP1.MAX
+Fri Nov 21 08:11:42 Saved as file BACKUP1.MAX
+Fri Nov 21 08:11:43 Saved as file BACKUP1.MAX
+Fri Nov 21 08:11:44 Saved as file BACKUP1.MAX
+Fri Nov 21 08:11:44 Routed 194 connections in 9 seconds.
+Fri Nov 21 08:11:44 Total is now 227 out of 228 (99%).
+Fri Nov 21 08:11:44 Saved as file SWEEP2.MAX
+Fri Nov 21 08:11:45 No new connections routed.
+Fri Nov 21 08:11:45 Total is now 227 out of 228 (99%).
+Fri Nov 21 08:11:45 Saved as file SWEEP3.MAX
+Fri Nov 21 08:11:46 Routed 1 connections in 1 seconds.
+Fri Nov 21 08:11:46 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:11:46 Saved as file SWEEP4.MAX
+Fri Nov 21 08:11:46 No new connections routed.
+Fri Nov 21 08:11:46 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:11:46 Saved as file SWEEP5.MAX
+Fri Nov 21 08:12:21 Saved as file BACKUP1.MAX
+Fri Nov 21 08:12:27 Saved as file BACKUP1.MAX
+Fri Nov 21 08:12:30 Saved as file BACKUP1.MAX
+Fri Nov 21 08:12:30 Routed 95 connections in 19 seconds.
+Fri Nov 21 08:12:30 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:12:30 Saved as file SWEEP6.MAX
+Fri Nov 21 08:12:56 Saved as file BACKUP1.MAX
+Fri Nov 21 08:13:01 Saved as file BACKUP1.MAX
+Fri Nov 21 08:13:03 Saved as file BACKUP1.MAX
+Fri Nov 21 08:13:03 Routed 66 connections in 15 seconds.
+Fri Nov 21 08:13:03 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:13:03 Saved as file SWEEP6.MAX
+Fri Nov 21 08:13:39 Saved as file BACKUP1.MAX
+Fri Nov 21 08:13:43 Saved as file BACKUP1.MAX
+Fri Nov 21 08:13:45 Saved as file BACKUP1.MAX
+Fri Nov 21 08:13:45 Routed 69 connections in 15 seconds.
+Fri Nov 21 08:13:45 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:13:45 Saved as file SWEEP6.MAX
+Fri Nov 21 08:14:30 Saved as file BACKUP1.MAX
+Fri Nov 21 08:14:30 Saved as file BACKUP1.MAX
+Fri Nov 21 08:14:30 Saved as file BACKUP1.MAX
+Fri Nov 21 08:14:30 Routed 42 connections in 0 seconds.
+Fri Nov 21 08:14:30 Total is now 42 out of 228 (18%).
+Fri Nov 21 08:14:30 Saved as file SWEEP1.MAX
+Fri Nov 21 08:14:37 Saved as file BACKUP1.MAX
+Fri Nov 21 08:14:38 Saved as file BACKUP1.MAX
+Fri Nov 21 08:14:38 Saved as file BACKUP1.MAX
+Fri Nov 21 08:14:38 Routed 195 connections in 7 seconds.
+Fri Nov 21 08:14:38 Total is now 227 out of 228 (99%).
+Fri Nov 21 08:14:38 Saved as file SWEEP2.MAX
+Fri Nov 21 08:14:40 Routed 1 connections in 1 seconds.
+Fri Nov 21 08:14:40 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:14:40 Saved as file SWEEP3.MAX
+Fri Nov 21 08:14:41 No new connections routed.
+Fri Nov 21 08:14:41 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:14:41 Saved as file SWEEP4.MAX
+Fri Nov 21 08:14:41 No new connections routed.
+Fri Nov 21 08:14:41 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:14:41 Saved as file SWEEP5.MAX
+Fri Nov 21 08:15:01 Saved as file BACKUP1.MAX
+Fri Nov 21 08:15:05 Saved as file BACKUP1.MAX
+Fri Nov 21 08:15:08 Saved as file BACKUP1.MAX
+Fri Nov 21 08:15:08 Routed 92 connections in 16 seconds.
+Fri Nov 21 08:15:08 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:15:08 Saved as file SWEEP6.MAX
+Fri Nov 21 08:15:28 Saved as file BACKUP1.MAX
+Fri Nov 21 08:15:32 Saved as file BACKUP1.MAX
+Fri Nov 21 08:15:34 Saved as file BACKUP1.MAX
+Fri Nov 21 08:15:34 Routed 70 connections in 13 seconds.
+Fri Nov 21 08:15:34 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:15:34 Saved as file SWEEP6.MAX
+Fri Nov 21 08:16:31 Saved as file BACKUP1.MAX
+Fri Nov 21 08:16:34 Saved as file BACKUP1.MAX
+Fri Nov 21 08:16:36 Saved as file BACKUP1.MAX
+Fri Nov 21 08:16:36 Routed 63 connections in 33 seconds.
+Fri Nov 21 08:16:36 Total is now 196 out of 228 (85%).
+Fri Nov 21 08:16:36 Saved as file SWEEP6.MAX
+Fri Nov 21 08:17:04 Saved as file BACKUP1.MAX
+Fri Nov 21 08:17:07 Saved as file BACKUP1.MAX
+Fri Nov 21 08:17:08 Saved as file BACKUP1.MAX
+Fri Nov 21 08:17:08 Routed 50 connections in 9 seconds.
+Fri Nov 21 08:17:08 Total is now 196 out of 228 (85%).
+Fri Nov 21 08:17:08 Saved as file SWEEP6.MAX
+Fri Nov 21 08:18:11 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:12 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:14 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:14 No new connections routed.
+Fri Nov 21 08:18:14 Total is now 0 out of 176 (0%).
+Fri Nov 21 08:18:14 Saved as file SWEEP6.MAX
+Fri Nov 21 08:18:22 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:22 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:23 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:23 Routed 27 connections in 0 seconds.
+Fri Nov 21 08:18:23 Total is now 27 out of 176 (15%).
+Fri Nov 21 08:18:23 Saved as file SWEEP1.MAX
+Fri Nov 21 08:18:26 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:28 Routed 127 connections in 5 seconds.
+Fri Nov 21 08:18:28 Total is now 146 out of 176 (82%).
+Fri Nov 21 08:18:38 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:38 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:38 Routed 36 connections in 0 seconds.
+Fri Nov 21 08:18:38 Total is now 65 out of 176 (36%).
+Fri Nov 21 08:18:38 Saved as file SWEEP1.MAX
+Fri Nov 21 08:18:39 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:43 Saved as file BACKUP1.MAX
+Fri Nov 21 08:18:43 Routed 129 connections in 4 seconds.
+Fri Nov 21 08:18:43 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:18:43 Saved as file SWEEP2.MAX
+Fri Nov 21 08:18:43 No new connections routed.
+Fri Nov 21 08:18:43 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:18:43 Saved as file SWEEP3.MAX
+Fri Nov 21 08:18:43 No new connections routed.
+Fri Nov 21 08:18:43 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:18:43 Saved as file SWEEP4.MAX
+Fri Nov 21 08:18:43 No new connections routed.
+Fri Nov 21 08:18:43 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:18:43 Saved as file SWEEP5.MAX
+Fri Nov 21 08:19:01 Saved as file BACKUP1.MAX
+Fri Nov 21 08:19:07 Saved as file BACKUP1.MAX
+Fri Nov 21 08:19:07 Routed 59 connections in 9 seconds.
+Fri Nov 21 08:19:07 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:19:07 Saved as file SWEEP6.MAX
+Fri Nov 21 08:19:38 Saved as file BACKUP1.MAX
+Fri Nov 21 08:19:43 Saved as file BACKUP1.MAX
+Fri Nov 21 08:19:43 Routed 26 connections in 8 seconds.
+Fri Nov 21 08:19:43 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:19:43 Saved as file SWEEP6.MAX
+Fri Nov 21 08:20:05 Saved as file BACKUP1.MAX
+Fri Nov 21 08:20:11 Saved as file BACKUP1.MAX
+Fri Nov 21 08:20:11 Routed 26 connections in 7 seconds.
+Fri Nov 21 08:20:11 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:20:11 Saved as file SWEEP6.MAX
+Fri Nov 21 08:20:26 Saved as file BACKUP1.MAX
+Fri Nov 21 08:20:32 Saved as file BACKUP1.MAX
+Fri Nov 21 08:20:32 Routed 30 connections in 8 seconds.
+Fri Nov 21 08:20:32 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:20:32 Saved as file SWEEP6.MAX
+Fri Nov 21 08:20:45 Saved as file BACKUP1.MAX
+Fri Nov 21 08:21:03 Saved as file BACKUP1.MAX
+Fri Nov 21 08:21:09 Saved as file BACKUP1.MAX
+Fri Nov 21 08:21:09 Routed 28 connections in 7 seconds.
+Fri Nov 21 08:21:09 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:21:09 Saved as file SWEEP6.MAX
+Fri Nov 21 08:21:19 Saved as file BACKUP1.MAX
+Fri Nov 21 08:21:24 Saved as file BACKUP1.MAX
+Fri Nov 21 08:21:24 Routed 25 connections in 7 seconds.
+Fri Nov 21 08:21:24 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:21:24 Saved as file SWEEP6.MAX
+Fri Nov 21 08:21:41 Saved as file BACKUP1.MAX
+Fri Nov 21 08:21:46 Saved as file BACKUP1.MAX
+Fri Nov 21 08:21:46 Routed 26 connections in 7 seconds.
+Fri Nov 21 08:21:46 Total is now 176 out of 176 (100%).
+Fri Nov 21 08:21:46 Saved as file SWEEP6.MAX
+Fri Nov 21 08:22:23 Saved as file BACKUP1.MAX
+Fri Nov 21 08:22:23 Saved as file BACKUP1.MAX
+Fri Nov 21 08:22:23 Routed 9 connections in 0 seconds.
+Fri Nov 21 08:22:23 Total is now 185 out of 228 (81%).
+Fri Nov 21 08:22:23 Saved as file SWEEP1.MAX
+Fri Nov 21 08:22:25 Saved as file BACKUP1.MAX
+Fri Nov 21 08:22:27 Saved as file BACKUP1.MAX
+Fri Nov 21 08:22:27 Routed 43 connections in 3 seconds.
+Fri Nov 21 08:22:27 Total is now 226 out of 228 (99%).
+Fri Nov 21 08:22:27 Saved as file SWEEP2.MAX
+Fri Nov 21 08:22:29 Routed 1 connections in 2 seconds.
+Fri Nov 21 08:22:29 Total is now 227 out of 228 (99%).
+Fri Nov 21 08:22:29 Saved as file SWEEP3.MAX
+Fri Nov 21 08:22:30 Routed 1 connections in 1 seconds.
+Fri Nov 21 08:22:30 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:22:30 Saved as file SWEEP4.MAX
+Fri Nov 21 08:22:31 No new connections routed.
+Fri Nov 21 08:22:31 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:22:31 Saved as file SWEEP5.MAX
+Fri Nov 21 08:22:47 Saved as file BACKUP1.MAX
+Fri Nov 21 08:22:54 Saved as file BACKUP1.MAX
+Fri Nov 21 08:22:54 Routed 54 connections in 12 seconds.
+Fri Nov 21 08:22:54 Total is now 228 out of 228 (100%).
+Fri Nov 21 08:22:54 Saved as file SWEEP6.MAX
+Fri Nov 21 08:23:39 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Fri Nov 21 08:23:40 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Fri Nov 21 08:25:55 Saved as file ~undo.max
+Fri Nov 21 08:26:01 Saved as file ~undo.max
+Fri Nov 21 08:26:04 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Fri Nov 21 08:28:34 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX
+Fri Nov 21 08:32:55 Saved as file C:\TRAVAIL\CARTE IO-I2C\LAYOUT\CARTEIOI2C-1.MAX

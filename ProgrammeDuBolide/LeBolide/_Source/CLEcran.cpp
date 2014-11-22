@@ -12,7 +12,7 @@
 //  les modules qui sont contenus dans la librairie.
 //
 //  AUTEUR : LOUIS-NORMAND ANG HOULE
-//  DATE CREATION :    2014/02/20		 VERSION: 1.0
+//  DATE CREATION :    2014/02/20       VERSION: 1.0
 //  DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
@@ -54,7 +54,7 @@ CLEcran :: ~CLEcran(void)
 //
 // Cree le  10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -79,7 +79,7 @@ void CLEcran :: vDelaiLCD(USI uiDelai)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -103,7 +103,7 @@ void CLEcran :: vLCDBusy(void)
 // 
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -128,7 +128,7 @@ void CLEcran :: vLCDClr(void)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -136,19 +136,19 @@ void CLEcran :: vLCDClr(void)
 void CLEcran :: vLCDInit(void)
  {
    USI i;
-   for(i=0; i<=3; i++)			    //Faire 3 fois
+   for(i=0; i<=3; i++)             //Faire 3 fois
     {    
-    vDelaiLCD(10000);			    //Attendre la stabilisation des parametres
+    vDelaiLCD(10000);             //Attendre la stabilisation des parametres
     vOut(uiAdresseEcran + ECRANCONFIG,0x38);    //
     }   
-   vLCDBusy();					                     //Attente du Busy Flag
-   vOut(uiAdresseEcran + ECRANCONFIG,0x38);		//
-   vLCDBusy();					                     //Attente du Busy Flag
-   vOut(uiAdresseEcran + ECRANCONFIG,0x01);		//
-   vLCDBusy();					                     //Attente du Busy Flag
-   vOut(uiAdresseEcran + ECRANCONFIG,0x0C);		//
-   vLCDBusy();					                     //Attente du Busy Flag
-   vOut(uiAdresseEcran + ECRANCONFIG,0x06);		//
+   vLCDBusy();                                    //Attente du Busy Flag
+   vOut(uiAdresseEcran + ECRANCONFIG,0x38);      //
+   vLCDBusy();                                    //Attente du Busy Flag
+   vOut(uiAdresseEcran + ECRANCONFIG,0x01);      //
+   vLCDBusy();                                    //Attente du Busy Flag
+   vOut(uiAdresseEcran + ECRANCONFIG,0x0C);      //
+   vLCDBusy();                                    //Attente du Busy Flag
+   vOut(uiAdresseEcran + ECRANCONFIG,0x06);      //
  }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -160,7 +160,7 @@ void CLEcran :: vLCDInit(void)
 //
 // Parametres d'entrees:
 // -ucCol : Definition de la position "X" du curseur 
-// -ucLine:	Definition de la position "Y" du curseur
+// -ucLine:   Definition de la position "Y" du curseur
 //             
 // Parametres de sortie: null
 //
@@ -168,7 +168,7 @@ void CLEcran :: vLCDInit(void)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -178,29 +178,29 @@ void CLEcran :: vLCDCursor(UC ucCol, UC ucLine)
  UC ucPosition;
  switch (ucLine)
  { 
- case 1:					            //Si ligne 1	choisi
- ucPosition = 0x00 + ucCol;	   //Curseur sur ligne 1 (1,Y)
+ case 1:                           //Si ligne 1   choisi
+ ucPosition = 0x00 + ucCol;      //Curseur sur ligne 1 (1,Y)
  break;
 
- case 2:					            //Si ligne 2	choisi
- ucPosition = 0x40 + ucCol;	   //Curseur sur ligne 2 (2,Y)
+ case 2:                           //Si ligne 2   choisi
+ ucPosition = 0x40 + ucCol;      //Curseur sur ligne 2 (2,Y)
  break;
 
- case 3:					            //Si ligne 3	choisi
- ucPosition = 0x14 + ucCol;	   //Curseur sur ligne 3 (3,Y)
+ case 3:                           //Si ligne 3   choisi
+ ucPosition = 0x14 + ucCol;      //Curseur sur ligne 3 (3,Y)
  break;
 
- case 4:					            //Si ligne 4	choisi 
- ucPosition = 0x54 + ucCol;	   //Curseur sur ligne 4 (4,Y)
+ case 4:                           //Si ligne 4   choisi 
+ ucPosition = 0x54 + ucCol;      //Curseur sur ligne 4 (4,Y)
  break;
 
- default:					         //Sinon
- ucPosition = 0x00 + ucCol;	   //Curseur à position initial (0,0)
+ default:                        //Sinon
+ ucPosition = 0x00 + ucCol;      //Curseur à position initial (0,0)
  break;
  }
  ucPosition = ucPosition | 0x80; //Definition du registre du curseur
 
- vLCDBusy();				         //Attente du Flag Busy
+ vLCDBusy();                     //Attente du Flag Busy
  vOut(uiAdresseEcran+ECRANCONFIG, ucPosition); //Envoi de la commande 
  }
 
@@ -219,7 +219,7 @@ void CLEcran :: vLCDCursor(UC ucCol, UC ucLine)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -253,7 +253,7 @@ void CLEcran :: vLCDDisplayCarac(char cCaractere)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -266,22 +266,22 @@ void CLEcran :: vHexToASCII(UC ucHexCar, UC *ucpHi, UC *ucpLo)
   *ucpHi = ucTemp >> 4;
   *ucpLo = ucHexCar & 0x0F;
    
-  if( *ucpHi <= 9 )		    //SI MSB est chiffe
+  if( *ucpHi <= 9 )          //SI MSB est chiffe
   {
    *ucpHi = *ucpHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
   }
-  else						    //SINON
+  else                      //SINON
   {
-   *ucpHi = *ucpHi + 0x37;	 //Convertion hexa a ASCII (Lettre)
+   *ucpHi = *ucpHi + 0x37;    //Convertion hexa a ASCII (Lettre)
   }
 
-  if(*ucpLo <= 9 )			 //SI LSB est chiffre
+  if(*ucpLo <= 9 )          //SI LSB est chiffre
   {
-   *ucpLo = *ucpLo + 0x30;	 //Convertion hexa a ASCII (Chiffre)
+   *ucpLo = *ucpLo + 0x30;    //Convertion hexa a ASCII (Chiffre)
   }
-  else						    //SINON
+  else                      //SINON
   {
-   *ucpLo = *ucpLo + 0x37;	 //Convertion hexa a ASCII (Lettre)
+   *ucpLo = *ucpLo + 0x37;    //Convertion hexa a ASCII (Lettre)
   }
  }
 
@@ -296,38 +296,38 @@ void CLEcran :: vHexToASCII(USI uiHexCar, UC *ucpHiOctHi, UC *ucpLoOctHi,
   *ucpLoOctLo =  uiHexCar        & 0x0F;
   
 //------------------------------------------------------------------------------
-  if( *ucpHiOctHi <= 9 )		    //SI MSB est chiffe
+  if( *ucpHiOctHi <= 9 )          //SI MSB est chiffe
   {
    *ucpHiOctHi = *ucpHiOctHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
   }
-  else						       //SINON
+  else                         //SINON
   {
    *ucpHiOctHi = *ucpHiOctHi + 0x37; //Convertion hexa a ASCII (Lettre)
   }
 //------------------------------------------------------------------------------
-  if(*ucpLoOctHi <= 9 )			 //SI LSB est chiffre
+  if(*ucpLoOctHi <= 9 )          //SI LSB est chiffre
   {
-   *ucpLoOctHi = *ucpLoOctHi + 0x30;	 //Convertion hexa a ASCII (Chiffre)
+   *ucpLoOctHi = *ucpLoOctHi + 0x30;    //Convertion hexa a ASCII (Chiffre)
   }
-  else						       //SINON
+  else                         //SINON
   {
     *ucpLoOctHi = *ucpLoOctHi + 0x37; //Convertion hexa a ASCII (Lettre)
   }
 //------------------------------------------------------------------------------
-  if(*ucpHiOctLo <= 9 )			 //SI MSB est chiffre
+  if(*ucpHiOctLo <= 9 )          //SI MSB est chiffre
   {
-   *ucpHiOctLo = *ucpHiOctLo + 0x30;	 //Convertion hexa a ASCII (Chiffre)
+   *ucpHiOctLo = *ucpHiOctLo + 0x30;    //Convertion hexa a ASCII (Chiffre)
   }
-  else						       //SINON
+  else                         //SINON
   {
    *ucpHiOctLo = *ucpHiOctLo + 0x37;    //Convertion hexa a ASCII (Lettre)
   }
 //------------------------------------------------------------------------------
-  if(*ucpLoOctLo <= 9 )			 //SI LSB est chiffre
+  if(*ucpLoOctLo <= 9 )          //SI LSB est chiffre
   {
-   *ucpLoOctLo = *ucpLoOctLo + 0x30;	 //Convertion hexa a ASCII (Chiffre)
+   *ucpLoOctLo = *ucpLoOctLo + 0x30;    //Convertion hexa a ASCII (Chiffre)
   }
-  else						       //SINON
+  else                         //SINON
   {
    *ucpLoOctLo = *ucpLoOctLo + 0x37;    //Convertion hexa a ASCII (Lettre)
   }
@@ -351,7 +351,7 @@ void CLEcran :: vHexToASCII(USI uiHexCar, UC *ucpHiOctHi, UC *ucpLoOctHi,
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -359,19 +359,19 @@ void CLEcran :: vHexToASCII(USI uiHexCar, UC *ucpHiOctHi, UC *ucpLoOctHi,
 
 void CLEcran :: vLCDDisplayHexCarac(UC ucHexCar)
  {
-  UC ucHi;	   
-  UC ucLo; 	  
+  UC ucHi;      
+  UC ucLo;      
 
-  vHexToASCII(ucHexCar, &ucHi, &ucLo);	//Conversion de Hexadecimal a ASCII
+  vHexToASCII(ucHexCar, &ucHi, &ucLo);   //Conversion de Hexadecimal a ASCII
 
-  vLCDDisplayCarac(ucHi);				//Affiche MSB
-  vLCDDisplayCarac(ucLo);				//Affiche LSB
+  vLCDDisplayCarac(ucHi);            //Affiche MSB
+  vLCDDisplayCarac(ucLo);            //Affiche LSB
  } 
 
 ////////////////////////////////////////////////////////////////////////////////
 void CLEcran :: vLCDDisplayHexCarac(USI uiHexCar)
  {
-  UC ucHiOctHi;	   
+  UC ucHiOctHi;      
   UC ucLoOctHi;
   
   UC ucHiOctLo;
@@ -379,11 +379,11 @@ void CLEcran :: vLCDDisplayHexCarac(USI uiHexCar)
 
   vHexToASCII(uiHexCar, &ucHiOctHi, &ucLoOctHi, &ucHiOctLo, &ucLoOctLo);
 
-  vLCDDisplayCarac(ucHiOctHi);				//Affiche MSB OctHI
-  vLCDDisplayCarac(ucLoOctHi);				//Affiche LSB OctHI
+  vLCDDisplayCarac(ucHiOctHi);            //Affiche MSB OctHI
+  vLCDDisplayCarac(ucLoOctHi);            //Affiche LSB OctHI
   
-  vLCDDisplayCarac(ucHiOctLo);				//Affiche MSB OctLO
-  vLCDDisplayCarac(ucLoOctLo);				//Affiche LSB OctLO
+  vLCDDisplayCarac(ucHiOctLo);            //Affiche MSB OctLO
+  vLCDDisplayCarac(ucLoOctLo);            //Affiche LSB OctLO
  } 
 
 
@@ -403,7 +403,7 @@ void CLEcran :: vLCDDisplayHexCarac(USI uiHexCar)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -442,7 +442,7 @@ void CLEcran ::vLCDDisplayCaracChain (const char *cpMessage)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -474,7 +474,7 @@ void CLEcran :: vLCDDisplayScreen(const UC *ucpEcran)
 //
 // Cree le 14 avril 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -506,7 +506,7 @@ void CLEcran :: vLCDDisplayEtatPort(UC ucEtatPort)
 //
 // Cree le 30 septembre 2014 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -545,7 +545,7 @@ void CLEcran :: vLCDDisplayDecimal (SI siDecimal)
       ucDizaines  = ucDizaines  + 0x30;
       ucUnites    = ucUnites    + 0x30;
       
-      vLCDDisplayCarac(ucMilliers);		
+      vLCDDisplayCarac(ucMilliers);      
       vLCDDisplayCarac(ucCentaines);
       vLCDDisplayCarac(ucDizaines);
       vLCDDisplayCarac(ucUnites);      
@@ -571,7 +571,7 @@ void CLEcran :: vLCDDisplayDecimal (SI siDecimal)
       ucDizaines  = ucDizaines  + 0x30;
       ucUnites    = ucUnites    + 0x30;
       
-      vLCDDisplayCarac(ucMilliers);		
+      vLCDDisplayCarac(ucMilliers);      
       vLCDDisplayCarac(ucCentaines);
       vLCDDisplayCarac(ucDizaines);
       vLCDDisplayCarac(ucUnites);        

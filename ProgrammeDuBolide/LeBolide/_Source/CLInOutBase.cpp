@@ -12,7 +12,7 @@
 //  les modules qui sont contenus dans la librairie.
 //
 //  AUTEUR : LOUIS-NORMAND ANG HOULE
-//  DATE CREATION :    2014/02/20		 VERSION: 1.0
+//  DATE CREATION :    2014/02/20       VERSION: 1.0
 //  DATE MODIFICATION: ****-**-**
 //
 // *****************************************************************************
@@ -36,7 +36,7 @@
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -67,7 +67,7 @@ void CLInOutBase :: vOutPort(USI uiAdresse, UC ucData)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -101,7 +101,7 @@ UC CLInOutBase :: ucInPort(USI uiAdresse)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -130,7 +130,7 @@ void CLInOutBase :: vOut(USI uiAdresse, UC ucData)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -181,7 +181,7 @@ void CLInOutBase :: vOut(USI uiAdresse, USI uiDonnee, UC ucTypeTransfert)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
@@ -213,7 +213,7 @@ UC CLInOutBase :: ucIn(USI uiAdresse)
 //
 // Cree le 10 octobre 2013 par Louis-Normand Ang Houle 
 // 
-// Modifications:	
+// Modifications:   
 // -
 //
 //
