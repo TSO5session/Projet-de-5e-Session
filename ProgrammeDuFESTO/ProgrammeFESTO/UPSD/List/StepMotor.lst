@@ -1,0 +1,672 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         24/Nov/2014  21:48:31 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\StepMotor.cpp                                    #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\StepMotor.cpp" -D UPSD3254A --preprocess=cl      #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Auto #
+#                          mne 2014\ProjetSession5\ProgrammeDuFESTO\Programme #
+#                          FESTO\UPSD\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\ProgrammeDuFESTO\Progr #
+#                          ammeFESTO\UPSD\List\" -o                           #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\" -e --no_cse --no_unroll --no_inline   #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large --code_model=near   #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\StepMotor.lst                          #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\StepMotor.r51                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\StepMotor.cpp
+      1          // **************************StepMotor.cpp
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         20 juillet 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     12          #include "StepMotor.h"             // Fichier de definitions du clavier
+     13          
+     14          
+     15          //******************************************************************************
+     16          //                            LE CONSTRUCTEUR PAR DEFAUT
+     17          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     18          StepMotor :: StepMotor(void)
+   \                     ??StepMotor:
+     19          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     20          
+     21          }
+   \   000000   22           RET
+     22          
+     23          //******************************************************************************
+     24          //                            LE CONSTRUCTEUR PAR DEFAUT
+     25          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     26          StepMotor :: StepMotor(UC ucParametre)
+   \                     ??StepMotor_1:
+     27          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     28          
+     29          }
+   \   000000   22           RET
+     30          
+     31          
+     32          // *****************************************************************************
+     33          //                            LE DESTRUCTEUR
+     34          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     35          StepMotor :: ~StepMotor(void)
+   \                     `?~StepMotor`:
+     36          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     37          
+     38          }
+   \   000000   22           RET
+     39          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     40          void StepMotor :: ClockWise(void)
+   \                     ??ClockWise:
+     41          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+     42          High(1); Low (2); Low (3); Low (4); Delay();
+   \   000008                ; Setup parameters for call to function StepMotor::High(UC)
+   \   000008   7901         MOV     R1,#0x1
+   \   00000A   AA82         MOV     R2,DPL
+   \   00000C   AB83         MOV     R3,DPH
+   \   00000E   12....       LCALL   ??High
+   \   000011                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000011   7902         MOV     R1,#0x2
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+   \   000017   12....       LCALL   ??Low
+   \   00001A                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00001A   7903         MOV     R1,#0x3
+   \   00001C   AA82         MOV     R2,DPL
+   \   00001E   AB83         MOV     R3,DPH
+   \   000020   12....       LCALL   ??Low
+   \   000023                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000023   7904         MOV     R1,#0x4
+   \   000025   AA82         MOV     R2,DPL
+   \   000027   AB83         MOV     R3,DPH
+   \   000029   12....       LCALL   ??Low
+   \   00002C                ; Setup parameters for call to function StepMotor::Delay()
+   \   00002C   AA82         MOV     R2,DPL
+   \   00002E   AB83         MOV     R3,DPH
+   \   000030   12....       LCALL   ??Delay
+     43          Low (1); High(2); Low (3); Low (4); Delay();
+   \   000033                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000033   7901         MOV     R1,#0x1
+   \   000035   AA82         MOV     R2,DPL
+   \   000037   AB83         MOV     R3,DPH
+   \   000039   12....       LCALL   ??Low
+   \   00003C                ; Setup parameters for call to function StepMotor::High(UC)
+   \   00003C   7902         MOV     R1,#0x2
+   \   00003E   AA82         MOV     R2,DPL
+   \   000040   AB83         MOV     R3,DPH
+   \   000042   12....       LCALL   ??High
+   \   000045                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000045   7903         MOV     R1,#0x3
+   \   000047   AA82         MOV     R2,DPL
+   \   000049   AB83         MOV     R3,DPH
+   \   00004B   12....       LCALL   ??Low
+   \   00004E                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00004E   7904         MOV     R1,#0x4
+   \   000050   AA82         MOV     R2,DPL
+   \   000052   AB83         MOV     R3,DPH
+   \   000054   12....       LCALL   ??Low
+   \   000057                ; Setup parameters for call to function StepMotor::Delay()
+   \   000057   AA82         MOV     R2,DPL
+   \   000059   AB83         MOV     R3,DPH
+   \   00005B   12....       LCALL   ??Delay
+     44          Low (1); Low (2); High(3); Low (4); Delay();
+   \   00005E                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00005E   7901         MOV     R1,#0x1
+   \   000060   AA82         MOV     R2,DPL
+   \   000062   AB83         MOV     R3,DPH
+   \   000064   12....       LCALL   ??Low
+   \   000067                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000067   7902         MOV     R1,#0x2
+   \   000069   AA82         MOV     R2,DPL
+   \   00006B   AB83         MOV     R3,DPH
+   \   00006D   12....       LCALL   ??Low
+   \   000070                ; Setup parameters for call to function StepMotor::High(UC)
+   \   000070   7903         MOV     R1,#0x3
+   \   000072   AA82         MOV     R2,DPL
+   \   000074   AB83         MOV     R3,DPH
+   \   000076   12....       LCALL   ??High
+   \   000079                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000079   7904         MOV     R1,#0x4
+   \   00007B   AA82         MOV     R2,DPL
+   \   00007D   AB83         MOV     R3,DPH
+   \   00007F   12....       LCALL   ??Low
+   \   000082                ; Setup parameters for call to function StepMotor::Delay()
+   \   000082   AA82         MOV     R2,DPL
+   \   000084   AB83         MOV     R3,DPH
+   \   000086   12....       LCALL   ??Delay
+     45          Low (1); Low (2); Low (3); High(4); Delay();
+   \   000089                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000089   7901         MOV     R1,#0x1
+   \   00008B   AA82         MOV     R2,DPL
+   \   00008D   AB83         MOV     R3,DPH
+   \   00008F   12....       LCALL   ??Low
+   \   000092                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000092   7902         MOV     R1,#0x2
+   \   000094   AA82         MOV     R2,DPL
+   \   000096   AB83         MOV     R3,DPH
+   \   000098   12....       LCALL   ??Low
+   \   00009B                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00009B   7903         MOV     R1,#0x3
+   \   00009D   AA82         MOV     R2,DPL
+   \   00009F   AB83         MOV     R3,DPH
+   \   0000A1   12....       LCALL   ??Low
+   \   0000A4                ; Setup parameters for call to function StepMotor::High(UC)
+   \   0000A4   7904         MOV     R1,#0x4
+   \   0000A6   AA82         MOV     R2,DPL
+   \   0000A8   AB83         MOV     R3,DPH
+   \   0000AA   12....       LCALL   ??High
+   \   0000AD                ; Setup parameters for call to function StepMotor::Delay()
+   \   0000AD   AA82         MOV     R2,DPL
+   \   0000AF   AB83         MOV     R3,DPH
+   \   0000B1   12....       LCALL   ??Delay
+     46          }
+   \   0000B4   D083         POP     DPH
+   \   0000B6   D082         POP     DPL
+   \   0000B8   22           RET
+     47          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     48          void StepMotor :: CounterClockWise(void)
+   \                     ??CounterClockWise:
+     49          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+     50          Low (1); Low (2); Low (3); High(4); Delay();
+   \   000008                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000008   7901         MOV     R1,#0x1
+   \   00000A   AA82         MOV     R2,DPL
+   \   00000C   AB83         MOV     R3,DPH
+   \   00000E   12....       LCALL   ??Low
+   \   000011                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000011   7902         MOV     R1,#0x2
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+   \   000017   12....       LCALL   ??Low
+   \   00001A                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00001A   7903         MOV     R1,#0x3
+   \   00001C   AA82         MOV     R2,DPL
+   \   00001E   AB83         MOV     R3,DPH
+   \   000020   12....       LCALL   ??Low
+   \   000023                ; Setup parameters for call to function StepMotor::High(UC)
+   \   000023   7904         MOV     R1,#0x4
+   \   000025   AA82         MOV     R2,DPL
+   \   000027   AB83         MOV     R3,DPH
+   \   000029   12....       LCALL   ??High
+   \   00002C                ; Setup parameters for call to function StepMotor::Delay()
+   \   00002C   AA82         MOV     R2,DPL
+   \   00002E   AB83         MOV     R3,DPH
+   \   000030   12....       LCALL   ??Delay
+     51          Low (1); Low (2); High(3); Low (4); Delay();
+   \   000033                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000033   7901         MOV     R1,#0x1
+   \   000035   AA82         MOV     R2,DPL
+   \   000037   AB83         MOV     R3,DPH
+   \   000039   12....       LCALL   ??Low
+   \   00003C                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00003C   7902         MOV     R1,#0x2
+   \   00003E   AA82         MOV     R2,DPL
+   \   000040   AB83         MOV     R3,DPH
+   \   000042   12....       LCALL   ??Low
+   \   000045                ; Setup parameters for call to function StepMotor::High(UC)
+   \   000045   7903         MOV     R1,#0x3
+   \   000047   AA82         MOV     R2,DPL
+   \   000049   AB83         MOV     R3,DPH
+   \   00004B   12....       LCALL   ??High
+   \   00004E                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00004E   7904         MOV     R1,#0x4
+   \   000050   AA82         MOV     R2,DPL
+   \   000052   AB83         MOV     R3,DPH
+   \   000054   12....       LCALL   ??Low
+   \   000057                ; Setup parameters for call to function StepMotor::Delay()
+   \   000057   AA82         MOV     R2,DPL
+   \   000059   AB83         MOV     R3,DPH
+   \   00005B   12....       LCALL   ??Delay
+     52          Low (1); High(2); Low (3); Low (4); Delay();
+   \   00005E                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00005E   7901         MOV     R1,#0x1
+   \   000060   AA82         MOV     R2,DPL
+   \   000062   AB83         MOV     R3,DPH
+   \   000064   12....       LCALL   ??Low
+   \   000067                ; Setup parameters for call to function StepMotor::High(UC)
+   \   000067   7902         MOV     R1,#0x2
+   \   000069   AA82         MOV     R2,DPL
+   \   00006B   AB83         MOV     R3,DPH
+   \   00006D   12....       LCALL   ??High
+   \   000070                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000070   7903         MOV     R1,#0x3
+   \   000072   AA82         MOV     R2,DPL
+   \   000074   AB83         MOV     R3,DPH
+   \   000076   12....       LCALL   ??Low
+   \   000079                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000079   7904         MOV     R1,#0x4
+   \   00007B   AA82         MOV     R2,DPL
+   \   00007D   AB83         MOV     R3,DPH
+   \   00007F   12....       LCALL   ??Low
+   \   000082                ; Setup parameters for call to function StepMotor::Delay()
+   \   000082   AA82         MOV     R2,DPL
+   \   000084   AB83         MOV     R3,DPH
+   \   000086   12....       LCALL   ??Delay
+     53          High(1); Low (2); Low (3); Low (4); Delay(); 
+   \   000089                ; Setup parameters for call to function StepMotor::High(UC)
+   \   000089   7901         MOV     R1,#0x1
+   \   00008B   AA82         MOV     R2,DPL
+   \   00008D   AB83         MOV     R3,DPH
+   \   00008F   12....       LCALL   ??High
+   \   000092                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   000092   7902         MOV     R1,#0x2
+   \   000094   AA82         MOV     R2,DPL
+   \   000096   AB83         MOV     R3,DPH
+   \   000098   12....       LCALL   ??Low
+   \   00009B                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   00009B   7903         MOV     R1,#0x3
+   \   00009D   AA82         MOV     R2,DPL
+   \   00009F   AB83         MOV     R3,DPH
+   \   0000A1   12....       LCALL   ??Low
+   \   0000A4                ; Setup parameters for call to function StepMotor::Low(UC)
+   \   0000A4   7904         MOV     R1,#0x4
+   \   0000A6   AA82         MOV     R2,DPL
+   \   0000A8   AB83         MOV     R3,DPH
+   \   0000AA   12....       LCALL   ??Low
+   \   0000AD                ; Setup parameters for call to function StepMotor::Delay()
+   \   0000AD   AA82         MOV     R2,DPL
+   \   0000AF   AB83         MOV     R3,DPH
+   \   0000B1   12....       LCALL   ??Delay
+     54          }
+   \   0000B4   D083         POP     DPH
+   \   0000B6   D082         POP     DPL
+   \   0000B8   22           RET
+     55          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     56          void StepMotor :: High(UC Enroulement)
+   \                     ??High:
+     57          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     58          switch(Enroulement)
+   \   000000   E9           MOV     A,R1
+   \   000001   14           DEC     A
+   \   000002   600A         JZ      ??High_1
+   \   000004   14           DEC     A
+   \   000005   600A         JZ      ??High_2
+   \   000007   14           DEC     A
+   \   000008   600A         JZ      ??High_3
+   \   00000A   14           DEC     A
+   \   00000B   600A         JZ      ??High_4
+   \   00000D   22           RET
+     59            { 
+     60             case 1:
+     61                Bobine1 = HIGH;
+   \                     ??High_1:
+   \   00000E   D290         SETB    0x90.0
+     62             break;
+   \   000010   22           RET
+     63          
+     64             case 2:
+     65                Bobine2 = HIGH;
+   \                     ??High_2:
+   \   000011   D291         SETB    0x90.1
+     66             break;
+   \   000013   22           RET
+     67          
+     68             case 3:
+     69                Bobine3 = HIGH;
+   \                     ??High_3:
+   \   000014   D292         SETB    0x90.2
+     70             break;
+   \   000016   22           RET
+     71          
+     72             case 4:
+     73                Bobine4 = HIGH;
+   \                     ??High_4:
+   \   000017   D293         SETB    0x90.3
+     74             break;
+     75            }
+     76          }
+   \   000019   22           RET
+   \   00001A                REQUIRE _A_P1
+     77          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     78          void StepMotor :: Low(UC Enroulement)
+   \                     ??Low:
+     79          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     80          switch(Enroulement)
+   \   000000   E9           MOV     A,R1
+   \   000001   14           DEC     A
+   \   000002   600A         JZ      ??Low_1
+   \   000004   14           DEC     A
+   \   000005   600A         JZ      ??Low_2
+   \   000007   14           DEC     A
+   \   000008   600A         JZ      ??Low_3
+   \   00000A   14           DEC     A
+   \   00000B   600A         JZ      ??Low_4
+   \   00000D   22           RET
+     81            { 
+     82             case 1:
+     83                Bobine1 = LOW;
+   \                     ??Low_1:
+   \   00000E   C290         CLR     0x90.0
+     84             break;
+   \   000010   22           RET
+     85          
+     86             case 2:
+     87                Bobine2 = LOW;
+   \                     ??Low_2:
+   \   000011   C291         CLR     0x90.1
+     88             break;
+   \   000013   22           RET
+     89          
+     90             case 3:
+     91                Bobine3 = LOW;
+   \                     ??Low_3:
+   \   000014   C292         CLR     0x90.2
+     92             break;
+   \   000016   22           RET
+     93          
+     94             case 4:
+     95                Bobine4 = LOW;
+   \                     ??Low_4:
+   \   000017   C293         CLR     0x90.3
+     96             break;
+     97            }  
+     98          }
+   \   000019   22           RET
+   \   00001A                REQUIRE _A_P1
+     99          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    100          void StepMotor :: Delay(void)
+   \                     ??Delay:
+    101          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    102          int i;
+    103          for(i = 0; i < InterStep; i++){/* Rien, hahaha! */ }
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??Delay_1
+   \                     ??Delay_2:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   F8           MOV     R0,A
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??Delay_1:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   94E8         SUBB    A,#-0x18
+   \   000012   E9           MOV     A,R1
+   \   000013   9403         SUBB    A,#0x3
+   \   000015   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000017   65D0         XRL     A,PSW
+   \   000019   33           RLC     A
+   \   00001A   40EA         JC      ??Delay_2
+    104          }
+   \   00001C   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant StepMotor &StepMotor::new StepMotor()
+   \                     `??new StepMotor`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new StepMotor_2`
+   \   00001B                ; Setup parameters for call to function StepMotor::StepMotor()
+   \   00001B   12....       LCALL   ??StepMotor
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new StepMotor_3`
+   \                     `??new StepMotor_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new StepMotor_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant StepMotor &StepMotor::new StepMotor(UC)
+   \                     `??new StepMotor_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A01         MOV     R2,#0x1
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new StepMotor_4`
+   \   00001E                ; Setup parameters for call to function StepMotor::StepMotor(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??StepMotor_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new StepMotor_5`
+   \                     `??new StepMotor_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new StepMotor_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void StepMotor::delete ~StepMotor(StepMotor *)
+   \                     `??delete ~StepMotor`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~StepMotor_1`
+   \   00000D                ; Setup parameters for call to function StepMotor::~StepMotor()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~StepMotor`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~StepMotor_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    105          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     StepMotor::ClockWise()             2      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Delay()            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Delay()            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Delay()            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Delay()            4      0      0
+     StepMotor::CounterClockWise()      2      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Delay()            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Delay()            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Delay()            4      0      0
+       -> StepMotor::High(UC)           4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Low(UC)            4      0      0
+       -> StepMotor::Delay()            4      0      0
+     StepMotor::Delay()                 0      0      0
+     StepMotor::High(UC)                0      0      0
+     StepMotor::Low(UC)                 0      0      0
+     StepMotor::StepMotor()             0      0      0
+     StepMotor::StepMotor(UC)           0      0      9
+     StepMotor::delete ~StepMotor(StepMotor *)
+                                        0      0      8
+       -> StepMotor::~StepMotor()       0      0     16
+       -> operator delete(void *)       0      0     16
+     StepMotor::new StepMotor()         2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> StepMotor::StepMotor()        4      0      0
+     StepMotor::new StepMotor(UC)       0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> StepMotor::StepMotor(UC)      0      0     18
+     StepMotor::~StepMotor()            0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     _A_P1                             1
+     StepMotor::StepMotor()            1
+     StepMotor::StepMotor(UC)          1
+     StepMotor::~StepMotor()           1
+     StepMotor::ClockWise()          185
+     StepMotor::CounterClockWise()   185
+     StepMotor::High(UC)              26
+     StepMotor::Low(UC)               26
+     StepMotor::Delay()               29
+     StepMotor::new StepMotor()       49
+     StepMotor::new StepMotor(UC)     54
+     StepMotor::delete ~StepMotor(StepMotor *)
+                                      32
+
+ 
+ 589 bytes in segment NEAR_CODE
+   1 byte  in segment SFR_AN
+ 
+ 589 bytes of CODE memory
+   0 bytes of DATA memory (+ 1 byte shared)
+
+Errors: none
+Warnings: none

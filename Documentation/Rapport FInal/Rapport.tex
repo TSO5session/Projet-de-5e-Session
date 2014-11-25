@@ -77,7 +77,7 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \pagebreak
 \begin{spacing}{1.14999}
 \tableofcontents 
-%\pagebreak
+\pagebreak
 \listoffigures  
 \listoftables 
 \end{spacing}  
@@ -103,7 +103,7 @@ Le projet de la cinquième session consiste à réaliser
 \begin{itemize}
 \item[$\Rightarrow$] Le Bolide
 \item[$\Rightarrow$] Carte Dallas DS89C450
-\item[$\Rightarrow$] Carte uPSD 3254A
+\item[$\Rightarrow$] Carte $\mu PSD$ 3254A
 \item[$\Rightarrow$] SOC8200
 \item[$\Rightarrow$] Table FESTO
 \item[$\Rightarrow$] Carte PIC16F88
@@ -202,6 +202,41 @@ Le bloc 2 est composé d'un système embarqué Linux basé sur le SOC8200. Son r
 \pagebreak
 \subsection{Liste des trames}
 
+
+\end{spacing}
+f
+\begin{spacing}{1.5}
+
+
+\pagebreak
+
+\section{Le matériel}
+\subsection{Bloc 1}
+D'un pont de vu matériel, le bloc 1 est le plus simple, car il est composé d'un ordinateur Windows munie d'une carte PCI vers CAN et d'une prise RS232. Il n'y a rien à faire, mise à part brancher les bons câbles aux bons endroits.
+
+\subsection{Bloc 2}
+
+\subsection{Bloc 3}
+
+\subsection{Bloc 4}
+
+
+
+\subsection{Explication des types de liens}
+\subsubsection{RS232}
+Un lien RS232 9600 Bauds est établi entre l'ordinateur et le SOC8200. Ce lien sert à l'envoie et à la réception de HeartBeat, afin que le SOC8200 ou l'ordinateur soit informé de toute défaillance de l'autre.
+
+\subsubsection{Xbee}
+Lorsque les modules Xbee sont adéquatement configurés, ils font office de remplacement au câble RS232. En effet, nos Xbee discutent entre eux à l'aide du protocole de communication RS232 à 9600 bauds.  
+
+
+\subsection{Explication des trames}
+\subsubsection{RS-232}
+Le protocole RS-232 sert à envoyer et à recevoir des HeartBeat. Le PC et le SOC 8200 s'envoient tous deux un HeartBeat par seconde à 9600 bauds. Un HeartBeat, c'est simplement le mot "Allo". Le PC et le SOC2800 "écoutent" les HeartBeats, et si ces derniers ne sont pas entendus, chaque dispositif prend pour acquis que l'autre est hors-service et prend la relève de la gestion du bus CAN.
+\pagebreak
+\subsubsection{CAN}
+Chaque dispositif matériel, du Bolide au PC, dispose d'un identifiant CAN allant de 000 à 005. Chaque fonctionnalité dispose d'un code d'identification suivi de la donnée à transmettre.
+
 \begin{table}[!ht]
 \caption{Index des identifiants matériel CAN}
 \medskip
@@ -293,7 +328,7 @@ Station 1 & Dit bloc = orange & 000 & 04 01 & TimeStamp & Ordinateur &  F9\\
 \hline 
 Station 1 & Dit bloc = noir & 000 & 04 02 & TimeStamp & Ordinateur &  FA\\
 \hline 
-Station 1 & Dit le poid du bloc & 000 & 05 [00 à 64] & TimeStamp & Ordinateur &  FB\\ 
+Station 1 & Dit le poids du bloc & 000 & 05 [00 à 64] & TimeStamp & Ordinateur &  FB\\ 
 \hline 
 Voiture & Dit qu'elle est à la station 1 & 000 & 07 00 & TimeStamp & Ordinateur &  FC\\ 
 \hline 
@@ -310,13 +345,11 @@ Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\
 \end{tabular} 
 \label{tab:testtab1}
 \end{table}
-\begin{flushleft}
-\textbf{Note:} Il faut définir les TimeStamps et la checkSUM\\
-\textbf{Note:} La station no.1 relaie les données entre l'ordinateur et la station no.3 (pesage), entre l'ordinateur et la station no.2 (table Festo) via xbee et entre la voiture et le PC via Xbee.
-\end{flushleft}
+
 \pagebreak
-\textbf{Note:} FF, c'est la checkSUM, mais elle n'a pas encore été faite \\
-\textbf{Note:} Il faut ajouter le TimeStamp 
+\begin{flushleft}
+ Exemples de trames CAN à transmettre au PC.
+ \end{flushleft} 
 \end{spacing}
 \begin{lstlisting}
    CAN.SendToPC("0100FF"); // Arrêté
@@ -335,39 +368,6 @@ Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\
 \begin{spacing}{1.5}
 \pagebreak
 
-\end{spacing}
-f
-\begin{spacing}{1.5}
-
-
-\pagebreak
-
-\section{Le matériel}
-\subsection{Bloc 1}
-D'un pont de vu matériel, le bloc 1 est le plus simple, car il est composé d'un ordinateur Windows munie d'une carte PCI vers CAN et d'une prise RS232. Il n'y a rien à faire, mise à part brancher les bons câbles aux bons endroits.
-
-\subsection{Bloc 2}
-
-\subsection{Bloc 3}
-
-\subsection{Bloc 4}
-
-
-
-\subsection{Explication des types de liens}
-\subsubsection{RS232}
-Un lien RS232 9600 Bauds est établi entre l'ordinateur et le SOC8200. Ce lien sert à l'envoie et à la réception de HeartBeat, afin que le SOC8200 ou l'ordinateur soit informé de toute défaillance de l'autre.
-
-\subsubsection{Xbee}
-Lorsque les modules Xbee sont adéquatement configurés, ils font office de remplacement au câble RS232. En effet, nos Xbee discutent entre eux à l'aide du protocole de communication RS232 à 9600 bauds.  
-
-
-\subsection{Explication des trames}
-\subsubsection{RS-232}
-Le protocole RS-232 sert à envoyer et à recevoir des HeartBeat. Le PC et le SOC 8200 s'envoient tous deux un HeartBeat par seconde à 9600 bauds. Un HeartBeat, c'est simplement le mot "Allo". Le PC et le SOC2800 "écoutent" les HeartBeats, et si ces derniers ne sont pas entendus, chaque dispositif prend pour acquis que l'autre est hors-service et prend la relève de la gestion du bus CAN.
-
-\subsubsection{CAN}
-
 \subsubsection{XBEE}
 Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station no.1 (la carte $\mu PSD$), sur la station no.2 (la table FESTO) et la station no.6, c'est à dire le bolide. La particularité des Xbee est que lorsqu'ils sont adéquatement configurés, tout ce qu'envoie un Xbee est reçu et lu par tous les autres Xbee à proximité, et c'est pourquoi nous avons définit un système de trames.
 
@@ -380,22 +380,23 @@ Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station n
 \begin{multicols}{3}
 \begin{itemize}
 \item[•]Carte Dallas
-\item[•]Carte uPSD
-\item[•]SOC 8200
-\item[•]PIC18Fmachin
+\item[•]Carte $\mu PSD$
+\item[•]SOC 8200 (avec clavier)
+\item[•]PIC18FmachinTruc
 \item[•]Carte d'extension SPI
 \item[•]Carte d'extension I2C
 \item[•]Carte CAN MCP2515
-\item[•]XBEE
+\item[•]Xbee
 \item[•]Table FESTO
 \item[•]Carte d'extension IO
+\item[•]Carte connecteur IO
 \item[•]Carte connecteur DAC ADC
 \item[•]Carte Xbee vers DB9
-\item[•]
-\item[•]
-\item[•]
-\item[•]
-\item[•]
+\item[•]Câble Ethernet croisé
+\item[•]Câble Ethernet régulier
+\item[•]Câble DB9
+\item[•]Carte Xbee vers DB8
+\item[•]Le Bolide
 \item[•]
 \item[•]
 \end{itemize}
@@ -406,7 +407,7 @@ Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station n
 
 \subsubsection{Liens web}
 Mettre ien vers GitHUB
-
+\pagebreak
 \subsubsection{Datasheets}
 Note: Toutes les datasheets sont en format non-compressé. Vous pouvez zoomer sur le document PDF\footnote{Présenter les datasheets de la sorte économise du papier, donc des arbres, mais requiert de consulter le document .PDF afin de lire adéquatement les datasheets.} afin de lire l'intégralité de leurs première page.
 \begin{multicols}{3}
@@ -498,13 +499,15 @@ Un ghost label est un label de texte présent sur l'interface, mais définit com
 Le programme du SOC2800 est écrit en script Shell\footnote{Car c'est plus simple que de se battre avec le gestionnaire de licence de Sourcery Codebench}\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable sur un système Linux}
 
 \subsection{Schéma bloc}
+
 \subsubsection{Du code}
+Mettre Doxygen generated stuff
 
 \subsubsection{Du script shell}
 
 \subsection{Gestion des processus et du temps de CPU}
 
-\subsection{Format et récupration des logs}
+\subsection{Format et récupération des logs}
 
 \subsection{Liste des tests et logiciels}
 
@@ -519,6 +522,7 @@ Le programme de la station 1, 2 et du bolide est écrit en C++ à l'aide d'IAR W
 
 \subsection{La station no.1}
 La sation no.1 est composé de $\mu$PSD et s'appelle Bloc no.2 dans le cahier de consignes. Cette station reçoit les directives du PC par le BUS CAN et les expédie sur le bus CAN (et vice-versa) aux endroits appropriés. C'est aussi à cette station qu'incombe la tâche de communiquer avec le bolide et la table FESTO via des Xbee
+
 \subsection{La station no.2}
 La sation no.2 est composé de la table FESTO et s'appelle Bloc no.3 dans le cahier de consignes
 
@@ -546,7 +550,7 @@ OPT101  &  0x50 & Suiveur de ligne  \\
 
 \pagebreak
 \subsection{Procédure de compilation sur IAR}
-Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivante, afin de compiler le code pour la carte Dallas ou pour la carte $\mu$PSD. 
+Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivante, afin de compiler le code pour la carte Dallas ou pour la carte $\mu PSD$. 
 
 \begin{figure}[hbtp]
 \caption{Choix de la cible sur IAR}
@@ -554,7 +558,7 @@ Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivant
 \fbox{\includegraphics[scale=1]{Figures/Procedure/procedure.png}}
 \end{figure}
 
-De plus, des paramètres de compilation optionnelle vous permettent, via la décommentation, de compiler le code pour la carte Dallasou $\mu$PSD, pour la carte d'extension I2C ou SPI et pour un capteur de ligne à 3 ou à 5 photoréccepteurs.\\
+De plus, des paramètres de compilation optionnelle vous permettent, via la décommentation, de compiler le code pour la carte Dallasou $\mu PSD$, pour la carte d'extension I2C ou SPI et pour un capteur de ligne à 3 ou à 5 photoréccepteurs.\\
 \end{spacing}
 \textbf{Appercu des directives de compilation conditionnelles}
 \begin{lstlisting}
@@ -582,14 +586,60 @@ De plus, des paramètres de compilation optionnelle vous permettent, via la déc
 $V_{MAX}=10.8V \Rightarrow MAX1236  = 12 bit \Rightarrow Pas = \dfrac{4K\Omega \cdot \left(\dfrac{10.8V}{10K\Omega}\right)}{2^{12}(pas)} = 1.33(mV/pas)$
 \subsection{Calcul du baudrate}
 $Baud = \dfrac{2^{SMOD}}{32}\cdot\dfrac{Crystal (Hz)}{12\cdot(256 - TH1)}$\\
-\pagebreak
+
 %\bigskip
 
 Alors...\\
 
 
 $\overbrace{9600 = \dfrac{2^{1}}{32} \cdot \dfrac{24\cdot10^{6}(Hz)}{12\cdot(256 - 243)}}^{uPSD 3254} $ $\Leftarrow \& \Rightarrow $ $ \overbrace{9600 = \dfrac{2^{0}}{32}\cdot \dfrac{11.0597 \cdot 10^{6}(Hz)}{12\cdot(256 - 253)}}^{DS89C450}$
+\pagebreak
+\section{Fichiers Gerbers}
+Une carte d'extionsion à été réalisée avec OrCad 16.2 et à été gravée sur la rutilante LPKF. Voici les gouches gerber\footnote{Les couches présentées no sont pas à l'échelle}.
 
+\begin{figure}[hbtp]
+\caption{Couche TOP}
+\centering
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/top.png}}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\caption{Couche BOT}
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/bot.png}}
+\end{figure}
+
+\vfill
+\pagebreak
+
+\begin{figure}[hbtp]
+\caption{Silk Screen TOP}
+\centering
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/sstop.png}}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\caption{Solder mask TOP}
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/smt.png}}
+\end{figure}
+
+\vfill
+\pagebreak
+
+
+
+\begin{figure}[hbtp]
+\caption{Drill}
+\centering
+\fbox{\includegraphics[scale=0.45]{Figures/OrCad/drill.png}}
+\end{figure}
 
 
 
@@ -626,6 +676,7 @@ $\overbrace{9600 = \dfrac{2^{1}}{32} \cdot \dfrac{24\cdot10^{6}(Hz)}{12\cdot(256
 \subsubsection{Gabriel Fortin-Bélanger}
 
 \subsubsection{Louis-Norman Ang-Houle}
+
 \end{spacing}
 \include{Codesource/BolideUpsd}
 \include{Codesource/cSharp}

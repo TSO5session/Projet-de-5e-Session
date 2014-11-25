@@ -1,0 +1,1478 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         24/Nov/2014  22:54:30 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\CLMCP2515.cpp                                    #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\CLMCP2515.cpp" -D UPSD3254A --preprocess=cl      #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Auto #
+#                          mne 2014\ProjetSession5\ProgrammeDuFESTO\Programme #
+#                          FESTO\UPSD\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\ProgrammeDuFESTO\Progr #
+#                          ammeFESTO\UPSD\List\" -o                           #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\" -e --no_cse --no_unroll --no_inline   #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large --code_model=near   #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\CLMCP2515.lst                          #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\CLMCP2515.r51                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLMCP2515.cpp
+      1          // ***************** FICHIER:CLI2CPort.cpp
+      2          //
+      3          //  Description:Contient les fonctions haut niveau pour communiquer avec 
+      4          //              l I2C.
+      5          //             
+      6          //
+      7          //  Application realisee avec IAR
+      8          //
+      9          //  AUTEUR : Gabriel Fortin-Belanger
+     10          //  DATE CREATION :    2014-02-07       VERSION: 1.0
+     11          //  DATE MODIFICATION: ****-**-**
+     12          //
+     13          //******************************************************************************
+     14          #include "_DeclarationGenerale.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     15          #include "CLMCP2515.h"
+
+     UC CLMCP2515 :: LireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
+        ^
+"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLMCP2515.h",40  Warning[Pe427]: 
+          qualified name is not allowed in member declaration
+     16          #include "CLSPI.h"
+     17          
+     18          //******************************************************************************
+     19          //                            LE CONSTRUCTEUR PAR DEFAUT
+     20          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     21          CLMCP2515 :: CLMCP2515(void)
+   \                     ??CLMCP2515:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     22          {
+   \   000009                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000009   EE           MOV     A,R6
+   \   00000A   2408         ADD     A,#0x8
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   ??CLSPI
+     23           
+     24          }
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   7F01         MOV     R7,#0x1
+   \   00001A   02....       LJMP    ?FUNC_LEAVE_XDATA
+     25          
+     26          
+     27          // *****************************************************************************
+     28          //                            LE DESTRUCTEUR
+     29          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     30          CLMCP2515 :: ~CLMCP2515(void)
+   \                     `?~CLMCP2515`:
+     31          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     32          
+     33          }
+   \   000000                ; Setup parameters for call to function CLSPI::~CLSPI()
+   \   000000   EA           MOV     A,R2
+   \   000001   2408         ADD     A,#0x8
+   \   000003   FA           MOV     R2,A
+   \   000004   EB           MOV     A,R3
+   \   000005   3400         ADDC    A,#0x0
+   \   000007   FB           MOV     R3,A
+   \   000008   02....       LJMP    `?~CLSPI`
+     34          
+     35          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     36          void CLMCP2515 :: InitialisationMCP2515(void)
+   \                     ??InitialisationMCP2515:
+     37          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     38             /* Envoi de la commande de « RESET », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. */
+     39             EcrireDonnesMCP2515(1, MCP2515_RESET, 0x00, 0x00);
+   \   000009                ; Setup parameters for call to function CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+   \   000009   75..00       MOV     ?V0 + 0,#0x0
+   \   00000C   78..         MOV     R0,#?V0 + 0
+   \   00000E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000011   7D00         MOV     R5,#0x0
+   \   000013   7CC0         MOV     R4,#-0x40
+   \   000015   7901         MOV     R1,#0x1
+   \   000017   EE           MOV     A,R6
+   \   000018   FA           MOV     R2,A
+   \   000019   EF           MOV     A,R7
+   \   00001A   FB           MOV     R3,A
+   \   00001B   12....       LCALL   ??EcrireDonnesMCP2515
+   \   00001E   7401         MOV     A,#0x1
+   \   000020   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000023   E9           MOV     A,R1
+     40             
+     41             Delai(1000);   /* Délai permettant de s'assurer que le cicruit « MCP2515 » soit bien réinitialisé. */
+   \   000024                ; Setup parameters for call to function CLMCP2515::Delai(unsigned long)
+   \   000024   90....       MOV     DPTR,#__Constant_3e8
+   \   000027   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   00002A   EE           MOV     A,R6
+   \   00002B   FA           MOV     R2,A
+   \   00002C   EF           MOV     A,R7
+   \   00002D   FB           MOV     R3,A
+   \   00002E   12....       LCALL   ??Delai
+   \   000031   7404         MOV     A,#0x4
+   \   000033   12....       LCALL   ?DEALLOC_XSTACK8
+     42          
+     43          
+     44          
+     45          /* Passage du circuit MCP2515 en « Configuration mode », nécéssaire pour pouvoir effectuer les opérations de configurations qui suivent */
+     46          
+     47             EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x87);   /* Registre 0x0F.
+   \   000036                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000036   7C87         MOV     R4,#-0x79
+   \   000038   790F         MOV     R1,#0xf
+   \   00003A   EE           MOV     A,R6
+   \   00003B   FA           MOV     R2,A
+   \   00003C   EF           MOV     A,R7
+   \   00003D   FB           MOV     R3,A
+   \   00003E   12....       LCALL   ??EcrireRegistreMCP2515
+     48                                       - REQOP2 = 1,
+     49                                       - REQOP1 = 0,
+     50                                       - REQOP0 = 0 : le circuit est passé en « Configuration mode »,
+     51                                       - ABAT = 0 : ne pas annuler toutes les transmissons en attentes, si nécéssaire,
+     52                                       - OSM : renvois des messages, si nécessaire,
+     53                                       - CLKEN = 1 : la broche « CLKOUT » est activée,
+     54                                       - CLKPRE1 = 1,
+     55                                       - CLKPRE0 = 1 : réglage du prédiviseur de l'horloge de la broche « CLKOUT » à 8,
+     56                                       - F_CLKOUT = System Clock / 8 */
+     57          
+     58             EcrireRegistreMCP2515(MCP2515_TX01_INT, 0x3C); /* Registre 0x0C */
+   \   000041                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000041   7C3C         MOV     R4,#0x3c
+   \   000043   790C         MOV     R1,#0xc
+   \   000045   EE           MOV     A,R6
+   \   000046   FA           MOV     R2,A
+   \   000047   EF           MOV     A,R7
+   \   000048   FB           MOV     R3,A
+   \   000049   12....       LCALL   ??EcrireRegistreMCP2515
+     59             EcrireRegistreMCP2515(MCP2515_TXRTSCTRL, 0x00); /* Registre 0x0D.
+   \   00004C                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   00004C   7C00         MOV     R4,#0x0
+   \   00004E   790D         MOV     R1,#0xd
+   \   000050   EE           MOV     A,R6
+   \   000051   FA           MOV     R2,A
+   \   000052   EF           MOV     A,R7
+   \   000053   FB           MOV     R3,A
+   \   000054   12....       LCALL   ??EcrireRegistreMCP2515
+     60                                     L'envoi d'un message - RTS - ne se fait pas sur le passage à « 0 » d'une broche,
+     61                                     mais après l'envoi de la commande « RTS », par l'intermédiaire du bus SPI */
+     62          
+     63          
+     64          /* Initialisations des registres des compteurs d'erreurs */
+     65          
+     66             EcrireRegistreMCP2515(MCP2515_TEC, 0x00); /* Registre 0x1C.
+   \   000057                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000057   7C00         MOV     R4,#0x0
+   \   000059   791C         MOV     R1,#0x1c
+   \   00005B   EE           MOV     A,R6
+   \   00005C   FA           MOV     R2,A
+   \   00005D   EF           MOV     A,R7
+   \   00005E   FB           MOV     R3,A
+   \   00005F   12....       LCALL   ??EcrireRegistreMCP2515
+     67                                   Mise à zéro du compteur d'erreurs en émission.*/
+     68             EcrireRegistreMCP2515(MCP2515_REC, 0x00); /* Registre 0x1D.
+   \   000062                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000062   7C00         MOV     R4,#0x0
+   \   000064   791D         MOV     R1,#0x1d
+   \   000066   EE           MOV     A,R6
+   \   000067   FA           MOV     R2,A
+   \   000068   EF           MOV     A,R7
+   \   000069   FB           MOV     R3,A
+   \   00006A   12....       LCALL   ??EcrireRegistreMCP2515
+     69                                   Mise à zéro du compteur d'erreurs en réception.*/
+     70          
+     71          
+     72             
+     73          /* Configurations du « Bit Timing » */
+     74                               
+     75             EcrireRegistreMCP2515(MCP2515_CNF1, 0xC0 ); /* Registre 0x2A.
+   \   00006D                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   00006D   7CC0         MOV     R4,#-0x40
+   \   00006F   792A         MOV     R1,#0x2a
+   \   000071   EE           MOV     A,R6
+   \   000072   FA           MOV     R2,A
+   \   000073   EF           MOV     A,R7
+   \   000074   FB           MOV     R3,A
+   \   000075   12....       LCALL   ??EcrireRegistreMCP2515
+     76                                      - SJW = 0 : 1 x TQ,
+     77                                      - BRP = 3. */
+     78             EcrireRegistreMCP2515(MCP2515_CNF2, 0x88); /* Registre 0x29.
+   \   000078                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000078   7C88         MOV     R4,#-0x78
+   \   00007A   7929         MOV     R1,#0x29
+   \   00007C   EE           MOV     A,R6
+   \   00007D   FA           MOV     R2,A
+   \   00007E   EF           MOV     A,R7
+   \   00007F   FB           MOV     R3,A
+   \   000080   12....       LCALL   ??EcrireRegistreMCP2515
+     79                                      - BTLMODE = 1,
+     80                                      - SAM = 0,
+     81                                      - PHSEG1 = 2,
+     82                                      - PRSEG = 0. */
+     83             EcrireRegistreMCP2515(MCP2515_CNF3, 0x03 ); /* Registre 0x28.
+   \   000083                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000083   7C03         MOV     R4,#0x3
+   \   000085   7928         MOV     R1,#0x28
+   \   000087   EE           MOV     A,R6
+   \   000088   FA           MOV     R2,A
+   \   000089   EF           MOV     A,R7
+   \   00008A   FB           MOV     R3,A
+   \   00008B   12....       LCALL   ??EcrireRegistreMCP2515
+     84                                      - SOF = 0 : Broche « CLKOUT » activée pour la fonction de répétition de l'horloge,
+     85                                      - WAKFIL = 0 : Wake-up filter désactivé,
+     86                                      - PHSEG : 2. */
+     87          
+     88          /* Configurations des interruptions du circuit MCP2515 */
+     89          
+     90             EcrireRegistreMCP2515(MCP2515_CANINTE, 0x01); /* Registre 0x2B.
+   \   00008E                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   00008E   7C01         MOV     R4,#0x1
+   \   000090   792B         MOV     R1,#0x2b
+   \   000092   EE           MOV     A,R6
+   \   000093   FA           MOV     R2,A
+   \   000094   EF           MOV     A,R7
+   \   000095   FB           MOV     R3,A
+   \   000096   12....       LCALL   ??EcrireRegistreMCP2515
+     91                                      Autorisation des interruptions suite à la réception d'une donnée par le module « RXB0 ». */
+     92          
+     93             EcrireRegistreMCP2515(MCP2515_CANINTF, 0x00); /* Registre 0x2C.
+   \   000099                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000099   7C00         MOV     R4,#0x0
+   \   00009B   792C         MOV     R1,#0x2c
+   \   00009D   EE           MOV     A,R6
+   \   00009E   FA           MOV     R2,A
+   \   00009F   EF           MOV     A,R7
+   \   0000A0   FB           MOV     R3,A
+   \   0000A1   12....       LCALL   ??EcrireRegistreMCP2515
+     94                                       Acquittement des éventuelles interruptions qui seraient en attente .*/
+     95             
+     96             EcrireRegistreMCP2515(MCP2515_EFLG, 0x00); /* Registre 0x2D */
+   \   0000A4                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000A4   7C00         MOV     R4,#0x0
+   \   0000A6   792D         MOV     R1,#0x2d
+   \   0000A8   EE           MOV     A,R6
+   \   0000A9   FA           MOV     R2,A
+   \   0000AA   EF           MOV     A,R7
+   \   0000AB   FB           MOV     R3,A
+   \   0000AC   12....       LCALL   ??EcrireRegistreMCP2515
+     97          
+     98             EcrireRegistreMCP2515(MCP2515_RXB0CTRL, 0x20); /* Registre 0x60 */
+   \   0000AF                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000AF   7C20         MOV     R4,#0x20
+   \   0000B1   7960         MOV     R1,#0x60
+   \   0000B3   EE           MOV     A,R6
+   \   0000B4   FA           MOV     R2,A
+   \   0000B5   EF           MOV     A,R7
+   \   0000B6   FB           MOV     R3,A
+   \   0000B7   12....       LCALL   ??EcrireRegistreMCP2515
+     99             
+    100             
+    101          
+    102          /* Configuration initiale du module « TXB0 » */
+    103          
+    104             EcrireRegistreMCP2515(MCP2515_TXB0CTRL, 0x03); /* Registre 0x30.
+   \   0000BA                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000BA   7C03         MOV     R4,#0x3
+   \   0000BC   7930         MOV     R1,#0x30
+   \   0000BE   EE           MOV     A,R6
+   \   0000BF   FA           MOV     R2,A
+   \   0000C0   EF           MOV     A,R7
+   \   0000C1   FB           MOV     R3,A
+   \   0000C2   12....       LCALL   ??EcrireRegistreMCP2515
+    105                                        TXP = 0b11 : les messages ont la plus haute priorité. */
+    106          
+    107             EcrireRegistreMCP2515(MCP2515_TXB0DLC, 0x01); /* Registre 0x35.
+   \   0000C5                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000C5   7C01         MOV     R4,#0x1
+   \   0000C7   7935         MOV     R1,#0x35
+   \   0000C9   EE           MOV     A,R6
+   \   0000CA   FA           MOV     R2,A
+   \   0000CB   EF           MOV     A,R7
+   \   0000CC   FB           MOV     R3,A
+   \   0000CD   12....       LCALL   ??EcrireRegistreMCP2515
+    108                                       Nombre d'octets occupés par les données à envoyer : 1 octet.*/
+    109          
+    110          
+    111                                      
+    112          /* Configurations de l'identifiant en réception par le filtre 0 du circuit MCP2515 */
+    113                
+    114             EcrireRegistreMCP2515(MCP2515_RXF0SIDH, 0x00);   /* Registre 0x00.
+   \   0000D0                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000D0   7C00         MOV     R4,#0x0
+   \   0000D2   7900         MOV     R1,#0x0
+   \   0000D4   EE           MOV     A,R6
+   \   0000D5   FA           MOV     R2,A
+   \   0000D6   EF           MOV     A,R7
+   \   0000D7   FB           MOV     R3,A
+   \   0000D8   12....       LCALL   ??EcrireRegistreMCP2515
+    115                                        Identifiant initial de réception H. */
+    116          
+    117             EcrireRegistreMCP2515(MCP2515_RXF0SIDL, 0xC0);   /* Registre 0x01.
+   \   0000DB                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000DB   7CC0         MOV     R4,#-0x40
+   \   0000DD   7901         MOV     R1,#0x1
+   \   0000DF   EE           MOV     A,R6
+   \   0000E0   FA           MOV     R2,A
+   \   0000E1   EF           MOV     A,R7
+   \   0000E2   FB           MOV     R3,A
+   \   0000E3   12....       LCALL   ??EcrireRegistreMCP2515
+    118                                        Identifiant initial de réception L + configurations initiales du mode de fonctionnement des identifiants en réceptions. */
+    119          
+    120          
+    121          
+    122          /* Configurations du masque de réception initial utilisé par le filtre 0 du circuit MCP2515 */
+    123          
+    124             EcrireRegistreMCP2515(MCP2515_RXM0SIDH, 0x00);   /* Registre 0x20.
+   \   0000E6                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000E6   7C00         MOV     R4,#0x0
+   \   0000E8   7920         MOV     R1,#0x20
+   \   0000EA   EE           MOV     A,R6
+   \   0000EB   FA           MOV     R2,A
+   \   0000EC   EF           MOV     A,R7
+   \   0000ED   FB           MOV     R3,A
+   \   0000EE   12....       LCALL   ??EcrireRegistreMCP2515
+    125                                        Masque de réception initial H. */
+    126                                        
+    127             EcrireRegistreMCP2515(MCP2515_RXM0SIDL, 0xE0);   /* Registre 0x21.
+   \   0000F1                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000F1   7CE0         MOV     R4,#-0x20
+   \   0000F3   7921         MOV     R1,#0x21
+   \   0000F5   EE           MOV     A,R6
+   \   0000F6   FA           MOV     R2,A
+   \   0000F7   EF           MOV     A,R7
+   \   0000F8   FB           MOV     R3,A
+   \   0000F9   12....       LCALL   ??EcrireRegistreMCP2515
+    128                                        Masque de réception initial L. + configurations initiales du mode de fonctionnement des masque de réceptions. */
+    129          
+    130          
+    131          
+    132          
+    133          /* Configurations de l'identifiant en émission par le module « TXB0 » du circuit MCP2515 */
+    134          
+    135             EcrireRegistreMCP2515(MCP2515_TXB0SIDH, 0x00);   /* Registre 0x31.
+   \   0000FC                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   0000FC   7C00         MOV     R4,#0x0
+   \   0000FE   7931         MOV     R1,#0x31
+   \   000100   EE           MOV     A,R6
+   \   000101   FA           MOV     R2,A
+   \   000102   EF           MOV     A,R7
+   \   000103   FB           MOV     R3,A
+   \   000104   12....       LCALL   ??EcrireRegistreMCP2515
+    136                                        Identifiant initial d'émission H. */
+    137          
+    138             EcrireRegistreMCP2515(MCP2515_TXB0SIDL, 0x00);   /* Registre 0x32.
+   \   000107                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000107   7C00         MOV     R4,#0x0
+   \   000109   7932         MOV     R1,#0x32
+   \   00010B   EE           MOV     A,R6
+   \   00010C   FA           MOV     R2,A
+   \   00010D   EF           MOV     A,R7
+   \   00010E   FB           MOV     R3,A
+   \   00010F   12....       LCALL   ??EcrireRegistreMCP2515
+    139                                        Identifiant initial d'émission L + configurations initiales du mode de fonctionnement des identifiants en émissions. */
+    140          
+    141             
+    142          /* Passage du circuit MCP2515 en « Normal Operation mode » */
+    143             EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x07); /* Registre 0x0F
+   \   000112                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000112   7C07         MOV     R4,#0x7
+   \   000114   790F         MOV     R1,#0xf
+   \   000116   EE           MOV     A,R6
+   \   000117   FA           MOV     R2,A
+   \   000118   EF           MOV     A,R7
+   \   000119   FB           MOV     R3,A
+   \   00011A   12....       LCALL   ??EcrireRegistreMCP2515
+    144             //EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x07); * Registre 0x0F.
+    145                                        - REQOP2 = 1,
+    146                                        - REQOP1 = 0,
+    147                                        - REQOP0 = 0 : le circuit est passé en « Normal Operation mode ». 
+    148                                        - Les réglages précédemment évoqués restent inchangés. */
+    149          
+    150          }
+   \   00011D   7F01         MOV     R7,#0x1
+   \   00011F   02....       LJMP    ?FUNC_LEAVE_XDATA
+    151          
+    152          
+    153          
+    154          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    155          void CLMCP2515 :: EcrireRegistreMCP2515(unsigned char Address, unsigned char Data)
+   \                     ??EcrireRegistreMCP2515:
+    156          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+   \   000007   EC           MOV     A,R4
+   \   000008   FE           MOV     R6,A
+    157             EcrireDonnesMCP2515(3, MCP2515_WRITE, Address, Data);   /* Envoi de 3 octets :
+   \   000009                ; Setup parameters for call to function CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+   \   000009   F5..         MOV     ?V0 + 0,A
+   \   00000B   78..         MOV     R0,#?V0 + 0
+   \   00000D   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000010   EF           MOV     A,R7
+   \   000011   FD           MOV     R5,A
+   \   000012   7C02         MOV     R4,#0x2
+   \   000014   7903         MOV     R1,#0x3
+   \   000016   12....       LCALL   ??EcrireDonnesMCP2515
+   \   000019   7401         MOV     A,#0x1
+   \   00001B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00001E   E9           MOV     A,R1
+    158                                                 - La commande d'écriture ;
+    159                                                 - L'adresse du registre dans lequel écrire ;
+    160                                                 - L'octet à écrire dans le registre. */
+    161          }
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
+    162          
+    163          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    164          UC CLMCP2515 :: LireRegistreMCP2515(unsigned char Address)
+   \                     ??LireRegistreMCP2515:
+    165          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    166           // EcrireDonnesMCP2515(3, MCP2515_READ, Address, 0xFF);
+    167            return(LireDonnesMCP2515(3, MCP2515_READ, Address, 0xFF));   /* Envoi de 3 octets :
+   \   000007                ; Setup parameters for call to function CLMCP2515::LireDonnesMCP2515(unsigned char, unsigned char, unsigned char, unsigned char)
+   \   000007   75..FF       MOV     ?V0 + 0,#-0x1
+   \   00000A   78..         MOV     R0,#?V0 + 0
+   \   00000C   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00000F   EE           MOV     A,R6
+   \   000010   FD           MOV     R5,A
+   \   000011   7C03         MOV     R4,#0x3
+   \   000013   7903         MOV     R1,#0x3
+   \   000015   12....       LCALL   ??LireDonnesMCP2515
+   \   000018   7401         MOV     A,#0x1
+   \   00001A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00001D   7F01         MOV     R7,#0x1
+   \   00001F   02....       LJMP    ?FUNC_LEAVE_XDATA
+    168                                                  //- La commande d'écriture ;
+    169                                                 - L'adresse du registre dans lequel écrire                                       - L'octet à écrire dans le registre. */
+    170          }
+    171          
+    172          
+    173          
+    174          /* Configuration de l'identifiant d'envoi utilisé par le module « TXB0 ».
+    175          
+    176          
+    177          Paramètres d'entrée :
+    178          
+    179          int identifiant - Identifiant, sur 11 bits, que doit utiliser le module « TXB0 ».
+    180          
+    181          Valeur de retour :
+    182          
+    183          Aucune.
+    184          */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    185          void CLMCP2515 :: ChoisirIdentifiantTX0(int Identifiant)
+   \                     ??ChoisirIdentifiantTX0:
+    186          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FA           MOV     R2,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FB           MOV     R3,A
+    187             UC Contenu_MCP2515_TXB0SIDH = 0;
+   \   00000D   7C00         MOV     R4,#0x0
+    188             UC Contenu_MCP2515_TXB0SIDL = 0;
+   \   00000F   7E00         MOV     R6,#0x0
+    189          
+    190             Contenu_MCP2515_TXB0SIDH = (UC)(0x00FF & (Identifiant >> 3));   /* On récupère les 8 bits de poids fort de l'identifiant à configurer,
+   \   000011   8A..         MOV     ?V0 + 0,R2
+   \   000013   8B..         MOV     ?V0 + 1,R3
+   \   000015   7403         MOV     A,#0x3
+   \   000017   78..         MOV     R0,#?V0 + 0
+   \   000019   12....       LCALL   ?SS_SHR
+   \   00001C   E5..         MOV     A,?V0 + 0
+   \   00001E   AC..         MOV     R4,?V0 + 0
+    191          qui doivent être placés tels quels dans le registre « MCP2515_TXB0SIDH ». */
+    192          
+    193             Contenu_MCP2515_TXB0SIDL = (UC)(0x00E0 & (Identifiant << 5));   /* On récupère les 3 bits de poids faible de l'identifiant à configurer,
+   \   000020   EA           MOV     A,R2
+   \   000021   C4           SWAP    A
+   \   000022   33           RLC     A
+   \   000023   54E0         ANL     A,#0xe0
+   \   000025   FE           MOV     R6,A
+    194          qui doivent être placés dans le registre « MCP2515_TXB0SIDL »,
+    195          aux bits « MCP2515_TXB0SIDL<5> », « MCP2515_TXB0SIDL<6> » et « MCP2515_TXB0SIDL<7> ». */
+    196          
+    197             EcrireRegistreMCP2515(MCP2515_TXB0SIDH, Contenu_MCP2515_TXB0SIDH);   /* Identifiant Emission H */
+   \   000026                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000026   7931         MOV     R1,#0x31
+   \   000028   AA82         MOV     R2,DPL
+   \   00002A   AB83         MOV     R3,DPH
+   \   00002C   12....       LCALL   ??EcrireRegistreMCP2515
+    198             EcrireRegistreMCP2515(MCP2515_TXB0SIDL, Contenu_MCP2515_TXB0SIDL);   /* Identifiant Emission L + Configurations du mode de fonctionnement des identifiants */
+   \   00002F                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   00002F   EE           MOV     A,R6
+   \   000030   FC           MOV     R4,A
+   \   000031   7932         MOV     R1,#0x32
+   \   000033   AA82         MOV     R2,DPL
+   \   000035   AB83         MOV     R3,DPH
+   \   000037   12....       LCALL   ??EcrireRegistreMCP2515
+    199          }
+   \   00003A   7F02         MOV     R7,#0x2
+   \   00003C   02....       LJMP    ?FUNC_LEAVE_XDATA
+    200          
+    201          
+    202          
+    203          
+    204          
+    205          /* Envoi d'un message d'un maximum de 8 caractères, par le module « TXB0 ».
+    206          
+    207          
+    208          Paramètres d'entrée :
+    209          
+    210          unsigned char * message - Pointeur sur le début d'une chaîne d'un maximum de 8 caractères,
+    211          à tranmettre par le module « TXB0 ».
+    212          
+    213          Valeur de retour :
+    214          
+    215          Aucune.
+    216          */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    217          void CLMCP2515 :: EnvoyerTrameMCP2515(const  unsigned char * Message)
+   \                     ??EnvoyerTrameMCP2515:
+    218          {
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 6,R4
+   \   00000B   8D..         MOV     ?V0 + 7,R5
+    219             UC TailleDuMessage = 0;
+   \   00000D   75..00       MOV     ?V0 + 0,#0x0
+    220             UC k;
+    221             UC PointeurRegistre = MCP2515_TXB0D0;
+   \   000010   75..36       MOV     ?V0 + 4,#0x36
+    222          
+    223             /* Détermination du nombre d'octets de données à transmettre, et limitation à 8 octets au maximum. */
+    224             TailleDuMessage = Longueur(Message);
+   \   000013                ; Setup parameters for call to function CLMCP2515::Longueur(unsigned char const *)
+   \   000013   AC..         MOV     R4,?V0 + 6
+   \   000015   AD..         MOV     R5,?V0 + 7
+   \   000017   EE           MOV     A,R6
+   \   000018   FA           MOV     R2,A
+   \   000019   EF           MOV     A,R7
+   \   00001A   FB           MOV     R3,A
+   \   00001B   12....       LCALL   ??Longueur
+   \   00001E   E9           MOV     A,R1
+   \   00001F   F5..         MOV     ?V0 + 0,A
+    225          
+    226             if(TailleDuMessage > 8)   /* Si le nombre d'octets de données à transmettre dépasse le nombre maximal d'octets possible. */
+   \   000021   E5..         MOV     A,?V0 + 0
+   \   000023   C3           CLR     C
+   \   000024   9409         SUBB    A,#0x9
+   \   000026   4003         JC      ??EnvoyerTrameMCP2515_1
+    227             {
+    228                TailleDuMessage = 8;   /* Le nombre maximal d'octets possible sera tranmis par le circuit MCP2515. */
+   \   000028   75..08       MOV     ?V0 + 0,#0x8
+    229             }
+    230          
+    231             EcrireRegistreMCP2515(MCP2515_TXB0DLC, TailleDuMessage);   /* Le MCP2515 est informé du nombre d'octets de données qu'il aura à tranmettre. */
+   \                     ??EnvoyerTrameMCP2515_1:
+   \   00002B                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   00002B   AC..         MOV     R4,?V0 + 0
+   \   00002D   7935         MOV     R1,#0x35
+   \   00002F   EE           MOV     A,R6
+   \   000030   FA           MOV     R2,A
+   \   000031   EF           MOV     A,R7
+   \   000032   FB           MOV     R3,A
+   \   000033   12....       LCALL   ??EcrireRegistreMCP2515
+    232          
+    233             /* Chargement du message dans le MCP2515 */
+    234             for(k = 0; k < TailleDuMessage; k++)
+   \   000036   75..00       MOV     ?V0 + 1,#0x0
+   \   000039   8021         SJMP    ??EnvoyerTrameMCP2515_2
+    235             {
+    236                EcrireRegistreMCP2515(PointeurRegistre, Message[k]);   /* Les registres de données du module « TXB0 »,
+   \                     ??EnvoyerTrameMCP2515_3:
+   \   00003B                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   00003B   85....       MOV     ?V0 + 2,?V0 + 1
+   \   00003E   75..00       MOV     ?V0 + 3,#0x0
+   \   000041   E5..         MOV     A,?V0 + 6
+   \   000043   25..         ADD     A,?V0 + 2
+   \   000045   F582         MOV     DPL,A
+   \   000047   E5..         MOV     A,?V0 + 7
+   \   000049   35..         ADDC    A,?V0 + 3
+   \   00004B   F583         MOV     DPH,A
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   FC           MOV     R4,A
+   \   00004F   A9..         MOV     R1,?V0 + 4
+   \   000051   EE           MOV     A,R6
+   \   000052   FA           MOV     R2,A
+   \   000053   EF           MOV     A,R7
+   \   000054   FB           MOV     R3,A
+   \   000055   12....       LCALL   ??EcrireRegistreMCP2515
+    237          dont les adresses sont consécutives, sont remplis,
+    238          en commencant par le registre « MCP2515_TXB0D0 », d'adresse 0x36. */
+    239                PointeurRegistre++;
+   \   000058   05..         INC     ?V0 + 4
+    240             }
+   \   00005A   05..         INC     ?V0 + 1
+   \                     ??EnvoyerTrameMCP2515_2:
+   \   00005C   E5..         MOV     A,?V0 + 1
+   \   00005E   C3           CLR     C
+   \   00005F   95..         SUBB    A,?V0 + 0
+   \   000061   40D8         JC      ??EnvoyerTrameMCP2515_3
+    241          
+    242             /* Envoi de la commande « RTS », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. */
+    243             EcrireDonnesMCP2515(1, MCP2515_RTS_TX0, 0x00, 0x00);
+   \   000063                ; Setup parameters for call to function CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+   \   000063   75..00       MOV     ?V0 + 0,#0x0
+   \   000066   78..         MOV     R0,#?V0 + 0
+   \   000068   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00006B   7D00         MOV     R5,#0x0
+   \   00006D   7C81         MOV     R4,#-0x7f
+   \   00006F   7901         MOV     R1,#0x1
+   \   000071   EE           MOV     A,R6
+   \   000072   FA           MOV     R2,A
+   \   000073   EF           MOV     A,R7
+   \   000074   FB           MOV     R3,A
+   \   000075   12....       LCALL   ??EcrireDonnesMCP2515
+   \   000078   7401         MOV     A,#0x1
+   \   00007A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00007D   E9           MOV     A,R1
+    244          
+    245             Delai(10);
+   \   00007E                ; Setup parameters for call to function CLMCP2515::Delai(unsigned long)
+   \   00007E   90....       MOV     DPTR,#__Constant_a
+   \   000081   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   000084   EE           MOV     A,R6
+   \   000085   FA           MOV     R2,A
+   \   000086   EF           MOV     A,R7
+   \   000087   FB           MOV     R3,A
+   \   000088   12....       LCALL   ??Delai
+   \   00008B   7404         MOV     A,#0x4
+   \   00008D   12....       LCALL   ?DEALLOC_XSTACK8
+    246          }
+   \   000090   7F08         MOV     R7,#0x8
+   \   000092   02....       LJMP    ?FUNC_LEAVE_XDATA
+    247          
+    248          
+    249          
+    250          
+    251          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    252          UC*  CLMCP2515 :: Read(void)
+   \                     ??Read:
+    253          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    254           UC ucTrame; 
+    255           ucTrame  = LireRegistreMCP2515(MCP2515_RXB0DLC);
+   \   000009                ; Setup parameters for call to function CLMCP2515::LireRegistreMCP2515(unsigned char)
+   \   000009   7965         MOV     R1,#0x65
+   \   00000B   EE           MOV     A,R6
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   FB           MOV     R3,A
+   \   00000F   12....       LCALL   ??LireRegistreMCP2515
+   \   000012   E9           MOV     A,R1
+   \   000013   F5..         MOV     ?V0 + 3,A
+    256           ucBuf[0] = ucTrame;
+   \   000015   E5..         MOV     A,?V0 + 3
+   \   000017   8E82         MOV     DPL,R6
+   \   000019   8F83         MOV     DPH,R7
+   \   00001B   E5..         MOV     A,?V0 + 3
+   \   00001D   F0           MOVX    @DPTR,A
+    257              
+    258           for(UC uci = 0; uci < ucTrame; uci++)
+   \   00001E   75..00       MOV     ?V0 + 2,#0x0
+   \   000021   8037         SJMP    ??Read_1
+    259             {
+    260              ucBuf[uci + 1] = LireRegistreMCP2515( MCP2515_RXB0D0 + uci);
+   \                     ??Read_2:
+   \   000023                ; Setup parameters for call to function CLMCP2515::LireRegistreMCP2515(unsigned char)
+   \   000023   7466         MOV     A,#0x66
+   \   000025   25..         ADD     A,?V0 + 2
+   \   000027   F9           MOV     R1,A
+   \   000028   EE           MOV     A,R6
+   \   000029   FA           MOV     R2,A
+   \   00002A   EF           MOV     A,R7
+   \   00002B   FB           MOV     R3,A
+   \   00002C   12....       LCALL   ??LireRegistreMCP2515
+   \   00002F   E9           MOV     A,R1
+   \   000030   C0E0         PUSH    A
+   \   000032   85....       MOV     ?V0 + 0,?V0 + 2
+   \   000035   75..00       MOV     ?V0 + 1,#0x0
+   \   000038   EE           MOV     A,R6
+   \   000039   25..         ADD     A,?V0 + 0
+   \   00003B   F582         MOV     DPL,A
+   \   00003D   EF           MOV     A,R7
+   \   00003E   35..         ADDC    A,?V0 + 1
+   \   000040   F583         MOV     DPH,A
+   \   000042   A3           INC     DPTR
+   \   000043   D0E0         POP     A
+   \   000045   F0           MOVX    @DPTR,A
+    261              Delai(1000);
+   \   000046                ; Setup parameters for call to function CLMCP2515::Delai(unsigned long)
+   \   000046   90....       MOV     DPTR,#__Constant_3e8
+   \   000049   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   00004C   EE           MOV     A,R6
+   \   00004D   FA           MOV     R2,A
+   \   00004E   EF           MOV     A,R7
+   \   00004F   FB           MOV     R3,A
+   \   000050   12....       LCALL   ??Delai
+   \   000053   7404         MOV     A,#0x4
+   \   000055   12....       LCALL   ?DEALLOC_XSTACK8
+    262             }
+   \   000058   05..         INC     ?V0 + 2
+   \                     ??Read_1:
+   \   00005A   E5..         MOV     A,?V0 + 2
+   \   00005C   C3           CLR     C
+   \   00005D   95..         SUBB    A,?V0 + 3
+   \   00005F   40C2         JC      ??Read_2
+    263            return(ucBuf);
+   \   000061   EE           MOV     A,R6
+   \   000062   FA           MOV     R2,A
+   \   000063   EF           MOV     A,R7
+   \   000064   FB           MOV     R3,A
+   \   000065   7F04         MOV     R7,#0x4
+   \   000067   02....       LJMP    ?FUNC_LEAVE_XDATA
+    264          }
+    265          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    266          void CLMCP2515 :: AcquitterInterruptionsMCP2515(void)
+   \                     ??AcquitterInterruptionsMCP2515:
+    267          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+    268             EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x87);   /* Registe 0x0F.
+   \   000008                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000008   7C87         MOV     R4,#-0x79
+   \   00000A   790F         MOV     R1,#0xf
+   \   00000C   AA82         MOV     R2,DPL
+   \   00000E   AB83         MOV     R3,DPH
+   \   000010   12....       LCALL   ??EcrireRegistreMCP2515
+    269                                        Le circuit est passé en « Configuration mode ». */
+    270             EcrireRegistreMCP2515(MCP2515_CANINTF, 0x00);   /* Registre 0x2C.
+   \   000013                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   000013   7C00         MOV     R4,#0x0
+   \   000015   792C         MOV     R1,#0x2c
+   \   000017   AA82         MOV     R2,DPL
+   \   000019   AB83         MOV     R3,DPH
+   \   00001B   12....       LCALL   ??EcrireRegistreMCP2515
+    271                                        Acquittement des interruptions du circuit MCP2515. */
+    272             EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x07);   /* Registe 0x0F.
+   \   00001E                ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+   \   00001E   7C07         MOV     R4,#0x7
+   \   000020   790F         MOV     R1,#0xf
+   \   000022   AA82         MOV     R2,DPL
+   \   000024   AB83         MOV     R3,DPH
+   \   000026   12....       LCALL   ??EcrireRegistreMCP2515
+    273                                        Le circuit est passé en « Normal Operation mode ». */
+    274          }
+   \   000029   D083         POP     DPH
+   \   00002B   D082         POP     DPL
+   \   00002D   22           RET
+    275          
+    276          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    277          UC CLMCP2515 :: EcrireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
+   \                     ??EcrireDonnesMCP2515:
+    278          {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 4,R2
+   \   00000C   8B..         MOV     ?V0 + 5,R3
+   \   00000E   89..         MOV     ?V0 + 0,R1
+   \   000010   EC           MOV     A,R4
+   \   000011   FE           MOV     R6,A
+   \   000012   ED           MOV     A,R5
+   \   000013   FF           MOV     R7,A
+   \   000014   7410         MOV     A,#0x10
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   F8           MOV     R0,A
+    279             UC k;
+    280             UC Donnees[3] = {0x00};
+   \   00001B   90....       MOV     DPTR,#`?<Constant {(UC)'\\000'}>`
+   \   00001E   C082         PUSH    DPL
+   \   000020   C083         PUSH    DPH
+   \   000022   85..82       MOV     DPL,?XSP + 0
+   \   000025   85..83       MOV     DPH,?XSP + 1
+   \   000028   AC82         MOV     R4,DPL
+   \   00002A   AD83         MOV     R5,DPH
+   \   00002C   D083         POP     DPH
+   \   00002E   D082         POP     DPL
+   \   000030   7403         MOV     A,#0x3
+   \   000032   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    281          
+    282             Donnees[0] = Donnee1;
+   \   000035   EE           MOV     A,R6
+   \   000036   85..82       MOV     DPL,?XSP + 0
+   \   000039   85..83       MOV     DPH,?XSP + 1
+   \   00003C   F0           MOVX    @DPTR,A
+    283             Donnees[1] = Donnee2;
+   \   00003D   EF           MOV     A,R7
+   \   00003E   C0E0         PUSH    A
+   \   000040   7401         MOV     A,#0x1
+   \   000042   12....       LCALL   ?XSTACK_DISP0_8
+   \   000045   D0E0         POP     A
+   \   000047   F0           MOVX    @DPTR,A
+    284             Donnees[2] = Donnee3;
+   \   000048   E8           MOV     A,R0
+   \   000049   C0E0         PUSH    A
+   \   00004B   7402         MOV     A,#0x2
+   \   00004D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000050   D0E0         POP     A
+   \   000052   F0           MOVX    @DPTR,A
+    285          
+    286             CS = 0;  
+   \   000053   C297         CLR     0x90.7
+    287          
+    288             for(k = 0; k < NombreDonneesEnvoyer; k++)
+   \   000055   75..00       MOV     ?V0 + 1,#0x0
+   \   000058   8018         SJMP    ??EcrireDonnesMCP2515_1
+    289             {
+    290              SPI.Write(0x00, Donnees[k]);
+    291              for(int V =0 ;V<100;V++);   /* Delai au moins tant que le module du SPI est occupé */   
+   \                     ??EcrireDonnesMCP2515_2:
+   \   00005A   E8           MOV     A,R0
+   \   00005B   2401         ADD     A,#0x1
+   \   00005D   F8           MOV     R0,A
+   \   00005E   E9           MOV     A,R1
+   \   00005F   3400         ADDC    A,#0x0
+   \   000061   F9           MOV     R1,A
+   \                     ??EcrireDonnesMCP2515_3:
+   \   000062   C3           CLR     C
+   \   000063   E8           MOV     A,R0
+   \   000064   9464         SUBB    A,#0x64
+   \   000066   E9           MOV     A,R1
+   \   000067   9400         SUBB    A,#0x0
+   \   000069   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00006B   65D0         XRL     A,PSW
+   \   00006D   33           RLC     A
+   \   00006E   40EA         JC      ??EcrireDonnesMCP2515_2
+   \   000070   05..         INC     ?V0 + 1
+   \                     ??EcrireDonnesMCP2515_1:
+   \   000072   E5..         MOV     A,?V0 + 1
+   \   000074   C3           CLR     C
+   \   000075   95..         SUBB    A,?V0 + 0
+   \   000077   5030         JNC     ??EcrireDonnesMCP2515_4
+   \   000079                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000079   85....       MOV     ?V0 + 2,?V0 + 1
+   \   00007C   75..00       MOV     ?V0 + 3,#0x0
+   \   00007F   85..82       MOV     DPL,?XSP + 0
+   \   000082   85..83       MOV     DPH,?XSP + 1
+   \   000085   E582         MOV     A,DPL
+   \   000087   25..         ADD     A,?V0 + 2
+   \   000089   F582         MOV     DPL,A
+   \   00008B   E583         MOV     A,DPH
+   \   00008D   35..         ADDC    A,?V0 + 3
+   \   00008F   F583         MOV     DPH,A
+   \   000091   E0           MOVX    A,@DPTR
+   \   000092   FC           MOV     R4,A
+   \   000093   7900         MOV     R1,#0x0
+   \   000095   E5..         MOV     A,?V0 + 4
+   \   000097   2408         ADD     A,#0x8
+   \   000099   FA           MOV     R2,A
+   \   00009A   E5..         MOV     A,?V0 + 5
+   \   00009C   3400         ADDC    A,#0x0
+   \   00009E   FB           MOV     R3,A
+   \   00009F   12....       LCALL   ??Write
+   \   0000A2   E9           MOV     A,R1
+   \   0000A3   7800         MOV     R0,#0x0
+   \   0000A5   7900         MOV     R1,#0x0
+   \   0000A7   80B9         SJMP    ??EcrireDonnesMCP2515_3
+    292             }
+    293          
+    294             CS = 1;  
+   \                     ??EcrireDonnesMCP2515_4:
+   \   0000A9   D297         SETB    0x90.7
+    295          
+    296             return(0x01);
+   \   0000AB   7901         MOV     R1,#0x1
+   \   0000AD   7403         MOV     A,#0x3
+   \   0000AF   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B2   7F06         MOV     R7,#0x6
+   \   0000B4   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   0000B7                REQUIRE _A_P1
+    297          }
+    298          
+    299          
+    300          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    301          unsigned char CLMCP2515 :: LireDonnesMCP2515(unsigned char NombreDonneesEnvoyer, unsigned char Donnee1, unsigned char Donnee2, unsigned char Donnee3)
+   \                     ??LireDonnesMCP2515:
+    302          {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 4,R2
+   \   00000C   8B..         MOV     ?V0 + 5,R3
+   \   00000E   89..         MOV     ?V0 + 0,R1
+   \   000010   EC           MOV     A,R4
+   \   000011   FE           MOV     R6,A
+   \   000012   ED           MOV     A,R5
+   \   000013   FF           MOV     R7,A
+   \   000014   7410         MOV     A,#0x10
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   F8           MOV     R0,A
+    303             UC k;
+    304             UC buf;
+    305             UC Donnees[3] = {0x00};
+   \   00001B   90....       MOV     DPTR,#`?<Constant {(UC)'\\000'}>_1`
+   \   00001E   C082         PUSH    DPL
+   \   000020   C083         PUSH    DPH
+   \   000022   85..82       MOV     DPL,?XSP + 0
+   \   000025   85..83       MOV     DPH,?XSP + 1
+   \   000028   AC82         MOV     R4,DPL
+   \   00002A   AD83         MOV     R5,DPH
+   \   00002C   D083         POP     DPH
+   \   00002E   D082         POP     DPL
+   \   000030   7403         MOV     A,#0x3
+   \   000032   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    306          
+    307             Donnees[0] = Donnee1;
+   \   000035   EE           MOV     A,R6
+   \   000036   85..82       MOV     DPL,?XSP + 0
+   \   000039   85..83       MOV     DPH,?XSP + 1
+   \   00003C   F0           MOVX    @DPTR,A
+    308             Donnees[1] = Donnee2;
+   \   00003D   EF           MOV     A,R7
+   \   00003E   C0E0         PUSH    A
+   \   000040   7401         MOV     A,#0x1
+   \   000042   12....       LCALL   ?XSTACK_DISP0_8
+   \   000045   D0E0         POP     A
+   \   000047   F0           MOVX    @DPTR,A
+    309             Donnees[2] = Donnee3;
+   \   000048   E8           MOV     A,R0
+   \   000049   C0E0         PUSH    A
+   \   00004B   7402         MOV     A,#0x2
+   \   00004D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000050   D0E0         POP     A
+   \   000052   F0           MOVX    @DPTR,A
+    310          
+    311             CS = 0;   
+   \   000053   C297         CLR     0x90.7
+    312          
+    313             for(k = 0; k < NombreDonneesEnvoyer; k++)
+   \   000055   75..00       MOV     ?V0 + 1,#0x0
+   \   000058   8018         SJMP    ??LireDonnesMCP2515_1
+    314             {
+    315              buf = SPI.Write( 0x00 , Donnees[k]);
+    316              for(int V = 0 ; V < 100; V++);   /* Delai au moins tant que le module du SPI est occupé */   
+   \                     ??LireDonnesMCP2515_2:
+   \   00005A   E8           MOV     A,R0
+   \   00005B   2401         ADD     A,#0x1
+   \   00005D   F8           MOV     R0,A
+   \   00005E   E9           MOV     A,R1
+   \   00005F   3400         ADDC    A,#0x0
+   \   000061   F9           MOV     R1,A
+   \                     ??LireDonnesMCP2515_3:
+   \   000062   C3           CLR     C
+   \   000063   E8           MOV     A,R0
+   \   000064   9464         SUBB    A,#0x64
+   \   000066   E9           MOV     A,R1
+   \   000067   9400         SUBB    A,#0x0
+   \   000069   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00006B   65D0         XRL     A,PSW
+   \   00006D   33           RLC     A
+   \   00006E   40EA         JC      ??LireDonnesMCP2515_2
+   \   000070   05..         INC     ?V0 + 1
+   \                     ??LireDonnesMCP2515_1:
+   \   000072   E5..         MOV     A,?V0 + 1
+   \   000074   C3           CLR     C
+   \   000075   95..         SUBB    A,?V0 + 0
+   \   000077   5031         JNC     ??LireDonnesMCP2515_4
+   \   000079                ; Setup parameters for call to function CLSPI::Write(UC, UC)
+   \   000079   85....       MOV     ?V0 + 2,?V0 + 1
+   \   00007C   75..00       MOV     ?V0 + 3,#0x0
+   \   00007F   85..82       MOV     DPL,?XSP + 0
+   \   000082   85..83       MOV     DPH,?XSP + 1
+   \   000085   E582         MOV     A,DPL
+   \   000087   25..         ADD     A,?V0 + 2
+   \   000089   F582         MOV     DPL,A
+   \   00008B   E583         MOV     A,DPH
+   \   00008D   35..         ADDC    A,?V0 + 3
+   \   00008F   F583         MOV     DPH,A
+   \   000091   E0           MOVX    A,@DPTR
+   \   000092   FC           MOV     R4,A
+   \   000093   7900         MOV     R1,#0x0
+   \   000095   E5..         MOV     A,?V0 + 4
+   \   000097   2408         ADD     A,#0x8
+   \   000099   FA           MOV     R2,A
+   \   00009A   E5..         MOV     A,?V0 + 5
+   \   00009C   3400         ADDC    A,#0x0
+   \   00009E   FB           MOV     R3,A
+   \   00009F   12....       LCALL   ??Write
+   \   0000A2   E9           MOV     A,R1
+   \   0000A3   FA           MOV     R2,A
+   \   0000A4   7800         MOV     R0,#0x0
+   \   0000A6   7900         MOV     R1,#0x0
+   \   0000A8   80B8         SJMP    ??LireDonnesMCP2515_3
+    317             }
+    318          
+    319             CS = 1;   
+   \                     ??LireDonnesMCP2515_4:
+   \   0000AA   D297         SETB    0x90.7
+    320          
+    321             return(buf);
+   \   0000AC   EA           MOV     A,R2
+   \   0000AD   F9           MOV     R1,A
+   \   0000AE   7403         MOV     A,#0x3
+   \   0000B0   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B3   7F06         MOV     R7,#0x6
+   \   0000B5   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   0000B8                REQUIRE _A_P1
+    322          }
+    323          
+    324          
+    325          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    326          void CLMCP2515 :: Delai(unsigned long Temps)
+   \                     ??Delai:
+    327          {
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   740F         MOV     A,#0xf
+   \   000007   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000A   78..         MOV     R0,#?V0 + 0
+   \   00000C   12....       LCALL   ?L_MOV_X
+    328           unsigned long k;
+    329           for(k = 0; k < Temps; k++);
+   \   00000F   90....       MOV     DPTR,#__Constant_0
+   \   000012   78..         MOV     R0,#?V0 + 4
+   \   000014   12....       LCALL   ?L_MOV_X
+   \   000017   8008         SJMP    ??Delai_1
+   \                     ??Delai_2:
+   \   000019   90....       MOV     DPTR,#__Constant_1
+   \   00001C   78..         MOV     R0,#?V0 + 4
+   \   00001E   12....       LCALL   ?L_ADD_X
+   \                     ??Delai_1:
+   \   000021   78..         MOV     R0,#?V0 + 0
+   \   000023   79..         MOV     R1,#?V0 + 4
+   \   000025   12....       LCALL   ?UL_GT
+   \   000028   40EF         JC      ??Delai_2
+    330          }
+   \   00002A   7F08         MOV     R7,#0x8
+   \   00002C   02....       LJMP    ?FUNC_LEAVE_XDATA
+    331          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    332          unsigned char CLMCP2515 :: Longueur(const  unsigned char * Contenu)
+   \                     ??Longueur:
+    333          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    334          UC Compteur = 0;
+   \   000005   7900         MOV     R1,#0x0
+   \   000007   8001         SJMP    ??Longueur_1
+    335          while(Contenu[Compteur] != '\0')
+    336            {
+    337             Compteur++;
+   \                     ??Longueur_2:
+   \   000009   09           INC     R1
+    338            }
+   \                     ??Longueur_1:
+   \   00000A   89..         MOV     ?V0 + 0,R1
+   \   00000C   75..00       MOV     ?V0 + 1,#0x0
+   \   00000F   EC           MOV     A,R4
+   \   000010   25..         ADD     A,?V0 + 0
+   \   000012   F582         MOV     DPL,A
+   \   000014   ED           MOV     A,R5
+   \   000015   35..         ADDC    A,?V0 + 1
+   \   000017   F583         MOV     DPH,A
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   70ED         JNZ     ??Longueur_2
+    339          return(Compteur);
+   \   00001C   7F02         MOV     R7,#0x2
+   \   00001E   02....       LJMP    ?FUNC_LEAVE_XDATA
+    340          }
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_3e8:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_3e8>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_3e8>`:
+   \   000000   E8030000     DD 1000
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_a:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_a>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_a>`:
+   \   000000   0A000000     DD 10
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_0:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_0>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_0>`:
+   \   000000   00000000     DD 0
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_1:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_1>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_1>`:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     `?<Constant {(UC)'\\000'}>`:
+   \   000000                DS 3
+   \   000003                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     `?<Constant {(UC)'\\000'}>_1`:
+   \   000000                DS 3
+   \   000003                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLMCP2515 &CLMCP2515::new CLMCP2515()
+   \                     `??new CLMCP2515`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A09         MOV     R2,#0x9
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLMCP2515_1`
+   \   00001B                ; Setup parameters for call to function CLMCP2515::CLMCP2515()
+   \   00001B   12....       LCALL   ??CLMCP2515
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLMCP2515_2`
+   \                     `??new CLMCP2515_1`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLMCP2515_2`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLMCP2515::delete ~CLMCP2515(CLMCP2515 *)
+   \                     `??delete ~CLMCP2515`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLMCP2515_1`
+   \   00000D                ; Setup parameters for call to function CLMCP2515::~CLMCP2515()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLMCP2515`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLMCP2515_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    341          
+    342          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLMCP2515::AcquitterInterruptionsMCP2515()
+                                        2      0      0
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        4      0      0
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        4      0      0
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        4      0      0
+     CLMCP2515::CLMCP2515()             0      0      8
+       -> CLSPI::CLSPI()                0      0     16
+     CLMCP2515::ChoisirIdentifiantTX0(int)
+                                        0      0      9
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     18
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     18
+     CLMCP2515::Delai(unsigned long)
+                                        0      0     34
+     CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+                                        2      0     32
+       -> CLSPI::Write(UC, UC)          0      0     32
+     CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     24
+       -> CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+                                        0      0     18
+     CLMCP2515::EnvoyerTrameMCP2515(unsigned char const *)
+                                        0      0     19
+       -> CLMCP2515::Longueur(unsigned char const *)
+                                        0      0     30
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     30
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     30
+       -> CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+                                        0      0     32
+       -> CLMCP2515::Delai(unsigned long)
+                                        0      0     38
+     CLMCP2515::InitialisationMCP2515()
+                                        0      0     12
+       -> CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+                                        0      0     18
+       -> CLMCP2515::Delai(unsigned long)
+                                        0      0     24
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+       -> CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                        0      0     16
+     CLMCP2515::LireDonnesMCP2515(unsigned char, unsigned char, unsigned char, unsigned char)
+                                        2      0     25
+       -> CLSPI::Write(UC, UC)          0      0     32
+     CLMCP2515::LireRegistreMCP2515(unsigned char)
+                                        0      0     20
+       -> CLMCP2515::LireDonnesMCP2515(unsigned char, unsigned char, unsigned char, unsigned char)
+                                        0      0     18
+     CLMCP2515::Longueur(unsigned char const *)
+                                        0      0     24
+     CLMCP2515::Read()                  1      0     15
+       -> CLMCP2515::LireRegistreMCP2515(unsigned char)
+                                        0      0     22
+       -> CLMCP2515::LireRegistreMCP2515(unsigned char)
+                                        0      0     22
+       -> CLMCP2515::Delai(unsigned long)
+                                        0      0     30
+     CLMCP2515::delete ~CLMCP2515(CLMCP2515 *)
+                                        0      0      8
+       -> CLMCP2515::~CLMCP2515()       0      0     16
+       -> operator delete(void *)       0      0     16
+     CLMCP2515::new CLMCP2515()         2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLMCP2515::CLMCP2515()        4      0      0
+     CLMCP2515::~CLMCP2515()            0      0      8
+       -> CLSPI::~CLSPI()               0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                    Bytes
+     --------------                    -----
+     _A_P1                                1
+     CLMCP2515::CLMCP2515()              29
+     CLMCP2515::~CLMCP2515()             11
+     CLMCP2515::InitialisationMCP2515()
+                                        290
+     CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
+                                         36
+     CLMCP2515::LireRegistreMCP2515(unsigned char)
+                                         34
+     CLMCP2515::ChoisirIdentifiantTX0(int)
+                                         63
+     CLMCP2515::EnvoyerTrameMCP2515(unsigned char const *)
+                                        149
+     CLMCP2515::Read()                  106
+     CLMCP2515::AcquitterInterruptionsMCP2515()
+                                         46
+     CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+                                        183
+     CLMCP2515::LireDonnesMCP2515(unsigned char, unsigned char, unsigned char, unsigned char)
+                                        184
+     CLMCP2515::Delai(unsigned long)
+                                         47
+     CLMCP2515::Longueur(unsigned char const *)
+                                         33
+     __Constant_3e8                       4
+     ?<Initializer for __Constant_3e8>    4
+     __Constant_a                         4
+     ?<Initializer for __Constant_a>      4
+     __Constant_0                         4
+     ?<Initializer for __Constant_0>      4
+     __Constant_1                         4
+     ?<Initializer for __Constant_1>      4
+     ?<Constant {(UC)'\000'}>             3
+     ?<Constant {(UC)'\000'}>_1           3
+     CLMCP2515::new CLMCP2515()          49
+     CLMCP2515::delete ~CLMCP2515(CLMCP2515 *)
+                                         32
+
+ 
+ 1 292 bytes in segment NEAR_CODE
+     1 byte  in segment SFR_AN
+    16 bytes in segment XDATA_I
+    16 bytes in segment XDATA_ID
+     6 bytes in segment XDATA_Z
+ 
+ 1 292 bytes of CODE  memory (+ 16 bytes shared)
+     0 bytes of DATA  memory (+  1 byte  shared)
+     6 bytes of XDATA memory (+ 16 bytes shared)
+
+Errors: none
+Warnings: 1

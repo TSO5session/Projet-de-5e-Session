@@ -1,0 +1,3100 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        24/Nov/2014  22:54:31 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\Conversions.cpp                                /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\Conversions.cpp" -D UPSD3254A --preprocess=cl  /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Au /
+//                          tomne 2014\ProjetSession5\ProgrammeDuFESTO\Progra /
+//                          mmeFESTO\UPSD\List\" -lA                          /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -o "C:\Synchro\Dropbox\Travaux\Aut /
+//                          omne 2014\ProjetSession5\ProgrammeDuFESTO\Program /
+//                          meFESTO\UPSD\Obj\" -e --no_cse --no_unroll        /
+//                          --no_inline --no_code_motion --no_tbaa --debug    /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=near --calling_convention=xdata_reen /
+//                          trant --place_constants=data --nr_virtual_regs 8  /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++     /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\Conversions.s51                      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME Conversions
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FLT_MUL
+        EXTERN ?FLT_SUB
+        EXTERN ?FLT_TO_L
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?R2345_FLT_TO_L
+        EXTERN ?UC_SWITCH_DENSE
+        EXTERN ?UL_TO_FLT
+        EXTERN ?US_DIV_MOD
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN ?XSTORE_R2345
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??ASCIItoHEX
+        FUNCTION ??ASCIItoHEX,080203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??Conversion
+        FUNCTION ??Conversion,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??Conversion_1
+        FUNCTION ??Conversion_1,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??FloatToString
+        FUNCTION ??FloatToString,0a1203H
+        ARGFRAME XSTACK, 4, STACK
+        LOCFRAME XSTACK, 29, STACK
+        PUBLIC ??HEXtoASCII
+        FUNCTION ??HEXtoASCII,080203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??StringAdder
+        FUNCTION ??StringAdder,0203H
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??StringFinal
+        PUBLIC `??delete ~Conversion`
+        FUNCTION `??delete ~Conversion`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new Conversion`
+        FUNCTION `??new Conversion`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new Conversion_1`
+        FUNCTION `??new Conversion_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~Conversion`
+        FUNCTION `?~Conversion`,0203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_42c80000
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+`?<Name Conversion 4>` SYMBOL "Conversion"
+??StringFinal       SYMBOL "StringFinal", `?<Name Conversion 4>`
+
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\Conversions.cpp
+//    1 // **************************Conversions.cpp
+//    2 // Auteur:       Vincent Chouinard
+//    3 // Date:         20 juillet 2014
+//    4 // Version:      1.0
+//    5 // Modification: Aucune
+//    6 //
+//    7 // Compilateur:  IAR 8.1
+//    8 //
+//    9 // Description:
+//   10 // *****************************************************************************
+//   11 #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+//   12 #include "Conversions.h"               // Fichier de definitions du clavier
+//   13 ///// Initialise les variables statiques.
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   14 char *Conversion :: StringFinal = NULL;
+??StringFinal:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant Conversion &Conversion::new Conversion()
+`??new Conversion`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new Conversion`
+        CODE
+        FUNCALL `??new Conversion`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new Conversion`, ??Conversion
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new Conversion_2`
+        ; Setup parameters for call to function Conversion::Conversion()
+        LCALL   ??Conversion
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new Conversion_3`
+`??new Conversion_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new Conversion_3`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant Conversion &Conversion::new Conversion(UC)
+`??new Conversion_1`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??new Conversion_1`
+        CODE
+        FUNCALL `??new Conversion_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new Conversion_1`, ??Conversion_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new Conversion_4`
+        ; Setup parameters for call to function Conversion::Conversion(UC)
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??Conversion_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new Conversion_5`
+`??new Conversion_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new Conversion_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void Conversion::delete ~Conversion(Conversion *)
+`??delete ~Conversion`:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function `??delete ~Conversion`
+        CODE
+        FUNCALL `??delete ~Conversion`, `?~Conversion`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~Conversion`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~Conversion_1`
+        ; Setup parameters for call to function Conversion::~Conversion()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~Conversion`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~Conversion_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//   15 
+//   16 //******************************************************************************
+//   17 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   18 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   19 Conversion :: Conversion(void)
+??Conversion:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ??Conversion
+        CODE
+//   20 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   21 
+//   22 }
+        RET
+        CFI EndBlock cfiBlock3
+//   23 
+//   24 //******************************************************************************
+//   25 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   26 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   27 Conversion :: Conversion(UC ucParametre)
+??Conversion_1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??Conversion_1
+        CODE
+//   28 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   29 
+//   30 }
+        RET
+        CFI EndBlock cfiBlock4
+//   31 
+//   32 // *****************************************************************************
+//   33 //                            LE DESTRUCTEUR
+//   34 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   35 Conversion :: ~Conversion(void)
+`?~Conversion`:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function `?~Conversion`
+        CODE
+//   36 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   37 
+//   38 }
+        RET
+        CFI EndBlock cfiBlock5
+//   39 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   40 void Conversion :: StringAdder(char cNumber)
+??StringAdder:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ??StringAdder
+        CODE
+//   41 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   42   
+//   43 }
+        RET
+        CFI EndBlock cfiBlock6
+//   44 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   45 const char Conversion :: FloatToString (float fInputFloat)
+??FloatToString:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function ??FloatToString
+        CODE
+//   46 {
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??FloatToString, ??StringAdder
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xf
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 14
+        MOV     A,#-0xe
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     A,#0x1d
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+//   47 int i                 = 0; // Pour les boucles de comptage
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   48 float fTemporaire     = 0; // Pour le calcul de decimales
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?XSTORE_R2345
+//   49 USI usiLesEntiers     = 0; // Pour la conversion d'un float en entier
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   50 USI usiLesEntiersTemp = 0; // Pour la conversion d'un float en entier
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   51 USI usiDecimalesTemp  = 0; // Pour convertir les decimales d'un float en entier
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//   52 USI usiLesDecimales   = 0; // Pour convertir les decimales d'un float en entier
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   53 
+//   54 usiLesEntiers   = (USI)fInputFloat; // Conversion des floats en USI sans virgule
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 5,?V0 + 1
+        MOV     ?V0 + 6,?V0 + 2
+        MOV     ?V0 + 7,?V0 + 3
+        MOV     R0,#?V0 + 4
+        LCALL   ?FLT_TO_L
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 5
+        MOVX    @DPTR,A
+//   55 usiLesDecimales = (USI)fInputFloat; // Enleve les decimales du float
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 5,?V0 + 1
+        MOV     ?V0 + 6,?V0 + 2
+        MOV     ?V0 + 7,?V0 + 3
+        MOV     R0,#?V0 + 4
+        LCALL   ?FLT_TO_L
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 5
+        MOVX    @DPTR,A
+//   56 fTemporaire     = (fInputFloat - (float)usiLesDecimales) * 100;//Decimales 0-999
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        CLR     A
+        MOV     ?V0 + 6,A
+        MOV     ?V0 + 7,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?UL_TO_FLT
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_SUB
+        MOV     DPTR,#__Constant_42c80000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+//   57 usiLesDecimales = (USI)fTemporaire; //Conversion (.0 a .999) vers (0 a 999)
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?XLOAD_R2345
+        LCALL   ?R2345_FLT_TO_L
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+//   58 
+//   59 for(i = 0; i < 3; i++) //Pour trois fois (Centaine, dizaine, unite)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        SJMP    ??FloatToString_1
+//   60   {
+//   61    if(i == 0) // Pour les centaines
+//   62      {
+//   63       usiLesEntiersTemp = usiLesEntiers /  100;
+//   64       usiLesEntiers     = usiLesEntiers - (100 * usiLesEntiersTemp);
+//   65      }
+//   66    if(i == 1) // Pour les dizaines
+//   67      {
+//   68       usiLesEntiersTemp = usiLesEntiers /  10;
+//   69       usiLesEntiers     = usiLesEntiers - (10 * usiLesEntiersTemp);
+//   70      }
+//   71    if(i == 2) // Pour les unitees
+//   72      {
+//   73       usiLesEntiersTemp=usiLesEntiers;
+//   74      }
+//   75 
+//   76    switch(usiLesEntiersTemp) // Affiche un caractere correspondant a l'unite
+//   77      {                       // float lue
+//   78       case 0:
+//   79          StringAdder('0');
+//   80       break;
+//   81 
+//   82       case 1:
+//   83          StringAdder('1');
+//   84       break;
+//   85 
+//   86       case 2:
+//   87          StringAdder('2');
+//   88       break;
+//   89 
+//   90       case 3:
+//   91          StringAdder('3');
+//   92       break;
+//   93 
+//   94       case 4:
+//   95          StringAdder('4');
+//   96       break;
+//   97 
+//   98       case 5:
+//   99          StringAdder('5');
+//  100       break;
+//  101 
+//  102       case 6:
+//  103          StringAdder('6');
+//  104       break;
+//  105 
+//  106       case 7:
+//  107          StringAdder('7');
+//  108       break;
+//  109 
+//  110       case 8:
+//  111          StringAdder('8');
+//  112       break;
+//  113 
+//  114       case 9:
+//  115          StringAdder('9');
+??FloatToString_2:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x39
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+//  116       break;
+??FloatToString_3:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+??FloatToString_1:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x3
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      $+5
+        LJMP    ??FloatToString_4
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??FloatToString_5
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0x64
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x64
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOVX    @DPTR,A
+??FloatToString_5:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??FloatToString_6
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??FloatToString_6:
+        JNZ     ??FloatToString_7
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOVX    @DPTR,A
+??FloatToString_7:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??FloatToString_8
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??FloatToString_8:
+        JNZ     ??FloatToString_9
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+??FloatToString_9:
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for FloatToString>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_10
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_11
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_12
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_13
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_14
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_15
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_17
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_18
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_2
+        CODE
+??FloatToString_10:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x30
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_11:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x31
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_12:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x32
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_13:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x33
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_14:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x34
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_15:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x35
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_16:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x36
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_17:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x37
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+??FloatToString_18:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x38
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_3
+//  117      }
+//  118    }
+//  119 
+//  120 StringAdder('.'); // Affiche la satane virgule
+??FloatToString_4:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x2e
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+//  121 
+//  122 for(i = 0; i < 2; i++) //Pour deux fois (Dixieme, centieme)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        SJMP    ??FloatToString_19
+//  123   {
+//  124    if(i == 0)          // Pour les dixiemes
+//  125      {
+//  126       usiDecimalesTemp = usiLesDecimales /  10;
+//  127      }
+//  128    if(i == 1)          // Pour les centiemes
+//  129      {
+//  130       usiDecimalesTemp = usiLesDecimales - (10 * usiDecimalesTemp) ;
+//  131      }
+//  132 
+//  133    switch(usiDecimalesTemp) // Affiche un caractere correspondant a l'unite
+//  134      {                      // float lue
+//  135       case 0:
+//  136          StringAdder('0');
+//  137       break;
+//  138 
+//  139       case 1:
+//  140          StringAdder('1');
+//  141       break;
+//  142 
+//  143       case 2:
+//  144          StringAdder('2');
+//  145       break;
+//  146 
+//  147       case 3:
+//  148          StringAdder('3');
+//  149       break;
+//  150 
+//  151       case 4:
+//  152          StringAdder('4');
+//  153       break;
+//  154 
+//  155       case 5:
+//  156          StringAdder('5');
+//  157       break;
+//  158 
+//  159       case 6:
+//  160          StringAdder('6');
+//  161       break;
+//  162 
+//  163       case 7:
+//  164          StringAdder('7');
+//  165       break;
+//  166 
+//  167       case 8:
+//  168          StringAdder('8');
+//  169       break;
+//  170 
+//  171       case 9:
+//  172          StringAdder('9');
+??FloatToString_20:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x39
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+//  173       break;
+??FloatToString_21:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+??FloatToString_19:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x2
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      $+5
+        LJMP    ??FloatToString_22
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??FloatToString_23
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+??FloatToString_23:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??FloatToString_24
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??FloatToString_24:
+        JNZ     ??FloatToString_25
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R6
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R6
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,R7
+        MUL     AB
+        ADD     A,R0
+        MOV     R7,A
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R6
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R7
+        MOV     R7,A
+??FloatToString_25:
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,R7
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for FloatToString>_1`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_21
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_26
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_27
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_28
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_29
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_30
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_31
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_32
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_33
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_34
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??FloatToString_20
+        CODE
+??FloatToString_26:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x30
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_27:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x31
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_28:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x32
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_29:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x33
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_30:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x34
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_31:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x35
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_32:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x36
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_33:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x37
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+??FloatToString_34:
+        ; Setup parameters for call to function Conversion::StringAdder(char)
+        MOV     R1,#0x38
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??StringAdder
+        LJMP    ??FloatToString_21
+//  174      }
+//  175   }
+//  176 return(*StringFinal);
+??FloatToString_22:
+        MOV     DPTR,#??StringFinal
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0xe
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 15)
+        MOV     R7,#0x8
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+//  177 }
+//  178 
+//  179 
+//  180 
+//  181 
+//  182 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  183 UC Conversion :: ASCIItoHEX(UC ASCIItoConvert)
+??ASCIItoHEX:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??ASCIItoHEX
+        CODE
+//  184 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//  185 UC ConvertedToHEX = 0;
+        MOV     R1,#0x0
+//  186 
+//  187 switch(ConvertedToHEX)
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for ASCIItoHEX>_0`:
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        48
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        42
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_10
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_11
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_12
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_13
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_14
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_15
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_17
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_18
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_19
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_20
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_21
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_22
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_23
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_24
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_25
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_26
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_27
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_28
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_29
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_30
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_31
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_32
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_33
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_34
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_35
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_36
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??ASCIItoHEX_37
+        CODE
+//  188     {
+//  189      case '0':
+//  190       ConvertedToHEX = 0x30;
+??ASCIItoHEX_2:
+        MOV     R1,#0x30
+//  191      break;
+        LJMP    ??ASCIItoHEX_1
+//  192 
+//  193      case '1':
+//  194       ConvertedToHEX = 0x31;
+??ASCIItoHEX_3:
+        MOV     R1,#0x31
+//  195      break;
+        LJMP    ??ASCIItoHEX_1
+//  196 
+//  197      case '2':
+//  198       ConvertedToHEX = 0x32;
+??ASCIItoHEX_4:
+        MOV     R1,#0x32
+//  199      break;
+        LJMP    ??ASCIItoHEX_1
+//  200 
+//  201      case '3':
+//  202       ConvertedToHEX = 0x33;
+??ASCIItoHEX_5:
+        MOV     R1,#0x33
+//  203      break;
+        SJMP    ??ASCIItoHEX_1
+//  204 
+//  205      case '4':
+//  206       ConvertedToHEX = 0x34;
+??ASCIItoHEX_6:
+        MOV     R1,#0x34
+//  207      break;
+        SJMP    ??ASCIItoHEX_1
+//  208 
+//  209      case '5':
+//  210       ConvertedToHEX = 0x35;
+??ASCIItoHEX_7:
+        MOV     R1,#0x35
+//  211      break;
+        SJMP    ??ASCIItoHEX_1
+//  212 
+//  213      case '6':
+//  214       ConvertedToHEX = 0x36;
+??ASCIItoHEX_8:
+        MOV     R1,#0x36
+//  215      break;
+        SJMP    ??ASCIItoHEX_1
+//  216 
+//  217      case '7':
+//  218       ConvertedToHEX = 0x37;
+??ASCIItoHEX_9:
+        MOV     R1,#0x37
+//  219      break;
+        SJMP    ??ASCIItoHEX_1
+//  220 
+//  221      case '8':
+//  222       ConvertedToHEX = 0x38;
+??ASCIItoHEX_10:
+        MOV     R1,#0x38
+//  223      break;
+        SJMP    ??ASCIItoHEX_1
+//  224 
+//  225      case '9':
+//  226       ConvertedToHEX = 0x39;
+??ASCIItoHEX_11:
+        MOV     R1,#0x39
+//  227      break;
+        SJMP    ??ASCIItoHEX_1
+//  228 
+//  229      case 'A':
+//  230       ConvertedToHEX = 0x41;
+??ASCIItoHEX_12:
+        MOV     R1,#0x41
+//  231      break;
+        SJMP    ??ASCIItoHEX_1
+//  232 
+//  233      case 'B':
+//  234       ConvertedToHEX = 0x42;
+??ASCIItoHEX_13:
+        MOV     R1,#0x42
+//  235      break;
+        SJMP    ??ASCIItoHEX_1
+//  236      
+//  237      case 'C':
+//  238       ConvertedToHEX = 0x43;
+??ASCIItoHEX_14:
+        MOV     R1,#0x43
+//  239      break;
+        SJMP    ??ASCIItoHEX_1
+//  240 
+//  241      case 'D':
+//  242       ConvertedToHEX = 0x44;
+??ASCIItoHEX_15:
+        MOV     R1,#0x44
+//  243      break;
+        SJMP    ??ASCIItoHEX_1
+//  244 
+//  245      case 'E':
+//  246       ConvertedToHEX = 0x45;
+??ASCIItoHEX_16:
+        MOV     R1,#0x45
+//  247      break;
+        SJMP    ??ASCIItoHEX_1
+//  248 
+//  249      case 'F':
+//  250       ConvertedToHEX = 0x46;
+??ASCIItoHEX_17:
+        MOV     R1,#0x46
+//  251      break;
+        SJMP    ??ASCIItoHEX_1
+//  252 
+//  253      case 'G':
+//  254       ConvertedToHEX = 0x47;
+??ASCIItoHEX_18:
+        MOV     R1,#0x47
+//  255      break;
+        SJMP    ??ASCIItoHEX_1
+//  256 
+//  257      case 'H':
+//  258       ConvertedToHEX = 0x48;
+??ASCIItoHEX_19:
+        MOV     R1,#0x48
+//  259      break;
+        SJMP    ??ASCIItoHEX_1
+//  260 
+//  261      case 'I':
+//  262       ConvertedToHEX = 0x49;
+??ASCIItoHEX_20:
+        MOV     R1,#0x49
+//  263      break;
+        SJMP    ??ASCIItoHEX_1
+//  264 
+//  265      case 'J':
+//  266       ConvertedToHEX = 0x4A;
+??ASCIItoHEX_21:
+        MOV     R1,#0x4a
+//  267      break;
+        SJMP    ??ASCIItoHEX_1
+//  268 
+//  269      case 'K':
+//  270       ConvertedToHEX = 0x4B;
+??ASCIItoHEX_22:
+        MOV     R1,#0x4b
+//  271      break;
+        SJMP    ??ASCIItoHEX_1
+//  272 
+//  273      case 'L':
+//  274       ConvertedToHEX = 0x4C;
+??ASCIItoHEX_23:
+        MOV     R1,#0x4c
+//  275      break;
+        SJMP    ??ASCIItoHEX_1
+//  276 
+//  277      case 'M':
+//  278       ConvertedToHEX = 0x4D;
+??ASCIItoHEX_24:
+        MOV     R1,#0x4d
+//  279      break;
+        SJMP    ??ASCIItoHEX_1
+//  280 
+//  281      case 'N':
+//  282       ConvertedToHEX = 0x4E;
+??ASCIItoHEX_25:
+        MOV     R1,#0x4e
+//  283      break;
+        SJMP    ??ASCIItoHEX_1
+//  284 
+//  285      case 'O':
+//  286       ConvertedToHEX = 0x4F;
+??ASCIItoHEX_26:
+        MOV     R1,#0x4f
+//  287      break;
+        SJMP    ??ASCIItoHEX_1
+//  288 
+//  289      case 'P':
+//  290       ConvertedToHEX = 0x50;
+??ASCIItoHEX_27:
+        MOV     R1,#0x50
+//  291      break;
+        SJMP    ??ASCIItoHEX_1
+//  292 
+//  293      case 'Q':
+//  294       ConvertedToHEX = 0x51;
+??ASCIItoHEX_28:
+        MOV     R1,#0x51
+//  295      break;
+        SJMP    ??ASCIItoHEX_1
+//  296 
+//  297      case 'R':
+//  298       ConvertedToHEX = 0x52;
+??ASCIItoHEX_29:
+        MOV     R1,#0x52
+//  299      break;
+        SJMP    ??ASCIItoHEX_1
+//  300 
+//  301      case 'S':
+//  302       ConvertedToHEX = 0x53;
+??ASCIItoHEX_30:
+        MOV     R1,#0x53
+//  303      break;
+        SJMP    ??ASCIItoHEX_1
+//  304 
+//  305      case 'T':
+//  306       ConvertedToHEX = 0x54;
+??ASCIItoHEX_31:
+        MOV     R1,#0x54
+//  307      break;
+        SJMP    ??ASCIItoHEX_1
+//  308 
+//  309      case 'U':
+//  310       ConvertedToHEX = 0x55;
+??ASCIItoHEX_32:
+        MOV     R1,#0x55
+//  311      break;
+        SJMP    ??ASCIItoHEX_1
+//  312 
+//  313      case 'V':
+//  314       ConvertedToHEX = 0x56;
+??ASCIItoHEX_33:
+        MOV     R1,#0x56
+//  315      break;
+        SJMP    ??ASCIItoHEX_1
+//  316 
+//  317      case 'W':
+//  318       ConvertedToHEX = 0x57;
+??ASCIItoHEX_34:
+        MOV     R1,#0x57
+//  319      break;
+        SJMP    ??ASCIItoHEX_1
+//  320 
+//  321      case 'X':
+//  322       ConvertedToHEX = 0x58;
+??ASCIItoHEX_35:
+        MOV     R1,#0x58
+//  323      break;
+        SJMP    ??ASCIItoHEX_1
+//  324 
+//  325      case 'Y':
+//  326       ConvertedToHEX = 0x59;
+??ASCIItoHEX_36:
+        MOV     R1,#0x59
+//  327      break;
+        SJMP    ??ASCIItoHEX_1
+//  328 
+//  329      case 'Z':
+//  330       ConvertedToHEX = 0x5A;
+??ASCIItoHEX_37:
+        MOV     R1,#0x5a
+//  331      break;     
+//  332    }
+//  333 
+//  334 return(ConvertedToHEX);
+??ASCIItoHEX_1:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock8
+//  335 }
+//  336 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  337 UC Conversion :: HEXtoASCII(UC HEXtoConvert)
+??HEXtoASCII:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function ??HEXtoASCII
+        CODE
+//  338 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R0,A
+//  339 UC ConvertedToAscii = 0;
+        MOV     R1,#0x0
+//  340 
+//  341 if((HEXtoConvert >= 0x41) && (HEXtoConvert <= 0x5A)) // Si l'hex est une lettre majuscule
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x41
+        CLR     C
+        SUBB    A,#0x1a
+        JC      $+5
+        LJMP    ??HEXtoASCII_1
+//  342   {
+//  343    switch(HEXtoConvert)
+        MOV     A,R0
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for HEXtoASCII>_0`:
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        65
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        25
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_10
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_11
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_12
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_13
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_14
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_15
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_17
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_18
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_19
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_20
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_21
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_22
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_23
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_24
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_25
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_26
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_27
+        CODE
+//  344     {
+//  345      case 0x41:
+//  346       ConvertedToAscii = 'A';
+??HEXtoASCII_2:
+        MOV     R1,#0x41
+//  347      break;
+        SJMP    ??HEXtoASCII_1
+//  348 
+//  349      case 0x42:
+//  350       ConvertedToAscii = 'B';
+??HEXtoASCII_3:
+        MOV     R1,#0x42
+//  351      break;
+        SJMP    ??HEXtoASCII_1
+//  352 
+//  353      case 0x43:
+//  354       ConvertedToAscii = 'C';
+??HEXtoASCII_4:
+        MOV     R1,#0x43
+//  355      break;
+        SJMP    ??HEXtoASCII_1
+//  356 
+//  357      case 0x44:
+//  358       ConvertedToAscii = 'D';
+??HEXtoASCII_5:
+        MOV     R1,#0x44
+//  359      break;
+        SJMP    ??HEXtoASCII_1
+//  360 
+//  361      case 0x45:
+//  362       ConvertedToAscii = 'E';
+??HEXtoASCII_6:
+        MOV     R1,#0x45
+//  363      break;
+        SJMP    ??HEXtoASCII_1
+//  364 
+//  365      case 0x46:
+//  366       ConvertedToAscii = 'F';
+??HEXtoASCII_7:
+        MOV     R1,#0x46
+//  367      break;
+        SJMP    ??HEXtoASCII_1
+//  368 
+//  369      case 0x47:
+//  370       ConvertedToAscii = 'G';
+??HEXtoASCII_8:
+        MOV     R1,#0x47
+//  371      break;
+        SJMP    ??HEXtoASCII_1
+//  372 
+//  373      case 0x48:
+//  374       ConvertedToAscii = 'H';
+??HEXtoASCII_9:
+        MOV     R1,#0x48
+//  375      break;
+        SJMP    ??HEXtoASCII_1
+//  376 
+//  377      case 0x49:
+//  378       ConvertedToAscii = 'I';
+??HEXtoASCII_10:
+        MOV     R1,#0x49
+//  379      break;
+        SJMP    ??HEXtoASCII_1
+//  380 
+//  381      case 0x4A:
+//  382       ConvertedToAscii = 'J';
+??HEXtoASCII_11:
+        MOV     R1,#0x4a
+//  383      break;
+        SJMP    ??HEXtoASCII_1
+//  384 
+//  385      case 0x4B:
+//  386       ConvertedToAscii = 'K';
+??HEXtoASCII_12:
+        MOV     R1,#0x4b
+//  387      break;
+        SJMP    ??HEXtoASCII_1
+//  388 
+//  389      case 0x4C:
+//  390       ConvertedToAscii = 'L';
+??HEXtoASCII_13:
+        MOV     R1,#0x4c
+//  391      break;
+        SJMP    ??HEXtoASCII_1
+//  392 
+//  393      case 0x4D:
+//  394       ConvertedToAscii = 'M';
+??HEXtoASCII_14:
+        MOV     R1,#0x4d
+//  395      break;
+        SJMP    ??HEXtoASCII_1
+//  396 
+//  397      case 0x4E:
+//  398       ConvertedToAscii = 'N';
+??HEXtoASCII_15:
+        MOV     R1,#0x4e
+//  399      break;
+        SJMP    ??HEXtoASCII_1
+//  400 
+//  401      case 0x4F:
+//  402       ConvertedToAscii = 'O';
+??HEXtoASCII_16:
+        MOV     R1,#0x4f
+//  403      break;
+        SJMP    ??HEXtoASCII_1
+//  404 
+//  405      case 0x50:
+//  406       ConvertedToAscii = 'P';
+??HEXtoASCII_17:
+        MOV     R1,#0x50
+//  407      break;
+        SJMP    ??HEXtoASCII_1
+//  408 
+//  409      case 0x51:
+//  410       ConvertedToAscii = 'Q';
+??HEXtoASCII_18:
+        MOV     R1,#0x51
+//  411      break;
+        SJMP    ??HEXtoASCII_1
+//  412 
+//  413      case 0x52:
+//  414       ConvertedToAscii = 'R';
+??HEXtoASCII_19:
+        MOV     R1,#0x52
+//  415      break;
+        SJMP    ??HEXtoASCII_1
+//  416 
+//  417      case 0x53:
+//  418       ConvertedToAscii = 'S';
+??HEXtoASCII_20:
+        MOV     R1,#0x53
+//  419      break;
+        SJMP    ??HEXtoASCII_1
+//  420 
+//  421      case 0x54:
+//  422       ConvertedToAscii = 'T';
+??HEXtoASCII_21:
+        MOV     R1,#0x54
+//  423      break;
+        SJMP    ??HEXtoASCII_1
+//  424 
+//  425      case 0x55:
+//  426       ConvertedToAscii = 'U';
+??HEXtoASCII_22:
+        MOV     R1,#0x55
+//  427      break;
+        SJMP    ??HEXtoASCII_1
+//  428 
+//  429      case 0x56:
+//  430       ConvertedToAscii = 'V';
+??HEXtoASCII_23:
+        MOV     R1,#0x56
+//  431      break;
+        SJMP    ??HEXtoASCII_1
+//  432 
+//  433      case 0x57:
+//  434       ConvertedToAscii = 'W';
+??HEXtoASCII_24:
+        MOV     R1,#0x57
+//  435      break;
+        SJMP    ??HEXtoASCII_1
+//  436 
+//  437      case 0x58:
+//  438       ConvertedToAscii = 'X';
+??HEXtoASCII_25:
+        MOV     R1,#0x58
+//  439      break;
+        SJMP    ??HEXtoASCII_1
+//  440 
+//  441      case 0x59:
+//  442       ConvertedToAscii = 'Y';
+??HEXtoASCII_26:
+        MOV     R1,#0x59
+//  443      break;
+        SJMP    ??HEXtoASCII_1
+//  444 
+//  445      case 0x5A:
+//  446       ConvertedToAscii = 'Z';
+??HEXtoASCII_27:
+        MOV     R1,#0x5a
+//  447      break;
+//  448   }
+//  449 }
+//  450 
+//  451 if((HEXtoConvert >= 0x61) && (HEXtoConvert <= 0x7A)) // Si l'hex est une lettre minuscule
+??HEXtoASCII_1:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x61
+        CLR     C
+        SUBB    A,#0x1a
+        JC      $+5
+        LJMP    ??HEXtoASCII_28
+//  452   {
+//  453    switch(HEXtoConvert)
+        MOV     A,R0
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for HEXtoASCII>_1`:
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        97
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        25
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_28
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_29
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_30
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_31
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_32
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_33
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_34
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_35
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_36
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_37
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_38
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_39
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_40
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_41
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_42
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_43
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_44
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_45
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_46
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_47
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_48
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_49
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_50
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_51
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_52
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_53
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??HEXtoASCII_54
+        CODE
+//  454     {
+//  455      case 0x61:
+//  456       ConvertedToAscii = 'a';
+??HEXtoASCII_29:
+        MOV     R1,#0x61
+//  457      break;
+        SJMP    ??HEXtoASCII_28
+//  458 
+//  459      case 0x62:
+//  460       ConvertedToAscii = 'b';
+??HEXtoASCII_30:
+        MOV     R1,#0x62
+//  461      break;
+        SJMP    ??HEXtoASCII_28
+//  462 
+//  463      case 0x63:
+//  464       ConvertedToAscii = 'c';
+??HEXtoASCII_31:
+        MOV     R1,#0x63
+//  465      break;
+        SJMP    ??HEXtoASCII_28
+//  466 
+//  467      case 0x64:
+//  468       ConvertedToAscii = 'd';
+??HEXtoASCII_32:
+        MOV     R1,#0x64
+//  469      break;
+        SJMP    ??HEXtoASCII_28
+//  470 
+//  471      case 0x65:
+//  472       ConvertedToAscii = 'e';
+??HEXtoASCII_33:
+        MOV     R1,#0x65
+//  473      break;
+        SJMP    ??HEXtoASCII_28
+//  474 
+//  475      case 0x66:
+//  476       ConvertedToAscii = 'f';
+??HEXtoASCII_34:
+        MOV     R1,#0x66
+//  477      break;
+        SJMP    ??HEXtoASCII_28
+//  478 
+//  479      case 0x67:
+//  480       ConvertedToAscii = 'g';
+??HEXtoASCII_35:
+        MOV     R1,#0x67
+//  481      break;
+        SJMP    ??HEXtoASCII_28
+//  482 
+//  483      case 0x68:
+//  484       ConvertedToAscii = 'h';
+??HEXtoASCII_36:
+        MOV     R1,#0x68
+//  485      break;
+        SJMP    ??HEXtoASCII_28
+//  486 
+//  487      case 0x69:
+//  488       ConvertedToAscii = 'i';
+??HEXtoASCII_37:
+        MOV     R1,#0x69
+//  489      break;
+        SJMP    ??HEXtoASCII_28
+//  490 
+//  491      case 0x6A:
+//  492       ConvertedToAscii = 'j';
+??HEXtoASCII_38:
+        MOV     R1,#0x6a
+//  493      break;
+        SJMP    ??HEXtoASCII_28
+//  494 
+//  495      case 0x6B:
+//  496       ConvertedToAscii = 'k';
+??HEXtoASCII_39:
+        MOV     R1,#0x6b
+//  497      break;
+        SJMP    ??HEXtoASCII_28
+//  498 
+//  499      case 0x6C:
+//  500       ConvertedToAscii = 'l';
+??HEXtoASCII_40:
+        MOV     R1,#0x6c
+//  501      break;
+        SJMP    ??HEXtoASCII_28
+//  502 
+//  503      case 0x6D:
+//  504       ConvertedToAscii = 'm';
+??HEXtoASCII_41:
+        MOV     R1,#0x6d
+//  505      break;
+        SJMP    ??HEXtoASCII_28
+//  506 
+//  507      case 0x6E:
+//  508       ConvertedToAscii = 'n';
+??HEXtoASCII_42:
+        MOV     R1,#0x6e
+//  509      break;
+        SJMP    ??HEXtoASCII_28
+//  510 
+//  511      case 0x6F:
+//  512       ConvertedToAscii = 'o';
+??HEXtoASCII_43:
+        MOV     R1,#0x6f
+//  513      break;
+        SJMP    ??HEXtoASCII_28
+//  514 
+//  515      case 0x70:
+//  516       ConvertedToAscii = 'p';
+??HEXtoASCII_44:
+        MOV     R1,#0x70
+//  517      break;
+        SJMP    ??HEXtoASCII_28
+//  518 
+//  519      case 0x71:
+//  520       ConvertedToAscii = 'q';
+??HEXtoASCII_45:
+        MOV     R1,#0x71
+//  521      break;
+        SJMP    ??HEXtoASCII_28
+//  522 
+//  523      case 0x72:
+//  524       ConvertedToAscii = 'r';
+??HEXtoASCII_46:
+        MOV     R1,#0x72
+//  525      break;
+        SJMP    ??HEXtoASCII_28
+//  526 
+//  527      case 0x73:
+//  528       ConvertedToAscii = 's';
+??HEXtoASCII_47:
+        MOV     R1,#0x73
+//  529      break;
+        SJMP    ??HEXtoASCII_28
+//  530 
+//  531      case 0x74:
+//  532       ConvertedToAscii = 't';
+??HEXtoASCII_48:
+        MOV     R1,#0x74
+//  533      break;
+        SJMP    ??HEXtoASCII_28
+//  534 
+//  535      case 0x75:
+//  536       ConvertedToAscii = 'u';
+??HEXtoASCII_49:
+        MOV     R1,#0x75
+//  537      break;
+        SJMP    ??HEXtoASCII_28
+//  538 
+//  539      case 0x76:
+//  540       ConvertedToAscii = 'v';
+??HEXtoASCII_50:
+        MOV     R1,#0x76
+//  541      break;
+        SJMP    ??HEXtoASCII_28
+//  542 
+//  543      case 0x77:
+//  544       ConvertedToAscii = 'w';
+??HEXtoASCII_51:
+        MOV     R1,#0x77
+//  545      break;
+        SJMP    ??HEXtoASCII_28
+//  546 
+//  547      case 0x78:
+//  548       ConvertedToAscii = 'x';
+??HEXtoASCII_52:
+        MOV     R1,#0x78
+//  549      break;
+        SJMP    ??HEXtoASCII_28
+//  550 
+//  551      case 0x79:
+//  552       ConvertedToAscii = 'y';
+??HEXtoASCII_53:
+        MOV     R1,#0x79
+//  553      break;
+        SJMP    ??HEXtoASCII_28
+//  554 
+//  555      case 0x7A:
+//  556       ConvertedToAscii = 'z';
+??HEXtoASCII_54:
+        MOV     R1,#0x7a
+//  557      break;
+//  558   }
+//  559 }
+//  560 
+//  561 if((HEXtoConvert >= 0x30) && (HEXtoConvert <= 0x39)) // Si l'hex est un chiffre
+??HEXtoASCII_28:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x30
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??HEXtoASCII_55
+//  562   {
+//  563 switch(HEXtoConvert)
+        MOV     A,R0
+        ADD     A,#-0x30
+        JZ      ??HEXtoASCII_56
+        DEC     A
+        JZ      ??HEXtoASCII_57
+        DEC     A
+        JZ      ??HEXtoASCII_58
+        DEC     A
+        JZ      ??HEXtoASCII_59
+        DEC     A
+        JZ      ??HEXtoASCII_60
+        DEC     A
+        JZ      ??HEXtoASCII_61
+        DEC     A
+        JZ      ??HEXtoASCII_62
+        DEC     A
+        JZ      ??HEXtoASCII_63
+        DEC     A
+        JZ      ??HEXtoASCII_64
+        DEC     A
+        JZ      ??HEXtoASCII_65
+        SJMP    ??HEXtoASCII_55
+//  564     {
+//  565      case 0x30:
+//  566       ConvertedToAscii = '0';
+??HEXtoASCII_56:
+        MOV     R1,#0x30
+//  567      break;
+        SJMP    ??HEXtoASCII_55
+//  568 
+//  569      case 0x31:
+//  570       ConvertedToAscii = '1';
+??HEXtoASCII_57:
+        MOV     R1,#0x31
+//  571      break;
+        SJMP    ??HEXtoASCII_55
+//  572 
+//  573      case 0x32:
+//  574       ConvertedToAscii = '2';
+??HEXtoASCII_58:
+        MOV     R1,#0x32
+//  575      break;
+        SJMP    ??HEXtoASCII_55
+//  576 
+//  577      case 0x33:
+//  578       ConvertedToAscii = '3';
+??HEXtoASCII_59:
+        MOV     R1,#0x33
+//  579      break;
+        SJMP    ??HEXtoASCII_55
+//  580 
+//  581      case 0x34:
+//  582       ConvertedToAscii = '4';
+??HEXtoASCII_60:
+        MOV     R1,#0x34
+//  583      break;
+        SJMP    ??HEXtoASCII_55
+//  584 
+//  585      case 0x35:
+//  586       ConvertedToAscii = '5';
+??HEXtoASCII_61:
+        MOV     R1,#0x35
+//  587      break;
+        SJMP    ??HEXtoASCII_55
+//  588 
+//  589      case 0x36:
+//  590       ConvertedToAscii = '6';
+??HEXtoASCII_62:
+        MOV     R1,#0x36
+//  591      break;
+        SJMP    ??HEXtoASCII_55
+//  592 
+//  593      case 0x37:
+//  594       ConvertedToAscii = '7';
+??HEXtoASCII_63:
+        MOV     R1,#0x37
+//  595      break;
+        SJMP    ??HEXtoASCII_55
+//  596 
+//  597      case 0x38:
+//  598       ConvertedToAscii = '8';
+??HEXtoASCII_64:
+        MOV     R1,#0x38
+//  599      break;
+        SJMP    ??HEXtoASCII_55
+//  600 
+//  601      case 0x39:
+//  602       ConvertedToAscii = '9';
+??HEXtoASCII_65:
+        MOV     R1,#0x39
+//  603      break;
+//  604   }
+//  605 }
+//  606 return(ConvertedToAscii);
+??HEXtoASCII_55:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock9
+//  607 }
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_0:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_0>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_0>`:
+        DATA32
+        DD 0H
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_42c80000:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_42c80000>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_42c80000>`:
+        DATA32
+        DD 42C80000H
+
+        END
+//  608 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+// 1 951 bytes in segment NEAR_CODE
+//     8 bytes in segment XDATA_I
+//     8 bytes in segment XDATA_ID
+//     2 bytes in segment XDATA_Z
+// 
+// 1 951 bytes of CODE  memory (+ 8 bytes shared)
+//     2 bytes of XDATA memory (+ 8 bytes shared)
+//
+//Errors: none
+//Warnings: 2

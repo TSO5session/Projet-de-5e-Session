@@ -1,0 +1,340 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         30/Sep/2014  20:43:28 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\NomDuProjet.cpp                                #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\NomDuProjet.cpp" -D DALLAS89C450               #
+#                          --preprocess=cl "C:\Synchro\Dropbox\Travaux\Automn #
+#                          e 2014\Fonctions\Projet Accumulatif                #
+#                          IAR\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\A #
+#                          utomne 2014\Fonctions\Projet Accumulatif           #
+#                          IAR\DALLAS\Obj\" -e --no_cse --no_unroll           #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\List\NomDuProjet.lst                    #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\Obj\NomDuProjet.r51                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\NomDuProjet.cpp
+      1          // **************************Main.c
+      2          // Auteur:      Vincent Chouinard
+      3          // Date:        29 septembre 2014
+      4          // Version :    1.0
+      5          //
+      6          // Compilateur: IAR 8.10
+      7          //
+      8          // Description: Fichier principal
+      9          //
+     10          // *****************************************************************************
+     11          // **** LES INCLUDES ****************//
+     12          #include "CLI2CPort.h"               // Pour utiliser le bus I2C Software
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IE
+   \                     _A_IE:
+   \   000000                DS 1
+     13          #include "CLI2CHard.h"               // Pour utiliser le bus I2C Hardware
+     14          #include "CLSPI.h"                   // Pour utiliser le bus SPI
+     15          #include "CLClavier.h"               // Pour utiliser le clavier
+     16          #include "CLEcran.h"                 // Pour utiliser l'écran
+     17          #include "Timer0.h"                  // Pour utiliser le timer 0
+     18          #include "CLSortieLatch.h"           // Pour faire des conversion DAC <===> ADC
+     19          #include "CLCommunicUpsdPort1.h"     // Pour utiliser le port série
+     20          #include "_DeclarationGenerale.h"    // Raccourcis Linguistiques utiles
+     21          #include "ConversionKeilToIAR.h"     // Compatbilité avec Keil
+     22          #include "NomDuProjet.h"             //
+     23          // **** LES DEFINES *****************//
+     24          #define PCF8574Adress 0x40           // Adresse I2C du PCD8574
+     25          // **** LES CLASSES *****************//
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   static __intrinsic __near_func __xdata_reentrant void __sti__routine()
+   \                     ??__sti__routine:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     26          class CLCommunic Serial;             // Initialise la communication série  
+   \   000000                ; Setup parameters for call to function CLCommunic::CLCommunic()
+   \   000000   7A..         MOV     R2,#Serial & 0xff
+   \   000002   7B..         MOV     R3,#(Serial >> 8) & 0xff
+   \   000004   12....       LCALL   ??CLCommunic
+   \   000007                ; Setup parameters for call to function __record_needed_destruction
+   \   000007   7A..         MOV     R2,#?_0 & 0xff
+   \   000009   7B..         MOV     R3,#(?_0 >> 8) & 0xff
+   \   00000B   12....       LCALL   __record_needed_destruction
+     27          class CLI2CPort  I2CSoft;            // Initialise le communication I2C Software
+   \   00000E                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   00000E   7A..         MOV     R2,#I2CSoft & 0xff
+   \   000010   7B..         MOV     R3,#(I2CSoft >> 8) & 0xff
+   \   000012   12....       LCALL   ??CLI2CPort
+   \   000015                ; Setup parameters for call to function __record_needed_destruction
+   \   000015   7A..         MOV     R2,#?_2 & 0xff
+   \   000017   7B..         MOV     R3,#(?_2 >> 8) & 0xff
+   \   000019   12....       LCALL   __record_needed_destruction
+     28          class CLI2CHARD  I2CHard;            // Initialise le communication I2C Hardware
+   \   00001C                ; Setup parameters for call to function CLI2CHARD::CLI2CHARD()
+   \   00001C   7A..         MOV     R2,#I2CHard & 0xff
+   \   00001E   7B..         MOV     R3,#(I2CHard >> 8) & 0xff
+   \   000020   12....       LCALL   ??CLI2CHARD
+   \   000023                ; Setup parameters for call to function __record_needed_destruction
+   \   000023   7A..         MOV     R2,#?_4 & 0xff
+   \   000025   7B..         MOV     R3,#(?_4 >> 8) & 0xff
+   \   000027   12....       LCALL   __record_needed_destruction
+     29          class CLEcran    LCD;                // Initialise l' ecran LCD
+   \   00002A                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   00002A   7A..         MOV     R2,#LCD & 0xff
+   \   00002C   7B..         MOV     R3,#(LCD >> 8) & 0xff
+   \   00002E   12....       LCALL   ??CLEcran
+   \   000031                ; Setup parameters for call to function __record_needed_destruction
+   \   000031   7A..         MOV     R2,#?_6 & 0xff
+   \   000033   7B..         MOV     R3,#(?_6 >> 8) & 0xff
+   \   000035   12....       LCALL   __record_needed_destruction
+     30          class CLClavier  Keyboard;           // Initialise le clavier
+   \   000038                ; Setup parameters for call to function CLClavier::CLClavier()
+   \   000038   7A..         MOV     R2,#Keyboard & 0xff
+   \   00003A   7B..         MOV     R3,#(Keyboard >> 8) & 0xff
+   \   00003C   12....       LCALL   ??CLClavier
+   \   00003F                ; Setup parameters for call to function __record_needed_destruction
+   \   00003F   7A..         MOV     R2,#?_8 & 0xff
+   \   000041   7B..         MOV     R3,#(?_8 >> 8) & 0xff
+   \   000043   12....       LCALL   __record_needed_destruction
+     31          class DAC_ADC    Convert;            // Initialise la conversion DAC <===> ADC
+   \   000046                ; Setup parameters for call to function DAC_ADC::DAC_ADC()
+   \   000046   7A..         MOV     R2,#Convert & 0xff
+   \   000048   7B..         MOV     R3,#(Convert >> 8) & 0xff
+   \   00004A   12....       LCALL   ??DAC_ADC
+   \   00004D                ; Setup parameters for call to function __record_needed_destruction
+   \   00004D   7A..         MOV     R2,#?_10 & 0xff
+   \   00004F   7B..         MOV     R3,#(?_10 >> 8) & 0xff
+   \   000051   12....       LCALL   __record_needed_destruction
+     32          class Timer0     Timer;              // Pour utiliser le timer 0 (Default = 1ms)
+   \   000054                ; Setup parameters for call to function Timer0::Timer0()
+   \   000054   7A..         MOV     R2,#Timer & 0xff
+   \   000056   7B..         MOV     R3,#(Timer >> 8) & 0xff
+   \   000058   12....       LCALL   ??Timer0
+   \   00005B                ; Setup parameters for call to function __record_needed_destruction
+   \   00005B   7A..         MOV     R2,#?_12 & 0xff
+   \   00005D   7B..         MOV     R3,#(?_12 >> 8) & 0xff
+   \   00005F   12....       LCALL   __record_needed_destruction
+     33          class CLSPI      SPI;                // Initialise la communication SPI
+   \   000062                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000062   7A..         MOV     R2,#SPI & 0xff
+   \   000064   7B..         MOV     R3,#(SPI >> 8) & 0xff
+   \   000066   12....       LCALL   ??CLSPI
+   \   000069                ; Setup parameters for call to function __record_needed_destruction
+   \   000069   7A..         MOV     R2,#?_14 & 0xff
+   \   00006B   7B..         MOV     R3,#(?_14 >> 8) & 0xff
+   \   00006D   02....       LJMP    __record_needed_destruction
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     Serial:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     I2CSoft:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     I2CHard:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     LCD:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     Keyboard:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     Convert:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     Timer:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     SPI:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     34          // **** LES FONCTIONS DU MAIN *******//
+     35          
+     36          // **** PROGRAMME PRINCIPAL *********//
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     37          void main(void)
+   \                     main:
+     38          {
+   \   000000                ; Auto size: 0
+     39          EA    = 0;     // Disable interrupt.
+   \   000000   C2AF         CLR     0xa8.7
+     40          //WDKEY = 0x55;  // Disable WatchDog.
+     41          EA    = 1;     // Enable Interrupt
+   \   000002   D2AF         SETB    0xa8.7
+     42          
+     43          while(1)
+   \                     ??main_0:
+   \   000004   80FE         SJMP    ??main_0
+   \   000006                REQUIRE _A_IE
+     44            {
+     45          
+     46            }
+     47          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >`:
+   \   000000   ....         DW ?_1
+   \   000002   ....         DW Serial
+   \   000004   ....         DW `?~CLCommunic`
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >_1`:
+   \   000000   ....         DW ?_3
+   \   000002   ....         DW I2CSoft
+   \   000004   ....         DW `?~CLI2CPort`
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >_2`:
+   \   000000   ....         DW ?_5
+   \   000002   ....         DW I2CHard
+   \   000004   ....         DW `?~CLI2CHARD`
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >_3`:
+   \   000000   ....         DW ?_7
+   \   000002   ....         DW LCD
+   \   000004   ....         DW `?~CLEcran`
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >_4`:
+   \   000000   ....         DW ?_9
+   \   000002   ....         DW Keyboard
+   \   000004   ....         DW `?~CLClavier`
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >_5`:
+   \   000000   ....         DW ?_11
+   \   000002   ....         DW Convert
+   \   000004   ....         DW `?~DAC_ADC`
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >_6`:
+   \   000000   ....         DW ?_13
+   \   000002   ....         DW Timer
+   \   000004   ....         DW `?~Timer0`
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >_7`:
+   \   000000   ....         DW ?_15
+   \   000002   ....         DW SPI
+   \   000004   ....         DW `?~CLSPI`
+
+   \                                 In  segment DIFUNCT, align 1, keep-with-next, root
+   \   000000                REQUIRE ?cstart_call_ctors
+   \   000000   ....         DC16    ??__sti__routine
+     48          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     __sti__routine()                   0      0      0
+       -> CLCommunic::CLCommunic()      0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+       -> CLI2CPort::CLI2CPort()        0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+       -> CLI2CHARD::CLI2CHARD()        0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+       -> CLEcran::CLEcran()            0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+       -> CLClavier::CLClavier()        0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+       -> DAC_ADC::DAC_ADC()            0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+       -> Timer0::Timer0()              0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+       -> CLSPI::CLSPI()                0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+     main()                             0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_IE                    1
+     __sti__routine()       112
+     Serial                   1
+     I2CSoft                  2
+     I2CHard                  2
+     LCD                      2
+     Keyboard                 1
+     Convert                  1
+     Timer                    1
+     SPI                      1
+     main()                   6
+     ?<Initializer for >      6
+     ?<Initializer for >_1    6
+     ?<Initializer for >_2    6
+     ?<Initializer for >_3    6
+     ?<Initializer for >_4    6
+     ?<Initializer for >_5    6
+     ?<Initializer for >_6    6
+     ?<Initializer for >_7    6
+      Others                 66
+
+ 
+   2 bytes in segment DIFUNCT
+ 118 bytes in segment NEAR_CODE
+   1 byte  in segment SFR_AN
+  48 bytes in segment XDATA_I
+  48 bytes in segment XDATA_ID
+  27 bytes in segment XDATA_Z
+ 
+ 168 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 1 byte shared)
+  75 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1525 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        24/Nov/2014  22:54:32 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\FESTO.cpp                                      /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\FESTO.cpp" -D UPSD3254A --preprocess=cl        /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Au /
+//                          tomne 2014\ProjetSession5\ProgrammeDuFESTO\Progra /
+//                          mmeFESTO\UPSD\List\" -lA                          /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -o "C:\Synchro\Dropbox\Travaux\Aut /
+//                          omne 2014\ProjetSession5\ProgrammeDuFESTO\Program /
+//                          meFESTO\UPSD\Obj\" -e --no_cse --no_unroll        /
+//                          --no_inline --no_code_motion --no_tbaa --debug    /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=near --calling_convention=xdata_reen /
+//                          trant --place_constants=data --nr_virtual_regs 8  /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++     /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\FESTO.s51                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME FESTO
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC ??CLFesto
+        FUNCTION ??CLFesto,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??CLFesto_1
+        FUNCTION ??CLFesto_1,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??GetBlocColor
+        FUNCTION ??GetBlocColor,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??IsTheBolideHere
+        FUNCTION ??IsTheBolideHere,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??ReadInstructionFromPC
+        FUNCTION ??ReadInstructionFromPC,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??SendToBolide
+        FUNCTION ??SendToBolide,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??SendToStation1
+        FUNCTION ??SendToStation1,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??delete ~CLFesto`
+        FUNCTION `??delete ~CLFesto`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new CLFesto`
+        FUNCTION `??new CLFesto`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CLFesto_1`
+        FUNCTION `??new CLFesto_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~CLFesto`
+        FUNCTION `?~CLFesto`,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??CLCommunic
+        FUNCTION ??CLCommunic,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??CLI2CPort
+        FUNCTION ??CLI2CPort,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??CLMCP2515
+        FUNCTION ??CLMCP2515,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??CLSPI
+        FUNCTION ??CLSPI,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??CLEcran
+        FUNCTION ??CLEcran,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??CLClavier
+        FUNCTION ??CLClavier,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??Conversion
+        FUNCTION ??Conversion,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~Conversion`
+        FUNCTION `?~Conversion`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~CLClavier`
+        FUNCTION `?~CLClavier`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~CLEcran`
+        FUNCTION `?~CLEcran`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~CLSPI`
+        FUNCTION `?~CLSPI`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~CLMCP2515`
+        FUNCTION `?~CLMCP2515`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~CLI2CPort`
+        FUNCTION `?~CLI2CPort`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `?~CLCommunic`
+        FUNCTION `?~CLCommunic`,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??Send
+        FUNCTION ??Send,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??SendString
+        FUNCTION ??SendString,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??vLCDCursor
+        FUNCTION ??vLCDCursor,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??String
+        FUNCTION ??String,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLFesto &CLFesto::new CLFesto()
+`??new CLFesto`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new CLFesto`
+        CODE
+        FUNCALL `??new CLFesto`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLFesto`, ??CLFesto
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x11
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLFesto_2`
+        ; Setup parameters for call to function CLFesto::CLFesto()
+        LCALL   ??CLFesto
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLFesto_3`
+`??new CLFesto_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLFesto_3`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLFesto &CLFesto::new CLFesto(unsigned char)
+`??new CLFesto_1`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??new CLFesto_1`
+        CODE
+        FUNCALL `??new CLFesto_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLFesto_1`, ??CLFesto_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x11
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLFesto_4`
+        ; Setup parameters for call to function CLFesto::CLFesto(unsigned char)
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??CLFesto_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLFesto_5`
+`??new CLFesto_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLFesto_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CLFesto::delete ~CLFesto(CLFesto *)
+`??delete ~CLFesto`:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function `??delete ~CLFesto`
+        CODE
+        FUNCALL `??delete ~CLFesto`, `?~CLFesto`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CLFesto`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CLFesto_1`
+        ; Setup parameters for call to function CLFesto::~CLFesto()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLFesto`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CLFesto_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+// C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\FESTO.cpp
+//    1 // **************************FESTO.cpp
+//    2 // Auteur:       Prenom Nom
+//    3 // Date:         19 Octobre 2014
+//    4 // Version:      1.0
+//    5 // Modification: Aucune
+//    6 //
+//    7 // Compilateur:  IAR 8.1
+//    8 //
+//    9 // Description:
+//   10 // *****************************************************************************
+//   11 #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+//   12 #include "FESTO.h"               // Fichier de definitions de...
+//   13 
+//   14 //******************************************************************************
+//   15 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   16 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   17 CLFesto :: CLFesto(void)
+??CLFesto:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ??CLFesto
+        CODE
+        FUNCALL ??CLFesto, ??CLCommunic
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto, ??CLI2CPort
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto, ??CLMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto, ??CLSPI
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto, ??CLEcran
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto, ??CLClavier
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto, ??Conversion
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   18 {
+        ; Setup parameters for call to function CLCommunic::CLCommunic()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??CLCommunic
+        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??CLI2CPort
+        ; Setup parameters for call to function CLMCP2515::CLMCP2515()
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLMCP2515
+        ; Setup parameters for call to function CLSPI::CLSPI()
+        MOV     A,R6
+        ADD     A,#0xc
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLSPI
+        ; Setup parameters for call to function CLEcran::CLEcran()
+        MOV     A,R6
+        ADD     A,#0xd
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLEcran
+        ; Setup parameters for call to function CLClavier::CLClavier()
+        MOV     A,R6
+        ADD     A,#0xf
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLClavier
+        ; Setup parameters for call to function Conversion::Conversion()
+        MOV     A,R6
+        ADD     A,#0x10
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??Conversion
+//   19 
+//   20 }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//   21 
+//   22 //******************************************************************************
+//   23 //                            LE CONSTRUCTEUR INITIALISATEUR
+//   24 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   25 CLFesto :: CLFesto(unsigned char ucParametre)
+??CLFesto_1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??CLFesto_1
+        CODE
+        FUNCALL ??CLFesto_1, ??CLCommunic
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto_1, ??CLI2CPort
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto_1, ??CLMCP2515
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto_1, ??CLSPI
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto_1, ??CLEcran
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto_1, ??CLClavier
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??CLFesto_1, ??Conversion
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   26 {
+        ; Setup parameters for call to function CLCommunic::CLCommunic()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??CLCommunic
+        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??CLI2CPort
+        ; Setup parameters for call to function CLMCP2515::CLMCP2515()
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLMCP2515
+        ; Setup parameters for call to function CLSPI::CLSPI()
+        MOV     A,R6
+        ADD     A,#0xc
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLSPI
+        ; Setup parameters for call to function CLEcran::CLEcran()
+        MOV     A,R6
+        ADD     A,#0xd
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLEcran
+        ; Setup parameters for call to function CLClavier::CLClavier()
+        MOV     A,R6
+        ADD     A,#0xf
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLClavier
+        ; Setup parameters for call to function Conversion::Conversion()
+        MOV     A,R6
+        ADD     A,#0x10
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??Conversion
+//   27 
+//   28 }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//   29 
+//   30 // *****************************************************************************
+//   31 //                            LE DESTRUCTEUR
+//   32 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   33 CLFesto :: ~CLFesto(void)
+`?~CLFesto`:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function `?~CLFesto`
+        CODE
+//   34 {
+        FUNCALL `?~CLFesto`, `?~Conversion`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `?~CLFesto`, `?~CLClavier`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `?~CLFesto`, `?~CLEcran`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `?~CLFesto`, `?~CLSPI`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `?~CLFesto`, `?~CLMCP2515`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `?~CLFesto`, `?~CLI2CPort`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `?~CLFesto`, `?~CLCommunic`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   35 
+//   36 }
+        ; Setup parameters for call to function Conversion::~Conversion()
+        MOV     A,R6
+        ADD     A,#0x10
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `?~Conversion`
+        ; Setup parameters for call to function CLClavier::~CLClavier()
+        MOV     A,R6
+        ADD     A,#0xf
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `?~CLClavier`
+        ; Setup parameters for call to function CLEcran::~CLEcran()
+        MOV     A,R6
+        ADD     A,#0xd
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `?~CLEcran`
+        ; Setup parameters for call to function CLSPI::~CLSPI()
+        MOV     A,R6
+        ADD     A,#0xc
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `?~CLSPI`
+        ; Setup parameters for call to function CLMCP2515::~CLMCP2515()
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `?~CLMCP2515`
+        ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `?~CLI2CPort`
+        ; Setup parameters for call to function CLCommunic::~CLCommunic()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLCommunic`
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//   37 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   38 UC CLFesto :: ReadInstructionFromPC(void)
+??ReadInstructionFromPC:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ??ReadInstructionFromPC
+        CODE
+//   39 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   40 //UC Commande[8] = CAN.Read();  
+//   41 }
+        RET
+        CFI EndBlock cfiBlock6
+//   42 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   43 void CLFesto :: SendToBolide(char const *ucpMessage)
+??SendToBolide:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function ??SendToBolide
+        CODE
+//   44 {
+        FUNCALL ??SendToBolide, ??Send
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??SendToBolide, ??SendString
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+//   45 Xbee.Send('B');               // Envoie au bolide  
+        ; Setup parameters for call to function CLCommunic::Send(UC)
+        MOV     R1,#0x42
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Send
+//   46 Xbee.SendString(ucpMessage);  // La commande passée en paramètres
+        ; Setup parameters for call to function CLCommunic::SendString(char const *)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??SendString
+//   47 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+//   48 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   49 void CLFesto :: SendToStation1(char const *ucpMessage)
+??SendToStation1:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??SendToStation1
+        CODE
+//   50 {
+        FUNCALL ??SendToStation1, ??Send
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??SendToStation1, ??SendString
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+//   51 Xbee.Send('1');               // Envoie au bolide  
+        ; Setup parameters for call to function CLCommunic::Send(UC)
+        MOV     R1,#0x31
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Send
+//   52 Xbee.SendString(ucpMessage);  // La commande passée en paramètres
+        ; Setup parameters for call to function CLCommunic::SendString(char const *)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??SendString
+//   53 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+//   54 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   55 UC CLFesto :: GetBlocColor(void)
+??GetBlocColor:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function ??GetBlocColor
+        CODE
+//   56 {
+        FUNCALL ??GetBlocColor, ??vLCDCursor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??GetBlocColor, ??String
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??GetBlocColor, ??SendToBolide
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??GetBlocColor, ??String
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??GetBlocColor, ??SendToBolide
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??GetBlocColor, ??String
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??GetBlocColor, ??SendToBolide
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   57 UC ucColor = 0;
+        MOV     ?V0 + 0,#0x0
+//   58 LCD.vLCDCursor(0,1);
+        ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
+        MOV     R4,#0x1
+        MOV     R1,#0x0
+        MOV     A,R6
+        ADD     A,#0xd
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??vLCDCursor
+//   59 
+//   60 if(ucColor == ORANGE)
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??GetBlocColor_1
+//   61   {
+//   62    LCD.String("Orange");
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "Orange">` & 0xff
+        MOV     R5,#(`?<Constant "Orange">` >> 8) & 0xff
+        MOV     A,R6
+        ADD     A,#0xd
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??String
+//   63    SendToBolide("CounterClockWise");
+        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+        MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
+        MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToBolide
+//   64   }
+//   65 
+//   66 if(ucColor == NOIR)
+??GetBlocColor_1:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??GetBlocColor_2
+//   67   {
+//   68    LCD.String("Noir");
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "Noir">` & 0xff
+        MOV     R5,#(`?<Constant "Noir">` >> 8) & 0xff
+        MOV     A,R6
+        ADD     A,#0xd
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??String
+//   69    SendToBolide("STOP");
+        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+        MOV     R4,#`?<Constant "STOP">` & 0xff
+        MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToBolide
+//   70   }
+//   71 
+//   72 if(ucColor == METAL)
+??GetBlocColor_2:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??GetBlocColor_3
+//   73   {
+//   74    LCD.String("Metallic");
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "Metallic">` & 0xff
+        MOV     R5,#(`?<Constant "Metallic">` >> 8) & 0xff
+        MOV     A,R6
+        ADD     A,#0xd
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??String
+//   75    SendToBolide("ClockWise");
+        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+        MOV     R4,#`?<Constant "ClockWise">` & 0xff
+        MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToBolide
+//   76   }
+//   77 return(ucColor);
+??GetBlocColor_3:
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock9
+//   78 }
+//   79 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   80 UC CLFesto ::IsTheBolideHere(void)
+??IsTheBolideHere:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function ??IsTheBolideHere
+        CODE
+//   81 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   82   
+//   83 }
+        RET
+        CFI EndBlock cfiBlock10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "Orange">>`:
+        DB "Orange"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "CounterClockWise"`:
+        DB "CounterClockWise"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "Noir">>`:
+        DB "Noir"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "STOP">>`:
+        DB "STOP"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "Metallic">>`:
+        DB "Metallic"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "ClockWise">>`:
+        DB "ClockWise"
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "Orange">`:
+        DS 7
+        REQUIRE `?<Initializer for <Constant "Orange">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "CounterClockWise">`:
+        DS 17
+        REQUIRE `?<Initializer for <Constant "CounterClockWise"`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "Noir">`:
+        DS 5
+        REQUIRE `?<Initializer for <Constant "Noir">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "STOP">`:
+        DS 5
+        REQUIRE `?<Initializer for <Constant "STOP">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "Metallic">`:
+        DS 9
+        REQUIRE `?<Initializer for <Constant "Metallic">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "ClockWise">`:
+        DS 10
+        REQUIRE `?<Initializer for <Constant "ClockWise">>`
+        REQUIRE __INIT_XDATA_I
+
+        END
+//   84 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+// 615 bytes in segment NEAR_CODE
+//  53 bytes in segment XDATA_I
+//  53 bytes in segment XDATA_ID
+// 
+// 668 bytes of CODE  memory
+//  53 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: 4

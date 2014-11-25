@@ -1,0 +1,771 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        30/Sep/2014  20:43:27 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Fonctions\Projet Accumulatif                 /
+//                          IAR\CLClavier.cpp                                 /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Fonctions\Projet Accumulatif                 /
+//                          IAR\CLClavier.cpp" -D DALLAS89C450                /
+//                          --preprocess=cl "C:\Synchro\Dropbox\Travaux\Autom /
+//                          ne 2014\Fonctions\Projet Accumulatif              /
+//                          IAR\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux /
+//                          \Automne 2014\Fonctions\Projet Accumulatif        /
+//                          IAR\DALLAS\List\" -lA "C:\Synchro\Dropbox\Travaux /
+//                          \Automne 2014\Fonctions\Projet Accumulatif        /
+//                          IAR\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\ /
+//                          Automne 2014\Fonctions\Projet Accumulatif         /
+//                          IAR\DALLAS\Obj\" -e --no_cse --no_unroll          /
+//                          --no_inline --no_code_motion --no_tbaa --debug    /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=near --calling_convention=xdata_reen /
+//                          trant --place_constants=data --nr_virtual_regs 8  /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++      /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Fonctions\Projet Accumulatif                 /
+//                          IAR\DALLAS\List\CLClavier.s51                     /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CLClavier
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??CLClavier
+        FUNCTION ??CLClavier,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC `??delete ~CLClavier`
+        FUNCTION `??delete ~CLClavier`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new CLClavier`
+        FUNCTION `??new CLClavier`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??ucBoutonAppuye
+        FUNCTION ??ucBoutonAppuye,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??ucEtatClavier
+        PUBLIC ??ucLireClavier
+        FUNCTION ??ucLireClavier,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 24, STACK
+        PUBLIC ??vKeyboardInterrupt
+        FUNCTION ??vKeyboardInterrupt,0233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 4, STACK
+        PUBWEAK `??vKeyboardInterrupt??INTVEC 3`
+        PUBLIC `?~CLClavier`
+        FUNCTION `?~CLClavier`,0203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK _A_IE
+        PUBWEAK _A_TCON
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+`?<Name CLClavier 9>` SYMBOL "CLClavier"
+??ucEtatClavier     SYMBOL "ucEtatClavier", `?<Name CLClavier 9>`
+
+`??vKeyboardInterrupt??INTVEC 3` SYMBOL "??INTVEC 3", ??vKeyboardInterrupt
+
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??ucIn
+        FUNCTION ??ucIn,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\CLClavier.cpp
+//    1 // **************************CLClavier.cpp
+//    2 // Auteur:      Vincent Chouinard
+//    3 // Date:        17 avril 2014
+//    4 // Version :    1.0
+//    5 //
+//    6 // Compilateur: IAR 8.1
+//    7 //
+//    8 // Description: Fichier permettant d'utiliser le clavier de l'uPSD
+//    9 //
+//   10 ///////////////////////////////////////////////////////////////////////////////
+//   11 //                     Infos relatives au montage du clavier sur le uPSD     
+//   12 // Utilise un 74HCC922                                                       
+//   13 // 74HCC922     uPSD
+//   14 //        A sur D0
+//   15 //        B sur D1
+//   16 //        C sur D2
+//   17 //        D sur D3                                                          
+//   18 //       OE sur CS1     (OutputEnable sur chip select 1)                     
+//   19 //       DA sur INT0    (DataAvailible sur interrupt0)                       
+//   20 ///////////////////////////////////////////////////////////////////////////////
+//   21 #include "CLClavier.h"            // Fichier de definitions du clavier
+
+        ASEGN SFR_AN:DATA:NOROOT,088H
+// union <unnamed> volatile __sfr _A_TCON
+_A_TCON:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IE
+_A_IE:
+        DATA8
+        DS 1
+//   22 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   23 UC  CLClavier  :: ucEtatClavier = INACTIF;
+??ucEtatClavier:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLClavier &CLClavier::new CLClavier()
+`??new CLClavier`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new CLClavier`
+        CODE
+        FUNCALL `??new CLClavier`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLClavier`, ??CLClavier
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLClavier_1`
+        ; Setup parameters for call to function CLClavier::CLClavier()
+        LCALL   ??CLClavier
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLClavier_2`
+`??new CLClavier_1`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLClavier_2`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CLClavier::delete ~CLClavier(CLClavier *)
+`??delete ~CLClavier`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??delete ~CLClavier`
+        CODE
+        FUNCALL `??delete ~CLClavier`, `?~CLClavier`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CLClavier`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CLClavier_1`
+        ; Setup parameters for call to function CLClavier::~CLClavier()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLClavier`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CLClavier_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//   24 
+//   25 //******************************************************************************
+//   26 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   27 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   28 CLClavier :: CLClavier(void)           
+??CLClavier:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function ??CLClavier
+        CODE
+//   29 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   30 EX0 = 1;
+        SETB    0xa8.0
+//   31 IT0 = 1;
+        SETB    0x88.0
+//   32 }
+        RET
+        CFI EndBlock cfiBlock2
+        REQUIRE _A_IE
+        REQUIRE _A_TCON
+//   33 
+//   34 // *****************************************************************************
+//   35 //                            LE DESTRUCTEUR
+//   36 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   37 CLClavier :: ~CLClavier(void)
+`?~CLClavier`:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function `?~CLClavier`
+        CODE
+//   38 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   39 
+//   40 }
+        RET
+        CFI EndBlock cfiBlock3
+//   41 
+//   42 // ********************** FONCTION: ucBoutonAppuye()
+//   43 //
+//   44 // DESCRIPTION:         Fonction pour transmettre un caractere
+//   45 //
+//   46 // INCLUDE:             "Clavier.h"
+//   47 //
+//   48 // PROTOTYPE:           UC ucBoutonAppuye(void)
+//   49 //
+//   50 // PROCEDURE D'APPEL:   UC = ucBoutonAppuye()
+//   51 //
+//   52 // PARAMETRE D'ENTREE:  AUCUN
+//   53 //
+//   54 // PARAMETRE DE SORTIE: UC ---> Contient le bouton appuye
+//   55 //
+//   56 // Auteur:              Vincent Chouinard
+//   57 // Date:                17 avril 2014 (Version 1.0)
+//   58 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   59 UC CLClavier :: ucBoutonAppuye(void)
+??ucBoutonAppuye:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??ucBoutonAppuye
+        CODE
+//   60 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//   61 UC ucEtat;
+//   62 if(ucEtatClavier == ACTIF)
+        MOV     DPTR,#??ucEtatClavier
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??ucBoutonAppuye_1
+//   63   {
+//   64    ucEtat = ACTIF;
+        MOV     R1,#0x1
+        SJMP    ??ucBoutonAppuye_2
+//   65   }
+//   66 else
+//   67   {
+//   68    ucEtat = INACTIF;
+??ucBoutonAppuye_1:
+        MOV     R1,#0x0
+//   69   }
+//   70 return(ucEtat);
+??ucBoutonAppuye_2:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock4
+//   71 }
+//   72 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   73 UC CLClavier:: ucLireClavier(void)
+??ucLireClavier:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function ??ucLireClavier
+        CODE
+//   74 {
+        FUNCALL ??ucLireClavier, ??ucIn
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 16
+        MOV     A,#-0x10
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   75 UC  uctTouche[]={         // Tableau des correspondances des
+//   76     '1','2','3','A',      // touches du clavier et de leurs
+//   77     '4','5','6','B',      // positions.
+//   78     '7','8','9','C',      //
+//   79     '*','0','#','D'};     //
+        MOV     DPTR,#`?<Constant {(UC)'1', (UC)'2', (UC)'3', (UC)'A'`
+        PUSH    DPL
+        CFI CFA_SP SP+-1
+        PUSH    DPH
+        CFI CFA_SP SP+-2
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        POP     DPH
+        CFI CFA_SP SP+-1
+        POP     DPL
+        CFI CFA_SP SP+0
+        MOV     A,#0x10
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//   80   
+//   81 ucToucheClavier = ucIn(0xF900);
+        ; Setup parameters for call to function CLInOutBase::ucIn(USI)
+        MOV     R4,#0x0
+        MOV     R5,#-0x7
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??ucIn
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//   82 ucEtatClavier   = INACTIF;
+        MOV     DPTR,#??ucEtatClavier
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//   83 return(uctTouche[ucToucheClavier]); 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0x10
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 8)
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//   84 }
+//   85 
+//   86 // ********************** FONCTION: vkeyboardInterrupt()
+//   87 //
+//   88 // DESCRIPTION:         Fonction d'interruption pour lire le clavier
+//   89 //
+//   90 // INCLUDE:             "Clavier.h"
+//   91 //
+//   92 // PROTOTYPE:           __interrupt void vkeyboardInterrupt(void)
+//   93 //
+//   94 // PROCEDURE D'APPEL:   #pragma vector = 0x03 (Seul un interrupt0 peut appeler
+//   95 //                                             cette fonction)
+//   96 //
+//   97 // PARAMETRE D'ENTREE:  AUCUN
+//   98 //
+//   99 // PARAMETRE DE SORTIE: AUCUN
+//  100 //
+//  101 // Auteur:              Vincent Chouinard
+//  102 // Date:                17 avril 2014 (Version 1.0)
+//  103 // *****************************************************************************
+//  104 #pragma vector = 0x03 // Lors d'une interruption de type INTERRUPT 0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  105 __interrupt void CLClavier :: vKeyboardInterrupt(void)
+??vKeyboardInterrupt:
+        CFI Block cfiBlock6 Using cfiCommon1
+        CFI Function ??vKeyboardInterrupt
+        CODE
+//  106 {
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        ; Saved register size: 4
+        ; Auto size: 0
+//  107 EA = 0;
+        CLR     0xa8.7
+//  108 ucEtatClavier = ACTIF;
+        MOV     DPTR,#??ucEtatClavier
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  109 EA = 1;
+        SETB    0xa8.7
+//  110 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-5
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-4
+        POP     PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP     A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_IE
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 3
+`??vKeyboardInterrupt??INTVEC 3`:
+        LJMP       (??vKeyboardInterrupt)
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant {(UC)'1', (UC)'2',`:
+        DATA8
+        DB 49
+        DB 50
+        DB 51
+        DB 65
+        DB 52
+        DB 53
+        DB 54
+        DB 66
+        DB 55
+        DB 56
+        DB 57
+        DB 67
+        DB 42
+        DB 48
+        DB 35
+        DB 68
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant {(UC)'1', (UC)'2', (UC)'3', (UC)'A'`:
+        DS 16
+        REQUIRE `?<Initializer for <Constant {(UC)'1', (UC)'2',`
+        REQUIRE __INIT_XDATA_I
+
+        END
+//  111 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+//   3 bytes in segment INTVEC
+// 236 bytes in segment NEAR_CODE
+//   2 bytes in segment SFR_AN
+//  16 bytes in segment XDATA_I
+//  16 bytes in segment XDATA_ID
+//   1 byte  in segment XDATA_Z
+// 
+// 252 bytes of CODE  memory (+ 3 bytes shared)
+//   0 bytes of DATA  memory (+ 2 bytes shared)
+//  17 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

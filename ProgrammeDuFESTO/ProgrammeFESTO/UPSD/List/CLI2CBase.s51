@@ -1,0 +1,1280 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        24/Nov/2014  22:54:31 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\CLI2CBase.Cpp                                  /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\CLI2CBase.Cpp" -D UPSD3254A --preprocess=cl    /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Au /
+//                          tomne 2014\ProjetSession5\ProgrammeDuFESTO\Progra /
+//                          mmeFESTO\UPSD\List\" -lA                          /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -o "C:\Synchro\Dropbox\Travaux\Aut /
+//                          omne 2014\ProjetSession5\ProgrammeDuFESTO\Program /
+//                          meFESTO\UPSD\Obj\" -e --no_cse --no_unroll        /
+//                          --no_inline --no_code_motion --no_tbaa --debug    /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=near --calling_convention=xdata_reen /
+//                          trant --place_constants=data --nr_virtual_regs 8  /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++     /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\CLI2CBase.s51                        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CLI2CBase
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?V0
+
+        PUBLIC ??CLI2CBase
+        FUNCTION ??CLI2CBase,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??CLI2CBase_1
+        FUNCTION ??CLI2CBase_1,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 3, STACK
+        PUBLIC `??delete ~CLI2CBase`
+        FUNCTION `??delete ~CLI2CBase`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new CLI2CBase`
+        FUNCTION `??new CLI2CBase`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CLI2CBase_1`
+        FUNCTION `??new CLI2CBase_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??ucI2CEcrireOctet
+        FUNCTION ??ucI2CEcrireOctet,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??ucI2CLireBit
+        FUNCTION ??ucI2CLireBit,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??ucI2CLireOctet
+        FUNCTION ??ucI2CLireOctet,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vDelaiI2C
+        FUNCTION ??vDelaiI2C,0203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??vI2CEcrireBit
+        FUNCTION ??vI2CEcrireBit,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vI2CStart
+        FUNCTION ??vI2CStart,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??vI2CStop
+        FUNCTION ??vI2CStop,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `?~CLI2CBase`
+        FUNCTION `?~CLI2CBase`,0203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK _A_P3
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLI2CBase.Cpp
+//    1 
+//    2 #include "CLI2CBase.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0b0H
+// union <unnamed> volatile __sfr _A_P3
+_A_P3:
+        DATA8
+        DS 1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLI2CBase &CLI2CBase::new CLI2CBase()
+`??new CLI2CBase`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new CLI2CBase`
+        CODE
+        FUNCALL `??new CLI2CBase`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLI2CBase`, ??CLI2CBase
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLI2CBase_2`
+        ; Setup parameters for call to function CLI2CBase::CLI2CBase()
+        LCALL   ??CLI2CBase
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLI2CBase_3`
+`??new CLI2CBase_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLI2CBase_3`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLI2CBase &CLI2CBase::new CLI2CBase(UC)
+`??new CLI2CBase_1`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??new CLI2CBase_1`
+        CODE
+        FUNCALL `??new CLI2CBase_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLI2CBase_1`, ??CLI2CBase_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLI2CBase_4`
+        ; Setup parameters for call to function CLI2CBase::CLI2CBase(UC)
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??CLI2CBase_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLI2CBase_5`
+`??new CLI2CBase_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLI2CBase_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CLI2CBase::delete ~CLI2CBase(CLI2CBase *)
+`??delete ~CLI2CBase`:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function `??delete ~CLI2CBase`
+        CODE
+        FUNCALL `??delete ~CLI2CBase`, `?~CLI2CBase`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CLI2CBase`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CLI2CBase_1`
+        ; Setup parameters for call to function CLI2CBase::~CLI2CBase()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLI2CBase`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CLI2CBase_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//    3 
+//    4 // *****************************************************************************
+//    5 //                            LES CONSTRUCTEURS
+//    6 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//    7 CLI2CBase :: CLI2CBase(void)
+??CLI2CBase:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ??CLI2CBase
+        CODE
+//    8 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//    9 ucDelaiI2C = 5;
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,#0x5
+        MOVX    @DPTR,A
+//   10 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock3
+//   11 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   12 CLI2CBase :: CLI2CBase(UC ucDelai)
+??CLI2CBase_1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??CLI2CBase_1
+        CODE
+//   13 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//   14 ucDelaiI2C = ucDelai;
+        MOV     A,R1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+//   15 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock4
+//   16 
+//   17 // *****************************************************************************
+//   18 //                            LE DESTRUCTEUR
+//   19 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   20 CLI2CBase :: ~CLI2CBase(void)
+`?~CLI2CBase`:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function `?~CLI2CBase`
+        CODE
+//   21 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   22 
+//   23 }
+        RET
+        CFI EndBlock cfiBlock5
+//   24 
+//   25 ///////////////////////////////////////////////////////////////////////////////
+//   26 // void CLI2CBase :: vI2CStart(void)
+//   27 ///////////////////////////////////////////////////////////////////////////////
+//   28 //
+//   29 // Description:
+//   30 //
+//   31 // Parametres d'entrees: null
+//   32 //
+//   33 // Parametres de sortie: null
+//   34 //
+//   35 // Appel de la fonction:
+//   36 //
+//   37 // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+//   38 //
+//   39 // Modifications:
+//   40 // -
+//   41 //
+//   42 ///////////////////////////////////////////////////////////////////////////////
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   43 void CLI2CBase :: vI2CStart(void)
+??vI2CStart:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ??vI2CStart
+        CODE
+//   44 {
+        FUNCALL ??vI2CStart, ??vDelaiI2C
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vI2CStart, ??vDelaiI2C
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vI2CStart, ??vDelaiI2C
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//   45 SDA = HAUT;                              //Met SDA a 1
+        SETB    0xb0.6
+//   46 SCL = HAUT;                              //Met SCL a 1
+        SETB    0xb0.7
+//   47 vDelaiI2C();                             //Delai
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//   48 SDA = BAS;                               //Met SDA a 0
+        CLR     0xb0.6
+//   49 vDelaiI2C();                             //Delai
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//   50 SCL = BAS;                               //Met SCL a 0
+        CLR     0xb0.7
+//   51 vDelaiI2C();                             //Delai
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//   52 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_P3
+//   53 
+//   54 ///////////////////////////////////////////////////////////////////////////////
+//   55 // void CLI2CBase :: vI2CStop(void)
+//   56 ///////////////////////////////////////////////////////////////////////////////
+//   57 //
+//   58 // Description:
+//   59 //
+//   60 // Parametres d'entrees: null
+//   61 //
+//   62 // Parametres de sortie: null
+//   63 //
+//   64 // Appel de la fonction:
+//   65 //
+//   66 // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+//   67 //
+//   68 // Modifications:
+//   69 // -
+//   70 //
+//   71 ///////////////////////////////////////////////////////////////////////////////
+//   72 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   73 void CLI2CBase :: vI2CStop(void)
+??vI2CStop:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function ??vI2CStop
+        CODE
+//   74 {
+        FUNCALL ??vI2CStop, ??vDelaiI2C
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vI2CStop, ??vDelaiI2C
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vI2CStop, ??vDelaiI2C
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//   75 SDA = BAS;                               //Met SDA a 0
+        CLR     0xb0.6
+//   76 SCL = BAS;                               //Met SCL a 0
+        CLR     0xb0.7
+//   77 vDelaiI2C();                             //Delai
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//   78 SCL = HAUT;                              //Met SCL a 1
+        SETB    0xb0.7
+//   79 vDelaiI2C();                             //Delai
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//   80 SDA = HAUT;                              //Met SDA a 1
+        SETB    0xb0.6
+//   81 vDelaiI2C();                             //Delai
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//   82 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock7
+        REQUIRE _A_P3
+//   83 
+//   84 ///////////////////////////////////////////////////////////////////////////////
+//   85 // UC   CLI2CBase :: ucI2CLireBit(void)
+//   86 ///////////////////////////////////////////////////////////////////////////////
+//   87 //
+//   88 // Description:
+//   89 //
+//   90 // Parametres d'entrees: null
+//   91 //
+//   92 // Parametres de sortie: null
+//   93 //
+//   94 // Appel de la fonction:
+//   95 //
+//   96 // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+//   97 //
+//   98 // Modifications:
+//   99 // -
+//  100 //
+//  101 ///////////////////////////////////////////////////////////////////////////////
+//  102 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  103 UC CLI2CBase :: ucI2CLireBit(void)
+??ucI2CLireBit:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??ucI2CLireBit
+        CODE
+//  104 {
+        FUNCALL ??ucI2CLireBit, ??vDelaiI2C
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucI2CLireBit, ??vDelaiI2C
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucI2CLireBit, ??vDelaiI2C
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucI2CLireBit, ??vDelaiI2C
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//  105 UC ucBit;
+//  106 SDA = HAUT;
+        SETB    0xb0.6
+//  107 vDelaiI2C();
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//  108 SCL = HAUT;
+        SETB    0xb0.7
+//  109 vDelaiI2C();
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//  110 ucBit = SDA;
+        MOV     C,0xb0.6
+        CLR     A
+        RLC     A
+        MOV     R6,A
+//  111 vDelaiI2C();
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//  112 SCL = BAS;
+        CLR     0xb0.7
+//  113 vDelaiI2C();
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//  114 return (ucBit);
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+        REQUIRE _A_P3
+//  115 }
+//  116 
+//  117 ///////////////////////////////////////////////////////////////////////////////
+//  118 // void CLI2CBase :: vI2CEcrireBit(UC ucBit)
+//  119 ///////////////////////////////////////////////////////////////////////////////
+//  120 //
+//  121 // Description:
+//  122 //
+//  123 // Parametres d'entrees: null
+//  124 //
+//  125 // Parametres de sortie: null
+//  126 //
+//  127 // Appel de la fonction:
+//  128 //
+//  129 // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+//  130 //
+//  131 // Modifications:
+//  132 // -
+//  133 //
+//  134 ///////////////////////////////////////////////////////////////////////////////
+//  135 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  136 void CLI2CBase :: vI2CEcrireBit(UC ucBit)
+??vI2CEcrireBit:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function ??vI2CEcrireBit
+        CODE
+//  137 {
+        FUNCALL ??vI2CEcrireBit, ??vDelaiI2C
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vI2CEcrireBit, ??vDelaiI2C
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vI2CEcrireBit, ??vDelaiI2C
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R6,A
+//  138 SDA = ucBit;
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xb0.6,C
+//  139 vDelaiI2C();
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//  140 SCL = HAUT;
+        SETB    0xb0.7
+//  141 vDelaiI2C();
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//  142 SCL = BAS;
+        CLR     0xb0.7
+//  143 vDelaiI2C();
+        ; Setup parameters for call to function CLI2CBase::vDelaiI2C()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vDelaiI2C
+//  144 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock9
+        REQUIRE _A_P3
+//  145 
+//  146 ///////////////////////////////////////////////////////////////////////////////
+//  147 // UC CLI2CBase :: ucI2CLireOctet(UC ucAck)
+//  148 ///////////////////////////////////////////////////////////////////////////////
+//  149 //
+//  150 // Description:
+//  151 //
+//  152 // Parametres d'entrees: null
+//  153 //
+//  154 // Parametres de sortie: null
+//  155 //
+//  156 // Appel de la fonction:
+//  157 //
+//  158 // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+//  159 //
+//  160 // Modifications:
+//  161 // -
+//  162 //
+//  163 ///////////////////////////////////////////////////////////////////////////////
+//  164 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  165 UC CLI2CBase :: ucI2CLireOctet(UC ucAck)
+??ucI2CLireOctet:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function ??ucI2CLireOctet
+        CODE
+//  166 {
+        FUNCALL ??ucI2CLireOctet, ??ucI2CLireBit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucI2CLireOctet, ??vI2CEcrireBit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R7,A
+//  167 UC ucLecture = 0x00;              //Variable de reception
+        MOV     R6,#0x0
+//  168 
+//  169 for(UC i=0; i < 8; i++)           //Repeter 8 fois
+        MOV     ?V0 + 0,#0x0
+        SJMP    ??ucI2CLireOctet_1
+//  170   {
+//  171    if(ucI2CLireBit() == 1)        //Si lecture retourne 1
+??ucI2CLireOctet_2:
+        ; Setup parameters for call to function CLI2CBase::ucI2CLireBit()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ucI2CLireBit
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??ucI2CLireOctet_3
+//  172      {
+//  173       ucLecture = ucLecture + 1;  //Additionne 1 a LireOctet
+        INC     R6
+//  174      }
+//  175    ucLecture = ucLecture << 1;    //Decale LireOctet 1 vers gauche
+??ucI2CLireOctet_3:
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R6,A
+//  176   }
+        INC     ?V0 + 0
+??ucI2CLireOctet_1:
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x8
+        JC      ??ucI2CLireOctet_2
+//  177 vI2CEcrireBit(ucAck);
+        ; Setup parameters for call to function CLI2CBase::vI2CEcrireBit(UC)
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vI2CEcrireBit
+//  178 return(ucLecture);                //Retourne l'octet lue
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+//  179  }
+//  180 
+//  181 ///////////////////////////////////////////////////////////////////////////////
+//  182 // UC CLI2CBase :: ucI2CEcrireOctet(UC ucOctet)
+//  183 ///////////////////////////////////////////////////////////////////////////////
+//  184 //
+//  185 // Description:
+//  186 //
+//  187 // Parametres d'entrees: null
+//  188 //
+//  189 // Parametres de sortie: null
+//  190 //
+//  191 // Appel de la fonction:
+//  192 //
+//  193 // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+//  194 //
+//  195 // Modifications:
+//  196 // -
+//  197 //
+//  198 ///////////////////////////////////////////////////////////////////////////////
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  199 UC CLI2CBase :: ucI2CEcrireOctet(UC ucOctet)
+??ucI2CEcrireOctet:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function ??ucI2CEcrireOctet
+        CODE
+//  200 {
+        FUNCALL ??ucI2CEcrireOctet, ??vI2CEcrireBit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucI2CEcrireOctet, ??vI2CEcrireBit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucI2CEcrireOctet, ??ucI2CLireBit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R7,A
+//  201 for(UC i=0; i<8; i++)
+        MOV     R6,#0x0
+        SJMP    ??ucI2CEcrireOctet_1
+//  202   {
+//  203    if((ucOctet & 0x80) == 0) vI2CEcrireBit(0);
+//  204    else                      vI2CEcrireBit(1);
+??ucI2CEcrireOctet_2:
+        ; Setup parameters for call to function CLI2CBase::vI2CEcrireBit(UC)
+        MOV     R1,#0x1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vI2CEcrireBit
+//  205       ucOctet = ucOctet << 1;
+??ucI2CEcrireOctet_3:
+        MOV     A,R7
+        CLR     C
+        RLC     A
+        MOV     R7,A
+        INC     R6
+??ucI2CEcrireOctet_1:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??ucI2CEcrireOctet_4
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.7
+        JC      ??ucI2CEcrireOctet_2
+        ; Setup parameters for call to function CLI2CBase::vI2CEcrireBit(UC)
+        MOV     R1,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vI2CEcrireBit
+        SJMP    ??ucI2CEcrireOctet_3
+//  206   }
+//  207 return (ucI2CLireBit());
+??ucI2CEcrireOctet_4:
+        ; Setup parameters for call to function CLI2CBase::ucI2CLireBit()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ucI2CLireBit
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock11
+//  208 }
+//  209 
+//  210 ///////////////////////////////////////////////////////////////////////////////
+//  211 // void CLI2CBase :: vDelaiI2C(void)
+//  212 ///////////////////////////////////////////////////////////////////////////////
+//  213 //
+//  214 // Description:
+//  215 //
+//  216 // Parametres d'entrees: null
+//  217 //
+//  218 // Parametres de sortie: null
+//  219 //
+//  220 // Appel de la fonction:
+//  221 //
+//  222 // Cree le  4 avril 2014 par Louis-Normand Ang Houle
+//  223 //
+//  224 // Modifications:
+//  225 // -
+//  226 //
+//  227 ///////////////////////////////////////////////////////////////////////////////
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  228 void CLI2CBase :: vDelaiI2C(void)
+??vDelaiI2C:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function ??vDelaiI2C
+        CODE
+//  229 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//  230 for (UC i= ucDelaiI2C; i>0; i--);
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R0,A
+        SJMP    ??vDelaiI2C_1
+??vDelaiI2C_2:
+        DEC     R0
+??vDelaiI2C_1:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x1
+        JNC     ??vDelaiI2C_2
+//  231 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock12
+
+        END
+//  232 
+//  233 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+// 498 bytes in segment NEAR_CODE
+//   1 byte  in segment SFR_AN
+// 
+// 498 bytes of CODE memory
+//   0 bytes of DATA memory (+ 1 byte shared)
+//
+//Errors: none
+//Warnings: none

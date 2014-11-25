@@ -1,0 +1,198 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         24/Nov/2014  22:54:31 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\BlocFESTOmain.cpp                                #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\BlocFESTOmain.cpp" -D UPSD3254A --preprocess=cl  #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Auto #
+#                          mne 2014\ProjetSession5\ProgrammeDuFESTO\Programme #
+#                          FESTO\UPSD\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\ProgrammeDuFESTO\Progr #
+#                          ammeFESTO\UPSD\List\" -o                           #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\" -e --no_cse --no_unroll --no_inline   #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large --code_model=near   #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\BlocFESTOmain.lst                      #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\BlocFESTOmain.r51                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\BlocFESTOmain.cpp
+      1          // **************************Main.c
+      2          // Auteur:      Vincent Chouinard
+      3          // Date:        26 octobre 2014
+      4          // Version :    1.0
+      5          //
+      6          // Compilateur: IAR 8.10
+      7          //
+      8          // Description: Fichier principal
+      9          //
+     10          // *****************************************************************************
+     11          // **** LES INCLUDES ****************//
+     12          #include "_DeclarationGenerale.h"    // Raccourcis Linguistiques utiles
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IE
+   \                     _A_IE:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xae
+   \   unsigned char volatile __sfr WDKEY
+   \                     WDKEY:
+   \   000000                DS 1
+     13          #include "ConversionKeilToIAR.h"     // Compatbilité avec Keil
+     14          #include "BlocFESTOmain.h"           //
+     15          #include "FESTO.h"
+
+     UC CLMCP2515 :: LireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
+        ^
+"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLMCP2515.h",40  Warning[Pe427]: 
+          qualified name is not allowed in member declaration
+
+     const char FloatToString (float fInputFloat); //String = Convert.FloatToString(131.74);  
+     ^
+"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\Conversions.h",25  Warning[Pe815]: 
+          type qualifier on return type is meaningless
+     16          // **** LES DEFINES *****************//
+     17          
+     18          // **** LES CLASSES *****************//
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   static __intrinsic __near_func __xdata_reentrant void __sti__routine()
+   \                     ??__sti__routine:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19          class CLFesto FESTO;
+   \   000000                ; Setup parameters for call to function CLFesto::CLFesto()
+   \   000000   7A..         MOV     R2,#FESTO & 0xff
+   \   000002   7B..         MOV     R3,#(FESTO >> 8) & 0xff
+   \   000004   12....       LCALL   ??CLFesto
+   \   000007                ; Setup parameters for call to function __record_needed_destruction
+   \   000007   7A..         MOV     R2,#?_0 & 0xff
+   \   000009   7B..         MOV     R3,#(?_0 >> 8) & 0xff
+   \   00000B   02....       LJMP    __record_needed_destruction
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     FESTO:
+   \   000000                DS 17
+   \   000011                REQUIRE __INIT_XDATA_Z
+     20          // **** LES FONCTIONS DU MAIN *******//
+     21          
+     22          // **** PROGRAMME PRINCIPAL *********//
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     23          void main(void)
+   \                     main:
+     24          {
+   \   000000                ; Auto size: 0
+     25          EA    = 0   ;  // Disable interrupt.
+   \   000000   C2AF         CLR     0xa8.7
+     26          WDKEY = 0x55;  // Disable WatchDog.
+   \   000002   75AE55       MOV     0xae,#0x55
+     27          EA    = 1   ;  // Enable Interrupt
+   \   000005   D2AF         SETB    0xa8.7
+     28          
+     29          while(1)
+     30            {
+     31             FESTO.SendToBolide("TEST");
+   \                     ??main_0:
+   \   000007                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   000007   7C..         MOV     R4,#`?<Constant "TEST">` & 0xff
+   \   000009   7D..         MOV     R5,#(`?<Constant "TEST">` >> 8) & 0xff
+   \   00000B   7A..         MOV     R2,#FESTO & 0xff
+   \   00000D   7B..         MOV     R3,#(FESTO >> 8) & 0xff
+   \   00000F   12....       LCALL   ??SendToBolide
+   \   000012   80F3         SJMP    ??main_0
+   \   000014                REQUIRE _A_IE
+   \   000014                REQUIRE WDKEY
+     32            }
+     33          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "TEST">>`:
+   \   000000   54455354     DB "TEST"
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for >`:
+   \   000000   ....         DW ?_1
+   \   000002   ....         DW FESTO
+   \   000004   ....         DW `?~CLFesto`
+
+   \                                 In  segment DIFUNCT, align 1, keep-with-next, root
+   \   000000                REQUIRE ?cstart_call_ctors
+   \   000000   ....         DC16    ??__sti__routine
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "TEST">`:
+   \   000000                DS 5
+   \   000005                REQUIRE `?<Initializer for <Constant "TEST">>`
+   \   000005                REQUIRE __INIT_XDATA_I
+     34          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     __sti__routine()                   0      0      0
+       -> CLFesto::CLFesto()            0      0      0
+       -> __record_needed_destruction
+                                        0      0      0
+     main()                             0      0      0
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                       Bytes
+     --------------                       -----
+     _A_IE                                   1
+     WDKEY                                   1
+     __sti__routine()                       14
+     FESTO                                  17
+     main()                                 20
+     ?<Initializer for <Constant "TEST">>    5
+     ?<Initializer for >                     6
+     ?<Constant "TEST">                      5
+      Others                                10
+
+ 
+  2 bytes in segment DIFUNCT
+ 34 bytes in segment NEAR_CODE
+  2 bytes in segment SFR_AN
+ 11 bytes in segment XDATA_I
+ 11 bytes in segment XDATA_ID
+ 19 bytes in segment XDATA_Z
+ 
+ 47 bytes of CODE  memory
+  0 bytes of DATA  memory (+ 2 bytes shared)
+ 30 bytes of XDATA memory
+
+Errors: none
+Warnings: 2

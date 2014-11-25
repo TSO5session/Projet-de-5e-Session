@@ -1,0 +1,284 @@
+\section{Objectifs}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\
+
+\textbf{Ce template permet:}
+\begin{itemize}
+\item[$\Rightarrow$]D'afficher directement du code source en C++ (d'autres langages pris en charge)
+\item[$\Rightarrow$]D'afficher des tableaux et des figures listés en table des matières
+\item[$\Rightarrow$]D'avoir une table des matières et une date qui s'auto-actualisent
+\item[$\Rightarrow$]D'avoir les éléments habituels en pied et en tête de page
+\item[$\Rightarrow$]D'avoir des marges généreuses pour mettre des schémas et des images
+\item[$\Rightarrow$]D'avoir une police en Droid Sans avec possibilité de changement via les commentaires
+\item[$\Rightarrow$]D'avoir le support intégral de la ponctuation francophone, y compris dans l'affichage de code source
+\item[$\Rightarrow$]De basculer en mode multi colonne hétérogène \textit{on the fly}
+\item[$\Rightarrow$]D'intégrer de l'art ASCII
+\end{itemize}
+
+\section{Expérimentation}
+\subsection{Partie A}
+\subsection{Partie B}
+\subsection{Partie C}
+\subsection{Partie D}
+\subsection{Partie E}
+\subsection{Partie F}
+
+\section{Autre chose}
+\subsection{Point A}
+\subsection{Point B}
+\subsection{Point C}
+
+\pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Fonctionnalités \LaTeX{} avancées}
+
+\subsection{Code source à partir d'un fichier externe}
+\begin{center}
+\fbox{\lstinputlisting[language=C++]{Codesource/exemple.h}}
+\end{center}
+
+
+\pagebreak
+
+\subsection{Code source dans le fichier .Tex}
+\begin{lstlisting}[label={list:first},caption=Code source en directe]
+// **************************Exemple.h
+// Auteur:      Vincent Chouinard
+// Date:        11 mars 2014
+// Version :    1.0
+//
+// Compilateur: IAR Embedded Workbench 8.1
+//
+// *****************************************************************************
+#include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+
+#ifndef EXEMPLEH
+  #define EXEMPLEH
+
+class CLExemple : public CLSomethingElse
+{
+public:
+   CLClasse(void);                 // ***Constructeur par défaut
+   CLClasse(UINT16 usiAdresse);    // ***Constructeur initialisateur
+  ~CLClasse(void);                 // ***Destructeur
+  
+  float VariableBabel_éÉàÀèÈïçîÎêÊ // Accents babel fonctionnels!
+
+protected:
+   void vFonction1(float);
+   char cFonction2(printf("Hello World"));
+   void vFonction3(UC, unsigned short int);
+
+private:
+   for(int i = 0; i <= 10; i++)
+     {
+      char   cVariable = cFonction2() -1;
+      float  fVar;
+      fVar++;
+     }
+};
+#endif
+//LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+\end{lstlisting}
+\pagebreak
+
+\subsection{Formules mathématiques}
+\begin{table}[ht]
+%\caption{Multi-column table}
+\begin{center}
+\begin{tabular}{llll}  
+    \hline
+    \multicolumn{4}{c}{}\\
+    
+    \bigskip
+    
+    $V=RI$&$R=\dfrac{V}{I}$&$I=\dfrac{V}{R}$&$P=VI$\\
+    
+    \bigskip
+    
+    $V=\dfrac{P}{I}$&$R=\dfrac{V^{2}}         {P}$&$I=\dfrac{P}{V}$&$P=RI^{2}$\\ 
+    
+   \bigskip 
+    
+    $V=\sqrt{PR}$&$R=\dfrac{P}{I^{2}}$&$I=\sqrt{\dfrac{P}{R}}$&$P=\sqrt{\dfrac{V^{2}}{R}}$\\
+    \hline
+\end{tabular}
+\end{center}
+\label{tab:multicol}
+\end{table}
+
+$$
+\underbrace{n(n-1)(n-2)\dots(n-m+1)}_
+{\mbox{total of $m$ factors}}
+$$
+
+\bigskip  
+  
+\[\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}\]
+
+\bigskip 
+
+\begin{center}
+$A_{m,n} =
+ \begin{pmatrix}
+  a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+  a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+ \end{pmatrix}$
+\end{center}
+
+\subsection{Art ASCII}
+\begin{verbatim}
+               ,        ,
+              /(        )`
+              \ \___   / |
+              /- _  `-/  '
+             (/\/ \ \   /\
+             / /   | `    \
+             O O   ) /    |
+             `-^--'`<     '
+            (_.)  _  )   /
+             `.___/`    /
+               `-----' /
+  <----.     __ / __   \
+  <----|====O)))==) \) /====
+  <----'    `--' `.__,' \
+               |        |
+                \       /
+           ______( (_  / \______
+         ,'  ,-----'   |        \
+         `--{__________)        \/   
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Figure}
+\begin{figure}[hbtp]
+\caption{Figure listé en table des matières}
+\centering
+\fbox{\includegraphics[scale=0.7]{Figures/Bolid.jpg}}
+\end{figure}
+
+\subsection{Tableau}
+\begin{table}[!ht]
+\caption{Tableau listé en table des matières}
+\medskip
+\centering
+\begin{tabular}{||l|l|l|l|l|l|l||}
+\hline 
+\textbf{Véhicule} & \textbf{Prix} & \textbf{L / 100 Km} & \textbf{Capacité} & \textbf{Comfort} & \textbf{Essence / année(\$)} & \textbf{Total} \\ 
+\hline 
+Ford Focus & 17 000 & 9.6 & 674-1209 & 5 & 12 480 & 24 660 \\ 
+\hline 
+Hyundai Elantra & 21 000 & 10.3 & 651-1449 & 4 & 13 390 & 27 570 \\ 
+\hline 
+Mazda 3 & 20 000 & 8.4 & 481-1213 & 4 & 10 920 & 24 600 \\ 
+\hline 
+Chevrolet Sonic & 17 000 & 7.7 & 459-946 & 5 & 10 010 & 22 190 \\ 
+\hline 
+Ford Fiesta & 14 000 & 9 & 504-1426 & 5 & 11 700 & 22 380 \\ 
+\hline 
+Nissan Versa & 13 500 & 9 & 228-728 & 4 & 11 700 & 22 130 \\ 
+\hline 
+Toyota Yaris  & 20 000 & 8.2 & 228-728 & 5 & 10 660 & 24 340 \\ 
+\hline 
+Honda Fit & 16 000 & 8.5 & 585-1622 & 5 & 11 050 & 22 730 \\ 
+\hline 
+\end{tabular} 
+\label{tab:testtab1}
+\end{table}
+
+\pagebreak
+
+\subsection{Multiples colones de texte}
+\begin{multicols}{2}
+
+
+Bacon ipsum dolor sit amet boudin ham hock turducken venison. Leberkas shank swine, drumstick flank ground round tenderloin jerky short loin cow venison boudin tri-tip chuck. Ham hock sausage ham, porchetta frankfurter rump t-bone jerky andouille pork chop pig shank ground round pork belly. Tongue rump ham jowl salami. Rump fatback turducken pork spare ribs landjaeger, chuck bresaola sirloin boudin. Porchetta spare ribs boudin ball tip pork.
+
+Jerky andouille biltong pork belly drumstick. Jowl filet mignon tail chuck doner drumstick turkey. Rump flank strip steak shoulder pork chop shank. Flank short ribs drumstick ground round meatloaf.
+
+Fatback turkey boudin bresaola, t-bone tail jowl leberkas. Tail jerky tenderloin ham hock pancetta, ribeye pork t-bone flank short ribs bacon cow. Turkey kevin t-bone shankle, jowl doner short loin ground round tri-tip rump sirloin. Beef tenderloin landjaeger boudin spare ribs pork belly andouille meatloaf salami corned beef flank. Kevin pancetta ribeye, chuck boudin tri-tip pork chop tongue. Leberkas porchetta sausage pork belly tri-tip pancetta ground round tail corned beef venison kevin ribeye.
+
+Ground round pork ham pork chop cow, sausage andouille boudin. Rump andouille shank pork belly, chuck ribeye frankfurter boudin bresaola swine meatloaf tenderloin short loin beef ribs biltong. Beef tenderloin flank t-bone, shankle fatback prosciutto pork loin turducken turkey. Chicken fatback strip steak, drumstick biltong swine andouille rump porchetta pastrami turducken frankfurter t-bone tenderloin. Turducken pastrami pancetta short loin.
+
+Pork chop ham hock tenderloin tail meatball meatloaf t-bone spare ribs. Boudin pancetta hamburger, drumstick ball tip t-bone shankle ribeye turkey. Shankle short loin turkey meatball t-bone. Tenderloin meatloaf kevin short ribs kielbasa sausage shank spare ribs pork chop cow chuck. Landjaeger ham hock rump, ham pork chop bresaola kielbasa turducken t-bone chuck tri-tip jerky boudin corned beef shoulder. Bresaola strip steak biltong ball tip turducken. Shankle ribeye pastrami meatball, tongue strip steak rump chuck beef ribs.
+\end{multicols}
+\begin{center}
+\HRule 
+\end{center}
+\begin{multicols}{3}
+Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+
+Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+
+Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
+
+Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.
+
+Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.
+
+Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.
+
+Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services. Seamlessly empower fully researched growth strategies and interoperable internal or "organic" sources.
+
+Credibly innovate granular internal or "organic" sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas with optimal networks.Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+
+Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+
+Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
+
+Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.
+
+Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.
+
+Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.
+
+Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services. Seamlessly empower fully researched growth strategies and interoperable internal or "organic" sources.
+
+Credibly innovate granular internal or "organic" sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas with optimal networks.
+
+\end{multicols}

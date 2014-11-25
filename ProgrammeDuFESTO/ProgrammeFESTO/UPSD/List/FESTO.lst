@@ -1,0 +1,806 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         24/Nov/2014  22:54:32 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\FESTO.cpp                                        #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\FESTO.cpp" -D UPSD3254A --preprocess=cl          #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Auto #
+#                          mne 2014\ProjetSession5\ProgrammeDuFESTO\Programme #
+#                          FESTO\UPSD\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\ProgrammeDuFESTO\Progr #
+#                          ammeFESTO\UPSD\List\" -o                           #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\" -e --no_cse --no_unroll --no_inline   #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large --code_model=near   #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\FESTO.lst                              #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\FESTO.r51                               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\FESTO.cpp
+      1          // **************************FESTO.cpp
+      2          // Auteur:       Prenom Nom
+      3          // Date:         19 Octobre 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+     12          #include "FESTO.h"               // Fichier de definitions de...
+
+     UC CLMCP2515 :: LireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
+        ^
+"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLMCP2515.h",40  Warning[Pe427]: 
+          qualified name is not allowed in member declaration
+
+     const char FloatToString (float fInputFloat); //String = Convert.FloatToString(131.74);  
+     ^
+"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\Conversions.h",25  Warning[Pe815]: 
+          type qualifier on return type is meaningless
+     13          
+     14          //******************************************************************************
+     15          //                            LE CONSTRUCTEUR PAR DEFAUT
+     16          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     17          CLFesto :: CLFesto(void)
+   \                     ??CLFesto:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     18          {
+   \   000009                ; Setup parameters for call to function CLCommunic::CLCommunic()
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??CLCommunic
+   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   000010   8E82         MOV     DPL,R6
+   \   000012   8F83         MOV     DPH,R7
+   \   000014   A3           INC     DPTR
+   \   000015   AA82         MOV     R2,DPL
+   \   000017   AB83         MOV     R3,DPH
+   \   000019   12....       LCALL   ??CLI2CPort
+   \   00001C                ; Setup parameters for call to function CLMCP2515::CLMCP2515()
+   \   00001C   EE           MOV     A,R6
+   \   00001D   2403         ADD     A,#0x3
+   \   00001F   FA           MOV     R2,A
+   \   000020   EF           MOV     A,R7
+   \   000021   3400         ADDC    A,#0x0
+   \   000023   FB           MOV     R3,A
+   \   000024   12....       LCALL   ??CLMCP2515
+   \   000027                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000027   EE           MOV     A,R6
+   \   000028   240C         ADD     A,#0xc
+   \   00002A   FA           MOV     R2,A
+   \   00002B   EF           MOV     A,R7
+   \   00002C   3400         ADDC    A,#0x0
+   \   00002E   FB           MOV     R3,A
+   \   00002F   12....       LCALL   ??CLSPI
+   \   000032                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   000032   EE           MOV     A,R6
+   \   000033   240D         ADD     A,#0xd
+   \   000035   FA           MOV     R2,A
+   \   000036   EF           MOV     A,R7
+   \   000037   3400         ADDC    A,#0x0
+   \   000039   FB           MOV     R3,A
+   \   00003A   12....       LCALL   ??CLEcran
+   \   00003D                ; Setup parameters for call to function CLClavier::CLClavier()
+   \   00003D   EE           MOV     A,R6
+   \   00003E   240F         ADD     A,#0xf
+   \   000040   FA           MOV     R2,A
+   \   000041   EF           MOV     A,R7
+   \   000042   3400         ADDC    A,#0x0
+   \   000044   FB           MOV     R3,A
+   \   000045   12....       LCALL   ??CLClavier
+   \   000048                ; Setup parameters for call to function Conversion::Conversion()
+   \   000048   EE           MOV     A,R6
+   \   000049   2410         ADD     A,#0x10
+   \   00004B   FA           MOV     R2,A
+   \   00004C   EF           MOV     A,R7
+   \   00004D   3400         ADDC    A,#0x0
+   \   00004F   FB           MOV     R3,A
+   \   000050   12....       LCALL   ??Conversion
+     19          
+     20          }
+   \   000053   EE           MOV     A,R6
+   \   000054   FA           MOV     R2,A
+   \   000055   EF           MOV     A,R7
+   \   000056   FB           MOV     R3,A
+   \   000057   7F01         MOV     R7,#0x1
+   \   000059   02....       LJMP    ?FUNC_LEAVE_XDATA
+     21          
+     22          //******************************************************************************
+     23          //                            LE CONSTRUCTEUR INITIALISATEUR
+     24          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     25          CLFesto :: CLFesto(unsigned char ucParametre)
+   \                     ??CLFesto_1:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     26          {
+   \   000009                ; Setup parameters for call to function CLCommunic::CLCommunic()
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??CLCommunic
+   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   000010   8E82         MOV     DPL,R6
+   \   000012   8F83         MOV     DPH,R7
+   \   000014   A3           INC     DPTR
+   \   000015   AA82         MOV     R2,DPL
+   \   000017   AB83         MOV     R3,DPH
+   \   000019   12....       LCALL   ??CLI2CPort
+   \   00001C                ; Setup parameters for call to function CLMCP2515::CLMCP2515()
+   \   00001C   EE           MOV     A,R6
+   \   00001D   2403         ADD     A,#0x3
+   \   00001F   FA           MOV     R2,A
+   \   000020   EF           MOV     A,R7
+   \   000021   3400         ADDC    A,#0x0
+   \   000023   FB           MOV     R3,A
+   \   000024   12....       LCALL   ??CLMCP2515
+   \   000027                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000027   EE           MOV     A,R6
+   \   000028   240C         ADD     A,#0xc
+   \   00002A   FA           MOV     R2,A
+   \   00002B   EF           MOV     A,R7
+   \   00002C   3400         ADDC    A,#0x0
+   \   00002E   FB           MOV     R3,A
+   \   00002F   12....       LCALL   ??CLSPI
+   \   000032                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   000032   EE           MOV     A,R6
+   \   000033   240D         ADD     A,#0xd
+   \   000035   FA           MOV     R2,A
+   \   000036   EF           MOV     A,R7
+   \   000037   3400         ADDC    A,#0x0
+   \   000039   FB           MOV     R3,A
+   \   00003A   12....       LCALL   ??CLEcran
+   \   00003D                ; Setup parameters for call to function CLClavier::CLClavier()
+   \   00003D   EE           MOV     A,R6
+   \   00003E   240F         ADD     A,#0xf
+   \   000040   FA           MOV     R2,A
+   \   000041   EF           MOV     A,R7
+   \   000042   3400         ADDC    A,#0x0
+   \   000044   FB           MOV     R3,A
+   \   000045   12....       LCALL   ??CLClavier
+   \   000048                ; Setup parameters for call to function Conversion::Conversion()
+   \   000048   EE           MOV     A,R6
+   \   000049   2410         ADD     A,#0x10
+   \   00004B   FA           MOV     R2,A
+   \   00004C   EF           MOV     A,R7
+   \   00004D   3400         ADDC    A,#0x0
+   \   00004F   FB           MOV     R3,A
+   \   000050   12....       LCALL   ??Conversion
+     27          
+     28          }
+   \   000053   EE           MOV     A,R6
+   \   000054   FA           MOV     R2,A
+   \   000055   EF           MOV     A,R7
+   \   000056   FB           MOV     R3,A
+   \   000057   7F01         MOV     R7,#0x1
+   \   000059   02....       LJMP    ?FUNC_LEAVE_XDATA
+     29          
+     30          // *****************************************************************************
+     31          //                            LE DESTRUCTEUR
+     32          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     33          CLFesto :: ~CLFesto(void)
+   \                     `?~CLFesto`:
+     34          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     35          
+     36          }
+   \   000009                ; Setup parameters for call to function Conversion::~Conversion()
+   \   000009   EE           MOV     A,R6
+   \   00000A   2410         ADD     A,#0x10
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~Conversion`
+   \   000014                ; Setup parameters for call to function CLClavier::~CLClavier()
+   \   000014   EE           MOV     A,R6
+   \   000015   240F         ADD     A,#0xf
+   \   000017   FA           MOV     R2,A
+   \   000018   EF           MOV     A,R7
+   \   000019   3400         ADDC    A,#0x0
+   \   00001B   FB           MOV     R3,A
+   \   00001C   12....       LCALL   `?~CLClavier`
+   \   00001F                ; Setup parameters for call to function CLEcran::~CLEcran()
+   \   00001F   EE           MOV     A,R6
+   \   000020   240D         ADD     A,#0xd
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   3400         ADDC    A,#0x0
+   \   000026   FB           MOV     R3,A
+   \   000027   12....       LCALL   `?~CLEcran`
+   \   00002A                ; Setup parameters for call to function CLSPI::~CLSPI()
+   \   00002A   EE           MOV     A,R6
+   \   00002B   240C         ADD     A,#0xc
+   \   00002D   FA           MOV     R2,A
+   \   00002E   EF           MOV     A,R7
+   \   00002F   3400         ADDC    A,#0x0
+   \   000031   FB           MOV     R3,A
+   \   000032   12....       LCALL   `?~CLSPI`
+   \   000035                ; Setup parameters for call to function CLMCP2515::~CLMCP2515()
+   \   000035   EE           MOV     A,R6
+   \   000036   2403         ADD     A,#0x3
+   \   000038   FA           MOV     R2,A
+   \   000039   EF           MOV     A,R7
+   \   00003A   3400         ADDC    A,#0x0
+   \   00003C   FB           MOV     R3,A
+   \   00003D   12....       LCALL   `?~CLMCP2515`
+   \   000040                ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
+   \   000040   8E82         MOV     DPL,R6
+   \   000042   8F83         MOV     DPH,R7
+   \   000044   A3           INC     DPTR
+   \   000045   AA82         MOV     R2,DPL
+   \   000047   AB83         MOV     R3,DPH
+   \   000049   12....       LCALL   `?~CLI2CPort`
+   \   00004C                ; Setup parameters for call to function CLCommunic::~CLCommunic()
+   \   00004C   EE           MOV     A,R6
+   \   00004D   FA           MOV     R2,A
+   \   00004E   EF           MOV     A,R7
+   \   00004F   FB           MOV     R3,A
+   \   000050   12....       LCALL   `?~CLCommunic`
+   \   000053   7F01         MOV     R7,#0x1
+   \   000055   02....       LJMP    ?FUNC_LEAVE_XDATA
+     37          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     38          UC CLFesto :: ReadInstructionFromPC(void)
+   \                     ??ReadInstructionFromPC:
+     39          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     40          //UC Commande[8] = CAN.Read();  
+     41          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "CLFesto::ReadInstructionFromPC"
+   \   000000   22           RET
+     42          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     43          void CLFesto :: SendToBolide(char const *ucpMessage)
+   \                     ??SendToBolide:
+     44          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FF           MOV     R7,A
+     45          Xbee.Send('B');               // Envoie au bolide  
+   \   00000D                ; Setup parameters for call to function CLCommunic::Send(UC)
+   \   00000D   7942         MOV     R1,#0x42
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   12....       LCALL   ??Send
+     46          Xbee.SendString(ucpMessage);  // La commande passée en paramètres
+   \   000016                ; Setup parameters for call to function CLCommunic::SendString(char const *)
+   \   000016   EE           MOV     A,R6
+   \   000017   FC           MOV     R4,A
+   \   000018   EF           MOV     A,R7
+   \   000019   FD           MOV     R5,A
+   \   00001A   AA82         MOV     R2,DPL
+   \   00001C   AB83         MOV     R3,DPH
+   \   00001E   12....       LCALL   ??SendString
+     47          }
+   \   000021   7F01         MOV     R7,#0x1
+   \   000023   02....       LJMP    ?FUNC_LEAVE_XDATA
+     48          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     49          void CLFesto :: SendToStation1(char const *ucpMessage)
+   \                     ??SendToStation1:
+     50          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FF           MOV     R7,A
+     51          Xbee.Send('1');               // Envoie au bolide  
+   \   00000D                ; Setup parameters for call to function CLCommunic::Send(UC)
+   \   00000D   7931         MOV     R1,#0x31
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   12....       LCALL   ??Send
+     52          Xbee.SendString(ucpMessage);  // La commande passée en paramètres
+   \   000016                ; Setup parameters for call to function CLCommunic::SendString(char const *)
+   \   000016   EE           MOV     A,R6
+   \   000017   FC           MOV     R4,A
+   \   000018   EF           MOV     A,R7
+   \   000019   FD           MOV     R5,A
+   \   00001A   AA82         MOV     R2,DPL
+   \   00001C   AB83         MOV     R3,DPH
+   \   00001E   12....       LCALL   ??SendString
+     53          }
+   \   000021   7F01         MOV     R7,#0x1
+   \   000023   02....       LJMP    ?FUNC_LEAVE_XDATA
+     54          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     55          UC CLFesto :: GetBlocColor(void)
+   \                     ??GetBlocColor:
+     56          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     57          UC ucColor = 0;
+   \   000009   75..00       MOV     ?V0 + 0,#0x0
+     58          LCD.vLCDCursor(0,1);
+   \   00000C                ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
+   \   00000C   7C01         MOV     R4,#0x1
+   \   00000E   7900         MOV     R1,#0x0
+   \   000010   EE           MOV     A,R6
+   \   000011   240D         ADD     A,#0xd
+   \   000013   FA           MOV     R2,A
+   \   000014   EF           MOV     A,R7
+   \   000015   3400         ADDC    A,#0x0
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   ??vLCDCursor
+     59          
+     60          if(ucColor == ORANGE)
+   \   00001B   7401         MOV     A,#0x1
+   \   00001D   65..         XRL     A,?V0 + 0
+   \   00001F   701A         JNZ     ??GetBlocColor_1
+     61            {
+     62             LCD.String("Orange");
+   \   000021                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   000021   7C..         MOV     R4,#`?<Constant "Orange">` & 0xff
+   \   000023   7D..         MOV     R5,#(`?<Constant "Orange">` >> 8) & 0xff
+   \   000025   EE           MOV     A,R6
+   \   000026   240D         ADD     A,#0xd
+   \   000028   FA           MOV     R2,A
+   \   000029   EF           MOV     A,R7
+   \   00002A   3400         ADDC    A,#0x0
+   \   00002C   FB           MOV     R3,A
+   \   00002D   12....       LCALL   ??String
+     63             SendToBolide("CounterClockWise");
+   \   000030                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   000030   7C..         MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
+   \   000032   7D..         MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
+   \   000034   EE           MOV     A,R6
+   \   000035   FA           MOV     R2,A
+   \   000036   EF           MOV     A,R7
+   \   000037   FB           MOV     R3,A
+   \   000038   12....       LCALL   ??SendToBolide
+     64            }
+     65          
+     66          if(ucColor == NOIR)
+   \                     ??GetBlocColor_1:
+   \   00003B   7401         MOV     A,#0x1
+   \   00003D   65..         XRL     A,?V0 + 0
+   \   00003F   701A         JNZ     ??GetBlocColor_2
+     67            {
+     68             LCD.String("Noir");
+   \   000041                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   000041   7C..         MOV     R4,#`?<Constant "Noir">` & 0xff
+   \   000043   7D..         MOV     R5,#(`?<Constant "Noir">` >> 8) & 0xff
+   \   000045   EE           MOV     A,R6
+   \   000046   240D         ADD     A,#0xd
+   \   000048   FA           MOV     R2,A
+   \   000049   EF           MOV     A,R7
+   \   00004A   3400         ADDC    A,#0x0
+   \   00004C   FB           MOV     R3,A
+   \   00004D   12....       LCALL   ??String
+     69             SendToBolide("STOP");
+   \   000050                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   000050   7C..         MOV     R4,#`?<Constant "STOP">` & 0xff
+   \   000052   7D..         MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
+   \   000054   EE           MOV     A,R6
+   \   000055   FA           MOV     R2,A
+   \   000056   EF           MOV     A,R7
+   \   000057   FB           MOV     R3,A
+   \   000058   12....       LCALL   ??SendToBolide
+     70            }
+     71          
+     72          if(ucColor == METAL)
+   \                     ??GetBlocColor_2:
+   \   00005B   7401         MOV     A,#0x1
+   \   00005D   65..         XRL     A,?V0 + 0
+   \   00005F   701A         JNZ     ??GetBlocColor_3
+     73            {
+     74             LCD.String("Metallic");
+   \   000061                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   000061   7C..         MOV     R4,#`?<Constant "Metallic">` & 0xff
+   \   000063   7D..         MOV     R5,#(`?<Constant "Metallic">` >> 8) & 0xff
+   \   000065   EE           MOV     A,R6
+   \   000066   240D         ADD     A,#0xd
+   \   000068   FA           MOV     R2,A
+   \   000069   EF           MOV     A,R7
+   \   00006A   3400         ADDC    A,#0x0
+   \   00006C   FB           MOV     R3,A
+   \   00006D   12....       LCALL   ??String
+     75             SendToBolide("ClockWise");
+   \   000070                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   000070   7C..         MOV     R4,#`?<Constant "ClockWise">` & 0xff
+   \   000072   7D..         MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
+   \   000074   EE           MOV     A,R6
+   \   000075   FA           MOV     R2,A
+   \   000076   EF           MOV     A,R7
+   \   000077   FB           MOV     R3,A
+   \   000078   12....       LCALL   ??SendToBolide
+     76            }
+     77          return(ucColor);
+   \                     ??GetBlocColor_3:
+   \   00007B   A9..         MOV     R1,?V0 + 0
+   \   00007D   7F01         MOV     R7,#0x1
+   \   00007F   02....       LJMP    ?FUNC_LEAVE_XDATA
+     78          }
+     79          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     80          UC CLFesto ::IsTheBolideHere(void)
+   \                     ??IsTheBolideHere:
+     81          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     82            
+     83          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "CLFesto::IsTheBolideHere"
+   \   000000   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "Orange">>`:
+   \   000000   4F72616E     DB "Orange"
+   \            676500  
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "CounterClockWise"`:
+   \   000000   436F756E     DB "CounterClockWise"
+   \            74657243
+   \            6C6F636B
+   \            57697365
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "Noir">>`:
+   \   000000   4E6F6972     DB "Noir"
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "STOP">>`:
+   \   000000   53544F50     DB "STOP"
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "Metallic">>`:
+   \   000000   4D657461     DB "Metallic"
+   \            6C6C6963
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "ClockWise">>`:
+   \   000000   436C6F63     DB "ClockWise"
+   \            6B576973
+   \            6500    
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "Orange">`:
+   \   000000                DS 7
+   \   000007                REQUIRE `?<Initializer for <Constant "Orange">>`
+   \   000007                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "CounterClockWise">`:
+   \   000000                DS 17
+   \   000011                REQUIRE `?<Initializer for <Constant "CounterClockWise"`
+   \   000011                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "Noir">`:
+   \   000000                DS 5
+   \   000005                REQUIRE `?<Initializer for <Constant "Noir">>`
+   \   000005                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "STOP">`:
+   \   000000                DS 5
+   \   000005                REQUIRE `?<Initializer for <Constant "STOP">>`
+   \   000005                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "Metallic">`:
+   \   000000                DS 9
+   \   000009                REQUIRE `?<Initializer for <Constant "Metallic">>`
+   \   000009                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "ClockWise">`:
+   \   000000                DS 10
+   \   00000A                REQUIRE `?<Initializer for <Constant "ClockWise">>`
+   \   00000A                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLFesto &CLFesto::new CLFesto()
+   \                     `??new CLFesto`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A11         MOV     R2,#0x11
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLFesto_2`
+   \   00001B                ; Setup parameters for call to function CLFesto::CLFesto()
+   \   00001B   12....       LCALL   ??CLFesto
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLFesto_3`
+   \                     `??new CLFesto_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLFesto_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLFesto &CLFesto::new CLFesto(unsigned char)
+   \                     `??new CLFesto_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A11         MOV     R2,#0x11
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new CLFesto_4`
+   \   00001E                ; Setup parameters for call to function CLFesto::CLFesto(unsigned char)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??CLFesto_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new CLFesto_5`
+   \                     `??new CLFesto_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new CLFesto_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLFesto::delete ~CLFesto(CLFesto *)
+   \                     `??delete ~CLFesto`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLFesto_1`
+   \   00000D                ; Setup parameters for call to function CLFesto::~CLFesto()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLFesto`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLFesto_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+     84          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLFesto::CLFesto()                 0      0      8
+       -> CLCommunic::CLCommunic()      0      0     16
+       -> CLI2CPort::CLI2CPort()        0      0     16
+       -> CLMCP2515::CLMCP2515()        0      0     16
+       -> CLSPI::CLSPI()                0      0     16
+       -> CLEcran::CLEcran()            0      0     16
+       -> CLClavier::CLClavier()        0      0     16
+       -> Conversion::Conversion()      0      0     16
+     CLFesto::CLFesto(unsigned char)
+                                        0      0     17
+       -> CLCommunic::CLCommunic()      0      0     16
+       -> CLI2CPort::CLI2CPort()        0      0     16
+       -> CLMCP2515::CLMCP2515()        0      0     16
+       -> CLSPI::CLSPI()                0      0     16
+       -> CLEcran::CLEcran()            0      0     16
+       -> CLClavier::CLClavier()        0      0     16
+       -> Conversion::Conversion()      0      0     16
+     CLFesto::GetBlocColor()            0      0      8
+       -> CLEcran::vLCDCursor(UC, UC)
+                                        0      0     16
+       -> CLEcran::String(char const *)
+                                        0      0     16
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0     16
+       -> CLEcran::String(char const *)
+                                        0      0     16
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0     16
+       -> CLEcran::String(char const *)
+                                        0      0     16
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0     16
+     CLFesto::IsTheBolideHere()         0      0      0
+     CLFesto::ReadInstructionFromPC()
+                                        0      0      0
+     CLFesto::SendToBolide(char const *)
+                                        0      0     16
+       -> CLCommunic::Send(UC)          0      0     16
+       -> CLCommunic::SendString(char const *)
+                                        0      0     16
+     CLFesto::SendToStation1(char const *)
+                                        0      0      8
+       -> CLCommunic::Send(UC)          0      0     16
+       -> CLCommunic::SendString(char const *)
+                                        0      0     16
+     CLFesto::delete ~CLFesto(CLFesto *)
+                                        0      0      8
+       -> CLFesto::~CLFesto()           0      0     16
+       -> operator delete(void *)       0      0     16
+     CLFesto::new CLFesto()             2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLFesto::CLFesto()            4      0      0
+     CLFesto::new CLFesto(unsigned char)
+                                        0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> CLFesto::CLFesto(unsigned char)
+                                        0      0     18
+     CLFesto::~CLFesto()                0      0     16
+       -> Conversion::~Conversion()     0      0     16
+       -> CLClavier::~CLClavier()       0      0     16
+       -> CLEcran::~CLEcran()           0      0     16
+       -> CLSPI::~CLSPI()               0      0     16
+       -> CLMCP2515::~CLMCP2515()       0      0     16
+       -> CLI2CPort::~CLI2CPort()       0      0     16
+       -> CLCommunic::~CLCommunic()     0      0     16
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     CLFesto::CLFesto()                               92
+     CLFesto::CLFesto(unsigned char)
+                                                      92
+     CLFesto::~CLFesto()                              88
+     CLFesto::ReadInstructionFromPC()
+                                                       1
+     CLFesto::SendToBolide(char const *)
+                                                      38
+     CLFesto::SendToStation1(char const *)
+                                                      38
+     CLFesto::GetBlocColor()                         130
+     CLFesto::IsTheBolideHere()                        1
+     ?<Initializer for <Constant "Orange">>            7
+     ?<Initializer for <Constant "CounterClockWise"   17
+     ?<Initializer for <Constant "Noir">>              5
+     ?<Initializer for <Constant "STOP">>              5
+     ?<Initializer for <Constant "Metallic">>          9
+     ?<Initializer for <Constant "ClockWise">>        10
+     ?<Constant "Orange">                              7
+     ?<Constant "CounterClockWise">                   17
+     ?<Constant "Noir">                                5
+     ?<Constant "STOP">                                5
+     ?<Constant "Metallic">                            9
+     ?<Constant "ClockWise">                          10
+     CLFesto::new CLFesto()                           49
+     CLFesto::new CLFesto(unsigned char)
+                                                      54
+     CLFesto::delete ~CLFesto(CLFesto *)
+                                                      32
+
+ 
+ 615 bytes in segment NEAR_CODE
+  53 bytes in segment XDATA_I
+  53 bytes in segment XDATA_ID
+ 
+ 668 bytes of CODE  memory
+  53 bytes of XDATA memory
+
+Errors: none
+Warnings: 4

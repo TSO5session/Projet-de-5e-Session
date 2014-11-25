@@ -1,0 +1,784 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         30/Sep/2014  20:43:28 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif IAR\CLSPI.cpp    #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif IAR\CLSPI.cpp"   #
+#                          -D DALLAS89C450 --preprocess=cl                    #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\A #
+#                          utomne 2014\Fonctions\Projet Accumulatif           #
+#                          IAR\DALLAS\Obj\" -e --no_cse --no_unroll           #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\List\CLSPI.lst                          #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\Obj\CLSPI.r51                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\CLSPI.cpp
+      1          // **************************CLSPI.cpp
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         15 septembre 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     12          #include "CLSPI.h"                 // Fichier de definitions du protocole SPI
+     13          ////////////***LES DEFINES***////////
+     14          #define MOSI P1_0                  // Master OUT Slave IN (Master send)
+     15          #define MISO P1_1                  // Master IN Slave OUT (Master receive)
+     16          #define SCK  P1_2                  // Clock               (Tic tac)
+     17          #define NSS  P1_3                  // Slave Select        (enable, chip select, others synonyms)
+     18          //******************************************************************************
+     19          //                            LE CONSTRUCTEUR PAR DEFAUT
+     20          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     21          CLSPI :: CLSPI(void)
+   \                     ??CLSPI:
+     22          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     23          MOSI = LOW;  // Commence a bas
+   \   000000   C290         CLR     0x90.0
+     24          MISO = LOW;  // Commence a bas
+   \   000002   C291         CLR     0x90.1
+     25          SCK  = LOW;  // Commence a bas
+   \   000004   C292         CLR     0x90.2
+     26          NSS  = LOW;  // Commence a bas
+   \   000006   C293         CLR     0x90.3
+     27          }
+   \   000008   22           RET
+   \   000009                REQUIRE _A_P1
+     28          
+     29          //******************************************************************************
+     30          //                            LE CONSTRUCTEUR INITIALISATEUR
+     31          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     32          CLSPI :: CLSPI(UC MCP23S08)
+   \                     ??CLSPI_1:
+     33          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+     34          MOSI      = LOW;  // Commence a bas  
+   \   00000B   C290         CLR     0x90.0
+     35          MISO      = LOW;  // Commence a bas  
+   \   00000D   C291         CLR     0x90.1
+     36          SCK       = LOW;  // Commence a bas
+   \   00000F   C292         CLR     0x90.2
+     37          NSS       = HIGH; // Commence a bas
+   \   000011   D293         SETB    0x90.3
+     38          UC ucTemp = MCP23S08Init(0x40, 0x00, MCP23S08);  // Ecriture des directions IN ou OUT
+   \   000013                ; Setup parameters for call to function CLSPI::MCP23S08Init(UC, UC, UC)
+   \   000013   FD           MOV     R5,A
+   \   000014   7C00         MOV     R4,#0x0
+   \   000016   7940         MOV     R1,#0x40
+   \   000018   AA82         MOV     R2,DPL
+   \   00001A   AB83         MOV     R3,DPH
+   \   00001C   12....       LCALL   ??MCP23S08Init
+   \   00001F   E9           MOV     A,R1
+   \   000020   F8           MOV     R0,A
+     39          }                                                // avec le parametre specifie par le constructeur
+   \   000021   AA82         MOV     R2,DPL
+   \   000023   AB83         MOV     R3,DPH
+   \   000025   7F01         MOV     R7,#0x1
+   \   000027   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00002A                REQUIRE _A_P1
+     40          
+     41          // *****************************************************************************
+     42          //                            LE DESTRUCTEUR
+     43          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     44          CLSPI :: ~CLSPI(void)
+   \                     `?~CLSPI`:
+     45          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     46          
+     47          }
+   \   000000   22           RET
+     48          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     49          UC CLSPI :: MPCWriteGPIO(UC ucData)                   // Pour eccrire sur les GPIO du MCP
+   \                     ??MPCWriteGPIO:
+     50          {
+   \   000000   EE           MOV     A,R6
+   \   000001   C0E0         PUSH    A
+   \   000003                ; Saved register size: 1
+   \   000003                ; Auto size: 0
+   \   000003   E9           MOV     A,R1
+   \   000004   FE           MOV     R6,A
+     51          UC ucReturnValue = MCP23S08Init(0x40, 0x09, ucData);  // Mode ecriture sur les GPIO, envoie donne choisie
+   \   000005                ; Setup parameters for call to function CLSPI::MCP23S08Init(UC, UC, UC)
+   \   000005   FD           MOV     R5,A
+   \   000006   7C09         MOV     R4,#0x9
+   \   000008   7940         MOV     R1,#0x40
+   \   00000A   12....       LCALL   ??MCP23S08Init
+   \   00000D   E9           MOV     A,R1
+   \   00000E   F9           MOV     R1,A
+     52          MOSI             = LOW;
+   \   00000F   C290         CLR     0x90.0
+     53          return(ucReturnValue);
+   \   000011   D0E0         POP     A
+   \   000013   FE           MOV     R6,A
+   \   000014   22           RET
+   \   000015                REQUIRE _A_P1
+     54          }
+     55          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     56          UC CLSPI :: MPCReadGPIO(void)                         // Pour lire sur les GPIO
+   \                     ??MPCReadGPIO:
+     57          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     58          UC ucReturnValue = MCP23S08Init(0x41, 0x09, 0x00);    // Mode ecriture sur les GPIO, envoie donne choisie
+   \   000000                ; Setup parameters for call to function CLSPI::MCP23S08Init(UC, UC, UC)
+   \   000000   7D00         MOV     R5,#0x0
+   \   000002   7C09         MOV     R4,#0x9
+   \   000004   7941         MOV     R1,#0x41
+   \   000006   12....       LCALL   ??MCP23S08Init
+   \   000009   E9           MOV     A,R1
+   \   00000A   F9           MOV     R1,A
+     59          MOSI             = LOW;
+   \   00000B   C290         CLR     0x90.0
+     60          return(ucReturnValue);
+   \   00000D   22           RET
+   \   00000E                REQUIRE _A_P1
+     61          }
+     62          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     63          UC CLSPI :: MCP23S08Init(UC ucReadOrWrite, UC ucRegisterADR, UC ucData)
+   \                     ??MCP23S08Init:
+     64          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   89..         MOV     ?V0 + 1,R1
+   \   00000B   8C..         MOV     ?V0 + 0,R4
+   \   00000D   ED           MOV     A,R5
+   \   00000E   FE           MOV     R6,A
+     65          UC ucRead;                                           // Variable pour lire
+     66          if(ucReadOrWrite == 0x40)                            // S'il faut ecrire
+   \   00000F   7440         MOV     A,#0x40
+   \   000011   65..         XRL     A,?V0 + 1
+   \   000013   7031         JNZ     ??MCP23S08Init_1
+     67            {
+     68             NSS = LOW;                                        // Active le chip select
+   \   000015   C293         CLR     0x90.3
+     69                ucRead = SPI_Transfert(0x40,          CPOL0);  // Active le mode ecriture
+   \   000017                ; Setup parameters for call to function CLSPI::SPI_Transfert(UC, char)
+   \   000017   7C00         MOV     R4,#0x0
+   \   000019   7940         MOV     R1,#0x40
+   \   00001B   AA82         MOV     R2,DPL
+   \   00001D   AB83         MOV     R3,DPH
+   \   00001F   12....       LCALL   ??SPI_Transfert
+   \   000022   E9           MOV     A,R1
+   \   000023   FF           MOV     R7,A
+     70                MOSI   = LOW;                                  // Minor semi-bug prevention
+   \   000024   C290         CLR     0x90.0
+     71                ucRead = SPI_Transfert(ucRegisterADR, CPOL0);  // Selectionne le registre choisi
+   \   000026                ; Setup parameters for call to function CLSPI::SPI_Transfert(UC, char)
+   \   000026   7C00         MOV     R4,#0x0
+   \   000028   A9..         MOV     R1,?V0 + 0
+   \   00002A   AA82         MOV     R2,DPL
+   \   00002C   AB83         MOV     R3,DPH
+   \   00002E   12....       LCALL   ??SPI_Transfert
+   \   000031   E9           MOV     A,R1
+   \   000032   FF           MOV     R7,A
+     72                MOSI   = LOW;                                  // Minor semi-bug prevention
+   \   000033   C290         CLR     0x90.0
+     73                ucRead = SPI_Transfert(ucData,        CPOL0);  // Configure le registre choisi
+   \   000035                ; Setup parameters for call to function CLSPI::SPI_Transfert(UC, char)
+   \   000035   7C00         MOV     R4,#0x0
+   \   000037   EE           MOV     A,R6
+   \   000038   F9           MOV     R1,A
+   \   000039   AA82         MOV     R2,DPL
+   \   00003B   AB83         MOV     R3,DPH
+   \   00003D   12....       LCALL   ??SPI_Transfert
+   \   000040   E9           MOV     A,R1
+   \   000041   FF           MOV     R7,A
+     74                MOSI   = LOW;                                  // Minor semi-bug prevention
+   \   000042   C290         CLR     0x90.0
+     75             NSS = HIGH; 
+   \   000044   D293         SETB    0x90.3
+     76            }
+     77          
+     78          if(ucReadOrWrite == 0x41)                            // S'il faut lire
+   \                     ??MCP23S08Init_1:
+   \   000046   7441         MOV     A,#0x41
+   \   000048   65..         XRL     A,?V0 + 1
+   \   00004A   7031         JNZ     ??MCP23S08Init_2
+     79            {
+     80             NSS = LOW;                                        // Active le chip select
+   \   00004C   C293         CLR     0x90.3
+     81                ucRead = SPI_Transfert(0x41,          CPOL0);  // Active le mode ecriture
+   \   00004E                ; Setup parameters for call to function CLSPI::SPI_Transfert(UC, char)
+   \   00004E   7C00         MOV     R4,#0x0
+   \   000050   7941         MOV     R1,#0x41
+   \   000052   AA82         MOV     R2,DPL
+   \   000054   AB83         MOV     R3,DPH
+   \   000056   12....       LCALL   ??SPI_Transfert
+   \   000059   E9           MOV     A,R1
+   \   00005A   FF           MOV     R7,A
+     82                MOSI   = LOW;                                  // Minor semi-bug prevention
+   \   00005B   C290         CLR     0x90.0
+     83                ucRead = SPI_Transfert(ucRegisterADR, CPOL0);  // Selectionne le registre choisi
+   \   00005D                ; Setup parameters for call to function CLSPI::SPI_Transfert(UC, char)
+   \   00005D   7C00         MOV     R4,#0x0
+   \   00005F   A9..         MOV     R1,?V0 + 0
+   \   000061   AA82         MOV     R2,DPL
+   \   000063   AB83         MOV     R3,DPH
+   \   000065   12....       LCALL   ??SPI_Transfert
+   \   000068   E9           MOV     A,R1
+   \   000069   FF           MOV     R7,A
+     84                MOSI   = LOW;                                  // Minor semi-bug prevention
+   \   00006A   C290         CLR     0x90.0
+     85                ucRead = SPI_Transfert(ucData,        CPOL0);  // Configure le registre choisi
+   \   00006C                ; Setup parameters for call to function CLSPI::SPI_Transfert(UC, char)
+   \   00006C   7C00         MOV     R4,#0x0
+   \   00006E   EE           MOV     A,R6
+   \   00006F   F9           MOV     R1,A
+   \   000070   AA82         MOV     R2,DPL
+   \   000072   AB83         MOV     R3,DPH
+   \   000074   12....       LCALL   ??SPI_Transfert
+   \   000077   E9           MOV     A,R1
+   \   000078   FF           MOV     R7,A
+     86                MOSI   = LOW;                                  // Minor semi-bug prevention
+   \   000079   C290         CLR     0x90.0
+     87             NSS = HIGH;                                       // Active le chip select
+   \   00007B   D293         SETB    0x90.3
+     88            }
+     89          MOSI = LOW;                                          // Minor semi-bug prevention
+   \                     ??MCP23S08Init_2:
+   \   00007D   C290         CLR     0x90.0
+     90          return(ucRead);                                      // Retourne la donnee lue
+   \   00007F   EF           MOV     A,R7
+   \   000080   F9           MOV     R1,A
+   \   000081   7F02         MOV     R7,#0x2
+   \   000083   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000086                REQUIRE _A_P1
+     91          }
+     92          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     93          UC CLSPI :: ucStraightWrite(UC ucData)
+   \                     ??ucStraightWrite:
+     94          {
+   \   000000   EE           MOV     A,R6
+   \   000001   C0E0         PUSH    A
+   \   000003                ; Saved register size: 1
+   \   000003                ; Auto size: 0
+   \   000003   E9           MOV     A,R1
+   \   000004   FE           MOV     R6,A
+     95          UC ucTemp;                                           // Variable pour la lecture
+     96          NSS    = LOW;                                        // Active le chip select
+   \   000005   C293         CLR     0x90.3
+     97          ucTemp = SPI_Transfert(ucData, CPOL0);               // Fait le transfert SPI
+   \   000007                ; Setup parameters for call to function CLSPI::SPI_Transfert(UC, char)
+   \   000007   7C00         MOV     R4,#0x0
+   \   000009   F9           MOV     R1,A
+   \   00000A   12....       LCALL   ??SPI_Transfert
+   \   00000D   E9           MOV     A,R1
+   \   00000E   F9           MOV     R1,A
+     98          NSS    = HIGH;                                       // Active le chip select
+   \   00000F   D293         SETB    0x90.3
+     99          return(ucTemp);                                      // Retourne la donnee lue
+   \   000011   D0E0         POP     A
+   \   000013   FE           MOV     R6,A
+   \   000014   22           RET
+   \   000015                REQUIRE _A_P1
+    100          }
+    101          
+    102          // **********************FONCTION: SPI_Transfert()**************************
+    103          //
+    104          // DESCRIPTION: Fait des transferts SPI en Read/Write (bas niveau, private access)
+    105          //
+    106          // INCLUDE: "DeclarationGenerale.h"
+    107          //          "CLSPI.h"
+    108          //
+    109          // PROTOTYPE:           UC SPI_Transfert(UC)
+    110          //
+    111          // PROCEDURE D'APPEL:   UC = SPI_Transfert(UC)
+    112          //
+    113          // PARAMETRE D'ENTREE:  SPI_byte ---> Data to send
+    114          //
+    115          // PARAMETRE DE SORTIE: SPI_byte ---> Data received
+    116          //
+    117          // EXEMPLE: ByteToRead = SPI_Transfert(ByteToSend);  ---> Ecrit 0x55 sur un bus SPI et lit
+    118          //
+    119          // Auteur:              Vincent Chouinard
+    120          // Date:                15 septembre 2014   (Version 1.0)
+    121          // Modification:
+    122          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    123          UC CLSPI :: SPI_Transfert (UC ByteToSend, char cMode)
+   \                     ??SPI_Transfert:
+    124          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV     A,R1
+   \   000001   FA           MOV     R2,A
+    125          // MOSI = P1_0
+    126          // MISO = P1_1
+    127          // SCK  = P1_2
+    128          // NSS  = P1_3
+    129          
+    130          UC SPI_count; // Bocle for afin de traiter un octer, char par char
+    131          UC SPI_Read;  // Valeur qui retourne la donneee lue
+    132          
+    133          switch(cMode) // SCK is idle-low, and bits are latched on SCK rising
+   \   000002   EC           MOV     A,R4
+   \   000003   600C         JZ      ??SPI_Transfert_1
+   \   000005   14           DEC     A
+   \   000006   602F         JZ      ??SPI_Transfert_2
+   \   000008   14           DEC     A
+   \   000009   6052         JZ      ??SPI_Transfert_3
+   \   00000B   14           DEC     A
+   \   00000C   6074         JZ      ??SPI_Transfert_4
+   \   00000E   02....       LJMP    ??SPI_Transfert_5
+    134            { 
+    135             case 0:    // CLock Polarity to LOW
+    136                for(SPI_count = 8; SPI_count > 0; SPI_count--)   // single byte SPI loop
+   \                     ??SPI_Transfert_1:
+   \   000011   7808         MOV     R0,#0x8
+   \   000013   8012         SJMP    ??SPI_Transfert_6
+    137                  {
+    138                   if((ByteToSend & 0x80) == 0x80){MOSI = HIGH;} // If byte to send = 1, send 1
+    139                   else{MOSI   = LOW;}                           // If byte to send = 0, send 0
+   \                     ??SPI_Transfert_7:
+   \   000015   C290         CLR     0x90.0
+    140                   ByteToSend  = ByteToSend << 1;                // shift next bit into MSB
+   \                     ??SPI_Transfert_8:
+   \   000017   EA           MOV     A,R2
+   \   000018   C3           CLR     C
+   \   000019   33           RLC     A
+   \   00001A   FA           MOV     R2,A
+    141                   SCK         = HIGH;                           // set SCK high
+   \   00001B   D292         SETB    0x90.2
+    142                   SPI_Read   |= MISO;                           // capture current bit on MISO
+   \   00001D   A291         MOV     C,0x90.1
+   \   00001F   E4           CLR     A
+   \   000020   33           RLC     A
+   \   000021   C9           XCH     A,R1
+   \   000022   49           ORL     A,R1
+   \   000023   F9           MOV     R1,A
+    143                   SCK         = LOW;                            // set SCK low
+   \   000024   C292         CLR     0x90.2
+   \   000026   18           DEC     R0
+   \                     ??SPI_Transfert_6:
+   \   000027   E8           MOV     A,R0
+   \   000028   C3           CLR     C
+   \   000029   9401         SUBB    A,#0x1
+   \   00002B   4009         JC      ??SPI_Transfert_9
+   \   00002D   EA           MOV     A,R2
+   \   00002E   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000030   50E3         JNC     ??SPI_Transfert_7
+   \   000032   D290         SETB    0x90.0
+   \   000034   80E1         SJMP    ??SPI_Transfert_8
+    144                  }
+    145             break;
+   \                     ??SPI_Transfert_9:
+   \   000036   22           RET
+    146             
+    147             case 1:    // SCK is idle-low, and bits are latched on SCK falling
+    148                for(SPI_count = 8; SPI_count > 0; SPI_count--)   // single byte SPI loop
+   \                     ??SPI_Transfert_2:
+   \   000037   7808         MOV     R0,#0x8
+   \   000039   8010         SJMP    ??SPI_Transfert_10
+    149                  {
+    150                   SCK         = HIGH;                           // set SCK high          
+    151                   if((ByteToSend & 0x80) == 0x80){MOSI = HIGH;} // If byte to send = 1, send 1
+    152                   else{MOSI   = LOW;}                           // If byte to send = 0, send 0
+   \                     ??SPI_Transfert_11:
+   \   00003B   C290         CLR     0x90.0
+    153                   ByteToSend  = ByteToSend << 1;                // shift next bit into MSB
+   \                     ??SPI_Transfert_12:
+   \   00003D   EA           MOV     A,R2
+   \   00003E   C3           CLR     C
+   \   00003F   33           RLC     A
+   \   000040   FA           MOV     R2,A
+    154                   SCK         = LOW;                            // set SCK low
+   \   000041   C292         CLR     0x90.2
+    155                   SPI_Read   |= MISO;                           // capture current bit on MISO
+   \   000043   A291         MOV     C,0x90.1
+   \   000045   E4           CLR     A
+   \   000046   33           RLC     A
+   \   000047   C9           XCH     A,R1
+   \   000048   49           ORL     A,R1
+   \   000049   F9           MOV     R1,A
+   \   00004A   18           DEC     R0
+   \                     ??SPI_Transfert_10:
+   \   00004B   E8           MOV     A,R0
+   \   00004C   C3           CLR     C
+   \   00004D   9401         SUBB    A,#0x1
+   \   00004F   400B         JC      ??SPI_Transfert_13
+   \   000051   D292         SETB    0x90.2
+   \   000053   EA           MOV     A,R2
+   \   000054   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000056   50E3         JNC     ??SPI_Transfert_11
+   \   000058   D290         SETB    0x90.0
+   \   00005A   80E1         SJMP    ??SPI_Transfert_12
+    156                  }
+    157             break;   
+   \                     ??SPI_Transfert_13:
+   \   00005C   22           RET
+    158           
+    159            case 2:    // SCK is idle-high, and bits are latched on SCK falling
+    160                for(SPI_count = 8; SPI_count > 0; SPI_count--)   // single byte SPI loop
+   \                     ??SPI_Transfert_3:
+   \   00005D   7808         MOV     R0,#0x8
+   \   00005F   8012         SJMP    ??SPI_Transfert_14
+    161                  {      
+    162                   if((ByteToSend & 0x80) == 0x80){MOSI = HIGH;} // If byte to send = 1, send 1
+    163                   else{MOSI   = LOW;}                           // If byte to send = 0, send 0
+   \                     ??SPI_Transfert_15:
+   \   000061   C290         CLR     0x90.0
+    164                   ByteToSend  = ByteToSend << 1;                // shift next bit into MSB         
+   \                     ??SPI_Transfert_16:
+   \   000063   EA           MOV     A,R2
+   \   000064   C3           CLR     C
+   \   000065   33           RLC     A
+   \   000066   FA           MOV     R2,A
+    165                   SCK         = LOW;                            // set SCK low         
+   \   000067   C292         CLR     0x90.2
+    166                   SPI_Read   |= MISO;                           // capture current bit on MISO
+   \   000069   A291         MOV     C,0x90.1
+   \   00006B   E4           CLR     A
+   \   00006C   33           RLC     A
+   \   00006D   C9           XCH     A,R1
+   \   00006E   49           ORL     A,R1
+   \   00006F   F9           MOV     R1,A
+    167                   SCK         = HIGH;                           // set SCK low          
+   \   000070   D292         SETB    0x90.2
+   \   000072   18           DEC     R0
+   \                     ??SPI_Transfert_14:
+   \   000073   E8           MOV     A,R0
+   \   000074   C3           CLR     C
+   \   000075   9401         SUBB    A,#0x1
+   \   000077   4053         JC      ??SPI_Transfert_17
+   \   000079   EA           MOV     A,R2
+   \   00007A   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00007C   50E3         JNC     ??SPI_Transfert_15
+   \   00007E   D290         SETB    0x90.0
+   \   000080   80E1         SJMP    ??SPI_Transfert_16
+    168                  }
+    169             break; 
+    170           
+    171             case 3:    // SCK is idle-high, and bits are latched on SCK rising
+    172                for(SPI_count = 8; SPI_count > 0; SPI_count--)   // single byte SPI loop
+   \                     ??SPI_Transfert_4:
+   \   000082   7808         MOV     R0,#0x8
+   \   000084   8010         SJMP    ??SPI_Transfert_18
+    173                  {   
+    174                   SCK         = LOW;                            // set SCK low           
+    175                   if((ByteToSend & 0x80) == 0x80){MOSI = HIGH;} // If byte to send = 1, send 1
+    176                   else{MOSI   = LOW;}                           // If byte to send = 0, send 0
+   \                     ??SPI_Transfert_19:
+   \   000086   C290         CLR     0x90.0
+    177                   ByteToSend  = ByteToSend << 1;                // shift next bit into MSB         
+   \                     ??SPI_Transfert_20:
+   \   000088   EA           MOV     A,R2
+   \   000089   C3           CLR     C
+   \   00008A   33           RLC     A
+   \   00008B   FA           MOV     R2,A
+    178                   SCK         = HIGH;                           // set SCK low         
+   \   00008C   D292         SETB    0x90.2
+    179                   SPI_Read   |= MISO;                           // capture current bit on MISO    
+   \   00008E   A291         MOV     C,0x90.1
+   \   000090   E4           CLR     A
+   \   000091   33           RLC     A
+   \   000092   C9           XCH     A,R1
+   \   000093   49           ORL     A,R1
+   \   000094   F9           MOV     R1,A
+   \   000095   18           DEC     R0
+   \                     ??SPI_Transfert_18:
+   \   000096   E8           MOV     A,R0
+   \   000097   C3           CLR     C
+   \   000098   9401         SUBB    A,#0x1
+   \   00009A   4030         JC      ??SPI_Transfert_17
+   \   00009C   C292         CLR     0x90.2
+   \   00009E   EA           MOV     A,R2
+   \   00009F   A2E7         MOV     C,0xE0 /* A   */.7
+   \   0000A1   50E3         JNC     ??SPI_Transfert_19
+   \   0000A3   D290         SETB    0x90.0
+   \   0000A5   80E1         SJMP    ??SPI_Transfert_20
+    180                  }
+    181             break; 
+    182          
+    183            default :    // If nothing else is specified, SCK is idle-high, and bits are latched on SCK rising
+    184                for(SPI_count = 8; SPI_count > 0; SPI_count--)   // single byte SPI loop
+   \                     ??SPI_Transfert_5:
+   \   0000A7   7808         MOV     R0,#0x8
+   \   0000A9   8012         SJMP    ??SPI_Transfert_21
+    185                  {     
+    186                   if((ByteToSend & 0x80) == 0x80){MOSI = HIGH;} // If byte to send = 1, send 1
+    187                   else{MOSI   = LOW;}                           // If byte to send = 0, send 0
+   \                     ??SPI_Transfert_22:
+   \   0000AB   C290         CLR     0x90.0
+    188                   ByteToSend  = ByteToSend << 1;                // shift next bit into MSB
+   \                     ??SPI_Transfert_23:
+   \   0000AD   EA           MOV     A,R2
+   \   0000AE   C3           CLR     C
+   \   0000AF   33           RLC     A
+   \   0000B0   FA           MOV     R2,A
+    189                   SCK         = HIGH;                           // set SCK high
+   \   0000B1   D292         SETB    0x90.2
+    190                   SPI_Read   |= MISO;                           // capture current bit on MISO
+   \   0000B3   A291         MOV     C,0x90.1
+   \   0000B5   E4           CLR     A
+   \   0000B6   33           RLC     A
+   \   0000B7   C9           XCH     A,R1
+   \   0000B8   49           ORL     A,R1
+   \   0000B9   F9           MOV     R1,A
+    191                   SCK         = LOW;                            // set SCK low   
+   \   0000BA   C292         CLR     0x90.2
+   \   0000BC   18           DEC     R0
+   \                     ??SPI_Transfert_21:
+   \   0000BD   E8           MOV     A,R0
+   \   0000BE   C3           CLR     C
+   \   0000BF   9401         SUBB    A,#0x1
+   \   0000C1   4009         JC      ??SPI_Transfert_17
+   \   0000C3   EA           MOV     A,R2
+   \   0000C4   A2E7         MOV     C,0xE0 /* A   */.7
+   \   0000C6   50E3         JNC     ??SPI_Transfert_22
+   \   0000C8   D290         SETB    0x90.0
+   \   0000CA   80E1         SJMP    ??SPI_Transfert_23
+    192                  }
+    193             break;   
+    194            }
+    195          return (SPI_Read);                                     // Return captured bit
+   \                     ??SPI_Transfert_17:
+   \   0000CC   22           RET
+   \   0000CD                REQUIRE _A_P1
+    196          }
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLSPI &CLSPI::new CLSPI()
+   \                     `??new CLSPI`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLSPI_2`
+   \   00001B                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   00001B   12....       LCALL   ??CLSPI
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLSPI_3`
+   \                     `??new CLSPI_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLSPI_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLSPI &CLSPI::new CLSPI(UC)
+   \                     `??new CLSPI_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A01         MOV     R2,#0x1
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new CLSPI_4`
+   \   00001E                ; Setup parameters for call to function CLSPI::CLSPI(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??CLSPI_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new CLSPI_5`
+   \                     `??new CLSPI_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new CLSPI_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLSPI::delete ~CLSPI(CLSPI *)
+   \                     `??delete ~CLSPI`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLSPI_1`
+   \   00000D                ; Setup parameters for call to function CLSPI::~CLSPI()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLSPI`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLSPI_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    197          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLSPI::CLSPI()                     0      0      0
+     CLSPI::CLSPI(UC)                   0      0     17
+       -> CLSPI::MCP23S08Init(UC, UC, UC)
+                                        0      0     16
+     CLSPI::MCP23S08Init(UC, UC, UC)
+                                        0      0     17
+       -> CLSPI::SPI_Transfert(UC, char)
+                                        0      0     18
+       -> CLSPI::SPI_Transfert(UC, char)
+                                        0      0     18
+       -> CLSPI::SPI_Transfert(UC, char)
+                                        0      0     18
+       -> CLSPI::SPI_Transfert(UC, char)
+                                        0      0     18
+       -> CLSPI::SPI_Transfert(UC, char)
+                                        0      0     18
+       -> CLSPI::SPI_Transfert(UC, char)
+                                        0      0     18
+     CLSPI::MPCReadGPIO()               0      0      0
+       -> CLSPI::MCP23S08Init(UC, UC, UC)
+                                        0      0      0
+     CLSPI::MPCWriteGPIO(UC)            1      0      0
+       -> CLSPI::MCP23S08Init(UC, UC, UC)
+                                        2      0      0
+     CLSPI::SPI_Transfert(UC, char)     0      0      9
+     CLSPI::delete ~CLSPI(CLSPI *)      0      0      8
+       -> CLSPI::~CLSPI()               0      0     16
+       -> operator delete(void *)       0      0     16
+     CLSPI::new CLSPI()                 2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLSPI::CLSPI()                4      0      0
+     CLSPI::new CLSPI(UC)               0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> CLSPI::CLSPI(UC)              0      0     18
+     CLSPI::ucStraightWrite(UC)         1      0      0
+       -> CLSPI::SPI_Transfert(UC, char)
+                                        2      0      0
+     CLSPI::~CLSPI()                    0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     _A_P1                             1
+     CLSPI::CLSPI()                    9
+     CLSPI::CLSPI(UC)                 42
+     CLSPI::~CLSPI()                   1
+     CLSPI::MPCWriteGPIO(UC)          21
+     CLSPI::MPCReadGPIO()             14
+     CLSPI::MCP23S08Init(UC, UC, UC)
+                                     134
+     CLSPI::ucStraightWrite(UC)       21
+     CLSPI::SPI_Transfert(UC, char)  205
+     CLSPI::new CLSPI()               49
+     CLSPI::new CLSPI(UC)             54
+     CLSPI::delete ~CLSPI(CLSPI *)    32
+
+ 
+ 582 bytes in segment NEAR_CODE
+   1 byte  in segment SFR_AN
+ 
+ 582 bytes of CODE memory
+   0 bytes of DATA memory (+ 1 byte shared)
+
+Errors: none
+Warnings: none

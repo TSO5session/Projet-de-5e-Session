@@ -1,0 +1,752 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         30/Sep/2014  20:43:28 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif IAR\Timer0.cpp   #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif IAR\Timer0.cpp"  #
+#                          -D DALLAS89C450 --preprocess=cl                    #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\A #
+#                          utomne 2014\Fonctions\Projet Accumulatif           #
+#                          IAR\DALLAS\Obj\" -e --no_cse --no_unroll           #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\List\Timer0.lst                         #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\Obj\Timer0.r51                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\Timer0.cpp
+      1          // **************************Timer0.cpp
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         24 septembre 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr TH0
+   \                     TH0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IE
+   \                     _A_IE:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x89
+   \   union <unnamed> volatile __sfr _A_TMOD
+   \                     _A_TMOD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr TL0
+   \                     TL0:
+   \   000000                DS 1
+     12          #include "Timer0.h"
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     13          UC   DutyCycle = 0;
+   \                     DutyCycle:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     14          //******************************************************************************
+     15          //                            LE CONSTRUCTEUR PAR DEFAUT
+     16          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     17          Timer0 :: Timer0(void)
+   \                     ??Timer0:
+     18          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+     19          InitTimer0();
+   \   000008                ; Setup parameters for call to function Timer0::InitTimer0()
+   \   000008   AA82         MOV     R2,DPL
+   \   00000A   AB83         MOV     R3,DPH
+   \   00000C   12....       LCALL   ??InitTimer0
+     20          }
+   \   00000F   AA82         MOV     R2,DPL
+   \   000011   AB83         MOV     R3,DPH
+   \   000013   D083         POP     DPH
+   \   000015   D082         POP     DPL
+   \   000017   22           RET
+     21          
+     22          //******************************************************************************
+     23          //                            LE CONSTRUCTEUR PAR DEFAUT
+     24          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     25          Timer0 :: Timer0(UC ucParametre)
+   \                     ??Timer0_1:
+     26          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+     27          CustomSpeed(ucParametre);
+   \   00000B                ; Setup parameters for call to function Timer0::CustomSpeed(UC)
+   \   00000B   F9           MOV     R1,A
+   \   00000C   AA82         MOV     R2,DPL
+   \   00000E   AB83         MOV     R3,DPH
+   \   000010   12....       LCALL   ??CustomSpeed
+     28          }
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+   \   000017   7F01         MOV     R7,#0x1
+   \   000019   02....       LJMP    ?FUNC_LEAVE_XDATA
+     29          
+     30          
+     31          // *****************************************************************************
+     32          //                            LE DESTRUCTEUR
+     33          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     34          Timer0 :: ~Timer0(void)
+   \                     `?~Timer0`:
+     35          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     36          
+     37          }
+   \   000000   22           RET
+     38          
+     39          /*
+     40          Note: La fréquence en HZ doit etre passee comme suit:
+     41          250hz = 1sec / 250 = 0.004 sec ---> Passez 4 en parametre
+     42          */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     43          void Timer0 :: ClockGenerator(void)
+   \                     ??ClockGenerator:
+     44          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     45          if(TCON_bit.TF0 == 1)     // Si flag de depassement du timer0 (default =  1ms)
+   \   000004   A28D         MOV     C,0x88.5
+   \   000006   502A         JNC     ??ClockGenerator_1
+     46            {
+     47             TCON_bit.TF0 = 0;      // Reinitialisation du flag de depassement
+   \   000008   C28D         CLR     0x88.5
+     48             TH0          = 0xF8;   // Remet le compteur a 1ms
+   \   00000A   758CF8       MOV     0x8c,#-0x8
+     49             TL0          = 0x60;   // Remet le compteur a 1ms
+   \   00000D   758A60       MOV     0x8a,#0x60
+     50             DutyCycle++;
+   \   000010   90....       MOV     DPTR,#DutyCycle
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   2401         ADD     A,#0x1
+   \   000016   F0           MOVX    @DPTR,A
+     51             if(DutyCycle <= 3){P1_7 = HIGH;}
+   \   000017   90....       MOV     DPTR,#DutyCycle
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   C3           CLR     C
+   \   00001C   9404         SUBB    A,#0x4
+   \   00001E   5002         JNC     ??ClockGenerator_2
+   \   000020   D297         SETB    0x90.7
+     52             if(DutyCycle == 4){P1_7 = LOW, DutyCycle = 0;}
+   \                     ??ClockGenerator_2:
+   \   000022   90....       MOV     DPTR,#DutyCycle
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   6404         XRL     A,#0x4
+   \   000028   7008         JNZ     ??ClockGenerator_1
+   \   00002A   C297         CLR     0x90.7
+   \   00002C   90....       MOV     DPTR,#DutyCycle
+   \   00002F   7400         MOV     A,#0x0
+   \   000031   F0           MOVX    @DPTR,A
+     53            }
+     54          }
+   \                     ??ClockGenerator_1:
+   \   000032   D083         POP     DPH
+   \   000034   D082         POP     DPL
+   \   000036   22           RET
+   \   000037                REQUIRE _A_TCON
+   \   000037                REQUIRE TH0
+   \   000037                REQUIRE TL0
+   \   000037                REQUIRE _A_P1
+     55          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     56          char Timer0 :: DelayMs(void)  // retourne 1 a chaque ms
+   \                     ??DelayMs:
+     57          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     58          char i;
+     59          i = 0;                        // Dit qu'il n'y a pas d'interrupt
+   \   000000   7900         MOV     R1,#0x0
+     60          if(TCON_bit.TF0 == 1)         // Si flag de depassement du timer0 ( a 10ms)
+   \   000002   A28D         MOV     C,0x88.5
+   \   000004   500A         JNC     ??DelayMs_1
+     61            {
+     62             TCON_bit.TF0 = 0;          // Reinitialisation du flag de depassement
+   \   000006   C28D         CLR     0x88.5
+     63             TH0 = 0xF8;                // Remet le compteur a 1ms
+   \   000008   758CF8       MOV     0x8c,#-0x8
+     64             TL0 = 0x60;                // Remet le compteur a 1ms
+   \   00000B   758A60       MOV     0x8a,#0x60
+     65             i   = 1;                   // Dit qu'il y a un interrupt
+   \   00000E   7901         MOV     R1,#0x1
+     66            }
+     67          return(i);
+   \                     ??DelayMs_1:
+   \   000010   22           RET
+   \   000011                REQUIRE _A_TCON
+   \   000011                REQUIRE TH0
+   \   000011                REQUIRE TL0
+     68          }
+     69          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     70          void Timer0 :: InitTimer0(void)       //Initialise le timer 0 a 1ms
+   \                     ??InitTimer0:
+     71          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     72          EA           = 0;
+   \   000000   C2AF         CLR     0xa8.7
+     73          TMOD         = (TMOD & 0xF0) | 0x01;  // timer0 en mode timer 16bit
+   \   000002   E589         MOV     A,0x89
+   \   000004   54F0         ANL     A,#0xf0
+   \   000006   4401         ORL     A,#0x1
+   \   000008   F589         MOV     0x89,A
+     74          TL0          = 0x60;                  // Initialise le timer0 a 1ms
+   \   00000A   758A60       MOV     0x8a,#0x60
+     75          TH0          = 0xF8;                  // Initialise le timer0 a 1ms
+   \   00000D   758CF8       MOV     0x8c,#-0x8
+     76          TH0          = 0;                     // Clear le flag d'overflow du timer0
+   \   000010   758C00       MOV     0x8c,#0x0
+     77          IE_bit.ET0   = 0;                     // Desactive les interruptions timer0
+   \   000013   C2A9         CLR     0xa8.1
+     78          TCON_bit.TR0 = 1;                     // Stop le timer0
+   \   000015   D28C         SETB    0x88.4
+     79          EA           = 1;                     // Enable Interrupt
+   \   000017   D2AF         SETB    0xa8.7
+     80          }
+   \   000019   22           RET
+   \   00001A                REQUIRE _A_IE
+   \   00001A                REQUIRE _A_TMOD
+   \   00001A                REQUIRE TL0
+   \   00001A                REQUIRE TH0
+   \   00001A                REQUIRE _A_TCON
+     81          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     82          void Timer0 :: CustomSpeed(UC ucCustomMili) // Initialise un timer custom via
+   \                     ??CustomSpeed:
+     83          {                                           // le constructeur initialisateur
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     84          EA           = 0;                           // Desactive les interruptions
+   \   000004   C2AF         CLR     0xa8.7
+     85          TMOD         = (TMOD & 0xF0) | 0x01;        // timer0 en mode timer 16bit
+   \   000006   E589         MOV     A,0x89
+   \   000008   54F0         ANL     A,#0xf0
+   \   00000A   4401         ORL     A,#0x1
+   \   00000C   F589         MOV     0x89,A
+     86          
+     87          switch(ucCustomMili)//En fonction des milisecondes demandees
+   \   00000E   E9           MOV     A,R1
+   \   00000F   12....       LCALL   ?UC_SWITCH_DENSE
+   \                     `?<Jumptable for CustomSpeed>_0`:
+   \   000012   01           DB        1
+   \   000013   18           DB        24
+   \   000014   ....         DW        ??CustomSpeed_1
+   \   000016   ....         DW        ??CustomSpeed_2
+   \   000018   ....         DW        ??CustomSpeed_3
+   \   00001A   ....         DW        ??CustomSpeed_4
+   \   00001C   ....         DW        ??CustomSpeed_5
+   \   00001E   ....         DW        ??CustomSpeed_6
+   \   000020   ....         DW        ??CustomSpeed_7
+   \   000022   ....         DW        ??CustomSpeed_8
+   \   000024   ....         DW        ??CustomSpeed_9
+   \   000026   ....         DW        ??CustomSpeed_10
+   \   000028   ....         DW        ??CustomSpeed_11
+   \   00002A   ....         DW        ??CustomSpeed_12
+   \   00002C   ....         DW        ??CustomSpeed_13
+   \   00002E   ....         DW        ??CustomSpeed_14
+   \   000030   ....         DW        ??CustomSpeed_15
+   \   000032   ....         DW        ??CustomSpeed_16
+   \   000034   ....         DW        ??CustomSpeed_17
+   \   000036   ....         DW        ??CustomSpeed_18
+   \   000038   ....         DW        ??CustomSpeed_19
+   \   00003A   ....         DW        ??CustomSpeed_20
+   \   00003C   ....         DW        ??CustomSpeed_21
+   \   00003E   ....         DW        ??CustomSpeed_22
+   \   000040   ....         DW        ??CustomSpeed_23
+   \   000042   ....         DW        ??CustomSpeed_24
+   \   000044   ....         DW        ??CustomSpeed_25
+   \   000046   ....         DW        ??CustomSpeed_26
+     88            {
+     89             case 1:
+     90                TL0 = 0x02;   // Initialise le timer0 a 1ms
+   \                     ??CustomSpeed_2:
+   \   000048   758A02       MOV     0x8a,#0x2
+     91                TH0 = 0xF8;   // Initialise le timer0 a 1ms
+   \   00004B   758CF8       MOV     0x8c,#-0x8
+     92             break;
+   \   00004E   02....       LJMP    ??CustomSpeed_27
+     93          
+     94             case 2:
+     95                TL0 = 0x05;   // Initialise le timer0 a 2ms
+   \                     ??CustomSpeed_3:
+   \   000051   758A05       MOV     0x8a,#0x5
+     96                TH0 = 0xF0;   // Initialise le timer0 a 2ms
+   \   000054   758CF0       MOV     0x8c,#-0x10
+     97             break;
+   \   000057   02....       LJMP    ??CustomSpeed_27
+     98          
+     99             case 3:
+    100                TL0 = 0x08;   // Initialise le timer0 a 3ms
+   \                     ??CustomSpeed_4:
+   \   00005A   758A08       MOV     0x8a,#0x8
+    101                TH0 = 0xE8;   // Initialise le timer0 a 3ms
+   \   00005D   758CE8       MOV     0x8c,#-0x18
+    102             break;
+   \   000060   02....       LJMP    ??CustomSpeed_27
+    103          
+    104             case 4:
+    105                TL0 = 0xBF;   // Initialise le timer0 a 4ms
+   \                     ??CustomSpeed_5:
+   \   000063   758ABF       MOV     0x8a,#-0x41
+    106                TH0 = 0xE0;   // Initialise le timer0 a 4ms
+   \   000066   758CE0       MOV     0x8c,#-0x20
+    107             break;
+   \   000069   02....       LJMP    ??CustomSpeed_27
+    108          
+    109             case 5:
+    110                TL0 = 0xEF;   // Initialise le timer0 a 5ms
+   \                     ??CustomSpeed_6:
+   \   00006C   758AEF       MOV     0x8a,#-0x11
+    111                TH0 = 0xD8;   // Initialise le timer0 a 5ms
+   \   00006F   758CD8       MOV     0x8c,#-0x28
+    112             break;
+   \   000072   02....       LJMP    ??CustomSpeed_27
+    113          
+    114             case 6:
+    115                TL0 = 0x1F;   // Initialise le timer0 a 6ms
+   \                     ??CustomSpeed_7:
+   \   000075   758A1F       MOV     0x8a,#0x1f
+    116                TH0 = 0xD1;   // Initialise le timer0 a 6ms
+   \   000078   758CD1       MOV     0x8c,#-0x2f
+    117             break;
+   \   00007B   02....       LJMP    ??CustomSpeed_27
+    118          
+    119             case 7:
+    120                TL0 = 0x4F;   // Initialise le timer0 a 7ms
+   \                     ??CustomSpeed_8:
+   \   00007E   758A4F       MOV     0x8a,#0x4f
+    121                TH0 = 0xC9;   // Initialise le timer0 a 7ms
+   \   000081   758CC9       MOV     0x8c,#-0x37
+    122             break;
+   \   000084   02....       LJMP    ??CustomSpeed_27
+    123          
+    124             case 8:
+    125                TL0 = 0x07;   // Initialise le timer0 a 8ms
+   \                     ??CustomSpeed_9:
+   \   000087   758A07       MOV     0x8a,#0x7
+    126                TH0 = 0xC1;   // Initialise le timer0 a 8ms
+   \   00008A   758CC1       MOV     0x8c,#-0x3f
+    127             break;
+   \   00008D   02....       LJMP    ??CustomSpeed_27
+    128          
+    129             case 9:
+    130                TL0 = 0xAF;   // Initialise le timer0 a 9ms
+   \                     ??CustomSpeed_10:
+   \   000090   758AAF       MOV     0x8a,#-0x51
+    131                TH0 = 0xB9;   // Initialise le timer0 a 9ms
+   \   000093   758CB9       MOV     0x8c,#-0x47
+    132             break;
+   \   000096   02....       LJMP    ??CustomSpeed_27
+    133          
+    134             case 10:
+    135                TL0 = 0xDF;   // Initialise le timer0 a 10ms
+   \                     ??CustomSpeed_11:
+   \   000099   758ADF       MOV     0x8a,#-0x21
+    136                TH0 = 0xB1;   // Initialise le timer0 a 10ms
+   \   00009C   758CB1       MOV     0x8c,#-0x4f
+    137             break;
+   \   00009F   807E         SJMP    ??CustomSpeed_27
+    138          
+    139             case 11:
+    140                TL0 = 0x0F;   // Initialise le timer0 a 11ms
+   \                     ??CustomSpeed_12:
+   \   0000A1   758A0F       MOV     0x8a,#0xf
+    141                TH0 = 0xAA;   // Initialise le timer0 a 11ms
+   \   0000A4   758CAA       MOV     0x8c,#-0x56
+    142             break;
+   \   0000A7   8076         SJMP    ??CustomSpeed_27
+    143          
+    144             case 12:
+    145                TL0 = 0x3F;   // Initialise le timer0 a 12ms
+   \                     ??CustomSpeed_13:
+   \   0000A9   758A3F       MOV     0x8a,#0x3f
+    146                TH0 = 0xA2;   // Initialise le timer0 a 12ms
+   \   0000AC   758CA2       MOV     0x8c,#-0x5e
+    147             break;
+   \   0000AF   806E         SJMP    ??CustomSpeed_27
+    148          
+    149            case 13:
+    150                TL0 = 0x6F;   // Initialise le timer0 a 13ms
+   \                     ??CustomSpeed_14:
+   \   0000B1   758A6F       MOV     0x8a,#0x6f
+    151                TH0 = 0x9A;   // Initialise le timer0 a 13ms
+   \   0000B4   758C9A       MOV     0x8c,#-0x66
+    152             break;
+   \   0000B7   8066         SJMP    ??CustomSpeed_27
+    153          
+    154             case 14:
+    155                TL0 = 0x9F;   // Initialise le timer0 a 14ms
+   \                     ??CustomSpeed_15:
+   \   0000B9   758A9F       MOV     0x8a,#-0x61
+    156                TH0 = 0x92;   // Initialise le timer0 a 14ms
+   \   0000BC   758C92       MOV     0x8c,#-0x6e
+    157             break;
+   \   0000BF   805E         SJMP    ??CustomSpeed_27
+    158          
+    159             case 15:
+    160                TL0 = 0xCF;   // Initialise le timer0 a 15ms
+   \                     ??CustomSpeed_16:
+   \   0000C1   758ACF       MOV     0x8a,#-0x31
+    161                TH0 = 0x8A;   // Initialise le timer0 a 15ms
+   \   0000C4   758C8A       MOV     0x8c,#-0x76
+    162             break;
+   \   0000C7   8056         SJMP    ??CustomSpeed_27
+    163          
+    164             case 16:
+    165                TL0 = 0xFF;   // Initialise le timer0 a 16ms
+   \                     ??CustomSpeed_17:
+   \   0000C9   758AFF       MOV     0x8a,#-0x1
+    166                TH0 = 0x82;   // Initialise le timer0 a 16ms
+   \   0000CC   758C82       MOV     0x8c,#-0x7e
+    167             break;
+   \   0000CF   804E         SJMP    ??CustomSpeed_27
+    168          
+    169             case 17:
+    170                TL0 = 0x2F;   // Initialise le timer0 a 17ms
+   \                     ??CustomSpeed_18:
+   \   0000D1   758A2F       MOV     0x8a,#0x2f
+    171                TH0 = 0x7B;   // Initialise le timer0 a 17ms
+   \   0000D4   758C7B       MOV     0x8c,#0x7b
+    172             break;
+   \   0000D7   8046         SJMP    ??CustomSpeed_27
+    173          
+    174             case 18:
+    175                TL0 = 0x5F;   // Initialise le timer0 a 18ms
+   \                     ??CustomSpeed_19:
+   \   0000D9   758A5F       MOV     0x8a,#0x5f
+    176                TH0 = 0x73;   // Initialise le timer0 a 18ms
+   \   0000DC   758C73       MOV     0x8c,#0x73
+    177             break;
+   \   0000DF   803E         SJMP    ??CustomSpeed_27
+    178          
+    179             case 19:
+    180                TL0 = 0x8F;   // Initialise le timer0 a 19ms
+   \                     ??CustomSpeed_20:
+   \   0000E1   758A8F       MOV     0x8a,#-0x71
+    181                TH0 = 0x6B;   // Initialise le timer0 a 19ms
+   \   0000E4   758C6B       MOV     0x8c,#0x6b
+    182             break;
+   \   0000E7   8036         SJMP    ??CustomSpeed_27
+    183          
+    184             case 20:
+    185                TL0 = 0xBF;   // Initialise le timer0 a 20ms
+   \                     ??CustomSpeed_21:
+   \   0000E9   758ABF       MOV     0x8a,#-0x41
+    186                TH0 = 0x63;   // Initialise le timer0 a 20ms
+   \   0000EC   758C63       MOV     0x8c,#0x63
+    187             break;
+   \   0000EF   802E         SJMP    ??CustomSpeed_27
+    188          
+    189             case 21:
+    190                TL0 = 0xEF;   // Initialise le timer0 a 21ms
+   \                     ??CustomSpeed_22:
+   \   0000F1   758AEF       MOV     0x8a,#-0x11
+    191                TH0 = 0x5B;   // Initialise le timer0 a 21ms
+   \   0000F4   758C5B       MOV     0x8c,#0x5b
+    192             break;
+   \   0000F7   8026         SJMP    ??CustomSpeed_27
+    193          
+    194             case 22:
+    195                TL0 = 0x1F;   // Initialise le timer0 a 22ms
+   \                     ??CustomSpeed_23:
+   \   0000F9   758A1F       MOV     0x8a,#0x1f
+    196                TH0 = 0x54;   // Initialise le timer0 a 22ms
+   \   0000FC   758C54       MOV     0x8c,#0x54
+    197             break;
+   \   0000FF   801E         SJMP    ??CustomSpeed_27
+    198          
+    199             case 23:
+    200                TL0 = 0x4F;   // Initialise le timer0 a 23ms
+   \                     ??CustomSpeed_24:
+   \   000101   758A4F       MOV     0x8a,#0x4f
+    201                TH0 = 0x4C;   // Initialise le timer0 a 23ms
+   \   000104   758C4C       MOV     0x8c,#0x4c
+    202             break;
+   \   000107   8016         SJMP    ??CustomSpeed_27
+    203          
+    204             case 24:
+    205                TL0 = 0x7F;   // Initialise le timer0 a 24ms
+   \                     ??CustomSpeed_25:
+   \   000109   758A7F       MOV     0x8a,#0x7f
+    206                TH0 = 0x44;   // Initialise le timer0 a 24ms
+   \   00010C   758C44       MOV     0x8c,#0x44
+    207             break;
+   \   00010F   800E         SJMP    ??CustomSpeed_27
+    208          
+    209             case 25:
+    210                TL0 = 0xAF;   // Initialise le timer0 a 25ms
+   \                     ??CustomSpeed_26:
+   \   000111   758AAF       MOV     0x8a,#-0x51
+    211                TH0 = 0x3C;   // Initialise le timer0 a 25ms
+   \   000114   758C3C       MOV     0x8c,#0x3c
+    212             break;
+   \   000117   8006         SJMP    ??CustomSpeed_27
+    213          
+    214             default:
+    215                TL0 = 0x60;   // Initialise le timer0 a 1ms
+   \                     ??CustomSpeed_1:
+   \   000119   758A60       MOV     0x8a,#0x60
+    216                TH0 = 0xF8;   // Initialise le timer0 a 1ms
+   \   00011C   758CF8       MOV     0x8c,#-0x8
+    217             break;
+    218          }
+    219          TH0          = 0;   // Clear le flag d'overflow du timer0
+   \                     ??CustomSpeed_27:
+   \   00011F   758C00       MOV     0x8c,#0x0
+    220          IE_bit.ET0   = 0;   // Desactive les interruptions timer0
+   \   000122   C2A9         CLR     0xa8.1
+    221          TCON_bit.TR0 = 1;   // Stop le timer0
+   \   000124   D28C         SETB    0x88.4
+    222          EA           = 1;   // Enable Interrupt
+   \   000126   D2AF         SETB    0xa8.7
+    223          }
+   \   000128   D083         POP     DPH
+   \   00012A   D082         POP     DPL
+   \   00012C   22           RET
+   \   00012D                REQUIRE _A_IE
+   \   00012D                REQUIRE _A_TMOD
+   \   00012D                REQUIRE TL0
+   \   00012D                REQUIRE TH0
+   \   00012D                REQUIRE _A_TCON
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant Timer0 &Timer0::new Timer0()
+   \                     `??new Timer0`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new Timer0_2`
+   \   00001B                ; Setup parameters for call to function Timer0::Timer0()
+   \   00001B   12....       LCALL   ??Timer0
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new Timer0_3`
+   \                     `??new Timer0_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new Timer0_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant Timer0 &Timer0::new Timer0(UC)
+   \                     `??new Timer0_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A01         MOV     R2,#0x1
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new Timer0_4`
+   \   00001E                ; Setup parameters for call to function Timer0::Timer0(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??Timer0_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new Timer0_5`
+   \                     `??new Timer0_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new Timer0_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void Timer0::delete ~Timer0(Timer0 *)
+   \                     `??delete ~Timer0`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~Timer0_1`
+   \   00000D                ; Setup parameters for call to function Timer0::~Timer0()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~Timer0`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~Timer0_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    224          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Timer0::ClockGenerator()           2      0      0
+     Timer0::CustomSpeed(UC)            2      0      8
+     Timer0::DelayMs()                  0      0      0
+     Timer0::InitTimer0()               0      0      0
+     Timer0::Timer0()                   2      0      0
+       -> Timer0::InitTimer0()          4      0      0
+     Timer0::Timer0(UC)                 0      0     17
+       -> Timer0::CustomSpeed(UC)       0      0     16
+     Timer0::delete ~Timer0(Timer0 *)
+                                        0      0      8
+       -> Timer0::~Timer0()             0      0     16
+       -> operator delete(void *)       0      0     16
+     Timer0::new Timer0()               2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> Timer0::Timer0()              4      0      0
+     Timer0::new Timer0(UC)             0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> Timer0::Timer0(UC)            0      0     18
+     Timer0::~Timer0()                  0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     TH0                               1
+     _A_TCON                           1
+     _A_IE                             1
+     _A_P1                             1
+     _A_TMOD                           1
+     TL0                               1
+     DutyCycle                         1
+     Timer0::Timer0()                 24
+     Timer0::Timer0(UC)               28
+     Timer0::~Timer0()                 1
+     Timer0::ClockGenerator()         55
+     Timer0::DelayMs()                17
+     Timer0::InitTimer0()             26
+     Timer0::CustomSpeed(UC)         301
+     Timer0::new Timer0()             49
+     Timer0::new Timer0(UC)           54
+     Timer0::delete ~Timer0(Timer0 *)
+                                      32
+
+ 
+ 587 bytes in segment NEAR_CODE
+   6 bytes in segment SFR_AN
+   1 byte  in segment XDATA_Z
+ 
+ 587 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 6 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

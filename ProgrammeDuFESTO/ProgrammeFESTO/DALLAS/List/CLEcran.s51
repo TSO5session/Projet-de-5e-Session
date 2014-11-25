@@ -1,0 +1,3635 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        30/Sep/2014  20:43:27 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Fonctions\Projet Accumulatif IAR\CLEcran.cpp /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Fonctions\Projet Accumulatif                 /
+//                          IAR\CLEcran.cpp" -D DALLAS89C450 --preprocess=cl  /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\Fonctions\Projet Accumulatif                 /
+//                          IAR\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux /
+//                          \Automne 2014\Fonctions\Projet Accumulatif        /
+//                          IAR\DALLAS\List\" -lA "C:\Synchro\Dropbox\Travaux /
+//                          \Automne 2014\Fonctions\Projet Accumulatif        /
+//                          IAR\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\ /
+//                          Automne 2014\Fonctions\Projet Accumulatif         /
+//                          IAR\DALLAS\Obj\" -e --no_cse --no_unroll          /
+//                          --no_inline --no_code_motion --no_tbaa --debug    /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=near --calling_convention=xdata_reen /
+//                          trant --place_constants=data --nr_virtual_regs 8  /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++      /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\Fonctions\Projet Accumulatif                 /
+//                          IAR\DALLAS\List\CLEcran.s51                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CLEcran
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FLT_MUL
+        EXTERN ?FLT_SUB
+        EXTERN ?FLT_TO_L
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?R2345_FLT_TO_L
+        EXTERN ?UL_TO_FLT
+        EXTERN ?US_DIV_MOD
+        EXTERN ?US_SHR
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN ?XSTORE_R2345
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC ??CLEcran
+        FUNCTION ??CLEcran,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??CLEcran_1
+        FUNCTION ??CLEcran_1,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??delete ~CLEcran`
+        FUNCTION `??delete ~CLEcran`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new CLEcran`
+        FUNCTION `??new CLEcran`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CLEcran_1`
+        FUNCTION `??new CLEcran_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ??vDelaiLCD
+        FUNCTION ??vDelaiLCD,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??vHexToASCII
+        FUNCTION ??vHexToASCII,0203H
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vHexToASCII_1
+        FUNCTION ??vHexToASCII_1,0203H
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 13, STACK
+        PUBLIC ??vLCDBusy
+        FUNCTION ??vLCDBusy,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDClr
+        FUNCTION ??vLCDClr,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDCursor
+        FUNCTION ??vLCDCursor,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC ??vLCDDisplayCarac
+        FUNCTION ??vLCDDisplayCarac,021203H
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDDisplayCaracChain
+        FUNCTION ??vLCDDisplayCaracChain,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDDisplayCaracChain_1
+        FUNCTION ??vLCDDisplayCaracChain_1,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDDisplayCarac_1
+        FUNCTION ??vLCDDisplayCarac_1,021203H
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDDisplayEtatPort
+        FUNCTION ??vLCDDisplayEtatPort,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDDisplayFloat
+        FUNCTION ??vLCDDisplayFloat,0a1203H
+        ARGFRAME XSTACK, 4, STACK
+        LOCFRAME XSTACK, 29, STACK
+        PUBLIC ??vLCDDisplayHexCarac
+        FUNCTION ??vLCDDisplayHexCarac,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        PUBLIC ??vLCDDisplayHexCarac_1
+        FUNCTION ??vLCDDisplayHexCarac_1,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        PUBLIC ??vLCDDisplayScreen
+        FUNCTION ??vLCDDisplayScreen,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??vLCDInit
+        FUNCTION ??vLCDInit,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~CLEcran`
+        FUNCTION `?~CLEcran`,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_42c80000
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??ucIn
+        FUNCTION ??ucIn,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??vOut
+        FUNCTION ??vOut,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran()
+`??new CLEcran`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new CLEcran`
+        CODE
+        FUNCALL `??new CLEcran`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLEcran`, ??CLEcran
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLEcran_2`
+        ; Setup parameters for call to function CLEcran::CLEcran()
+        LCALL   ??CLEcran
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLEcran_3`
+`??new CLEcran_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLEcran_3`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLEcran &CLEcran::new CLEcran(USI)
+`??new CLEcran_1`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??new CLEcran_1`
+        CODE
+        FUNCALL `??new CLEcran_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLEcran_1`, ??CLEcran_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLEcran_4`
+        ; Setup parameters for call to function CLEcran::CLEcran(USI)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        LCALL   ??CLEcran_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLEcran_5`
+`??new CLEcran_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLEcran_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CLEcran::delete ~CLEcran(CLEcran *)
+`??delete ~CLEcran`:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function `??delete ~CLEcran`
+        CODE
+        FUNCALL `??delete ~CLEcran`, `?~CLEcran`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CLEcran`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CLEcran_1`
+        ; Setup parameters for call to function CLEcran::~CLEcran()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLEcran`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CLEcran_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+// C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\CLEcran.cpp
+//    1 // **************************CLEcran.cpp
+//    2 // Auteur:      Vincent Chouinard
+//    3 // Date:        13 fevrier 2014
+//    4 // Version :    1.0
+//    5 //
+//    6 // vLcdAffCar      ---> Affiche un caracter (a-z,A-Z0-9)
+//    7 // vLcdClr         ---> Efface l'ecran
+//    8 // vLcdPoscurC0L1  ---> Positionne le curseur
+//    9 // vLcdInit        ---> Initialise l'ecran
+//   10 // vDelaisEcran    ---> Delais a tout faire
+//   11 // vLcdAffChaine   ---> Affiche un string de "Texte"
+//   12 // vLcdAffEcran    ---> Pour afficher des menus
+//   13 // vLcdAffCarHex   ---> Pour afficher un caracter en HEX
+//   14 // vLcdCarGen      ---> Pour creer des caracteres customs
+//   15 // vHexToAscii2    ---> Pour transformer l'ASCII en HEX
+//   16 // vLcdBusy        ---> Busy Polling
+//   17 //
+//   18 // Compilateur: IAR 8.2 && Keil 4.79.9
+//   19 //
+//   20 // Description: Fichier de definitions pour utiliser un ecran LCD
+//   21 //
+//   22 // *****************************************************************************
+//   23 #include "CLEcran.h"
+//   24 // *****************************************************************************
+//   25 //                            LES CONSTRUCTEURS
+//   26 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   27 CLEcran :: CLEcran(void)
+??CLEcran:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ??CLEcran
+        CODE
+//   28 {
+        FUNCALL ??CLEcran, ??vLCDInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   29 uiAdresseEcran = 0xF800;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#-0x8
+        MOVX    @DPTR,A
+//   30 vLCDInit();
+        ; Setup parameters for call to function CLEcran::vLCDInit()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDInit
+//   31 }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//   32 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   33 CLEcran :: CLEcran(USI uiAdresse)
+??CLEcran_1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??CLEcran_1
+        CODE
+//   34 {
+        FUNCALL ??CLEcran_1, ??vLCDInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   35 uiAdresseEcran = uiAdresse;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//   36 vLCDInit();
+        ; Setup parameters for call to function CLEcran::vLCDInit()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDInit
+//   37 }
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//   38 
+//   39 // *****************************************************************************
+//   40 //                            LE DESTRUCTEUR
+//   41 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   42 CLEcran :: ~CLEcran(void)
+`?~CLEcran`:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function `?~CLEcran`
+        CODE
+//   43 {
+        FUNCALL `?~CLEcran`, ??vLCDClr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        ; Saved register size: 0
+        ; Auto size: 0
+//   44 vLCDClr();
+        ; Setup parameters for call to function CLEcran::vLCDClr()
+        LJMP    ??vLCDClr
+        CFI EndBlock cfiBlock5
+//   45 }
+//   46 
+//   47 // **********************FONCTION: NomDeLaFonction()**************************
+//   48 //
+//   49 // DESCRIPTION: Positionne le curseur d'ecriture a l'endroit spécifie par
+//   50 //              la fonction appelante
+//   51 //
+//   52 // INCLUDE: <_DeclarationGenerale.h>
+//   53 //          "CLEcran.h"
+//   54 //
+//   55 // PROTOTYPE:           void vLcdPoscurC0L1(UC,UC)
+//   56 //
+//   57 // PROCEDURE D'APPEL:   vLcdPoscurC0L1(ucCol,ucLigne)
+//   58 //
+//   59 // PARAMETRE D'ENTREE:  ucCol   ---> Positionne la colone
+//   60 //                      ucLigne ---> Positionne la ligne
+//   61 //
+//   62 // PARAMETRE DE SORTIE: AUCUN
+//   63 //
+//   64 // EXEMPLE: vLcdPoscurC0L1(0,1) ---> Met le curseur au debut de l'ecran
+//   65 //
+//   66 // Auteur:              Vincent Chouinard
+//   67 // Date:                22 mars 2014   (Version 1.0)
+//   68 // Modification:
+//   69 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   70 void CLEcran :: vDelaiLCD(USI uiDelai)
+??vDelaiLCD:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ??vDelaiLCD
+        CODE
+//   71 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   72 USI i;
+//   73 for(i = 0;i <= uiDelai; i++);
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        SJMP    ??vDelaiLCD_1
+??vDelaiLCD_2:
+        MOV     A,R0
+        ADD     A,#0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??vDelaiLCD_1:
+        CLR     C
+        MOV     A,R4
+        SUBB    A,R0
+        MOV     A,R5
+        SUBB    A,R1
+        JNC     ??vDelaiLCD_2
+//   74 }
+        RET
+        CFI EndBlock cfiBlock6
+//   75 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   76 void CLEcran :: vLCDBusy(void)
+??vLCDBusy:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function ??vLCDBusy
+        CODE
+//   77 {
+        FUNCALL ??vLCDBusy, ??ucIn
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   78 while(ucIn(uiAdresseEcran + ECRANFLAG) & 0x80);
+??vLCDBusy_1:
+        ; Setup parameters for call to function CLInOutBase::ucIn(USI)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??ucIn
+        MOV     A,R1
+        MOV     R0,A
+        MOV     C,0xE0 /* A   */.7
+        JC      ??vLCDBusy_1
+//   79 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+//   80 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   81 void CLEcran :: vLCDClr(void)
+??vLCDClr:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??vLCDClr
+        CODE
+//   82 {
+        FUNCALL ??vLCDClr, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDClr, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   83 vLCDBusy();
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+//   84 vOut(uiAdresseEcran + ECRANCONFIG, 0x01);
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,#0x1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//   85 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+//   86 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   87 void CLEcran :: vLCDInit(void)
+??vLCDInit:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function ??vLCDInit
+        CODE
+//   88 {
+        FUNCALL ??vLCDInit, ??vDelaiLCD
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDInit, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   89 USI i;
+//   90 for(i = 0; i <= 3; i++)    //Faire 3 fois
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        SJMP    ??vLCDInit_1
+//   91   {
+//   92    vDelaiLCD(10000);                  //Attendre la stabilisation des parametres
+??vLCDInit_2:
+        ; Setup parameters for call to function CLEcran::vDelaiLCD(USI)
+        MOV     R4,#0x10
+        MOV     R5,#0x27
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vDelaiLCD
+//   93    vOut(uiAdresseEcran + ECRANCONFIG,0x38);
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,#0x38
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//   94   }
+        MOV     A,?V0 + 0
+        ADD     A,#0x1
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+??vLCDInit_1:
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,#0x4
+        MOV     A,?V0 + 1
+        SUBB    A,#0x0
+        JC      ??vLCDInit_2
+//   95 
+//   96 vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x38); // Attente du Busy Flag
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,#0x38
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//   97 vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x01); // Attente du Busy Flag
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,#0x1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//   98 vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x0C); // Attente du Busy Flag
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,#0xc
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//   99 vLCDBusy();vOut(uiAdresseEcran + ECRANCONFIG,0x06); // Attente du Busy Flag
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,#0x6
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  100 }
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock9
+//  101 
+//  102 // **********************FONCTION: NomDeLaFonction()**************************
+//  103 //
+//  104 // DESCRIPTION: Positionne le curseur d'ecriture a l'endroit spécifie par
+//  105 //              la fonction appelante
+//  106 //
+//  107 // INCLUDE: <_DeclarationGenerale.h>
+//  108 //          "CLEcran.h"
+//  109 //
+//  110 // PROTOTYPE:           void vLcdPoscurC0L1(UC,UC)
+//  111 //
+//  112 // PROCEDURE D'APPEL:   vLcdPoscurC0L1(ucCol,ucLigne)
+//  113 //
+//  114 // PARAMETRE D'ENTREE:  ucCol   ---> Positionne la colone
+//  115 //                      ucLigne ---> Positionne la ligne
+//  116 //
+//  117 // PARAMETRE DE SORTIE: AUCUN
+//  118 //
+//  119 // EXEMPLE: vLcdPoscurC0L1(0,1) ---> Met le curseur au debut de l'ecran
+//  120 //
+//  121 // Auteur:              Vincent Chouinard
+//  122 // Date:                22 mars 2014   (Version 1.0)
+//  123 // Modification:
+//  124 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  125 void CLEcran :: vLCDCursor(UC ucCol, UC ucLine)
+??vLCDCursor:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function ??vLCDCursor
+        CODE
+//  126 {
+        FUNCALL ??vLCDCursor, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDCursor, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 1,R1
+        MOV     ?V0 + 2,R4
+//  127 UC ucPosition;
+//  128 switch(ucLine)
+        MOV     A,?V0 + 2
+        DEC     A
+        JZ      ??vLCDCursor_1
+        DEC     A
+        JZ      ??vLCDCursor_2
+        DEC     A
+        JZ      ??vLCDCursor_3
+        DEC     A
+        JZ      ??vLCDCursor_4
+        SJMP    ??vLCDCursor_5
+//  129   {
+//  130    case 1:                       //Si ligne 1 choisi
+//  131       ucPosition = 0x00 + ucCol; //Curseur sur ligne 1 (1,Y)
+??vLCDCursor_1:
+        MOV     ?V0 + 0,?V0 + 1
+//  132    break;
+        SJMP    ??vLCDCursor_6
+//  133 
+//  134    case 2:                       //Si ligne 2 choisi
+//  135       ucPosition = 0x40 + ucCol; //Curseur sur ligne 2 (2,Y)
+??vLCDCursor_2:
+        MOV     A,#0x40
+        ADD     A,?V0 + 1
+        MOV     ?V0 + 0,A
+//  136    break;
+        SJMP    ??vLCDCursor_6
+//  137 
+//  138    case 3:                       //Si ligne 3 choisi
+//  139       ucPosition = 0x14 + ucCol; //Curseur sur ligne 3 (3,Y)
+??vLCDCursor_3:
+        MOV     A,#0x14
+        ADD     A,?V0 + 1
+        MOV     ?V0 + 0,A
+//  140    break;
+        SJMP    ??vLCDCursor_6
+//  141 
+//  142    case 4:                       //Si ligne 4 choisi
+//  143       ucPosition = 0x54 + ucCol; //Curseur sur ligne 4 (4,Y)
+??vLCDCursor_4:
+        MOV     A,#0x54
+        ADD     A,?V0 + 1
+        MOV     ?V0 + 0,A
+//  144    break;
+        SJMP    ??vLCDCursor_6
+//  145 
+//  146    default:                      //Sinon
+//  147       ucPosition = 0x00 + ucCol; //Curseur à position initial (0,0)
+??vLCDCursor_5:
+        MOV     ?V0 + 0,?V0 + 1
+//  148    break;
+//  149   }
+//  150 
+//  151 ucPosition = ucPosition | 0x80; //Definition du registre du curseur
+??vLCDCursor_6:
+        SETB    C
+        MOV     A,?V0 + 0
+        MOV     0xE0 /* A   */.7,C
+        MOV     ?V0 + 0,A
+//  152 vLCDBusy();                                   //Attente du Flag Busy
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+//  153 vOut(uiAdresseEcran+ECRANCONFIG, ucPosition); //Envoi de la commande
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  154 }
+        MOV     R7,#0x3
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+//  155 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  156 void CLEcran :: vLCDDisplayCarac(UC ucCaractere)
+??vLCDDisplayCarac:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function ??vLCDDisplayCarac
+        CODE
+//  157 {
+        FUNCALL ??vLCDDisplayCarac, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayCarac, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  158 vLCDBusy();
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+//  159 vOut(uiAdresseEcran+ECRANWR, ucCaractere);
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  160 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock11
+//  161 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  162 void CLEcran :: vLCDDisplayCarac(char cCaractere)
+??vLCDDisplayCarac_1:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function ??vLCDDisplayCarac_1
+        CODE
+//  163 {
+        FUNCALL ??vLCDDisplayCarac_1, ??vLCDBusy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayCarac_1, ??vOut
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  164 vLCDBusy();
+        ; Setup parameters for call to function CLEcran::vLCDBusy()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDBusy
+//  165 vOut(uiAdresseEcran+ECRANWR, cCaractere);
+        ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+        MOV     R1,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vOut
+//  166 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock12
+//  167 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  168 void CLEcran :: vHexToASCII(UC ucHexCar, UC *ucpHi, UC *ucpLo)
+??vHexToASCII:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function ??vHexToASCII
+        CODE
+//  169 {
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R2,A
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+//  170 UC ucTemp;
+//  171 ucTemp = ucHexCar;
+        MOV     A,R2
+        MOV     R3,A
+//  172 *ucpHi = ucTemp   >> 4;
+        SWAP    A
+        ANL     A,#0xf
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+//  173 *ucpLo = ucHexCar & 0x0F;
+        MOV     A,#0xf
+        ANL     A,R2
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    @DPTR,A
+//  174 
+//  175 if(*ucpHi <= 9)             //SI MSB est chiffe
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vHexToASCII_2
+//  176   {
+//  177    *ucpHi = *ucpHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        SJMP    ??vHexToASCII_3
+//  178   }
+//  179 else                        //SINON
+//  180   {
+//  181    *ucpHi = *ucpHi + 0x37;  //Convertion hexa a ASCII (Lettre)
+??vHexToASCII_2:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        ADD     A,#0x37
+        MOVX    @DPTR,A
+//  182   }
+//  183 
+//  184 if(*ucpLo <= 9)             //SI LSB est chiffre
+??vHexToASCII_3:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vHexToASCII_4
+//  185   {
+//  186    *ucpLo = *ucpLo + 0x30;  //Convertion hexa a ASCII (Chiffre)
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        SJMP    ??vHexToASCII_5
+//  187   }
+//  188 else                        //SINON
+//  189   {
+//  190    *ucpLo = *ucpLo + 0x37;  //Convertion hexa a ASCII (Lettre)
+??vHexToASCII_4:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,#0x37
+        MOVX    @DPTR,A
+//  191   }
+//  192 }
+??vHexToASCII_5:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock13
+//  193 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  194 void CLEcran :: vHexToASCII(USI uiHexCar, UC *ucpHiOctHi, UC *ucpLoOctHi,
+??vHexToASCII_1:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function ??vHexToASCII_1
+        CODE
+//  195                                           UC *ucpHiOctLo, UC *ucpLoOctLo)
+//  196 {
+        MOV     A,#-0xd
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 13)
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+        MOV     A,#0x13
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     ?V0 + 4,R0
+        MOV     ?V0 + 5,R1
+//  197 *ucpHiOctHi = (uiHexCar >> 12) & 0x0F;
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0xc
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SHR
+        MOV     A,?V0 + 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+//  198 *ucpLoOctHi = (uiHexCar >> 8 ) & 0x0F;
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        ANL     A,#0xf
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//  199 *ucpHiOctLo = (uiHexCar >> 4 ) & 0x0F;
+        MOV     A,R4
+        SWAP    A
+        ANL     A,#0xf
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    @DPTR,A
+//  200 *ucpLoOctLo =  uiHexCar        & 0x0F;
+        MOV     A,R4
+        ANL     A,#0xf
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOVX    @DPTR,A
+//  201 
+//  202 if(*ucpHiOctHi <= 9)                  //SI MSB est chiffe
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vHexToASCII_6
+//  203   {
+//  204    *ucpHiOctHi = *ucpHiOctHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        SJMP    ??vHexToASCII_7
+//  205   }
+//  206 else                                  //SINON
+//  207   {
+//  208    *ucpHiOctHi = *ucpHiOctHi + 0x37;  //Convertion hexa a ASCII (Lettre)
+??vHexToASCII_6:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        ADD     A,#0x37
+        MOVX    @DPTR,A
+//  209   }
+//  210 
+//  211 if(*ucpLoOctHi <= 9)                  //SI LSB est chiffre
+??vHexToASCII_7:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vHexToASCII_8
+//  212   {
+//  213    *ucpLoOctHi = *ucpLoOctHi + 0x30;  //Convertion hexa a ASCII (Chiffre)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        SJMP    ??vHexToASCII_9
+//  214   }
+//  215 else                                  //SINON
+//  216   {
+//  217    *ucpLoOctHi = *ucpLoOctHi + 0x37;  //Convertion hexa a ASCII (Lettre)
+??vHexToASCII_8:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x37
+        MOVX    @DPTR,A
+//  218   }
+//  219 
+//  220 if(*ucpHiOctLo <= 9 )                 //SI MSB est chiffre
+??vHexToASCII_9:
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vHexToASCII_10
+//  221   {
+//  222    *ucpHiOctLo = *ucpHiOctLo + 0x30;  //Convertion hexa a ASCII (Chiffre)
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        SJMP    ??vHexToASCII_11
+//  223   }
+//  224 else                                  //SINON
+//  225   {
+//  226    *ucpHiOctLo = *ucpHiOctLo + 0x37;  //Convertion hexa a ASCII (Lettre)
+??vHexToASCII_10:
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        ADD     A,#0x37
+        MOVX    @DPTR,A
+//  227   }
+//  228 
+//  229 if(*ucpLoOctLo <= 9 )                 //SI LSB est chiffre
+??vHexToASCII_11:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??vHexToASCII_12
+//  230   {
+//  231    *ucpLoOctLo = *ucpLoOctLo + 0x30;  //Convertion hexa a ASCII (Chiffre)
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOVX    A,@DPTR
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        SJMP    ??vHexToASCII_13
+//  232   }
+//  233 else                                  //SINON
+//  234   {
+//  235    *ucpLoOctLo = *ucpLoOctLo + 0x37;  //Convertion hexa a ASCII (Lettre)
+??vHexToASCII_12:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOVX    A,@DPTR
+        ADD     A,#0x37
+        MOVX    @DPTR,A
+//  236   }
+//  237 }
+??vHexToASCII_13:
+        MOV     R7,#0x6
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock14
+//  238 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  239 void CLEcran :: vLCDDisplayHexCarac(UC ucHexCar)
+??vLCDDisplayHexCarac:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function ??vLCDDisplayHexCarac
+        CODE
+//  240  {
+        FUNCALL ??vLCDDisplayHexCarac, ??vHexToASCII
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayHexCarac, ??vLCDDisplayCarac
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayHexCarac, ??vLCDDisplayCarac
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xb
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 13)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  241   UC ucHi;UC ucLo;
+//  242 
+//  243   vHexToASCII(ucHexCar, &ucHi, &ucLo); //Conversion de Hexadecimal a ASCII
+        ; Setup parameters for call to function CLEcran::vHexToASCII(UC, UC *, UC *)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 15)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,?V0 + 0
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vHexToASCII
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 13)
+//  244   vLCDDisplayCarac(ucHi);              //Affiche MSB
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(UC)
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac
+//  245   vLCDDisplayCarac(ucLo);              //Affiche LSB
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(UC)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac
+//  246  }
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R7,#0x4
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock15
+//  247 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  248 void CLEcran :: vLCDDisplayHexCarac(USI uiHexCar)
+??vLCDDisplayHexCarac_1:
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI Function ??vLCDDisplayHexCarac_1
+        CODE
+//  249 {
+        FUNCALL ??vLCDDisplayHexCarac_1, ??vHexToASCII_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayHexCarac_1, ??vLCDDisplayCarac
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayHexCarac_1, ??vLCDDisplayCarac
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayHexCarac_1, ??vLCDDisplayCarac
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayHexCarac_1, ??vLCDDisplayCarac
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 13)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  250 UC ucHiOctHi;
+//  251 UC ucLoOctHi;
+//  252 UC ucHiOctLo;
+//  253 UC ucLoOctLo;
+//  254 
+//  255 vHexToASCII(uiHexCar, &ucHiOctHi, &ucLoOctHi, &ucHiOctLo, &ucLoOctLo);
+        ; Setup parameters for call to function CLEcran::vHexToASCII(USI, UC *, UC *, UC *, UC *)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 15)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 17)
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 19)
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 21)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vHexToASCII_1
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 13)
+//  256 
+//  257 vLCDDisplayCarac(ucHiOctHi); //Affiche MSB OctHI
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(UC)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac
+//  258 vLCDDisplayCarac(ucLoOctHi); //Affiche LSB OctHI
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(UC)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac
+//  259 vLCDDisplayCarac(ucHiOctLo); //Affiche MSB OctLO
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(UC)
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac
+//  260 vLCDDisplayCarac(ucLoOctLo); //Affiche LSB OctLO
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(UC)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac
+//  261 }
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 9)
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock16
+//  262 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  263 void CLEcran :: vLCDDisplayCaracChain(const UC *ucpMessage)
+??vLCDDisplayCaracChain:
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Function ??vLCDDisplayCaracChain
+        CODE
+//  264 {
+        FUNCALL ??vLCDDisplayCaracChain, ??vLCDDisplayCarac
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        SJMP    ??vLCDDisplayCaracChain_2
+//  265 while(*ucpMessage != 0x00)
+//  266   {
+//  267    vLCDDisplayCarac(*ucpMessage);
+??vLCDDisplayCaracChain_3:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(UC)
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac
+//  268    ucpMessage++;
+        INC     DPTR
+//  269   }
+??vLCDDisplayCaracChain_2:
+        MOVX    A,@DPTR
+        JNZ     ??vLCDDisplayCaracChain_3
+//  270 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock17
+//  271 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  272 void CLEcran ::vLCDDisplayCaracChain (const char *cpMessage)
+??vLCDDisplayCaracChain_1:
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI Function ??vLCDDisplayCaracChain_1
+        CODE
+//  273 {
+        FUNCALL ??vLCDDisplayCaracChain_1, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        SJMP    ??vLCDDisplayCaracChain_4
+//  274 while(*cpMessage != 0x00)
+//  275   {
+//  276    vLCDDisplayCarac(*cpMessage);
+??vLCDDisplayCaracChain_5:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+//  277    cpMessage++;
+        INC     DPTR
+//  278   }
+??vLCDDisplayCaracChain_4:
+        MOVX    A,@DPTR
+        JNZ     ??vLCDDisplayCaracChain_5
+//  279 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock18
+//  280 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  281 void CLEcran :: vLCDDisplayScreen(const UC *ucpEcran)
+??vLCDDisplayScreen:
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI Function ??vLCDDisplayScreen
+        CODE
+//  282 {
+        FUNCALL ??vLCDDisplayScreen, ??vLCDCursor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayScreen, ??vLCDDisplayCaracChain
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+//  283 UC ucLigne;
+//  284 for(ucLigne = 1; ucLigne <= 4; ucLigne++)
+        MOV     ?V0 + 0,#0x1
+        SJMP    ??vLCDDisplayScreen_1
+//  285   {
+//  286    vLCDCursor(1,ucLigne);
+??vLCDDisplayScreen_2:
+        ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
+        MOV     R4,?V0 + 0
+        MOV     R1,#0x1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDCursor
+//  287    vLCDDisplayCaracChain(ucpEcran);
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCaracChain(UC const *)
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCaracChain
+//  288    ucpEcran = ucpEcran + 1;
+        INC     DPTR
+//  289   }
+        INC     ?V0 + 0
+??vLCDDisplayScreen_1:
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x5
+        JC      ??vLCDDisplayScreen_2
+//  290 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock19
+//  291 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  292 void CLEcran :: vLCDDisplayEtatPort(UC ucEtatPort)
+??vLCDDisplayEtatPort:
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI Function ??vLCDDisplayEtatPort
+        CODE
+//  293 {
+        FUNCALL ??vLCDDisplayEtatPort, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayEtatPort, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R7,A
+//  294 for(UC i = 0; i < 8; i++)
+        MOV     R6,#0x0
+        SJMP    ??vLCDDisplayEtatPort_1
+//  295   {
+//  296    if((ucEtatPort & 0x80) == 0x80)
+//  297      {
+//  298       vLCDDisplayCarac('1');
+//  299      }
+//  300    else
+//  301      {
+//  302       vLCDDisplayCarac('0');
+??vLCDDisplayEtatPort_2:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x30
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vLCDDisplayCarac_1
+//  303      }
+//  304    ucEtatPort = ucEtatPort << 1;
+??vLCDDisplayEtatPort_3:
+        MOV     A,R7
+        CLR     C
+        RLC     A
+        MOV     R7,A
+        INC     R6
+??vLCDDisplayEtatPort_1:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??vLCDDisplayEtatPort_4
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??vLCDDisplayEtatPort_2
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x31
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vLCDDisplayCarac_1
+        SJMP    ??vLCDDisplayEtatPort_3
+//  305   }
+//  306 }
+??vLCDDisplayEtatPort_4:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock20
+//  307 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  308 void CLEcran :: vLCDDisplayFloat(float fInputFloat)
+??vLCDDisplayFloat:
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI Function ??vLCDDisplayFloat
+        CODE
+//  309 {
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??vLCDDisplayFloat, ??vLCDDisplayCarac_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xf
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 14
+        MOV     A,#-0xe
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     A,#0x1d
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+//  310 int i                 = 0; // Pour les boucles de comptage
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  311 float fTemporaire     = 0; // Pour le calcul de decimales
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?XSTORE_R2345
+//  312 USI usiLesEntiers     = 0; // Pour la conversion d'un float en entier
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  313 USI usiLesEntiersTemp = 0; // Pour la conversion d'un float en entier
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  314 USI usiDecimalesTemp  = 0; // Pour convertir les decimales d'un float en entier
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//  315 USI usiLesDecimales   = 0; // Pour convertir les decimales d'un float en entier
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  316 
+//  317 usiLesEntiers   = (USI)fInputFloat; // Conversion des floats en USI sans virgule
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 5,?V0 + 1
+        MOV     ?V0 + 6,?V0 + 2
+        MOV     ?V0 + 7,?V0 + 3
+        MOV     R0,#?V0 + 4
+        LCALL   ?FLT_TO_L
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 5
+        MOVX    @DPTR,A
+//  318 usiLesDecimales = (USI)fInputFloat; // Enleve les decimales du float
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 5,?V0 + 1
+        MOV     ?V0 + 6,?V0 + 2
+        MOV     ?V0 + 7,?V0 + 3
+        MOV     R0,#?V0 + 4
+        LCALL   ?FLT_TO_L
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 5
+        MOVX    @DPTR,A
+//  319 fTemporaire     = (fInputFloat - (float)usiLesDecimales) * 100;//Decimales 0-999
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        CLR     A
+        MOV     ?V0 + 6,A
+        MOV     ?V0 + 7,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?UL_TO_FLT
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_SUB
+        MOV     DPTR,#__Constant_42c80000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+//  320 usiLesDecimales = (USI)fTemporaire; //Conversion (.0 a .999) vers (0 a 999)
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?XLOAD_R2345
+        LCALL   ?R2345_FLT_TO_L
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+//  321 
+//  322 for(i = 0; i < 3; i++) //Pour trois fois (Centaine, dizaine, unite)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        SJMP    ??vLCDDisplayFloat_1
+//  323   {
+//  324    if(i == 0) // Pour les centaines
+//  325      {
+//  326       usiLesEntiersTemp = usiLesEntiers /  100;
+//  327       usiLesEntiers     = usiLesEntiers - (100 * usiLesEntiersTemp);
+//  328      }
+//  329    if(i == 1) // Pour les dizaines
+//  330      {
+//  331       usiLesEntiersTemp = usiLesEntiers /  10;
+//  332       usiLesEntiers     = usiLesEntiers - (10 * usiLesEntiersTemp);
+//  333      }
+//  334    if(i == 2) // Pour les unitees
+//  335      {
+//  336       usiLesEntiersTemp=usiLesEntiers;
+//  337      }
+//  338 
+//  339    switch(usiLesEntiersTemp) // Affiche un caractere correspondant a l'unite
+//  340      {                       // float lue
+//  341       case 0:
+//  342          vLCDDisplayCarac('0');
+//  343       break;
+//  344 
+//  345       case 1:
+//  346          vLCDDisplayCarac('1');
+//  347       break;
+//  348 
+//  349       case 2:
+//  350          vLCDDisplayCarac('2');
+//  351       break;
+//  352 
+//  353       case 3:
+//  354          vLCDDisplayCarac('3');
+//  355       break;
+//  356 
+//  357       case 4:
+//  358          vLCDDisplayCarac('4');
+//  359       break;
+//  360 
+//  361       case 5:
+//  362          vLCDDisplayCarac('5');
+//  363       break;
+//  364 
+//  365       case 6:
+//  366          vLCDDisplayCarac('6');
+//  367       break;
+//  368 
+//  369       case 7:
+//  370          vLCDDisplayCarac('7');
+//  371       break;
+//  372 
+//  373       case 8:
+//  374          vLCDDisplayCarac('8');
+//  375       break;
+//  376 
+//  377       case 9:
+//  378          vLCDDisplayCarac('9');
+??vLCDDisplayFloat_2:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x39
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+//  379       break;
+??vLCDDisplayFloat_3:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+??vLCDDisplayFloat_1:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x3
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      $+5
+        LJMP    ??vLCDDisplayFloat_4
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??vLCDDisplayFloat_5
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0x64
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x64
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOVX    @DPTR,A
+??vLCDDisplayFloat_5:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??vLCDDisplayFloat_6
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??vLCDDisplayFloat_6:
+        JNZ     ??vLCDDisplayFloat_7
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOVX    @DPTR,A
+??vLCDDisplayFloat_7:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??vLCDDisplayFloat_8
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??vLCDDisplayFloat_8:
+        JNZ     ??vLCDDisplayFloat_9
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+??vLCDDisplayFloat_9:
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for vLCDDisplayFloat>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_10
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_11
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_12
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_13
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_14
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_15
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_17
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_18
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_2
+        CODE
+??vLCDDisplayFloat_10:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x30
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_11:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x31
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_12:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x32
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_13:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x33
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_14:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x34
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_15:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x35
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_16:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x36
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_17:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x37
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+??vLCDDisplayFloat_18:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x38
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_3
+//  380      }
+//  381    }
+//  382 
+//  383 vLCDDisplayCarac('.'); // Affiche la satane virgule
+??vLCDDisplayFloat_4:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x2e
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+//  384 
+//  385 for(i = 0; i < 2; i++) //Pour deux fois (Dixieme, centieme)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        SJMP    ??vLCDDisplayFloat_19
+//  386   {
+//  387    if(i == 0)          // Pour les dixiemes
+//  388      {
+//  389       usiDecimalesTemp = usiLesDecimales /  10;
+//  390      }
+//  391    if(i == 1)          // Pour les centiemes
+//  392      {
+//  393       usiDecimalesTemp = usiLesDecimales - (10 * usiDecimalesTemp) ;
+//  394      }
+//  395 
+//  396    switch(usiDecimalesTemp) // Affiche un caractere correspondant a l'unite
+//  397      {                      // float lue
+//  398       case 0:
+//  399          vLCDDisplayCarac('0');
+//  400       break;
+//  401 
+//  402       case 1:
+//  403          vLCDDisplayCarac('1');
+//  404       break;
+//  405 
+//  406       case 2:
+//  407          vLCDDisplayCarac('2');
+//  408       break;
+//  409 
+//  410       case 3:
+//  411          vLCDDisplayCarac('3');
+//  412       break;
+//  413 
+//  414       case 4:
+//  415          vLCDDisplayCarac('4');
+//  416       break;
+//  417 
+//  418       case 5:
+//  419          vLCDDisplayCarac('5');
+//  420       break;
+//  421 
+//  422       case 6:
+//  423          vLCDDisplayCarac('6');
+//  424       break;
+//  425 
+//  426       case 7:
+//  427          vLCDDisplayCarac('7');
+//  428       break;
+//  429 
+//  430       case 8:
+//  431          vLCDDisplayCarac('8');
+//  432       break;
+//  433 
+//  434       case 9:
+//  435          vLCDDisplayCarac('9');
+??vLCDDisplayFloat_20:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x39
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+//  436       break;
+??vLCDDisplayFloat_21:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+??vLCDDisplayFloat_19:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x2
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      $+5
+        LJMP    ??vLCDDisplayFloat_22
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??vLCDDisplayFloat_23
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+??vLCDDisplayFloat_23:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??vLCDDisplayFloat_24
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x0
+??vLCDDisplayFloat_24:
+        JNZ     ??vLCDDisplayFloat_25
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R6
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R6
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,R7
+        MUL     AB
+        ADD     A,R0
+        MOV     R7,A
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R6
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R7
+        MOV     R7,A
+??vLCDDisplayFloat_25:
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,R7
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for vLCDDisplayFloat>_1`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_21
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_26
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_27
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_28
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_29
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_30
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_31
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_32
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_33
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_34
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??vLCDDisplayFloat_20
+        CODE
+??vLCDDisplayFloat_26:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x30
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_27:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x31
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_28:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x32
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_29:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x33
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_30:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x34
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_31:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x35
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_32:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x36
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_33:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x37
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+??vLCDDisplayFloat_34:
+        ; Setup parameters for call to function CLEcran::vLCDDisplayCarac(char)
+        MOV     R1,#0x38
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??vLCDDisplayCarac_1
+        LJMP    ??vLCDDisplayFloat_21
+//  437      }
+//  438   }
+//  439 }
+??vLCDDisplayFloat_22:
+        MOV     A,#0xe
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 15)
+        MOV     R7,#0x8
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock21
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_0:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_0>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_0>`:
+        DATA32
+        DD 0H
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_42c80000:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_42c80000>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_42c80000>`:
+        DATA32
+        DD 42C80000H
+
+        END
+//  440 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+// 
+// 2 553 bytes in segment NEAR_CODE
+//     8 bytes in segment XDATA_I
+//     8 bytes in segment XDATA_ID
+// 
+// 2 553 bytes of CODE  memory (+ 8 bytes shared)
+//     0 bytes of XDATA memory (+ 8 bytes shared)
+//
+//Errors: none
+//Warnings: none

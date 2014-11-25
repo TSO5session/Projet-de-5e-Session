@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>_PrjSes3/UPSD</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>150</Column0><Column1>27</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+    <Build><ColumnWidth0>31</ColumnWidth0><ColumnWidth1>1205</ColumnWidth1><ColumnWidth2>321</ColumnWidth2><ColumnWidth3>80</ColumnWidth3></Build></Static>
+    <Windows>
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-28999-4190</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>_PrjSes3</ExpandedNode><ExpandedNode>_PrjSes3/_Session3Main.cpp</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-13086-4693</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\BlocFESTOmain.cpp</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>835</SelStart><SelEnd>835</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\FESTO.cpp</Filename><XPos>0</XPos><YPos>30</YPos><SelStart>1963</SelStart><SelEnd>1963</SelEnd></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\FESTO.h</Filename><XPos>0</XPos><YPos>36</YPos><SelStart>1784</SelStart><SelEnd>1796</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLMCP2515.cpp</Filename><XPos>0</XPos><YPos>253</YPos><SelStart>10658</SelStart><SelEnd>10658</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLMCP2515.h</Filename><XPos>0</XPos><YPos>11</YPos><SelStart>881</SelStart><SelEnd>881</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLSPI.cpp</Filename><XPos>0</XPos><YPos>66</YPos><SelStart>2573</SelStart><SelEnd>2578</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLSPI.h</Filename><XPos>0</XPos><YPos>27</YPos><SelStart>1313</SelStart><SelEnd>1313</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLCommunicUpsdPort1.cpp</Filename><XPos>0</XPos><YPos>424</YPos><SelStart>17832</SelStart><SelEnd>17832</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLCommunicUpsdPort1.h</Filename><XPos>0</XPos><YPos>36</YPos><SelStart>3091</SelStart><SelEnd>3095</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLEcran.cpp</Filename><XPos>0</XPos><YPos>16</YPos><SelStart>1172</SelStart><SelEnd>1172</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CLEcran.h</Filename><XPos>0</XPos><YPos>39</YPos><SelStart>1237</SelStart><SelEnd>1243</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-02fc1d10><key>iaridepm.enu1</key></Toolbar-02fc1d10></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>856</Bottom><Right>224</Right><x>-2</x><y>-2</y><xscreen>126</xscreen><yscreen>98</yscreen><sizeHorzCX>65625</sizeHorzCX><sizeHorzCY>98295</sizeHorzCY><sizeVertCX>117708</sizeVertCX><sizeVertCY>860582</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>96</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>98</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>98295</sizeHorzCY><sizeVertCX>65625</sizeVertCX><sizeVertCY>98295</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

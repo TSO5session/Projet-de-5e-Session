@@ -1,0 +1,2077 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        24/Nov/2014  22:54:32 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\CLSPI.cpp                                      /
+//    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\CLSPI.cpp" -D UPSD3254A --preprocess=cl        /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Au /
+//                          tomne 2014\ProjetSession5\ProgrammeDuFESTO\Progra /
+//                          mmeFESTO\UPSD\List\" -lA                          /
+//                          "C:\Synchro\Dropbox\Travaux\Automne               /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\" -o "C:\Synchro\Dropbox\Travaux\Aut /
+//                          omne 2014\ProjetSession5\ProgrammeDuFESTO\Program /
+//                          meFESTO\UPSD\Obj\" -e --no_cse --no_unroll        /
+//                          --no_inline --no_code_motion --no_tbaa --debug    /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=near --calling_convention=xdata_reen /
+//                          trant --place_constants=data --nr_virtual_regs 8  /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++     /
+//    List file          =  C:\Synchro\Dropbox\Travaux\Automne                /
+//                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFES /
+//                          TO\UPSD\List\CLSPI.s51                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CLSPI
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?L_ADD_X
+        EXTERN ?L_MOV_X
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN ?UL_GT
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??CLSPI
+        FUNCTION ??CLSPI,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??CLSPI_1
+        FUNCTION ??CLSPI_1,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??Delai
+        FUNCTION ??Delai,0203H
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 15, STACK
+        PUBLIC ??Direction
+        FUNCTION ??Direction,021203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??ReadMPC
+        FUNCTION ??ReadMPC,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??Write
+        FUNCTION ??Write,0203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC ??Write16
+        FUNCTION ??Write16,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??WriteDAC
+        FUNCTION ??WriteDAC,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??WriteMPC
+        FUNCTION ??WriteMPC,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??WriteMPC_1
+        FUNCTION ??WriteMPC_1,021203H
+        ARGFRAME XSTACK, 1, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 20, STACK
+        PUBLIC ??WritePOT
+        FUNCTION ??WritePOT,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??delete ~CLSPI`
+        FUNCTION `??delete ~CLSPI`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        PUBLIC `??new CLSPI`
+        FUNCTION `??new CLSPI`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC `??new CLSPI_1`
+        FUNCTION `??new CLSPI_1`,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC `?~CLSPI`
+        FUNCTION `?~CLSPI`,0203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK _A_P1
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_1
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN `??operator new`
+        FUNCTION `??operator new`,010202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN `??operator delete`
+        FUNCTION `??operator delete`,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLSPI.cpp
+//    1 //**********************  Fichier: CLSPI.cpp
+//    2 //  Description  : Fonctions necessaire pour communiquer en SPI.
+//    3 //
+//    4 //  Composition  : aucune
+//    5 //  Heritage     : aucune
+//    6 //
+//    7 //  Programmeur  : Vincent Chouinard
+//    8 //  Cours        : 247-636
+//    9 //
+//   10 //  Date         : 22 Octobre 2014
+//   11 //
+//   12 //  Compilateur  : IAR 8.1
+//   13 //
+//   14 //  Modification :
+//   15 //
+//   16 //////////////////////////////////////////////////////////////////////////////
+//   17 #include "CLSPI.h"                // Inclue le fichier d'entete I2CPort.h.
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLSPI &CLSPI::new CLSPI()
+`??new CLSPI`:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function `??new CLSPI`
+        CODE
+        FUNCALL `??new CLSPI`, `??operator new`
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLSPI`, ??CLSPI
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    ?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    ?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLSPI_2`
+        ; Setup parameters for call to function CLSPI::CLSPI()
+        LCALL   ??CLSPI
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLSPI_3`
+`??new CLSPI_2`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLSPI_3`:
+        POP     ?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP     ?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant CLSPI &CLSPI::new CLSPI(UC)
+`??new CLSPI_1`:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function `??new CLSPI_1`
+        CODE
+        FUNCALL `??new CLSPI_1`, `??operator new`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??new CLSPI_1`, ??CLSPI_1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function operator new(unsigned int)
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   `??operator new`
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      `??new CLSPI_4`
+        ; Setup parameters for call to function CLSPI::CLSPI(UC)
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??CLSPI_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    `??new CLSPI_5`
+`??new CLSPI_4`:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+`??new CLSPI_5`:
+        MOV     R7,#0x2
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// __near_func __xdata_reentrant void CLSPI::delete ~CLSPI(CLSPI *)
+`??delete ~CLSPI`:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function `??delete ~CLSPI`
+        CODE
+        FUNCALL `??delete ~CLSPI`, `?~CLSPI`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL `??delete ~CLSPI`, `??operator delete`
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JZ      `??delete ~CLSPI_1`
+        ; Setup parameters for call to function CLSPI::~CLSPI()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `?~CLSPI`
+        ; Setup parameters for call to function operator delete(void *)
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??operator delete`
+`??delete ~CLSPI_1`:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//   18 #include "_DeclarationGenerale.h" // inclue DeclarationGenerale.h
+//   19 #include "MCP2515.h"              // define des registres du MCP2515
+//   20 //******************************************************************************
+//   21 //                            LE CONSTRUCTEUR PAR DEFAUT
+//   22 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   23 CLSPI :: CLSPI(void)
+??CLSPI:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ??CLSPI
+        CODE
+//   24 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   25 MOSI     = LOW;  // Commence a bas  
+        CLR     0x90.5
+//   26 MISO     = LOW;  // Commence a bas  
+        CLR     0x90.4
+//   27 SCLK     = LOW;  // Commence a bas
+        CLR     0x90.6
+//   28 CS       = HIGH; // Commence a bas
+        SETB    0x90.7
+//   29 }
+        RET
+        CFI EndBlock cfiBlock3
+        REQUIRE _A_P1
+//   30 
+//   31 //******************************************************************************
+//   32 //                            LE CONSTRUCTEUR INITIALISATEUR
+//   33 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   34 CLSPI :: CLSPI(UC Directions)
+??CLSPI_1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ??CLSPI_1
+        CODE
+//   35 {
+        FUNCALL ??CLSPI_1, ??Direction
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R6,A
+//   36 MOSI     = LOW;        // Commence a bas  
+        CLR     0x90.5
+//   37 MISO     = LOW;        // Commence a bas  
+        CLR     0x90.4
+//   38 SCLK     = LOW;        // Commence a bas
+        CLR     0x90.6
+//   39 CS       = HIGH;       // Commence a bas
+        SETB    0x90.7
+//   40 Direction(Directions); // Initialise les directions
+        ; Setup parameters for call to function CLSPI::Direction(UC)
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Direction
+//   41 }
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+        REQUIRE _A_P1
+//   42 
+//   43 // *****************************************************************************
+//   44 //                            LE DESTRUCTEUR
+//   45 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   46 CLSPI :: ~CLSPI(void)
+`?~CLSPI`:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function `?~CLSPI`
+        CODE
+//   47 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   48 
+//   49 }
+        RET
+        CFI EndBlock cfiBlock5
+//   50 
+//   51 //*****************************************************************************
+//   52 // Nom de la fct       : vSPIEcire
+//   53 // Description         : Fonction qui permet de lire et d'ecrire un octet
+//   54 //                     : sous les 4 different mode SPI
+//   55 //
+//   56 // INCLUDE             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
+//   57 //
+//   58 // Prototype           : UC ucSPIEcire(UC ucValeur, UC ucMode);
+//   59 //
+//   60 //
+//   61 // Parametre d'entree  : ucValeur pour la valeur a envoyer ucMode pour le mode
+//   62 //
+//   63 // Parametre de sortie : ucDonneeLue pour la donnee lue
+//   64 //
+//   65 // Procedure appelees  : aucune
+//   66 //
+//   67 // Exemple d'appel     : val = clComSPI.ucSPIEcire(0xAA);
+//   68 //
+//   69 // Fait par            : Vincent Chouinard
+//   70 // Date                : 23 septembre 2014
+//   71 // Revision            : A
+//   72 // Modification
+//   73 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   74 UC CLSPI :: Write(UC ucValeur, UC ucMode)
+??Write:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ??Write
+        CODE
+//   75 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R2,A
+//   76 UC i;                               // Pour boucle
+//   77 UC ucDonneeLue = 0;                 // Pour la donnee a transmettre
+        MOV     R1,#0x0
+//   78 //CS             = LOW;
+//   79 
+//   80 if(ucMode == 0)                     // Si mode 0?
+        MOV     A,R4
+        JNZ     ??Write_1
+//   81   {
+//   82    SCLK  = BAS;                     // Met la clock a 0
+        CLR     0x90.6
+//   83 
+//   84    for(i = 0; i < 8; i++)           // Fait 8 fois
+        MOV     R0,#0x0
+        SJMP    ??Write_2
+//   85      {
+//   86       if((ucValeur & 0x80) == 0x80) //fait un masque si egale a 1
+//   87         {
+//   88          MOSI = 1;                  // Envoie 1
+//   89         }
+//   90        else                         // Sinon
+//   91         {
+//   92          MOSI =0;                   // Envoie 0.
+??Write_3:
+        CLR     0x90.5
+//   93         }
+//   94 
+//   95        ucValeur    = ucValeur    << 1  ; // Decale la valeur a envoyer
+??Write_4:
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R2,A
+//   96        ucDonneeLue = ucDonneeLue << 1  ; // Decale la valeur lue
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     R1,A
+//   97        SCLK        = HAUT              ; // Clock a 1
+        SETB    0x90.6
+//   98        ucDonneeLue = ucDonneeLue + MISO; // Aditionne l'etat de MISO avec
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        ADD     A,R1
+        MOV     R1,A
+//   99                                          // le reste de la donnee lue
+//  100        SCLK        = BAS               ; // Clock a 0.
+        CLR     0x90.6
+        INC     R0
+??Write_2:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??Write_1
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??Write_3
+        SETB    0x90.5
+        SJMP    ??Write_4
+//  101      }
+//  102    }
+//  103 
+//  104 if(ucMode == 1)          // Si mode 1?
+??Write_1:
+        MOV     A,#0x1
+        XRL     A,R4
+        JNZ     ??Write_5
+//  105   {
+//  106    SCLK  = HAUT;
+        SETB    0x90.6
+//  107    for(i = 0; i < 8; i++)
+        MOV     R0,#0x0
+        SJMP    ??Write_6
+//  108      {
+//  109       ucDonneeLue = ucDonneeLue << 1;
+//  110       SCLK        = HAUT;
+//  111 
+//  112       if((ucValeur & 0x80) == 0x80)
+//  113         {
+//  114          MOSI = 1;
+//  115         }
+//  116       else
+//  117         {
+//  118          MOSI =0;
+??Write_7:
+        CLR     0x90.5
+//  119         }
+//  120       ucDonneeLue = ucDonneeLue + MISO;
+??Write_8:
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        ADD     A,R1
+        MOV     R1,A
+//  121       SCLK        = BAS;                // Met la clock a 0
+        CLR     0x90.6
+        INC     R0
+??Write_6:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??Write_9
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     R1,A
+        SETB    0x90.6
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??Write_7
+        SETB    0x90.5
+        SJMP    ??Write_8
+//  122      }
+//  123      SCLK         = HAUT;
+??Write_9:
+        SETB    0x90.6
+//  124    }
+//  125 
+//  126 if(ucMode == 2)          // Si mode 2?
+??Write_5:
+        MOV     A,#0x2
+        XRL     A,R4
+        JNZ     ??Write_10
+//  127   {
+//  128    for(i = 0; i < 8; i++)
+        MOV     R0,#0x0
+        SJMP    ??Write_11
+//  129      {
+//  130       ucDonneeLue = ucDonneeLue << 1;
+//  131       if((ucValeur & 0x80) == 0x80)
+//  132         {
+//  133          MOSI = 1;
+//  134         }
+//  135       else
+//  136         {
+//  137          MOSI =0;
+??Write_12:
+        CLR     0x90.5
+//  138         }
+//  139        ucDonneeLue = ucDonneeLue + MISO;
+??Write_13:
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        ADD     A,R1
+        MOV     R1,A
+//  140        SCLK        = BAS;
+        CLR     0x90.6
+//  141        SCLK        = HAUT;
+        SETB    0x90.6
+        INC     R0
+??Write_11:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??Write_10
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     R1,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??Write_12
+        SETB    0x90.5
+        SJMP    ??Write_13
+//  142      }
+//  143    }
+//  144 
+//  145 if(ucMode == 3)          // Si mode 3?
+??Write_10:
+        MOV     A,#0x3
+        XRL     A,R4
+        JNZ     ??Write_14
+//  146   {
+//  147    for(i = 0; i < 8; i++)
+        MOV     R0,#0x0
+        SJMP    ??Write_15
+//  148      {
+//  149       ucDonneeLue = ucDonneeLue << 1;
+//  150       SCLK        = BAS;
+//  151       if((ucValeur & 0x80) == 0x80)
+//  152         {
+//  153          MOSI = 1;
+//  154         }
+//  155       else
+//  156         {
+//  157          MOSI = 0;
+??Write_16:
+        CLR     0x90.5
+//  158         }
+//  159       ucDonneeLue = ucDonneeLue + MISO;
+??Write_17:
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        ADD     A,R1
+        MOV     R1,A
+//  160       SCLK        = HAUT;
+        SETB    0x90.6
+        INC     R0
+??Write_15:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??Write_14
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     R1,A
+        CLR     0x90.6
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??Write_16
+        SETB    0x90.5
+        SJMP    ??Write_17
+//  161      }
+//  162    }
+//  163 //CS = HIGH;
+//  164 return(ucDonneeLue);
+??Write_14:
+        RET
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_P1
+//  165 }
+//  166 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  167 UI CLSPI :: Write16(UI uiValeur, UC ucMode)
+??Write16:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function ??Write16
+        CODE
+//  168 {
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//  169 UC i;                      // Pour boucle
+//  170 UI uiDonneeLue= 0;         // Pour la donnee a transmettre
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+//  171 CS = LOW;
+        CLR     0x90.7
+//  172 if(ucMode == 0)            // Si mode 0?
+        MOV     A,R7
+        JNZ     ??Write16_1
+//  173   {
+//  174    SCLK = BAS;             // Met la clock a 0
+        CLR     0x90.6
+//  175    for(i = 0; i < 16; i++) // Fait 8 fois
+        MOV     R6,#0x0
+        SJMP    ??Write16_2
+//  176      {
+//  177       if((uiValeur & 0x8000) == 0x8000)//fait un masque si egale a 1
+//  178         {
+//  179          MOSI = 1;          // Envoie 1
+//  180         }
+//  181       else                  // Sinon
+//  182         {
+//  183          MOSI =0;           // Envoie 0.
+??Write16_3:
+        CLR     0x90.5
+//  184         }
+//  185 
+//  186       uiValeur    = uiValeur    << 1  ;  // Decale la valeur a envoyer
+??Write16_4:
+        MOV     A,R4
+        CLR     C
+        RLC     A
+        MOV     R4,A
+        MOV     A,R5
+        RLC     A
+        MOV     R5,A
+//  187       uiDonneeLue = uiDonneeLue << 1  ;  // Decale la valeur lue
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R2,A
+        MOV     A,R3
+        RLC     A
+        MOV     R3,A
+//  188       SCLK        = HAUT              ; // Clock a 1
+        SETB    0x90.6
+//  189       uiDonneeLue = uiDonneeLue + MISO; // Aditionne l'etat de MISO avec
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R3,A
+//  190                                         // le reste de la donnee lue
+//  191       SCLK        = BAS               ; // Clock a 0.
+        CLR     0x90.6
+        INC     R6
+??Write16_2:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x10
+        JNC     ??Write16_1
+        MOV     A,R4
+        ANL     A,#0x0
+        MOV     R0,A
+        MOV     A,R5
+        ANL     A,#0x80
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??Write16_3
+        SETB    0x90.5
+        SJMP    ??Write16_4
+//  192      }
+//  193    }
+//  194 
+//  195    if(ucMode == 1)          // Si mode 1?
+??Write16_1:
+        MOV     A,#0x1
+        XRL     A,R7
+        JNZ     ??Write16_5
+//  196     {
+//  197      SCLK = HAUT;
+        SETB    0x90.6
+//  198      for(i = 0; i < 16; i++)
+        MOV     R6,#0x0
+        SJMP    ??Write16_6
+//  199        {
+//  200         uiDonneeLue = uiDonneeLue << 1;
+//  201         SCLK        = HAUT;
+//  202         if((uiValeur & 0x8000) == 0x8000)
+//  203          {
+//  204           MOSI = 1;
+//  205          }
+//  206         else
+//  207          {
+//  208           MOSI =0;
+??Write16_7:
+        CLR     0x90.5
+//  209          }
+//  210         uiDonneeLue = uiDonneeLue + MISO;
+??Write16_8:
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R3,A
+//  211         SCLK        = BAS;   // Met la clock a 0
+        CLR     0x90.6
+        INC     R6
+??Write16_6:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x10
+        JNC     ??Write16_9
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R2,A
+        MOV     A,R3
+        RLC     A
+        MOV     R3,A
+        SETB    0x90.6
+        MOV     A,R4
+        ANL     A,#0x0
+        MOV     R0,A
+        MOV     A,R5
+        ANL     A,#0x80
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??Write16_7
+        SETB    0x90.5
+        SJMP    ??Write16_8
+//  212        }
+//  213      SCLK = HAUT;
+??Write16_9:
+        SETB    0x90.6
+//  214     }
+//  215   if(ucMode == 2)          // Si mode 2?
+??Write16_5:
+        MOV     A,#0x2
+        XRL     A,R7
+        JNZ     ??Write16_10
+//  216     {
+//  217      for(i = 0; i < 16; i++)
+        MOV     R6,#0x0
+        SJMP    ??Write16_11
+//  218        {
+//  219         uiDonneeLue = uiDonneeLue << 1;
+//  220         if((uiValeur & 0x8000) == 0x8000)
+//  221           {
+//  222            MOSI = 1;
+//  223           }
+//  224         else
+//  225          {
+//  226           MOSI =0;
+??Write16_12:
+        CLR     0x90.5
+//  227          }
+//  228        uiDonneeLue = uiDonneeLue + MISO;
+??Write16_13:
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R3,A
+//  229        SCLK        = BAS;
+        CLR     0x90.6
+//  230        SCLK        = HAUT;
+        SETB    0x90.6
+        INC     R6
+??Write16_11:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x10
+        JNC     ??Write16_10
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R2,A
+        MOV     A,R3
+        RLC     A
+        MOV     R3,A
+        MOV     A,R4
+        ANL     A,#0x0
+        MOV     R0,A
+        MOV     A,R5
+        ANL     A,#0x80
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??Write16_12
+        SETB    0x90.5
+        SJMP    ??Write16_13
+//  231       }
+//  232    }
+//  233 
+//  234    if(ucMode == 3)          // Si mode 3?
+??Write16_10:
+        MOV     A,#0x3
+        XRL     A,R7
+        JNZ     ??Write16_14
+//  235      {
+//  236       for(i = 0; i < 16; i++)
+        MOV     R6,#0x0
+        SJMP    ??Write16_15
+//  237         {
+//  238          uiDonneeLue = uiDonneeLue << 1;
+//  239          SCLK        = BAS;
+//  240          if((uiValeur & 0x8000) == 0x8000)
+//  241            {
+//  242             MOSI = 1;
+//  243            }
+//  244          else
+//  245            {
+//  246             MOSI =0;
+??Write16_16:
+        CLR     0x90.5
+//  247            }
+//  248          uiDonneeLue = uiDonneeLue + MISO;
+??Write16_17:
+        MOV     C,0x90.4
+        CLR     A
+        RLC     A
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R3,A
+//  249          SCLK        = HAUT;
+        SETB    0x90.6
+        INC     R6
+??Write16_15:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x10
+        JNC     ??Write16_14
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R2,A
+        MOV     A,R3
+        RLC     A
+        MOV     R3,A
+        CLR     0x90.6
+        MOV     A,R4
+        ANL     A,#0x0
+        MOV     R0,A
+        MOV     A,R5
+        ANL     A,#0x80
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??Write16_16
+        SETB    0x90.5
+        SJMP    ??Write16_17
+//  250         }
+//  251 
+//  252       }
+//  253 CS = HIGH;
+??Write16_14:
+        SETB    0x90.7
+//  254 return(uiDonneeLue);
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+        REQUIRE _A_P1
+//  255 }
+//  256 
+//  257 //*****************************************************************************
+//  258 // Nom de la fct:       : Direction
+//  259 // Description:         : Fonction qui permet de modifier la direction des ports
+//  260 //                      : du MCP23S08
+//  261 //
+//  262 // INCLUDE:             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
+//  263 //
+//  264 // Prototype:           : Direction(UC ucDirection)
+//  265 //
+//  266 //
+//  267 // Parametre d'entree:  : ucDirection pour la direction des I/O.
+//  268 //
+//  269 // Parametre de sortie: : aucun
+//  270 //
+//  271 // Procedure appelees:  : aucune
+//  272 //
+//  273 // Exemple d'appel:     : val = clComSPI.ucSPIEcire(0xAA);
+//  274 //
+//  275 // Fait par             : Vincent Chouinard
+//  276 // Date:                : 23 septembre 2014
+//  277 // Revision             :
+//  278 // Modification         :
+//  279 //*****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  280 void CLSPI :: Direction (UC ucDirection)
+??Direction:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??Direction
+        CODE
+//  281 {
+        FUNCALL ??Direction, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??Direction, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??Direction, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R6,A
+//  282 CS = BAS             ; // Chip select bas
+        CLR     0x90.7
+//  283 Write(0x40, 0)       ; // Envoie l'adresse du boitier
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x40
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  284 Write(0x00, 0)       ; // Envoie le registre a modifier
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  285 Write(ucDirection, 0); // Envoie la direction
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  286 CS = HAUT            ; // Chip Select haut
+        SETB    0x90.7
+//  287 }
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+        REQUIRE _A_P1
+//  288 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  289 UC CLSPI :: WriteMPC (UC Data)
+??WriteMPC:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function ??WriteMPC
+        CODE
+//  290 {
+        FUNCALL ??WriteMPC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteMPC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteMPC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R7,A
+//  291 UC maVar = 0           ;  
+        MOV     R6,#0x0
+//  292 CS = LOW               ; // Selectionne le MPC via chip select
+        CLR     0x90.7
+//  293 Write(0x40, 0)         ; // Envoie l'adresse du boitier
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x40
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  294 Write(0x09, 0)         ; // Envoie l'adresse du reistre des IO
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x9
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  295 maVar = Write(Data, 0) ; // Envoie la donnee
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+        MOV     R6,A
+//  296 CS = HIGH              ; // End chip select
+        SETB    0x90.7
+//  297 return(maVar)          ; // Envoie la donnee hexa a ecrire sur les IO
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock9
+        REQUIRE _A_P1
+//  298 }
+//  299 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  300 UC CLSPI :: ReadMPC (void)
+??ReadMPC:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function ??ReadMPC
+        CODE
+//  301 {
+        FUNCALL ??ReadMPC, ??Write
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ReadMPC, ??Write
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ReadMPC, ??Write
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//  302 CS       = LOW            ; // Selectionne le MPC via chip select  
+        CLR     0x90.7
+//  303 Write(0x41, 0)            ; // Envoie l'adresse du boitier
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x41
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  304 Write(0x09, 0)            ; // Envoie l'adresse du reistre des IO
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x9
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  305 UC maVar = Write(NULL, 0) ; // Lit le contenu du MPC
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+        MOV     R1,A
+//  306 CS       = HIGH           ; // End chip select
+        SETB    0x90.7
+//  307 return(maVar); // Lit la donnee hexa a correspondant aux IO
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock10
+        REQUIRE _A_P1
+//  308 }
+//  309 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  310 UC CLSPI :: WritePOT (UC Data)
+??WritePOT:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function ??WritePOT
+        CODE
+//  311 {
+        FUNCALL ??WritePOT, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WritePOT, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R6,A
+//  312 CS       = LOW           ; // Selectionne le MPC via chip select  
+        CLR     0x90.7
+//  313 Write(0x00, 0)           ; // Pour activer le mode ecriture
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R1,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  314 UC maVar = Write(Data, 0); // Ecrit une valeur sur le POT
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+        MOV     R1,A
+//  315 CS       = HIGH          ; // Selectionne le MPC via chip select
+        SETB    0x90.7
+//  316 return(maVar)            ; // Ecrit la valeur sur le POT numerique
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock11
+        REQUIRE _A_P1
+//  317 }
+//  318 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  319 UC CLSPI :: WriteDAC (UC ucPin, int iData)
+??WriteDAC:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function ??WriteDAC
+        CODE
+//  320 {
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteDAC, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R1
+        MOV     R7,A
+//  321 UC ucHaut;
+//  322 UC ucBas;
+//  323 CSDA = LOW; // DAC CHip Select ON
+        CLR     0x90.6
+//  324 
+//  325 switch (ucPin)
+        DEC     A
+        JZ      ??WriteDAC_1
+        DEC     A
+        JZ      ??WriteDAC_2
+        DEC     A
+        JZ      ??WriteDAC_3
+        DEC     A
+        JZ      ??WriteDAC_4
+        SJMP    ??WriteDAC_5
+//  326   { 
+//  327   case 1:     // Write on DAC A
+//  328      ucHaut    = (iData << 8) & 0x000F; 
+??WriteDAC_1:
+        MOV     R1,#0x0
+//  329      ucHaut    = ucHaut |       0x80  ;    
+        SETB    C
+        MOV     A,R1
+        MOV     0xE0 /* A   */.7,C
+        MOV     R1,A
+//  330      ucBas     = iData  &       0x00FF;    
+        MOV     A,R4
+        MOV     R6,A
+//  331      Write(ucHaut, 0);
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  332      Write(ucBas,  0);
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  333   break;
+        SJMP    ??WriteDAC_5
+//  334   
+//  335   case 2:     // Write on DAC B
+//  336      ucHaut    = (iData << 8) & 0x000F; 
+??WriteDAC_2:
+        MOV     R1,#0x0
+//  337      ucHaut    = ucHaut |       0x90  ;    
+        XCH     A,R1
+        ORL     A,#0x90
+        MOV     R1,A
+//  338      ucBas     = iData  &       0x00FF;   
+        MOV     A,R4
+        MOV     R6,A
+//  339      Write(ucHaut, 0);
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  340      Write(ucBas,  0); 
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  341   break;
+        SJMP    ??WriteDAC_5
+//  342 
+//  343   case 3:     // Write on DAC C
+//  344      ucHaut    = (iData << 8) & 0x000F; 
+??WriteDAC_3:
+        MOV     R1,#0x0
+//  345      ucHaut    = ucHaut |       0xA0  ;    
+        XCH     A,R1
+        ORL     A,#0xa0
+        MOV     R1,A
+//  346      ucBas     = iData  &       0x00FF;   
+        MOV     A,R4
+        MOV     R6,A
+//  347      Write(ucHaut, 0);
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  348      Write(ucBas,  0); 
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  349   break;
+        SJMP    ??WriteDAC_5
+//  350 
+//  351   case 4:     // Write on DAC D
+//  352      ucHaut    = (iData << 8) & 0x000F; 
+??WriteDAC_4:
+        MOV     R1,#0x0
+//  353      ucHaut    = ucHaut |       0xB0  ;    
+        XCH     A,R1
+        ORL     A,#0xb0
+        MOV     R1,A
+//  354      ucBas     = iData  &       0x00FF;    
+        MOV     A,R4
+        MOV     R6,A
+//  355      Write(ucHaut, 0);
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  356      Write(ucBas,  0);      
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Write
+        MOV     A,R1
+//  357   break;  
+//  358  }
+//  359 
+//  360 CSDA = HIGH;// DAC CHip Select OFF
+??WriteDAC_5:
+        SETB    0x90.6
+//  361 return(NULL);
+        MOV     R1,#0x0
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock12
+        REQUIRE _A_P1
+//  362 }
+//  363 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  364 UC CLSPI :: WriteMPC(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
+??WriteMPC_1:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function ??WriteMPC_1
+        CODE
+//  365 {
+        FUNCALL ??WriteMPC_1, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??WriteMPC_1, ??Delai
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xd
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 13)
+        ; Saved register size: 13
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 16)
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 0,R1
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+//  366 UC i;
+//  367 
+//  368 UC Donnees[3] = {0x00};
+        MOV     DPTR,#`?<Constant {(UC)'\\000'}>`
+        PUSH    DPL
+        CFI CFA_SP SP+-1
+        PUSH    DPH
+        CFI CFA_SP SP+-2
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        POP     DPH
+        CFI CFA_SP SP+-1
+        POP     DPL
+        CFI CFA_SP SP+0
+        MOV     A,#0x3
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  369    Donnees[0] = Donnee1;
+        MOV     A,R6
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  370    Donnees[1] = Donnee2;
+        MOV     A,R7
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  371    Donnees[2] = Donnee3;
+        MOV     A,R0
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  372 
+//  373 CS = LOW;   // Un chip select
+        CLR     0x90.7
+//  374 
+//  375 for(i = 0; i < NombreDonneesEnvoyer; i++)
+        MOV     ?V0 + 1,#0x0
+        SJMP    ??WriteMPC_2
+//  376   {
+//  377    Write(Donnees[i], 0);      // = Donnees[k];
+??WriteMPC_3:
+        ; Setup parameters for call to function CLSPI::Write(UC, UC)
+        MOV     R4,#0x0
+        MOV     ?V0 + 2,?V0 + 1
+        MOV     ?V0 + 3,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,?V0 + 3
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        LCALL   ??Write
+        MOV     A,R1
+//  378    Delai(1);   // Delai au moins tant que le module du SPI est occupé 
+        ; Setup parameters for call to function CLSPI::Delai(unsigned long)
+        MOV     DPTR,#__Constant_1
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        CFI CFA_XSP16 add(XSP16, 20)
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        LCALL   ??Delai
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 16)
+//  379   }
+        INC     ?V0 + 1
+??WriteMPC_2:
+        MOV     A,?V0 + 1
+        CLR     C
+        SUBB    A,?V0 + 0
+        JC      ??WriteMPC_3
+//  380 
+//  381 CS = HIGH;   // Un chip select
+        SETB    0x90.7
+//  382 return(0x01);
+        MOV     R1,#0x1
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 13)
+        MOV     R7,#0x6
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock13
+        REQUIRE _A_P1
+//  383 }
+//  384 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  385 void CLSPI :: Delai(unsigned long Temps)
+??Delai:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function ??Delai
+        CODE
+//  386 {
+        MOV     A,#-0xf
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+//  387 unsigned long k;
+//  388 for(k = 0; k < Temps; k++);  
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        SJMP    ??Delai_1
+??Delai_2:
+        MOV     DPTR,#__Constant_1
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_ADD_X
+??Delai_1:
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JC      ??Delai_2
+//  389 }
+        MOV     R7,#0x8
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock14
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_1:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_1>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_1>`:
+        DATA32
+        DD 1
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA32
+__Constant_0:
+        DS 4
+        REQUIRE `?<Initializer for __Constant_0>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for __Constant_0>`:
+        DATA32
+        DD 0
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+`?<Constant {(UC)'\\000'}>`:
+        DS 3
+        REQUIRE __INIT_XDATA_Z
+
+        END
+//  390 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+//  391 
+// 
+// 1 213 bytes in segment NEAR_CODE
+//     1 byte  in segment SFR_AN
+//     8 bytes in segment XDATA_I
+//     8 bytes in segment XDATA_ID
+//     3 bytes in segment XDATA_Z
+// 
+// 1 213 bytes of CODE  memory (+ 8 bytes shared)
+//     0 bytes of DATA  memory (+ 1 byte  shared)
+//     3 bytes of XDATA memory (+ 8 bytes shared)
+//
+//Errors: none
+//Warnings: none

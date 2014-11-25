@@ -1,0 +1,389 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         30/Sep/2014  20:43:27 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\CLSortieLatch.cpp                              #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\CLSortieLatch.cpp" -D DALLAS89C450             #
+#                          --preprocess=cl "C:\Synchro\Dropbox\Travaux\Automn #
+#                          e 2014\Fonctions\Projet Accumulatif                #
+#                          IAR\DALLAS\List\" -lC "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\Fonctions\Projet Accumulatif          #
+#                          IAR\DALLAS\List\" -o "C:\Synchro\Dropbox\Travaux\A #
+#                          utomne 2014\Fonctions\Projet Accumulatif           #
+#                          IAR\DALLAS\Obj\" -e --no_cse --no_unroll           #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=near --calling_convention=xdata_reent #
+#                          rant --place_constants=data --nr_virtual_regs 8    #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --ec++       #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\List\CLSortieLatch.lst                  #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\Fonctions\Projet Accumulatif                  #
+#                          IAR\DALLAS\Obj\CLSortieLatch.r51                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\Fonctions\Projet Accumulatif IAR\CLSortieLatch.cpp
+      1          // **************************CLSortieLatch.cpp
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         20 juillet 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          // Le channel du convertisseur ADC va de 0xFA08 a 0xFA0F
+     12          // Le channel du convertisseur DAC va de...
+     13          // *****************************************************************************
+     14          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+
+   \                                 In  segment SFR_AN, at 0xb0
+   \   union <unnamed> volatile __sfr _A_P3
+   \                     _A_P3:
+   \   000000                DS 1
+     15          #include "CLSortieLatch.h"              // Fichier de definitions du clavier
+     16          #include "CLInOutBase.h"
+     17          
+     18          
+     19          //******************************************************************************
+     20          //                            LE CONSTRUCTEUR PAR DEFAUT
+     21          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     22          DAC_ADC :: DAC_ADC(void)
+   \                     ??DAC_ADC:
+     23          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     24          
+     25          }
+   \   000000   22           RET
+     26          
+     27          //******************************************************************************
+     28          //                            LE CONSTRUCTEUR PAR DEFAUT
+     29          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     30          DAC_ADC :: DAC_ADC(UC ucParametre)
+   \                     ??DAC_ADC_1:
+     31          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     32          
+     33          }
+   \   000000   22           RET
+     34          
+     35          // *****************************************************************************
+     36          //                            LE DESTRUCTEUR
+     37          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     38          DAC_ADC :: ~DAC_ADC(void)
+   \                     `?~DAC_ADC`:
+     39          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     40          
+     41          }
+   \   000000   22           RET
+     42          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     43          void DAC_ADC :: DAC(UC ucChannel, UC ucData)
+   \                     ??DAC:
+     44          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   89..         MOV     ?V0 + 1,R1
+   \   00000B   8C..         MOV     ?V0 + 0,R4
+     45          unsigned int uiAdresseDA;
+     46          uiAdresseDA = 0xFA28 + ucChannel;
+   \   00000D   85....       MOV     ?V0 + 2,?V0 + 1
+   \   000010   75..00       MOV     ?V0 + 3,#0x0
+   \   000013   E5..         MOV     A,?V0 + 2
+   \   000015   2428         ADD     A,#0x28
+   \   000017   FE           MOV     R6,A
+   \   000018   E5..         MOV     A,?V0 + 3
+   \   00001A   34FA         ADDC    A,#-0x6
+   \   00001C   FF           MOV     R7,A
+     47          
+     48          vOut (0xFA20, ucData);            // Écriture de la donnée sur le latch (activation via chip select)
+   \   00001D                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   00001D   A9..         MOV     R1,?V0 + 0
+   \   00001F   7C20         MOV     R4,#0x20
+   \   000021   7DFA         MOV     R5,#-0x6
+   \   000023   AA82         MOV     R2,DPL
+   \   000025   AB83         MOV     R3,DPH
+   \   000027   12....       LCALL   ??vOut
+     49          vOut (uiAdresseDA, ucData);       // Transfert de la donnée du latch au convertisseur (via chip select)
+   \   00002A                ; Setup parameters for call to function CLInOutBase::vOut(USI, UC)
+   \   00002A   A9..         MOV     R1,?V0 + 0
+   \   00002C   EE           MOV     A,R6
+   \   00002D   FC           MOV     R4,A
+   \   00002E   EF           MOV     A,R7
+   \   00002F   FD           MOV     R5,A
+   \   000030   AA82         MOV     R2,DPL
+   \   000032   AB83         MOV     R3,DPH
+   \   000034   12....       LCALL   ??vOut
+     50          }
+   \   000037   7F04         MOV     R7,#0x4
+   \   000039   02....       LJMP    ?FUNC_LEAVE_XDATA
+     51          
+     52          
+     53          
+     54          
+     55          
+     56          
+     57          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     58          UC DAC_ADC :: ADC(UC ucChannel)
+   \                     ??ADC:
+     59          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   89..         MOV     ?V0 + 0,R1
+     60          UC ucEssai;
+     61          unsigned int uiAdresseAD;
+     62          
+     63          uiAdresseAD = 0xFA08 + ucChannel; //Ajoute l'adresse au canal      
+   \   00000B   85....       MOV     ?V0 + 2,?V0 + 0
+   \   00000E   75..00       MOV     ?V0 + 3,#0x0
+   \   000011   E5..         MOV     A,?V0 + 2
+   \   000013   2408         ADD     A,#0x8
+   \   000015   FE           MOV     R6,A
+   \   000016   E5..         MOV     A,?V0 + 3
+   \   000018   34FA         ADDC    A,#-0x6
+   \   00001A   FF           MOV     R7,A
+     64          ucEssai     = ucIn(uiAdresseAD);  //Chip select du ADC7829
+   \   00001B                ; Setup parameters for call to function CLInOutBase::ucIn(USI)
+   \   00001B   EE           MOV     A,R6
+   \   00001C   FC           MOV     R4,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   FD           MOV     R5,A
+   \   00001F   AA82         MOV     R2,DPL
+   \   000021   AB83         MOV     R3,DPH
+   \   000023   12....       LCALL   ??ucIn
+   \   000026   E9           MOV     A,R1
+   \   000027   F9           MOV     R1,A
+     65          P3_3        = 0;                  //Demande de conversion
+   \   000028   C2B3         CLR     0xb0.3
+     66          P3_3        = 1;                  //Demande de conversion
+   \   00002A   D2B3         SETB    0xb0.3
+     67          while (P3_2 == 0);                //Attente de fin de conversion
+   \                     ??ADC_1:
+   \   00002C   A2B2         MOV     C,0xb0.2
+   \   00002E   50FC         JNC     ??ADC_1
+     68            {
+     69             ucEssai = ucIn(uiAdresseAD);   //Lecture du convertisseur
+   \   000030                ; Setup parameters for call to function CLInOutBase::ucIn(USI)
+   \   000030   EE           MOV     A,R6
+   \   000031   FC           MOV     R4,A
+   \   000032   EF           MOV     A,R7
+   \   000033   FD           MOV     R5,A
+   \   000034   AA82         MOV     R2,DPL
+   \   000036   AB83         MOV     R3,DPH
+   \   000038   12....       LCALL   ??ucIn
+   \   00003B   E9           MOV     A,R1
+   \   00003C   F9           MOV     R1,A
+     70            }
+     71          //Version de programme pour la carte IO BUG ver2 ou il n'y a pas de buffer sur le bus de donnees
+     72          //   ucEssai = ucInput(0xFA10);         //Lecture du buffer du convertisseur AD
+     73             return (ucEssai);
+   \   00003D   7F04         MOV     R7,#0x4
+   \   00003F   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000042                REQUIRE _A_P3
+     74          }
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant DAC_ADC &DAC_ADC::new DAC_ADC()
+   \                     `??new DAC_ADC`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new DAC_ADC_2`
+   \   00001B                ; Setup parameters for call to function DAC_ADC::DAC_ADC()
+   \   00001B   12....       LCALL   ??DAC_ADC
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new DAC_ADC_3`
+   \                     `??new DAC_ADC_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new DAC_ADC_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant DAC_ADC &DAC_ADC::new DAC_ADC(UC)
+   \                     `??new DAC_ADC_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A01         MOV     R2,#0x1
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new DAC_ADC_4`
+   \   00001E                ; Setup parameters for call to function DAC_ADC::DAC_ADC(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??DAC_ADC_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new DAC_ADC_5`
+   \                     `??new DAC_ADC_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new DAC_ADC_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void DAC_ADC::delete ~DAC_ADC(DAC_ADC *)
+   \                     `??delete ~DAC_ADC`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~DAC_ADC_1`
+   \   00000D                ; Setup parameters for call to function DAC_ADC::~DAC_ADC()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~DAC_ADC`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~DAC_ADC_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+     75          
+     76          
+     77          
+     78          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     DAC_ADC::ADC(UC)                   0      0     11
+       -> CLInOutBase::ucIn(USI)        0      0     22
+       -> CLInOutBase::ucIn(USI)        0      0     22
+     DAC_ADC::DAC(UC, UC)               0      0     11
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     22
+       -> CLInOutBase::vOut(USI, UC)
+                                        0      0     22
+     DAC_ADC::DAC_ADC()                 0      0      0
+     DAC_ADC::DAC_ADC(UC)               0      0      9
+     DAC_ADC::delete ~DAC_ADC(DAC_ADC *)
+                                        0      0      8
+       -> DAC_ADC::~DAC_ADC()           0      0     16
+       -> operator delete(void *)       0      0     16
+     DAC_ADC::new DAC_ADC()             2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> DAC_ADC::DAC_ADC()            4      0      0
+     DAC_ADC::new DAC_ADC(UC)           0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> DAC_ADC::DAC_ADC(UC)          0      0     18
+     DAC_ADC::~DAC_ADC()                0      0      8
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     _A_P3                             1
+     DAC_ADC::DAC_ADC()                1
+     DAC_ADC::DAC_ADC(UC)              1
+     DAC_ADC::~DAC_ADC()               1
+     DAC_ADC::DAC(UC, UC)             60
+     DAC_ADC::ADC(UC)                 66
+     DAC_ADC::new DAC_ADC()           49
+     DAC_ADC::new DAC_ADC(UC)         54
+     DAC_ADC::delete ~DAC_ADC(DAC_ADC *)
+                                      32
+
+ 
+ 264 bytes in segment NEAR_CODE
+   1 byte  in segment SFR_AN
+ 
+ 264 bytes of CODE memory
+   0 bytes of DATA memory (+ 1 byte shared)
+
+Errors: none
+Warnings: none
