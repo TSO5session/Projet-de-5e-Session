@@ -36,7 +36,9 @@ public:
    UC   Longueur           (const UC * Contenu);
    UC   LireRegistreMCP2515(UC Address);
    
-   UC EcrireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
+   UC   Write(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
+   
+   
    UC CLMCP2515 :: LireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
   
 protected:

@@ -1393,7 +1393,9 @@ public:
    UC   Longueur           (const UC * Contenu);
    UC   LireRegistreMCP2515(UC Address);
    
-   UC EcrireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
+   UC   Write(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
+   
+   
    UC CLMCP2515 :: LireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
   
 protected:
@@ -1428,7 +1430,7 @@ CLMCP2515 :: ~CLMCP2515(void)
 void CLMCP2515 :: InitialisationMCP2515(void)
 {
    /* Envoi de la commande de « RESET », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. */
-   EcrireDonnesMCP2515(1, 0xC0, 0x00, 0x00);
+   Write(1, 0xC0, 0x00, 0x00);
    
    Delai(1000);   /* Délai permettant de s'assurer que le cicruit « MCP2515 » soit bien réinitialisé. */
 
@@ -1546,7 +1548,7 @@ void CLMCP2515 :: InitialisationMCP2515(void)
 
 void CLMCP2515 :: EcrireRegistreMCP2515(unsigned char Address, unsigned char Data)
 {
-   EcrireDonnesMCP2515(3, 0x02, Address, Data);   /* Envoi de 3 octets :
+   Write(3, 0x02, Address, Data);   /* Envoi de 3 octets :
                                        - La commande d'écriture ;
                                        - L'adresse du registre dans lequel écrire ;
                                        - L'octet à écrire dans le registre. */
@@ -1632,16 +1634,12 @@ en commencant par le registre « MCP2515_TXB0D0 », d'adresse 0x36. */
    }
 
    /* Envoi de la commande « RTS », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. */
-   EcrireDonnesMCP2515(1, 0x81, 0x00, 0x00);
+   Write(1, 0x81, 0x00, 0x00);
 
    Delai(10);
 }
 
-
-
-
-
-UC*  CLMCP2515 :: Read(void)
+UC* CLMCP2515 :: Read(void)
 {
  UC ucTrame; 
  ucTrame  = LireRegistreMCP2515(0x65);
@@ -1666,7 +1664,7 @@ void CLMCP2515 :: AcquitterInterruptionsMCP2515(void)
 }
 
 
-UC CLMCP2515 :: EcrireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
+UC CLMCP2515 :: Write(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
 {
    UC k;
    UC Donnees[3] = {0x00};

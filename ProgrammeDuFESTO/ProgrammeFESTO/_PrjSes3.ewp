@@ -2764,7 +2764,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>I2CHARD.Hex</state>
+          <state>FESTO.hex</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -6208,6 +6208,9 @@
     <name>$PROJ_DIR$\CLEcran.cpp</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\CLFestoCaptors.cpp</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\CLI2CBase.Cpp</name>
   </file>
   <file>
@@ -6221,6 +6224,9 @@
   </file>
   <file>
     <name>$PROJ_DIR$\CLMCP2515.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\clPompe.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\CLSortieLatch.cpp</name>

@@ -1,10 +1,12 @@
 \select@language {french}
-\contentsline {figure}{\numberline {1}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{13}
-\contentsline {figure}{\numberline {2}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{14}
-\contentsline {figure}{\numberline {3}{\ignorespaces Historique des actions}}{15}
-\contentsline {figure}{\numberline {4}{\ignorespaces Choix de la cible sur IAR}}{18}
-\contentsline {figure}{\numberline {5}{\ignorespaces Couche TOP}}{20}
-\contentsline {figure}{\numberline {6}{\ignorespaces Couche BOT}}{20}
-\contentsline {figure}{\numberline {7}{\ignorespaces Silk Screen TOP}}{21}
-\contentsline {figure}{\numberline {8}{\ignorespaces Solder mask TOP}}{21}
-\contentsline {figure}{\numberline {9}{\ignorespaces Drill}}{22}
+\contentsline {figure}{\numberline {1}{\ignorespaces Vue d'ensemble du projet}}{5}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{14}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{15}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Historique des actions}}{16}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Choix de la cible sur IAR}}{20}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Couche TOP}}{23}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Couche BOT}}{23}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Silk Screen TOP}}{24}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Solder mask TOP}}{24}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Drill}}{25}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Correctif}}{25}{figure.11}

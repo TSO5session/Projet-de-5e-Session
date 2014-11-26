@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         24/Nov/2014  22:54:31 #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         25/Nov/2014  19:57:45 #
 # Copyright 2004-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -71,13 +71,14 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
 
      UC CLMCP2515 :: LireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
         ^
-"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLMCP2515.h",40  Warning[Pe427]: 
+"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLMCP2515.h",42  Warning[Pe427]: 
           qualified name is not allowed in member declaration
 
-     const char FloatToString (float fInputFloat); //String = Convert.FloatToString(131.74);  
-     ^
-"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\Conversions.h",25  Warning[Pe815]: 
-          type qualifier on return type is meaningless
+  #include "CLPompe.h"                 // Utilisation des pompes de la table FESTO
+                                                                                 ^
+"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\FESTO.h",19  Warning[Pa050]: 
+          non-native end of line sequence detected (this diagnostic is only
+          issued once)
      16          // **** LES DEFINES *****************//
      17          
      18          // **** LES CLASSES *****************//
@@ -99,8 +100,8 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
 
    \                                 In  segment XDATA_Z, align 1, keep-with-next
    \                     FESTO:
-   \   000000                DS 17
-   \   000011                REQUIRE __INIT_XDATA_Z
+   \   000000                DS 20
+   \   000014                REQUIRE __INIT_XDATA_Z
      20          // **** LES FONCTIONS DU MAIN *******//
      21          
      22          // **** PROGRAMME PRINCIPAL *********//
@@ -175,7 +176,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      _A_IE                                   1
      WDKEY                                   1
      __sti__routine()                       14
-     FESTO                                  17
+     FESTO                                  20
      main()                                 20
      ?<Initializer for <Constant "TEST">>    5
      ?<Initializer for >                     6
@@ -188,11 +189,11 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
   2 bytes in segment SFR_AN
  11 bytes in segment XDATA_I
  11 bytes in segment XDATA_ID
- 19 bytes in segment XDATA_Z
+ 22 bytes in segment XDATA_Z
  
  47 bytes of CODE  memory
   0 bytes of DATA  memory (+ 2 bytes shared)
- 30 bytes of XDATA memory
+ 33 bytes of XDATA memory
 
 Errors: none
 Warnings: 2

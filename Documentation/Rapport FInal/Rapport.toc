@@ -1,75 +1,76 @@
 \select@language {french}
-\contentsline {section}{\numberline {1}Pr\IeC {\'e}sentation du projet}{5}
-\contentsline {subsection}{\numberline {1.1}Explication du projet}{5}
-\contentsline {subsection}{\numberline {1.2}Sch\IeC {\'e}ma bloc du syst\IeC {\`e}me}{5}
-\contentsline {subsubsection}{\numberline {1.2.1}Bloc 1}{5}
-\contentsline {subsubsection}{\numberline {1.2.2}Bloc 2}{5}
-\contentsline {subsubsection}{\numberline {1.2.3}Bloc 3}{5}
-\contentsline {subsubsection}{\numberline {1.2.4}Bloc 4}{5}
-\contentsline {subsection}{\numberline {1.3}Liste des logiciels}{5}
-\contentsline {subsection}{\numberline {1.4}Liste des trames}{7}
-\contentsline {section}{\numberline {2}Le mat\IeC {\'e}riel}{8}
-\contentsline {subsection}{\numberline {2.1}Bloc 1}{8}
-\contentsline {subsection}{\numberline {2.2}Bloc 2}{8}
-\contentsline {subsection}{\numberline {2.3}Bloc 3}{8}
-\contentsline {subsection}{\numberline {2.4}Bloc 4}{8}
-\contentsline {subsection}{\numberline {2.5}Explication des types de liens}{8}
-\contentsline {subsubsection}{\numberline {2.5.1}RS232}{8}
-\contentsline {subsubsection}{\numberline {2.5.2}Xbee}{8}
-\contentsline {subsection}{\numberline {2.6}Explication des trames}{8}
-\contentsline {subsubsection}{\numberline {2.6.1}RS-232}{8}
-\contentsline {subsubsection}{\numberline {2.6.2}CAN}{9}
-\contentsline {subsubsection}{\numberline {2.6.3}XBEE}{11}
-\contentsline {subsection}{\numberline {2.7}Liste des pi\IeC {\`e}ces}{11}
-\contentsline {subsubsection}{\numberline {2.7.1}Liens web}{11}
-\contentsline {subsubsection}{\numberline {2.7.2}Datasheets}{12}
-\contentsline {section}{\numberline {3}Interface PC}{13}
-\contentsline {subsection}{\numberline {3.1}Gestion de l'historique}{15}
-\contentsline {subsubsection}{\numberline {3.1.1}Exemple d'historique typique}{15}
-\contentsline {subsection}{\numberline {3.2}Structure du programme}{15}
-\contentsline {subsubsection}{\numberline {3.2.1}Les Ghosts Labels}{15}
-\contentsline {subsection}{\numberline {3.3}Explication des trames}{15}
-\contentsline {subsection}{\numberline {3.4}Ordre de gestion des t\IeC {\^a}ches}{15}
-\contentsline {section}{\numberline {4}Logiciel du SOC8200}{16}
-\contentsline {subsection}{\numberline {4.1}Description du programme}{16}
-\contentsline {subsection}{\numberline {4.2}Sch\IeC {\'e}ma bloc}{16}
-\contentsline {subsubsection}{\numberline {4.2.1}Du code}{16}
-\contentsline {subsubsection}{\numberline {4.2.2}Du script shell}{16}
-\contentsline {subsection}{\numberline {4.3}Gestion des processus et du temps de CPU}{16}
-\contentsline {subsection}{\numberline {4.4}Format et r\IeC {\'e}cup\IeC {\'e}ration des logs}{16}
-\contentsline {subsection}{\numberline {4.5}Liste des tests et logiciels}{16}
-\contentsline {section}{\numberline {5}Logiciel de la station 1 et 2 et du bolide}{17}
-\contentsline {subsection}{\numberline {5.1}La station no.1}{17}
-\contentsline {subsection}{\numberline {5.2}La station no.2}{17}
-\contentsline {subsection}{\numberline {5.3}Le bolide}{17}
-\contentsline {subsection}{\numberline {5.4}Proc\IeC {\'e}dure de compilation sur IAR}{18}
-\contentsline {subsection}{\numberline {5.5}Proc\IeC {\'e}dure de v\IeC {\'e}rification}{18}
-\contentsline {section}{\numberline {6}Logiciel du module PIC18F258}{18}
-\contentsline {subsection}{\numberline {6.1}Description du fonctionnement du programme}{18}
-\contentsline {subsection}{\numberline {6.2}Proc\IeC {\'e}dure de compilation sur MPLAB}{18}
-\contentsline {subsection}{\numberline {6.3}Proc\IeC {\'e}dure de v\IeC {\'e}rification}{18}
-\contentsline {section}{\numberline {7}Calculs}{19}
-\contentsline {subsection}{\numberline {7.1}Calcul du pas de conversion de la pile}{19}
-\contentsline {subsection}{\numberline {7.2}Calcul du baudrate}{19}
-\contentsline {section}{\numberline {8}Fichiers Gerbers}{20}
-\contentsline {section}{\numberline {9}Conclusion}{23}
-\contentsline {subsection}{\numberline {9.1}Ce que le projet m'a apport\IeC {\'e}}{23}
-\contentsline {subsubsection}{\numberline {9.1.1}Vincent Chouinard}{23}
-\contentsline {subsubsection}{\numberline {9.1.2}Hicham Safoine}{23}
-\contentsline {subsubsection}{\numberline {9.1.3}Gabriel Fortin-B\IeC {\'e}langer}{23}
-\contentsline {subsubsection}{\numberline {9.1.4}Louis-Norman Ang-Houle}{23}
-\contentsline {subsection}{\numberline {9.2}Difficult\IeC {\'e}s et corrections}{23}
-\contentsline {subsubsection}{\numberline {9.2.1}Vincent Chouinard}{23}
-\contentsline {subsubsection}{\numberline {9.2.2}Hicham Safoine}{23}
-\contentsline {subsubsection}{\numberline {9.2.3}Gabriel Fortin-B\IeC {\'e}langer}{23}
-\contentsline {subsubsection}{\numberline {9.2.4}Louis-Norman Ang-Houle}{23}
-\contentsline {subsection}{\numberline {9.3}Ce que j'ai aim\IeC {\'e} ou pas}{23}
-\contentsline {subsubsection}{\numberline {9.3.1}Vincent Chouinard}{23}
-\contentsline {subsubsection}{\numberline {9.3.2}Hicham Safoine}{23}
-\contentsline {subsubsection}{\numberline {9.3.3}Gabriel Fortin-B\IeC {\'e}langer}{23}
-\contentsline {subsubsection}{\numberline {9.3.4}Louis-Norman Ang-Houle}{23}
-\contentsline {section}{\numberline {10}ANNEXE 1: Code source du Bolide et de la station no.1}{24}
-\contentsline {section}{\numberline {11}ANNEXE 2: Code source du programme pour PC}{25}
-\contentsline {section}{\numberline {12}ANNEXE 6: Code source du programme PIC}{26}
-\contentsline {section}{\numberline {13}ANNEXE 3: Code source du programme du SOC8200}{27}
-\contentsline {section}{\numberline {14}ANNEXE 5: Code source de la table FESTO}{28}
+\contentsline {section}{\numberline {1}Pr\IeC {\'e}sentation du projet}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}Explication du projet}{5}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Sch\IeC {\'e}ma bloc du syst\IeC {\`e}me}{5}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Bloc 1}{6}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Bloc 2}{6}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Bloc 3}{6}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}Bloc 4}{6}{subsubsection.1.2.4}
+\contentsline {subsection}{\numberline {1.3}Liste des logiciels}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Liste des trames}{7}{subsection.1.4}
+\contentsline {section}{\numberline {2}Le mat\IeC {\'e}riel}{8}{section.2}
+\contentsline {subsection}{\numberline {2.1}Bloc 1}{8}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Bloc 2}{8}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Bloc 3}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Bloc 4}{8}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Explication des types de liens}{8}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}RS232}{8}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Xbee}{8}{subsubsection.2.5.2}
+\contentsline {subsection}{\numberline {2.6}Explication des trames}{8}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}RS-232}{8}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}CAN}{10}{subsubsection.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}XBEE}{12}{subsubsection.2.6.3}
+\contentsline {subsection}{\numberline {2.7}Liste des pi\IeC {\`e}ces}{12}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Liens web}{12}{subsubsection.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.2}Datasheets}{13}{subsubsection.2.7.2}
+\contentsline {section}{\numberline {3}Interface PC}{14}{section.3}
+\contentsline {subsection}{\numberline {3.1}Gestion de l'historique}{16}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Exemple d'historique typique}{16}{subsubsection.3.1.1}
+\contentsline {subsection}{\numberline {3.2}Structure du programme}{16}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Les Ghosts Labels}{16}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Explication des trames}{16}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Ordre de gestion des t\IeC {\^a}ches}{16}{subsection.3.4}
+\contentsline {section}{\numberline {4}Logiciel du SOC8200}{17}{section.4}
+\contentsline {subsection}{\numberline {4.1}Description du programme}{17}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Sch\IeC {\'e}ma bloc}{17}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Du script shell}{17}{subsubsection.4.2.1}
+\contentsline {subsection}{\numberline {4.3}Gestion des processus et du temps de CPU}{17}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Format et r\IeC {\'e}cup\IeC {\'e}ration des logs}{17}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Liste des tests et logiciels}{17}{subsection.4.5}
+\contentsline {section}{\numberline {5}Logiciel de la station 1 et 2 et du bolide}{18}{section.5}
+\contentsline {subsection}{\numberline {5.1}La station no.1}{18}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}La station no.2}{18}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Sch\IeC {\'e}ma des h\IeC {\'e}ritages de classes, table FESTO}{18}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Sch\IeC {\'e}ma des h\IeC {\'e}ritages de classes, Bolide et Station 1}{19}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Le bolide}{19}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Proc\IeC {\'e}dure de compilation sur IAR}{20}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Proc\IeC {\'e}dure de v\IeC {\'e}rification}{20}{subsection.5.7}
+\contentsline {section}{\numberline {6}Logiciel du module PIC18F258}{21}{section.6}
+\contentsline {subsection}{\numberline {6.1}Description du fonctionnement du programme}{21}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Proc\IeC {\'e}dure de compilation sur MPLAB}{21}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Proc\IeC {\'e}dure de v\IeC {\'e}rification}{21}{subsection.6.3}
+\contentsline {section}{\numberline {7}Calculs}{22}{section.7}
+\contentsline {subsection}{\numberline {7.1}Calcul du pas de conversion de la pile}{22}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Calcul du baudrate}{22}{subsection.7.2}
+\contentsline {section}{\numberline {8}Fichiers Gerbers}{23}{section.8}
+\contentsline {section}{\numberline {9}Conclusion}{26}{section.9}
+\contentsline {subsection}{\numberline {9.1}Ce que le projet m'a apport\IeC {\'e}}{26}{subsection.9.1}
+\contentsline {subsubsection}{\numberline {9.1.1}Vincent Chouinard}{26}{subsubsection.9.1.1}
+\contentsline {subsubsection}{\numberline {9.1.2}Hicham Safoine}{26}{subsubsection.9.1.2}
+\contentsline {subsubsection}{\numberline {9.1.3}Gabriel Fortin-B\IeC {\'e}langer}{26}{subsubsection.9.1.3}
+\contentsline {subsubsection}{\numberline {9.1.4}Louis-Norman Ang-Houle}{26}{subsubsection.9.1.4}
+\contentsline {subsection}{\numberline {9.2}Difficult\IeC {\'e}s et corrections}{26}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Vincent Chouinard}{26}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}Hicham Safoine}{26}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Gabriel Fortin-B\IeC {\'e}langer}{26}{subsubsection.9.2.3}
+\contentsline {subsubsection}{\numberline {9.2.4}Louis-Norman Ang-Houle}{26}{subsubsection.9.2.4}
+\contentsline {subsection}{\numberline {9.3}Ce que j'ai aim\IeC {\'e} ou pas}{26}{subsection.9.3}
+\contentsline {subsubsection}{\numberline {9.3.1}Vincent Chouinard}{26}{subsubsection.9.3.1}
+\contentsline {subsubsection}{\numberline {9.3.2}Hicham Safoine}{26}{subsubsection.9.3.2}
+\contentsline {subsubsection}{\numberline {9.3.3}Gabriel Fortin-B\IeC {\'e}langer}{26}{subsubsection.9.3.3}
+\contentsline {subsubsection}{\numberline {9.3.4}Louis-Norman Ang-Houle}{26}{subsubsection.9.3.4}
+\contentsline {section}{\numberline {10}ANNEXE 1: Code source du programme pour PC}{27}{section.10}
+\contentsline {section}{\numberline {11}ANNEXE 2: Code source du Bolide et de la station 1}{28}{section.11}
+\contentsline {section}{\numberline {12}ANNEXE 4: Code source de la table FESTO}{29}{section.12}
+\contentsline {section}{\numberline {13}ANNEXE 5: Code source du programme PIC}{30}{section.13}
+\contentsline {section}{\numberline {14}ANNEXE 4: Code source du script Shell du SOC8200}{31}{section.14}

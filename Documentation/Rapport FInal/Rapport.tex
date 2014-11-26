@@ -1,6 +1,7 @@
 \documentclass[10pt,a4paper,final]{article}
 
 \include{TeX/Packages}   % Packages et dépendances nécessaires
+
 \include{TeX/SourceCode} % Permet de mettre du code source dans le document
 
 \begin{document}
@@ -15,7 +16,7 @@
 \begin{center}
 \includegraphics[scale=1]{Figures/School_Logo.jpg}~\\[1cm]  
 \textsc{\LARGE \'{E}lectronique Programmable et Robotique}\\[1.5cm]
-\Large 247-6[1-2-3-4]7-LI\\[0.5cm]
+\Large 247-6 [1-2-3-4] 7-LI\\[0.5cm]
 { \huge \bfseries Projet de 5$\mathbf{^{e}}$ session \\[0.4cm] }
 \HRule \\[1.5cm]
 
@@ -89,7 +90,7 @@ L'usine à gaz, et le gaz, c'est de l'air!
 
 
 \renewcommand\headrulewidth{1pt}
-\fancyhead[L]{247-6[1-2-3-4]7-LI}
+\fancyhead[L]{247-6 [1-2-3-4] 7-LI}
 \fancyhead[R]{Projet de 5$\mathbf{^{e}}$ session}
 
 \renewcommand\footrulewidth{1pt}
@@ -103,7 +104,7 @@ Le projet de la cinquième session consiste à réaliser
 \begin{itemize}
 \item[$\Rightarrow$] Le Bolide
 \item[$\Rightarrow$] Carte Dallas DS89C450
-\item[$\Rightarrow$] Carte $\mu PSD$ 3254A
+\item[$\Rightarrow$] Carte uPSD 3254A
 \item[$\Rightarrow$] SOC8200
 \item[$\Rightarrow$] Table FESTO
 \item[$\Rightarrow$] Carte PIC16F88
@@ -116,11 +117,17 @@ Le projet de la cinquième session consiste à réaliser
 \subsection{Explication du projet}
 
 \subsection{Schéma bloc du système}
+
+\begin{figure}[hbtp]
+\caption{Vue d'ensemble du projet}
+\centering
+\fbox{\includegraphics[scale=0.45]{Figures/SchemaBloc/1.png}}
+\end{figure}
+
+
 \subsubsection{Bloc 1}
-Le bloc 1 est composé d'un ordinateur muni d'une carte d'extension PCI vers bus CAN. Son rôle est de contrôler et diriger toute l'opération et de veiller au bon fonctionnement de chaque composantes à l'aide d'une application en Csharp. Le bloc 1 est le cerveau de l'usine.
- 
+
 \subsubsection{Bloc 2}
-Le bloc 2 est composé d'un système embarqué Linux basé sur le SOC8200. Son rôle principal est d'agir comme sniffeur d'information et d'afficher sur son écran toutes les données qui transitent sur le bus CAN. Toutefois, ce dernier est en mesure de détecter une défaillance du PC via un gestionnaire de HeartBeat et de prendre la relève en tant que cerveau de l'opération. Le SOC8200 agit comme vice-président du bus CAN.
 
 \subsubsection{Bloc 3}
 
@@ -212,15 +219,15 @@ f
 
 \section{Le matériel}
 \subsection{Bloc 1}
-D'un pont de vu matériel, le bloc 1 est le plus simple, car il est composé d'un ordinateur Windows munie d'une carte PCI vers CAN et d'une prise RS232. Il n'y a rien à faire, mise à part brancher les bons câbles aux bons endroits.
+D'un pont de vu matériel, le bloc 1 est le plus simple, car il est composé d'un ordinateur Windows munie d'une carte PCI vers CAN et d'une prise RS232 et d'une prise Ethernet. Il n'y a rien à faire, mise à part brancher les bons câbles aux bons endroits. Son rôle est de contrôler et diriger toute l'opération et de veiller au bon fonctionnement de chaque composantes à l'aide d'une application en Csharp. Le bloc 1 est le cerveau de l'usine.
 
 \subsection{Bloc 2}
+Le bloc 2 est composé du bolide et de la station no.1. Cette dernière, dont le cerveau est une carte uPSD, joue le rôle de centralisateur CAN. En effet, cette station reçoit des consignes\footnote{Sous forme de trames} en provenance du PC, consignes qu'elle s'empresse d'expédier aux bons endroits via Xbee. De plus, cette station reçoit des information de la station de pesée\footnote{Sous forme de trames CAN}, de la table FESTO\footnote{Via Xbee} et du bolide\footnote{Idem}. Ces informations sont systématiquement retransmises au PC via le bus CAN.
 
 \subsection{Bloc 3}
 
 \subsection{Bloc 4}
-
-
+Le bloc 4 est composé d'un système embarqué Linux basé sur le SOC8200. Son rôle principal est d'agir comme sniffeur d'information et d'afficher sur son écran toutes les données qui transitent sur le bus CAN. Toutefois, ce dernier est en mesure de détecter une défaillance du PC via un gestionnaire de HeartBeat et de prendre la relève en tant que cerveau de l'opération. Le SOC8200 agit comme vice-président du bus CAN.
 
 \subsection{Explication des types de liens}
 \subsubsection{RS232}
@@ -228,7 +235,6 @@ Un lien RS232 9600 Bauds est établi entre l'ordinateur et le SOC8200. Ce lien s
 
 \subsubsection{Xbee}
 Lorsque les modules Xbee sont adéquatement configurés, ils font office de remplacement au câble RS232. En effet, nos Xbee discutent entre eux à l'aide du protocole de communication RS232 à 9600 bauds.  
-
 
 \subsection{Explication des trames}
 \subsubsection{RS-232}
@@ -369,7 +375,7 @@ Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\
 \pagebreak
 
 \subsubsection{XBEE}
-Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station no.1 (la carte $\mu PSD$), sur la station no.2 (la table FESTO) et la station no.6, c'est à dire le bolide. La particularité des Xbee est que lorsqu'ils sont adéquatement configurés, tout ce qu'envoie un Xbee est reçu et lu par tous les autres Xbee à proximité, et c'est pourquoi nous avons définit un système de trames.
+Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station no.1 (la carte uPSD), sur la station no.2 (la table FESTO) et la station no.6, c'est à dire le bolide. La particularité des Xbee est que lorsqu'ils sont adéquatement configurés, tout ce qu'envoie un Xbee est reçu et lu par tous les autres Xbee à proximité, et c'est pourquoi nous avons définit un système de trames.
 
 
 
@@ -380,7 +386,7 @@ Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station n
 \begin{multicols}{3}
 \begin{itemize}
 \item[•]Carte Dallas
-\item[•]Carte $\mu PSD$
+\item[•]Carte uPSD
 \item[•]SOC 8200 (avec clavier)
 \item[•]PIC18FmachinTruc
 \item[•]Carte d'extension SPI
@@ -409,7 +415,7 @@ Trois modules Xbee sont présent sur l'ensemble du projet, soit sur la station n
 Mettre ien vers GitHUB
 \pagebreak
 \subsubsection{Datasheets}
-Note: Toutes les datasheets sont en format non-compressé. Vous pouvez zoomer sur le document PDF\footnote{Présenter les datasheets de la sorte économise du papier, donc des arbres, mais requiert de consulter le document .PDF afin de lire adéquatement les datasheets.} afin de lire l'intégralité de leurs première page.
+Note: Toutes les datasheets sont en format non-compressé. Vous pouvez zoomer sur le document PDF\footnote{Présenter les datasheets de la sorte économise du papier, donc des arbres, mais requiert de consulter le document .PDF afin de lire adéquatement les datasheets.} afin de lire l'intégralité de leurs premières pages.
 \begin{multicols}{3}
 74HC14\\
 \fbox{\includegraphics[scale=0.2]{Figures/Datasheets/74HC14.pdf}}\\
@@ -478,12 +484,9 @@ wefsd
 \end{verbatim}
 \begin{spacing}{1.5}
 
-
-
 \subsection{Structure du programme}
 \subsubsection{Les Ghosts Labels}
 Un ghost label est un label de texte présent sur l'interface, mais définit comme invisible. Il est doc impossible pour l'usager de le voir et d'y accéder. Leurs principales utilités est de faire office de variable globale afin de passer des paramètres entre fonctions et de déclencher des événements système lorsqu'ils sont lut ou modifié.
-
 
 \subsection{Explication des trames}
 
@@ -499,9 +502,6 @@ Un ghost label est un label de texte présent sur l'interface, mais définit com
 Le programme du SOC2800 est écrit en script Shell\footnote{Car c'est plus simple que de se battre avec le gestionnaire de licence de Sourcery Codebench}\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable sur un système Linux}
 
 \subsection{Schéma bloc}
-
-\subsubsection{Du code}
-Mettre Doxygen generated stuff
 
 \subsubsection{Du script shell}
 
@@ -521,10 +521,33 @@ Mettre Doxygen generated stuff
 Le programme de la station 1, 2 et du bolide est écrit en C++ à l'aide d'IAR WorkBench 8.20 et la compilation conditionnelle offre de le compiler pour chacune des trois stations mentionnées. De plus, la compilation conditionnelle permet au bolide d'utiliser soit une carte d'extension I2C, soit une carte d'extension SPI pour contrôler ses moteurs.
 
 \subsection{La station no.1}
-La sation no.1 est composé de $\mu$PSD et s'appelle Bloc no.2 dans le cahier de consignes. Cette station reçoit les directives du PC par le BUS CAN et les expédie sur le bus CAN (et vice-versa) aux endroits appropriés. C'est aussi à cette station qu'incombe la tâche de communiquer avec le bolide et la table FESTO via des Xbee
+La station no.1 est composé de uPSD et s'appelle Bloc no.2 dans le cahier de consignes. Cette station reçoit les directives du PC par le BUS CAN et les expédie sur le bus CAN (et vice-versa) aux endroits appropriés. C'est aussi à cette station qu'incombe la tâche de communiquer avec le bolide et la table FESTO via des Xbee
 
 \subsection{La station no.2}
-La sation no.2 est composé de la table FESTO et s'appelle Bloc no.3 dans le cahier de consignes
+La station no.2 (qui s'appelle Bloc no.3 dans le cahier de consignes) est composé de la table FESTO, de la carte uPSD, de trois cartes d'extensions IO et d'un Xbee.
+
+\subsection{Schéma des héritages de classes, table FESTO}
+\begin{center}
+\fbox{\includegraphics[scale=1]{Figures/DoxyFESTO/1.pdf}}\\
+\begin{multicols}{3}
+\fbox{\includegraphics[scale=0.14]{Figures/DoxyFESTO/2.pdf}}\\
+\fbox{\includegraphics[scale=0.1]{Figures/DoxyFESTO/3.pdf}}\\
+\fbox{\includegraphics[scale=0.14]{Figures/DoxyFESTO/4.pdf}}\\
+\end{multicols}
+\end{center}
+\pagebreak
+
+
+
+\subsection{Schéma des héritages de classes, Bolide et Station 1}
+\begin{center}
+\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/1.pdf}}\\
+\bigskip
+\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/2.pdf}}
+\end{center}
+
+
+
 
 \subsection{Le bolide}
 \begin{table}[!ht]
@@ -550,7 +573,7 @@ OPT101  &  0x50 & Suiveur de ligne  \\
 
 \pagebreak
 \subsection{Procédure de compilation sur IAR}
-Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivante, afin de compiler le code pour la carte Dallas ou pour la carte $\mu PSD$. 
+Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivante, afin de compiler le code pour la carte Dallas ou pour la carte uPSD. 
 
 \begin{figure}[hbtp]
 \caption{Choix de la cible sur IAR}
@@ -558,7 +581,7 @@ Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivant
 \fbox{\includegraphics[scale=1]{Figures/Procedure/procedure.png}}
 \end{figure}
 
-De plus, des paramètres de compilation optionnelle vous permettent, via la décommentation, de compiler le code pour la carte Dallasou $\mu PSD$, pour la carte d'extension I2C ou SPI et pour un capteur de ligne à 3 ou à 5 photoréccepteurs.\\
+De plus, des paramètres de compilation optionnelle vous permettent, via la décommentation, de compiler le code pour la carte Dallasou uPSD, pour la carte d'extension I2C ou SPI et pour un capteur de ligne à 3 ou à 5 photoréccepteurs.\\
 \end{spacing}
 \textbf{Appercu des directives de compilation conditionnelles}
 \begin{lstlisting}
@@ -572,7 +595,7 @@ De plus, des paramètres de compilation optionnelle vous permettent, via la déc
 \begin{spacing}{1.5}
 \subsection{Procédure de vérification}
 
-
+\pagebreak
 \section{Logiciel du module PIC18F258}
 \subsection{Description du fonctionnement du programme}
 
@@ -595,7 +618,7 @@ Alors...\\
 $\overbrace{9600 = \dfrac{2^{1}}{32} \cdot \dfrac{24\cdot10^{6}(Hz)}{12\cdot(256 - 243)}}^{uPSD 3254} $ $\Leftarrow \& \Rightarrow $ $ \overbrace{9600 = \dfrac{2^{0}}{32}\cdot \dfrac{11.0597 \cdot 10^{6}(Hz)}{12\cdot(256 - 253)}}^{DS89C450}$
 \pagebreak
 \section{Fichiers Gerbers}
-Une carte d'extionsion à été réalisée avec OrCad 16.2 et à été gravée sur la rutilante LPKF. Voici les gouches gerber\footnote{Les couches présentées no sont pas à l'échelle}.
+Une carte d'extension, dont voici les images GERBER\footnote{Les couches présentées no sont pas à l'échelle}, à été réalisée avec OrCAD 16.2 et gravée à l'aide de la rutilante LPKF.
 
 \begin{figure}[hbtp]
 \caption{Couche TOP}
@@ -639,9 +662,11 @@ Une carte d'extionsion à été réalisée avec OrCad 16.2 et à été gravée s
 \caption{Drill}
 \centering
 \fbox{\includegraphics[scale=0.45]{Figures/OrCad/drill.png}}
+\caption{Correctif}
+\fbox{\includegraphics[scale=0.45]{Figures/OrCad/patch.jpg}}
 \end{figure}
 
-
+Il est à noter que nous avons dû réaliser un correctif lors de la soudure de la carte IO du projet. La zone de ground plane en bleu devait être reliée à GND, c'est-à-dire la zone verte, mais ce n'était pas la cas. C'est pourquoi un bout de fil à été soudé afin de pailler à ce manque.
 
 
 \pagebreak
@@ -678,10 +703,42 @@ Une carte d'extionsion à été réalisée avec OrCad 16.2 et à été gravée s
 \subsubsection{Louis-Norman Ang-Houle}
 
 \end{spacing}
-\include{Codesource/BolideUpsd}
 \include{Codesource/cSharp}
+\include{Codesource/BolideUpsd}
+\include{Codesource/FESTO}
 \include{Codesource/PIC}
 \include{Codesource/ShellScript}
-\include{Codesource/FESTO}
+
+\textbf{Bonus}\\
+
+\bigskip
+
+\noindent $\mathbf{*54\cdot43.} \vdash:.\alpha,\beta\in1.\supset:\alpha\cap\beta=\Lambda.\equiv.\alpha\cup\beta\in2$\\ 
+\indent\emph{Dem.}
+\begin{flalign}\nonumber
+\vdash .*54\cdot26.\supset\vdash:.\alpha=\iota'x.\beta=\iota'y.\supset:\alpha\cup\beta\in2.&\equiv.x\neq y.\\\nonumber
+[*51\cdot 231]\hspace{4.7cm}\hspace{1cm} & \equiv.t'x\cap\iota'y=\Lambda.\\
+[*13\cdot 12]\hspace{4.88cm}\hspace{1cm} & \equiv.\alpha\cap\beta=\Lambda \\\nonumber
+\vdash.(1).*11\cdot11\cdot35.\supset\hspace{2.88cm}\hspace{1cm}\\
+\vdash:.(\exists x,y).\alpha=\iota'x.\beta=\iota'y.\supset:\alpha\cup\beta\in2.&\equiv.\alpha\cap\beta=\Lambda\\\nonumber
+\vdash.(2).*11\cdot54.*52\cdot1.\supset\vdash.Prop\hspace{1.09cm}\hspace{1cm}\end{flalign}
+\indent From this proposition it will follow, when arithmetical addition has been defined, that $1 + 1 = 2$.
+
+
+\bigskip
+
+
+\bigskip
+
+
+\bigskip
+
+
+\bigskip
+
+\begin{flushleft}
+Cette démonstration mathématique prouve hors de tout doute que $1 + 1 = 2$.\\ Si les mathématiques sont vrais, alors notre projet devrait aller.
+
+\end{flushleft}
 \end{document}
 

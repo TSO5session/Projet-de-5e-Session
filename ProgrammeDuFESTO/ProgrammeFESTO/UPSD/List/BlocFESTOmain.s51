@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        24/Nov/2014  22:54:31 /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        25/Nov/2014  19:57:45 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -267,7 +267,7 @@ WDKEY:
         RSEG XDATA_Z:XDATA:NOROOT(0)
         DATA8
 FESTO:
-        DS 17
+        DS 20
         REQUIRE __INIT_XDATA_Z
 
         RSEG XDATA_Z:XDATA:NOROOT(0)
@@ -345,11 +345,11 @@ main:
 //  2 bytes in segment SFR_AN
 // 11 bytes in segment XDATA_I
 // 11 bytes in segment XDATA_ID
-// 19 bytes in segment XDATA_Z
+// 22 bytes in segment XDATA_Z
 // 
 // 47 bytes of CODE  memory
 //  0 bytes of DATA  memory (+ 2 bytes shared)
-// 30 bytes of XDATA memory
+// 33 bytes of XDATA memory
 //
 //Errors: none
 //Warnings: 2

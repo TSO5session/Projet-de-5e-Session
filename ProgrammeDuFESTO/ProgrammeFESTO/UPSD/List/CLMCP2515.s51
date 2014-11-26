@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        24/Nov/2014  22:54:30 /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        25/Nov/2014  19:57:44 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -101,13 +101,6 @@
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME XSTACK, 15, STACK
-        PUBLIC ??EcrireDonnesMCP2515
-        FUNCTION ??EcrireDonnesMCP2515,021203H
-        ARGFRAME XSTACK, 16, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        LOCFRAME ISTACK, 2, STACK
-        LOCFRAME XSTACK, 16, STACK
         PUBLIC ??EcrireRegistreMCP2515
         FUNCTION ??EcrireRegistreMCP2515,021203H
         ARGFRAME XSTACK, 15, STACK
@@ -146,6 +139,13 @@
         ARGFRAME XSTACK, 0, STACK
         LOCFRAME ISTACK, 1, STACK
         LOCFRAME XSTACK, 15, STACK
+        PUBLIC ??Write
+        FUNCTION ??Write,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 16, STACK
         PUBLIC `??delete ~CLMCP2515`
         FUNCTION `??delete ~CLMCP2515`,021203H
         ARGFRAME XSTACK, 0, STACK
@@ -269,8 +269,8 @@
         ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??Write
-        FUNCTION ??Write,0202H
+        EXTERN ??Write_1
+        FUNCTION ??Write_1,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 16, STACK
@@ -542,7 +542,7 @@ _A_P1:
         CFI Function ??InitialisationMCP2515
         CODE
 //   37 {
-        FUNCALL ??InitialisationMCP2515, ??EcrireDonnesMCP2515
+        FUNCALL ??InitialisationMCP2515, ??Write
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 9, STACK
@@ -814,8 +814,8 @@ _A_P1:
         MOV     A,R3
         MOV     R7,A
 //   38    /* Envoi de la commande de « RESET », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. */
-//   39    EcrireDonnesMCP2515(1, MCP2515_RESET, 0x00, 0x00);
-        ; Setup parameters for call to function CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+//   39    Write(1, MCP2515_RESET, 0x00, 0x00);
+        ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
         MOV     ?V0 + 0,#0x0
         MOV     R0,#?V0 + 0
         LCALL   ?PUSH_XSTACK_I_ONE
@@ -827,7 +827,7 @@ _A_P1:
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   ??EcrireDonnesMCP2515
+        LCALL   ??Write
         MOV     A,#0x1
         LCALL   ?DEALLOC_XSTACK8
         CFI CFA_XSP16 add(XSP16, 8)
@@ -1138,7 +1138,7 @@ _A_P1:
         CFI Function ??EcrireRegistreMCP2515
         CODE
 //  156 {
-        FUNCALL ??EcrireRegistreMCP2515, ??EcrireDonnesMCP2515
+        FUNCALL ??EcrireRegistreMCP2515, ??Write
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 9, STACK
@@ -1167,8 +1167,8 @@ _A_P1:
         MOV     R7,A
         MOV     A,R4
         MOV     R6,A
-//  157    EcrireDonnesMCP2515(3, MCP2515_WRITE, Address, Data);   /* Envoi de 3 octets :
-        ; Setup parameters for call to function CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+//  157    Write(3, MCP2515_WRITE, Address, Data);   /* Envoi de 3 octets :
+        ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
         MOV     ?V0 + 0,A
         MOV     R0,#?V0 + 0
         LCALL   ?PUSH_XSTACK_I_ONE
@@ -1177,7 +1177,7 @@ _A_P1:
         MOV     R5,A
         MOV     R4,#0x2
         MOV     R1,#0x3
-        LCALL   ??EcrireDonnesMCP2515
+        LCALL   ??Write
         MOV     A,#0x1
         LCALL   ?DEALLOC_XSTACK8
         CFI CFA_XSP16 add(XSP16, 8)
@@ -1412,7 +1412,7 @@ _A_P1:
         ARGFRAME XSTACK, 15, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??EnvoyerTrameMCP2515, ??EcrireDonnesMCP2515
+        FUNCALL ??EnvoyerTrameMCP2515, ??Write
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 16, STACK
@@ -1538,8 +1538,8 @@ _A_P1:
         JC      ??EnvoyerTrameMCP2515_3
 //  241 
 //  242    /* Envoi de la commande « RTS », qui consiste en l'envoi de l'octet « 0xC0 », par le bus SPI. */
-//  243    EcrireDonnesMCP2515(1, MCP2515_RTS_TX0, 0x00, 0x00);
-        ; Setup parameters for call to function CLMCP2515::EcrireDonnesMCP2515(UC, UC, UC, UC)
+//  243    Write(1, MCP2515_RTS_TX0, 0x00, 0x00);
+        ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
         MOV     ?V0 + 0,#0x0
         MOV     R0,#?V0 + 0
         LCALL   ?PUSH_XSTACK_I_ONE
@@ -1551,7 +1551,7 @@ _A_P1:
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   ??EcrireDonnesMCP2515
+        LCALL   ??Write
         MOV     A,#0x1
         LCALL   ?DEALLOC_XSTACK8
         CFI CFA_XSP16 add(XSP16, 15)
@@ -1575,18 +1575,14 @@ _A_P1:
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock8
 //  247 
-//  248 
-//  249 
-//  250 
-//  251 
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  252 UC*  CLMCP2515 :: Read(void)
+//  248 UC* CLMCP2515 :: Read(void)
 ??Read:
         CFI Block cfiBlock9 Using cfiCommon0
         CFI Function ??Read
         CODE
-//  253 {
+//  249 {
         FUNCALL ??Read, ??LireRegistreMCP2515
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1641,8 +1637,8 @@ _A_P1:
         MOV     R6,A
         MOV     A,R3
         MOV     R7,A
-//  254  UC ucTrame; 
-//  255  ucTrame  = LireRegistreMCP2515(MCP2515_RXB0DLC);
+//  250  UC ucTrame; 
+//  251  ucTrame  = LireRegistreMCP2515(MCP2515_RXB0DLC);
         ; Setup parameters for call to function CLMCP2515::LireRegistreMCP2515(unsigned char)
         MOV     R1,#0x65
         MOV     A,R6
@@ -1652,18 +1648,18 @@ _A_P1:
         LCALL   ??LireRegistreMCP2515
         MOV     A,R1
         MOV     ?V0 + 3,A
-//  256  ucBuf[0] = ucTrame;
+//  252  ucBuf[0] = ucTrame;
         MOV     A,?V0 + 3
         MOV     DPL,R6
         MOV     DPH,R7
         MOV     A,?V0 + 3
         MOVX    @DPTR,A
-//  257     
-//  258  for(UC uci = 0; uci < ucTrame; uci++)
+//  253     
+//  254  for(UC uci = 0; uci < ucTrame; uci++)
         MOV     ?V0 + 2,#0x0
         SJMP    ??Read_1
-//  259    {
-//  260     ucBuf[uci + 1] = LireRegistreMCP2515( MCP2515_RXB0D0 + uci);
+//  255    {
+//  256     ucBuf[uci + 1] = LireRegistreMCP2515( MCP2515_RXB0D0 + uci);
 ??Read_2:
         ; Setup parameters for call to function CLMCP2515::LireRegistreMCP2515(unsigned char)
         MOV     A,#0x66
@@ -1689,7 +1685,7 @@ _A_P1:
         POP     A
         CFI CFA_SP SP+0
         MOVX    @DPTR,A
-//  261     Delai(1000);
+//  257     Delai(1000);
         ; Setup parameters for call to function CLMCP2515::Delai(unsigned long)
         MOV     DPTR,#__Constant_3e8
         LCALL   ?PUSH_XSTACK8_X_FOUR
@@ -1702,14 +1698,14 @@ _A_P1:
         MOV     A,#0x4
         LCALL   ?DEALLOC_XSTACK8
         CFI CFA_XSP16 add(XSP16, 11)
-//  262    }
+//  258    }
         INC     ?V0 + 2
 ??Read_1:
         MOV     A,?V0 + 2
         CLR     C
         SUBB    A,?V0 + 3
         JC      ??Read_2
-//  263   return(ucBuf);
+//  259   return(ucBuf);
         MOV     A,R6
         MOV     R2,A
         MOV     A,R7
@@ -1717,16 +1713,16 @@ _A_P1:
         MOV     R7,#0x4
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock9
-//  264 }
-//  265 
+//  260 }
+//  261 
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  266 void CLMCP2515 :: AcquitterInterruptionsMCP2515(void)
+//  262 void CLMCP2515 :: AcquitterInterruptionsMCP2515(void)
 ??AcquitterInterruptionsMCP2515:
         CFI Block cfiBlock10 Using cfiCommon0
         CFI Function ??AcquitterInterruptionsMCP2515
         CODE
-//  267 {
+//  263 {
         FUNCALL ??AcquitterInterruptionsMCP2515, ??EcrireRegistreMCP2515
         LOCFRAME ISTACK, 2, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1770,31 +1766,31 @@ _A_P1:
         ; Auto size: 0
         MOV     DPL,R2
         MOV     DPH,R3
-//  268    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x87);   /* Registe 0x0F.
+//  264    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x87);   /* Registe 0x0F.
         ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
         MOV     R4,#-0x79
         MOV     R1,#0xf
         MOV     R2,DPL
         MOV     R3,DPH
         LCALL   ??EcrireRegistreMCP2515
-//  269                               Le circuit est passé en « Configuration mode ». */
-//  270    EcrireRegistreMCP2515(MCP2515_CANINTF, 0x00);   /* Registre 0x2C.
+//  265                               Le circuit est passé en « Configuration mode ». */
+//  266    EcrireRegistreMCP2515(MCP2515_CANINTF, 0x00);   /* Registre 0x2C.
         ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
         MOV     R4,#0x0
         MOV     R1,#0x2c
         MOV     R2,DPL
         MOV     R3,DPH
         LCALL   ??EcrireRegistreMCP2515
-//  271                               Acquittement des interruptions du circuit MCP2515. */
-//  272    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x07);   /* Registe 0x0F.
+//  267                               Acquittement des interruptions du circuit MCP2515. */
+//  268    EcrireRegistreMCP2515(MCP2515_CANCTRL, 0x07);   /* Registe 0x0F.
         ; Setup parameters for call to function CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
         MOV     R4,#0x7
         MOV     R1,#0xf
         MOV     R2,DPL
         MOV     R3,DPH
         LCALL   ??EcrireRegistreMCP2515
-//  273                               Le circuit est passé en « Normal Operation mode ». */
-//  274 }
+//  269                               Le circuit est passé en « Normal Operation mode ». */
+//  270 }
         POP     DPH
         CFI DPH0 SameValue
         CFI CFA_SP SP+-3
@@ -1803,17 +1799,17 @@ _A_P1:
         CFI CFA_SP SP+-2
         RET
         CFI EndBlock cfiBlock10
-//  275 
-//  276 
+//  271 
+//  272 
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  277 UC CLMCP2515 :: EcrireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
-??EcrireDonnesMCP2515:
+//  273 UC CLMCP2515 :: Write(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
+??Write:
         CFI Block cfiBlock11 Using cfiCommon0
-        CFI Function ??EcrireDonnesMCP2515
+        CFI Function ??Write
         CODE
-//  278 {
-        FUNCALL ??EcrireDonnesMCP2515, ??Write
+//  274 {
+        FUNCALL ??Write, ??Write_1
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 16, STACK
@@ -1857,8 +1853,8 @@ _A_P1:
         LCALL   ?XSTACK_DISP0_8
         MOVX    A,@DPTR
         MOV     R0,A
-//  279    UC k;
-//  280    UC Donnees[3] = {0x00};
+//  275    UC k;
+//  276    UC Donnees[3] = {0x00};
         MOV     DPTR,#`?<Constant {(UC)'\\000'}>`
         PUSH    DPL
         CFI CFA_SP SP+-1
@@ -1874,13 +1870,13 @@ _A_P1:
         CFI CFA_SP SP+0
         MOV     A,#0x3
         LCALL   ?MOVE_LONG8_XDATA_XDATA
-//  281 
-//  282    Donnees[0] = Donnee1;
+//  277 
+//  278    Donnees[0] = Donnee1;
         MOV     A,R6
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOVX    @DPTR,A
-//  283    Donnees[1] = Donnee2;
+//  279    Donnees[1] = Donnee2;
         MOV     A,R7
         PUSH    A
         CFI CFA_SP SP+-1
@@ -1889,7 +1885,7 @@ _A_P1:
         POP     A
         CFI CFA_SP SP+0
         MOVX    @DPTR,A
-//  284    Donnees[2] = Donnee3;
+//  280    Donnees[2] = Donnee3;
         MOV     A,R0
         PUSH    A
         CFI CFA_SP SP+-1
@@ -1898,24 +1894,24 @@ _A_P1:
         POP     A
         CFI CFA_SP SP+0
         MOVX    @DPTR,A
-//  285 
-//  286    CS = 0;  
+//  281 
+//  282    CS = 0;  
         CLR     0x90.7
-//  287 
-//  288    for(k = 0; k < NombreDonneesEnvoyer; k++)
+//  283 
+//  284    for(k = 0; k < NombreDonneesEnvoyer; k++)
         MOV     ?V0 + 1,#0x0
-        SJMP    ??EcrireDonnesMCP2515_1
-//  289    {
-//  290     SPI.Write(0x00, Donnees[k]);
-//  291     for(int V =0 ;V<100;V++);   /* Delai au moins tant que le module du SPI est occupé */   
-??EcrireDonnesMCP2515_2:
+        SJMP    ??Write_2
+//  285    {
+//  286     SPI.Write(0x00, Donnees[k]);
+//  287     for(int V =0 ;V<100;V++);   /* Delai au moins tant que le module du SPI est occupé */   
+??Write_3:
         MOV     A,R0
         ADD     A,#0x1
         MOV     R0,A
         MOV     A,R1
         ADDC    A,#0x0
         MOV     R1,A
-??EcrireDonnesMCP2515_3:
+??Write_4:
         CLR     C
         MOV     A,R0
         SUBB    A,#0x64
@@ -1924,13 +1920,13 @@ _A_P1:
         MOV     C,0xD0 /* PSW */.2
         XRL     A,PSW
         RLC     A
-        JC      ??EcrireDonnesMCP2515_2
+        JC      ??Write_3
         INC     ?V0 + 1
-??EcrireDonnesMCP2515_1:
+??Write_2:
         MOV     A,?V0 + 1
         CLR     C
         SUBB    A,?V0 + 0
-        JNC     ??EcrireDonnesMCP2515_4
+        JNC     ??Write_5
         ; Setup parameters for call to function CLSPI::Write(UC, UC)
         MOV     ?V0 + 2,?V0 + 1
         MOV     ?V0 + 3,#0x0
@@ -1951,18 +1947,18 @@ _A_P1:
         MOV     A,?V0 + 5
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??Write
+        LCALL   ??Write_1
         MOV     A,R1
         MOV     R0,#0x0
         MOV     R1,#0x0
-        SJMP    ??EcrireDonnesMCP2515_3
-//  292    }
-//  293 
-//  294    CS = 1;  
-??EcrireDonnesMCP2515_4:
+        SJMP    ??Write_4
+//  288    }
+//  289 
+//  290    CS = 1;  
+??Write_5:
         SETB    0x90.7
-//  295 
-//  296    return(0x01);
+//  291 
+//  292    return(0x01);
         MOV     R1,#0x1
         MOV     A,#0x3
         LCALL   ?DEALLOC_XSTACK8
@@ -1971,19 +1967,19 @@ _A_P1:
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock11
         REQUIRE _A_P1
-//  297 }
-//  298 
-//  299 
-//  300 
+//  293 }
+//  294 
+//  295 
+//  296 
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  301 unsigned char CLMCP2515 :: LireDonnesMCP2515(unsigned char NombreDonneesEnvoyer, unsigned char Donnee1, unsigned char Donnee2, unsigned char Donnee3)
+//  297 unsigned char CLMCP2515 :: LireDonnesMCP2515(unsigned char NombreDonneesEnvoyer, unsigned char Donnee1, unsigned char Donnee2, unsigned char Donnee3)
 ??LireDonnesMCP2515:
         CFI Block cfiBlock12 Using cfiCommon0
         CFI Function ??LireDonnesMCP2515
         CODE
-//  302 {
-        FUNCALL ??LireDonnesMCP2515, ??Write
+//  298 {
+        FUNCALL ??LireDonnesMCP2515, ??Write_1
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 16, STACK
@@ -2027,9 +2023,9 @@ _A_P1:
         LCALL   ?XSTACK_DISP0_8
         MOVX    A,@DPTR
         MOV     R0,A
-//  303    UC k;
-//  304    UC buf;
-//  305    UC Donnees[3] = {0x00};
+//  299    UC k;
+//  300    UC buf;
+//  301    UC Donnees[3] = {0x00};
         MOV     DPTR,#`?<Constant {(UC)'\\000'}>_1`
         PUSH    DPL
         CFI CFA_SP SP+-1
@@ -2045,13 +2041,13 @@ _A_P1:
         CFI CFA_SP SP+0
         MOV     A,#0x3
         LCALL   ?MOVE_LONG8_XDATA_XDATA
-//  306 
-//  307    Donnees[0] = Donnee1;
+//  302 
+//  303    Donnees[0] = Donnee1;
         MOV     A,R6
         MOV     DPL,?XSP + 0
         MOV     DPH,?XSP + 1
         MOVX    @DPTR,A
-//  308    Donnees[1] = Donnee2;
+//  304    Donnees[1] = Donnee2;
         MOV     A,R7
         PUSH    A
         CFI CFA_SP SP+-1
@@ -2060,7 +2056,7 @@ _A_P1:
         POP     A
         CFI CFA_SP SP+0
         MOVX    @DPTR,A
-//  309    Donnees[2] = Donnee3;
+//  305    Donnees[2] = Donnee3;
         MOV     A,R0
         PUSH    A
         CFI CFA_SP SP+-1
@@ -2069,16 +2065,16 @@ _A_P1:
         POP     A
         CFI CFA_SP SP+0
         MOVX    @DPTR,A
-//  310 
-//  311    CS = 0;   
+//  306 
+//  307    CS = 0;   
         CLR     0x90.7
-//  312 
-//  313    for(k = 0; k < NombreDonneesEnvoyer; k++)
+//  308 
+//  309    for(k = 0; k < NombreDonneesEnvoyer; k++)
         MOV     ?V0 + 1,#0x0
         SJMP    ??LireDonnesMCP2515_1
-//  314    {
-//  315     buf = SPI.Write( 0x00 , Donnees[k]);
-//  316     for(int V = 0 ; V < 100; V++);   /* Delai au moins tant que le module du SPI est occupé */   
+//  310    {
+//  311     buf = SPI.Write( 0x00 , Donnees[k]);
+//  312     for(int V = 0 ; V < 100; V++);   /* Delai au moins tant que le module du SPI est occupé */   
 ??LireDonnesMCP2515_2:
         MOV     A,R0
         ADD     A,#0x1
@@ -2122,19 +2118,19 @@ _A_P1:
         MOV     A,?V0 + 5
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??Write
+        LCALL   ??Write_1
         MOV     A,R1
         MOV     R2,A
         MOV     R0,#0x0
         MOV     R1,#0x0
         SJMP    ??LireDonnesMCP2515_3
-//  317    }
-//  318 
-//  319    CS = 1;   
+//  313    }
+//  314 
+//  315    CS = 1;   
 ??LireDonnesMCP2515_4:
         SETB    0x90.7
-//  320 
-//  321    return(buf);
+//  316 
+//  317    return(buf);
         MOV     A,R2
         MOV     R1,A
         MOV     A,#0x3
@@ -2144,18 +2140,18 @@ _A_P1:
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock12
         REQUIRE _A_P1
-//  322 }
-//  323 
-//  324 
-//  325 
+//  318 }
+//  319 
+//  320 
+//  321 
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  326 void CLMCP2515 :: Delai(unsigned long Temps)
+//  322 void CLMCP2515 :: Delai(unsigned long Temps)
 ??Delai:
         CFI Block cfiBlock13 Using cfiCommon0
         CFI Function ??Delai
         CODE
-//  327 {
+//  323 {
         MOV     A,#-0xf
         LCALL   ?FUNC_ENTER_XDATA
         CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
@@ -2181,8 +2177,8 @@ _A_P1:
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
         LCALL   ?L_MOV_X
-//  328  unsigned long k;
-//  329  for(k = 0; k < Temps; k++);
+//  324  unsigned long k;
+//  325  for(k = 0; k < Temps; k++);
         MOV     DPTR,#__Constant_0
         MOV     R0,#?V0 + 4
         LCALL   ?L_MOV_X
@@ -2196,19 +2192,19 @@ _A_P1:
         MOV     R1,#?V0 + 4
         LCALL   ?UL_GT
         JC      ??Delai_2
-//  330 }
+//  326 }
         MOV     R7,#0x8
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock13
-//  331 
+//  327 
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  332 unsigned char CLMCP2515 :: Longueur(const  unsigned char * Contenu)
+//  328 unsigned char CLMCP2515 :: Longueur(const  unsigned char * Contenu)
 ??Longueur:
         CFI Block cfiBlock14 Using cfiCommon0
         CFI Function ??Longueur
         CODE
-//  333 {
+//  329 {
         MOV     A,#-0x9
         LCALL   ?FUNC_ENTER_XDATA
         CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
@@ -2224,15 +2220,15 @@ _A_P1:
         CFI CFA_XSP16 add(XSP16, 9)
         ; Saved register size: 9
         ; Auto size: 0
-//  334 UC Compteur = 0;
+//  330 UC Compteur = 0;
         MOV     R1,#0x0
         SJMP    ??Longueur_1
-//  335 while(Contenu[Compteur] != '\0')
-//  336   {
-//  337    Compteur++;
+//  331 while(Contenu[Compteur] != '\0')
+//  332   {
+//  333    Compteur++;
 ??Longueur_2:
         INC     R1
-//  338   }
+//  334   }
 ??Longueur_1:
         MOV     ?V0 + 0,R1
         MOV     ?V0 + 1,#0x0
@@ -2244,11 +2240,11 @@ _A_P1:
         MOV     DPH,A
         MOVX    A,@DPTR
         JNZ     ??Longueur_2
-//  339 return(Compteur);
+//  335 return(Compteur);
         MOV     R7,#0x2
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock14
-//  340 }
+//  336 }
 
         RSEG XDATA_I:XDATA:NOROOT(0)
         DATA32
@@ -2311,8 +2307,8 @@ __Constant_1:
         REQUIRE __INIT_XDATA_Z
 
         END
-//  341 
-//  342 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+//  337 
+//  338 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 // 
 // 1 292 bytes in segment NEAR_CODE
 //     1 byte  in segment SFR_AN

@@ -1,0 +1,506 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         25/Nov/2014  19:57:45 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\CLFestoCaptors.cpp                               #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\CLFestoCaptors.cpp" -D UPSD3254A                 #
+#                          --preprocess=cl "C:\Synchro\Dropbox\Travaux\Automn #
+#                          e 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFE #
+#                          STO\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Au #
+#                          tomne 2014\ProjetSession5\ProgrammeDuFESTO\Program #
+#                          meFESTO\UPSD\List\" -lA "C:\Synchro\Dropbox\Travau #
+#                          x\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Pro #
+#                          grammeFESTO\UPSD\List\" -o                         #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\" -e --no_cse --no_unroll --no_inline   #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large --code_model=near   #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\CLFestoCaptors.lst                     #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\CLFestoCaptors.r51                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLFestoCaptors.cpp
+      1          // **************************CLFestoCaptors.cpp
+      2          // Auteur:       Prenom Nom
+      3          // Date:         19 Octobre 2014
+      4          // Version:      1.0
+      5          // Modification: Aucune
+      6          //
+      7          // Compilateur:  IAR 8.1
+      8          //
+      9          // Description:
+     10          // *****************************************************************************
+     11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
+     12          #include "CLFestoCaptors.h"             
+     13          
+     14          
+     15          //******************************************************************************
+     16          //                            LE CONSTRUCTEUR PAR DEFAUT
+     17          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     18          CLFestoCaptors :: CLFestoCaptors(void)
+   \                     ??CLFestoCaptors:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     19          {
+   \   000009                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??CLSPI
+   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   000010   8E82         MOV     DPL,R6
+   \   000012   8F83         MOV     DPH,R7
+   \   000014   A3           INC     DPTR
+   \   000015   AA82         MOV     R2,DPL
+   \   000017   AB83         MOV     R3,DPH
+   \   000019   12....       LCALL   ??CLI2CPort
+     20          
+     21          }
+   \   00001C   EE           MOV     A,R6
+   \   00001D   FA           MOV     R2,A
+   \   00001E   EF           MOV     A,R7
+   \   00001F   FB           MOV     R3,A
+   \   000020   7F01         MOV     R7,#0x1
+   \   000022   02....       LJMP    ?FUNC_LEAVE_XDATA
+     22          
+     23          //******************************************************************************
+     24          //                            LE CONSTRUCTEUR INITIALISATEUR
+     25          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     26          CLFestoCaptors :: CLFestoCaptors(UC ucParametre)
+   \                     ??CLFestoCaptors_1:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     27          {
+   \   000009                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??CLSPI
+   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   000010   8E82         MOV     DPL,R6
+   \   000012   8F83         MOV     DPH,R7
+   \   000014   A3           INC     DPTR
+   \   000015   AA82         MOV     R2,DPL
+   \   000017   AB83         MOV     R3,DPH
+   \   000019   12....       LCALL   ??CLI2CPort
+     28          
+     29          }
+   \   00001C   EE           MOV     A,R6
+   \   00001D   FA           MOV     R2,A
+   \   00001E   EF           MOV     A,R7
+   \   00001F   FB           MOV     R3,A
+   \   000020   7F01         MOV     R7,#0x1
+   \   000022   02....       LJMP    ?FUNC_LEAVE_XDATA
+     30          
+     31          // *****************************************************************************
+     32          //                            LE DESTRUCTEUR
+     33          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     34          CLFestoCaptors :: ~CLFestoCaptors(void)
+   \                     `?~CLFestoCaptors`:
+     35          {
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     36          
+     37          }
+   \   000009                ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   AA82         MOV     R2,DPL
+   \   000010   AB83         MOV     R3,DPH
+   \   000012   12....       LCALL   `?~CLI2CPort`
+   \   000015                ; Setup parameters for call to function CLSPI::~CLSPI()
+   \   000015   EE           MOV     A,R6
+   \   000016   FA           MOV     R2,A
+   \   000017   EF           MOV     A,R7
+   \   000018   FB           MOV     R3,A
+   \   000019   12....       LCALL   `?~CLSPI`
+   \   00001C   7F01         MOV     R7,#0x1
+   \   00001E   02....       LJMP    ?FUNC_LEAVE_XDATA
+     38          
+     39          // **********************FONCTION: readCapacitiveCaptor()
+     40          //
+     41          // DESCRIPTION        : Lit le capteur capacitif et retourne la valeur lue
+     42          //
+     43          // INCLUDE            : "_DeclarationGenerale.h" "CLFestoCaptors.h"
+     44          //                      
+     45          // PROTOTYPE          : UC readOpticCaptor(void)
+     46          //
+     47          // PROCEDURE D'APPEL  : data = readOpticCaptor()
+     48          //
+     49          // PARAMETRE D'ENTREE : AUCUN
+     50          //
+     51          // PARAMETRE DE SORTIE: UC
+     52          //
+     53          // Auteur             : Vincent Chouinard
+     54          // Date               : 25 novembre 2014   (Version 1.0)
+     55          // Modification       :
+     56          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     57          UC CLFestoCaptors :: readCapacitiveCaptor (void)
+   \                     ??readCapacitiveCaptor:
+     58          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     59          return(0);
+   \   000000   7900         MOV     R1,#0x0
+   \   000002   22           RET
+     60          }
+     61          
+     62          // **********************FONCTION: readOpticCaptor()
+     63          //
+     64          // DESCRIPTION        : Lit le capteur optique et retourne la valeur lue
+     65          //
+     66          // INCLUDE            : "_DeclarationGenerale.h" "CLFestoCaptors.h"
+     67          //                      
+     68          // PROTOTYPE          : UC readOpticCaptor(void)
+     69          //
+     70          // PROCEDURE D'APPEL  : data = readOpticCaptor()
+     71          //
+     72          // PARAMETRE D'ENTREE : AUCUN
+     73          //
+     74          // PARAMETRE DE SORTIE: UC
+     75          //
+     76          // Auteur             : Vincent Chouinard
+     77          // Date               : 25 novembre 2014   (Version 1.0)
+     78          // Modification       :
+     79          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     80          UC CLFestoCaptors :: readOpticCaptor (void)
+   \                     ??readOpticCaptor:
+     81          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     82          return(0); 
+   \   000000   7900         MOV     R1,#0x0
+   \   000002   22           RET
+     83          }
+     84          
+     85          // **********************FONCTION: readMagneticCaptor()
+     86          //
+     87          // DESCRIPTION        : Lit le capteur magnétique et retourne la valeur lue
+     88          //
+     89          // INCLUDE            : "_DeclarationGenerale.h" "CLFestoCaptors.h"
+     90          //                      
+     91          // PROTOTYPE          : UC readInductiveCaptor(void)
+     92          //
+     93          // PROCEDURE D'APPEL  : data = readInductiveCaptor()
+     94          //
+     95          // PARAMETRE D'ENTREE : AUCUN
+     96          //
+     97          // PARAMETRE DE SORTIE: UC
+     98          //
+     99          // Auteur             : Vincent Chouinard
+    100          // Date               : 25 novembre 2014   (Version 1.0)
+    101          // Modification       :
+    102          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    103          UC CLFestoCaptors :: readInductiveCaptor (void)
+   \                     ??readInductiveCaptor:
+    104          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    105          return(0);   
+   \   000000   7900         MOV     R1,#0x0
+   \   000002   22           RET
+    106          }
+    107          
+    108          // **********************FONCTION: readHeightCaptor()
+    109          //
+    110          // DESCRIPTION        : Lit le capteur de hauteur du bloc
+    111          //
+    112          // INCLUDE            : "_DeclarationGenerale.h" "CLFestoCaptors.h"
+    113          //                      
+    114          // PROTOTYPE          : UC readHeightCaptor(void)
+    115          //
+    116          // PROCEDURE D'APPEL  : data = readHeightCaptor()
+    117          //
+    118          // PARAMETRE D'ENTREE : AUCUN
+    119          //
+    120          // PARAMETRE DE SORTIE: UC
+    121          //
+    122          // Auteur             : Vincent Chouinard
+    123          // Date               : 25 novembre 2014   (Version 1.0)
+    124          // Modification       :
+    125          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    126          UC CLFestoCaptors :: readHeightCaptor (void)
+   \                     ??readHeightCaptor:
+    127          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    128          return(0);
+   \   000000   7900         MOV     R1,#0x0
+   \   000002   22           RET
+    129          }
+    130          
+    131          // **********************FONCTION: readPreVentouseCaptor()
+    132          //
+    133          // DESCRIPTION        : Lit le dernier capteur avant que la ventouse ne prenne le bloc
+    134          //
+    135          // INCLUDE            : "_DeclarationGenerale.h" "CLFestoCaptors.h"
+    136          //                      
+    137          // PROTOTYPE          : UC readPreVentouseCaptor(void)
+    138          //
+    139          // PROCEDURE D'APPEL  : data = readPreVentouseCaptor()
+    140          //
+    141          // PARAMETRE D'ENTREE : AUCUN
+    142          //
+    143          // PARAMETRE DE SORTIE: UC
+    144          //
+    145          // Auteur             : Vincent Chouinard
+    146          // Date               : 25 novembre 2014   (Version 1.0)
+    147          // Modification       :
+    148          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    149          UC CLFestoCaptors :: readPreVentouseCaptor(void)
+   \                     ??readPreVentouseCaptor:
+    150          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    151          return(0);  
+   \   000000   7900         MOV     R1,#0x0
+   \   000002   22           RET
+    152          }
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLFestoCaptors &CLFestoCaptors::new CLFestoCaptors()
+   \                     `??new CLFestoCaptors`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A03         MOV     R2,#0x3
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLFestoCaptors_2`
+   \   00001B                ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors()
+   \   00001B   12....       LCALL   ??CLFestoCaptors
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLFestoCaptors_3`
+   \                     `??new CLFestoCaptors_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLFestoCaptors_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLFestoCaptors &CLFestoCaptors::new CLFestoCaptors(UC)
+   \                     `??new CLFestoCaptors_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A03         MOV     R2,#0x3
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new CLFestoCaptors_4`
+   \   00001E                ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??CLFestoCaptors_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new CLFestoCaptors_5`
+   \                     `??new CLFestoCaptors_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new CLFestoCaptors_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLFestoCaptors::delete ~CLFestoCaptors(CLFestoCaptors *)
+   \                     `??delete ~CLFestoCaptors`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLFestoCaptors_1`
+   \   00000D                ; Setup parameters for call to function CLFestoCaptors::~CLFestoCaptors()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLFestoCaptors`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLFestoCaptors_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+    153          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLFestoCaptors::CLFestoCaptors()
+                                        0      0      8
+       -> CLSPI::CLSPI()                0      0     16
+       -> CLI2CPort::CLI2CPort()        0      0     16
+     CLFestoCaptors::CLFestoCaptors(UC)
+                                        0      0     17
+       -> CLSPI::CLSPI()                0      0     16
+       -> CLI2CPort::CLI2CPort()        0      0     16
+     CLFestoCaptors::delete ~CLFestoCaptors(CLFestoCaptors *)
+                                        0      0      8
+       -> CLFestoCaptors::~CLFestoCaptors()
+                                        0      0     16
+       -> operator delete(void *)       0      0     16
+     CLFestoCaptors::new CLFestoCaptors()
+                                        2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLFestoCaptors::CLFestoCaptors()
+                                        4      0      0
+     CLFestoCaptors::new CLFestoCaptors(UC)
+                                        0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> CLFestoCaptors::CLFestoCaptors(UC)
+                                        0      0     18
+     CLFestoCaptors::readCapacitiveCaptor()
+                                        0      0      0
+     CLFestoCaptors::readHeightCaptor()
+                                        0      0      0
+     CLFestoCaptors::readInductiveCaptor()
+                                        0      0      0
+     CLFestoCaptors::readOpticCaptor()
+                                        0      0      0
+     CLFestoCaptors::readPreVentouseCaptor()
+                                        0      0      0
+     CLFestoCaptors::~CLFestoCaptors()
+                                        0      0     16
+       -> CLI2CPort::~CLI2CPort()       0      0     16
+       -> CLSPI::~CLSPI()               0      0     16
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     CLFestoCaptors::CLFestoCaptors()
+                                      37
+     CLFestoCaptors::CLFestoCaptors(UC)
+                                      37
+     CLFestoCaptors::~CLFestoCaptors()
+                                      33
+     CLFestoCaptors::readCapacitiveCaptor()
+                                       3
+     CLFestoCaptors::readOpticCaptor()
+                                       3
+     CLFestoCaptors::readInductiveCaptor()
+                                       3
+     CLFestoCaptors::readHeightCaptor()
+                                       3
+     CLFestoCaptors::readPreVentouseCaptor()
+                                       3
+     CLFestoCaptors::new CLFestoCaptors()
+                                      49
+     CLFestoCaptors::new CLFestoCaptors(UC)
+                                      54
+     CLFestoCaptors::delete ~CLFestoCaptors(CLFestoCaptors *)
+                                      32
+
+ 
+ 257 bytes in segment NEAR_CODE
+ 
+ 257 bytes of CODE memory
+
+Errors: none
+Warnings: none
