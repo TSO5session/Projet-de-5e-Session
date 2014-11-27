@@ -6214,13 +6214,13 @@
     <name>$PROJ_DIR$\CLI2CBase.Cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLI2CHard.cpp</name>
-  </file>
-  <file>
     <name>$PROJ_DIR$\CLI2CPort.Cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\CLinOutBase.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\CLMCP2515.cpp</name>

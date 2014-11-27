@@ -1,10 +1,10 @@
 // **************************CLPompe.cpp
-// Auteur:       Prenom Nom
-// Date:         19 Octobre 2014
+// Auteur:       Vincent Chouinard
+// Date:         27 novembre 2014
 // Version:      1.0
 // Modification: Aucune
 //
-// Compilateur:  IAR 8.1
+// Compilateur:  IAR 8.10
 //
 // Description:
 // *****************************************************************************
@@ -53,9 +53,9 @@ CLPompe :: ~CLPompe(void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-void CLPompe :: vPompeSOL725 (void)
+void CLPompe :: SOL725 (void)
 {
-  
+PCF1.Write(AdresseSOL725);  
 }
 
 // **********************FONCTION: vPompeSOL713()
@@ -76,9 +76,9 @@ void CLPompe :: vPompeSOL725 (void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-void CLPompe :: vPompeSOL713 (void)
+void CLPompe :: SOL713 (void)
 {
-  
+PCF1.Write(AdresseSOL713);  
 }
 
 // **********************FONCTION: vPompeSOL713()
@@ -99,9 +99,9 @@ void CLPompe :: vPompeSOL713 (void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-void CLPompe :: vPompeSOL716 (void)
+void CLPompe :: SOL716 (void)
 {
-  
+PCF1.Write(AdresseSOL716);  
 }
 
 // **********************FONCTION: vPompeSOL722()
@@ -122,9 +122,9 @@ void CLPompe :: vPompeSOL716 (void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-void CLPompe :: vPompeSOL722 (void)
+void CLPompe :: SOL722 (void)
 {
-  
+PCF1.Write(AdresseSOL722);  
 }
 
 // **********************FONCTION: vPompeSOL722()
@@ -145,9 +145,9 @@ void CLPompe :: vPompeSOL722 (void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-void CLPompe :: vPompeSOL719 (void)
+void CLPompe :: SOL719 (void)
 {
-  
+PCF2.Write(AdresseSOL719);  
 }
 
 // **********************FONCTION: vPompeSOL704()
@@ -168,9 +168,9 @@ void CLPompe :: vPompeSOL719 (void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-void CLPompe :: vPompeSOL704 (void)
+void CLPompe :: SOL704 (void)
 {
-  
+PCF2.Write(AdresseSOL704);  
 }
 
 // **********************FONCTION: vPompeSOL706()
@@ -191,8 +191,8 @@ void CLPompe :: vPompeSOL704 (void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-void CLPompe :: vPompeSOL706 (void)
+void CLPompe :: SOL706 (void)
 {
-  
+PCF2.Write(AdresseSOL706);  
 }
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

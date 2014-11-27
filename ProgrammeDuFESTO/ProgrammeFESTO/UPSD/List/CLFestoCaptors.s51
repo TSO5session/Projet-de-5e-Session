@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        25/Nov/2014  19:57:45 /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        27/Nov/2014  09:22:09 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -80,6 +80,21 @@
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??ReadCapacitiveCaptor
+        FUNCTION ??ReadCapacitiveCaptor,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??ReadHeightCaptor
+        FUNCTION ??ReadHeightCaptor,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??ReadInductiveCaptor
+        FUNCTION ??ReadInductiveCaptor,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??ReadOpticCaptor
+        FUNCTION ??ReadOpticCaptor,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??ReadPreVentouseCaptor
+        FUNCTION ??ReadPreVentouseCaptor,021203H
+        ARGFRAME XSTACK, 0, STACK
         PUBLIC `??delete ~CLFestoCaptors`
         FUNCTION `??delete ~CLFestoCaptors`,021203H
         ARGFRAME XSTACK, 0, STACK
@@ -92,21 +107,6 @@
         FUNCTION `??new CLFestoCaptors_1`,021203H
         ARGFRAME XSTACK, 0, STACK
         LOCFRAME XSTACK, 9, STACK
-        PUBLIC ??readCapacitiveCaptor
-        FUNCTION ??readCapacitiveCaptor,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??readHeightCaptor
-        FUNCTION ??readHeightCaptor,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??readInductiveCaptor
-        FUNCTION ??readInductiveCaptor,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??readOpticCaptor
-        FUNCTION ??readOpticCaptor,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??readPreVentouseCaptor
-        FUNCTION ??readPreVentouseCaptor,0203H
-        ARGFRAME XSTACK, 0, STACK
         PUBLIC `?~CLFestoCaptors`
         FUNCTION `?~CLFestoCaptors`,021203H
         ARGFRAME XSTACK, 8, STACK
@@ -204,32 +204,25 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??CLSPI
-        FUNCTION ??CLSPI,0202H
+        EXTERN ??CLIOPCF8574
+        FUNCTION ??CLIOPCF8574,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??CLI2CPort
-        FUNCTION ??CLI2CPort,0202H
+        EXTERN `?~CLIOPCF8574`
+        FUNCTION `?~CLIOPCF8574`,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN `?~CLI2CPort`
-        FUNCTION `?~CLI2CPort`,0202H
+        EXTERN ??Read
+        FUNCTION ??Read,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN `?~CLSPI`
-        FUNCTION `?~CLSPI`,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
 
@@ -271,7 +264,7 @@
         ; Saved register size: 2
         ; Auto size: 0
         ; Setup parameters for call to function operator new(unsigned int)
-        MOV     R2,#0x3
+        MOV     R2,#0x8
         MOV     R3,#0x0
         LCALL   `??operator new`
         MOV     ?V0 + 0,R2
@@ -351,7 +344,7 @@
         MOV     A,R1
         MOV     R6,A
         ; Setup parameters for call to function operator new(unsigned int)
-        MOV     R2,#0x3
+        MOV     R2,#0x8
         MOV     R3,#0x0
         LCALL   `??operator new`
         MOV     ?V0 + 0,R2
@@ -449,12 +442,12 @@
         CFI EndBlock cfiBlock2
 // C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLFestoCaptors.cpp
 //    1 // **************************CLFestoCaptors.cpp
-//    2 // Auteur:       Prenom Nom
-//    3 // Date:         19 Octobre 2014
+//    2 // Auteur:       Vincent Chouinard
+//    3 // Date:         27 novembre 2014
 //    4 // Version:      1.0
 //    5 // Modification: Aucune
 //    6 //
-//    7 // Compilateur:  IAR 8.1
+//    7 // Compilateur:  IAR 8.10
 //    8 //
 //    9 // Description:
 //   10 // *****************************************************************************
@@ -472,7 +465,7 @@
         CFI Block cfiBlock3 Using cfiCommon0
         CFI Function ??CLFestoCaptors
         CODE
-        FUNCALL ??CLFestoCaptors, ??CLSPI
+        FUNCALL ??CLFestoCaptors, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -483,7 +476,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLFestoCaptors, ??CLI2CPort
+        FUNCALL ??CLFestoCaptors, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -513,19 +506,20 @@
         MOV     A,R3
         MOV     R7,A
 //   19 {
-        ; Setup parameters for call to function CLSPI::CLSPI()
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
         MOV     A,R6
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   ??CLSPI
-        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-        MOV     DPL,R6
-        MOV     DPH,R7
-        INC     DPTR
-        MOV     R2,DPL
-        MOV     R3,DPH
-        LCALL   ??CLI2CPort
+        LCALL   ??CLIOPCF8574
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLIOPCF8574
 //   20 
 //   21 }
         MOV     A,R6
@@ -546,7 +540,7 @@
         CFI Block cfiBlock4 Using cfiCommon0
         CFI Function ??CLFestoCaptors_1
         CODE
-        FUNCALL ??CLFestoCaptors_1, ??CLSPI
+        FUNCALL ??CLFestoCaptors_1, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -557,7 +551,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLFestoCaptors_1, ??CLI2CPort
+        FUNCALL ??CLFestoCaptors_1, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -587,19 +581,20 @@
         MOV     A,R3
         MOV     R7,A
 //   27 {
-        ; Setup parameters for call to function CLSPI::CLSPI()
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
         MOV     A,R6
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   ??CLSPI
-        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-        MOV     DPL,R6
-        MOV     DPH,R7
-        INC     DPTR
-        MOV     R2,DPL
-        MOV     R3,DPH
-        LCALL   ??CLI2CPort
+        LCALL   ??CLIOPCF8574
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLIOPCF8574
 //   28 
 //   29 }
         MOV     A,R6
@@ -621,7 +616,7 @@
         CFI Function `?~CLFestoCaptors`
         CODE
 //   35 {
-        FUNCALL `?~CLFestoCaptors`, `?~CLI2CPort`
+        FUNCALL `?~CLFestoCaptors`, `?~CLIOPCF8574`
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -632,7 +627,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL `?~CLFestoCaptors`, `?~CLSPI`
+        FUNCALL `?~CLFestoCaptors`, `?~CLIOPCF8574`
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -663,19 +658,20 @@
         MOV     R7,A
 //   36 
 //   37 }
-        ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
-        MOV     DPL,R6
-        MOV     DPH,R7
-        INC     DPTR
-        MOV     R2,DPL
-        MOV     R3,DPH
-        LCALL   `?~CLI2CPort`
-        ; Setup parameters for call to function CLSPI::~CLSPI()
+        ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `?~CLIOPCF8574`
+        ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
         MOV     A,R6
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   `?~CLSPI`
+        LCALL   `?~CLIOPCF8574`
         MOV     R7,#0x1
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock5
@@ -700,17 +696,28 @@
 //   56 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//   57 UC CLFestoCaptors :: readCapacitiveCaptor (void)
-??readCapacitiveCaptor:
+//   57 UC CLFestoCaptors :: ReadCapacitiveCaptor (void)
+??ReadCapacitiveCaptor:
         CFI Block cfiBlock6 Using cfiCommon0
-        CFI Function ??readCapacitiveCaptor
+        CFI Function ??ReadCapacitiveCaptor
         CODE
 //   58 {
+        FUNCALL ??ReadCapacitiveCaptor, ??Read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//   59 return(0);
-        MOV     R1,#0x0
-        RET
+//   59 return(PCF3.Read());
+        ; Setup parameters for call to function CLIOPCF8574::Read()
+        LJMP    ??Read
         CFI EndBlock cfiBlock6
 //   60 }
 //   61 
@@ -734,17 +741,28 @@
 //   79 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//   80 UC CLFestoCaptors :: readOpticCaptor (void)
-??readOpticCaptor:
+//   80 UC CLFestoCaptors :: ReadOpticCaptor (void)
+??ReadOpticCaptor:
         CFI Block cfiBlock7 Using cfiCommon0
-        CFI Function ??readOpticCaptor
+        CFI Function ??ReadOpticCaptor
         CODE
 //   81 {
+        FUNCALL ??ReadOpticCaptor, ??Read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//   82 return(0); 
-        MOV     R1,#0x0
-        RET
+//   82 return(PCF3.Read()); 
+        ; Setup parameters for call to function CLIOPCF8574::Read()
+        LJMP    ??Read
         CFI EndBlock cfiBlock7
 //   83 }
 //   84 
@@ -768,17 +786,28 @@
 //  102 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  103 UC CLFestoCaptors :: readInductiveCaptor (void)
-??readInductiveCaptor:
+//  103 UC CLFestoCaptors :: ReadInductiveCaptor (void)
+??ReadInductiveCaptor:
         CFI Block cfiBlock8 Using cfiCommon0
-        CFI Function ??readInductiveCaptor
+        CFI Function ??ReadInductiveCaptor
         CODE
 //  104 {
+        FUNCALL ??ReadInductiveCaptor, ??Read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  105 return(0);   
-        MOV     R1,#0x0
-        RET
+//  105 return(PCF3.Read());   
+        ; Setup parameters for call to function CLIOPCF8574::Read()
+        LJMP    ??Read
         CFI EndBlock cfiBlock8
 //  106 }
 //  107 
@@ -802,17 +831,34 @@
 //  125 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  126 UC CLFestoCaptors :: readHeightCaptor (void)
-??readHeightCaptor:
+//  126 UC CLFestoCaptors :: ReadHeightCaptor (void)
+??ReadHeightCaptor:
         CFI Block cfiBlock9 Using cfiCommon0
-        CFI Function ??readHeightCaptor
+        CFI Function ??ReadHeightCaptor
         CODE
 //  127 {
+        FUNCALL ??ReadHeightCaptor, ??Read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  128 return(0);
-        MOV     R1,#0x0
-        RET
+//  128 return(PCF4.Read());
+        ; Setup parameters for call to function CLIOPCF8574::Read()
+        MOV     A,R2
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        LJMP    ??Read
         CFI EndBlock cfiBlock9
 //  129 }
 //  130 
@@ -836,26 +882,43 @@
 //  148 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  149 UC CLFestoCaptors :: readPreVentouseCaptor(void)
-??readPreVentouseCaptor:
+//  149 UC CLFestoCaptors :: ReadPreVentouseCaptor(void)
+??ReadPreVentouseCaptor:
         CFI Block cfiBlock10 Using cfiCommon0
-        CFI Function ??readPreVentouseCaptor
+        CFI Function ??ReadPreVentouseCaptor
         CODE
 //  150 {
+        FUNCALL ??ReadPreVentouseCaptor, ??Read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  151 return(0);  
-        MOV     R1,#0x0
-        RET
+//  151 return(PCF4.Read());  
+        ; Setup parameters for call to function CLIOPCF8574::Read()
+        MOV     A,R2
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        LJMP    ??Read
         CFI EndBlock cfiBlock10
 //  152 }
 
         END
 //  153 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 // 
-// 257 bytes in segment NEAR_CODE
+// 270 bytes in segment NEAR_CODE
 // 
-// 257 bytes of CODE memory
+// 270 bytes of CODE memory
 //
 //Errors: none
 //Warnings: none

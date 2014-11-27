@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         25/Nov/2014  19:57:46 #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         27/Nov/2014  09:22:09 #
 # Copyright 2004-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -44,12 +44,12 @@
 
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\clPompe.cpp
       1          // **************************CLPompe.cpp
-      2          // Auteur:       Prenom Nom
-      3          // Date:         19 Octobre 2014
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         27 novembre 2014
       4          // Version:      1.0
       5          // Modification: Aucune
       6          //
-      7          // Compilateur:  IAR 8.1
+      7          // Compilateur:  IAR 8.10
       8          //
       9          // Description:
      10          // *****************************************************************************
@@ -72,27 +72,28 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   EB           MOV     A,R3
    \   000008   FF           MOV     R7,A
      18          {
-   \   000009                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000009                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
    \   000009   EE           MOV     A,R6
    \   00000A   FA           MOV     R2,A
    \   00000B   EF           MOV     A,R7
    \   00000C   FB           MOV     R3,A
-   \   00000D   12....       LCALL   ??CLSPI
-   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-   \   000010   8E82         MOV     DPL,R6
-   \   000012   8F83         MOV     DPH,R7
-   \   000014   A3           INC     DPTR
-   \   000015   AA82         MOV     R2,DPL
-   \   000017   AB83         MOV     R3,DPH
-   \   000019   12....       LCALL   ??CLI2CPort
+   \   00000D   12....       LCALL   ??CLIOPCF8574
+   \   000010                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+   \   000010   EE           MOV     A,R6
+   \   000011   2404         ADD     A,#0x4
+   \   000013   FA           MOV     R2,A
+   \   000014   EF           MOV     A,R7
+   \   000015   3400         ADDC    A,#0x0
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   ??CLIOPCF8574
      19          
      20          }
-   \   00001C   EE           MOV     A,R6
-   \   00001D   FA           MOV     R2,A
-   \   00001E   EF           MOV     A,R7
-   \   00001F   FB           MOV     R3,A
-   \   000020   7F01         MOV     R7,#0x1
-   \   000022   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00001B   EE           MOV     A,R6
+   \   00001C   FA           MOV     R2,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   FB           MOV     R3,A
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
      21          
      22          //******************************************************************************
      23          //                            LE CONSTRUCTEUR INITIALISATEUR
@@ -110,27 +111,28 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   EB           MOV     A,R3
    \   000008   FF           MOV     R7,A
      26          {
-   \   000009                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000009                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
    \   000009   EE           MOV     A,R6
    \   00000A   FA           MOV     R2,A
    \   00000B   EF           MOV     A,R7
    \   00000C   FB           MOV     R3,A
-   \   00000D   12....       LCALL   ??CLSPI
-   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-   \   000010   8E82         MOV     DPL,R6
-   \   000012   8F83         MOV     DPH,R7
-   \   000014   A3           INC     DPTR
-   \   000015   AA82         MOV     R2,DPL
-   \   000017   AB83         MOV     R3,DPH
-   \   000019   12....       LCALL   ??CLI2CPort
+   \   00000D   12....       LCALL   ??CLIOPCF8574
+   \   000010                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+   \   000010   EE           MOV     A,R6
+   \   000011   2404         ADD     A,#0x4
+   \   000013   FA           MOV     R2,A
+   \   000014   EF           MOV     A,R7
+   \   000015   3400         ADDC    A,#0x0
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   ??CLIOPCF8574
      27          
      28          }
-   \   00001C   EE           MOV     A,R6
-   \   00001D   FA           MOV     R2,A
-   \   00001E   EF           MOV     A,R7
-   \   00001F   FB           MOV     R3,A
-   \   000020   7F01         MOV     R7,#0x1
-   \   000022   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00001B   EE           MOV     A,R6
+   \   00001C   FA           MOV     R2,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   FB           MOV     R3,A
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
      29          
      30          // *****************************************************************************
      31          //                            LE DESTRUCTEUR
@@ -150,21 +152,22 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000008   FF           MOV     R7,A
      35          
      36          }
-   \   000009                ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
-   \   000009   8E82         MOV     DPL,R6
-   \   00000B   8F83         MOV     DPH,R7
-   \   00000D   A3           INC     DPTR
-   \   00000E   AA82         MOV     R2,DPL
-   \   000010   AB83         MOV     R3,DPH
-   \   000012   12....       LCALL   `?~CLI2CPort`
-   \   000015                ; Setup parameters for call to function CLSPI::~CLSPI()
-   \   000015   EE           MOV     A,R6
-   \   000016   FA           MOV     R2,A
-   \   000017   EF           MOV     A,R7
-   \   000018   FB           MOV     R3,A
-   \   000019   12....       LCALL   `?~CLSPI`
-   \   00001C   7F01         MOV     R7,#0x1
-   \   00001E   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000009                ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
+   \   000009   EE           MOV     A,R6
+   \   00000A   2404         ADD     A,#0x4
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLIOPCF8574`
+   \   000014                ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `?~CLIOPCF8574`
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
      37          
      38          // **********************FONCTION: vPompeSOL725()
      39          //
@@ -186,14 +189,16 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      55          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     56          void CLPompe :: vPompeSOL725 (void)
-   \                     ??vPompeSOL725:
+     56          void CLPompe :: SOL725 (void)
+   \                     ??SOL725:
      57          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-     58            
+     58          PCF1.Write(AdresseSOL725);  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+   \   000000   7940         MOV     R1,#0x40
+   \   000002   02....       LJMP    ??Write
      59          }
-   \   000000   22           RET
      60          
      61          // **********************FONCTION: vPompeSOL713()
      62          //
@@ -215,14 +220,16 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      78          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     79          void CLPompe :: vPompeSOL713 (void)
-   \                     ??vPompeSOL713:
+     79          void CLPompe :: SOL713 (void)
+   \                     ??SOL713:
      80          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-     81            
+     81          PCF1.Write(AdresseSOL713);  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+   \   000000   7940         MOV     R1,#0x40
+   \   000002   02....       LJMP    ??Write
      82          }
-   \   000000   22           RET
      83          
      84          // **********************FONCTION: vPompeSOL713()
      85          //
@@ -244,14 +251,16 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     101          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    102          void CLPompe :: vPompeSOL716 (void)
-   \                     ??vPompeSOL716:
+    102          void CLPompe :: SOL716 (void)
+   \                     ??SOL716:
     103          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    104            
+    104          PCF1.Write(AdresseSOL716);  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+   \   000000   7940         MOV     R1,#0x40
+   \   000002   02....       LJMP    ??Write
     105          }
-   \   000000   22           RET
     106          
     107          // **********************FONCTION: vPompeSOL722()
     108          //
@@ -273,14 +282,16 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     124          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    125          void CLPompe :: vPompeSOL722 (void)
-   \                     ??vPompeSOL722:
+    125          void CLPompe :: SOL722 (void)
+   \                     ??SOL722:
     126          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    127            
+    127          PCF1.Write(AdresseSOL722);  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+   \   000000   7940         MOV     R1,#0x40
+   \   000002   02....       LJMP    ??Write
     128          }
-   \   000000   22           RET
     129          
     130          // **********************FONCTION: vPompeSOL722()
     131          //
@@ -302,14 +313,22 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     147          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    148          void CLPompe :: vPompeSOL719 (void)
-   \                     ??vPompeSOL719:
+    148          void CLPompe :: SOL719 (void)
+   \                     ??SOL719:
     149          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    150            
+    150          PCF2.Write(AdresseSOL719);  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+   \   000000   7941         MOV     R1,#0x41
+   \   000002   EA           MOV     A,R2
+   \   000003   2404         ADD     A,#0x4
+   \   000005   FA           MOV     R2,A
+   \   000006   EB           MOV     A,R3
+   \   000007   3400         ADDC    A,#0x0
+   \   000009   FB           MOV     R3,A
+   \   00000A   02....       LJMP    ??Write
     151          }
-   \   000000   22           RET
     152          
     153          // **********************FONCTION: vPompeSOL704()
     154          //
@@ -331,14 +350,22 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     170          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    171          void CLPompe :: vPompeSOL704 (void)
-   \                     ??vPompeSOL704:
+    171          void CLPompe :: SOL704 (void)
+   \                     ??SOL704:
     172          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    173            
+    173          PCF2.Write(AdresseSOL704);  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+   \   000000   7941         MOV     R1,#0x41
+   \   000002   EA           MOV     A,R2
+   \   000003   2404         ADD     A,#0x4
+   \   000005   FA           MOV     R2,A
+   \   000006   EB           MOV     A,R3
+   \   000007   3400         ADDC    A,#0x0
+   \   000009   FB           MOV     R3,A
+   \   00000A   02....       LJMP    ??Write
     174          }
-   \   000000   22           RET
     175          
     176          // **********************FONCTION: vPompeSOL706()
     177          //
@@ -360,14 +387,22 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     193          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    194          void CLPompe :: vPompeSOL706 (void)
-   \                     ??vPompeSOL706:
+    194          void CLPompe :: SOL706 (void)
+   \                     ??SOL706:
     195          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    196            
+    196          PCF2.Write(AdresseSOL706);  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+   \   000000   7941         MOV     R1,#0x41
+   \   000002   EA           MOV     A,R2
+   \   000003   2404         ADD     A,#0x4
+   \   000005   FA           MOV     R2,A
+   \   000006   EB           MOV     A,R3
+   \   000007   3400         ADDC    A,#0x0
+   \   000009   FB           MOV     R3,A
+   \   00000A   02....       LJMP    ??Write
     197          }
-   \   000000   22           RET
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
    \   __near_func __xdata_reentrant CLPompe &CLPompe::new CLPompe()
@@ -377,7 +412,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000004                ; Saved register size: 2
    \   000004                ; Auto size: 0
    \   000004                ; Setup parameters for call to function operator new(unsigned int)
-   \   000004   7A03         MOV     R2,#0x3
+   \   000004   7A08         MOV     R2,#0x8
    \   000006   7B00         MOV     R3,#0x0
    \   000008   12....       LCALL   `??operator new`
    \   00000B   8A..         MOV     ?V0 + 0,R2
@@ -416,7 +451,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000005   E9           MOV     A,R1
    \   000006   FE           MOV     R6,A
    \   000007                ; Setup parameters for call to function operator new(unsigned int)
-   \   000007   7A03         MOV     R2,#0x3
+   \   000007   7A08         MOV     R2,#0x8
    \   000009   7B00         MOV     R3,#0x0
    \   00000B   12....       LCALL   `??operator new`
    \   00000E   8A..         MOV     ?V0 + 0,R2
@@ -482,11 +517,29 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      Function                       ISTACK PSTACK XSTACK
      --------                       ------ ------ ------
      CLPompe::CLPompe()                 0      0      8
-       -> CLSPI::CLSPI()                0      0     16
-       -> CLI2CPort::CLI2CPort()        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
      CLPompe::CLPompe(UC)               0      0     17
-       -> CLSPI::CLSPI()                0      0     16
-       -> CLI2CPort::CLI2CPort()        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
+     CLPompe::SOL704()                  0      0      0
+       -> CLIOPCF8574::Write(UC)        0      0      0
+     CLPompe::SOL706()                  0      0      0
+       -> CLIOPCF8574::Write(UC)        0      0      0
+     CLPompe::SOL713()                  0      0      0
+       -> CLIOPCF8574::Write(UC)        0      0      0
+     CLPompe::SOL716()                  0      0      0
+       -> CLIOPCF8574::Write(UC)        0      0      0
+     CLPompe::SOL719()                  0      0      0
+       -> CLIOPCF8574::Write(UC)        0      0      0
+     CLPompe::SOL722()                  0      0      0
+       -> CLIOPCF8574::Write(UC)        0      0      0
+     CLPompe::SOL725()                  0      0      0
+       -> CLIOPCF8574::Write(UC)        0      0      0
      CLPompe::delete ~CLPompe(CLPompe *)
                                         0      0      8
        -> CLPompe::~CLPompe()           0      0     16
@@ -499,41 +552,36 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
        -> operator new(unsigned int)
                                         0      0     18
        -> CLPompe::CLPompe(UC)          0      0     18
-     CLPompe::vPompeSOL704()            0      0      0
-     CLPompe::vPompeSOL706()            0      0      0
-     CLPompe::vPompeSOL713()            0      0      0
-     CLPompe::vPompeSOL716()            0      0      0
-     CLPompe::vPompeSOL719()            0      0      0
-     CLPompe::vPompeSOL722()            0      0      0
-     CLPompe::vPompeSOL725()            0      0      0
      CLPompe::~CLPompe()                0      0     16
-       -> CLI2CPort::~CLI2CPort()       0      0     16
-       -> CLSPI::~CLSPI()               0      0     16
+       -> CLIOPCF8574::~CLIOPCF8574()
+                                        0      0     16
+       -> CLIOPCF8574::~CLIOPCF8574()
+                                        0      0     16
 
 
    Segment part sizes:
 
      Function/Label                 Bytes
      --------------                 -----
-     CLPompe::CLPompe()               37
-     CLPompe::CLPompe(UC)             37
-     CLPompe::~CLPompe()              33
-     CLPompe::vPompeSOL725()           1
-     CLPompe::vPompeSOL713()           1
-     CLPompe::vPompeSOL716()           1
-     CLPompe::vPompeSOL722()           1
-     CLPompe::vPompeSOL719()           1
-     CLPompe::vPompeSOL704()           1
-     CLPompe::vPompeSOL706()           1
+     CLPompe::CLPompe()               36
+     CLPompe::CLPompe(UC)             36
+     CLPompe::~CLPompe()              32
+     CLPompe::SOL725()                 5
+     CLPompe::SOL713()                 5
+     CLPompe::SOL716()                 5
+     CLPompe::SOL722()                 5
+     CLPompe::SOL719()                13
+     CLPompe::SOL704()                13
+     CLPompe::SOL706()                13
      CLPompe::new CLPompe()           49
      CLPompe::new CLPompe(UC)         54
      CLPompe::delete ~CLPompe(CLPompe *)
                                       32
 
  
- 249 bytes in segment NEAR_CODE
+ 298 bytes in segment NEAR_CODE
  
- 249 bytes of CODE memory
+ 298 bytes of CODE memory
 
 Errors: none
 Warnings: none

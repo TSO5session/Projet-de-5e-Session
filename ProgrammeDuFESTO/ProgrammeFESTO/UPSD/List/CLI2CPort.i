@@ -907,17 +907,17 @@ __sfr __no_init volatile union
 
 typedef bool               bit;
 typedef float              F;
-typedef signed long        L;
-typedef signed char        C;
-typedef unsigned  long     UL;
+typedef signed   long      L;
+typedef signed   char      C;
+typedef unsigned long      UL;
 typedef unsigned char      UC;
 typedef unsigned int       UI;
-typedef signed short int   SI;
+typedef signed   short int SI;
 typedef unsigned short int USI;
-typedef signed char        INT8;
+typedef signed   char      INT8;
 typedef unsigned char      UINT8;
 typedef unsigned short int UINT16;
-typedef signed long        INT32;
+typedef signed   long      INT32;
 typedef unsigned long int  UINT32;
 typedef void               VOID;
 
@@ -1112,7 +1112,8 @@ protected:
    void vI2CEcrireDonnee(UC ucAdrBoitier, UC ucAdrRegistre,  UC ucDonnee);
    void vI2CEcrireDonnee(UC ucAdrBoitier, USI uiAdrRegistre, UC ucTypeAdr,
                          UC *ucpDonnee,   UC ucNbrEcritures);
-
+   
+   UC   LirePCF8574     (void);
 private:
    UC ucAdrBoitier;
 };
@@ -1362,5 +1363,18 @@ void CLI2CPort :: vI2CEcrireDonnee(UC ucAdrBoitier, USI uiAdrRegistre,
    else while(ucI2CEcrireOctet(ucpDonnee[0])== 1);
    vI2CStop();
  }
+
+UC CLI2CPort :: LirePCF8574(void)
+{
+UC ucDonneeLue;  
+vI2CStart();
+while(ucI2CEcrireOctet(0x40) == 1){vI2CStart();}  
+ucDonneeLue = ucI2CLireOctet(1);
+vI2CStop();
+return(ucDonneeLue);
+}
+
+
+
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 

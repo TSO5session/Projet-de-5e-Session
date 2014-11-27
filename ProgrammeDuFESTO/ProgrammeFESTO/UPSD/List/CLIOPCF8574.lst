@@ -1,0 +1,424 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         27/Nov/2014  09:22:08 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  near                                               #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\CLIOPCF8574.cpp                                  #
+#    Command line       =  "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\CLIOPCF8574.cpp" -D UPSD3254A --preprocess=cl    #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\" -lC "C:\Synchro\Dropbox\Travaux\Auto #
+#                          mne 2014\ProjetSession5\ProgrammeDuFESTO\Programme #
+#                          FESTO\UPSD\List\" -lA "C:\Synchro\Dropbox\Travaux\ #
+#                          Automne 2014\ProjetSession5\ProgrammeDuFESTO\Progr #
+#                          ammeFESTO\UPSD\List\" -o                           #
+#                          "C:\Synchro\Dropbox\Travaux\Automne                #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\" -e --no_cse --no_unroll --no_inline   #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large --code_model=near   #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data --nr_virtual_regs 8         #
+#                          --dlib_config "C:\Program Files (x86)\IAR          #
+#                          Systems\Embedded Workbench                         #
+#                          6.0\8051\LIB\DLIB\dl8051Normal.h" -Ol --eec++      #
+#    List file          =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\List\CLIOPCF8574.lst                        #
+#    Object file        =  C:\Synchro\Dropbox\Travaux\Automne                 #
+#                          2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFEST #
+#                          O\UPSD\Obj\CLIOPCF8574.r51                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLIOPCF8574.cpp
+      1          // ************************** FICHIER: CLIOPCF8574.CPP ***********************
+      2          //
+      3          // Fonctions pour carte d'extension I/O I2C PCF8574
+      4          //
+      5          // Application realisee avec IAR C++ 8.10
+      6          //
+      7          // LIMITATION DU COMPILATEUR:
+      8          // Impossible de faire de l'heritage multiple.
+      9          //
+     10          // Note: on peut utiliser XAR pour creer des librairies.
+     11          // On peut mettre les librairies dans le projets et Exclure de la compilation
+     12          // les modules qui sont contenus dans la librairie.
+     13          //
+     14          // Pour Windows 7 on utilise la VMware pour programmer le upsd 3254A avec CAPS.
+     15          //
+     16          // AUTEUR : LOUIS-NORMAND ANG HOULE
+     17          // DATE CREATION : 2014/11/14 VERSION: 1.0
+     18          // DATE MODIFICATION: ****-**-**
+     19          //
+     20          // *****************************************************************************
+     21          #include "CLIOPCF8574.h"
+     22          
+     23          //******************************************************************************
+     24          //                            LE CONSTRUCTEUR PAR DEFAUT
+     25          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     26          CLIOPCF8574 :: CLIOPCF8574(void)
+   \                     ??CLIOPCF8574:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     27          {
+   \   000009                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??CLI2CPort
+     28           ucAdresseIOPCF = ADRIOPCF;
+   \   000010   8E82         MOV     DPL,R6
+   \   000012   8F83         MOV     DPH,R7
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   7440         MOV     A,#0x40
+   \   000019   F0           MOVX    @DPTR,A
+     29          }
+   \   00001A   EE           MOV     A,R6
+   \   00001B   FA           MOV     R2,A
+   \   00001C   EF           MOV     A,R7
+   \   00001D   FB           MOV     R3,A
+   \   00001E   7F01         MOV     R7,#0x1
+   \   000020   02....       LJMP    ?FUNC_LEAVE_XDATA
+     30          
+     31          //******************************************************************************
+     32          //                            LE CONSTRUCTEUR INITIALISATEUR
+     33          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     34          CLIOPCF8574 :: CLIOPCF8574(UC ucParametre)
+   \                     ??CLIOPCF8574_1:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+     35          {
+   \   00000B                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   00000B   EE           MOV     A,R6
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   FB           MOV     R3,A
+   \   00000F   12....       LCALL   ??CLI2CPort
+     36           ucAdresseIOPCF = ucParametre; 
+   \   000012   E5..         MOV     A,?V0 + 0
+   \   000014   8E82         MOV     DPL,R6
+   \   000016   8F83         MOV     DPH,R7
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   E5..         MOV     A,?V0 + 0
+   \   00001D   F0           MOVX    @DPTR,A
+     37          }
+   \   00001E   EE           MOV     A,R6
+   \   00001F   FA           MOV     R2,A
+   \   000020   EF           MOV     A,R7
+   \   000021   FB           MOV     R3,A
+   \   000022   7F01         MOV     R7,#0x1
+   \   000024   02....       LJMP    ?FUNC_LEAVE_XDATA
+     38          
+     39          // *****************************************************************************
+     40          //                            LE DESTRUCTEUR
+     41          // *****************************************************************************
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     42          CLIOPCF8574 :: ~CLIOPCF8574(void)
+   \                     `?~CLIOPCF8574`:
+     43          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     44             
+     45          }
+   \   000000                ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
+   \   000000   02....       LJMP    `?~CLI2CPort`
+     46          
+     47          ///////////////////////////////////////////////////////////////////////////////
+     48          // UC CLIOPCF8574 :: ucLireIOPCF(void)
+     49          ///////////////////////////////////////////////////////////////////////////////
+     50          //
+     51          // Description: Lecture de l'etat des bits du port
+     52          //
+     53          // Parametres d'entrees: null
+     54          //
+     55          // Parametres de sortie 
+     56          // - unIOPCF.ucOctet: Etat des bits du port
+     57          //
+     58          // Appel de la fonction: CLIOPCF8574.ucLireIOPCF();
+     59          //
+     60          // Cree le 2014/04/16 par Louis-Normand Ang Houle
+     61          //
+     62          // Modifications:
+     63          // -
+     64          //
+     65          ///////////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     66          UC CLIOPCF8574 :: Read(void)
+   \                     ??Read:
+     67          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     68          return(LirePCF8574());
+   \   000000                ; Setup parameters for call to function CLI2CPort::LirePCF8574()
+   \   000000   02....       LJMP    ??LirePCF8574
+     69          }
+     70          
+     71          ///////////////////////////////////////////////////////////////////////////////
+     72          // void CLIOPCF8574 :: vEcrireIOPCF(UC ucDonnee)
+     73          ///////////////////////////////////////////////////////////////////////////////
+     74          //
+     75          // Description: Modifie l'etat des bits du port
+     76          //
+     77          // Parametres d'entrees 
+     78          // - ucDonnee: 
+     79          //
+     80          // Parametres de sortie: null
+     81          //
+     82          // Appel de la fonction: CLIOPCF8574.vEcrireIOPCF(UCDONNEE);
+     83          //
+     84          // Cree le 2014/04/16 par Louis-Normand Ang Houle
+     85          //
+     86          // Modifications:
+     87          // -
+     88          //
+     89          ///////////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     90          void CLIOPCF8574 :: Write(UC ucDonnee)
+   \                     ??Write:
+     91           {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+     92             UC uctDonnee[1];
+     93             uctDonnee   [0] = ucDonnee;  
+   \   00000C   85..82       MOV     DPL,?XSP + 0
+   \   00000F   85..83       MOV     DPH,?XSP + 1
+   \   000012   F0           MOVX    @DPTR,A
+     94             
+     95             vI2CEcrireDonnee(ucAdresseIOPCF, NULL, PASADR, uctDonnee, 1);   
+   \   000013                ; Setup parameters for call to function CLI2CPort::vI2CEcrireDonnee(UC, USI, UC, UC *, UC)
+   \   000013   75..01       MOV     ?V0 + 0,#0x1
+   \   000016   78..         MOV     R0,#?V0 + 0
+   \   000018   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00001B   7401         MOV     A,#0x1
+   \   00001D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000020   8582..       MOV     ?V0 + 0,DPL
+   \   000023   8583..       MOV     ?V0 + 1,DPH
+   \   000026   78..         MOV     R0,#?V0 + 0
+   \   000028   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00002B   75..00       MOV     ?V0 + 0,#0x0
+   \   00002E   78..         MOV     R0,#?V0 + 0
+   \   000030   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000033   7C00         MOV     R4,#0x0
+   \   000035   7D00         MOV     R5,#0x0
+   \   000037   8A82         MOV     DPL,R2
+   \   000039   8B83         MOV     DPH,R3
+   \   00003B   A3           INC     DPTR
+   \   00003C   A3           INC     DPTR
+   \   00003D   A3           INC     DPTR
+   \   00003E   E0           MOVX    A,@DPTR
+   \   00003F   F9           MOV     R1,A
+   \   000040   12....       LCALL   ??vI2CEcrireDonnee
+   \   000043   7404         MOV     A,#0x4
+   \   000045   12....       LCALL   ?DEALLOC_XSTACK8
+     96           }
+   \   000048   7401         MOV     A,#0x1
+   \   00004A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00004D   7F02         MOV     R7,#0x2
+   \   00004F   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLIOPCF8574 &CLIOPCF8574::new CLIOPCF8574()
+   \                     `??new CLIOPCF8574`:
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Setup parameters for call to function operator new(unsigned int)
+   \   000004   7A04         MOV     R2,#0x4
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   `??operator new`
+   \   00000B   8A..         MOV     ?V0 + 0,R2
+   \   00000D   8B..         MOV     ?V0 + 1,R3
+   \   00000F   A8..         MOV     R0,?V0 + 0
+   \   000011   A9..         MOV     R1,?V0 + 1
+   \   000013   E8           MOV     A,R0
+   \   000014   FA           MOV     R2,A
+   \   000015   E9           MOV     A,R1
+   \   000016   FB           MOV     R3,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   600D         JZ      `??new CLIOPCF8574_2`
+   \   00001B                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+   \   00001B   12....       LCALL   ??CLIOPCF8574
+   \   00001E   8A..         MOV     ?V0 + 0,R2
+   \   000020   8B..         MOV     ?V0 + 1,R3
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   AB..         MOV     R3,?V0 + 1
+   \   000026   8004         SJMP    `??new CLIOPCF8574_3`
+   \                     `??new CLIOPCF8574_2`:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     `??new CLIOPCF8574_3`:
+   \   00002C   D0..         POP     ?V0 + 1
+   \   00002E   D0..         POP     ?V0 + 0
+   \   000030   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant CLIOPCF8574 &CLIOPCF8574::new CLIOPCF8574(UC)
+   \                     `??new CLIOPCF8574_1`:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007                ; Setup parameters for call to function operator new(unsigned int)
+   \   000007   7A04         MOV     R2,#0x4
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   `??operator new`
+   \   00000E   8A..         MOV     ?V0 + 0,R2
+   \   000010   8B..         MOV     ?V0 + 1,R3
+   \   000012   A8..         MOV     R0,?V0 + 0
+   \   000014   A9..         MOV     R1,?V0 + 1
+   \   000016   E8           MOV     A,R0
+   \   000017   FA           MOV     R2,A
+   \   000018   E9           MOV     A,R1
+   \   000019   FB           MOV     R3,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600F         JZ      `??new CLIOPCF8574_4`
+   \   00001E                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574(UC)
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??CLIOPCF8574_1
+   \   000023   8A..         MOV     ?V0 + 0,R2
+   \   000025   8B..         MOV     ?V0 + 1,R3
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   8004         SJMP    `??new CLIOPCF8574_5`
+   \                     `??new CLIOPCF8574_4`:
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \                     `??new CLIOPCF8574_5`:
+   \   000031   7F02         MOV     R7,#0x2
+   \   000033   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \   __near_func __xdata_reentrant void CLIOPCF8574::delete ~CLIOPCF8574(CLIOPCF8574 *)
+   \                     `??delete ~CLIOPCF8574`:
+   \   000000   74F8         MOV     A,#-0x8
+   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 8
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   4F           ORL     A,R7
+   \   00000B   600E         JZ      `??delete ~CLIOPCF8574_1`
+   \   00000D                ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
+   \   00000D   EE           MOV     A,R6
+   \   00000E   FA           MOV     R2,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLIOPCF8574`
+   \   000014                ; Setup parameters for call to function operator delete(void *)
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `??operator delete`
+   \                     `??delete ~CLIOPCF8574_1`:
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
+     97          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     CLIOPCF8574::CLIOPCF8574()         0      0      8
+       -> CLI2CPort::CLI2CPort()        0      0     16
+     CLIOPCF8574::CLIOPCF8574(UC)       1      0     17
+       -> CLI2CPort::CLI2CPort()        0      0     16
+     CLIOPCF8574::Read()                0      0      0
+       -> CLI2CPort::LirePCF8574()      0      0      0
+     CLIOPCF8574::Write(UC)             1      0     14
+       -> CLI2CPort::vI2CEcrireDonnee(UC, USI, UC, UC *, UC)
+                                        0      0     28
+     CLIOPCF8574::delete ~CLIOPCF8574(CLIOPCF8574 *)
+                                        0      0      8
+       -> CLIOPCF8574::~CLIOPCF8574()
+                                        0      0     16
+       -> operator delete(void *)       0      0     16
+     CLIOPCF8574::new CLIOPCF8574()     2      0      0
+       -> operator new(unsigned int)
+                                        4      0      0
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        4      0      0
+     CLIOPCF8574::new CLIOPCF8574(UC)
+                                        0      0      9
+       -> operator new(unsigned int)
+                                        0      0     18
+       -> CLIOPCF8574::CLIOPCF8574(UC)
+                                        0      0     18
+     CLIOPCF8574::~CLIOPCF8574()        0      0      8
+       -> CLI2CPort::~CLI2CPort()       0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     CLIOPCF8574::CLIOPCF8574()       35
+     CLIOPCF8574::CLIOPCF8574(UC)     39
+     CLIOPCF8574::~CLIOPCF8574()       3
+     CLIOPCF8574::Read()               3
+     CLIOPCF8574::Write(UC)           82
+     CLIOPCF8574::new CLIOPCF8574()   49
+     CLIOPCF8574::new CLIOPCF8574(UC)
+                                      54
+     CLIOPCF8574::delete ~CLIOPCF8574(CLIOPCF8574 *)
+                                      32
+
+ 
+ 297 bytes in segment NEAR_CODE
+ 
+ 297 bytes of CODE memory
+
+Errors: none
+Warnings: none

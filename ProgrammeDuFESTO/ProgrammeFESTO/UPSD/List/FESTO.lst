@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         25/Nov/2014  19:57:44 #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         27/Nov/2014  09:22:07 #
 # Copyright 2004-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -44,28 +44,17 @@
 
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\FESTO.cpp
       1          // **************************FESTO.cpp
-      2          // Auteur:       Prenom Nom
-      3          // Date:         19 Octobre 2014
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         27 novembre 2014
       4          // Version:      1.0
       5          // Modification: Aucune
       6          //
-      7          // Compilateur:  IAR 8.1
+      7          // Compilateur:  IAR 8.10
       8          //
       9          // Description:
      10          // *****************************************************************************
      11          #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
-     12          #include "FESTO.h"               // Fichier de definitions de...
-
-     UC CLMCP2515 :: LireDonnesMCP2515(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);
-        ^
-"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLMCP2515.h",42  Warning[Pe427]: 
-          qualified name is not allowed in member declaration
-
-  #include "CLPompe.h"                 // Utilisation des pompes de la table FESTO
-                                                                                 ^
-"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\FESTO.h",19  Warning[Pa050]: 
-          non-native end of line sequence detected (this diagnostic is only
-          issued once)
+     12          #include "FESTO.h"                 // Fichier de definitions du gestionnaire de table festo
      13          
      14          //******************************************************************************
      15          //                            LE CONSTRUCTEUR PAR DEFAUT
@@ -89,53 +78,37 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00000B   EF           MOV     A,R7
    \   00000C   FB           MOV     R3,A
    \   00000D   12....       LCALL   ??CLCommunic
-   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   000010                ; Setup parameters for call to function CLEcran::CLEcran()
    \   000010   8E82         MOV     DPL,R6
    \   000012   8F83         MOV     DPH,R7
    \   000014   A3           INC     DPTR
    \   000015   AA82         MOV     R2,DPL
    \   000017   AB83         MOV     R3,DPH
-   \   000019   12....       LCALL   ??CLI2CPort
-   \   00001C                ; Setup parameters for call to function CLMCP2515::CLMCP2515()
+   \   000019   12....       LCALL   ??CLEcran
+   \   00001C                ; Setup parameters for call to function CLPompe::CLPompe()
    \   00001C   EE           MOV     A,R6
    \   00001D   2403         ADD     A,#0x3
    \   00001F   FA           MOV     R2,A
    \   000020   EF           MOV     A,R7
    \   000021   3400         ADDC    A,#0x0
    \   000023   FB           MOV     R3,A
-   \   000024   12....       LCALL   ??CLMCP2515
-   \   000027                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   000024   12....       LCALL   ??CLPompe
+   \   000027                ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors()
    \   000027   EE           MOV     A,R6
-   \   000028   240C         ADD     A,#0xc
+   \   000028   240B         ADD     A,#0xb
    \   00002A   FA           MOV     R2,A
    \   00002B   EF           MOV     A,R7
    \   00002C   3400         ADDC    A,#0x0
    \   00002E   FB           MOV     R3,A
-   \   00002F   12....       LCALL   ??CLEcran
-   \   000032                ; Setup parameters for call to function CLPompe::CLPompe()
-   \   000032   EE           MOV     A,R6
-   \   000033   240E         ADD     A,#0xe
-   \   000035   FA           MOV     R2,A
-   \   000036   EF           MOV     A,R7
-   \   000037   3400         ADDC    A,#0x0
-   \   000039   FB           MOV     R3,A
-   \   00003A   12....       LCALL   ??CLPompe
-   \   00003D                ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors()
-   \   00003D   EE           MOV     A,R6
-   \   00003E   2411         ADD     A,#0x11
-   \   000040   FA           MOV     R2,A
-   \   000041   EF           MOV     A,R7
-   \   000042   3400         ADDC    A,#0x0
-   \   000044   FB           MOV     R3,A
-   \   000045   12....       LCALL   ??CLFestoCaptors
+   \   00002F   12....       LCALL   ??CLFestoCaptors
      19          
      20          }
-   \   000048   EE           MOV     A,R6
-   \   000049   FA           MOV     R2,A
-   \   00004A   EF           MOV     A,R7
-   \   00004B   FB           MOV     R3,A
-   \   00004C   7F01         MOV     R7,#0x1
-   \   00004E   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000032   EE           MOV     A,R6
+   \   000033   FA           MOV     R2,A
+   \   000034   EF           MOV     A,R7
+   \   000035   FB           MOV     R3,A
+   \   000036   7F01         MOV     R7,#0x1
+   \   000038   02....       LJMP    ?FUNC_LEAVE_XDATA
      21          
      22          //******************************************************************************
      23          //                            LE CONSTRUCTEUR INITIALISATEUR
@@ -159,53 +132,37 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00000B   EF           MOV     A,R7
    \   00000C   FB           MOV     R3,A
    \   00000D   12....       LCALL   ??CLCommunic
-   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+   \   000010                ; Setup parameters for call to function CLEcran::CLEcran()
    \   000010   8E82         MOV     DPL,R6
    \   000012   8F83         MOV     DPH,R7
    \   000014   A3           INC     DPTR
    \   000015   AA82         MOV     R2,DPL
    \   000017   AB83         MOV     R3,DPH
-   \   000019   12....       LCALL   ??CLI2CPort
-   \   00001C                ; Setup parameters for call to function CLMCP2515::CLMCP2515()
+   \   000019   12....       LCALL   ??CLEcran
+   \   00001C                ; Setup parameters for call to function CLPompe::CLPompe()
    \   00001C   EE           MOV     A,R6
    \   00001D   2403         ADD     A,#0x3
    \   00001F   FA           MOV     R2,A
    \   000020   EF           MOV     A,R7
    \   000021   3400         ADDC    A,#0x0
    \   000023   FB           MOV     R3,A
-   \   000024   12....       LCALL   ??CLMCP2515
-   \   000027                ; Setup parameters for call to function CLEcran::CLEcran()
+   \   000024   12....       LCALL   ??CLPompe
+   \   000027                ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors()
    \   000027   EE           MOV     A,R6
-   \   000028   240C         ADD     A,#0xc
+   \   000028   240B         ADD     A,#0xb
    \   00002A   FA           MOV     R2,A
    \   00002B   EF           MOV     A,R7
    \   00002C   3400         ADDC    A,#0x0
    \   00002E   FB           MOV     R3,A
-   \   00002F   12....       LCALL   ??CLEcran
-   \   000032                ; Setup parameters for call to function CLPompe::CLPompe()
-   \   000032   EE           MOV     A,R6
-   \   000033   240E         ADD     A,#0xe
-   \   000035   FA           MOV     R2,A
-   \   000036   EF           MOV     A,R7
-   \   000037   3400         ADDC    A,#0x0
-   \   000039   FB           MOV     R3,A
-   \   00003A   12....       LCALL   ??CLPompe
-   \   00003D                ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors()
-   \   00003D   EE           MOV     A,R6
-   \   00003E   2411         ADD     A,#0x11
-   \   000040   FA           MOV     R2,A
-   \   000041   EF           MOV     A,R7
-   \   000042   3400         ADDC    A,#0x0
-   \   000044   FB           MOV     R3,A
-   \   000045   12....       LCALL   ??CLFestoCaptors
+   \   00002F   12....       LCALL   ??CLFestoCaptors
      27          
      28          }
-   \   000048   EE           MOV     A,R6
-   \   000049   FA           MOV     R2,A
-   \   00004A   EF           MOV     A,R7
-   \   00004B   FB           MOV     R3,A
-   \   00004C   7F01         MOV     R7,#0x1
-   \   00004E   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000032   EE           MOV     A,R6
+   \   000033   FA           MOV     R2,A
+   \   000034   EF           MOV     A,R7
+   \   000035   FB           MOV     R3,A
+   \   000036   7F01         MOV     R7,#0x1
+   \   000038   02....       LJMP    ?FUNC_LEAVE_XDATA
      29          
      30          // *****************************************************************************
      31          //                            LE DESTRUCTEUR
@@ -227,7 +184,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      36          }
    \   000009                ; Setup parameters for call to function CLFestoCaptors::~CLFestoCaptors()
    \   000009   EE           MOV     A,R6
-   \   00000A   2411         ADD     A,#0x11
+   \   00000A   240B         ADD     A,#0xb
    \   00000C   FA           MOV     R2,A
    \   00000D   EF           MOV     A,R7
    \   00000E   3400         ADDC    A,#0x0
@@ -235,43 +192,27 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000011   12....       LCALL   `?~CLFestoCaptors`
    \   000014                ; Setup parameters for call to function CLPompe::~CLPompe()
    \   000014   EE           MOV     A,R6
-   \   000015   240E         ADD     A,#0xe
+   \   000015   2403         ADD     A,#0x3
    \   000017   FA           MOV     R2,A
    \   000018   EF           MOV     A,R7
    \   000019   3400         ADDC    A,#0x0
    \   00001B   FB           MOV     R3,A
    \   00001C   12....       LCALL   `?~CLPompe`
    \   00001F                ; Setup parameters for call to function CLEcran::~CLEcran()
-   \   00001F   EE           MOV     A,R6
-   \   000020   240C         ADD     A,#0xc
-   \   000022   FA           MOV     R2,A
-   \   000023   EF           MOV     A,R7
-   \   000024   3400         ADDC    A,#0x0
-   \   000026   FB           MOV     R3,A
-   \   000027   12....       LCALL   `?~CLEcran`
-   \   00002A                ; Setup parameters for call to function CLMCP2515::~CLMCP2515()
-   \   00002A   EE           MOV     A,R6
-   \   00002B   2403         ADD     A,#0x3
-   \   00002D   FA           MOV     R2,A
-   \   00002E   EF           MOV     A,R7
-   \   00002F   3400         ADDC    A,#0x0
-   \   000031   FB           MOV     R3,A
-   \   000032   12....       LCALL   `?~CLMCP2515`
-   \   000035                ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
-   \   000035   8E82         MOV     DPL,R6
-   \   000037   8F83         MOV     DPH,R7
-   \   000039   A3           INC     DPTR
-   \   00003A   AA82         MOV     R2,DPL
-   \   00003C   AB83         MOV     R3,DPH
-   \   00003E   12....       LCALL   `?~CLI2CPort`
-   \   000041                ; Setup parameters for call to function CLCommunic::~CLCommunic()
-   \   000041   EE           MOV     A,R6
-   \   000042   FA           MOV     R2,A
-   \   000043   EF           MOV     A,R7
-   \   000044   FB           MOV     R3,A
-   \   000045   12....       LCALL   `?~CLCommunic`
-   \   000048   7F01         MOV     R7,#0x1
-   \   00004A   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00001F   8E82         MOV     DPL,R6
+   \   000021   8F83         MOV     DPH,R7
+   \   000023   A3           INC     DPTR
+   \   000024   AA82         MOV     R2,DPL
+   \   000026   AB83         MOV     R3,DPH
+   \   000028   12....       LCALL   `?~CLEcran`
+   \   00002B                ; Setup parameters for call to function CLCommunic::~CLCommunic()
+   \   00002B   EE           MOV     A,R6
+   \   00002C   FA           MOV     R2,A
+   \   00002D   EF           MOV     A,R7
+   \   00002E   FB           MOV     R3,A
+   \   00002F   12....       LCALL   `?~CLCommunic`
+   \   000032   7F01         MOV     R7,#0x1
+   \   000034   02....       LJMP    ?FUNC_LEAVE_XDATA
      37          
      38          // **********************FONCTION: ReadInstructionFromPC()
      39          //
@@ -293,13 +234,13 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      55          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     56          UC CLFesto :: ReadInstructionFromPC(void)
+     56          UC CLFesto :: ReadInstructionFromPC(void) 
    \                     ??ReadInstructionFromPC:
      57          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-     58          // MaVar = CAN.Read();
-     59          return(NULL);
+     58            // Note: la station 1 lit le bus CAN et envoie par Xbee les infos appropriées à la table FESTO
+     59          return(NULL); // Il faut donc lire le Xbee!
    \   000000   7900         MOV     R1,#0x0
    \   000002   22           RET
      60          }
@@ -435,378 +376,245 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 11
    \   000005                ; Auto size: 0
-   \   000005   8A..         MOV     ?V0 + 0,R2
-   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
     130          UC ucColor      = 0;
-   \   000009   7E00         MOV     R6,#0x0
+   \   000009   75..00       MOV     ?V0 + 0,#0x0
     131          UC ucCapacitive = 0;
-   \   00000B   75..00       MOV     ?V0 + 3,#0x0
+   \   00000C   75..00       MOV     ?V0 + 1,#0x0
     132          UC ucMagnetic   = 0;
-   \   00000E   75..00       MOV     ?V0 + 2,#0x0
+   \   00000F   75..00       MOV     ?V0 + 2,#0x0
     133          UC ucOptique    = 0;
-   \   000011   7F00         MOV     R7,#0x0
+   \   000012   75..00       MOV     ?V0 + 3,#0x0
     134          
     135          LCD.vLCDCursor(0,1);
-   \   000013                ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
-   \   000013   7C01         MOV     R4,#0x1
-   \   000015   7900         MOV     R1,#0x0
-   \   000017   E5..         MOV     A,?V0 + 0
-   \   000019   240C         ADD     A,#0xc
-   \   00001B   FA           MOV     R2,A
-   \   00001C   E5..         MOV     A,?V0 + 1
-   \   00001E   3400         ADDC    A,#0x0
-   \   000020   FB           MOV     R3,A
-   \   000021   12....       LCALL   ??vLCDCursor
+   \   000015                ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
+   \   000015   7C01         MOV     R4,#0x1
+   \   000017   7900         MOV     R1,#0x0
+   \   000019   8E82         MOV     DPL,R6
+   \   00001B   8F83         MOV     DPH,R7
+   \   00001D   A3           INC     DPTR
+   \   00001E   AA82         MOV     R2,DPL
+   \   000020   AB83         MOV     R3,DPH
+   \   000022   12....       LCALL   ??vLCDCursor
     136          
     137          ////////////Lecture des capteurs
-    138          ucCapacitive = Capteur.readCapacitiveCaptor();
-   \   000024                ; Setup parameters for call to function CLFestoCaptors::readCapacitiveCaptor()
-   \   000024   E5..         MOV     A,?V0 + 0
-   \   000026   2411         ADD     A,#0x11
+    138          ucCapacitive = Capteur.ReadCapacitiveCaptor();
+   \   000025                ; Setup parameters for call to function CLFestoCaptors::ReadCapacitiveCaptor()
+   \   000025   EE           MOV     A,R6
+   \   000026   240B         ADD     A,#0xb
    \   000028   FA           MOV     R2,A
-   \   000029   E5..         MOV     A,?V0 + 1
-   \   00002B   3400         ADDC    A,#0x0
-   \   00002D   FB           MOV     R3,A
-   \   00002E   12....       LCALL   ??readCapacitiveCaptor
-   \   000031   E9           MOV     A,R1
-   \   000032   F5..         MOV     ?V0 + 3,A
-    139          ucMagnetic   = Capteur.readInductiveCaptor ();
-   \   000034                ; Setup parameters for call to function CLFestoCaptors::readInductiveCaptor()
-   \   000034   E5..         MOV     A,?V0 + 0
-   \   000036   2411         ADD     A,#0x11
-   \   000038   FA           MOV     R2,A
-   \   000039   E5..         MOV     A,?V0 + 1
-   \   00003B   3400         ADDC    A,#0x0
-   \   00003D   FB           MOV     R3,A
-   \   00003E   12....       LCALL   ??readInductiveCaptor
-   \   000041   E9           MOV     A,R1
-   \   000042   F5..         MOV     ?V0 + 2,A
-    140          ucOptique    = Capteur.readOpticCaptor     ();
-   \   000044                ; Setup parameters for call to function CLFestoCaptors::readOpticCaptor()
-   \   000044   E5..         MOV     A,?V0 + 0
-   \   000046   2411         ADD     A,#0x11
-   \   000048   FA           MOV     R2,A
-   \   000049   E5..         MOV     A,?V0 + 1
-   \   00004B   3400         ADDC    A,#0x0
-   \   00004D   FB           MOV     R3,A
-   \   00004E   12....       LCALL   ??readOpticCaptor
-   \   000051   E9           MOV     A,R1
-   \   000052   FF           MOV     R7,A
+   \   000029   EF           MOV     A,R7
+   \   00002A   3400         ADDC    A,#0x0
+   \   00002C   FB           MOV     R3,A
+   \   00002D   12....       LCALL   ??ReadCapacitiveCaptor
+   \   000030   E9           MOV     A,R1
+   \   000031   F5..         MOV     ?V0 + 1,A
+    139          ucMagnetic   = Capteur.ReadInductiveCaptor ();
+   \   000033                ; Setup parameters for call to function CLFestoCaptors::ReadInductiveCaptor()
+   \   000033   EE           MOV     A,R6
+   \   000034   240B         ADD     A,#0xb
+   \   000036   FA           MOV     R2,A
+   \   000037   EF           MOV     A,R7
+   \   000038   3400         ADDC    A,#0x0
+   \   00003A   FB           MOV     R3,A
+   \   00003B   12....       LCALL   ??ReadInductiveCaptor
+   \   00003E   E9           MOV     A,R1
+   \   00003F   F5..         MOV     ?V0 + 2,A
+    140          ucOptique    = Capteur.ReadOpticCaptor     ();
+   \   000041                ; Setup parameters for call to function CLFestoCaptors::ReadOpticCaptor()
+   \   000041   EE           MOV     A,R6
+   \   000042   240B         ADD     A,#0xb
+   \   000044   FA           MOV     R2,A
+   \   000045   EF           MOV     A,R7
+   \   000046   3400         ADDC    A,#0x0
+   \   000048   FB           MOV     R3,A
+   \   000049   12....       LCALL   ??ReadOpticCaptor
+   \   00004C   E9           MOV     A,R1
+   \   00004D   F5..         MOV     ?V0 + 3,A
     141          
     142          ////////////Prise de décision
     143          if(ucCapacitive == 1) // Si un bloc est présent
-   \   000053   7401         MOV     A,#0x1
-   \   000055   65..         XRL     A,?V0 + 3
-   \   000057   702B         JNZ     ??GetBlocColor_1
+   \   00004F   7401         MOV     A,#0x1
+   \   000051   65..         XRL     A,?V0 + 1
+   \   000053   7029         JNZ     ??GetBlocColor_1
     144            {
-    145             if((ucMagnetic == 1) && (ucOptique = 1))
-                                            ^
-Warning[Pe187]: use of "=" where "==" may have been intended
-   \   000059   7401         MOV     A,#0x1
-   \   00005B   65..         XRL     A,?V0 + 2
-   \   00005D   7009         JNZ     ??GetBlocColor_2
-   \   00005F   7801         MOV     R0,#0x1
-   \   000061   E8           MOV     A,R0
-   \   000062   FF           MOV     R7,A
-   \   000063   E8           MOV     A,R0
-   \   000064   6002         JZ      ??GetBlocColor_2
+    145             if((ucMagnetic == 1) && (ucOptique == 1))
+   \   000055   7401         MOV     A,#0x1
+   \   000057   65..         XRL     A,?V0 + 2
+   \   000059   7009         JNZ     ??GetBlocColor_2
+   \   00005B   7401         MOV     A,#0x1
+   \   00005D   65..         XRL     A,?V0 + 3
+   \   00005F   7003         JNZ     ??GetBlocColor_2
     146               {
     147                ucColor = METAL;  
-   \   000066   7E03         MOV     R6,#0x3
+   \   000061   75..03       MOV     ?V0 + 0,#0x3
     148               }
     149          
-    150             if((ucMagnetic == 0) && (ucOptique = 1))
-                                            ^
-Warning[Pe187]: use of "=" where "==" may have been intended
+    150             if((ucMagnetic == 0) && (ucOptique == 1))
    \                     ??GetBlocColor_2:
-   \   000068   E5..         MOV     A,?V0 + 2
-   \   00006A   7009         JNZ     ??GetBlocColor_3
-   \   00006C   7801         MOV     R0,#0x1
-   \   00006E   E8           MOV     A,R0
-   \   00006F   FF           MOV     R7,A
-   \   000070   E8           MOV     A,R0
-   \   000071   6002         JZ      ??GetBlocColor_3
+   \   000064   E5..         MOV     A,?V0 + 2
+   \   000066   7009         JNZ     ??GetBlocColor_3
+   \   000068   7401         MOV     A,#0x1
+   \   00006A   65..         XRL     A,?V0 + 3
+   \   00006C   7003         JNZ     ??GetBlocColor_3
     151               {
     152                ucColor = ORANGE;  
-   \   000073   7E01         MOV     R6,#0x1
+   \   00006E   75..01       MOV     ?V0 + 0,#0x1
     153               }
     154          
-    155             if((ucMagnetic == 0) && (ucOptique = 0))
-                                            ^
-Warning[Pe187]: use of "=" where "==" may have been intended
-
-  UC ucOptique    = 0;
-     ^
-"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\FESTO.cpp",133  Warning[Pe550]: 
-          variable "ucOptique" was set but never used
+    155             if((ucMagnetic == 0) && (ucOptique == 0))
    \                     ??GetBlocColor_3:
-   \   000075   E5..         MOV     A,?V0 + 2
-   \   000077   700D         JNZ     ??GetBlocColor_4
-   \   000079   7800         MOV     R0,#0x0
-   \   00007B   E8           MOV     A,R0
-   \   00007C   FF           MOV     R7,A
-   \   00007D   E8           MOV     A,R0
-   \   00007E   6006         JZ      ??GetBlocColor_4
+   \   000071   E5..         MOV     A,?V0 + 2
+   \   000073   700C         JNZ     ??GetBlocColor_4
+   \   000075   E5..         MOV     A,?V0 + 3
+   \   000077   7008         JNZ     ??GetBlocColor_4
     156               {
     157                ucColor = NOIR;  
-   \   000080   7E02         MOV     R6,#0x2
-   \   000082   8002         SJMP    ??GetBlocColor_4
+   \   000079   75..02       MOV     ?V0 + 0,#0x2
+   \   00007C   8003         SJMP    ??GetBlocColor_4
     158               }
     159            }
     160          else
     161            {
     162             ucColor = NOBLOC;
    \                     ??GetBlocColor_1:
-   \   000084   7E04         MOV     R6,#0x4
+   \   00007E   75..04       MOV     ?V0 + 0,#0x4
     163            }
     164          
-    165          ////////////Écriture des résultats
-    166          if(ucColor == ORANGE)
+    165          ////////////Écriture des résultats////////////
+    166          if(ucColor == ORANGE){LCD.String("Orange"  );}
    \                     ??GetBlocColor_4:
-   \   000086   7401         MOV     A,#0x1
-   \   000088   6E           XRL     A,R6
-   \   000089   703D         JNZ     ??GetBlocColor_5
-    167            {
-    168             LCD.String("Orange");
-   \   00008B                ; Setup parameters for call to function CLEcran::String(char const *)
-   \   00008B   7C..         MOV     R4,#`?<Constant "Orange">` & 0xff
-   \   00008D   7D..         MOV     R5,#(`?<Constant "Orange">` >> 8) & 0xff
-   \   00008F   E5..         MOV     A,?V0 + 0
-   \   000091   240C         ADD     A,#0xc
-   \   000093   FA           MOV     R2,A
-   \   000094   E5..         MOV     A,?V0 + 1
-   \   000096   3400         ADDC    A,#0x0
-   \   000098   FB           MOV     R3,A
-   \   000099   12....       LCALL   ??String
-    169             SendToBolide("CounterClockWise");
-   \   00009C                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
-   \   00009C   7C..         MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
-   \   00009E   7D..         MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
-   \   0000A0   AA..         MOV     R2,?V0 + 0
-   \   0000A2   AB..         MOV     R3,?V0 + 1
-   \   0000A4   12....       LCALL   ??SendToBolide
-    170             CAN.Write(3, 0x04, 0x01, 0xFF);
-   \   0000A7                ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-   \   0000A7   75..FF       MOV     ?V0 + 2,#-0x1
-   \   0000AA   78..         MOV     R0,#?V0 + 2
-   \   0000AC   12....       LCALL   ?PUSH_XSTACK_I_ONE
-   \   0000AF   7D01         MOV     R5,#0x1
-   \   0000B1   7C04         MOV     R4,#0x4
-   \   0000B3   7903         MOV     R1,#0x3
-   \   0000B5   E5..         MOV     A,?V0 + 0
-   \   0000B7   2403         ADD     A,#0x3
-   \   0000B9   FA           MOV     R2,A
-   \   0000BA   E5..         MOV     A,?V0 + 1
-   \   0000BC   3400         ADDC    A,#0x0
-   \   0000BE   FB           MOV     R3,A
-   \   0000BF   12....       LCALL   ??Write
-   \   0000C2   7401         MOV     A,#0x1
-   \   0000C4   12....       LCALL   ?DEALLOC_XSTACK8
-   \   0000C7   E9           MOV     A,R1
-    171            }
-    172          
-    173          if(ucColor == NOIR)
+   \   000081   7401         MOV     A,#0x1
+   \   000083   65..         XRL     A,?V0 + 0
+   \   000085   7010         JNZ     ??GetBlocColor_5
+   \   000087                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   000087   7C..         MOV     R4,#`?<Constant "Orange">` & 0xff
+   \   000089   7D..         MOV     R5,#(`?<Constant "Orange">` >> 8) & 0xff
+   \   00008B   8E82         MOV     DPL,R6
+   \   00008D   8F83         MOV     DPH,R7
+   \   00008F   A3           INC     DPTR
+   \   000090   AA82         MOV     R2,DPL
+   \   000092   AB83         MOV     R3,DPH
+   \   000094   12....       LCALL   ??String
+    167          if(ucColor == NOIR  ){LCD.String("Noir"    );}
    \                     ??GetBlocColor_5:
-   \   0000C8   7402         MOV     A,#0x2
-   \   0000CA   6E           XRL     A,R6
-   \   0000CB   703D         JNZ     ??GetBlocColor_6
-    174            {
-    175             LCD.String("Noir");
-   \   0000CD                ; Setup parameters for call to function CLEcran::String(char const *)
-   \   0000CD   7C..         MOV     R4,#`?<Constant "Noir">` & 0xff
-   \   0000CF   7D..         MOV     R5,#(`?<Constant "Noir">` >> 8) & 0xff
-   \   0000D1   E5..         MOV     A,?V0 + 0
-   \   0000D3   240C         ADD     A,#0xc
-   \   0000D5   FA           MOV     R2,A
-   \   0000D6   E5..         MOV     A,?V0 + 1
-   \   0000D8   3400         ADDC    A,#0x0
-   \   0000DA   FB           MOV     R3,A
-   \   0000DB   12....       LCALL   ??String
-    176             SendToBolide("STOP");
-   \   0000DE                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
-   \   0000DE   7C..         MOV     R4,#`?<Constant "STOP">` & 0xff
-   \   0000E0   7D..         MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
-   \   0000E2   AA..         MOV     R2,?V0 + 0
-   \   0000E4   AB..         MOV     R3,?V0 + 1
-   \   0000E6   12....       LCALL   ??SendToBolide
-    177             CAN.Write(3, 0x04, 0x02, 0xFF);
-   \   0000E9                ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-   \   0000E9   75..FF       MOV     ?V0 + 2,#-0x1
-   \   0000EC   78..         MOV     R0,#?V0 + 2
-   \   0000EE   12....       LCALL   ?PUSH_XSTACK_I_ONE
-   \   0000F1   7D02         MOV     R5,#0x2
-   \   0000F3   7C04         MOV     R4,#0x4
-   \   0000F5   7903         MOV     R1,#0x3
-   \   0000F7   E5..         MOV     A,?V0 + 0
-   \   0000F9   2403         ADD     A,#0x3
-   \   0000FB   FA           MOV     R2,A
-   \   0000FC   E5..         MOV     A,?V0 + 1
-   \   0000FE   3400         ADDC    A,#0x0
-   \   000100   FB           MOV     R3,A
-   \   000101   12....       LCALL   ??Write
-   \   000104   7401         MOV     A,#0x1
-   \   000106   12....       LCALL   ?DEALLOC_XSTACK8
-   \   000109   E9           MOV     A,R1
-    178            }
-    179          
-    180          if(ucColor == METAL)
+   \   000097   7402         MOV     A,#0x2
+   \   000099   65..         XRL     A,?V0 + 0
+   \   00009B   7010         JNZ     ??GetBlocColor_6
+   \   00009D                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   00009D   7C..         MOV     R4,#`?<Constant "Noir">` & 0xff
+   \   00009F   7D..         MOV     R5,#(`?<Constant "Noir">` >> 8) & 0xff
+   \   0000A1   8E82         MOV     DPL,R6
+   \   0000A3   8F83         MOV     DPH,R7
+   \   0000A5   A3           INC     DPTR
+   \   0000A6   AA82         MOV     R2,DPL
+   \   0000A8   AB83         MOV     R3,DPH
+   \   0000AA   12....       LCALL   ??String
+    168          if(ucColor == METAL ){LCD.String("Metallic");}
    \                     ??GetBlocColor_6:
-   \   00010A   7403         MOV     A,#0x3
-   \   00010C   6E           XRL     A,R6
-   \   00010D   703D         JNZ     ??GetBlocColor_7
-    181            {
-    182             LCD.String("Metallic");
-   \   00010F                ; Setup parameters for call to function CLEcran::String(char const *)
-   \   00010F   7C..         MOV     R4,#`?<Constant "Metallic">` & 0xff
-   \   000111   7D..         MOV     R5,#(`?<Constant "Metallic">` >> 8) & 0xff
-   \   000113   E5..         MOV     A,?V0 + 0
-   \   000115   240C         ADD     A,#0xc
-   \   000117   FA           MOV     R2,A
-   \   000118   E5..         MOV     A,?V0 + 1
-   \   00011A   3400         ADDC    A,#0x0
-   \   00011C   FB           MOV     R3,A
-   \   00011D   12....       LCALL   ??String
-    183             SendToBolide("ClockWise");
-   \   000120                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
-   \   000120   7C..         MOV     R4,#`?<Constant "ClockWise">` & 0xff
-   \   000122   7D..         MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
-   \   000124   AA..         MOV     R2,?V0 + 0
-   \   000126   AB..         MOV     R3,?V0 + 1
-   \   000128   12....       LCALL   ??SendToBolide
-    184             CAN.Write(3, 0x04, 0x00, 0xFF);
-   \   00012B                ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-   \   00012B   75..FF       MOV     ?V0 + 2,#-0x1
-   \   00012E   78..         MOV     R0,#?V0 + 2
-   \   000130   12....       LCALL   ?PUSH_XSTACK_I_ONE
-   \   000133   7D00         MOV     R5,#0x0
-   \   000135   7C04         MOV     R4,#0x4
-   \   000137   7903         MOV     R1,#0x3
-   \   000139   E5..         MOV     A,?V0 + 0
-   \   00013B   2403         ADD     A,#0x3
-   \   00013D   FA           MOV     R2,A
-   \   00013E   E5..         MOV     A,?V0 + 1
-   \   000140   3400         ADDC    A,#0x0
-   \   000142   FB           MOV     R3,A
-   \   000143   12....       LCALL   ??Write
-   \   000146   7401         MOV     A,#0x1
-   \   000148   12....       LCALL   ?DEALLOC_XSTACK8
-   \   00014B   E9           MOV     A,R1
-    185            }
-    186          if(ucColor == NOBLOC)
+   \   0000AD   7403         MOV     A,#0x3
+   \   0000AF   65..         XRL     A,?V0 + 0
+   \   0000B1   7010         JNZ     ??GetBlocColor_7
+   \   0000B3                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   0000B3   7C..         MOV     R4,#`?<Constant "Metallic">` & 0xff
+   \   0000B5   7D..         MOV     R5,#(`?<Constant "Metallic">` >> 8) & 0xff
+   \   0000B7   8E82         MOV     DPL,R6
+   \   0000B9   8F83         MOV     DPH,R7
+   \   0000BB   A3           INC     DPTR
+   \   0000BC   AA82         MOV     R2,DPL
+   \   0000BE   AB83         MOV     R3,DPH
+   \   0000C0   12....       LCALL   ??String
+    169          if(ucColor == NOBLOC){LCD.String("No bloc" );}
    \                     ??GetBlocColor_7:
-   \   00014C   7404         MOV     A,#0x4
-   \   00014E   6E           XRL     A,R6
-   \   00014F   7011         JNZ     ??GetBlocColor_8
-    187            {
-    188             LCD.String("Empty");
-   \   000151                ; Setup parameters for call to function CLEcran::String(char const *)
-   \   000151   7C..         MOV     R4,#`?<Constant "Empty">` & 0xff
-   \   000153   7D..         MOV     R5,#(`?<Constant "Empty">` >> 8) & 0xff
-   \   000155   E5..         MOV     A,?V0 + 0
-   \   000157   240C         ADD     A,#0xc
-   \   000159   FA           MOV     R2,A
-   \   00015A   E5..         MOV     A,?V0 + 1
-   \   00015C   3400         ADDC    A,#0x0
-   \   00015E   FB           MOV     R3,A
-   \   00015F   12....       LCALL   ??String
-    189            }
-    190          return(ucColor);
+   \   0000C3   7404         MOV     A,#0x4
+   \   0000C5   65..         XRL     A,?V0 + 0
+   \   0000C7   7010         JNZ     ??GetBlocColor_8
+   \   0000C9                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   0000C9   7C..         MOV     R4,#`?<Constant "No bloc">` & 0xff
+   \   0000CB   7D..         MOV     R5,#(`?<Constant "No bloc">` >> 8) & 0xff
+   \   0000CD   8E82         MOV     DPL,R6
+   \   0000CF   8F83         MOV     DPH,R7
+   \   0000D1   A3           INC     DPTR
+   \   0000D2   AA82         MOV     R2,DPL
+   \   0000D4   AB83         MOV     R3,DPH
+   \   0000D6   12....       LCALL   ??String
+    170          return(ucColor);
    \                     ??GetBlocColor_8:
-   \   000162   EE           MOV     A,R6
-   \   000163   F9           MOV     R1,A
-   \   000164   7F04         MOV     R7,#0x4
-   \   000166   02....       LJMP    ?FUNC_LEAVE_XDATA
-    191          }
-    192          
-    193          // **********************FONCTION: IsTheBolideHere()
-    194          //
-    195          // DESCRIPTION        : Vérifie et indique la présence du bolide
-    196          //
-    197          // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
-    198          //                      
-    199          // PROTOTYPE          : UC IsTheBolideHere(void)
-    200          //
-    201          // PROCEDURE D'APPEL  : data = IsTheBolideHere()
-    202          //
-    203          // PARAMETRE D'ENTREE : AUCUN
-    204          //
-    205          // PARAMETRE DE SORTIE: UC
-    206          //
-    207          // Auteur             : Vincent Chouinard
-    208          // Date               : 25 novembre 2014   (Version 1.0)
-    209          // Modification       :
-    210          // *****************************************************************************
+   \   0000D9   A9..         MOV     R1,?V0 + 0
+   \   0000DB   7F04         MOV     R7,#0x4
+   \   0000DD   02....       LJMP    ?FUNC_LEAVE_XDATA
+    171          }
+    172          
+    173          // **********************FONCTION: IsTheBolideHere()
+    174          //
+    175          // DESCRIPTION        : Vérifie et indique la présence du bolide
+    176          //
+    177          // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
+    178          //                      
+    179          // PROTOTYPE          : UC IsTheBolideHere(void)
+    180          //
+    181          // PROCEDURE D'APPEL  : data = IsTheBolideHere()
+    182          //
+    183          // PARAMETRE D'ENTREE : AUCUN
+    184          //
+    185          // PARAMETRE DE SORTIE: UC
+    186          //
+    187          // Auteur             : Vincent Chouinard
+    188          // Date               : 25 novembre 2014   (Version 1.0)
+    189          // Modification       :
+    190          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    211          UC CLFesto :: IsTheBolideHere(void)
+    191          UC CLFesto :: IsTheBolideHere(void)
    \                     ??IsTheBolideHere:
-    212          {
-   \   000000   74F8         MOV     A,#-0x8
-   \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
-   \   000005                ; Saved register size: 8
-   \   000005                ; Auto size: 0
-   \   000005   EA           MOV     A,R2
-   \   000006   FE           MOV     R6,A
-   \   000007   EB           MOV     A,R3
-   \   000008   FF           MOV     R7,A
-    213           LCD.String("Table FESTO");
-   \   000009                ; Setup parameters for call to function CLEcran::String(char const *)
-   \   000009   7C..         MOV     R4,#`?<Constant "Table FESTO">` & 0xff
-   \   00000B   7D..         MOV     R5,#(`?<Constant "Table FESTO">` >> 8) & 0xff
-   \   00000D   EE           MOV     A,R6
-   \   00000E   240C         ADD     A,#0xc
-   \   000010   FA           MOV     R2,A
-   \   000011   EF           MOV     A,R7
-   \   000012   3400         ADDC    A,#0x0
-   \   000014   FB           MOV     R3,A
-   \   000015   12....       LCALL   ??String
-    214           CAN.Write(3, 0x07, 0x02, 0xFF);
-   \   000018                ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-   \   000018   75..FF       MOV     ?V0 + 0,#-0x1
-   \   00001B   78..         MOV     R0,#?V0 + 0
-   \   00001D   12....       LCALL   ?PUSH_XSTACK_I_ONE
-   \   000020   7D02         MOV     R5,#0x2
-   \   000022   7C07         MOV     R4,#0x7
-   \   000024   7903         MOV     R1,#0x3
-   \   000026   EE           MOV     A,R6
-   \   000027   2403         ADD     A,#0x3
-   \   000029   FA           MOV     R2,A
-   \   00002A   EF           MOV     A,R7
-   \   00002B   3400         ADDC    A,#0x0
-   \   00002D   FB           MOV     R3,A
-   \   00002E   12....       LCALL   ??Write
-   \   000031   7401         MOV     A,#0x1
-   \   000033   12....       LCALL   ?DEALLOC_XSTACK8
-   \   000036   E9           MOV     A,R1
-    215           return(0);
-   \   000037   7900         MOV     R1,#0x0
-   \   000039   7F01         MOV     R7,#0x1
-   \   00003B   02....       LJMP    ?FUNC_LEAVE_XDATA
-    216          }
-    217          
-    218          // **********************FONCTION: ucGestionFESTO()
-    219          //
-    220          // DESCRIPTION        : Gère toute la séquence de la table Festo
-    221          //
-    222          // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
-    223          //                      
-    224          // PROTOTYPE          : UC readMagneticCaptor(void)
-    225          //
-    226          // PROCEDURE D'APPEL  : data = readMagneticCaptor()
-    227          //
-    228          // PARAMETRE D'ENTREE : AUCUN
-    229          //
-    230          // PARAMETRE DE SORTIE: UC
-    231          //
-    232          // Auteur             : Vincent Chouinard
-    233          // Date               : 25 novembre 2014   (Version 1.0)
-    234          // Modification       :
-    235          // *****************************************************************************
+    192          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    193           LCD.String("Table FESTO");
+   \   000004                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   000004   7C..         MOV     R4,#`?<Constant "Table FESTO">` & 0xff
+   \   000006   7D..         MOV     R5,#(`?<Constant "Table FESTO">` >> 8) & 0xff
+   \   000008   8A82         MOV     DPL,R2
+   \   00000A   8B83         MOV     DPH,R3
+   \   00000C   A3           INC     DPTR
+   \   00000D   AA82         MOV     R2,DPL
+   \   00000F   AB83         MOV     R3,DPH
+   \   000011   12....       LCALL   ??String
+    194           return(0);
+   \   000014   7900         MOV     R1,#0x0
+   \   000016   D083         POP     DPH
+   \   000018   D082         POP     DPL
+   \   00001A   22           RET
+    195          }
+    196          
+    197          // **********************FONCTION: ucGestionFESTO()
+    198          //
+    199          // DESCRIPTION        : Gère toute la séquence de la table Festo
+    200          //
+    201          // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
+    202          //                      
+    203          // PROTOTYPE          : UC readMagneticCaptor(void)
+    204          //
+    205          // PROCEDURE D'APPEL  : data = readMagneticCaptor()
+    206          //
+    207          // PARAMETRE D'ENTREE : AUCUN
+    208          //
+    209          // PARAMETRE DE SORTIE: UC
+    210          //
+    211          // Auteur             : Vincent Chouinard
+    212          // Date               : 25 novembre 2014   (Version 1.0)
+    213          // Modification       :
+    214          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    236          UC CLFesto :: ucGestionFESTO (void)
+    215          void CLFesto :: ucGestionFESTO (void)
    \                     ??ucGestionFESTO:
-    237          {
+    216          {
    \   000000   74F8         MOV     A,#-0x8
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 8
@@ -815,144 +623,337 @@ Warning[Pe187]: use of "=" where "==" may have been intended
    \   000006   FE           MOV     R6,A
    \   000007   EB           MOV     A,R3
    \   000008   FF           MOV     R7,A
-    238          UC ucCouleurDuBloc; 
-                    ^
-Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
-    239            
-    240          if(IsTheBolideHere() == TRUE) // Si le bolide est présent à la station FESTO
-   \   000009                ; Setup parameters for call to function CLFesto::IsTheBolideHere()
-   \   000009   EE           MOV     A,R6
-   \   00000A   FA           MOV     R2,A
-   \   00000B   EF           MOV     A,R7
-   \   00000C   FB           MOV     R3,A
-   \   00000D   12....       LCALL   ??IsTheBolideHere
-   \   000010   E9           MOV     A,R1
-   \   000011   6401         XRL     A,#0x1
-   \   000013   707C         JNZ     ??ucGestionFESTO_1
-    241            {
-    242             if(Capteur.readInductiveCaptor() == NOBLOC) // S'il n'y a pas de bloc dans la zone de départ
-   \   000015                ; Setup parameters for call to function CLFestoCaptors::readInductiveCaptor()
-   \   000015   EE           MOV     A,R6
-   \   000016   2411         ADD     A,#0x11
-   \   000018   FA           MOV     R2,A
-   \   000019   EF           MOV     A,R7
-   \   00001A   3400         ADDC    A,#0x0
+    217          UC ucCouleur;  
+    218          LCD.vLCDCursor(0, 2);  
+   \   000009                ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
+   \   000009   7C02         MOV     R4,#0x2
+   \   00000B   7900         MOV     R1,#0x0
+   \   00000D   8E82         MOV     DPL,R6
+   \   00000F   8F83         MOV     DPH,R7
+   \   000011   A3           INC     DPTR
+   \   000012   AA82         MOV     R2,DPL
+   \   000014   AB83         MOV     R3,DPH
+   \   000016   12....       LCALL   ??vLCDCursor
+    219          
+    220          if(IsTheBolideHere() == VRAI) // Si le bolide est à la table festo
+   \   000019                ; Setup parameters for call to function CLFesto::IsTheBolideHere()
+   \   000019   EE           MOV     A,R6
+   \   00001A   FA           MOV     R2,A
+   \   00001B   EF           MOV     A,R7
    \   00001C   FB           MOV     R3,A
-   \   00001D   12....       LCALL   ??readInductiveCaptor
+   \   00001D   12....       LCALL   ??IsTheBolideHere
    \   000020   E9           MOV     A,R1
-   \   000021   6404         XRL     A,#0x4
-   \   000023   701F         JNZ     ??ucGestionFESTO_2
-    243               {
-    244                Pompe.vPompeSOL725();  // Charge un bloc dans l'aire de chargement
-   \   000025                ; Setup parameters for call to function CLPompe::vPompeSOL725()
-   \   000025   EE           MOV     A,R6
-   \   000026   240E         ADD     A,#0xe
-   \   000028   FA           MOV     R2,A
-   \   000029   EF           MOV     A,R7
-   \   00002A   3400         ADDC    A,#0x0
-   \   00002C   FB           MOV     R3,A
-   \   00002D   12....       LCALL   ??vPompeSOL725
-    245                Delai(5000);
-   \   000030                ; Setup parameters for call to function CLFesto::Delai(unsigned long)
-   \   000030   90....       MOV     DPTR,#__Constant_1388
-   \   000033   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
-   \   000036   EE           MOV     A,R6
-   \   000037   FA           MOV     R2,A
-   \   000038   EF           MOV     A,R7
-   \   000039   FB           MOV     R3,A
-   \   00003A   12....       LCALL   ??Delai
-   \   00003D   7404         MOV     A,#0x4
-   \   00003F   12....       LCALL   ?DEALLOC_XSTACK8
-   \   000042   804D         SJMP    ??ucGestionFESTO_1
-    246               }
-    247             else // S'il y a un bloc dans l'aire de chargement
-    248               {
-    249                ucCouleurDuBloc = GetBlocColor();// Lit la couleur du bloc
+   \   000021   6401         XRL     A,#0x1
+   \   000023   7003         JNZ     $+5
+   \   000025   02....       LJMP    ??ucGestionFESTO_1
+    221            {
+    222             while(Capteur.ReadCapacitiveCaptor() == 0) // Tant qu'il n'y a pas de bloc dans l'aire de chargement
+    223               {
+    224                Pompe.SOL725();                         // Active la pompe de chargement
+    225                LCD.String("SOL725 Active");
+    226               }
+    227             
+    228             ucCouleur = GetBlocColor();                // Lit la couleur du bloc
+    229             Pompe.SOL713();                            // Active la pompe qui fait monter la plateforme
+    230             LCD.String("SOL713 Active");   
+    231             
+    232             while(Capteur.ReadHeightCaptor() == 0)     // Tant que la platefore n'a pas fini de monter
+    233               {
+    234                Pompe.SOL713();                         // Active la pompe qui fait monter la plateforme
+    235               }
+    236             
+    237             Pompe.SOL722();                            // Active la pompe qui envoie sur le convoyeur
+    238             LCD.String("SOL722 Active");
+    239                   
+    240             while(Capteur.ReadPreVentouseCaptor() == 0) // Tant que le bloc est encore sur le convoyeur
+    241               {
+    242                Pompe.SOL722();                          // Maintient active la pompe qui envoie sur le convoyeur
+    243               }
+    244             
+    245             Pompe.SOL716();                           // Rétracte la pompe d'envoie dans le convoyeur
+    246             Pompe.SOL719();                           // Abaisse la plateforme élévatrice
+    247            }
+    248          else // Si le bolide n'est pas à la table festo
+    249            {
+    250             LCD.String("No bolid"); // Affiche un message sur l'écran LCD  
+   \   000028                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   000028   7C..         MOV     R4,#`?<Constant "No bolid">` & 0xff
+   \   00002A   7D..         MOV     R5,#(`?<Constant "No bolid">` >> 8) & 0xff
+   \   00002C   8E82         MOV     DPL,R6
+   \   00002E   8F83         MOV     DPH,R7
+   \   000030   A3           INC     DPTR
+   \   000031   AA82         MOV     R2,DPL
+   \   000033   AB83         MOV     R3,DPH
+   \   000035   12....       LCALL   ??String
+    251            }
+    252          
+    253          if(IsTheBlocInTheBolid() == TRUE)        // Si le bloc est retombé dans le bolide
    \                     ??ucGestionFESTO_2:
-   \   000044                ; Setup parameters for call to function CLFesto::GetBlocColor()
-   \   000044   EE           MOV     A,R6
-   \   000045   FA           MOV     R2,A
-   \   000046   EF           MOV     A,R7
-   \   000047   FB           MOV     R3,A
-   \   000048   12....       LCALL   ??GetBlocColor
-   \   00004B   E9           MOV     A,R1
-   \   00004C   800B         SJMP    ??ucGestionFESTO_3
-    250                
-    251                while((Capteur.readHeightCaptor()) != 66)     // Tant que la plateforme n'a pas fini de s'élever // Note: 66, c'est pas la bonne valeur
-    252                  {
-    253                   Pompe.vPompeSOL713();                      // Active la pompe d'élévation du bloc
-   \                     ??ucGestionFESTO_4:
-   \   00004E                ; Setup parameters for call to function CLPompe::vPompeSOL713()
+   \   000038                ; Setup parameters for call to function CLFesto::IsTheBlocInTheBolid()
+   \   000038   EE           MOV     A,R6
+   \   000039   FA           MOV     R2,A
+   \   00003A   EF           MOV     A,R7
+   \   00003B   FB           MOV     R3,A
+   \   00003C   12....       LCALL   ??IsTheBlocInTheBolid
+   \   00003F   E9           MOV     A,R1
+   \   000040   6401         XRL     A,#0x1
+   \   000042   7070         JNZ     ??ucGestionFESTO_3
+    254            {
+    255             if(ucCouleur == ORANGE)               // Si le bloc est orange
+   \   000044   7401         MOV     A,#0x1
+   \   000046   65..         XRL     A,?V0 + 0
+   \   000048   7016         JNZ     ??ucGestionFESTO_4
+    256              {
+    257               SendToBolide("CounterClockWise");   // Donne une instruction au Bolide
+   \   00004A                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   00004A   7C..         MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
+   \   00004C   7D..         MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
    \   00004E   EE           MOV     A,R6
-   \   00004F   240E         ADD     A,#0xe
-   \   000051   FA           MOV     R2,A
-   \   000052   EF           MOV     A,R7
-   \   000053   3400         ADDC    A,#0x0
-   \   000055   FB           MOV     R3,A
-   \   000056   12....       LCALL   ??vPompeSOL713
-    254                  }
-   \                     ??ucGestionFESTO_3:
-   \   000059                ; Setup parameters for call to function CLFestoCaptors::readHeightCaptor()
+   \   00004F   FA           MOV     R2,A
+   \   000050   EF           MOV     A,R7
+   \   000051   FB           MOV     R3,A
+   \   000052   12....       LCALL   ??SendToBolide
+    258               SendToStation1("CounterClockWise"); // Donne l'info au PC via la station 1
+   \   000055                ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+   \   000055   7C..         MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
+   \   000057   7D..         MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
    \   000059   EE           MOV     A,R6
-   \   00005A   2411         ADD     A,#0x11
-   \   00005C   FA           MOV     R2,A
-   \   00005D   EF           MOV     A,R7
-   \   00005E   3400         ADDC    A,#0x0
-   \   000060   FB           MOV     R3,A
-   \   000061   12....       LCALL   ??readHeightCaptor
-   \   000064   E9           MOV     A,R1
-   \   000065   6442         XRL     A,#0x42
-   \   000067   70E5         JNZ     ??ucGestionFESTO_4
-    255                
-    256                while((Capteur.readPreVentouseCaptor()) != 1) // Tant que le bloc n'est pas au bout du convoyeur
+   \   00005A   FA           MOV     R2,A
+   \   00005B   EF           MOV     A,R7
+   \   00005C   FB           MOV     R3,A
+   \   00005D   12....       LCALL   ??SendToStation1
+    259              }
+    260          
+    261             if(ucCouleur == NOIR)                 // Si le bloc est noir
+   \                     ??ucGestionFESTO_4:
+   \   000060   7402         MOV     A,#0x2
+   \   000062   65..         XRL     A,?V0 + 0
+   \   000064   7016         JNZ     ??ucGestionFESTO_5
+    262              {
+    263               SendToBolide("STOP");               // Donne une instruction au Bolide
+   \   000066                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   000066   7C..         MOV     R4,#`?<Constant "STOP">` & 0xff
+   \   000068   7D..         MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
+   \   00006A   EE           MOV     A,R6
+   \   00006B   FA           MOV     R2,A
+   \   00006C   EF           MOV     A,R7
+   \   00006D   FB           MOV     R3,A
+   \   00006E   12....       LCALL   ??SendToBolide
+    264               SendToStation1("STOP");             // Donne l'info au PC via la station 1
+   \   000071                ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+   \   000071   7C..         MOV     R4,#`?<Constant "STOP">` & 0xff
+   \   000073   7D..         MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
+   \   000075   EE           MOV     A,R6
+   \   000076   FA           MOV     R2,A
+   \   000077   EF           MOV     A,R7
+   \   000078   FB           MOV     R3,A
+   \   000079   12....       LCALL   ??SendToStation1
+    265              }
+    266          
+    267             if(ucCouleur == METAL)                // Si le bloc est métallique
    \                     ??ucGestionFESTO_5:
-   \   000069                ; Setup parameters for call to function CLFestoCaptors::readPreVentouseCaptor()
-   \   000069   EE           MOV     A,R6
-   \   00006A   2411         ADD     A,#0x11
-   \   00006C   FA           MOV     R2,A
-   \   00006D   EF           MOV     A,R7
-   \   00006E   3400         ADDC    A,#0x0
-   \   000070   FB           MOV     R3,A
-   \   000071   12....       LCALL   ??readPreVentouseCaptor
-   \   000074   E9           MOV     A,R1
-   \   000075   6401         XRL     A,#0x1
-   \   000077   600D         JZ      ??ucGestionFESTO_6
-    257                  {
-    258                   Pompe.vPompeSOL722();                      // Envoie le bloc dans le convoyeur
-   \   000079                ; Setup parameters for call to function CLPompe::vPompeSOL722()
-   \   000079   EE           MOV     A,R6
-   \   00007A   240E         ADD     A,#0xe
-   \   00007C   FA           MOV     R2,A
-   \   00007D   EF           MOV     A,R7
-   \   00007E   3400         ADDC    A,#0x0
-   \   000080   FB           MOV     R3,A
-   \   000081   12....       LCALL   ??vPompeSOL722
-   \   000084   80E3         SJMP    ??ucGestionFESTO_5
-    259                  }
-    260                Pompe.vPompeSOL719();                         // Rétracte la pompe d'envoie dans le convoyeur
-   \                     ??ucGestionFESTO_6:
-   \   000086                ; Setup parameters for call to function CLPompe::vPompeSOL719()
+   \   00007C   7403         MOV     A,#0x3
+   \   00007E   65..         XRL     A,?V0 + 0
+   \   000080   7016         JNZ     ??ucGestionFESTO_6
+    268              {
+    269               SendToBolide("ClockWise");          // Donne une instruction au Bolide
+   \   000082                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   000082   7C..         MOV     R4,#`?<Constant "ClockWise">` & 0xff
+   \   000084   7D..         MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
    \   000086   EE           MOV     A,R6
-   \   000087   240E         ADD     A,#0xe
-   \   000089   FA           MOV     R2,A
-   \   00008A   EF           MOV     A,R7
-   \   00008B   3400         ADDC    A,#0x0
-   \   00008D   FB           MOV     R3,A
-   \   00008E   12....       LCALL   ??vPompeSOL719
-    261               }
-    262            }
-    263          return(0);
+   \   000087   FA           MOV     R2,A
+   \   000088   EF           MOV     A,R7
+   \   000089   FB           MOV     R3,A
+   \   00008A   12....       LCALL   ??SendToBolide
+    270               SendToStation1("ClockWise");        // Donne l'info au PC via la station 1
+   \   00008D                ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+   \   00008D   7C..         MOV     R4,#`?<Constant "ClockWise">` & 0xff
+   \   00008F   7D..         MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
+   \   000091   EE           MOV     A,R6
+   \   000092   FA           MOV     R2,A
+   \   000093   EF           MOV     A,R7
+   \   000094   FB           MOV     R3,A
+   \   000095   12....       LCALL   ??SendToStation1
+    271              }
+    272          
+    273             if(ucCouleur == NOBLOC)               // S'il n'y a pas de bloc
+   \                     ??ucGestionFESTO_6:
+   \   000098   7404         MOV     A,#0x4
+   \   00009A   65..         XRL     A,?V0 + 0
+   \   00009C   7016         JNZ     ??ucGestionFESTO_3
+    274              {
+    275               SendToBolide("No bloc");            // Donne une instruction au Bolide
+   \   00009E                ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+   \   00009E   7C..         MOV     R4,#`?<Constant "No bloc">` & 0xff
+   \   0000A0   7D..         MOV     R5,#(`?<Constant "No bloc">` >> 8) & 0xff
+   \   0000A2   EE           MOV     A,R6
+   \   0000A3   FA           MOV     R2,A
+   \   0000A4   EF           MOV     A,R7
+   \   0000A5   FB           MOV     R3,A
+   \   0000A6   12....       LCALL   ??SendToBolide
+    276               SendToStation1("No bloc");          // Donne l'info au PC via la station 1
+   \   0000A9                ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+   \   0000A9   7C..         MOV     R4,#`?<Constant "No bloc">` & 0xff
+   \   0000AB   7D..         MOV     R5,#(`?<Constant "No bloc">` >> 8) & 0xff
+   \   0000AD   EE           MOV     A,R6
+   \   0000AE   FA           MOV     R2,A
+   \   0000AF   EF           MOV     A,R7
+   \   0000B0   FB           MOV     R3,A
+   \   0000B1   12....       LCALL   ??SendToStation1
+    277              } 
+    278            }
+    279          }
+   \                     ??ucGestionFESTO_3:
+   \   0000B4   7F01         MOV     R7,#0x1
+   \   0000B6   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \                     ??ucGestionFESTO_7:
+   \   0000B9                ; Setup parameters for call to function CLPompe::SOL725()
+   \   0000B9   EE           MOV     A,R6
+   \   0000BA   2403         ADD     A,#0x3
+   \   0000BC   FA           MOV     R2,A
+   \   0000BD   EF           MOV     A,R7
+   \   0000BE   3400         ADDC    A,#0x0
+   \   0000C0   FB           MOV     R3,A
+   \   0000C1   12....       LCALL   ??SOL725
+   \   0000C4                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   0000C4   7C..         MOV     R4,#`?<Constant "SOL725 Active">` & 0xff
+   \   0000C6   7D..         MOV     R5,#(`?<Constant "SOL725 Active">` >> 8) & 0xff
+   \   0000C8   8E82         MOV     DPL,R6
+   \   0000CA   8F83         MOV     DPH,R7
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   AA82         MOV     R2,DPL
+   \   0000CF   AB83         MOV     R3,DPH
+   \   0000D1   12....       LCALL   ??String
    \                     ??ucGestionFESTO_1:
-   \   000091   7900         MOV     R1,#0x0
-   \   000093   7F01         MOV     R7,#0x1
-   \   000095   02....       LJMP    ?FUNC_LEAVE_XDATA
-    264          }
-    265          
+   \   0000D4                ; Setup parameters for call to function CLFestoCaptors::ReadCapacitiveCaptor()
+   \   0000D4   EE           MOV     A,R6
+   \   0000D5   240B         ADD     A,#0xb
+   \   0000D7   FA           MOV     R2,A
+   \   0000D8   EF           MOV     A,R7
+   \   0000D9   3400         ADDC    A,#0x0
+   \   0000DB   FB           MOV     R3,A
+   \   0000DC   12....       LCALL   ??ReadCapacitiveCaptor
+   \   0000DF   E9           MOV     A,R1
+   \   0000E0   60D7         JZ      ??ucGestionFESTO_7
+   \   0000E2                ; Setup parameters for call to function CLFesto::GetBlocColor()
+   \   0000E2   EE           MOV     A,R6
+   \   0000E3   FA           MOV     R2,A
+   \   0000E4   EF           MOV     A,R7
+   \   0000E5   FB           MOV     R3,A
+   \   0000E6   12....       LCALL   ??GetBlocColor
+   \   0000E9   E9           MOV     A,R1
+   \   0000EA   F5..         MOV     ?V0 + 0,A
+   \   0000EC                ; Setup parameters for call to function CLPompe::SOL713()
+   \   0000EC   EE           MOV     A,R6
+   \   0000ED   2403         ADD     A,#0x3
+   \   0000EF   FA           MOV     R2,A
+   \   0000F0   EF           MOV     A,R7
+   \   0000F1   3400         ADDC    A,#0x0
+   \   0000F3   FB           MOV     R3,A
+   \   0000F4   12....       LCALL   ??SOL713
+   \   0000F7                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   0000F7   7C..         MOV     R4,#`?<Constant "SOL713 Active">` & 0xff
+   \   0000F9   7D..         MOV     R5,#(`?<Constant "SOL713 Active">` >> 8) & 0xff
+   \   0000FB   8E82         MOV     DPL,R6
+   \   0000FD   8F83         MOV     DPH,R7
+   \   0000FF   A3           INC     DPTR
+   \   000100   AA82         MOV     R2,DPL
+   \   000102   AB83         MOV     R3,DPH
+   \   000104   12....       LCALL   ??String
+   \   000107   800B         SJMP    ??ucGestionFESTO_8
+   \                     ??ucGestionFESTO_9:
+   \   000109                ; Setup parameters for call to function CLPompe::SOL713()
+   \   000109   EE           MOV     A,R6
+   \   00010A   2403         ADD     A,#0x3
+   \   00010C   FA           MOV     R2,A
+   \   00010D   EF           MOV     A,R7
+   \   00010E   3400         ADDC    A,#0x0
+   \   000110   FB           MOV     R3,A
+   \   000111   12....       LCALL   ??SOL713
+   \                     ??ucGestionFESTO_8:
+   \   000114                ; Setup parameters for call to function CLFestoCaptors::ReadHeightCaptor()
+   \   000114   EE           MOV     A,R6
+   \   000115   240B         ADD     A,#0xb
+   \   000117   FA           MOV     R2,A
+   \   000118   EF           MOV     A,R7
+   \   000119   3400         ADDC    A,#0x0
+   \   00011B   FB           MOV     R3,A
+   \   00011C   12....       LCALL   ??ReadHeightCaptor
+   \   00011F   E9           MOV     A,R1
+   \   000120   60E7         JZ      ??ucGestionFESTO_9
+   \   000122                ; Setup parameters for call to function CLPompe::SOL722()
+   \   000122   EE           MOV     A,R6
+   \   000123   2403         ADD     A,#0x3
+   \   000125   FA           MOV     R2,A
+   \   000126   EF           MOV     A,R7
+   \   000127   3400         ADDC    A,#0x0
+   \   000129   FB           MOV     R3,A
+   \   00012A   12....       LCALL   ??SOL722
+   \   00012D                ; Setup parameters for call to function CLEcran::String(char const *)
+   \   00012D   7C..         MOV     R4,#`?<Constant "SOL722 Active">` & 0xff
+   \   00012F   7D..         MOV     R5,#(`?<Constant "SOL722 Active">` >> 8) & 0xff
+   \   000131   8E82         MOV     DPL,R6
+   \   000133   8F83         MOV     DPH,R7
+   \   000135   A3           INC     DPTR
+   \   000136   AA82         MOV     R2,DPL
+   \   000138   AB83         MOV     R3,DPH
+   \   00013A   12....       LCALL   ??String
+   \   00013D   800B         SJMP    ??ucGestionFESTO_10
+   \                     ??ucGestionFESTO_11:
+   \   00013F                ; Setup parameters for call to function CLPompe::SOL722()
+   \   00013F   EE           MOV     A,R6
+   \   000140   2403         ADD     A,#0x3
+   \   000142   FA           MOV     R2,A
+   \   000143   EF           MOV     A,R7
+   \   000144   3400         ADDC    A,#0x0
+   \   000146   FB           MOV     R3,A
+   \   000147   12....       LCALL   ??SOL722
+   \                     ??ucGestionFESTO_10:
+   \   00014A                ; Setup parameters for call to function CLFestoCaptors::ReadPreVentouseCaptor()
+   \   00014A   EE           MOV     A,R6
+   \   00014B   240B         ADD     A,#0xb
+   \   00014D   FA           MOV     R2,A
+   \   00014E   EF           MOV     A,R7
+   \   00014F   3400         ADDC    A,#0x0
+   \   000151   FB           MOV     R3,A
+   \   000152   12....       LCALL   ??ReadPreVentouseCaptor
+   \   000155   E9           MOV     A,R1
+   \   000156   60E7         JZ      ??ucGestionFESTO_11
+   \   000158                ; Setup parameters for call to function CLPompe::SOL716()
+   \   000158   EE           MOV     A,R6
+   \   000159   2403         ADD     A,#0x3
+   \   00015B   FA           MOV     R2,A
+   \   00015C   EF           MOV     A,R7
+   \   00015D   3400         ADDC    A,#0x0
+   \   00015F   FB           MOV     R3,A
+   \   000160   12....       LCALL   ??SOL716
+   \   000163                ; Setup parameters for call to function CLPompe::SOL719()
+   \   000163   EE           MOV     A,R6
+   \   000164   2403         ADD     A,#0x3
+   \   000166   FA           MOV     R2,A
+   \   000167   EF           MOV     A,R7
+   \   000168   3400         ADDC    A,#0x0
+   \   00016A   FB           MOV     R3,A
+   \   00016B   12....       LCALL   ??SOL719
+   \   00016E   02....       LJMP    ??ucGestionFESTO_2
+    280          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    266          void CLFesto :: Delai(unsigned long Temps)
+    281          UC CLFesto :: IsTheBlocInTheBolid (void) // Retourne 1 lorsque le bloc est retombé dans le bolide
+   \                     ??IsTheBlocInTheBolid:
+    282          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    283          return(1);  
+   \   000000   7901         MOV     R1,#0x1
+   \   000002   22           RET
+    284          }
+    285          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    286          void CLFesto :: Delai(UINT32 Temps)
    \                     ??Delai:
-    267          {
+    287          {
    \   000000   74F1         MOV     A,#-0xf
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 15
@@ -961,8 +962,8 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \   000007   12....       LCALL   ?XSTACK_DISP0_8
    \   00000A   78..         MOV     R0,#?V0 + 0
    \   00000C   12....       LCALL   ?L_MOV_X
-    268          unsigned long k;
-    269          for(k = 0; k < Temps; k++);  
+    288          unsigned long k;
+    289          for(k = 0; k < Temps; k++);  
    \   00000F   90....       MOV     DPTR,#__Constant_0
    \   000012   78..         MOV     R0,#?V0 + 4
    \   000014   12....       LCALL   ?L_MOV_X
@@ -976,9 +977,60 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \   000023   79..         MOV     R1,#?V0 + 4
    \   000025   12....       LCALL   ?UL_GT
    \   000028   40EF         JC      ??Delai_2
-    270          }
+    290          }
    \   00002A   7F08         MOV     R7,#0x8
    \   00002C   02....       LJMP    ?FUNC_LEAVE_XDATA
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "SOL725 Active">>`:
+   \   000000   534F4C37     DB "SOL725 Active"
+   \            32352041
+   \            63746976
+   \            6500    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "SOL713 Active">>`:
+   \   000000   534F4C37     DB "SOL713 Active"
+   \            31332041
+   \            63746976
+   \            6500    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "SOL722 Active">>`:
+   \   000000   534F4C37     DB "SOL722 Active"
+   \            32322041
+   \            63746976
+   \            6500    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "No bolid">>`:
+   \   000000   4E6F2062     DB "No bolid"
+   \            6F6C6964
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "CounterClockWise"`:
+   \   000000   436F756E     DB "CounterClockWise"
+   \            74657243
+   \            6C6F636B
+   \            57697365
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "STOP">>`:
+   \   000000   53544F50     DB "STOP"
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "ClockWise">>`:
+   \   000000   436C6F63     DB "ClockWise"
+   \            6B576973
+   \            6500    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "No bloc">>`:
+   \   000000   4E6F2062     DB "No bloc"
+   \            6C6F6300
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for <Constant "Table FESTO">>`:
@@ -992,21 +1044,8 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \            676500  
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
-   \                     `?<Initializer for <Constant "CounterClockWise"`:
-   \   000000   436F756E     DB "CounterClockWise"
-   \            74657243
-   \            6C6F636B
-   \            57697365
-   \            00      
-
-   \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for <Constant "Noir">>`:
    \   000000   4E6F6972     DB "Noir"
-   \            00      
-
-   \                                 In  segment XDATA_ID, align 1, keep-with-next
-   \                     `?<Initializer for <Constant "STOP">>`:
-   \   000000   53544F50     DB "STOP"
    \            00      
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
@@ -1016,27 +1055,60 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \            00      
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
-   \                     `?<Initializer for <Constant "ClockWise">>`:
-   \   000000   436C6F63     DB "ClockWise"
-   \            6B576973
-   \            6500    
-
-   \                                 In  segment XDATA_ID, align 1, keep-with-next
-   \                     `?<Initializer for <Constant "Empty">>`:
-   \   000000   456D7074     DB "Empty"
-   \            7900    
-
-   \                                 In  segment XDATA_ID, align 1, keep-with-next
-   \                     `?<Initializer for __Constant_1388>`:
-   \   000000   88130000     DD 5000
-
-   \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for __Constant_0>`:
    \   000000   00000000     DD 0
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for __Constant_1>`:
    \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "SOL725 Active">`:
+   \   000000                DS 14
+   \   00000E                REQUIRE `?<Initializer for <Constant "SOL725 Active">>`
+   \   00000E                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "SOL713 Active">`:
+   \   000000                DS 14
+   \   00000E                REQUIRE `?<Initializer for <Constant "SOL713 Active">>`
+   \   00000E                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "SOL722 Active">`:
+   \   000000                DS 14
+   \   00000E                REQUIRE `?<Initializer for <Constant "SOL722 Active">>`
+   \   00000E                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "No bolid">`:
+   \   000000                DS 9
+   \   000009                REQUIRE `?<Initializer for <Constant "No bolid">>`
+   \   000009                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "CounterClockWise">`:
+   \   000000                DS 17
+   \   000011                REQUIRE `?<Initializer for <Constant "CounterClockWise"`
+   \   000011                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "STOP">`:
+   \   000000                DS 5
+   \   000005                REQUIRE `?<Initializer for <Constant "STOP">>`
+   \   000005                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "ClockWise">`:
+   \   000000                DS 10
+   \   00000A                REQUIRE `?<Initializer for <Constant "ClockWise">>`
+   \   00000A                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "No bloc">`:
+   \   000000                DS 8
+   \   000008                REQUIRE `?<Initializer for <Constant "No bloc">>`
+   \   000008                REQUIRE __INIT_XDATA_I
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
    \                     `?<Constant "Table FESTO">`:
@@ -1051,21 +1123,9 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \   000007                REQUIRE __INIT_XDATA_I
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
-   \                     `?<Constant "CounterClockWise">`:
-   \   000000                DS 17
-   \   000011                REQUIRE `?<Initializer for <Constant "CounterClockWise"`
-   \   000011                REQUIRE __INIT_XDATA_I
-
-   \                                 In  segment XDATA_I, align 1, keep-with-next
    \                     `?<Constant "Noir">`:
    \   000000                DS 5
    \   000005                REQUIRE `?<Initializer for <Constant "Noir">>`
-   \   000005                REQUIRE __INIT_XDATA_I
-
-   \                                 In  segment XDATA_I, align 1, keep-with-next
-   \                     `?<Constant "STOP">`:
-   \   000000                DS 5
-   \   000005                REQUIRE `?<Initializer for <Constant "STOP">>`
    \   000005                REQUIRE __INIT_XDATA_I
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
@@ -1073,24 +1133,6 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \   000000                DS 9
    \   000009                REQUIRE `?<Initializer for <Constant "Metallic">>`
    \   000009                REQUIRE __INIT_XDATA_I
-
-   \                                 In  segment XDATA_I, align 1, keep-with-next
-   \                     `?<Constant "ClockWise">`:
-   \   000000                DS 10
-   \   00000A                REQUIRE `?<Initializer for <Constant "ClockWise">>`
-   \   00000A                REQUIRE __INIT_XDATA_I
-
-   \                                 In  segment XDATA_I, align 1, keep-with-next
-   \                     `?<Constant "Empty">`:
-   \   000000                DS 6
-   \   000006                REQUIRE `?<Initializer for <Constant "Empty">>`
-   \   000006                REQUIRE __INIT_XDATA_I
-
-   \                                 In  segment XDATA_I, align 1, keep-with-next
-   \                     __Constant_1388:
-   \   000000                DS 4
-   \   000004                REQUIRE `?<Initializer for __Constant_1388>`
-   \   000004                REQUIRE __INIT_XDATA_I
 
    \                                 In  segment XDATA_I, align 1, keep-with-next
    \                     __Constant_0:
@@ -1112,7 +1154,7 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \   000004                ; Saved register size: 2
    \   000004                ; Auto size: 0
    \   000004                ; Setup parameters for call to function operator new(unsigned int)
-   \   000004   7A14         MOV     R2,#0x14
+   \   000004   7A13         MOV     R2,#0x13
    \   000006   7B00         MOV     R3,#0x0
    \   000008   12....       LCALL   `??operator new`
    \   00000B   8A..         MOV     ?V0 + 0,R2
@@ -1151,7 +1193,7 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \   000005   E9           MOV     A,R1
    \   000006   FE           MOV     R6,A
    \   000007                ; Setup parameters for call to function operator new(unsigned int)
-   \   000007   7A14         MOV     R2,#0x14
+   \   000007   7A13         MOV     R2,#0x13
    \   000009   7B00         MOV     R3,#0x0
    \   00000B   12....       LCALL   `??operator new`
    \   00000E   8A..         MOV     ?V0 + 0,R2
@@ -1210,7 +1252,7 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
    \                     `??delete ~CLFesto_1`:
    \   00001B   7F01         MOV     R7,#0x1
    \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
-    271          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+    291          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 
    Maximum stack usage in bytes:
 
@@ -1218,64 +1260,47 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
      --------                       ------ ------ ------
      CLFesto::CLFesto()                 0      0      8
        -> CLCommunic::CLCommunic()      0      0     16
-       -> CLI2CPort::CLI2CPort()        0      0     16
-       -> CLMCP2515::CLMCP2515()        0      0     16
        -> CLEcran::CLEcran()            0      0     16
        -> CLPompe::CLPompe()            0      0     16
        -> CLFestoCaptors::CLFestoCaptors()
                                         0      0     16
      CLFesto::CLFesto(UC)               0      0     17
        -> CLCommunic::CLCommunic()      0      0     16
-       -> CLI2CPort::CLI2CPort()        0      0     16
-       -> CLMCP2515::CLMCP2515()        0      0     16
        -> CLEcran::CLEcran()            0      0     16
        -> CLPompe::CLPompe()            0      0     16
        -> CLFestoCaptors::CLFestoCaptors()
                                         0      0     16
-     CLFesto::Delai(unsigned long)      0      0     27
-     CLFesto::GetBlocColor()            0      0     20
+     CLFesto::Delai(UINT32)             0      0     19
+     CLFesto::GetBlocColor()            0      0     19
        -> CLEcran::vLCDCursor(UC, UC)
                                         0      0     22
-       -> CLFestoCaptors::readCapacitiveCaptor()
+       -> CLFestoCaptors::ReadCapacitiveCaptor()
                                         0      0     22
-       -> CLFestoCaptors::readInductiveCaptor()
+       -> CLFestoCaptors::ReadInductiveCaptor()
                                         0      0     22
-       -> CLFestoCaptors::readOpticCaptor()
+       -> CLFestoCaptors::ReadOpticCaptor()
                                         0      0     22
        -> CLEcran::String(char const *)
                                         0      0     22
-       -> CLFesto::SendToBolide(char const *)
-                                        0      0     22
-       -> CLMCP2515::Write(UC, UC, UC, UC)
-                                        0      0     24
        -> CLEcran::String(char const *)
                                         0      0     22
-       -> CLFesto::SendToBolide(char const *)
-                                        0      0     22
-       -> CLMCP2515::Write(UC, UC, UC, UC)
-                                        0      0     24
        -> CLEcran::String(char const *)
                                         0      0     22
-       -> CLFesto::SendToBolide(char const *)
-                                        0      0     22
-       -> CLMCP2515::Write(UC, UC, UC, UC)
-                                        0      0     24
        -> CLEcran::String(char const *)
                                         0      0     22
-     CLFesto::IsTheBolideHere()         0      0     17
+     CLFesto::IsTheBlocInTheBolid()     0      0      8
+     CLFesto::IsTheBolideHere()         2      0      8
        -> CLEcran::String(char const *)
-                                        0      0     16
-       -> CLMCP2515::Write(UC, UC, UC, UC)
-                                        0      0     18
+                                        4      0      0
      CLFesto::ReadInstructionFromPC()
                                         0      0      0
      CLFesto::SendToBolide(char const *)
-                                        0      0     19
+                                        0      0     16
        -> CLCommunic::Send(UC)          0      0     16
        -> CLCommunic::SendString(char const *)
                                         0      0     16
      CLFesto::SendToStation1(char const *)
-                                        0      0      8
+                                        0      0     16
        -> CLCommunic::Send(UC)          0      0     16
        -> CLCommunic::SendString(char const *)
                                         0      0     16
@@ -1291,29 +1316,56 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
        -> operator new(unsigned int)
                                         0      0     18
        -> CLFesto::CLFesto(UC)          0      0     18
-     CLFesto::ucGestionFESTO()          0      0     12
+     CLFesto::ucGestionFESTO()          0      0      8
+       -> CLEcran::vLCDCursor(UC, UC)
+                                        0      0     16
        -> CLFesto::IsTheBolideHere()
                                         0      0     16
-       -> CLFestoCaptors::readInductiveCaptor()
+       -> CLEcran::String(char const *)
                                         0      0     16
-       -> CLPompe::vPompeSOL725()       0      0     16
-       -> CLFesto::Delai(unsigned long)
-                                        0      0     24
+       -> CLFesto::IsTheBlocInTheBolid()
+                                        0      0     16
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0     16
+       -> CLFesto::SendToStation1(char const *)
+                                        0      0     16
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0     16
+       -> CLFesto::SendToStation1(char const *)
+                                        0      0     16
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0     16
+       -> CLFesto::SendToStation1(char const *)
+                                        0      0     16
+       -> CLFesto::SendToBolide(char const *)
+                                        0      0     16
+       -> CLFesto::SendToStation1(char const *)
+                                        0      0     16
+       -> CLPompe::SOL725()             0      0     16
+       -> CLEcran::String(char const *)
+                                        0      0     16
+       -> CLFestoCaptors::ReadCapacitiveCaptor()
+                                        0      0     16
        -> CLFesto::GetBlocColor()       0      0     16
-       -> CLPompe::vPompeSOL713()       0      0     16
-       -> CLFestoCaptors::readHeightCaptor()
+       -> CLPompe::SOL713()             0      0     16
+       -> CLEcran::String(char const *)
                                         0      0     16
-       -> CLFestoCaptors::readPreVentouseCaptor()
+       -> CLPompe::SOL713()             0      0     16
+       -> CLFestoCaptors::ReadHeightCaptor()
                                         0      0     16
-       -> CLPompe::vPompeSOL722()       0      0     16
-       -> CLPompe::vPompeSOL719()       0      0     16
+       -> CLPompe::SOL722()             0      0     16
+       -> CLEcran::String(char const *)
+                                        0      0     16
+       -> CLPompe::SOL722()             0      0     16
+       -> CLFestoCaptors::ReadPreVentouseCaptor()
+                                        0      0     16
+       -> CLPompe::SOL716()             0      0     16
+       -> CLPompe::SOL719()             0      0     16
      CLFesto::~CLFesto()                0      0     16
        -> CLFestoCaptors::~CLFestoCaptors()
                                         0      0     16
        -> CLPompe::~CLPompe()           0      0     16
        -> CLEcran::~CLEcran()           0      0     16
-       -> CLMCP2515::~CLMCP2515()       0      0     16
-       -> CLI2CPort::~CLI2CPort()       0      0     16
        -> CLCommunic::~CLCommunic()     0      0     16
 
 
@@ -1321,39 +1373,46 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
 
      Function/Label                                 Bytes
      --------------                                 -----
-     CLFesto::CLFesto()                               81
-     CLFesto::CLFesto(UC)                             81
-     CLFesto::~CLFesto()                              77
+     CLFesto::CLFesto()                               59
+     CLFesto::CLFesto(UC)                             59
+     CLFesto::~CLFesto()                              55
      CLFesto::ReadInstructionFromPC()
                                                        3
      CLFesto::SendToBolide(char const *)
                                                       38
      CLFesto::SendToStation1(char const *)
                                                       38
-     CLFesto::GetBlocColor()                         361
-     CLFesto::IsTheBolideHere()                       62
-     CLFesto::ucGestionFESTO()                       152
-     CLFesto::Delai(unsigned long)                    47
+     CLFesto::GetBlocColor()                         224
+     CLFesto::IsTheBolideHere()                       27
+     CLFesto::ucGestionFESTO()                       369
+     CLFesto::IsTheBlocInTheBolid()                    3
+     CLFesto::Delai(UINT32)                           47
+     ?<Initializer for <Constant "SOL725 Active">>    14
+     ?<Initializer for <Constant "SOL713 Active">>    14
+     ?<Initializer for <Constant "SOL722 Active">>    14
+     ?<Initializer for <Constant "No bolid">>          9
+     ?<Initializer for <Constant "CounterClockWise"   17
+     ?<Initializer for <Constant "STOP">>              5
+     ?<Initializer for <Constant "ClockWise">>        10
+     ?<Initializer for <Constant "No bloc">>           8
      ?<Initializer for <Constant "Table FESTO">>      12
      ?<Initializer for <Constant "Orange">>            7
-     ?<Initializer for <Constant "CounterClockWise"   17
      ?<Initializer for <Constant "Noir">>              5
-     ?<Initializer for <Constant "STOP">>              5
      ?<Initializer for <Constant "Metallic">>          9
-     ?<Initializer for <Constant "ClockWise">>        10
-     ?<Initializer for <Constant "Empty">>             6
-     ?<Initializer for __Constant_1388>                4
      ?<Initializer for __Constant_0>                   4
      ?<Initializer for __Constant_1>                   4
+     ?<Constant "SOL725 Active">                      14
+     ?<Constant "SOL713 Active">                      14
+     ?<Constant "SOL722 Active">                      14
+     ?<Constant "No bolid">                            9
+     ?<Constant "CounterClockWise">                   17
+     ?<Constant "STOP">                                5
+     ?<Constant "ClockWise">                          10
+     ?<Constant "No bloc">                             8
      ?<Constant "Table FESTO">                        12
      ?<Constant "Orange">                              7
-     ?<Constant "CounterClockWise">                   17
      ?<Constant "Noir">                                5
-     ?<Constant "STOP">                                5
      ?<Constant "Metallic">                            9
-     ?<Constant "ClockWise">                          10
-     ?<Constant "Empty">                               6
-     __Constant_1388                                   4
      __Constant_0                                      4
      __Constant_1                                      4
      CLFesto::new CLFesto()                           49
@@ -1362,12 +1421,12 @@ Warning[Pe550]: variable "ucCouleurDuBloc" was set but never used
                                                       32
 
  
- 1 075 bytes in segment NEAR_CODE
-    83 bytes in segment XDATA_I
-    83 bytes in segment XDATA_ID
+ 1 057 bytes in segment NEAR_CODE
+   132 bytes in segment XDATA_I
+   132 bytes in segment XDATA_ID
  
- 1 146 bytes of CODE  memory (+ 12 bytes shared)
-    71 bytes of XDATA memory (+ 12 bytes shared)
+ 1 181 bytes of CODE  memory (+ 8 bytes shared)
+   124 bytes of XDATA memory (+ 8 bytes shared)
 
 Errors: none
-Warnings: 7
+Warnings: none

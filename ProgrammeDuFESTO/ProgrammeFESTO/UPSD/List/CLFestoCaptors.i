@@ -1,11 +1,11 @@
 #line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.cpp"
 // **************************CLFestoCaptors.cpp
-// Auteur:       Prenom Nom
-// Date:         19 Octobre 2014
+// Auteur:       Vincent Chouinard
+// Date:         27 novembre 2014
 // Version:      1.0
 // Modification: Aucune
 //
-// Compilateur:  IAR 8.1
+// Compilateur:  IAR 8.10
 //
 // Description:
 // *****************************************************************************
@@ -892,17 +892,17 @@ __sfr __no_init volatile union
 
 typedef bool               bit;
 typedef float              F;
-typedef signed long        L;
-typedef signed char        C;
-typedef unsigned  long     UL;
+typedef signed   long      L;
+typedef signed   char      C;
+typedef unsigned long      UL;
 typedef unsigned char      UC;
 typedef unsigned int       UI;
-typedef signed short int   SI;
+typedef signed   short int SI;
 typedef unsigned short int USI;
-typedef signed char        INT8;
+typedef signed   char      INT8;
 typedef unsigned char      UINT8;
 typedef unsigned short int UINT16;
-typedef signed long        INT32;
+typedef signed   long      INT32;
 typedef unsigned long int  UINT32;
 typedef void               VOID;
 
@@ -973,13 +973,13 @@ union UNLongOctet
 
 #line 12 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.cpp"
 #line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.h"
-// **************************Fichier.h
-// Auteur:       Prenom nom
-// Date:         19 octobre 2014
+// **************************CLFestoCaptors.h
+// Auteur:       Vincent Chouinard
+// Date:         27 novembre 2014
 // Version:      1.0
 // Modification: Aucune
 //
-// Compilateur:  IAR 8.1
+// Compilateur:  IAR 8.10
 //
 // Description:
 // *****************************************************************************
@@ -1024,7 +1024,60 @@ union UNLongOctet
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 
 #line 12 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.h"
-#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLI2CPort.h"
+#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLIOPCF8574.h"
+// ************************** FICHIER: CLIOPCF8574.H ***************************
+//
+// Auteur:       Vincent Chouinard
+// Date:         27 novembre 2014
+// Version:      1.0
+// Modification: Aucune
+//
+// Compilateur:  IAR 8.10
+//
+// Description:
+// *****************************************************************************
+#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\_DeclarationGenerale.h"
+// ***************** FICHIER: _DeclarationGenerale.h
+//
+//  DEFINITION GENERALE POUR UN PROJET
+//
+//  Application realisee avec Keil 4.72.9 && IAR 8.1
+//
+//  AUTEUR : DANIEL BRETON
+//  DATE CREATION :    4 septembre 2013      VERSION: 1.2
+//  DATE MODIFICATION: 23 janvier 2014
+//                        ---> Ajout de TypeDEF
+//                     6 FEVRIER 2014
+//                        ---> Ajout de structures & de headers pour IAR 8.1
+// ****************************************************************************
+//                           LES INCLUDES
+// ****************************************************************************
+#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\ConversionKeilToIAR.h"
+// ************************** FICHIER: ConversionKeilToIAR.h *******************
+//
+// Auteur:       Vincent Chouinard
+// Date:         1 mai 2014
+// Version:      1.0
+// Modification: Aucune
+//
+// Compilateur:  IAR 8.1 et Keil 4.0
+//
+// Description: Conversion des SFR entre Keil 4.0 et IAR 8.1
+// *****************************************************************************
+
+
+
+#line 213 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\ConversionKeilToIAR.h"
+//LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+#line 17 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\_DeclarationGenerale.h"
+
+
+#line 139 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\_DeclarationGenerale.h"
+//LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+
+#line 13 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLIOPCF8574.h"
+#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLI2CPort.H"
 // ************************** FICHIER: CLI2CPORT.H *****************************
 //
 // Fonctions d'I/O du protocole I2C
@@ -1088,7 +1141,7 @@ union UNLongOctet
 #line 139 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\_DeclarationGenerale.h"
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 
-#line 25 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLI2CPort.h"
+#line 25 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLI2CPort.H"
 #line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLI2CBase.h"
 // ************************** FICHIER: CLI2CBASE.H *****************************
 //
@@ -1189,7 +1242,7 @@ private:
 };
 
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
-#line 26 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLI2CPort.h"
+#line 26 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLI2CPort.H"
 
 
 
@@ -1214,162 +1267,46 @@ protected:
    void vI2CEcrireDonnee(UC ucAdrBoitier, UC ucAdrRegistre,  UC ucDonnee);
    void vI2CEcrireDonnee(UC ucAdrBoitier, USI uiAdrRegistre, UC ucTypeAdr,
                          UC *ucpDonnee,   UC ucNbrEcritures);
-
+   
+   UC   LirePCF8574     (void);
 private:
    UC ucAdrBoitier;
 };
 
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
-#line 13 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.h"
-#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLSPI.h"
-//**********************  Fichier: CLSPI.h
-//  Description  : Fonctions necessaire pour communiquer en SPI.
-//
-//  Composition  : aucune
-//  Heritage     : aucune
-//
-//  Programmeur  : Vincent Chouinard
-//  Cours        : 247-636
-//
-//  Date         : 22 Octobre 2014
-//
-//  Compilateur  : IAR 8.1
-//
-//  Modification :
-//
-//////////////////////////////////////////////////////////////////////////////
-
-
-
-#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\_DeclarationGenerale.h"
-// ***************** FICHIER: _DeclarationGenerale.h
-//
-//  DEFINITION GENERALE POUR UN PROJET
-//
-//  Application realisee avec Keil 4.72.9 && IAR 8.1
-//
-//  AUTEUR : DANIEL BRETON
-//  DATE CREATION :    4 septembre 2013      VERSION: 1.2
-//  DATE MODIFICATION: 23 janvier 2014
-//                        ---> Ajout de TypeDEF
-//                     6 FEVRIER 2014
-//                        ---> Ajout de structures & de headers pour IAR 8.1
-// ****************************************************************************
-//                           LES INCLUDES
-// ****************************************************************************
-#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\ConversionKeilToIAR.h"
-// ************************** FICHIER: ConversionKeilToIAR.h *******************
-//
-// Auteur:       Vincent Chouinard
-// Date:         1 mai 2014
-// Version:      1.0
-// Modification: Aucune
-//
-// Compilateur:  IAR 8.1 et Keil 4.0
-//
-// Description: Conversion des SFR entre Keil 4.0 et IAR 8.1
-// *****************************************************************************
-
-
-
-#line 213 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\ConversionKeilToIAR.h"
-//LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
-
-#line 17 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\_DeclarationGenerale.h"
-
-
-#line 139 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\_DeclarationGenerale.h"
-//LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
-
-#line 21 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLSPI.h"
-#line 1 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\MCP2515.h"
-
-
-
-#line 52 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\MCP2515.h"
+#line 14 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLIOPCF8574.h"
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#line 97 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\MCP2515.h"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#line 120 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\MCP2515.h"
-
-/* Registres permettant de contrôler le module d'envoi « TX0 » */
-#line 138 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\MCP2515.h"
-
-/* Registres permettant de contrôler le module de réception « RX0 » */
-#line 22 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLSPI.h"
-/////////////////////////////////////
-#line 31 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLSPI.h"
-/////////////////////////////////////
-
-class CLSPI
+class CLIOPCF8574 : public CLI2CPort
 {
 public:
-   CLSPI(void)    ;                            // Constructeur.
-   CLSPI(UC ucVal);                            // Constructeur initialisateur.
-  ~CLSPI(void)    ;                            // Destructeur.
+   CLIOPCF8574(void);
+   CLIOPCF8574(UC ucAdresse);
+  ~CLIOPCF8574(void);
 
-   UC   WriteMPC     (UC Data);                // Pour envoyer une valeur hexa sur les IO du MPC
-   UC   WritePOT     (UC Data);                // Pour écrire sur un POT numerique 
-   UC   WriteDAC     (UC ucPin, int iData);    // Pour faire une conversion Digital to Numeric
-   UC   WriteMPC     (UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3);   
-   UC   ReadMPC      (void);                   // Pour lire la valeur hexa des IO du MPC
-   UC   Write        (UC ucValeur, UC ucMode); // Pour ecrire une donnee 8  bit en SPI
+   UC    Read  (void);
+   void  Write (UC ucDonnee);
+   
+   union UNOctetBit   unIOPCF;
+
 protected:
 
 private:
-   void Delai     (unsigned long Temps);     // Implémentation d'un delai ajustable
-   void Direction (UC Directions) ;          // Pour la direction des port du MCP23S08  
-   
-   UI   Write16   (UI uiValeur, UC ucMode);  // Pour ecrire une donnee 16 bit en SPI    
+   UC ucAdresseIOPCF;
 };
 
-
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+#line 13 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.h"
 
-#line 14 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.h"
+
+
+
+
+
 
 
 
@@ -1381,18 +1318,19 @@ public:
    CLFestoCaptors(UC ucParametre);   // ***Constructeur initialisateur
   ~CLFestoCaptors(void);             // ***Destructeur
 
-   UC readCapacitiveCaptor (void);   // Lit le capteur capacitif
-   UC readOpticCaptor      (void);   // lit le capteur optique
-   UC readInductiveCaptor  (void);   // lit le capteur magnétique
+   UC ReadCapacitiveCaptor (void);   // Lit le capteur capacitif
+   UC ReadOpticCaptor      (void);   // lit le capteur optique
+   UC ReadInductiveCaptor  (void);   // lit le capteur magnétique
+   UC ReadHeightCaptor     (void);   // Lit le capteur de hauteur du bloc (capteur A4)
+   UC ReadPreVentouseCaptor(void);   // Lit le dernier capteur avant que la ventouse ne prenne le bloc
    
-   UC readHeightCaptor     (void);   // Lit le capteur de hauteur du bloc (capteur A4)
-   UC readPreVentouseCaptor(void);   // Lit le dernier capteur avant que la ventouse ne prenne le bloc
+   class CLIOPCF8574 PCF3;//(0x43);    
+   class CLIOPCF8574 PCF4;   
    
 protected:
 
 private:
-   class CLSPI      SPI     ; // Initialise la communication SPI
-   class CLI2CPort  I2C     ; // Initialise le communication I2C Software
+         
 };
 
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
@@ -1441,9 +1379,9 @@ CLFestoCaptors :: ~CLFestoCaptors(void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readCapacitiveCaptor (void)
+UC CLFestoCaptors :: ReadCapacitiveCaptor (void)
 {
-return(0);
+return(PCF3.Read());
 }
 
 // **********************FONCTION: readOpticCaptor()
@@ -1464,9 +1402,9 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readOpticCaptor (void)
+UC CLFestoCaptors :: ReadOpticCaptor (void)
 {
-return(0); 
+return(PCF3.Read()); 
 }
 
 // **********************FONCTION: readMagneticCaptor()
@@ -1487,9 +1425,9 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readInductiveCaptor (void)
+UC CLFestoCaptors :: ReadInductiveCaptor (void)
 {
-return(0);   
+return(PCF3.Read());   
 }
 
 // **********************FONCTION: readHeightCaptor()
@@ -1510,9 +1448,9 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readHeightCaptor (void)
+UC CLFestoCaptors :: ReadHeightCaptor (void)
 {
-return(0);
+return(PCF4.Read());
 }
 
 // **********************FONCTION: readPreVentouseCaptor()
@@ -1533,8 +1471,8 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readPreVentouseCaptor(void)
+UC CLFestoCaptors :: ReadPreVentouseCaptor(void)
 {
-return(0);  
+return(PCF4.Read());  
 }
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

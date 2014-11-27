@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        25/Nov/2014  19:57:46 /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        27/Nov/2014  09:22:09 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -80,6 +80,27 @@
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME XSTACK, 8, STACK
+        PUBLIC ??SOL704
+        FUNCTION ??SOL704,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??SOL706
+        FUNCTION ??SOL706,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??SOL713
+        FUNCTION ??SOL713,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??SOL716
+        FUNCTION ??SOL716,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??SOL719
+        FUNCTION ??SOL719,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??SOL722
+        FUNCTION ??SOL722,021203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC ??SOL725
+        FUNCTION ??SOL725,021203H
+        ARGFRAME XSTACK, 0, STACK
         PUBLIC `??delete ~CLPompe`
         FUNCTION `??delete ~CLPompe`,021203H
         ARGFRAME XSTACK, 0, STACK
@@ -92,27 +113,6 @@
         FUNCTION `??new CLPompe_1`,021203H
         ARGFRAME XSTACK, 0, STACK
         LOCFRAME XSTACK, 9, STACK
-        PUBLIC ??vPompeSOL704
-        FUNCTION ??vPompeSOL704,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??vPompeSOL706
-        FUNCTION ??vPompeSOL706,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??vPompeSOL713
-        FUNCTION ??vPompeSOL713,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??vPompeSOL716
-        FUNCTION ??vPompeSOL716,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??vPompeSOL719
-        FUNCTION ??vPompeSOL719,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??vPompeSOL722
-        FUNCTION ??vPompeSOL722,0203H
-        ARGFRAME XSTACK, 0, STACK
-        PUBLIC ??vPompeSOL725
-        FUNCTION ??vPompeSOL725,0203H
-        ARGFRAME XSTACK, 0, STACK
         PUBLIC `?~CLPompe`
         FUNCTION `?~CLPompe`,021203H
         ARGFRAME XSTACK, 8, STACK
@@ -210,32 +210,25 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??CLSPI
-        FUNCTION ??CLSPI,0202H
+        EXTERN ??CLIOPCF8574
+        FUNCTION ??CLIOPCF8574,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??CLI2CPort
-        FUNCTION ??CLI2CPort,0202H
+        EXTERN `?~CLIOPCF8574`
+        FUNCTION `?~CLIOPCF8574`,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN `?~CLI2CPort`
-        FUNCTION `?~CLI2CPort`,0202H
+        EXTERN ??Write
+        FUNCTION ??Write,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN `?~CLSPI`
-        FUNCTION `?~CLSPI`,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
 
@@ -277,7 +270,7 @@
         ; Saved register size: 2
         ; Auto size: 0
         ; Setup parameters for call to function operator new(unsigned int)
-        MOV     R2,#0x3
+        MOV     R2,#0x8
         MOV     R3,#0x0
         LCALL   `??operator new`
         MOV     ?V0 + 0,R2
@@ -357,7 +350,7 @@
         MOV     A,R1
         MOV     R6,A
         ; Setup parameters for call to function operator new(unsigned int)
-        MOV     R2,#0x3
+        MOV     R2,#0x8
         MOV     R3,#0x0
         LCALL   `??operator new`
         MOV     ?V0 + 0,R2
@@ -455,12 +448,12 @@
         CFI EndBlock cfiBlock2
 // C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\clPompe.cpp
 //    1 // **************************CLPompe.cpp
-//    2 // Auteur:       Prenom Nom
-//    3 // Date:         19 Octobre 2014
+//    2 // Auteur:       Vincent Chouinard
+//    3 // Date:         27 novembre 2014
 //    4 // Version:      1.0
 //    5 // Modification: Aucune
 //    6 //
-//    7 // Compilateur:  IAR 8.1
+//    7 // Compilateur:  IAR 8.10
 //    8 //
 //    9 // Description:
 //   10 // *****************************************************************************
@@ -477,7 +470,7 @@
         CFI Block cfiBlock3 Using cfiCommon0
         CFI Function ??CLPompe
         CODE
-        FUNCALL ??CLPompe, ??CLSPI
+        FUNCALL ??CLPompe, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -488,7 +481,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLPompe, ??CLI2CPort
+        FUNCALL ??CLPompe, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -518,19 +511,20 @@
         MOV     A,R3
         MOV     R7,A
 //   18 {
-        ; Setup parameters for call to function CLSPI::CLSPI()
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
         MOV     A,R6
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   ??CLSPI
-        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-        MOV     DPL,R6
-        MOV     DPH,R7
-        INC     DPTR
-        MOV     R2,DPL
-        MOV     R3,DPH
-        LCALL   ??CLI2CPort
+        LCALL   ??CLIOPCF8574
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLIOPCF8574
 //   19 
 //   20 }
         MOV     A,R6
@@ -551,7 +545,7 @@
         CFI Block cfiBlock4 Using cfiCommon0
         CFI Function ??CLPompe_1
         CODE
-        FUNCALL ??CLPompe_1, ??CLSPI
+        FUNCALL ??CLPompe_1, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -562,7 +556,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLPompe_1, ??CLI2CPort
+        FUNCALL ??CLPompe_1, ??CLIOPCF8574
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -592,19 +586,20 @@
         MOV     A,R3
         MOV     R7,A
 //   26 {
-        ; Setup parameters for call to function CLSPI::CLSPI()
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
         MOV     A,R6
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   ??CLSPI
-        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-        MOV     DPL,R6
-        MOV     DPH,R7
-        INC     DPTR
-        MOV     R2,DPL
-        MOV     R3,DPH
-        LCALL   ??CLI2CPort
+        LCALL   ??CLIOPCF8574
+        ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??CLIOPCF8574
 //   27 
 //   28 }
         MOV     A,R6
@@ -626,7 +621,7 @@
         CFI Function `?~CLPompe`
         CODE
 //   34 {
-        FUNCALL `?~CLPompe`, `?~CLI2CPort`
+        FUNCALL `?~CLPompe`, `?~CLIOPCF8574`
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -637,7 +632,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL `?~CLPompe`, `?~CLSPI`
+        FUNCALL `?~CLPompe`, `?~CLIOPCF8574`
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -668,19 +663,20 @@
         MOV     R7,A
 //   35 
 //   36 }
-        ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
-        MOV     DPL,R6
-        MOV     DPH,R7
-        INC     DPTR
-        MOV     R2,DPL
-        MOV     R3,DPH
-        LCALL   `?~CLI2CPort`
-        ; Setup parameters for call to function CLSPI::~CLSPI()
+        ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `?~CLIOPCF8574`
+        ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
         MOV     A,R6
         MOV     R2,A
         MOV     A,R7
         MOV     R3,A
-        LCALL   `?~CLSPI`
+        LCALL   `?~CLIOPCF8574`
         MOV     R7,#0x1
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock5
@@ -705,18 +701,31 @@
 //   55 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//   56 void CLPompe :: vPompeSOL725 (void)
-??vPompeSOL725:
+//   56 void CLPompe :: SOL725 (void)
+??SOL725:
         CFI Block cfiBlock6 Using cfiCommon0
-        CFI Function ??vPompeSOL725
+        CFI Function ??SOL725
         CODE
 //   57 {
+        FUNCALL ??SOL725, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//   58   
-//   59 }
-        RET
+//   58 PCF1.Write(AdresseSOL725);  
+        ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+        MOV     R1,#0x40
+        LJMP    ??Write
         CFI EndBlock cfiBlock6
+//   59 }
 //   60 
 //   61 // **********************FONCTION: vPompeSOL713()
 //   62 //
@@ -738,18 +747,31 @@
 //   78 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//   79 void CLPompe :: vPompeSOL713 (void)
-??vPompeSOL713:
+//   79 void CLPompe :: SOL713 (void)
+??SOL713:
         CFI Block cfiBlock7 Using cfiCommon0
-        CFI Function ??vPompeSOL713
+        CFI Function ??SOL713
         CODE
 //   80 {
+        FUNCALL ??SOL713, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//   81   
-//   82 }
-        RET
+//   81 PCF1.Write(AdresseSOL713);  
+        ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+        MOV     R1,#0x40
+        LJMP    ??Write
         CFI EndBlock cfiBlock7
+//   82 }
 //   83 
 //   84 // **********************FONCTION: vPompeSOL713()
 //   85 //
@@ -771,18 +793,31 @@
 //  101 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  102 void CLPompe :: vPompeSOL716 (void)
-??vPompeSOL716:
+//  102 void CLPompe :: SOL716 (void)
+??SOL716:
         CFI Block cfiBlock8 Using cfiCommon0
-        CFI Function ??vPompeSOL716
+        CFI Function ??SOL716
         CODE
 //  103 {
+        FUNCALL ??SOL716, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  104   
-//  105 }
-        RET
+//  104 PCF1.Write(AdresseSOL716);  
+        ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+        MOV     R1,#0x40
+        LJMP    ??Write
         CFI EndBlock cfiBlock8
+//  105 }
 //  106 
 //  107 // **********************FONCTION: vPompeSOL722()
 //  108 //
@@ -804,18 +839,31 @@
 //  124 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  125 void CLPompe :: vPompeSOL722 (void)
-??vPompeSOL722:
+//  125 void CLPompe :: SOL722 (void)
+??SOL722:
         CFI Block cfiBlock9 Using cfiCommon0
-        CFI Function ??vPompeSOL722
+        CFI Function ??SOL722
         CODE
 //  126 {
+        FUNCALL ??SOL722, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  127   
-//  128 }
-        RET
+//  127 PCF1.Write(AdresseSOL722);  
+        ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+        MOV     R1,#0x40
+        LJMP    ??Write
         CFI EndBlock cfiBlock9
+//  128 }
 //  129 
 //  130 // **********************FONCTION: vPompeSOL722()
 //  131 //
@@ -837,18 +885,37 @@
 //  147 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  148 void CLPompe :: vPompeSOL719 (void)
-??vPompeSOL719:
+//  148 void CLPompe :: SOL719 (void)
+??SOL719:
         CFI Block cfiBlock10 Using cfiCommon0
-        CFI Function ??vPompeSOL719
+        CFI Function ??SOL719
         CODE
 //  149 {
+        FUNCALL ??SOL719, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  150   
-//  151 }
-        RET
+//  150 PCF2.Write(AdresseSOL719);  
+        ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+        MOV     R1,#0x41
+        MOV     A,R2
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        LJMP    ??Write
         CFI EndBlock cfiBlock10
+//  151 }
 //  152 
 //  153 // **********************FONCTION: vPompeSOL704()
 //  154 //
@@ -870,18 +937,37 @@
 //  170 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  171 void CLPompe :: vPompeSOL704 (void)
-??vPompeSOL704:
+//  171 void CLPompe :: SOL704 (void)
+??SOL704:
         CFI Block cfiBlock11 Using cfiCommon0
-        CFI Function ??vPompeSOL704
+        CFI Function ??SOL704
         CODE
 //  172 {
+        FUNCALL ??SOL704, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  173   
-//  174 }
-        RET
+//  173 PCF2.Write(AdresseSOL704);  
+        ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+        MOV     R1,#0x41
+        MOV     A,R2
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        LJMP    ??Write
         CFI EndBlock cfiBlock11
+//  174 }
 //  175 
 //  176 // **********************FONCTION: vPompeSOL706()
 //  177 //
@@ -903,25 +989,44 @@
 //  193 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  194 void CLPompe :: vPompeSOL706 (void)
-??vPompeSOL706:
+//  194 void CLPompe :: SOL706 (void)
+??SOL706:
         CFI Block cfiBlock12 Using cfiCommon0
-        CFI Function ??vPompeSOL706
+        CFI Function ??SOL706
         CODE
 //  195 {
+        FUNCALL ??SOL706, ??Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         ; Saved register size: 0
         ; Auto size: 0
-//  196   
-//  197 }
-        RET
+//  196 PCF2.Write(AdresseSOL706);  
+        ; Setup parameters for call to function CLIOPCF8574::Write(UC)
+        MOV     R1,#0x41
+        MOV     A,R2
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        LJMP    ??Write
         CFI EndBlock cfiBlock12
+//  197 }
 
         END
 //  198 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 // 
-// 249 bytes in segment NEAR_CODE
+// 298 bytes in segment NEAR_CODE
 // 
-// 249 bytes of CODE memory
+// 298 bytes of CODE memory
 //
 //Errors: none
 //Warnings: none

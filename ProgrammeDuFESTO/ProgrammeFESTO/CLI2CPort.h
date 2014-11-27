@@ -47,7 +47,8 @@ protected:
    void vI2CEcrireDonnee(UC ucAdrBoitier, UC ucAdrRegistre,  UC ucDonnee);
    void vI2CEcrireDonnee(UC ucAdrBoitier, USI uiAdrRegistre, UC ucTypeAdr,
                          UC *ucpDonnee,   UC ucNbrEcritures);
-
+   
+   UC   LirePCF8574     (void);
 private:
    UC ucAdrBoitier;
 };

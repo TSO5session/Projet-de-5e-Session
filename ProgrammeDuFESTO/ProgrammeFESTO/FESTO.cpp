@@ -1,15 +1,15 @@
 // **************************FESTO.cpp
-// Auteur:       Prenom Nom
-// Date:         19 Octobre 2014
+// Auteur:       Vincent Chouinard
+// Date:         27 novembre 2014
 // Version:      1.0
 // Modification: Aucune
 //
-// Compilateur:  IAR 8.1
+// Compilateur:  IAR 8.10
 //
 // Description:
 // *****************************************************************************
 #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
-#include "FESTO.h"               // Fichier de definitions de...
+#include "FESTO.h"                 // Fichier de definitions du gestionnaire de table festo
 
 //******************************************************************************
 //                            LE CONSTRUCTEUR PAR DEFAUT
@@ -53,10 +53,10 @@ CLFesto :: ~CLFesto(void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFesto :: ReadInstructionFromPC(void)
+UC CLFesto :: ReadInstructionFromPC(void) 
 {
-// MaVar = CAN.Read();
-return(NULL);
+  // Note: la station 1 lit le bus CAN et envoie par Xbee les infos appropriées à la table FESTO
+return(NULL); // Il faut donc lire le Xbee!
 }
 
 // **********************FONCTION: SendToBolide()
@@ -135,24 +135,24 @@ UC ucOptique    = 0;
 LCD.vLCDCursor(0,1);
 
 ////////////Lecture des capteurs
-ucCapacitive = Capteur.readCapacitiveCaptor();
-ucMagnetic   = Capteur.readInductiveCaptor ();
-ucOptique    = Capteur.readOpticCaptor     ();
+ucCapacitive = Capteur.ReadCapacitiveCaptor();
+ucMagnetic   = Capteur.ReadInductiveCaptor ();
+ucOptique    = Capteur.ReadOpticCaptor     ();
 
 ////////////Prise de décision
 if(ucCapacitive == 1) // Si un bloc est présent
   {
-   if((ucMagnetic == 1) && (ucOptique = 1))
+   if((ucMagnetic == 1) && (ucOptique == 1))
      {
       ucColor = METAL;  
      }
 
-   if((ucMagnetic == 0) && (ucOptique = 1))
+   if((ucMagnetic == 0) && (ucOptique == 1))
      {
       ucColor = ORANGE;  
      }
 
-   if((ucMagnetic == 0) && (ucOptique = 0))
+   if((ucMagnetic == 0) && (ucOptique == 0))
      {
       ucColor = NOIR;  
      }
@@ -162,31 +162,11 @@ else
    ucColor = NOBLOC;
   }
 
-////////////Écriture des résultats
-if(ucColor == ORANGE)
-  {
-   LCD.String("Orange");
-   SendToBolide("CounterClockWise");
-   CAN.Write(3, 0x04, 0x01, 0xFF);
-  }
-
-if(ucColor == NOIR)
-  {
-   LCD.String("Noir");
-   SendToBolide("STOP");
-   CAN.Write(3, 0x04, 0x02, 0xFF);
-  }
-
-if(ucColor == METAL)
-  {
-   LCD.String("Metallic");
-   SendToBolide("ClockWise");
-   CAN.Write(3, 0x04, 0x00, 0xFF);
-  }
-if(ucColor == NOBLOC)
-  {
-   LCD.String("Empty");
-  }
+////////////Écriture des résultats////////////
+if(ucColor == ORANGE){LCD.String("Orange"  );}
+if(ucColor == NOIR  ){LCD.String("Noir"    );}
+if(ucColor == METAL ){LCD.String("Metallic");}
+if(ucColor == NOBLOC){LCD.String("No bloc" );}
 return(ucColor);
 }
 
@@ -211,7 +191,6 @@ return(ucColor);
 UC CLFesto :: IsTheBolideHere(void)
 {
  LCD.String("Table FESTO");
- CAN.Write(3, 0x07, 0x02, 0xFF);
  return(0);
 }
 
@@ -233,37 +212,78 @@ UC CLFesto :: IsTheBolideHere(void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFesto :: ucGestionFESTO (void)
+void CLFesto :: ucGestionFESTO (void)
 {
-UC ucCouleurDuBloc; 
-  
-if(IsTheBolideHere() == TRUE) // Si le bolide est présent à la station FESTO
+UC ucCouleur;  
+LCD.vLCDCursor(0, 2);  
+
+if(IsTheBolideHere() == VRAI) // Si le bolide est à la table festo
   {
-   if(Capteur.readInductiveCaptor() == NOBLOC) // S'il n'y a pas de bloc dans la zone de départ
+   while(Capteur.ReadCapacitiveCaptor() == 0) // Tant qu'il n'y a pas de bloc dans l'aire de chargement
      {
-      Pompe.vPompeSOL725();  // Charge un bloc dans l'aire de chargement
-      Delai(5000);
+      Pompe.SOL725();                         // Active la pompe de chargement
+      LCD.String("SOL725 Active");
      }
-   else // S'il y a un bloc dans l'aire de chargement
+   
+   ucCouleur = GetBlocColor();                // Lit la couleur du bloc
+   Pompe.SOL713();                            // Active la pompe qui fait monter la plateforme
+   LCD.String("SOL713 Active");   
+   
+   while(Capteur.ReadHeightCaptor() == 0)     // Tant que la platefore n'a pas fini de monter
      {
-      ucCouleurDuBloc = GetBlocColor();// Lit la couleur du bloc
-      
-      while((Capteur.readHeightCaptor()) != 66)     // Tant que la plateforme n'a pas fini de s'élever // Note: 66, c'est pas la bonne valeur
-        {
-         Pompe.vPompeSOL713();                      // Active la pompe d'élévation du bloc
-        }
-      
-      while((Capteur.readPreVentouseCaptor()) != 1) // Tant que le bloc n'est pas au bout du convoyeur
-        {
-         Pompe.vPompeSOL722();                      // Envoie le bloc dans le convoyeur
-        }
-      Pompe.vPompeSOL719();                         // Rétracte la pompe d'envoie dans le convoyeur
+      Pompe.SOL713();                         // Active la pompe qui fait monter la plateforme
      }
+   
+   Pompe.SOL722();                            // Active la pompe qui envoie sur le convoyeur
+   LCD.String("SOL722 Active");
+         
+   while(Capteur.ReadPreVentouseCaptor() == 0) // Tant que le bloc est encore sur le convoyeur
+     {
+      Pompe.SOL722();                          // Maintient active la pompe qui envoie sur le convoyeur
+     }
+   
+   Pompe.SOL716();                           // Rétracte la pompe d'envoie dans le convoyeur
+   Pompe.SOL719();                           // Abaisse la plateforme élévatrice
   }
-return(0);
+else // Si le bolide n'est pas à la table festo
+  {
+   LCD.String("No bolid"); // Affiche un message sur l'écran LCD  
+  }
+
+if(IsTheBlocInTheBolid() == TRUE)        // Si le bloc est retombé dans le bolide
+  {
+   if(ucCouleur == ORANGE)               // Si le bloc est orange
+    {
+     SendToBolide("CounterClockWise");   // Donne une instruction au Bolide
+     SendToStation1("CounterClockWise"); // Donne l'info au PC via la station 1
+    }
+
+   if(ucCouleur == NOIR)                 // Si le bloc est noir
+    {
+     SendToBolide("STOP");               // Donne une instruction au Bolide
+     SendToStation1("STOP");             // Donne l'info au PC via la station 1
+    }
+
+   if(ucCouleur == METAL)                // Si le bloc est métallique
+    {
+     SendToBolide("ClockWise");          // Donne une instruction au Bolide
+     SendToStation1("ClockWise");        // Donne l'info au PC via la station 1
+    }
+
+   if(ucCouleur == NOBLOC)               // S'il n'y a pas de bloc
+    {
+     SendToBolide("No bloc");            // Donne une instruction au Bolide
+     SendToStation1("No bloc");          // Donne l'info au PC via la station 1
+    } 
+  }
 }
 
-void CLFesto :: Delai(unsigned long Temps)
+UC CLFesto :: IsTheBlocInTheBolid (void) // Retourne 1 lorsque le bloc est retombé dans le bolide
+{
+return(1);  
+}
+
+void CLFesto :: Delai(UINT32 Temps)
 {
 unsigned long k;
 for(k = 0; k < Temps; k++);  

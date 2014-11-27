@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         25/Nov/2014  19:57:45 #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         27/Nov/2014  09:22:09 #
 # Copyright 2004-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -44,12 +44,12 @@
 
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\CLFestoCaptors.cpp
       1          // **************************CLFestoCaptors.cpp
-      2          // Auteur:       Prenom Nom
-      3          // Date:         19 Octobre 2014
+      2          // Auteur:       Vincent Chouinard
+      3          // Date:         27 novembre 2014
       4          // Version:      1.0
       5          // Modification: Aucune
       6          //
-      7          // Compilateur:  IAR 8.1
+      7          // Compilateur:  IAR 8.10
       8          //
       9          // Description:
      10          // *****************************************************************************
@@ -73,27 +73,28 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   EB           MOV     A,R3
    \   000008   FF           MOV     R7,A
      19          {
-   \   000009                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000009                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
    \   000009   EE           MOV     A,R6
    \   00000A   FA           MOV     R2,A
    \   00000B   EF           MOV     A,R7
    \   00000C   FB           MOV     R3,A
-   \   00000D   12....       LCALL   ??CLSPI
-   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-   \   000010   8E82         MOV     DPL,R6
-   \   000012   8F83         MOV     DPH,R7
-   \   000014   A3           INC     DPTR
-   \   000015   AA82         MOV     R2,DPL
-   \   000017   AB83         MOV     R3,DPH
-   \   000019   12....       LCALL   ??CLI2CPort
+   \   00000D   12....       LCALL   ??CLIOPCF8574
+   \   000010                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+   \   000010   EE           MOV     A,R6
+   \   000011   2404         ADD     A,#0x4
+   \   000013   FA           MOV     R2,A
+   \   000014   EF           MOV     A,R7
+   \   000015   3400         ADDC    A,#0x0
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   ??CLIOPCF8574
      20          
      21          }
-   \   00001C   EE           MOV     A,R6
-   \   00001D   FA           MOV     R2,A
-   \   00001E   EF           MOV     A,R7
-   \   00001F   FB           MOV     R3,A
-   \   000020   7F01         MOV     R7,#0x1
-   \   000022   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00001B   EE           MOV     A,R6
+   \   00001C   FA           MOV     R2,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   FB           MOV     R3,A
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
      22          
      23          //******************************************************************************
      24          //                            LE CONSTRUCTEUR INITIALISATEUR
@@ -111,27 +112,28 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   EB           MOV     A,R3
    \   000008   FF           MOV     R7,A
      27          {
-   \   000009                ; Setup parameters for call to function CLSPI::CLSPI()
+   \   000009                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
    \   000009   EE           MOV     A,R6
    \   00000A   FA           MOV     R2,A
    \   00000B   EF           MOV     A,R7
    \   00000C   FB           MOV     R3,A
-   \   00000D   12....       LCALL   ??CLSPI
-   \   000010                ; Setup parameters for call to function CLI2CPort::CLI2CPort()
-   \   000010   8E82         MOV     DPL,R6
-   \   000012   8F83         MOV     DPH,R7
-   \   000014   A3           INC     DPTR
-   \   000015   AA82         MOV     R2,DPL
-   \   000017   AB83         MOV     R3,DPH
-   \   000019   12....       LCALL   ??CLI2CPort
+   \   00000D   12....       LCALL   ??CLIOPCF8574
+   \   000010                ; Setup parameters for call to function CLIOPCF8574::CLIOPCF8574()
+   \   000010   EE           MOV     A,R6
+   \   000011   2404         ADD     A,#0x4
+   \   000013   FA           MOV     R2,A
+   \   000014   EF           MOV     A,R7
+   \   000015   3400         ADDC    A,#0x0
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   ??CLIOPCF8574
      28          
      29          }
-   \   00001C   EE           MOV     A,R6
-   \   00001D   FA           MOV     R2,A
-   \   00001E   EF           MOV     A,R7
-   \   00001F   FB           MOV     R3,A
-   \   000020   7F01         MOV     R7,#0x1
-   \   000022   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   00001B   EE           MOV     A,R6
+   \   00001C   FA           MOV     R2,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   FB           MOV     R3,A
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
      30          
      31          // *****************************************************************************
      32          //                            LE DESTRUCTEUR
@@ -151,21 +153,22 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000008   FF           MOV     R7,A
      36          
      37          }
-   \   000009                ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
-   \   000009   8E82         MOV     DPL,R6
-   \   00000B   8F83         MOV     DPH,R7
-   \   00000D   A3           INC     DPTR
-   \   00000E   AA82         MOV     R2,DPL
-   \   000010   AB83         MOV     R3,DPH
-   \   000012   12....       LCALL   `?~CLI2CPort`
-   \   000015                ; Setup parameters for call to function CLSPI::~CLSPI()
-   \   000015   EE           MOV     A,R6
-   \   000016   FA           MOV     R2,A
-   \   000017   EF           MOV     A,R7
-   \   000018   FB           MOV     R3,A
-   \   000019   12....       LCALL   `?~CLSPI`
-   \   00001C   7F01         MOV     R7,#0x1
-   \   00001E   02....       LJMP    ?FUNC_LEAVE_XDATA
+   \   000009                ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
+   \   000009   EE           MOV     A,R6
+   \   00000A   2404         ADD     A,#0x4
+   \   00000C   FA           MOV     R2,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   FB           MOV     R3,A
+   \   000011   12....       LCALL   `?~CLIOPCF8574`
+   \   000014                ; Setup parameters for call to function CLIOPCF8574::~CLIOPCF8574()
+   \   000014   EE           MOV     A,R6
+   \   000015   FA           MOV     R2,A
+   \   000016   EF           MOV     A,R7
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   `?~CLIOPCF8574`
+   \   00001B   7F01         MOV     R7,#0x1
+   \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
      38          
      39          // **********************FONCTION: readCapacitiveCaptor()
      40          //
@@ -187,14 +190,14 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      56          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     57          UC CLFestoCaptors :: readCapacitiveCaptor (void)
-   \                     ??readCapacitiveCaptor:
+     57          UC CLFestoCaptors :: ReadCapacitiveCaptor (void)
+   \                     ??ReadCapacitiveCaptor:
      58          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-     59          return(0);
-   \   000000   7900         MOV     R1,#0x0
-   \   000002   22           RET
+     59          return(PCF3.Read());
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Read()
+   \   000000   02....       LJMP    ??Read
      60          }
      61          
      62          // **********************FONCTION: readOpticCaptor()
@@ -217,14 +220,14 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      79          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     80          UC CLFestoCaptors :: readOpticCaptor (void)
-   \                     ??readOpticCaptor:
+     80          UC CLFestoCaptors :: ReadOpticCaptor (void)
+   \                     ??ReadOpticCaptor:
      81          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-     82          return(0); 
-   \   000000   7900         MOV     R1,#0x0
-   \   000002   22           RET
+     82          return(PCF3.Read()); 
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Read()
+   \   000000   02....       LJMP    ??Read
      83          }
      84          
      85          // **********************FONCTION: readMagneticCaptor()
@@ -247,14 +250,14 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     102          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    103          UC CLFestoCaptors :: readInductiveCaptor (void)
-   \                     ??readInductiveCaptor:
+    103          UC CLFestoCaptors :: ReadInductiveCaptor (void)
+   \                     ??ReadInductiveCaptor:
     104          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    105          return(0);   
-   \   000000   7900         MOV     R1,#0x0
-   \   000002   22           RET
+    105          return(PCF3.Read());   
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Read()
+   \   000000   02....       LJMP    ??Read
     106          }
     107          
     108          // **********************FONCTION: readHeightCaptor()
@@ -277,14 +280,20 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     125          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    126          UC CLFestoCaptors :: readHeightCaptor (void)
-   \                     ??readHeightCaptor:
+    126          UC CLFestoCaptors :: ReadHeightCaptor (void)
+   \                     ??ReadHeightCaptor:
     127          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    128          return(0);
-   \   000000   7900         MOV     R1,#0x0
-   \   000002   22           RET
+    128          return(PCF4.Read());
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Read()
+   \   000000   EA           MOV     A,R2
+   \   000001   2404         ADD     A,#0x4
+   \   000003   FA           MOV     R2,A
+   \   000004   EB           MOV     A,R3
+   \   000005   3400         ADDC    A,#0x0
+   \   000007   FB           MOV     R3,A
+   \   000008   02....       LJMP    ??Read
     129          }
     130          
     131          // **********************FONCTION: readPreVentouseCaptor()
@@ -307,14 +316,20 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
     148          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    149          UC CLFestoCaptors :: readPreVentouseCaptor(void)
-   \                     ??readPreVentouseCaptor:
+    149          UC CLFestoCaptors :: ReadPreVentouseCaptor(void)
+   \                     ??ReadPreVentouseCaptor:
     150          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-    151          return(0);  
-   \   000000   7900         MOV     R1,#0x0
-   \   000002   22           RET
+    151          return(PCF4.Read());  
+   \   000000                ; Setup parameters for call to function CLIOPCF8574::Read()
+   \   000000   EA           MOV     A,R2
+   \   000001   2404         ADD     A,#0x4
+   \   000003   FA           MOV     R2,A
+   \   000004   EB           MOV     A,R3
+   \   000005   3400         ADDC    A,#0x0
+   \   000007   FB           MOV     R3,A
+   \   000008   02....       LJMP    ??Read
     152          }
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
@@ -325,7 +340,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000004                ; Saved register size: 2
    \   000004                ; Auto size: 0
    \   000004                ; Setup parameters for call to function operator new(unsigned int)
-   \   000004   7A03         MOV     R2,#0x3
+   \   000004   7A08         MOV     R2,#0x8
    \   000006   7B00         MOV     R3,#0x0
    \   000008   12....       LCALL   `??operator new`
    \   00000B   8A..         MOV     ?V0 + 0,R2
@@ -364,7 +379,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000005   E9           MOV     A,R1
    \   000006   FE           MOV     R6,A
    \   000007                ; Setup parameters for call to function operator new(unsigned int)
-   \   000007   7A03         MOV     R2,#0x3
+   \   000007   7A08         MOV     R2,#0x8
    \   000009   7B00         MOV     R3,#0x0
    \   00000B   12....       LCALL   `??operator new`
    \   00000E   8A..         MOV     ?V0 + 0,R2
@@ -431,12 +446,31 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      --------                       ------ ------ ------
      CLFestoCaptors::CLFestoCaptors()
                                         0      0      8
-       -> CLSPI::CLSPI()                0      0     16
-       -> CLI2CPort::CLI2CPort()        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
      CLFestoCaptors::CLFestoCaptors(UC)
                                         0      0     17
-       -> CLSPI::CLSPI()                0      0     16
-       -> CLI2CPort::CLI2CPort()        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
+       -> CLIOPCF8574::CLIOPCF8574()
+                                        0      0     16
+     CLFestoCaptors::ReadCapacitiveCaptor()
+                                        0      0      0
+       -> CLIOPCF8574::Read()           0      0      0
+     CLFestoCaptors::ReadHeightCaptor()
+                                        0      0      0
+       -> CLIOPCF8574::Read()           0      0      0
+     CLFestoCaptors::ReadInductiveCaptor()
+                                        0      0      0
+       -> CLIOPCF8574::Read()           0      0      0
+     CLFestoCaptors::ReadOpticCaptor()
+                                        0      0      0
+       -> CLIOPCF8574::Read()           0      0      0
+     CLFestoCaptors::ReadPreVentouseCaptor()
+                                        0      0      0
+       -> CLIOPCF8574::Read()           0      0      0
      CLFestoCaptors::delete ~CLFestoCaptors(CLFestoCaptors *)
                                         0      0      8
        -> CLFestoCaptors::~CLFestoCaptors()
@@ -454,20 +488,12 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
                                         0      0     18
        -> CLFestoCaptors::CLFestoCaptors(UC)
                                         0      0     18
-     CLFestoCaptors::readCapacitiveCaptor()
-                                        0      0      0
-     CLFestoCaptors::readHeightCaptor()
-                                        0      0      0
-     CLFestoCaptors::readInductiveCaptor()
-                                        0      0      0
-     CLFestoCaptors::readOpticCaptor()
-                                        0      0      0
-     CLFestoCaptors::readPreVentouseCaptor()
-                                        0      0      0
      CLFestoCaptors::~CLFestoCaptors()
                                         0      0     16
-       -> CLI2CPort::~CLI2CPort()       0      0     16
-       -> CLSPI::~CLSPI()               0      0     16
+       -> CLIOPCF8574::~CLIOPCF8574()
+                                        0      0     16
+       -> CLIOPCF8574::~CLIOPCF8574()
+                                        0      0     16
 
 
    Segment part sizes:
@@ -475,21 +501,21 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
      Function/Label                 Bytes
      --------------                 -----
      CLFestoCaptors::CLFestoCaptors()
-                                      37
+                                      36
      CLFestoCaptors::CLFestoCaptors(UC)
-                                      37
+                                      36
      CLFestoCaptors::~CLFestoCaptors()
-                                      33
-     CLFestoCaptors::readCapacitiveCaptor()
+                                      32
+     CLFestoCaptors::ReadCapacitiveCaptor()
                                        3
-     CLFestoCaptors::readOpticCaptor()
+     CLFestoCaptors::ReadOpticCaptor()
                                        3
-     CLFestoCaptors::readInductiveCaptor()
+     CLFestoCaptors::ReadInductiveCaptor()
                                        3
-     CLFestoCaptors::readHeightCaptor()
-                                       3
-     CLFestoCaptors::readPreVentouseCaptor()
-                                       3
+     CLFestoCaptors::ReadHeightCaptor()
+                                      11
+     CLFestoCaptors::ReadPreVentouseCaptor()
+                                      11
      CLFestoCaptors::new CLFestoCaptors()
                                       49
      CLFestoCaptors::new CLFestoCaptors(UC)
@@ -498,9 +524,9 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
                                       32
 
  
- 257 bytes in segment NEAR_CODE
+ 270 bytes in segment NEAR_CODE
  
- 257 bytes of CODE memory
+ 270 bytes of CODE memory
 
 Errors: none
 Warnings: none

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        25/Nov/2014  19:57:45 /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        27/Nov/2014  09:22:08 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -78,6 +78,10 @@
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME ISTACK, 2, STACK
+        PUBLIC ??LirePCF8574
+        FUNCTION ??LirePCF8574,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
         PUBLIC `??delete ~CLI2CPort`
         FUNCTION `??delete ~CLI2CPort`,021203H
         ARGFRAME XSTACK, 0, STACK
@@ -1993,14 +1997,139 @@
         MOV     R7,#0x8
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock7
+//  246 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  247 UC CLI2CPort :: LirePCF8574(void)
+??LirePCF8574:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function ??LirePCF8574
+        CODE
+//  248 {
+        FUNCALL ??LirePCF8574, ??vI2CStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??LirePCF8574, ??vI2CStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??LirePCF8574, ??ucI2CEcrireOctet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??LirePCF8574, ??ucI2CLireOctet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??LirePCF8574, ??vI2CStop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 8)
+        ; Saved register size: 8
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+//  249 UC ucDonneeLue;  
+//  250 vI2CStart();
+        ; Setup parameters for call to function CLI2CBase::vI2CStart()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vI2CStart
+        SJMP    ??LirePCF8574_1
+//  251 while(ucI2CEcrireOctet(0x40) == NACK){vI2CStart();}  
+??LirePCF8574_2:
+        ; Setup parameters for call to function CLI2CBase::vI2CStart()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vI2CStart
+??LirePCF8574_1:
+        ; Setup parameters for call to function CLI2CBase::ucI2CEcrireOctet(UC)
+        MOV     R1,#0x40
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ucI2CEcrireOctet
+        MOV     A,R1
+        XRL     A,#0x1
+        JZ      ??LirePCF8574_2
+//  252 ucDonneeLue = ucI2CLireOctet(NACK);
+        ; Setup parameters for call to function CLI2CBase::ucI2CLireOctet(UC)
+        MOV     R1,#0x1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ucI2CLireOctet
+        MOV     A,R1
+        MOV     R6,A
+//  253 vI2CStop();
+        ; Setup parameters for call to function CLI2CBase::vI2CStop()
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vI2CStop
+//  254 return(ucDonneeLue);
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+//  255 }
 
         END
-//  246 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
-//  247 
+//  256 
+//  257 
+//  258 
+//  259 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+//  260 
 // 
-// 1 042 bytes in segment NEAR_CODE
+// 1 106 bytes in segment NEAR_CODE
 // 
-// 1 042 bytes of CODE memory
+// 1 106 bytes of CODE memory
 //
 //Errors: none
 //Warnings: none

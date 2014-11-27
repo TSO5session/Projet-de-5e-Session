@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        25/Nov/2014  19:57:44 /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        27/Nov/2014  09:22:07 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -64,13 +64,10 @@
 //      not produce an equivalent object file to the one produced
 //      by the C++ compiler.
 
-        EXTERN ?DEALLOC_XSTACK8
         EXTERN ?FUNC_ENTER_XDATA
         EXTERN ?FUNC_LEAVE_XDATA
         EXTERN ?L_ADD_X
         EXTERN ?L_MOV_X
-        EXTERN ?PUSH_XSTACK8_X_FOUR
-        EXTERN ?PUSH_XSTACK_I_ONE
         EXTERN ?UL_GT
         EXTERN ?V0
         EXTERN ?XSTACK_DISP0_8
@@ -90,34 +87,39 @@
         LOCFRAME XSTACK, 8, STACK
         PUBLIC ??Delai
         FUNCTION ??Delai,0203H
-        ARGFRAME XSTACK, 12, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
+        ARGFRAME XSTACK, 4, STACK
         LOCFRAME XSTACK, 15, STACK
         PUBLIC ??GetBlocColor
         FUNCTION ??GetBlocColor,021203H
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME XSTACK, 11, STACK
+        PUBLIC ??IsTheBlocInTheBolid
+        FUNCTION ??IsTheBlocInTheBolid,0203H
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         PUBLIC ??IsTheBolideHere
         FUNCTION ??IsTheBolideHere,021203H
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME ISTACK, 2, STACK
         PUBLIC ??ReadInstructionFromPC
         FUNCTION ??ReadInstructionFromPC,0203H
         ARGFRAME XSTACK, 0, STACK
         PUBLIC ??SendToBolide
         FUNCTION ??SendToBolide,021203H
-        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME XSTACK, 8, STACK
         PUBLIC ??SendToStation1
         FUNCTION ??SendToStation1,021203H
-        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME XSTACK, 8, STACK
         PUBLIC `??delete ~CLFesto`
         FUNCTION `??delete ~CLFesto`,021203H
@@ -134,7 +136,7 @@
         PUBLIC ??ucGestionFESTO
         FUNCTION ??ucGestionFESTO,021203H
         ARGFRAME XSTACK, 0, STACK
-        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME XSTACK, 8, STACK
         PUBLIC `?~CLFesto`
         FUNCTION `?~CLFesto`,021203H
         ARGFRAME XSTACK, 8, STACK
@@ -143,7 +145,6 @@
         LOCFRAME XSTACK, 8, STACK
         PUBWEAK __Constant_0
         PUBWEAK __Constant_1
-        PUBWEAK __Constant_1388
         
         CFI Names cfiNames0
         CFI StackFrame CFA_SP SP IDATA
@@ -242,20 +243,6 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??CLI2CPort
-        FUNCTION ??CLI2CPort,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??CLMCP2515
-        FUNCTION ??CLMCP2515,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
         EXTERN ??CLEcran
         FUNCTION ??CLEcran,0202H
         ARGFRAME ISTACK, 0, STACK
@@ -298,20 +285,6 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN `?~CLMCP2515`
-        FUNCTION `?~CLMCP2515`,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN `?~CLI2CPort`
-        FUNCTION `?~CLI2CPort`,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
         EXTERN `?~CLCommunic`
         FUNCTION `?~CLCommunic`,0202H
         ARGFRAME ISTACK, 0, STACK
@@ -340,22 +313,22 @@
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??readCapacitiveCaptor
-        FUNCTION ??readCapacitiveCaptor,0202H
+        EXTERN ??ReadCapacitiveCaptor
+        FUNCTION ??ReadCapacitiveCaptor,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??readInductiveCaptor
-        FUNCTION ??readInductiveCaptor,0202H
+        EXTERN ??ReadInductiveCaptor
+        FUNCTION ??ReadInductiveCaptor,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??readOpticCaptor
-        FUNCTION ??readOpticCaptor,0202H
+        EXTERN ??ReadOpticCaptor
+        FUNCTION ??ReadOpticCaptor,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 11, STACK
@@ -363,55 +336,55 @@
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN ??String
         FUNCTION ??String,0202H
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??Write
-        FUNCTION ??Write,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 12, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??vPompeSOL725
-        FUNCTION ??vPompeSOL725,0202H
+        EXTERN ??SOL725
+        FUNCTION ??SOL725,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??vPompeSOL713
-        FUNCTION ??vPompeSOL713,0202H
+        EXTERN ??SOL713
+        FUNCTION ??SOL713,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??readHeightCaptor
-        FUNCTION ??readHeightCaptor,0202H
+        EXTERN ??ReadHeightCaptor
+        FUNCTION ??ReadHeightCaptor,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??readPreVentouseCaptor
-        FUNCTION ??readPreVentouseCaptor,0202H
+        EXTERN ??SOL722
+        FUNCTION ??SOL722,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??vPompeSOL722
-        FUNCTION ??vPompeSOL722,0202H
+        EXTERN ??ReadPreVentouseCaptor
+        FUNCTION ??ReadPreVentouseCaptor,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??vPompeSOL719
-        FUNCTION ??vPompeSOL719,0202H
+        EXTERN ??SOL716
+        FUNCTION ??SOL716,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??SOL719
+        FUNCTION ??SOL719,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 8, STACK
@@ -456,7 +429,7 @@
         ; Saved register size: 2
         ; Auto size: 0
         ; Setup parameters for call to function operator new(unsigned int)
-        MOV     R2,#0x14
+        MOV     R2,#0x13
         MOV     R3,#0x0
         LCALL   `??operator new`
         MOV     ?V0 + 0,R2
@@ -536,7 +509,7 @@
         MOV     A,R1
         MOV     R6,A
         ; Setup parameters for call to function operator new(unsigned int)
-        MOV     R2,#0x14
+        MOV     R2,#0x13
         MOV     R3,#0x0
         LCALL   `??operator new`
         MOV     ?V0 + 0,R2
@@ -634,17 +607,17 @@
         CFI EndBlock cfiBlock2
 // C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\FESTO.cpp
 //    1 // **************************FESTO.cpp
-//    2 // Auteur:       Prenom Nom
-//    3 // Date:         19 Octobre 2014
+//    2 // Auteur:       Vincent Chouinard
+//    3 // Date:         27 novembre 2014
 //    4 // Version:      1.0
 //    5 // Modification: Aucune
 //    6 //
-//    7 // Compilateur:  IAR 8.1
+//    7 // Compilateur:  IAR 8.10
 //    8 //
 //    9 // Description:
 //   10 // *****************************************************************************
 //   11 #include "_DeclarationGenerale.h"  // Raccourcis de programmation & variables
-//   12 #include "FESTO.h"               // Fichier de definitions de...
+//   12 #include "FESTO.h"                 // Fichier de definitions du gestionnaire de table festo
 //   13 
 //   14 //******************************************************************************
 //   15 //                            LE CONSTRUCTEUR PAR DEFAUT
@@ -657,28 +630,6 @@
         CFI Function ??CLFesto
         CODE
         FUNCALL ??CLFesto, ??CLCommunic
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 8, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLFesto, ??CLI2CPort
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 8, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLFesto, ??CLMCP2515
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -747,32 +698,16 @@
         MOV     A,R7
         MOV     R3,A
         LCALL   ??CLCommunic
-        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+        ; Setup parameters for call to function CLEcran::CLEcran()
         MOV     DPL,R6
         MOV     DPH,R7
         INC     DPTR
         MOV     R2,DPL
         MOV     R3,DPH
-        LCALL   ??CLI2CPort
-        ; Setup parameters for call to function CLMCP2515::CLMCP2515()
-        MOV     A,R6
-        ADD     A,#0x3
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??CLMCP2515
-        ; Setup parameters for call to function CLEcran::CLEcran()
-        MOV     A,R6
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
         LCALL   ??CLEcran
         ; Setup parameters for call to function CLPompe::CLPompe()
         MOV     A,R6
-        ADD     A,#0xe
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
@@ -780,7 +715,7 @@
         LCALL   ??CLPompe
         ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors()
         MOV     A,R6
-        ADD     A,#0x11
+        ADD     A,#0xb
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
@@ -807,28 +742,6 @@
         CFI Function ??CLFesto_1
         CODE
         FUNCALL ??CLFesto_1, ??CLCommunic
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 8, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLFesto_1, ??CLI2CPort
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 8, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??CLFesto_1, ??CLMCP2515
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -897,32 +810,16 @@
         MOV     A,R7
         MOV     R3,A
         LCALL   ??CLCommunic
-        ; Setup parameters for call to function CLI2CPort::CLI2CPort()
+        ; Setup parameters for call to function CLEcran::CLEcran()
         MOV     DPL,R6
         MOV     DPH,R7
         INC     DPTR
         MOV     R2,DPL
         MOV     R3,DPH
-        LCALL   ??CLI2CPort
-        ; Setup parameters for call to function CLMCP2515::CLMCP2515()
-        MOV     A,R6
-        ADD     A,#0x3
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??CLMCP2515
-        ; Setup parameters for call to function CLEcran::CLEcran()
-        MOV     A,R6
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
         LCALL   ??CLEcran
         ; Setup parameters for call to function CLPompe::CLPompe()
         MOV     A,R6
-        ADD     A,#0xe
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
@@ -930,7 +827,7 @@
         LCALL   ??CLPompe
         ; Setup parameters for call to function CLFestoCaptors::CLFestoCaptors()
         MOV     A,R6
-        ADD     A,#0x11
+        ADD     A,#0xb
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
@@ -990,28 +887,6 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL `?~CLFesto`, `?~CLMCP2515`
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 8, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL `?~CLFesto`, `?~CLI2CPort`
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 8, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 8, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL `?~CLFesto`, `?~CLCommunic`
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1045,7 +920,7 @@
 //   36 }
         ; Setup parameters for call to function CLFestoCaptors::~CLFestoCaptors()
         MOV     A,R6
-        ADD     A,#0x11
+        ADD     A,#0xb
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
@@ -1053,35 +928,19 @@
         LCALL   `?~CLFestoCaptors`
         ; Setup parameters for call to function CLPompe::~CLPompe()
         MOV     A,R6
-        ADD     A,#0xe
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
         LCALL   `?~CLPompe`
         ; Setup parameters for call to function CLEcran::~CLEcran()
-        MOV     A,R6
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   `?~CLEcran`
-        ; Setup parameters for call to function CLMCP2515::~CLMCP2515()
-        MOV     A,R6
-        ADD     A,#0x3
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   `?~CLMCP2515`
-        ; Setup parameters for call to function CLI2CPort::~CLI2CPort()
         MOV     DPL,R6
         MOV     DPH,R7
         INC     DPTR
         MOV     R2,DPL
         MOV     R3,DPH
-        LCALL   `?~CLI2CPort`
+        LCALL   `?~CLEcran`
         ; Setup parameters for call to function CLCommunic::~CLCommunic()
         MOV     A,R6
         MOV     R2,A
@@ -1112,7 +971,7 @@
 //   55 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//   56 UC CLFesto :: ReadInstructionFromPC(void)
+//   56 UC CLFesto :: ReadInstructionFromPC(void) 
 ??ReadInstructionFromPC:
         CFI Block cfiBlock6 Using cfiCommon0
         CFI Function ??ReadInstructionFromPC
@@ -1120,8 +979,8 @@
 //   57 {
         ; Saved register size: 0
         ; Auto size: 0
-//   58 // MaVar = CAN.Read();
-//   59 return(NULL);
+//   58   // Note: la station 1 lit le bus CAN et envoie par Xbee les infos appropriées à la table FESTO
+//   59 return(NULL); // Il faut donc lire le Xbee!
         MOV     R1,#0x0
         RET
         CFI EndBlock cfiBlock6
@@ -1340,7 +1199,7 @@
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??readCapacitiveCaptor
+        FUNCALL ??GetBlocColor, ??ReadCapacitiveCaptor
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 11, STACK
@@ -1351,7 +1210,7 @@
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??readInductiveCaptor
+        FUNCALL ??GetBlocColor, ??ReadInductiveCaptor
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 11, STACK
@@ -1362,7 +1221,7 @@
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??readOpticCaptor
+        FUNCALL ??GetBlocColor, ??ReadOpticCaptor
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 11, STACK
@@ -1384,28 +1243,6 @@
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??SendToBolide
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 11, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 11, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??Write
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 12, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 12, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL ??GetBlocColor, ??String
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1417,28 +1254,6 @@
         ARGFRAME XSTACK, 11, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??SendToBolide
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 11, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 11, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??Write
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 12, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 12, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL ??GetBlocColor, ??String
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1448,28 +1263,6 @@
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 11, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??SendToBolide
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 11, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 11, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??GetBlocColor, ??Write
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 12, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 12, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL ??GetBlocColor, ??String
@@ -1500,110 +1293,104 @@
         CFI CFA_XSP16 add(XSP16, 11)
         ; Saved register size: 11
         ; Auto size: 0
-        MOV     ?V0 + 0,R2
-        MOV     ?V0 + 1,R3
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
 //  130 UC ucColor      = 0;
-        MOV     R6,#0x0
+        MOV     ?V0 + 0,#0x0
 //  131 UC ucCapacitive = 0;
-        MOV     ?V0 + 3,#0x0
+        MOV     ?V0 + 1,#0x0
 //  132 UC ucMagnetic   = 0;
         MOV     ?V0 + 2,#0x0
 //  133 UC ucOptique    = 0;
-        MOV     R7,#0x0
+        MOV     ?V0 + 3,#0x0
 //  134 
 //  135 LCD.vLCDCursor(0,1);
         ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
         MOV     R4,#0x1
         MOV     R1,#0x0
-        MOV     A,?V0 + 0
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
         LCALL   ??vLCDCursor
 //  136 
 //  137 ////////////Lecture des capteurs
-//  138 ucCapacitive = Capteur.readCapacitiveCaptor();
-        ; Setup parameters for call to function CLFestoCaptors::readCapacitiveCaptor()
-        MOV     A,?V0 + 0
-        ADD     A,#0x11
+//  138 ucCapacitive = Capteur.ReadCapacitiveCaptor();
+        ; Setup parameters for call to function CLFestoCaptors::ReadCapacitiveCaptor()
+        MOV     A,R6
+        ADD     A,#0xb
         MOV     R2,A
-        MOV     A,?V0 + 1
+        MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??readCapacitiveCaptor
+        LCALL   ??ReadCapacitiveCaptor
         MOV     A,R1
-        MOV     ?V0 + 3,A
-//  139 ucMagnetic   = Capteur.readInductiveCaptor ();
-        ; Setup parameters for call to function CLFestoCaptors::readInductiveCaptor()
-        MOV     A,?V0 + 0
-        ADD     A,#0x11
+        MOV     ?V0 + 1,A
+//  139 ucMagnetic   = Capteur.ReadInductiveCaptor ();
+        ; Setup parameters for call to function CLFestoCaptors::ReadInductiveCaptor()
+        MOV     A,R6
+        ADD     A,#0xb
         MOV     R2,A
-        MOV     A,?V0 + 1
+        MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??readInductiveCaptor
+        LCALL   ??ReadInductiveCaptor
         MOV     A,R1
         MOV     ?V0 + 2,A
-//  140 ucOptique    = Capteur.readOpticCaptor     ();
-        ; Setup parameters for call to function CLFestoCaptors::readOpticCaptor()
-        MOV     A,?V0 + 0
-        ADD     A,#0x11
+//  140 ucOptique    = Capteur.ReadOpticCaptor     ();
+        ; Setup parameters for call to function CLFestoCaptors::ReadOpticCaptor()
+        MOV     A,R6
+        ADD     A,#0xb
         MOV     R2,A
-        MOV     A,?V0 + 1
+        MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??readOpticCaptor
+        LCALL   ??ReadOpticCaptor
         MOV     A,R1
-        MOV     R7,A
+        MOV     ?V0 + 3,A
 //  141 
 //  142 ////////////Prise de décision
 //  143 if(ucCapacitive == 1) // Si un bloc est présent
         MOV     A,#0x1
-        XRL     A,?V0 + 3
+        XRL     A,?V0 + 1
         JNZ     ??GetBlocColor_1
 //  144   {
-//  145    if((ucMagnetic == 1) && (ucOptique = 1))
+//  145    if((ucMagnetic == 1) && (ucOptique == 1))
         MOV     A,#0x1
         XRL     A,?V0 + 2
         JNZ     ??GetBlocColor_2
-        MOV     R0,#0x1
-        MOV     A,R0
-        MOV     R7,A
-        MOV     A,R0
-        JZ      ??GetBlocColor_2
+        MOV     A,#0x1
+        XRL     A,?V0 + 3
+        JNZ     ??GetBlocColor_2
 //  146      {
 //  147       ucColor = METAL;  
-        MOV     R6,#0x3
+        MOV     ?V0 + 0,#0x3
 //  148      }
 //  149 
-//  150    if((ucMagnetic == 0) && (ucOptique = 1))
+//  150    if((ucMagnetic == 0) && (ucOptique == 1))
 ??GetBlocColor_2:
         MOV     A,?V0 + 2
         JNZ     ??GetBlocColor_3
-        MOV     R0,#0x1
-        MOV     A,R0
-        MOV     R7,A
-        MOV     A,R0
-        JZ      ??GetBlocColor_3
+        MOV     A,#0x1
+        XRL     A,?V0 + 3
+        JNZ     ??GetBlocColor_3
 //  151      {
 //  152       ucColor = ORANGE;  
-        MOV     R6,#0x1
+        MOV     ?V0 + 0,#0x1
 //  153      }
 //  154 
-//  155    if((ucMagnetic == 0) && (ucOptique = 0))
+//  155    if((ucMagnetic == 0) && (ucOptique == 0))
 ??GetBlocColor_3:
         MOV     A,?V0 + 2
         JNZ     ??GetBlocColor_4
-        MOV     R0,#0x0
-        MOV     A,R0
-        MOV     R7,A
-        MOV     A,R0
-        JZ      ??GetBlocColor_4
+        MOV     A,?V0 + 3
+        JNZ     ??GetBlocColor_4
 //  156      {
 //  157       ucColor = NOIR;  
-        MOV     R6,#0x2
+        MOV     ?V0 + 0,#0x2
         SJMP    ??GetBlocColor_4
 //  158      }
 //  159   }
@@ -1611,201 +1398,168 @@
 //  161   {
 //  162    ucColor = NOBLOC;
 ??GetBlocColor_1:
-        MOV     R6,#0x4
+        MOV     ?V0 + 0,#0x4
 //  163   }
 //  164 
-//  165 ////////////Écriture des résultats
-//  166 if(ucColor == ORANGE)
+//  165 ////////////Écriture des résultats////////////
+//  166 if(ucColor == ORANGE){LCD.String("Orange"  );}
 ??GetBlocColor_4:
         MOV     A,#0x1
-        XRL     A,R6
+        XRL     A,?V0 + 0
         JNZ     ??GetBlocColor_5
-//  167   {
-//  168    LCD.String("Orange");
         ; Setup parameters for call to function CLEcran::String(char const *)
         MOV     R4,#`?<Constant "Orange">` & 0xff
         MOV     R5,#(`?<Constant "Orange">` >> 8) & 0xff
-        MOV     A,?V0 + 0
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
         LCALL   ??String
-//  169    SendToBolide("CounterClockWise");
-        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
-        MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
-        MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
-        MOV     R2,?V0 + 0
-        MOV     R3,?V0 + 1
-        LCALL   ??SendToBolide
-//  170    CAN.Write(3, 0x04, 0x01, 0xFF);
-        ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-        MOV     ?V0 + 2,#-0x1
-        MOV     R0,#?V0 + 2
-        LCALL   ?PUSH_XSTACK_I_ONE
-        CFI CFA_XSP16 add(XSP16, 12)
-        MOV     R5,#0x1
-        MOV     R4,#0x4
-        MOV     R1,#0x3
-        MOV     A,?V0 + 0
-        ADD     A,#0x3
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??Write
-        MOV     A,#0x1
-        LCALL   ?DEALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 11)
-        MOV     A,R1
-//  171   }
-//  172 
-//  173 if(ucColor == NOIR)
+//  167 if(ucColor == NOIR  ){LCD.String("Noir"    );}
 ??GetBlocColor_5:
         MOV     A,#0x2
-        XRL     A,R6
+        XRL     A,?V0 + 0
         JNZ     ??GetBlocColor_6
-//  174   {
-//  175    LCD.String("Noir");
         ; Setup parameters for call to function CLEcran::String(char const *)
         MOV     R4,#`?<Constant "Noir">` & 0xff
         MOV     R5,#(`?<Constant "Noir">` >> 8) & 0xff
-        MOV     A,?V0 + 0
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
         LCALL   ??String
-//  176    SendToBolide("STOP");
-        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
-        MOV     R4,#`?<Constant "STOP">` & 0xff
-        MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
-        MOV     R2,?V0 + 0
-        MOV     R3,?V0 + 1
-        LCALL   ??SendToBolide
-//  177    CAN.Write(3, 0x04, 0x02, 0xFF);
-        ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-        MOV     ?V0 + 2,#-0x1
-        MOV     R0,#?V0 + 2
-        LCALL   ?PUSH_XSTACK_I_ONE
-        CFI CFA_XSP16 add(XSP16, 12)
-        MOV     R5,#0x2
-        MOV     R4,#0x4
-        MOV     R1,#0x3
-        MOV     A,?V0 + 0
-        ADD     A,#0x3
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??Write
-        MOV     A,#0x1
-        LCALL   ?DEALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 11)
-        MOV     A,R1
-//  178   }
-//  179 
-//  180 if(ucColor == METAL)
+//  168 if(ucColor == METAL ){LCD.String("Metallic");}
 ??GetBlocColor_6:
         MOV     A,#0x3
-        XRL     A,R6
+        XRL     A,?V0 + 0
         JNZ     ??GetBlocColor_7
-//  181   {
-//  182    LCD.String("Metallic");
         ; Setup parameters for call to function CLEcran::String(char const *)
         MOV     R4,#`?<Constant "Metallic">` & 0xff
         MOV     R5,#(`?<Constant "Metallic">` >> 8) & 0xff
-        MOV     A,?V0 + 0
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
         LCALL   ??String
-//  183    SendToBolide("ClockWise");
-        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
-        MOV     R4,#`?<Constant "ClockWise">` & 0xff
-        MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
-        MOV     R2,?V0 + 0
-        MOV     R3,?V0 + 1
-        LCALL   ??SendToBolide
-//  184    CAN.Write(3, 0x04, 0x00, 0xFF);
-        ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-        MOV     ?V0 + 2,#-0x1
-        MOV     R0,#?V0 + 2
-        LCALL   ?PUSH_XSTACK_I_ONE
-        CFI CFA_XSP16 add(XSP16, 12)
-        MOV     R5,#0x0
-        MOV     R4,#0x4
-        MOV     R1,#0x3
-        MOV     A,?V0 + 0
-        ADD     A,#0x3
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??Write
-        MOV     A,#0x1
-        LCALL   ?DEALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 11)
-        MOV     A,R1
-//  185   }
-//  186 if(ucColor == NOBLOC)
+//  169 if(ucColor == NOBLOC){LCD.String("No bloc" );}
 ??GetBlocColor_7:
         MOV     A,#0x4
-        XRL     A,R6
+        XRL     A,?V0 + 0
         JNZ     ??GetBlocColor_8
-//  187   {
-//  188    LCD.String("Empty");
         ; Setup parameters for call to function CLEcran::String(char const *)
-        MOV     R4,#`?<Constant "Empty">` & 0xff
-        MOV     R5,#(`?<Constant "Empty">` >> 8) & 0xff
-        MOV     A,?V0 + 0
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,?V0 + 1
-        ADDC    A,#0x0
-        MOV     R3,A
+        MOV     R4,#`?<Constant "No bloc">` & 0xff
+        MOV     R5,#(`?<Constant "No bloc">` >> 8) & 0xff
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
         LCALL   ??String
-//  189   }
-//  190 return(ucColor);
+//  170 return(ucColor);
 ??GetBlocColor_8:
-        MOV     A,R6
-        MOV     R1,A
+        MOV     R1,?V0 + 0
         MOV     R7,#0x4
         LJMP    ?FUNC_LEAVE_XDATA
         CFI EndBlock cfiBlock9
-//  191 }
-//  192 
-//  193 // **********************FONCTION: IsTheBolideHere()
-//  194 //
-//  195 // DESCRIPTION        : Vérifie et indique la présence du bolide
-//  196 //
-//  197 // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
-//  198 //                      
-//  199 // PROTOTYPE          : UC IsTheBolideHere(void)
-//  200 //
-//  201 // PROCEDURE D'APPEL  : data = IsTheBolideHere()
-//  202 //
-//  203 // PARAMETRE D'ENTREE : AUCUN
-//  204 //
-//  205 // PARAMETRE DE SORTIE: UC
-//  206 //
-//  207 // Auteur             : Vincent Chouinard
-//  208 // Date               : 25 novembre 2014   (Version 1.0)
-//  209 // Modification       :
-//  210 // *****************************************************************************
+//  171 }
+//  172 
+//  173 // **********************FONCTION: IsTheBolideHere()
+//  174 //
+//  175 // DESCRIPTION        : Vérifie et indique la présence du bolide
+//  176 //
+//  177 // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
+//  178 //                      
+//  179 // PROTOTYPE          : UC IsTheBolideHere(void)
+//  180 //
+//  181 // PROCEDURE D'APPEL  : data = IsTheBolideHere()
+//  182 //
+//  183 // PARAMETRE D'ENTREE : AUCUN
+//  184 //
+//  185 // PARAMETRE DE SORTIE: UC
+//  186 //
+//  187 // Auteur             : Vincent Chouinard
+//  188 // Date               : 25 novembre 2014   (Version 1.0)
+//  189 // Modification       :
+//  190 // *****************************************************************************
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  211 UC CLFesto :: IsTheBolideHere(void)
+//  191 UC CLFesto :: IsTheBolideHere(void)
 ??IsTheBolideHere:
         CFI Block cfiBlock10 Using cfiCommon0
         CFI Function ??IsTheBolideHere
         CODE
-//  212 {
+//  192 {
         FUNCALL ??IsTheBolideHere, ??String
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//  193  LCD.String("Table FESTO");
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "Table FESTO">` & 0xff
+        MOV     R5,#(`?<Constant "Table FESTO">` >> 8) & 0xff
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??String
+//  194  return(0);
+        MOV     R1,#0x0
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-3
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-2
+        RET
+        CFI EndBlock cfiBlock10
+//  195 }
+//  196 
+//  197 // **********************FONCTION: ucGestionFESTO()
+//  198 //
+//  199 // DESCRIPTION        : Gère toute la séquence de la table Festo
+//  200 //
+//  201 // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
+//  202 //                      
+//  203 // PROTOTYPE          : UC readMagneticCaptor(void)
+//  204 //
+//  205 // PROCEDURE D'APPEL  : data = readMagneticCaptor()
+//  206 //
+//  207 // PARAMETRE D'ENTREE : AUCUN
+//  208 //
+//  209 // PARAMETRE DE SORTIE: UC
+//  210 //
+//  211 // Auteur             : Vincent Chouinard
+//  212 // Date               : 25 novembre 2014   (Version 1.0)
+//  213 // Modification       :
+//  214 // *****************************************************************************
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  215 void CLFesto :: ucGestionFESTO (void)
+??ucGestionFESTO:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function ??ucGestionFESTO
+        CODE
+//  216 {
+        FUNCALL ??ucGestionFESTO, ??vLCDCursor
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -1816,99 +1570,6 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??IsTheBolideHere, ??Write
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 9, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 9, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        MOV     A,#-0x8
-        LCALL   ?FUNC_ENTER_XDATA
-        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-3)))
-        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-4)))
-        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-5)))
-        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-7)))
-        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-        CFI CFA_SP SP+0
-        CFI CFA_XSP16 add(XSP16, 8)
-        ; Saved register size: 8
-        ; Auto size: 0
-        MOV     A,R2
-        MOV     R6,A
-        MOV     A,R3
-        MOV     R7,A
-//  213  LCD.String("Table FESTO");
-        ; Setup parameters for call to function CLEcran::String(char const *)
-        MOV     R4,#`?<Constant "Table FESTO">` & 0xff
-        MOV     R5,#(`?<Constant "Table FESTO">` >> 8) & 0xff
-        MOV     A,R6
-        ADD     A,#0xc
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??String
-//  214  CAN.Write(3, 0x07, 0x02, 0xFF);
-        ; Setup parameters for call to function CLMCP2515::Write(UC, UC, UC, UC)
-        MOV     ?V0 + 0,#-0x1
-        MOV     R0,#?V0 + 0
-        LCALL   ?PUSH_XSTACK_I_ONE
-        CFI CFA_XSP16 add(XSP16, 9)
-        MOV     R5,#0x2
-        MOV     R4,#0x7
-        MOV     R1,#0x3
-        MOV     A,R6
-        ADD     A,#0x3
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??Write
-        MOV     A,#0x1
-        LCALL   ?DEALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 8)
-        MOV     A,R1
-//  215  return(0);
-        MOV     R1,#0x0
-        MOV     R7,#0x1
-        LJMP    ?FUNC_LEAVE_XDATA
-        CFI EndBlock cfiBlock10
-//  216 }
-//  217 
-//  218 // **********************FONCTION: ucGestionFESTO()
-//  219 //
-//  220 // DESCRIPTION        : Gère toute la séquence de la table Festo
-//  221 //
-//  222 // INCLUDE            : "_DeclarationGenerale.h" "FESTO.h"
-//  223 //                      
-//  224 // PROTOTYPE          : UC readMagneticCaptor(void)
-//  225 //
-//  226 // PROCEDURE D'APPEL  : data = readMagneticCaptor()
-//  227 //
-//  228 // PARAMETRE D'ENTREE : AUCUN
-//  229 //
-//  230 // PARAMETRE DE SORTIE: UC
-//  231 //
-//  232 // Auteur             : Vincent Chouinard
-//  233 // Date               : 25 novembre 2014   (Version 1.0)
-//  234 // Modification       :
-//  235 // *****************************************************************************
-
-        RSEG NEAR_CODE:CODE:NOROOT(0)
-//  236 UC CLFesto :: ucGestionFESTO (void)
-??ucGestionFESTO:
-        CFI Block cfiBlock11 Using cfiCommon0
-        CFI Function ??ucGestionFESTO
-        CODE
-//  237 {
         FUNCALL ??ucGestionFESTO, ??IsTheBolideHere
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1920,7 +1581,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??readInductiveCaptor
+        FUNCALL ??ucGestionFESTO, ??String
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -1931,7 +1592,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??vPompeSOL725
+        FUNCALL ??ucGestionFESTO, ??IsTheBlocInTheBolid
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -1942,15 +1603,125 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??Delai
+        FUNCALL ??ucGestionFESTO, ??SendToBolide
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME XSTACK, 8, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SendToStation1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SendToBolide
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SendToStation1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SendToBolide
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SendToStation1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SendToBolide
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SendToStation1
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SOL725
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??String
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??ReadCapacitiveCaptor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL ??ucGestionFESTO, ??GetBlocColor
@@ -1964,7 +1735,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??vPompeSOL713
+        FUNCALL ??ucGestionFESTO, ??SOL713
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -1975,7 +1746,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??readHeightCaptor
+        FUNCALL ??ucGestionFESTO, ??String
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -1986,7 +1757,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??readPreVentouseCaptor
+        FUNCALL ??ucGestionFESTO, ??SOL713
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -1997,7 +1768,7 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??vPompeSOL722
+        FUNCALL ??ucGestionFESTO, ??ReadHeightCaptor
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -2008,7 +1779,62 @@
         ARGFRAME XSTACK, 8, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL ??ucGestionFESTO, ??vPompeSOL719
+        FUNCALL ??ucGestionFESTO, ??SOL722
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??String
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SOL722
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??ReadPreVentouseCaptor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SOL716
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 8, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 8, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ??ucGestionFESTO, ??SOL719
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 8, STACK
@@ -2037,9 +1863,19 @@
         MOV     R6,A
         MOV     A,R3
         MOV     R7,A
-//  238 UC ucCouleurDuBloc; 
-//  239   
-//  240 if(IsTheBolideHere() == TRUE) // Si le bolide est présent à la station FESTO
+//  217 UC ucCouleur;  
+//  218 LCD.vLCDCursor(0, 2);  
+        ; Setup parameters for call to function CLEcran::vLCDCursor(UC, UC)
+        MOV     R4,#0x2
+        MOV     R1,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??vLCDCursor
+//  219 
+//  220 if(IsTheBolideHere() == VRAI) // Si le bolide est à la table festo
         ; Setup parameters for call to function CLFesto::IsTheBolideHere()
         MOV     A,R6
         MOV     R2,A
@@ -2048,49 +1884,197 @@
         LCALL   ??IsTheBolideHere
         MOV     A,R1
         XRL     A,#0x1
-        JNZ     ??ucGestionFESTO_1
-//  241   {
-//  242    if(Capteur.readInductiveCaptor() == NOBLOC) // S'il n'y a pas de bloc dans la zone de départ
-        ; Setup parameters for call to function CLFestoCaptors::readInductiveCaptor()
-        MOV     A,R6
-        ADD     A,#0x11
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??readInductiveCaptor
-        MOV     A,R1
-        XRL     A,#0x4
-        JNZ     ??ucGestionFESTO_2
-//  243      {
-//  244       Pompe.vPompeSOL725();  // Charge un bloc dans l'aire de chargement
-        ; Setup parameters for call to function CLPompe::vPompeSOL725()
-        MOV     A,R6
-        ADD     A,#0xe
-        MOV     R2,A
-        MOV     A,R7
-        ADDC    A,#0x0
-        MOV     R3,A
-        LCALL   ??vPompeSOL725
-//  245       Delai(5000);
-        ; Setup parameters for call to function CLFesto::Delai(unsigned long)
-        MOV     DPTR,#__Constant_1388
-        LCALL   ?PUSH_XSTACK8_X_FOUR
-        CFI CFA_XSP16 add(XSP16, 12)
-        MOV     A,R6
-        MOV     R2,A
-        MOV     A,R7
-        MOV     R3,A
-        LCALL   ??Delai
-        MOV     A,#0x4
-        LCALL   ?DEALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 8)
-        SJMP    ??ucGestionFESTO_1
-//  246      }
-//  247    else // S'il y a un bloc dans l'aire de chargement
-//  248      {
-//  249       ucCouleurDuBloc = GetBlocColor();// Lit la couleur du bloc
+        JNZ     $+5
+        LJMP    ??ucGestionFESTO_1
+//  221   {
+//  222    while(Capteur.ReadCapacitiveCaptor() == 0) // Tant qu'il n'y a pas de bloc dans l'aire de chargement
+//  223      {
+//  224       Pompe.SOL725();                         // Active la pompe de chargement
+//  225       LCD.String("SOL725 Active");
+//  226      }
+//  227    
+//  228    ucCouleur = GetBlocColor();                // Lit la couleur du bloc
+//  229    Pompe.SOL713();                            // Active la pompe qui fait monter la plateforme
+//  230    LCD.String("SOL713 Active");   
+//  231    
+//  232    while(Capteur.ReadHeightCaptor() == 0)     // Tant que la platefore n'a pas fini de monter
+//  233      {
+//  234       Pompe.SOL713();                         // Active la pompe qui fait monter la plateforme
+//  235      }
+//  236    
+//  237    Pompe.SOL722();                            // Active la pompe qui envoie sur le convoyeur
+//  238    LCD.String("SOL722 Active");
+//  239          
+//  240    while(Capteur.ReadPreVentouseCaptor() == 0) // Tant que le bloc est encore sur le convoyeur
+//  241      {
+//  242       Pompe.SOL722();                          // Maintient active la pompe qui envoie sur le convoyeur
+//  243      }
+//  244    
+//  245    Pompe.SOL716();                           // Rétracte la pompe d'envoie dans le convoyeur
+//  246    Pompe.SOL719();                           // Abaisse la plateforme élévatrice
+//  247   }
+//  248 else // Si le bolide n'est pas à la table festo
+//  249   {
+//  250    LCD.String("No bolid"); // Affiche un message sur l'écran LCD  
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "No bolid">` & 0xff
+        MOV     R5,#(`?<Constant "No bolid">` >> 8) & 0xff
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??String
+//  251   }
+//  252 
+//  253 if(IsTheBlocInTheBolid() == TRUE)        // Si le bloc est retombé dans le bolide
 ??ucGestionFESTO_2:
+        ; Setup parameters for call to function CLFesto::IsTheBlocInTheBolid()
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??IsTheBlocInTheBolid
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??ucGestionFESTO_3
+//  254   {
+//  255    if(ucCouleur == ORANGE)               // Si le bloc est orange
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??ucGestionFESTO_4
+//  256     {
+//  257      SendToBolide("CounterClockWise");   // Donne une instruction au Bolide
+        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+        MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
+        MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToBolide
+//  258      SendToStation1("CounterClockWise"); // Donne l'info au PC via la station 1
+        ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+        MOV     R4,#`?<Constant "CounterClockWise">` & 0xff
+        MOV     R5,#(`?<Constant "CounterClockWise">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToStation1
+//  259     }
+//  260 
+//  261    if(ucCouleur == NOIR)                 // Si le bloc est noir
+??ucGestionFESTO_4:
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??ucGestionFESTO_5
+//  262     {
+//  263      SendToBolide("STOP");               // Donne une instruction au Bolide
+        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+        MOV     R4,#`?<Constant "STOP">` & 0xff
+        MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToBolide
+//  264      SendToStation1("STOP");             // Donne l'info au PC via la station 1
+        ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+        MOV     R4,#`?<Constant "STOP">` & 0xff
+        MOV     R5,#(`?<Constant "STOP">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToStation1
+//  265     }
+//  266 
+//  267    if(ucCouleur == METAL)                // Si le bloc est métallique
+??ucGestionFESTO_5:
+        MOV     A,#0x3
+        XRL     A,?V0 + 0
+        JNZ     ??ucGestionFESTO_6
+//  268     {
+//  269      SendToBolide("ClockWise");          // Donne une instruction au Bolide
+        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+        MOV     R4,#`?<Constant "ClockWise">` & 0xff
+        MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToBolide
+//  270      SendToStation1("ClockWise");        // Donne l'info au PC via la station 1
+        ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+        MOV     R4,#`?<Constant "ClockWise">` & 0xff
+        MOV     R5,#(`?<Constant "ClockWise">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToStation1
+//  271     }
+//  272 
+//  273    if(ucCouleur == NOBLOC)               // S'il n'y a pas de bloc
+??ucGestionFESTO_6:
+        MOV     A,#0x4
+        XRL     A,?V0 + 0
+        JNZ     ??ucGestionFESTO_3
+//  274     {
+//  275      SendToBolide("No bloc");            // Donne une instruction au Bolide
+        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
+        MOV     R4,#`?<Constant "No bloc">` & 0xff
+        MOV     R5,#(`?<Constant "No bloc">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToBolide
+//  276      SendToStation1("No bloc");          // Donne l'info au PC via la station 1
+        ; Setup parameters for call to function CLFesto::SendToStation1(char const *)
+        MOV     R4,#`?<Constant "No bloc">` & 0xff
+        MOV     R5,#(`?<Constant "No bloc">` >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??SendToStation1
+//  277     } 
+//  278   }
+//  279 }
+??ucGestionFESTO_3:
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+??ucGestionFESTO_7:
+        ; Setup parameters for call to function CLPompe::SOL725()
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??SOL725
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "SOL725 Active">` & 0xff
+        MOV     R5,#(`?<Constant "SOL725 Active">` >> 8) & 0xff
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??String
+??ucGestionFESTO_1:
+        ; Setup parameters for call to function CLFestoCaptors::ReadCapacitiveCaptor()
+        MOV     A,R6
+        ADD     A,#0xb
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??ReadCapacitiveCaptor
+        MOV     A,R1
+        JZ      ??ucGestionFESTO_7
         ; Setup parameters for call to function CLFesto::GetBlocColor()
         MOV     A,R6
         MOV     R2,A
@@ -2098,87 +2082,126 @@
         MOV     R3,A
         LCALL   ??GetBlocColor
         MOV     A,R1
-        SJMP    ??ucGestionFESTO_3
-//  250       
-//  251       while((Capteur.readHeightCaptor()) != 66)     // Tant que la plateforme n'a pas fini de s'élever // Note: 66, c'est pas la bonne valeur
-//  252         {
-//  253          Pompe.vPompeSOL713();                      // Active la pompe d'élévation du bloc
-??ucGestionFESTO_4:
-        ; Setup parameters for call to function CLPompe::vPompeSOL713()
+        MOV     ?V0 + 0,A
+        ; Setup parameters for call to function CLPompe::SOL713()
         MOV     A,R6
-        ADD     A,#0xe
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??vPompeSOL713
-//  254         }
-??ucGestionFESTO_3:
-        ; Setup parameters for call to function CLFestoCaptors::readHeightCaptor()
+        LCALL   ??SOL713
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "SOL713 Active">` & 0xff
+        MOV     R5,#(`?<Constant "SOL713 Active">` >> 8) & 0xff
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??String
+        SJMP    ??ucGestionFESTO_8
+??ucGestionFESTO_9:
+        ; Setup parameters for call to function CLPompe::SOL713()
         MOV     A,R6
-        ADD     A,#0x11
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??readHeightCaptor
+        LCALL   ??SOL713
+??ucGestionFESTO_8:
+        ; Setup parameters for call to function CLFestoCaptors::ReadHeightCaptor()
+        MOV     A,R6
+        ADD     A,#0xb
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??ReadHeightCaptor
         MOV     A,R1
-        XRL     A,#0x42
-        JNZ     ??ucGestionFESTO_4
-//  255       
-//  256       while((Capteur.readPreVentouseCaptor()) != 1) // Tant que le bloc n'est pas au bout du convoyeur
-??ucGestionFESTO_5:
-        ; Setup parameters for call to function CLFestoCaptors::readPreVentouseCaptor()
+        JZ      ??ucGestionFESTO_9
+        ; Setup parameters for call to function CLPompe::SOL722()
         MOV     A,R6
-        ADD     A,#0x11
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??readPreVentouseCaptor
+        LCALL   ??SOL722
+        ; Setup parameters for call to function CLEcran::String(char const *)
+        MOV     R4,#`?<Constant "SOL722 Active">` & 0xff
+        MOV     R5,#(`?<Constant "SOL722 Active">` >> 8) & 0xff
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??String
+        SJMP    ??ucGestionFESTO_10
+??ucGestionFESTO_11:
+        ; Setup parameters for call to function CLPompe::SOL722()
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??SOL722
+??ucGestionFESTO_10:
+        ; Setup parameters for call to function CLFestoCaptors::ReadPreVentouseCaptor()
+        MOV     A,R6
+        ADD     A,#0xb
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??ReadPreVentouseCaptor
         MOV     A,R1
-        XRL     A,#0x1
-        JZ      ??ucGestionFESTO_6
-//  257         {
-//  258          Pompe.vPompeSOL722();                      // Envoie le bloc dans le convoyeur
-        ; Setup parameters for call to function CLPompe::vPompeSOL722()
+        JZ      ??ucGestionFESTO_11
+        ; Setup parameters for call to function CLPompe::SOL716()
         MOV     A,R6
-        ADD     A,#0xe
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??vPompeSOL722
-        SJMP    ??ucGestionFESTO_5
-//  259         }
-//  260       Pompe.vPompeSOL719();                         // Rétracte la pompe d'envoie dans le convoyeur
-??ucGestionFESTO_6:
-        ; Setup parameters for call to function CLPompe::vPompeSOL719()
+        LCALL   ??SOL716
+        ; Setup parameters for call to function CLPompe::SOL719()
         MOV     A,R6
-        ADD     A,#0xe
+        ADD     A,#0x3
         MOV     R2,A
         MOV     A,R7
         ADDC    A,#0x0
         MOV     R3,A
-        LCALL   ??vPompeSOL719
-//  261      }
-//  262   }
-//  263 return(0);
-??ucGestionFESTO_1:
-        MOV     R1,#0x0
-        MOV     R7,#0x1
-        LJMP    ?FUNC_LEAVE_XDATA
+        LCALL   ??SOL719
+        LJMP    ??ucGestionFESTO_2
         CFI EndBlock cfiBlock11
-//  264 }
-//  265 
+//  280 
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//  266 void CLFesto :: Delai(unsigned long Temps)
-??Delai:
+//  281 UC CLFesto :: IsTheBlocInTheBolid (void) // Retourne 1 lorsque le bloc est retombé dans le bolide
+??IsTheBlocInTheBolid:
         CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function ??IsTheBlocInTheBolid
+        CODE
+//  282 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  283 return(1);  
+        MOV     R1,#0x1
+        RET
+        CFI EndBlock cfiBlock12
+//  284 }
+//  285 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  286 void CLFesto :: Delai(UINT32 Temps)
+??Delai:
+        CFI Block cfiBlock13 Using cfiCommon0
         CFI Function ??Delai
         CODE
-//  267 {
+//  287 {
         MOV     A,#-0xf
         LCALL   ?FUNC_ENTER_XDATA
         CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
@@ -2204,8 +2227,8 @@
         LCALL   ?XSTACK_DISP0_8
         MOV     R0,#?V0 + 0
         LCALL   ?L_MOV_X
-//  268 unsigned long k;
-//  269 for(k = 0; k < Temps; k++);  
+//  288 unsigned long k;
+//  289 for(k = 0; k < Temps; k++);  
         MOV     DPTR,#__Constant_0
         MOV     R0,#?V0 + 4
         LCALL   ?L_MOV_X
@@ -2219,10 +2242,42 @@
         MOV     R1,#?V0 + 4
         LCALL   ?UL_GT
         JC      ??Delai_2
-//  270 }
+//  290 }
         MOV     R7,#0x8
         LJMP    ?FUNC_LEAVE_XDATA
-        CFI EndBlock cfiBlock12
+        CFI EndBlock cfiBlock13
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "SOL725 Active">>`:
+        DB "SOL725 Active"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "SOL713 Active">>`:
+        DB "SOL713 Active"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "SOL722 Active">>`:
+        DB "SOL722 Active"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "No bolid">>`:
+        DB "No bolid"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "CounterClockWise"`:
+        DB "CounterClockWise"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "STOP">>`:
+        DB "STOP"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "ClockWise">>`:
+        DB "ClockWise"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for <Constant "No bloc">>`:
+        DB "No bloc"
 
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for <Constant "Table FESTO">>`:
@@ -2233,33 +2288,12 @@
         DB "Orange"
 
         RSEG XDATA_ID:CODE:NOROOT(0)
-`?<Initializer for <Constant "CounterClockWise"`:
-        DB "CounterClockWise"
-
-        RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for <Constant "Noir">>`:
         DB "Noir"
 
         RSEG XDATA_ID:CODE:NOROOT(0)
-`?<Initializer for <Constant "STOP">>`:
-        DB "STOP"
-
-        RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for <Constant "Metallic">>`:
         DB "Metallic"
-
-        RSEG XDATA_ID:CODE:NOROOT(0)
-`?<Initializer for <Constant "ClockWise">>`:
-        DB "ClockWise"
-
-        RSEG XDATA_ID:CODE:NOROOT(0)
-`?<Initializer for <Constant "Empty">>`:
-        DB "Empty"
-
-        RSEG XDATA_ID:CODE:NOROOT(0)
-`?<Initializer for __Constant_1388>`:
-        DATA32
-        DD 5000
 
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for __Constant_0>`:
@@ -2270,6 +2304,62 @@
 `?<Initializer for __Constant_1>`:
         DATA32
         DD 1
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "SOL725 Active">`:
+        DS 14
+        REQUIRE `?<Initializer for <Constant "SOL725 Active">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "SOL713 Active">`:
+        DS 14
+        REQUIRE `?<Initializer for <Constant "SOL713 Active">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "SOL722 Active">`:
+        DS 14
+        REQUIRE `?<Initializer for <Constant "SOL722 Active">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "No bolid">`:
+        DS 9
+        REQUIRE `?<Initializer for <Constant "No bolid">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "CounterClockWise">`:
+        DS 17
+        REQUIRE `?<Initializer for <Constant "CounterClockWise"`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "STOP">`:
+        DS 5
+        REQUIRE `?<Initializer for <Constant "STOP">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "ClockWise">`:
+        DS 10
+        REQUIRE `?<Initializer for <Constant "ClockWise">>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA8
+`?<Constant "No bloc">`:
+        DS 8
+        REQUIRE `?<Initializer for <Constant "No bloc">>`
+        REQUIRE __INIT_XDATA_I
 
         RSEG XDATA_I:XDATA:NOROOT(0)
         DATA8
@@ -2287,13 +2377,6 @@
 
         RSEG XDATA_I:XDATA:NOROOT(0)
         DATA8
-`?<Constant "CounterClockWise">`:
-        DS 17
-        REQUIRE `?<Initializer for <Constant "CounterClockWise"`
-        REQUIRE __INIT_XDATA_I
-
-        RSEG XDATA_I:XDATA:NOROOT(0)
-        DATA8
 `?<Constant "Noir">`:
         DS 5
         REQUIRE `?<Initializer for <Constant "Noir">>`
@@ -2301,37 +2384,9 @@
 
         RSEG XDATA_I:XDATA:NOROOT(0)
         DATA8
-`?<Constant "STOP">`:
-        DS 5
-        REQUIRE `?<Initializer for <Constant "STOP">>`
-        REQUIRE __INIT_XDATA_I
-
-        RSEG XDATA_I:XDATA:NOROOT(0)
-        DATA8
 `?<Constant "Metallic">`:
         DS 9
         REQUIRE `?<Initializer for <Constant "Metallic">>`
-        REQUIRE __INIT_XDATA_I
-
-        RSEG XDATA_I:XDATA:NOROOT(0)
-        DATA8
-`?<Constant "ClockWise">`:
-        DS 10
-        REQUIRE `?<Initializer for <Constant "ClockWise">>`
-        REQUIRE __INIT_XDATA_I
-
-        RSEG XDATA_I:XDATA:NOROOT(0)
-        DATA8
-`?<Constant "Empty">`:
-        DS 6
-        REQUIRE `?<Initializer for <Constant "Empty">>`
-        REQUIRE __INIT_XDATA_I
-
-        RSEG XDATA_I:XDATA:NOROOT(0)
-        DATA32
-__Constant_1388:
-        DS 4
-        REQUIRE `?<Initializer for __Constant_1388>`
         REQUIRE __INIT_XDATA_I
 
         RSEG XDATA_I:XDATA:NOROOT(0)
@@ -2349,14 +2404,14 @@ __Constant_1:
         REQUIRE __INIT_XDATA_I
 
         END
-//  271 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+//  291 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 // 
-// 1 075 bytes in segment NEAR_CODE
-//    83 bytes in segment XDATA_I
-//    83 bytes in segment XDATA_ID
+// 1 057 bytes in segment NEAR_CODE
+//   132 bytes in segment XDATA_I
+//   132 bytes in segment XDATA_ID
 // 
-// 1 146 bytes of CODE  memory (+ 12 bytes shared)
-//    71 bytes of XDATA memory (+ 12 bytes shared)
+// 1 181 bytes of CODE  memory (+ 8 bytes shared)
+//   124 bytes of XDATA memory (+ 8 bytes shared)
 //
 //Errors: none
-//Warnings: 7
+//Warnings: none

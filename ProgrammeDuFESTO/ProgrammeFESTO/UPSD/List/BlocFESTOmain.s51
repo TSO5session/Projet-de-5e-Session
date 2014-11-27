@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        25/Nov/2014  19:57:45 /
+// IAR C/C++ Compiler V8.10.1.40194/W32 for 8051        27/Nov/2014  09:22:07 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -167,8 +167,8 @@
         ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN ??SendToBolide
-        FUNCTION ??SendToBolide,0202H
+        EXTERN ??ucGestionFESTO
+        FUNCTION ??ucGestionFESTO,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 0, STACK
@@ -178,18 +178,17 @@
         FUNCTION `?~CLFesto`,0602H
 
 // C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\BlocFESTOmain.cpp
-//    1 // **************************Main.c
-//    2 // Auteur:      Vincent Chouinard
-//    3 // Date:        26 octobre 2014
-//    4 // Version :    1.0
-//    5 //
-//    6 // Compilateur: IAR 8.10
-//    7 //
-//    8 // Description: Fichier principal
-//    9 //
-//   10 // *****************************************************************************
-//   11 // **** LES INCLUDES ****************//
-//   12 #include "_DeclarationGenerale.h"    // Raccourcis Linguistiques utiles
+//    1 // **************************BlocFESTOmain.cp
+//    2 // Auteur:       Vincent Chouinard
+//    3 // Date:         27 novembre 2014
+//    4 // Version:      1.0
+//    5 // Modification: Aucune
+//    6 //
+//    7 // Compilateur:  IAR 8.10
+//    8 //
+//    9 // *****************************************************************************
+//   10 // **** LES INCLUDES ****************//
+//   11 #include "_DeclarationGenerale.h"    // Raccourcis Linguistiques utiles
 
         ASEGN SFR_AN:DATA:NOROOT,0a8H
 // union <unnamed> volatile __sfr _A_IE
@@ -205,20 +204,13 @@ WDKEY:
 
         RSEG XDATA_I:XDATA:NOROOT(0)
         DATA8
-`?<Constant "TEST">`:
-        DS 5
-        REQUIRE `?<Initializer for <Constant "TEST">>`
-        REQUIRE __INIT_XDATA_I
-
-        RSEG XDATA_I:XDATA:NOROOT(0)
-        DATA8
-//   13 #include "ConversionKeilToIAR.h"     // Compatbilité avec Keil
-//   14 #include "BlocFESTOmain.h"           //
-//   15 #include "FESTO.h"
-//   16 // **** LES DEFINES *****************//
-//   17 
-//   18 // **** LES CLASSES *****************//
-//   19 class CLFesto FESTO;
+//   12 #include "ConversionKeilToIAR.h"     // Compatbilité avec Keil
+//   13 #include "BlocFESTOmain.h"           // header du main while(1){}
+//   14 #include "FESTO.h"                   // Gestionnaire de table festo
+//   15 // **** LES DEFINES *****************//
+//   16 
+//   17 // **** LES CLASSES *****************//
+//   18 class CLFesto FESTO;
 ?_0:
         DS 6
         REQUIRE `?<Initializer for >`
@@ -267,7 +259,7 @@ WDKEY:
         RSEG XDATA_Z:XDATA:NOROOT(0)
         DATA8
 FESTO:
-        DS 20
+        DS 19
         REQUIRE __INIT_XDATA_Z
 
         RSEG XDATA_Z:XDATA:NOROOT(0)
@@ -275,18 +267,18 @@ FESTO:
 ?_1:
         DS 2
         REQUIRE __INIT_XDATA_Z
-//   20 // **** LES FONCTIONS DU MAIN *******//
-//   21 
-//   22 // **** PROGRAMME PRINCIPAL *********//
+//   19 // **** LES FONCTIONS DU MAIN *******//
+//   20 
+//   21 // **** PROGRAMME PRINCIPAL *********//
 
         RSEG NEAR_CODE:CODE:NOROOT(0)
-//   23 void main(void)
+//   22 void main(void)
 main:
         CFI Block cfiBlock1 Using cfiCommon0
         CFI Function main
         CODE
-//   24 {
-        FUNCALL main, ??SendToBolide
+//   23 {
+        FUNCALL main, ??ucGestionFESTO
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 0, STACK
@@ -298,33 +290,27 @@ main:
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         ; Auto size: 0
-//   25 EA    = 0   ;  // Disable interrupt.
+//   24 EA    = 0   ;  // Disable interrupt.
         CLR     0xa8.7
-//   26 WDKEY = 0x55;  // Disable WatchDog.
+//   25 WDKEY = 0x55;  // Disable WatchDog.
         MOV     0xae,#0x55
-//   27 EA    = 1   ;  // Enable Interrupt
+//   26 EA    = 1   ;  // Enable Interrupt
         SETB    0xa8.7
-//   28 
-//   29 while(1)
-//   30   {
-//   31    FESTO.SendToBolide("TEST");
+//   27 
+//   28 while(1)
+//   29   {
+//   30    FESTO.ucGestionFESTO();
 ??main_0:
-        ; Setup parameters for call to function CLFesto::SendToBolide(char const *)
-        MOV     R4,#`?<Constant "TEST">` & 0xff
-        MOV     R5,#(`?<Constant "TEST">` >> 8) & 0xff
+        ; Setup parameters for call to function CLFesto::ucGestionFESTO()
         MOV     R2,#FESTO & 0xff
         MOV     R3,#(FESTO >> 8) & 0xff
-        LCALL   ??SendToBolide
+        LCALL   ??ucGestionFESTO
         SJMP    ??main_0
         CFI EndBlock cfiBlock1
         REQUIRE _A_IE
         REQUIRE WDKEY
-//   32   }
-//   33 }
-
-        RSEG XDATA_ID:CODE:NOROOT(0)
-`?<Initializer for <Constant "TEST">>`:
-        DB "TEST"
+//   31   }
+//   32 }
 
         RSEG XDATA_ID:CODE:NOROOT(0)
 `?<Initializer for >`:
@@ -338,18 +324,18 @@ main:
         DC16    ??__sti__routine
 
         END
-//   34 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+//   33 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 // 
 //  2 bytes in segment DIFUNCT
-// 34 bytes in segment NEAR_CODE
+// 30 bytes in segment NEAR_CODE
 //  2 bytes in segment SFR_AN
-// 11 bytes in segment XDATA_I
-// 11 bytes in segment XDATA_ID
-// 22 bytes in segment XDATA_Z
+//  6 bytes in segment XDATA_I
+//  6 bytes in segment XDATA_ID
+// 21 bytes in segment XDATA_Z
 // 
-// 47 bytes of CODE  memory
+// 38 bytes of CODE  memory
 //  0 bytes of DATA  memory (+ 2 bytes shared)
-// 33 bytes of XDATA memory
+// 27 bytes of XDATA memory
 //
 //Errors: none
-//Warnings: 2
+//Warnings: none

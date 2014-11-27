@@ -272,35 +272,35 @@ Véhicule  & 005 \\
 \caption{Index des trames CAN}
 \medskip
 \centering
-\begin{tabular}{|l|c|l|c|}
+\begin{tabular}{|l|c|l|}
 \hline 
-\textbf{Fonctionnalité} & \textbf{Composante} & \textbf{Données} & \textbf{TimeStamp}\\
+\textbf{Fonctionnalité} & \textbf{Composante} & \textbf{Données} \\
 \hline 
-Démarre le véhcule & 0x00 & 0x00 & TimeStamp\\ 
+Démarre le véhcule & 0x00 & 0x00 \\ 
 \hline 
-Arrête le véhicule & 0x00 & 0x01 & TimeStamp\\ 
+Arrête le véhicule & 0x00 & 0x01 \\ 
 \hline 
-Le véhicule est arrêté & 0x01 & 0x00 & TimeStamp\\ 
+Le véhicule est arrêté & 0x01 & 0x00 \\ 
 \hline 
-Le véhicule est en marche& 0x01 & 0x01 & TimeStamp\\ 
+Le véhicule est en marche& 0x01 & 0x01 \\ 
 \hline 
-Le véhicule est hors circuit & 0x01 & 0x02 & TimeStamp\\ 
+Le véhicule est hors circuit & 0x01 & 0x02 \\ 
 \hline 
-Vitesse (0-100) & 0x02 & 0x00 à 0x64 & TimeStamp\\ 
+Vitesse (0-100) & 0x02 & 0x00 à 0x64 \\ 
 \hline 
-Battrie & 0x03 & 0x00 à 0x64 & TimeStamp\\ 
+Battrie & 0x03 & 0x00 à 0x64 \\ 
 \hline 
-Couleur du bloc & 0x04 & 0x00 à 0x02 & TimeStamp\\ 
+Couleur du bloc & 0x04 & 0x00 à 0x02 \\ 
 \hline 
-Poids du bloc & 0x05 & 0x00 à 0x64 & TimeStamp\\ 
+Poids du bloc & 0x05 & 0x00 à 0x64 \\ 
 \hline 
-Envoyer l'heure & 0x06 & à déterminer  & TimeStamp\\ 
+Envoyer l'heure & 0x06 & à déterminer \\ 
 \hline 
-No. de la station & 0x07 & 0x00 à 0x02 & TimeStamp\\ 
+No. de la station & 0x07 & 0x00 à 0x02 \\ 
 \hline 
-Demande de l'historique & 0xC0 & 0x00 & TimeStamp\\ 
+Demande de l'historique & 0xC0 & 0x00 \\ 
 \hline 
-Direction horaire et antihoraire & 0x08 & 0x00 à 0x01 & TimeStamp\\
+Direction horaire et antihoraire & 0x08 & 0x00 à 0x01 \\
 \hline
 \end{tabular} 
 \label{tab:testtab1}
@@ -312,41 +312,41 @@ Direction horaire et antihoraire & 0x08 & 0x00 à 0x01 & TimeStamp\\
 \centering
 \begin{tabular}{|l|l|c|l|c|l|c|}
 \hline 
-\textbf{Émetteur} & \textbf{Action} & \textbf{ID receveur} & \textbf{Donnée envoyée} & \textbf{TimeStamp} & \textbf{Récepteur} & \textbf{Erreur}\\ 
+\textbf{Émetteur} & \textbf{Action} & \textbf{ID receveur} & \textbf{Donnée envoyée} & \textbf{Récepteur} & \textbf{Erreur}\\ 
 \hline 
-Ordinateur & Démarrer le véhicule & 004 & 00 00 & TimeStamp & Véhicule &  F1\\ 
+Ordinateur & Démarrer le véhicule & 004 & 00 00  & Véhicule &  F1\\ 
 \hline 
-Ordinateur & Arrêter le véhicule & 004 & 00 01 & TimeStamp & Véhicule &  F2\\ 
+Ordinateur & Arrêter le véhicule & 004 & 00 01  & Véhicule &  F2\\ 
 \hline 
-Véhicule & Dit: je suis arrêté & 000 & 01 00  & TimeStamp & Ordinateur &  F3\\
+Véhicule & Dit: je suis arrêté & 000 & 01 00   & Ordinateur &  F3\\
 \hline 
-Véhicule & Dit: j'avance & 000 & 01 01 & TimeStamp & Ordinateur  &  F4\\  
+Véhicule & Dit: j'avance & 000 & 01 01  & Ordinateur  &  F4\\  
 \hline 
-Véhicule & Dit: je suis hors circuit & 000 & 01 02 & TimeStamp & Ordinateur &  F5\\ 
+Véhicule & Dit: je suis hors circuit & 000 & 01 02  & Ordinateur &  F5\\ 
 \hline 
-Véhicule & Dit sa vitesse & 000 & 02 [00 à 64] & TimeStamp & Ordinateur &  F6\\ 
+Véhicule & Dit sa vitesse & 000 & 02 [00 à 64]  & Ordinateur &  F6\\ 
 \hline 
-Véhicule & Dit le niveau de sa battrie & 000 & 03 [00 à 64] & TimeStamp & Ordinateur &  F7\\ 
+Véhicule & Dit le niveau de sa battrie & 000 & 03 [00 à 64]  & Ordinateur &  F7\\ 
 \hline 
-Station 1 & Dit bloc = métal & 000 & 04 00 & TimeStamp & Ordinateur &  F8\\ 
+Station 1 & Dit bloc = métal & 000 & 04 00  & Ordinateur &  F8\\ 
 \hline  
-Station 1 & Dit bloc = orange & 000 & 04 01 & TimeStamp & Ordinateur &  F9\\
+Station 1 & Dit bloc = orange & 000 & 04 01  & Ordinateur &  F9\\
 \hline 
-Station 1 & Dit bloc = noir & 000 & 04 02 & TimeStamp & Ordinateur &  FA\\
+Station 1 & Dit bloc = noir & 000 & 04 02  & Ordinateur &  FA\\
 \hline 
-Station 1 & Dit le poids du bloc & 000 & 05 [00 à 64] & TimeStamp & Ordinateur &  FB\\ 
+Station 1 & Dit le poids du bloc & 000 & 05 [00 à 64]  & Ordinateur &  FB\\ 
 \hline 
-Voiture & Dit qu'elle est à la station 1 & 000 & 07 00 & TimeStamp & Ordinateur &  FC\\ 
+Voiture & Dit qu'elle est à la station 1 & 000 & 07 00  & Ordinateur &  FC\\ 
 \hline 
-Voiture & Dit qu'elle est à la station 2 & 000 & 07 01 & TimeStamp & Ordinateur &  FD\\
+Voiture & Dit qu'elle est à la station 2 & 000 & 07 01  & Ordinateur &  FD\\
 \hline 
-Ordinateur & Envoie l'heure & 003 & 06 à déterminer & TimeStamp & Station 1 &  FE\\ 
+Ordinateur & Envoie l'heure & 003 & 06 à déterminer  & Station 1 &  FE\\ 
 \hline 
-Ordinateur & Demande le LOG & 001 & C0 00 & TimeStamp & SOC8200 & E0\\ 
+Ordinateur & Demande le LOG & 001 & C0 00  & SOC8200 & E0\\ 
 \hline
-Ordinateur & Exige Horaire & 004 & 08 00 & TimeStamp & Véhicule & E1\\ 
+Ordinateur & Exige Horaire & 004 & 08 00  & Véhicule & E1\\ 
 \hline
-Ordinateur & Exige Antihoraire & 004 & 08 01 & TimeStamp & Véhicule & E2\\ 
+Ordinateur & Exige Antihoraire & 004 & 08 01  & Véhicule & E2\\ 
 \hline
 \end{tabular} 
 \label{tab:testtab1}
@@ -526,7 +526,9 @@ La station no.1 est composé de uPSD et s'appelle Bloc no.2 dans le cahier de co
 \subsection{La station no.2}
 La station no.2 (qui s'appelle Bloc no.3 dans le cahier de consignes) est composé de la table FESTO, de la carte uPSD, de trois cartes d'extensions IO et d'un Xbee.
 
+\pagebreak
 \subsection{Schéma des héritages de classes, table FESTO}
+Quelles classes utilisent quelles autres classes dans le code de la table FESTO?
 \begin{center}
 \fbox{\includegraphics[scale=1]{Figures/DoxyFESTO/1.pdf}}\\
 \begin{multicols}{3}
@@ -540,13 +542,36 @@ La station no.2 (qui s'appelle Bloc no.3 dans le cahier de consignes) est compos
 
 
 \subsection{Schéma des héritages de classes, Bolide et Station 1}
-\begin{center}
-\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/1.pdf}}\\
-\bigskip
-\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/2.pdf}}
-\end{center}
+Quelles classes utilisent quelles autres classes dans le code du bolidee et de la station no. 1?
 
+\begin{figure}[hbtp]
+\caption{Héritage de la classe clVéhicule}
+\centering
+\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/clvehicule.pdf}}
+\end{figure}
+\begin{figure}[hbtp]
+\caption{Héritage de la classe I2C}
+\centering
+\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/I2C.pdf}}
+\end{figure}
+\begin{figure}[hbtp]
+\caption{Héritage de la classe SPI}
+\centering
+\fbox{\includegraphics[scale=0.9]{Figures/DoxyBolide/SPI.pdf}}
+\end{figure}
+\begin{figure}[hbtp]
+\caption{Héritage de la classe clInOutBase}
+\centering
+\fbox{\includegraphics[scale=0.4]{Figures/DoxyBolide/inout.pdf}}
+\end{figure}
+\vfill
+\pagebreak
 
+\begin{figure}[hbtp]
+\caption{Héritage de la classe Station1}
+\centering
+\fbox{\includegraphics[scale=0.7]{Figures/DoxyBolide/Station1.pdf}}
+\end{figure}
 
 
 \subsection{Le bolide}

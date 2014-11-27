@@ -914,17 +914,17 @@ __sfr __no_init volatile union
 
 typedef bool               bit;
 typedef float              F;
-typedef signed long        L;
-typedef signed char        C;
-typedef unsigned  long     UL;
+typedef signed   long      L;
+typedef signed   char      C;
+typedef unsigned long      UL;
 typedef unsigned char      UC;
 typedef unsigned int       UI;
-typedef signed short int   SI;
+typedef signed   short int SI;
 typedef unsigned short int USI;
-typedef signed char        INT8;
+typedef signed   char      INT8;
 typedef unsigned char      UINT8;
 typedef unsigned short int UINT16;
-typedef signed long        INT32;
+typedef signed   long      INT32;
 typedef unsigned long int  UINT32;
 typedef void               VOID;
 

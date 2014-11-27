@@ -1,10 +1,10 @@
 // **************************CLFestoCaptors.cpp
-// Auteur:       Prenom Nom
-// Date:         19 Octobre 2014
+// Auteur:       Vincent Chouinard
+// Date:         27 novembre 2014
 // Version:      1.0
 // Modification: Aucune
 //
-// Compilateur:  IAR 8.1
+// Compilateur:  IAR 8.10
 //
 // Description:
 // *****************************************************************************
@@ -54,9 +54,9 @@ CLFestoCaptors :: ~CLFestoCaptors(void)
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readCapacitiveCaptor (void)
+UC CLFestoCaptors :: ReadCapacitiveCaptor (void)
 {
-return(0);
+return(PCF3.Read());
 }
 
 // **********************FONCTION: readOpticCaptor()
@@ -77,9 +77,9 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readOpticCaptor (void)
+UC CLFestoCaptors :: ReadOpticCaptor (void)
 {
-return(0); 
+return(PCF3.Read()); 
 }
 
 // **********************FONCTION: readMagneticCaptor()
@@ -100,9 +100,9 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readInductiveCaptor (void)
+UC CLFestoCaptors :: ReadInductiveCaptor (void)
 {
-return(0);   
+return(PCF3.Read());   
 }
 
 // **********************FONCTION: readHeightCaptor()
@@ -123,9 +123,9 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readHeightCaptor (void)
+UC CLFestoCaptors :: ReadHeightCaptor (void)
 {
-return(0);
+return(PCF4.Read());
 }
 
 // **********************FONCTION: readPreVentouseCaptor()
@@ -146,8 +146,8 @@ return(0);
 // Date               : 25 novembre 2014   (Version 1.0)
 // Modification       :
 // *****************************************************************************
-UC CLFestoCaptors :: readPreVentouseCaptor(void)
+UC CLFestoCaptors :: ReadPreVentouseCaptor(void)
 {
-return(0);  
+return(PCF4.Read());  
 }
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

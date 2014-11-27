@@ -243,5 +243,18 @@ void CLI2CPort :: vI2CEcrireDonnee(UC ucAdrBoitier, USI uiAdrRegistre,
    else while(ucI2CEcrireOctet(ucpDonnee[0])== NACK);
    vI2CStop();
  }
+
+UC CLI2CPort :: LirePCF8574(void)
+{
+UC ucDonneeLue;  
+vI2CStart();
+while(ucI2CEcrireOctet(0x40) == NACK){vI2CStart();}  
+ucDonneeLue = ucI2CLireOctet(NACK);
+vI2CStop();
+return(ucDonneeLue);
+}
+
+
+
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 
