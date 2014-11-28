@@ -33,7 +33,7 @@ public:
    UC ReadHeightCaptor     (void);   // Lit le capteur de hauteur du bloc (capteur A4)
    UC ReadPreVentouseCaptor(void);   // Lit le dernier capteur avant que la ventouse ne prenne le bloc
    
-   class CLIOPCF8574 PCF3;//(0x43);    
+   class CLIOPCF8574 PCF3;//(AdresseCapacitive);    
    class CLIOPCF8574 PCF4;   
    
 protected:

@@ -1,0 +1,14 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F258 -DL -O11111114 -fo4 -N"J:\Projet_Session5_LNAH\S3_24Nov2014\MIKROC\CANPIC.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"J:\Projet_Session5_LNAH\S3_24Nov2014\MIKROC\" "CANPIC.c" "PIC18F258.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CAN_C_A.mcl"	 
+hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	126	All files Preprocessed in 203 ms	 
+diagnostics: 0	122	Compilation Started	declarationpic.h
+diagnostics: 113	123	Compiled Successfully	CANPIC.c
+diagnostics: 0	122	Compilation Started	declarationpic.h
+diagnostics: 169	123	Compiled Successfully	PIC18F258.c
+diagnostics: 0	127	All files Compiled in 436 ms	 
+hint: 0	1144	Used RAM (bytes): 76 (5%)  Free RAM (bytes): 1439 (95%)	Used RAM (bytes): 76 (5%)  Free RAM (bytes): 1439 (95%)
+hint: 0	1144	Used ROM (bytes): 1609 (5%)  Free ROM (bytes): 31159 (95%)	Used ROM (bytes): 1609 (5%)  Free ROM (bytes): 31159 (95%)
+diagnostics: 0	125	Project Linked Successfully	CANPIC.mcppi
+diagnostics: 0	128	Linked in 312 ms	 
+diagnostics: 0	129	Project 'CANPIC.mcppi' completed: 967 ms	 
+diagnostics: 0	103	Finished successfully: 28 nov. 2014, 09:28:40	CANPIC.mcppi

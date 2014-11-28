@@ -1,0 +1,5 @@
+while true
+ do
+  head -1 /dev/ttySCMA0 > ./junk
+  echo "Allo" > ./hbeat
+ done 

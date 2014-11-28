@@ -1,0 +1,21 @@
+main
+	__CC2DW
+	vInitPic
+	vInitRS232
+	vTransChaine
+		vTx232
+	CANInitialize
+		CANSetOperationMode
+		CANSetBaudRate
+		CANSetMask
+			CANIDToRegs
+		CANSetFilter
+			CANIDToRegs
+	CANSetOperationMode
+	CANSetMask
+		CANIDToRegs
+	CANSetFilter
+		CANIDToRegs
+	CANWrite
+		CANIDToRegs
+interrupt

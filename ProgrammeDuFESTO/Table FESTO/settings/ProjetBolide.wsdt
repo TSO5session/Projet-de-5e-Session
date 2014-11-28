@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>ProjetBolide/UPSD3254A</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>397</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      <PreferedWindows><Position>1</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1395</ColumnWidth1><ColumnWidth2>372</ColumnWidth2><ColumnWidth3>93</ColumnWidth3></Build>
+    <TerminalIO/><Find-All-Declarations><ColumnWidth0>664</ColumnWidth0><ColumnWidth1>94</ColumnWidth1><ColumnWidth2>1138</ColumnWidth2></Find-All-Declarations></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-27688-21257</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-1533-2113</Identity><TabName>Find All Declarations</TabName><Factory>Find-All-Declarations</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd3><Tabs><Tab><Identity>TabID-12802-20537</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>ProjetBolide</ExpandedNode><ExpandedNode>ProjetBolide/CLTest.cpp</ExpandedNode><ExpandedNode>ProjetBolide/CLTest.cpp/Output</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLSerialPortInterface.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>14</YPos2><SelStart2>731</SelStart2><SelEnd2>731</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\Laboratoire.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>16</YPos2><SelStart2>1288</SelStart2><SelEnd2>1288</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLI2CPort.Cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>9</SelStart2><SelEnd2>9</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLI2CBase.Cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>15</YPos2><SelStart2>757</SelStart2><SelEnd2>766</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLI2CBase.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>24</YPos2><SelStart2>1353</SelStart2><SelEnd2>1353</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLMCP2515.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>15</YPos2><SelStart2>957</SelStart2><SelEnd2>957</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLMCP2515.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>231</YPos2><SelStart2>7936</SelStart2><SelEnd2>7955</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLHorloge1307.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>119</YPos2><SelStart2>1602</SelStart2><SelEnd2>1602</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLADCMAX1236.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>80</YPos2><SelStart2>3481</SelStart2><SelEnd2>3481</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLTest.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>367</YPos2><SelStart2>11771</SelStart2><SelEnd2>11771</SelEnd2></Tab><ActiveTab>9</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLRS232.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>379</YPos2><SelStart2>15414</SelStart2><SelEnd2>15414</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLRS232.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>2166</SelStart2><SelEnd2>2166</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLIOPCF8574.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>59</YPos2><SelStart2>1899</SelStart2><SelEnd2>1899</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLTest.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>45</YPos2><SelStart2>742</SelStart2><SelEnd2>742</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLFesto.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>66</YPos2><SelStart2>2634</SelStart2><SelEnd2>4567</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLI2CPort.H</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>19</YPos2><SelStart2>1217</SelStart2><SelEnd2>1217</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLIOPCF8574.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>768</SelStart2><SelEnd2>782</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Source\CLEcran.cpp</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>348</YPos2><SelStart2>11435</SelStart2><SelEnd2>11454</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\_Header\CLHorloge1307.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>16</YPos2><SelStart2>1238</SelStart2><SelEnd2>1243</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01caff88><key>iaridepm.enu1</key></Toolbar-01caff88></Sizes></Row0></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>648</Bottom><Right>488</Right><x>-2</x><y>-2</y><xscreen>325</xscreen><yscreen>113</yscreen><sizeHorzCX>242356</sizeHorzCX><sizeHorzCY>115071</sizeHorzCY><sizeVertCX>365399</sizeVertCX><sizeVertCY>661914</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>289</Bottom><Right>1343</Right><x>-2</x><y>-2</y><xscreen>1345</xscreen><yscreen>291</yscreen><sizeHorzCX>1002983</sizeHorzCX><sizeHorzCY>296334</sizeHorzCY><sizeVertCX>1001491</sizeVertCX><sizeVertCY>107943</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

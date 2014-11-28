@@ -1752,12 +1752,13 @@ public:
    UC    Read  (void);
    void  Write (UC ucDonnee);
    
-   union UNOctetBit   unIOPCF;
-
+   union UNOctetBit unIOPCF;
+   UC    ucAdresseIOPCF;
+   
 protected:
 
 private:
-   UC ucAdresseIOPCF;
+   
 };
 
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
@@ -2046,7 +2047,7 @@ private:
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 #line 14 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLIOPCF8574.h"
 
-#line 38 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLIOPCF8574.h"
+#line 39 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLIOPCF8574.h"
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
 #line 13 "C:\\Synchro\\Dropbox\\Travaux\\Automne 2014\\ProjetSession5\\ProgrammeDuFESTO\\ProgrammeFESTO\\CLFestoCaptors.h"
 
@@ -2072,7 +2073,7 @@ public:
    UC ReadHeightCaptor     (void);   // Lit le capteur de hauteur du bloc (capteur A4)
    UC ReadPreVentouseCaptor(void);   // Lit le dernier capteur avant que la ventouse ne prenne le bloc
    
-   class CLIOPCF8574 PCF3;//(0x43);    
+   class CLIOPCF8574 PCF3;//(AdresseCapacitive);    
    class CLIOPCF8574 PCF4;   
    
 protected:

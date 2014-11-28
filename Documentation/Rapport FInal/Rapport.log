@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.23)  26 NOV 2014 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.23)  28 NOV 2014 18:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1040,7 +1040,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout6 = `Rapport.lot'.
 
  [4]
-<Figures/SchemaBloc/1.png, id=448, 1157.82562pt x 507.39563pt>
+<Figures/SchemaBloc/1.png, id=452, 1157.82562pt x 507.39563pt>
 File: Figures/SchemaBloc/1.png Graphic file (type png)
 
 <use Figures/SchemaBloc/1.png>
@@ -1057,7 +1057,7 @@ File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/74HC14.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/74HC14.pdf, id=509, 614.295pt x 794.97pt>
+<Figures/Datasheets/74HC14.pdf, id=513, 614.295pt x 794.97pt>
 File: Figures/Datasheets/74HC14.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/74HC14.pdf>
@@ -1067,7 +1067,7 @@ Package pdftex.def Info: Figures/Datasheets/74HC14.pdf used on input line 421.
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/dac6574.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/dac6574.pdf, id=510, 614.295pt x 794.97pt>
+<Figures/Datasheets/dac6574.pdf, id=514, 614.295pt x 794.97pt>
 File: Figures/Datasheets/dac6574.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/dac6574.pdf>
@@ -1078,7 +1078,7 @@ Package pdftex.def Info: Figures/Datasheets/dac6574.pdf used on input line 423.
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/DS89C450.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/DS89C450.pdf, id=511, 614.295pt x 794.97pt>
+<Figures/Datasheets/DS89C450.pdf, id=515, 614.295pt x 794.97pt>
 File: Figures/Datasheets/DS89C450.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/DS89C450.pdf>
@@ -1094,7 +1094,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 420--426
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/LineSensor.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/LineSensor.pdf, id=512, 614.295pt x 794.97pt>
+<Figures/Datasheets/LineSensor.pdf, id=516, 614.295pt x 794.97pt>
 File: Figures/Datasheets/LineSensor.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/LineSensor.pdf>
@@ -1105,7 +1105,7 @@ Package pdftex.def Info: Figures/Datasheets/LineSensor.pdf used on input line 4
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/lm3914.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/lm3914.pdf, id=513, 614.295pt x 794.97pt>
+<Figures/Datasheets/lm3914.pdf, id=517, 614.295pt x 794.97pt>
 File: Figures/Datasheets/lm3914.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/lm3914.pdf>
@@ -1115,7 +1115,7 @@ Package pdftex.def Info: Figures/Datasheets/lm3914.pdf used on input line 432.
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/opt101.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/opt101.pdf, id=514, 614.295pt x 794.97pt>
+<Figures/Datasheets/opt101.pdf, id=518, 614.295pt x 794.97pt>
 File: Figures/Datasheets/opt101.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/opt101.pdf>
@@ -1130,7 +1130,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 429--435
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/PCF8574.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/PCF8574.pdf, id=515, 614.295pt x 794.97pt>
+<Figures/Datasheets/PCF8574.pdf, id=519, 614.295pt x 794.97pt>
 File: Figures/Datasheets/PCF8574.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/PCF8574.pdf>
@@ -1141,7 +1141,7 @@ Package pdftex.def Info: Figures/Datasheets/PCF8574.pdf used on input line 439.
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/UPSD3254A.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/UPSD3254A.pdf, id=516, 614.295pt x 794.97pt>
+<Figures/Datasheets/UPSD3254A.pdf, id=520, 614.295pt x 794.97pt>
 File: Figures/Datasheets/UPSD3254A.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/UPSD3254A.pdf>
@@ -1152,7 +1152,7 @@ Package pdftex.def Info: Figures/Datasheets/UPSD3254A.pdf used on input line 44
 
 pdfTeX warning: pdflatex (file ./Figures/Datasheets/Sabertooth.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/Sabertooth.pdf, id=517, 614.295pt x 794.97pt>
+<Figures/Datasheets/Sabertooth.pdf, id=521, 614.295pt x 794.97pt>
 File: Figures/Datasheets/Sabertooth.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/Sabertooth.pdf>
@@ -1168,7 +1168,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 438--444
 ures/Datasheets/DS89C450.pdf> <./Figures/Datasheets/LineSensor.pdf> <./Figures/
 Datasheets/lm3914.pdf> <./Figures/Datasheets/opt101.pdf> <./Figures/Datasheets/
 PCF8574.pdf> <./Figures/Datasheets/UPSD3254A.pdf> <./Figures/Datasheets/Saberto
-oth.pdf>] <Figures/programme.png, id=583, 778.40813pt x 467.49657pt>
+oth.pdf>] <Figures/programme.png, id=587, 778.40813pt x 467.49657pt>
 File: Figures/programme.png Graphic file (type png)
 
 <use Figures/programme.png>
@@ -1209,36 +1209,21 @@ LaTeX Font Info:    Try loading font information for OT1+fdm on input line 482.
 (/usr/share/texlive/texmf-dist/tex/latex/droid/ot1fdm.fd
 File: ot1fdm.fd 2011/09/11 Fontinst v1.933 font definitions for OT1/fdm.
 ) [16] [17] [18]
-<Figures/DoxyFESTO/1.pdf, id=617, 501.875pt x 71.18594pt>
-File: Figures/DoxyFESTO/1.pdf Graphic file (type pdf)
+<Figures/DoxyFESTO/clfesto.pdf, id=621, 501.875pt x 150.71306pt>
+File: Figures/DoxyFESTO/clfesto.pdf Graphic file (type pdf)
 
-<use Figures/DoxyFESTO/1.pdf>
-Package pdftex.def Info: Figures/DoxyFESTO/1.pdf used on input line 533.
-(pdftex.def)             Requested size: 501.87376pt x 71.18576pt.
+<use Figures/DoxyFESTO/clfesto.pdf>
+Package pdftex.def Info: Figures/DoxyFESTO/clfesto.pdf used on input line 535.
+(pdftex.def)             Requested size: 501.87376pt x 150.71268pt.
 
-<Figures/DoxyFESTO/2.pdf, id=618, 501.875pt x 483.73723pt>
-File: Figures/DoxyFESTO/2.pdf Graphic file (type pdf)
+<Figures/DoxyFESTO/clinout.pdf, id=622, 501.875pt x 160.1684pt>
+File: Figures/DoxyFESTO/clinout.pdf Graphic file (type pdf)
 
-<use Figures/DoxyFESTO/2.pdf>
-Package pdftex.def Info: Figures/DoxyFESTO/2.pdf used on input line 535.
-(pdftex.def)             Requested size: 70.26201pt x 67.72275pt.
-
-<Figures/DoxyFESTO/3.pdf, id=619, 501.875pt x 627.34375pt>
-File: Figures/DoxyFESTO/3.pdf Graphic file (type pdf)
-
-<use Figures/DoxyFESTO/3.pdf>
-Package pdftex.def Info: Figures/DoxyFESTO/3.pdf used on input line 536.
-(pdftex.def)             Requested size: 50.19043pt x 62.73804pt.
-
-<Figures/DoxyFESTO/4.pdf, id=620, 501.875pt x 427.12573pt>
-File: Figures/DoxyFESTO/4.pdf Graphic file (type pdf)
-
-<use Figures/DoxyFESTO/4.pdf>
-Package pdftex.def Info: Figures/DoxyFESTO/4.pdf used on input line 537.
-(pdftex.def)             Requested size: 70.26201pt x 59.79718pt.
- [19 <./Figures/DoxyFESTO/1.pdf> <./Figures/DoxyFESTO/2.pdf> <./Figures/DoxyFES
-TO/3.pdf> <./Figures/DoxyFESTO/4.pdf>]
-<Figures/DoxyBolide/clvehicule.pdf, id=646, 501.875pt x 100.97725pt>
+<use Figures/DoxyFESTO/clinout.pdf>
+Package pdftex.def Info: Figures/DoxyFESTO/clinout.pdf used on input line 537.
+(pdftex.def)             Requested size: 301.12732pt x 96.10176pt.
+ [19 <./Figures/DoxyFESTO/clfesto.pdf> <./Figures/DoxyFESTO/clinout.pdf>]
+<Figures/DoxyBolide/clvehicule.pdf, id=638, 501.875pt x 100.97725pt>
 File: Figures/DoxyBolide/clvehicule.pdf Graphic file (type pdf)
 
 <use Figures/DoxyBolide/clvehicule.pdf>
@@ -1246,21 +1231,21 @@ Package pdftex.def Info: Figures/DoxyBolide/clvehicule.pdf used on input line 5
 50.
 (pdftex.def)             Requested size: 501.87376pt x 100.97699pt.
 
-<Figures/DoxyBolide/I2C.pdf, id=647, 501.875pt x 167.29501pt>
+<Figures/DoxyBolide/I2C.pdf, id=639, 501.875pt x 167.29501pt>
 File: Figures/DoxyBolide/I2C.pdf Graphic file (type pdf)
 
 <use Figures/DoxyBolide/I2C.pdf>
 Package pdftex.def Info: Figures/DoxyBolide/I2C.pdf used on input line 555.
 (pdftex.def)             Requested size: 501.87376pt x 167.29459pt.
 
-<Figures/DoxyBolide/SPI.pdf, id=648, 501.875pt x 141.37819pt>
+<Figures/DoxyBolide/SPI.pdf, id=640, 501.875pt x 141.37819pt>
 File: Figures/DoxyBolide/SPI.pdf Graphic file (type pdf)
 
 <use Figures/DoxyBolide/SPI.pdf>
 Package pdftex.def Info: Figures/DoxyBolide/SPI.pdf used on input line 560.
 (pdftex.def)             Requested size: 451.68332pt x 127.23918pt.
 
-<Figures/DoxyBolide/inout.pdf, id=649, 501.875pt x 213.56789pt>
+<Figures/DoxyBolide/inout.pdf, id=641, 501.875pt x 213.56789pt>
 File: Figures/DoxyBolide/inout.pdf Graphic file (type pdf)
 
 <use Figures/DoxyBolide/inout.pdf>
@@ -1268,7 +1253,7 @@ Package pdftex.def Info: Figures/DoxyBolide/inout.pdf used on input line 565.
 (pdftex.def)             Requested size: 200.74643pt x 85.42563pt.
  [20 <./Figures/DoxyBolide/clvehicule.pdf> <./Figures/DoxyBolide/I2C.pdf> <./Fi
 gures/DoxyBolide/SPI.pdf>]
-<Figures/DoxyBolide/Station1.pdf, id=669, 501.875pt x 184.1781pt>
+<Figures/DoxyBolide/Station1.pdf, id=661, 501.875pt x 184.1781pt>
 File: Figures/DoxyBolide/Station1.pdf Graphic file (type pdf)
 
 <use Figures/DoxyBolide/Station1.pdf>
@@ -1276,7 +1261,7 @@ Package pdftex.def Info: Figures/DoxyBolide/Station1.pdf used on input line 573
 .
 (pdftex.def)             Requested size: 351.31009pt x 128.92378pt.
  [21 <./Figures/DoxyBolide/inout.pdf> <./Figures/DoxyBolide/Station1.pdf>]
-<Figures/Procedure/procedure.png, id=684, 441.14813pt x 200.24812pt>
+<Figures/Procedure/procedure.png, id=676, 441.14813pt x 200.24812pt>
 File: Figures/Procedure/procedure.png Graphic file (type png)
 
 <use Figures/Procedure/procedure.png>
@@ -1298,7 +1283,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 640--641
 
  []
 
-[24] <Figures/OrCad/top.png, id=711, 1144.275pt x 462.22687pt>
+[24] <Figures/OrCad/top.png, id=703, 1144.275pt x 462.22687pt>
 File: Figures/OrCad/top.png Graphic file (type png)
 
 <use Figures/OrCad/top.png>
@@ -1309,7 +1294,7 @@ Overfull \hbox (4.00693pt too wide) in paragraph at lines 651--652
  [][] 
  []
 
-<Figures/OrCad/bot.png, id=712, 1142.76938pt x 462.22687pt>
+<Figures/OrCad/bot.png, id=704, 1142.76938pt x 462.22687pt>
 File: Figures/OrCad/bot.png Graphic file (type png)
 
 <use Figures/OrCad/bot.png>
@@ -1321,7 +1306,7 @@ Overfull \hbox (3.29929pt too wide) in paragraph at lines 660--661
  []
 
 [25 <./Figures/OrCad/top.png> <./Figures/OrCad/bot.png>]
-<Figures/OrCad/sstop.png, id=721, 1144.275pt x 460.72125pt>
+<Figures/OrCad/sstop.png, id=713, 1144.275pt x 460.72125pt>
 File: Figures/OrCad/sstop.png Graphic file (type png)
 
 <use Figures/OrCad/sstop.png>
@@ -1332,21 +1317,21 @@ Overfull \hbox (4.00693pt too wide) in paragraph at lines 669--670
  [][] 
  []
 
-<Figures/OrCad/smt.png, id=722, 1121.69063pt x 447.92343pt>
+<Figures/OrCad/smt.png, id=714, 1121.69063pt x 447.92343pt>
 File: Figures/OrCad/smt.png Graphic file (type png)
 
 <use Figures/OrCad/smt.png>
 Package pdftex.def Info: Figures/OrCad/smt.png used on input line 678.
 (pdftex.def)             Requested size: 527.19467pt x 210.52403pt.
  [26 <./Figures/OrCad/sstop.png> <./Figures/OrCad/smt.png>] <Figures/OrCad/dril
-l.png, id=729, 1153.30875pt x 679.78969pt>
+l.png, id=721, 1153.30875pt x 679.78969pt>
 File: Figures/OrCad/drill.png Graphic file (type png)
 
 <use Figures/OrCad/drill.png>
 Package pdftex.def Info: Figures/OrCad/drill.png used on input line 689.
 (pdftex.def)             Requested size: 518.98415pt x 305.90253pt.
 
-<Figures/OrCad/patch.jpg, id=730, 1144.275pt x 462.22687pt>
+<Figures/OrCad/patch.jpg, id=722, 1144.275pt x 462.22687pt>
 File: Figures/OrCad/patch.jpg Graphic file (type jpg)
 
 <use Figures/OrCad/patch.jpg>
@@ -1416,10 +1401,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 768.
  ) 
 Here is how much of TeX's memory you used:
- 11717 strings out of 493104
- 164794 string characters out of 6136931
+ 11710 strings out of 493104
+ 164641 string characters out of 6136931
  433783 words of memory out of 5000000
- 14726 multiletter control sequences out of 15000+600000
+ 14718 multiletter control sequences out of 15000+600000
  59001 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,14n,60p,592b,1353s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1470,10 +1455,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf
 /fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-
 gyre/qhvr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvri.pfb>
-Output written on Rapport.pdf (34 pages, 5353871 bytes).
+Output written on Rapport.pdf (34 pages, 5351052 bytes).
 PDF statistics:
- 881 PDF objects out of 1000 (max. 8388607)
- 743 compressed objects within 8 object streams
- 178 named destinations out of 1000 (max. 500000)
- 746 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 873 PDF objects out of 1000 (max. 8388607)
+ 739 compressed objects within 8 object streams
+ 180 named destinations out of 1000 (max. 500000)
+ 736 words of extra memory for PDF output out of 10000 (max. 10000000)
 

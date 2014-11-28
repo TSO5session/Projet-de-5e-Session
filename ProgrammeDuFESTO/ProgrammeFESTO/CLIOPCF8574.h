@@ -27,12 +27,13 @@ public:
    UC    Read  (void);
    void  Write (UC ucDonnee);
    
-   union UNOctetBit   unIOPCF;
-
+   union UNOctetBit unIOPCF;
+   UC    ucAdresseIOPCF;
+   
 protected:
 
 private:
-   UC ucAdresseIOPCF;
+   
 };
 #endif
 //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

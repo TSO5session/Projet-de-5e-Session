@@ -16,7 +16,6 @@
 //////////////////////////////////////////////////////////////////////////////
 #include "CLSPI.h"                // Inclue le fichier d'entete I2CPort.h.
 #include "_DeclarationGenerale.h" // inclue DeclarationGenerale.h
-#include "MCP2515.h"              // define des registres du MCP2515
 //******************************************************************************
 //                            LE CONSTRUCTEUR PAR DEFAUT
 // *****************************************************************************

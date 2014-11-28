@@ -18,7 +18,6 @@
   #define CLSPIH                   // Defini CLSPI.h
 
 #include "_DeclarationGenerale.h"  // inclue DeclarationGenerale.h
-#include "MCP2515.h"              // define des registres du MCP2515
 /////////////////////////////////////
 #define MOSI P1_5                  // Master OUT, Slave IN
 #define MISO P1_4                  // Master IN, Slave OUT

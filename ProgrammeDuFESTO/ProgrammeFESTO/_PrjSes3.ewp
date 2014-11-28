@@ -6223,13 +6223,7 @@
     <name>$PROJ_DIR$\CLIOPCF8574.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\CLMCP2515.cpp</name>
-  </file>
-  <file>
     <name>$PROJ_DIR$\clPompe.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\CLSortieLatch.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\CLSPI.cpp</name>

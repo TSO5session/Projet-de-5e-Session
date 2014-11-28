@@ -4,7 +4,7 @@
 #                                                                              #
 #      IAR Universal Linker V5.0.2.5/W32                                       #
 #                                                                              #
-#           Link time     =  27/Nov/2014  09:22:09                             #
+#           Link time     =  28/Nov/2014  08:11:54                             #
 #           Target CPU    =  x51                                               #
 #           List file     =  "C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSe #
 #                            ssion5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\List\ #
@@ -43,13 +43,7 @@
 #                            LIOPCF8574.r51"                                   #
 #                            "C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSe #
 #                            ssion5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\C #
-#                            LMCP2515.r51"                                     #
-#                            "C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSe #
-#                            ssion5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\C #
 #                            LSPI.r51"                                         #
-#                            "C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSe #
-#                            ssion5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\C #
-#                            LSortieLatch.r51"                                 #
 #                            "C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSe #
 #                            ssion5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\C #
 #                            LinOutBase.r51"                                   #
@@ -78,14 +72,14 @@
 #                            -f                                                #
 #                            "C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSe #
 #                            ssion5\ProgrammeDuFESTO\ProgrammeFESTO\_Ver810_ln #
-                              - Cross-reference -                      Page    2
-
 #                            k51ew_uPSD3254A.xcl"                              #
 #                            (-D_IDATA0_START=0x00 -D_IDATA0_END=0xFF          #
 #                            -D_PDATA0_START=0x0F01 -D_PDATA0_END=0x0FFF       #
 #                            -D_IXDATA0_START=0x0001 -D_IXDATA0_END=0x0FFF     #
 #                            -D_XDATA0_START=0x0001 -D_XDATA0_END=0x0FFFF      #
 #                            -D_CODE0_START=0x0000 -D_CODE0_END=0xFFFF         #
+                              - Cross-reference -                      Page    2
+
 #                            -D?REGISTER_BANK=0x0 -D_REGISTER_BANK_START=0x0   #
 #                            -D?PBANK_NUMBER=0x00 -D_BREG_START=0x00           #
 #                            -D?VB=0x20 -D?ESP=0x9B -Z(BIT)BREG=_BREG_START    #
@@ -1598,8 +1592,8 @@ DOVERLAY
 
     *************************************************************************
 
-  FILE NAME : C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\CLMCP2515.r51
-  PROGRAM MODULE, NAME : CLMCP2515
+  FILE NAME : C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\CLSPI.r51
+  PROGRAM MODULE, NAME : CLSPI
 
   SEGMENTS IN THE MODULE
   ======================
@@ -1609,220 +1603,6 @@ SFR_AN
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_P1                   00000090 
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           P1                      00000090 
-           P1_bit                  00000090 
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 17. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::new CLMCP2515()
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 18. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::delete ~CLMCP2515(CLMCP2515 *)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 19. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::CLMCP2515()
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 20. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::~CLMCP2515()
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 21. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::InitialisationMCP2515()
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 22. NOT NEEDED.
-                              - Cross-reference -                      Page   22
-
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::EcrireRegistreMCP2515(unsigned char, unsigned char)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 23. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::LireRegistreMCP2515(unsigned char)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 24. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::ChoisirIdentifiantTX0(int)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 25. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::EnvoyerTrameMCP2515(unsigned char const *)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 26. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::Read()       
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 27. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::AcquitterInterruptionsMCP2515()
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 28. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::Write(UC, UC, UC, UC)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 29. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::LireDonnesMCP2515(unsigned char, unsigned char, unsigned char, unsigned char)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 30. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::Delai(unsigned long)
-                                   
-               is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   23
-
-NEAR_CODE
-  Segment part 31. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           CLMCP2515::Longueur(unsigned char const *)
-                                   
-               is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-ISTACK
-  Segment part 2. NOT NEEDED.
-    -------------------------------------------------------------------------
-PSTACK
-  Segment part 3. NOT NEEDED.
-    -------------------------------------------------------------------------
-XSTACK
-  Segment part 4. NOT NEEDED.
-    -------------------------------------------------------------------------
-IOVERLAY
-  Segment part 5. NOT NEEDED.
-    -------------------------------------------------------------------------
-DOVERLAY
-  Segment part 6. NOT NEEDED.
-    -------------------------------------------------------------------------
-XDATA_I
-  Segment part 9. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           __Constant_3e8          
-    -------------------------------------------------------------------------
-XDATA_ID
-  Segment part 10. NOT NEEDED.
-    -------------------------------------------------------------------------
-XDATA_I
-  Segment part 11. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           __Constant_a            
-    -------------------------------------------------------------------------
-XDATA_ID
-  Segment part 12. NOT NEEDED.
-    -------------------------------------------------------------------------
-XDATA_I
-  Segment part 13. TENTATIVE. Used definition from CLEcran
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           __Constant_0            
-    -------------------------------------------------------------------------
-XDATA_ID
-  Segment part 14. NOT NEEDED.
-    -------------------------------------------------------------------------
-XDATA_I
-  Segment part 15. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           __Constant_1            
-    -------------------------------------------------------------------------
-XDATA_ID
-  Segment part 16. NOT NEEDED.
-    -------------------------------------------------------------------------
-XDATA_Z
-  Segment part 7. NOT NEEDED.
-    -------------------------------------------------------------------------
-XDATA_Z
-  Segment part 8. NOT NEEDED.
-
-    *************************************************************************
-
-  FILE NAME : C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\CLSPI.r51
-  PROGRAM MODULE, NAME : CLSPI
-
-  SEGMENTS IN THE MODULE
-  ======================
-SFR_AN
-  Segment part 1. TENTATIVE. Used definition from CLMCP2515
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_P1                   
-                              - Cross-reference -                      Page   24
-
            LOCAL                   ADDRESS         
            =====                   =======         
            P1                      00000090 
@@ -1875,6 +1655,8 @@ NEAR_CODE
            =====                   =======         ======
            CLSPI::~CLSPI()         
                is not allocated
+                              - Cross-reference -                      Page   22
+
                not allocated function
     -------------------------------------------------------------------------
 NEAR_CODE
@@ -1901,8 +1683,6 @@ NEAR_CODE
            CLSPI::Direction(UC)    
                calls direct, is not allocated
                not allocated function
-                              - Cross-reference -                      Page   25
-
     -------------------------------------------------------------------------
 NEAR_CODE
   Segment part 21. NOT NEEDED.
@@ -1955,6 +1735,8 @@ NEAR_CODE
                is not allocated
                not allocated function
     -------------------------------------------------------------------------
+                              - Cross-reference -                      Page   23
+
 ISTACK
   Segment part 2. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -1971,7 +1753,7 @@ DOVERLAY
   Segment part 6. NOT NEEDED.
     -------------------------------------------------------------------------
 XDATA_I
-  Segment part 8. TENTATIVE. Used definition from CLMCP2515
+  Segment part 8. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            __Constant_1            
@@ -1981,8 +1763,6 @@ XDATA_ID
     -------------------------------------------------------------------------
 XDATA_I
   Segment part 10. TENTATIVE. Used definition from CLEcran
-                              - Cross-reference -                      Page   26
-
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            __Constant_0            
@@ -1992,107 +1772,6 @@ XDATA_ID
     -------------------------------------------------------------------------
 XDATA_Z
   Segment part 7. NOT NEEDED.
-
-    *************************************************************************
-
-  FILE NAME : C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\ProgrammeFESTO\UPSD\Obj\CLSortieLatch.r51
-  PROGRAM MODULE, NAME : CLSortieLatch
-
-  SEGMENTS IN THE MODULE
-  ======================
-SFR_AN
-  Segment part 1. TENTATIVE. Used definition from CLI2CBase
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_P3                   
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           P3                      000000B0 
-           P3_bit                  000000B0 
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 7. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::new DAC_ADC()
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 8. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::new DAC_ADC(UC)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 9. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::delete ~DAC_ADC(DAC_ADC *)
-                                   
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 10. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::DAC_ADC()      
-               is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 11. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::DAC_ADC(UC)    
-               is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 12. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::~DAC_ADC()     
-               is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   27
-
-NEAR_CODE
-  Segment part 13. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::DAC(UC, UC)    
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-NEAR_CODE
-  Segment part 14. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           DAC_ADC::ADC(UC)        
-               calls direct, is not allocated
-               not allocated function
-    -------------------------------------------------------------------------
-ISTACK
-  Segment part 2. NOT NEEDED.
-    -------------------------------------------------------------------------
-PSTACK
-  Segment part 3. NOT NEEDED.
-    -------------------------------------------------------------------------
-XSTACK
-  Segment part 4. NOT NEEDED.
-    -------------------------------------------------------------------------
-IOVERLAY
-  Segment part 5. NOT NEEDED.
-    -------------------------------------------------------------------------
-DOVERLAY
-  Segment part 6. NOT NEEDED.
 
     *************************************************************************
 
@@ -2136,13 +1815,13 @@ DOVERLAY
     -------------------------------------------------------------------------
 NEAR_CODE
   Segment part 9. NOT NEEDED.
+                              - Cross-reference -                      Page   24
+
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            CLInOutBase::vOut(USI, USI, UC)
                                    
                calls direct, is not allocated
-                              - Cross-reference -                      Page   28
-
                not allocated function
     -------------------------------------------------------------------------
 <NEAR_CODE> 1 (was NEAR_CODE)
@@ -2216,12 +1895,12 @@ NEAR_CODE
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            Conversion::delete ~Conversion(Conversion *)
+                              - Cross-reference -                      Page   25
+
                                    
                calls direct, is not allocated
                not allocated function
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   29
-
 NEAR_CODE
   Segment part 14. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
@@ -2296,12 +1975,12 @@ XSTACK
     -------------------------------------------------------------------------
 IOVERLAY
   Segment part 4. NOT NEEDED.
+                              - Cross-reference -                      Page   26
+
     -------------------------------------------------------------------------
 DOVERLAY
   Segment part 5. NOT NEEDED.
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   30
-
 XDATA_I
   Segment part 7. TENTATIVE. Used definition from CLEcran
            ENTRY                   ADDRESS         REF BY
@@ -2376,12 +2055,12 @@ NEAR_CODE
   Segment part 39.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
+                              - Cross-reference -                      Page   27
+
            CLFesto::~CLFesto()     000003DC        Segment part 10 (BlocFESTOmain)
                calls direct, is indirectly called
                XSTACK = 00000008 ( 00000008 )
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   31
-
 NEAR_CODE
   Segment part 40. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
@@ -2456,12 +2135,12 @@ NEAR_CODE
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            CLFesto::Delai(UINT32)
+                              - Cross-reference -                      Page   28
+
                                    
                is not allocated
                not allocated function
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   32
-
 ISTACK
   Segment part 1. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -2535,12 +2214,12 @@ XDATA_I
   Relative segment, address: XDATA 00000F36 - 00000F43 (0xe bytes), align: 0
   Segment part 6.             Intra module refs:   CLFesto::ucGestionFESTO()
     -------------------------------------------------------------------------
+                              - Cross-reference -                      Page   29
+
 XDATA_I
   Relative segment, address: XDATA 00000F44 - 00000F51 (0xe bytes), align: 0
   Segment part 8.             Intra module refs:   CLFesto::ucGestionFESTO()
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   33
-
 XDATA_I
   Relative segment, address: XDATA 00000F52 - 00000F5F (0xe bytes), align: 0
   Segment part 10.            Intra module refs:   CLFesto::ucGestionFESTO()
@@ -2589,7 +2268,7 @@ XDATA_I
            __Constant_0            
     -------------------------------------------------------------------------
 XDATA_I
-  Segment part 32. TENTATIVE. Used definition from CLMCP2515
+  Segment part 32. TENTATIVE. Used definition from CLSPI
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            __Constant_1            
@@ -2615,12 +2294,12 @@ NEAR_CODE
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            CLPompe::new CLPompe(UC)
+                              - Cross-reference -                      Page   30
+
                                    
                calls direct, is not allocated
                not allocated function
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   34
-
 NEAR_CODE
   Segment part 8. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
@@ -2695,12 +2374,12 @@ NEAR_CODE
            =====                   =======         ======
            CLPompe::SOL719()       0000128A        CLFesto::ucGestionFESTO() (FESTO)
                calls direct
+                              - Cross-reference -                      Page   31
+
     -------------------------------------------------------------------------
 NEAR_CODE
   Segment part 17. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
-                              - Cross-reference -                      Page   35
-
            =====                   =======         ======
            CLPompe::SOL704()       
                calls direct, is not allocated
@@ -2775,12 +2454,12 @@ CSTART
   ======================
 CSTART
   Relative segment, address: CODE 00000034, align: 0
+                              - Cross-reference -                      Page   32
+
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?cmain                  00000034        Segment part 13 (CSTARTUP)
-                              - Cross-reference -                      Page   36
-
     -------------------------------------------------------------------------
 CSTART
   Relative segment, address: CODE 00000034 - 0000003C (0x9 bytes), align: 0
@@ -2855,12 +2534,12 @@ IXDATA_Z
     -------------------------------------------------------------------------
 CSTART
   Segment part 13. NOT NEEDED.
+                              - Cross-reference -                      Page   33
+
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            __INIT_IXDATA_Z         
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   37
-
 BDATA_I
   Segment part 14. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -2935,12 +2614,12 @@ CSTART
                                                    Segment part 6 (FESTO)
                                                    Segment part 8 (FESTO)
                                                    Segment part 9 (BlocFESTOmain)
+                              - Cross-reference -                      Page   34
+
     -------------------------------------------------------------------------
 IXDATA_I
   Segment part 29. NOT NEEDED.
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   38
-
 IXDATA_ID
   Segment part 30. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -3015,12 +2694,12 @@ REGISTERS
            =====                   =======         ======
            ?REGISTERS              00000000 
     -------------------------------------------------------------------------
+                              - Cross-reference -                      Page   35
+
 ISTACK
   Relative segment, address: IDATA 000000C0, align: 0
   Segment part 1.             Intra module refs:   Segment part 6
            ENTRY                   ADDRESS         REF BY
-                              - Cross-reference -                      Page   39
-
            =====                   =======         ======
            ?ISTACK_START           000000C0 
     -------------------------------------------------------------------------
@@ -3095,10 +2774,10 @@ CSTART
   Relative segment, address: CODE 0000008B - 0000008D (0x3 bytes), align: 0
   Segment part 13.            Intra module refs:   Absolute parts
 
+                              - Cross-reference -                      Page   36
+
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : VIRTUAL_REGISTERS
-
-                              - Cross-reference -                      Page   40
 
   SEGMENTS IN THE MODULE
   ======================
@@ -3175,11 +2854,11 @@ RCODE
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?UL_GT                  
+                              - Cross-reference -                      Page   37
+
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?G_EQ
-                              - Cross-reference -                      Page   41
-
 
   SEGMENTS IN THE MODULE
   ======================
@@ -3255,11 +2934,11 @@ RCODE
 RCODE
   Segment part 3. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
+                              - Cross-reference -                      Page   38
+
            =====                   =======         ======
            ?FLT_TO_L_REW           
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   42
-
 RCODE
   Segment part 4. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
@@ -3334,12 +3013,12 @@ RCODE
 
   SEGMENTS IN THE MODULE
   ======================
+                              - Cross-reference -                      Page   39
+
 RCODE
   Segment part 0. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-                              - Cross-reference -                      Page   43
-
            ?FLT_TEST_INF_R1_REW    
     -------------------------------------------------------------------------
 RCODE
@@ -3414,12 +3093,12 @@ RCODE
   Segment part 1. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
+                              - Cross-reference -                      Page   40
+
            ?FLT_SUB                
     -------------------------------------------------------------------------
 RCODE
   Segment part 2. NOT NEEDED.
-                              - Cross-reference -                      Page   44
-
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?FLT_ADD_REW            
@@ -3494,11 +3173,11 @@ RCODE
     -------------------------------------------------------------------------
 RCODE
   Segment part 2. NOT NEEDED.
+                              - Cross-reference -                      Page   41
+
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?L_MOV_TO_X             
-
-                              - Cross-reference -                      Page   45
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?XLOAD_R2345
@@ -3565,28 +3244,6 @@ RCODE
            ?US_DIV_MOD             
 
     -------------------------------------------------------------------------
-  LIBRARY MODULE, NAME : ?SS_SHR
-
-  SEGMENTS IN THE MODULE
-  ======================
-RCODE
-  Segment part 0. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           ?SS_SHR_REW             
-    -------------------------------------------------------------------------
-RCODE
-  Segment part 1. NOT NEEDED.
-           ENTRY                   ADDRESS         REF BY
-                              - Cross-reference -                      Page   46
-
-           =====                   =======         ======
-           ?SS_SHR                 
-    -------------------------------------------------------------------------
-RCODE
-  Segment part 2. NOT NEEDED.
-
-    -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?US_SHR
 
   SEGMENTS IN THE MODULE
@@ -3596,6 +3253,8 @@ RCODE
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?US_SHR_REW             
+                              - Cross-reference -                      Page   42
+
     -------------------------------------------------------------------------
 RCODE
   Segment part 1. NOT NEEDED.
@@ -3658,8 +3317,6 @@ XSTACK
 RCODE
   Relative segment, address: CODE 0000016D - 00000176 (0xa bytes), align: 0
   Segment part 1.
-                              - Cross-reference -                      Page   47
-
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?XSTACK_DISP0_8         0000016D        CLI2CPort::vI2CEcrireDonnee(UC, USI, UC, UC *, UC) (CLI2CPort)
@@ -3676,6 +3333,8 @@ RCODE
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?CALL_IND               00000177        __call_ctors (?cppinit)
+                              - Cross-reference -                      Page   43
+
                                                    __call_dtors (?cppinit)
                                                    operator new(unsigned int) (?newop_0)
 
@@ -3738,8 +3397,6 @@ XSTACK
 RCODE
   Relative segment, address: CODE 000001DF - 0000021E (0x40 bytes), align: 0
   Segment part 1.
-                              - Cross-reference -                      Page   48
-
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?FUNC_LEAVE_XDATA       000001DF        CLCommunic::CLCommunic() (CLCommunicUpsdPort1)
@@ -3756,6 +3413,8 @@ RCODE
                                                    CLFesto::GetBlocColor() (FESTO)
                                                    CLFesto::SendToBolide(char const *) (FESTO)
                                                    CLFesto::SendToStation1(char const *) (FESTO)
+                              - Cross-reference -                      Page   44
+
                                                    CLFesto::ucGestionFESTO() (FESTO)
                                                    CLFesto::~CLFesto() (FESTO)
                                                    CLFestoCaptors::CLFestoCaptors() (CLFestoCaptors)
@@ -3818,8 +3477,6 @@ RCODE
            =====                   =======         ======
            ?PUSH_XSTACK_I_FOUR     
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   49
-
 RCODE
   Segment part 1. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
@@ -3836,6 +3493,8 @@ RCODE
 RCODE
   Relative segment, address: CODE 000002DA - 000002DB (0x2 bytes), align: 0
   Segment part 3.
+                              - Cross-reference -                      Page   45
+
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?PUSH_XSTACK_I_ONE      000002DA        CLIOPCF8574::Write(UC) (CLIOPCF8574)
@@ -3897,8 +3556,6 @@ RCODE
            =====                   =======         ======
            ?UC_SWITCH_DENSE        
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   50
-
 RCODE
   Segment part 1. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
@@ -3915,6 +3572,8 @@ RCODE
            ?UC_SWITCH_DENSE_CBF_RESTORE
                                    
     -------------------------------------------------------------------------
+                              - Cross-reference -                      Page   46
+
 RCODE
   Segment part 4. NOT NEEDED.
 
@@ -3977,8 +3636,6 @@ RCODE
     -------------------------------------------------------------------------
 RCODE
   Segment part 3. NOT NEEDED.
-                              - Cross-reference -                      Page   51
-
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?US_SWITCH_SPARSE_CBF_RESTORE
@@ -3995,6 +3652,8 @@ RCODE
   ======================
 RCODE
   Relative segment, address: CODE 00000335 - 00000373 (0x3f bytes), align: 0
+                              - Cross-reference -                      Page   47
+
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -4056,8 +3715,6 @@ DOVERLAY
 ISTACK
   Segment part 1. NOT NEEDED.
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   52
-
 PSTACK
   Segment part 2. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -4075,6 +3732,8 @@ DOVERLAY
 
   SEGMENTS IN THE MODULE
   ======================
+                              - Cross-reference -                      Page   48
+
 <NEAR_CODE> 1 (was NEAR_CODE)
   Relative segment, address: CODE 0000109F - 00001104 (0x66 bytes), align: 0
   Segment part 7.
@@ -4136,8 +3795,6 @@ NEAR_CODE
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            __idata_vec_cctor       
-                              - Cross-reference -                      Page   53
-
                is not allocated
                not allocated function
     -------------------------------------------------------------------------
@@ -4155,6 +3812,8 @@ NEAR_CODE
 NEAR_CODE
   Segment part 17. NOT NEEDED.
     -------------------------------------------------------------------------
+                              - Cross-reference -                      Page   49
+
 NEAR_CODE
   Segment part 18. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -4216,8 +3875,6 @@ DOVERLAY
   Segment part 5. NOT NEEDED.
 
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   54
-
   LIBRARY MODULE, NAME : ?delop_0
 
   SEGMENTS IN THE MODULE
@@ -4234,6 +3891,8 @@ DOVERLAY
 ISTACK
   Segment part 1. NOT NEEDED.
     -------------------------------------------------------------------------
+                              - Cross-reference -                      Page   50
+
 PSTACK
   Segment part 2. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -4296,8 +3955,6 @@ PSTACK
 XSTACK
   Segment part 3. NOT NEEDED.
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   55
-
 IOVERLAY
   Segment part 4. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -4314,6 +3971,8 @@ XDATA_Z
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
+                              - Cross-reference -                      Page   51
+
            __iar_New_hand          00000F26        operator new(unsigned int) (?newop_0)
     -------------------------------------------------------------------------
 NEAR_CODE
@@ -4376,8 +4035,6 @@ DOVERLAY
   ======================
 <NEAR_CODE> 1 (was NEAR_CODE)
   Relative segment, address: CODE 00001372 - 000013A9 (0x38 bytes), align: 0
-                              - Cross-reference -                      Page   56
-
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -4394,6 +4051,8 @@ PSTACK
     -------------------------------------------------------------------------
 XSTACK
   Segment part 3. NOT NEEDED.
+                              - Cross-reference -                      Page   52
+
     -------------------------------------------------------------------------
 IOVERLAY
   Segment part 4. NOT NEEDED.
@@ -4456,8 +4115,6 @@ NEAR_CODE
   Segment part 17.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-                              - Cross-reference -                      Page   57
-
            _Nomemory()             000013FD        operator new(unsigned int) (?newop_0)
                calls direct
     -------------------------------------------------------------------------
@@ -4473,6 +4130,8 @@ XSTACK
 IOVERLAY
   Segment part 4. NOT NEEDED.
     -------------------------------------------------------------------------
+                              - Cross-reference -                      Page   53
+
 DOVERLAY
   Segment part 5. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -4535,8 +4194,6 @@ DOVERLAY
            __xdata_GetMemChunk     00001336        __xdata_findmem (?xxmemxmalloc)
                ISTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   58
-
 NEAR_CODE
   Segment part 11. NOT NEEDED.
            ENTRY                   ADDRESS         REF BY
@@ -4553,6 +4210,8 @@ NEAR_CODE
     -------------------------------------------------------------------------
 NEAR_CODE
   Segment part 14. NOT NEEDED.
+                              - Cross-reference -                      Page   54
+
     -------------------------------------------------------------------------
 XDATA_Z
   Relative segment, address: XDATA 00000F28 - 00000F29 (0x2 bytes), align: 0
@@ -4577,7 +4236,7 @@ DOVERLAY
   Segment part 5. NOT NEEDED.
     -------------------------------------------------------------------------
 XDATA_I
-  Segment part 8. TENTATIVE. Used definition from CLMCP2515
+  Segment part 8. TENTATIVE. Used definition from CLSPI
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            __Constant_1            
@@ -4614,8 +4273,6 @@ PSTACK
 XSTACK
   Segment part 3. NOT NEEDED.
     -------------------------------------------------------------------------
-                              - Cross-reference -                      Page   59
-
 IOVERLAY
   Segment part 4. NOT NEEDED.
     -------------------------------------------------------------------------
@@ -4633,6 +4290,8 @@ DOVERLAY
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            __xdata_free            00000F52        __xdata_findmem (?xxmemxmalloc)
+                              - Cross-reference -                      Page   55
+
                                                    operator delete(void *) (?delop_0)
                XSTACK = 00000000 ( 0000000D )
     -------------------------------------------------------------------------
@@ -4694,8 +4353,6 @@ XDATA_Z
            =====                   =======         
            __xdata_findmem         00000AAC 
                calls direct
-                              - Cross-reference -                      Page   60
-
                XSTACK = 0000000A ( 00000009 )
     -------------------------------------------------------------------------
 <NEAR_CODE> 1 (was NEAR_CODE)
@@ -4713,6 +4370,8 @@ XDATA_Z
     -------------------------------------------------------------------------
 <NEAR_CODE> 1 (was NEAR_CODE)
   Relative segment, address: CODE 00000B60 - 00000C4A (0xeb bytes), align: 0
+                              - Cross-reference -                      Page   56
+
   Segment part 12.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -4807,12 +4466,10 @@ CLCommunicUpsdPort1        502             5     16
   + common                  38
 CLEcran                    490
 CLFestoCaptors              99
-CLI2CBase                  348
-  + shared                                 1
+CLI2CBase                  348             1
 CLI2CPort                  400
 CLIOPCF8574                123
-CLMCP2515
-  + shared                                 1
+CLSPI                                      1
 CLinOutBase                 60
 CSTARTUP                    15
   + common                   3
@@ -4833,8 +4490,6 @@ Total:                   5 090     18     10  8 112     64      8
                 ****************************************
 
   ->Sub-tree of type: Interrupt function tree that does not make
-                              - Cross-reference -                      Page   61
-
                     : indirect calls
                              XSTACK   ISTACK
     | Stack used (prev) :  00000000 00000000
@@ -4852,6 +4507,8 @@ Total:                   5 090     18     10  8 112     64      8
     | Stack used (prev) :  00000000 00000004
   02    CLCommunic::ucLireNbCaractRecu()
         | Stack used (prev) :  00000000 00000004
+                              - Cross-reference -                      Page   57
+
         | + function block  :  00000000 00000002
   01  CLCommunic::vInteruptSerial()
       | Stack used (prev) :  00000000 00000006
@@ -4913,8 +4570,6 @@ Total:                   5 090     18     10  8 112     64      8
           | Stack used (prev) :  0000000D 00000024
           | + function block  :  00000000 00000000
   02    CLCommunic::~CLCommunic()
-                              - Cross-reference -                      Page   62
-
         | Stack used (prev) :  0000000D 00000024
         | + function block  :  00000008 00000004
   01  CLFesto::~CLFesto()
@@ -4932,6 +4587,8 @@ Total:                   5 090     18     10  8 112     64      8
   04        __exit
             | Stack used (prev) :  00000056 00000029
             | + function block  :  00000000 00000000
+                              - Cross-reference -                      Page   58
+
   03      abort
           | Stack used (prev) :  00000056 00000029
           | + function block  :  00000000 00000000
@@ -4993,8 +4650,6 @@ Total:                   5 090     18     10  8 112     64      8
   08                __xdata_GetMemChunk
                     | Stack used (prev) :  00000056 00000029
                     | + function block  :  00000000 00000002
-                              - Cross-reference -                      Page   63
-
   07              __xdata_findmem
                   | Stack used (prev) :  00000056 0000002B
                   | + function block  :  0000001C 00000000
@@ -5012,6 +4667,8 @@ Total:                   5 090     18     10  8 112     64      8
               | Stack used (prev) :  00000086 0000002B
               | + function block  :  00000012 00000000
   04        operator new[](unsigned int)
+                              - Cross-reference -                      Page   59
+
             | Stack used (prev) :  00000098 0000002B
             | + function block  :  00000000 00000000
   04        CLCommunic::vInitBaudRate(UI)
@@ -5073,8 +4730,6 @@ Total:                   5 090     18     10  8 112     64      8
   06            CLI2CBase::ucI2CEcrireOctet(UC)
                 | Stack used (prev) :  000000D8 00000031
                 | + function block  :  00000010 00000000
-                              - Cross-reference -                      Page   64
-
   07              CLI2CBase::vDelaiI2C()
                   | Stack used (prev) :  000000B8 0000002F
                   | + function block  :  00000008 00000002
@@ -5092,6 +4747,8 @@ Total:                   5 090     18     10  8 112     64      8
                 | + function block  :  00000000 00000004
   07              CLI2CBase::vDelaiI2C()
                   | Stack used (prev) :  000000B8 0000002F
+                              - Cross-reference -                      Page   60
+
                   | + function block  :  00000008 00000002
                   |  Already listed
   07              CLI2CBase::vDelaiI2C()
@@ -5153,8 +4810,6 @@ Total:                   5 090     18     10  8 112     64      8
                 | Stack used (prev) :  0000000C 00000028
                 | + function block  :  0000001A 00000000
                 |  Already listed
-                              - Cross-reference -                      Page   65
-
   05          CLEcran::Lettre(char)
               | Stack used (prev) :  000000B8 0000002F
               | + function block  :  00000025 00000000
@@ -5172,6 +4827,8 @@ Total:                   5 090     18     10  8 112     64      8
                     | Stack used (prev) :  000000C0 00000031
                     | + function block  :  00000018 00000000
                     |  Already listed
+                              - Cross-reference -                      Page   61
+
   08                CLI2CBase::ucI2CLireBit()
                     | Stack used (prev) :  000000C0 00000031
                     | + function block  :  00000018 00000000
@@ -5233,8 +4890,6 @@ Total:                   5 090     18     10  8 112     64      8
               | + function block  :  0000000A 00000000
   04        CLCommunic::SendString(char const *)
             | Stack used (prev) :  000000C2 0000002F
-                              - Cross-reference -                      Page   66
-
             | + function block  :  00000010 00000000
   04        CLCommunic::Send(UC)
             | Stack used (prev) :  000000B8 0000002F
@@ -5252,6 +4907,8 @@ Total:                   5 090     18     10  8 112     64      8
           | + function block  :  00000018 00000000
           |  Already listed
   03      CLFesto::SendToStation1(char const *)
+                              - Cross-reference -                      Page   62
+
           | Stack used (prev) :  000000D2 0000002F
           | + function block  :  00000018 00000000
           |  Already listed
@@ -5313,8 +4970,6 @@ Total:                   5 090     18     10  8 112     64      8
   <-Sub-tree of type: Function tree
     | Stack used          :  0000013A 00000035
 
-                              - Cross-reference -                      Page   67
-
 
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
@@ -5332,6 +4987,8 @@ Total:                   5 090     18     10  8 112     64      8
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
     | Stack used (prev) :  00000146 00000035
+                              - Cross-reference -                      Page   63
+
   01  __program_start
       | Stack used (prev) :  00000146 00000035
       | + function block  :  00000000 00000000
@@ -5393,8 +5050,6 @@ BIT_ID               CODE               00000091                     dse    0
 BDATA_ID             CODE               00000091                     dse    0
 XDATA_ID             CODE          00000091 - 00000114          84   rel    0
 RCODE                CODE          00000115 - 0000039E         28A   rel    0
-                              - Cross-reference -                      Page   68
-
 DIFUNCT              CODE          0000039F - 000003A0           2   rel    0
 <NEAR_CODE> 1        CODE          000003A1 - 00001407        1067   rel    0
 REGISTERS            DATA          00000000 - 00000007           8   rel    0
@@ -5412,6 +5067,8 @@ SFR_AN               DATA          00000087 - 00000089           3   rel    0
 XSTACK               XDATA         00000001 - 00000EFF         EFF   rel    0
 XDATA_Z              XDATA         00000F00 - 00000F2D          2E   rel    0
 PDATA_Z              XDATA              00000F01                     rel    0
+                              - Cross-reference -                      Page   64
+
 XDATA_I              XDATA         00000F2E - 00000FB1          84   rel    0
 XDATA_HEAP           XDATA         00000FB2 - 00001FB0         FFF   dse    0
 ISTACK               IDATA         000000C0 - 000000FF          40   rel    0

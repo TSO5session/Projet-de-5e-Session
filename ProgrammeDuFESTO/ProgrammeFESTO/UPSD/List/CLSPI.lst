@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         27/Nov/2014  09:22:08 #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         28/Nov/2014  08:11:53 #
 # Copyright 2004-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -66,37 +66,36 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \                     _A_P1:
    \   000000                DS 1
      18          #include "_DeclarationGenerale.h" // inclue DeclarationGenerale.h
-     19          #include "MCP2515.h"              // define des registres du MCP2515
-     20          //******************************************************************************
-     21          //                            LE CONSTRUCTEUR PAR DEFAUT
-     22          // *****************************************************************************
+     19          //******************************************************************************
+     20          //                            LE CONSTRUCTEUR PAR DEFAUT
+     21          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     23          CLSPI :: CLSPI(void)
+     22          CLSPI :: CLSPI(void)
    \                     ??CLSPI:
-     24          {
+     23          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-     25          MOSI     = LOW;  // Commence a bas  
+     24          MOSI     = LOW;  // Commence a bas  
    \   000000   C295         CLR     0x90.5
-     26          MISO     = LOW;  // Commence a bas  
+     25          MISO     = LOW;  // Commence a bas  
    \   000002   C294         CLR     0x90.4
-     27          SCLK     = LOW;  // Commence a bas
+     26          SCLK     = LOW;  // Commence a bas
    \   000004   C296         CLR     0x90.6
-     28          CS       = HIGH; // Commence a bas
+     27          CS       = HIGH; // Commence a bas
    \   000006   D297         SETB    0x90.7
-     29          }
+     28          }
    \   000008   22           RET
    \   000009                REQUIRE _A_P1
-     30          
-     31          //******************************************************************************
-     32          //                            LE CONSTRUCTEUR INITIALISATEUR
-     33          // *****************************************************************************
+     29          
+     30          //******************************************************************************
+     31          //                            LE CONSTRUCTEUR INITIALISATEUR
+     32          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     34          CLSPI :: CLSPI(UC Directions)
+     33          CLSPI :: CLSPI(UC Directions)
    \                     ??CLSPI_1:
-     35          {
+     34          {
    \   000000   74F8         MOV     A,#-0x8
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 8
@@ -105,121 +104,121 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   8B83         MOV     DPH,R3
    \   000009   E9           MOV     A,R1
    \   00000A   FE           MOV     R6,A
-     36          MOSI     = LOW;        // Commence a bas  
+     35          MOSI     = LOW;        // Commence a bas  
    \   00000B   C295         CLR     0x90.5
-     37          MISO     = LOW;        // Commence a bas  
+     36          MISO     = LOW;        // Commence a bas  
    \   00000D   C294         CLR     0x90.4
-     38          SCLK     = LOW;        // Commence a bas
+     37          SCLK     = LOW;        // Commence a bas
    \   00000F   C296         CLR     0x90.6
-     39          CS       = HIGH;       // Commence a bas
+     38          CS       = HIGH;       // Commence a bas
    \   000011   D297         SETB    0x90.7
-     40          Direction(Directions); // Initialise les directions
+     39          Direction(Directions); // Initialise les directions
    \   000013                ; Setup parameters for call to function CLSPI::Direction(UC)
    \   000013   F9           MOV     R1,A
    \   000014   AA82         MOV     R2,DPL
    \   000016   AB83         MOV     R3,DPH
    \   000018   12....       LCALL   ??Direction
-     41          }
+     40          }
    \   00001B   AA82         MOV     R2,DPL
    \   00001D   AB83         MOV     R3,DPH
    \   00001F   7F01         MOV     R7,#0x1
    \   000021   02....       LJMP    ?FUNC_LEAVE_XDATA
    \   000024                REQUIRE _A_P1
-     42          
-     43          // *****************************************************************************
-     44          //                            LE DESTRUCTEUR
-     45          // *****************************************************************************
+     41          
+     42          // *****************************************************************************
+     43          //                            LE DESTRUCTEUR
+     44          // *****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     46          CLSPI :: ~CLSPI(void)
+     45          CLSPI :: ~CLSPI(void)
    \                     `?~CLSPI`:
-     47          {
+     46          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
-     48          
-     49          }
+     47          
+     48          }
    \   000000   22           RET
-     50          
-     51          //*****************************************************************************
-     52          // Nom de la fct       : vSPIEcire
-     53          // Description         : Fonction qui permet de lire et d'ecrire un octet
-     54          //                     : sous les 4 different mode SPI
-     55          //
-     56          // INCLUDE             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
-     57          //
-     58          // Prototype           : UC ucSPIEcire(UC ucValeur, UC ucMode);
+     49          
+     50          //*****************************************************************************
+     51          // Nom de la fct       : vSPIEcire
+     52          // Description         : Fonction qui permet de lire et d'ecrire un octet
+     53          //                     : sous les 4 different mode SPI
+     54          //
+     55          // INCLUDE             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
+     56          //
+     57          // Prototype           : UC ucSPIEcire(UC ucValeur, UC ucMode);
+     58          //
      59          //
-     60          //
-     61          // Parametre d'entree  : ucValeur pour la valeur a envoyer ucMode pour le mode
-     62          //
-     63          // Parametre de sortie : ucDonneeLue pour la donnee lue
-     64          //
-     65          // Procedure appelees  : aucune
-     66          //
-     67          // Exemple d'appel     : val = clComSPI.ucSPIEcire(0xAA);
-     68          //
-     69          // Fait par            : Vincent Chouinard
-     70          // Date                : 23 septembre 2014
-     71          // Revision            : A
-     72          // Modification
-     73          //*****************************************************************************
+     60          // Parametre d'entree  : ucValeur pour la valeur a envoyer ucMode pour le mode
+     61          //
+     62          // Parametre de sortie : ucDonneeLue pour la donnee lue
+     63          //
+     64          // Procedure appelees  : aucune
+     65          //
+     66          // Exemple d'appel     : val = clComSPI.ucSPIEcire(0xAA);
+     67          //
+     68          // Fait par            : Vincent Chouinard
+     69          // Date                : 23 septembre 2014
+     70          // Revision            : A
+     71          // Modification
+     72          //*****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-     74          UC CLSPI :: Write(UC ucValeur, UC ucMode)
+     73          UC CLSPI :: Write(UC ucValeur, UC ucMode)
    \                     ??Write:
-     75          {
+     74          {
    \   000000                ; Saved register size: 0
    \   000000                ; Auto size: 0
    \   000000   E9           MOV     A,R1
    \   000001   FA           MOV     R2,A
-     76          UC i;                               // Pour boucle
-     77          UC ucDonneeLue = 0;                 // Pour la donnee a transmettre
+     75          UC i;                               // Pour boucle
+     76          UC ucDonneeLue = 0;                 // Pour la donnee a transmettre
    \   000002   7900         MOV     R1,#0x0
-     78          //CS             = LOW;
-     79          
-     80          if(ucMode == 0)                     // Si mode 0?
+     77          //CS             = LOW;
+     78          
+     79          if(ucMode == 0)                     // Si mode 0?
    \   000004   EC           MOV     A,R4
    \   000005   702A         JNZ     ??Write_1
-     81            {
-     82             SCLK  = BAS;                     // Met la clock a 0
+     80            {
+     81             SCLK  = BAS;                     // Met la clock a 0
    \   000007   C296         CLR     0x90.6
-     83          
-     84             for(i = 0; i < 8; i++)           // Fait 8 fois
+     82          
+     83             for(i = 0; i < 8; i++)           // Fait 8 fois
    \   000009   7800         MOV     R0,#0x0
    \   00000B   8015         SJMP    ??Write_2
-     85               {
-     86                if((ucValeur & 0x80) == 0x80) //fait un masque si egale a 1
-     87                  {
-     88                   MOSI = 1;                  // Envoie 1
-     89                  }
-     90                 else                         // Sinon
-     91                  {
-     92                   MOSI =0;                   // Envoie 0.
+     84               {
+     85                if((ucValeur & 0x80) == 0x80) //fait un masque si egale a 1
+     86                  {
+     87                   MOSI = 1;                  // Envoie 1
+     88                  }
+     89                 else                         // Sinon
+     90                  {
+     91                   MOSI =0;                   // Envoie 0.
    \                     ??Write_3:
    \   00000D   C295         CLR     0x90.5
-     93                  }
-     94          
-     95                 ucValeur    = ucValeur    << 1  ; // Decale la valeur a envoyer
+     92                  }
+     93          
+     94                 ucValeur    = ucValeur    << 1  ; // Decale la valeur a envoyer
    \                     ??Write_4:
    \   00000F   EA           MOV     A,R2
    \   000010   C3           CLR     C
    \   000011   33           RLC     A
    \   000012   FA           MOV     R2,A
-     96                 ucDonneeLue = ucDonneeLue << 1  ; // Decale la valeur lue
+     95                 ucDonneeLue = ucDonneeLue << 1  ; // Decale la valeur lue
    \   000013   E9           MOV     A,R1
    \   000014   C3           CLR     C
    \   000015   33           RLC     A
    \   000016   F9           MOV     R1,A
-     97                 SCLK        = HAUT              ; // Clock a 1
+     96                 SCLK        = HAUT              ; // Clock a 1
    \   000017   D296         SETB    0x90.6
-     98                 ucDonneeLue = ucDonneeLue + MISO; // Aditionne l'etat de MISO avec
+     97                 ucDonneeLue = ucDonneeLue + MISO; // Aditionne l'etat de MISO avec
    \   000019   A294         MOV     C,0x90.4
    \   00001B   E4           CLR     A
    \   00001C   33           RLC     A
    \   00001D   29           ADD     A,R1
    \   00001E   F9           MOV     R1,A
-     99                                                   // le reste de la donnee lue
-    100                 SCLK        = BAS               ; // Clock a 0.
+     98                                                   // le reste de la donnee lue
+     99                 SCLK        = BAS               ; // Clock a 0.
    \   00001F   C296         CLR     0x90.6
    \   000021   08           INC     R0
    \                     ??Write_2:
@@ -232,42 +231,42 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00002B   50E0         JNC     ??Write_3
    \   00002D   D295         SETB    0x90.5
    \   00002F   80DE         SJMP    ??Write_4
-    101               }
-    102             }
-    103          
-    104          if(ucMode == 1)          // Si mode 1?
+    100               }
+    101             }
+    102          
+    103          if(ucMode == 1)          // Si mode 1?
    \                     ??Write_1:
    \   000031   7401         MOV     A,#0x1
    \   000033   6C           XRL     A,R4
    \   000034   7028         JNZ     ??Write_5
-    105            {
-    106             SCLK  = HAUT;
+    104            {
+    105             SCLK  = HAUT;
    \   000036   D296         SETB    0x90.6
-    107             for(i = 0; i < 8; i++)
+    106             for(i = 0; i < 8; i++)
    \   000038   7800         MOV     R0,#0x0
    \   00003A   800B         SJMP    ??Write_6
-    108               {
-    109                ucDonneeLue = ucDonneeLue << 1;
-    110                SCLK        = HAUT;
-    111          
-    112                if((ucValeur & 0x80) == 0x80)
-    113                  {
-    114                   MOSI = 1;
-    115                  }
-    116                else
-    117                  {
-    118                   MOSI =0;
+    107               {
+    108                ucDonneeLue = ucDonneeLue << 1;
+    109                SCLK        = HAUT;
+    110          
+    111                if((ucValeur & 0x80) == 0x80)
+    112                  {
+    113                   MOSI = 1;
+    114                  }
+    115                else
+    116                  {
+    117                   MOSI =0;
    \                     ??Write_7:
    \   00003C   C295         CLR     0x90.5
-    119                  }
-    120                ucDonneeLue = ucDonneeLue + MISO;
+    118                  }
+    119                ucDonneeLue = ucDonneeLue + MISO;
    \                     ??Write_8:
    \   00003E   A294         MOV     C,0x90.4
    \   000040   E4           CLR     A
    \   000041   33           RLC     A
    \   000042   29           ADD     A,R1
    \   000043   F9           MOV     R1,A
-    121                SCLK        = BAS;                // Met la clock a 0
+    120                SCLK        = BAS;                // Met la clock a 0
    \   000044   C296         CLR     0x90.6
    \   000046   08           INC     R0
    \                     ??Write_6:
@@ -285,43 +284,43 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000056   50E4         JNC     ??Write_7
    \   000058   D295         SETB    0x90.5
    \   00005A   80E2         SJMP    ??Write_8
-    122               }
-    123               SCLK         = HAUT;
+    121               }
+    122               SCLK         = HAUT;
    \                     ??Write_9:
    \   00005C   D296         SETB    0x90.6
-    124             }
-    125          
-    126          if(ucMode == 2)          // Si mode 2?
+    123             }
+    124          
+    125          if(ucMode == 2)          // Si mode 2?
    \                     ??Write_5:
    \   00005E   7402         MOV     A,#0x2
    \   000060   6C           XRL     A,R4
    \   000061   7024         JNZ     ??Write_10
-    127            {
-    128             for(i = 0; i < 8; i++)
+    126            {
+    127             for(i = 0; i < 8; i++)
    \   000063   7800         MOV     R0,#0x0
    \   000065   800D         SJMP    ??Write_11
-    129               {
-    130                ucDonneeLue = ucDonneeLue << 1;
-    131                if((ucValeur & 0x80) == 0x80)
-    132                  {
-    133                   MOSI = 1;
-    134                  }
-    135                else
-    136                  {
-    137                   MOSI =0;
+    128               {
+    129                ucDonneeLue = ucDonneeLue << 1;
+    130                if((ucValeur & 0x80) == 0x80)
+    131                  {
+    132                   MOSI = 1;
+    133                  }
+    134                else
+    135                  {
+    136                   MOSI =0;
    \                     ??Write_12:
    \   000067   C295         CLR     0x90.5
-    138                  }
-    139                 ucDonneeLue = ucDonneeLue + MISO;
+    137                  }
+    138                 ucDonneeLue = ucDonneeLue + MISO;
    \                     ??Write_13:
    \   000069   A294         MOV     C,0x90.4
    \   00006B   E4           CLR     A
    \   00006C   33           RLC     A
    \   00006D   29           ADD     A,R1
    \   00006E   F9           MOV     R1,A
-    140                 SCLK        = BAS;
+    139                 SCLK        = BAS;
    \   00006F   C296         CLR     0x90.6
-    141                 SCLK        = HAUT;
+    140                 SCLK        = HAUT;
    \   000071   D296         SETB    0x90.6
    \   000073   08           INC     R0
    \                     ??Write_11:
@@ -338,39 +337,39 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000081   50E4         JNC     ??Write_12
    \   000083   D295         SETB    0x90.5
    \   000085   80E2         SJMP    ??Write_13
-    142               }
-    143             }
-    144          
-    145          if(ucMode == 3)          // Si mode 3?
+    141               }
+    142             }
+    143          
+    144          if(ucMode == 3)          // Si mode 3?
    \                     ??Write_10:
    \   000087   7403         MOV     A,#0x3
    \   000089   6C           XRL     A,R4
    \   00008A   7024         JNZ     ??Write_14
-    146            {
-    147             for(i = 0; i < 8; i++)
+    145            {
+    146             for(i = 0; i < 8; i++)
    \   00008C   7800         MOV     R0,#0x0
    \   00008E   800B         SJMP    ??Write_15
-    148               {
-    149                ucDonneeLue = ucDonneeLue << 1;
-    150                SCLK        = BAS;
-    151                if((ucValeur & 0x80) == 0x80)
-    152                  {
-    153                   MOSI = 1;
-    154                  }
-    155                else
-    156                  {
-    157                   MOSI = 0;
+    147               {
+    148                ucDonneeLue = ucDonneeLue << 1;
+    149                SCLK        = BAS;
+    150                if((ucValeur & 0x80) == 0x80)
+    151                  {
+    152                   MOSI = 1;
+    153                  }
+    154                else
+    155                  {
+    156                   MOSI = 0;
    \                     ??Write_16:
    \   000090   C295         CLR     0x90.5
-    158                  }
-    159                ucDonneeLue = ucDonneeLue + MISO;
+    157                  }
+    158                ucDonneeLue = ucDonneeLue + MISO;
    \                     ??Write_17:
    \   000092   A294         MOV     C,0x90.4
    \   000094   E4           CLR     A
    \   000095   33           RLC     A
    \   000096   29           ADD     A,R1
    \   000097   F9           MOV     R1,A
-    160                SCLK        = HAUT;
+    159                SCLK        = HAUT;
    \   000098   D296         SETB    0x90.6
    \   00009A   08           INC     R0
    \                     ??Write_15:
@@ -388,54 +387,54 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   0000AA   50E4         JNC     ??Write_16
    \   0000AC   D295         SETB    0x90.5
    \   0000AE   80E2         SJMP    ??Write_17
-    161               }
-    162             }
-    163          //CS = HIGH;
-    164          return(ucDonneeLue);
+    160               }
+    161             }
+    162          //CS = HIGH;
+    163          return(ucDonneeLue);
    \                     ??Write_14:
    \   0000B0   22           RET
    \   0000B1                REQUIRE _A_P1
-    165          }
-    166          
+    164          }
+    165          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    167          UI CLSPI :: Write16(UI uiValeur, UC ucMode)
+    166          UI CLSPI :: Write16(UI uiValeur, UC ucMode)
    \                     ??Write16:
-    168          {
+    167          {
    \   000000   74F8         MOV     A,#-0x8
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 8
    \   000005                ; Auto size: 0
    \   000005   E9           MOV     A,R1
    \   000006   FF           MOV     R7,A
-    169          UC i;                      // Pour boucle
-    170          UI uiDonneeLue= 0;         // Pour la donnee a transmettre
+    168          UC i;                      // Pour boucle
+    169          UI uiDonneeLue= 0;         // Pour la donnee a transmettre
    \   000007   7A00         MOV     R2,#0x0
    \   000009   7B00         MOV     R3,#0x0
-    171          CS = LOW;
+    170          CS = LOW;
    \   00000B   C297         CLR     0x90.7
-    172          if(ucMode == 0)            // Si mode 0?
+    171          if(ucMode == 0)            // Si mode 0?
    \   00000D   EF           MOV     A,R7
    \   00000E   703E         JNZ     ??Write16_1
-    173            {
-    174             SCLK = BAS;             // Met la clock a 0
+    172            {
+    173             SCLK = BAS;             // Met la clock a 0
    \   000010   C296         CLR     0x90.6
-    175             for(i = 0; i < 16; i++) // Fait 8 fois
+    174             for(i = 0; i < 16; i++) // Fait 8 fois
    \   000012   7E00         MOV     R6,#0x0
    \   000014   8022         SJMP    ??Write16_2
-    176               {
-    177                if((uiValeur & 0x8000) == 0x8000)//fait un masque si egale a 1
-    178                  {
-    179                   MOSI = 1;          // Envoie 1
-    180                  }
-    181                else                  // Sinon
-    182                  {
-    183                   MOSI =0;           // Envoie 0.
+    175               {
+    176                if((uiValeur & 0x8000) == 0x8000)//fait un masque si egale a 1
+    177                  {
+    178                   MOSI = 1;          // Envoie 1
+    179                  }
+    180                else                  // Sinon
+    181                  {
+    182                   MOSI =0;           // Envoie 0.
    \                     ??Write16_3:
    \   000016   C295         CLR     0x90.5
-    184                  }
-    185          
-    186                uiValeur    = uiValeur    << 1  ;  // Decale la valeur a envoyer
+    183                  }
+    184          
+    185                uiValeur    = uiValeur    << 1  ;  // Decale la valeur a envoyer
    \                     ??Write16_4:
    \   000018   EC           MOV     A,R4
    \   000019   C3           CLR     C
@@ -444,7 +443,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00001C   ED           MOV     A,R5
    \   00001D   33           RLC     A
    \   00001E   FD           MOV     R5,A
-    187                uiDonneeLue = uiDonneeLue << 1  ;  // Decale la valeur lue
+    186                uiDonneeLue = uiDonneeLue << 1  ;  // Decale la valeur lue
    \   00001F   EA           MOV     A,R2
    \   000020   C3           CLR     C
    \   000021   33           RLC     A
@@ -452,9 +451,9 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000023   EB           MOV     A,R3
    \   000024   33           RLC     A
    \   000025   FB           MOV     R3,A
-    188                SCLK        = HAUT              ; // Clock a 1
+    187                SCLK        = HAUT              ; // Clock a 1
    \   000026   D296         SETB    0x90.6
-    189                uiDonneeLue = uiDonneeLue + MISO; // Aditionne l'etat de MISO avec
+    188                uiDonneeLue = uiDonneeLue + MISO; // Aditionne l'etat de MISO avec
    \   000028   A294         MOV     C,0x90.4
    \   00002A   E4           CLR     A
    \   00002B   33           RLC     A
@@ -466,8 +465,8 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000032   EB           MOV     A,R3
    \   000033   39           ADDC    A,R1
    \   000034   FB           MOV     R3,A
-    190                                                  // le reste de la donnee lue
-    191                SCLK        = BAS               ; // Clock a 0.
+    189                                                  // le reste de la donnee lue
+    190                SCLK        = BAS               ; // Clock a 0.
    \   000035   C296         CLR     0x90.6
    \   000037   0E           INC     R6
    \                     ??Write16_2:
@@ -486,34 +485,34 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000048   60CC         JZ      ??Write16_3
    \   00004A   D295         SETB    0x90.5
    \   00004C   80CA         SJMP    ??Write16_4
-    192               }
-    193             }
-    194          
-    195             if(ucMode == 1)          // Si mode 1?
+    191               }
+    192             }
+    193          
+    194             if(ucMode == 1)          // Si mode 1?
    \                     ??Write16_1:
    \   00004E   7401         MOV     A,#0x1
    \   000050   6F           XRL     A,R7
    \   000051   7039         JNZ     ??Write16_5
-    196              {
-    197               SCLK = HAUT;
+    195              {
+    196               SCLK = HAUT;
    \   000053   D296         SETB    0x90.6
-    198               for(i = 0; i < 16; i++)
+    197               for(i = 0; i < 16; i++)
    \   000055   7E00         MOV     R6,#0x0
    \   000057   8012         SJMP    ??Write16_6
-    199                 {
-    200                  uiDonneeLue = uiDonneeLue << 1;
-    201                  SCLK        = HAUT;
-    202                  if((uiValeur & 0x8000) == 0x8000)
-    203                   {
-    204                    MOSI = 1;
-    205                   }
-    206                  else
-    207                   {
-    208                    MOSI =0;
+    198                 {
+    199                  uiDonneeLue = uiDonneeLue << 1;
+    200                  SCLK        = HAUT;
+    201                  if((uiValeur & 0x8000) == 0x8000)
+    202                   {
+    203                    MOSI = 1;
+    204                   }
+    205                  else
+    206                   {
+    207                    MOSI =0;
    \                     ??Write16_7:
    \   000059   C295         CLR     0x90.5
-    209                   }
-    210                  uiDonneeLue = uiDonneeLue + MISO;
+    208                   }
+    209                  uiDonneeLue = uiDonneeLue + MISO;
    \                     ??Write16_8:
    \   00005B   A294         MOV     C,0x90.4
    \   00005D   E4           CLR     A
@@ -526,7 +525,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000065   EB           MOV     A,R3
    \   000066   39           ADDC    A,R1
    \   000067   FB           MOV     R3,A
-    211                  SCLK        = BAS;   // Met la clock a 0
+    210                  SCLK        = BAS;   // Met la clock a 0
    \   000068   C296         CLR     0x90.6
    \   00006A   0E           INC     R6
    \                     ??Write16_6:
@@ -553,33 +552,33 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000084   60D3         JZ      ??Write16_7
    \   000086   D295         SETB    0x90.5
    \   000088   80D1         SJMP    ??Write16_8
-    212                 }
-    213               SCLK = HAUT;
+    211                 }
+    212               SCLK = HAUT;
    \                     ??Write16_9:
    \   00008A   D296         SETB    0x90.6
-    214              }
-    215            if(ucMode == 2)          // Si mode 2?
+    213              }
+    214            if(ucMode == 2)          // Si mode 2?
    \                     ??Write16_5:
    \   00008C   7402         MOV     A,#0x2
    \   00008E   6F           XRL     A,R7
    \   00008F   7035         JNZ     ??Write16_10
-    216              {
-    217               for(i = 0; i < 16; i++)
+    215              {
+    216               for(i = 0; i < 16; i++)
    \   000091   7E00         MOV     R6,#0x0
    \   000093   8014         SJMP    ??Write16_11
-    218                 {
-    219                  uiDonneeLue = uiDonneeLue << 1;
-    220                  if((uiValeur & 0x8000) == 0x8000)
-    221                    {
-    222                     MOSI = 1;
-    223                    }
-    224                  else
-    225                   {
-    226                    MOSI =0;
+    217                 {
+    218                  uiDonneeLue = uiDonneeLue << 1;
+    219                  if((uiValeur & 0x8000) == 0x8000)
+    220                    {
+    221                     MOSI = 1;
+    222                    }
+    223                  else
+    224                   {
+    225                    MOSI =0;
    \                     ??Write16_12:
    \   000095   C295         CLR     0x90.5
-    227                   }
-    228                 uiDonneeLue = uiDonneeLue + MISO;
+    226                   }
+    227                 uiDonneeLue = uiDonneeLue + MISO;
    \                     ??Write16_13:
    \   000097   A294         MOV     C,0x90.4
    \   000099   E4           CLR     A
@@ -592,9 +591,9 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   0000A1   EB           MOV     A,R3
    \   0000A2   39           ADDC    A,R1
    \   0000A3   FB           MOV     R3,A
-    229                 SCLK        = BAS;
+    228                 SCLK        = BAS;
    \   0000A4   C296         CLR     0x90.6
-    230                 SCLK        = HAUT;
+    229                 SCLK        = HAUT;
    \   0000A6   D296         SETB    0x90.6
    \   0000A8   0E           INC     R6
    \                     ??Write16_11:
@@ -620,32 +619,32 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   0000C0   60D3         JZ      ??Write16_12
    \   0000C2   D295         SETB    0x90.5
    \   0000C4   80D1         SJMP    ??Write16_13
-    231                }
-    232             }
-    233          
-    234             if(ucMode == 3)          // Si mode 3?
+    230                }
+    231             }
+    232          
+    233             if(ucMode == 3)          // Si mode 3?
    \                     ??Write16_10:
    \   0000C6   7403         MOV     A,#0x3
    \   0000C8   6F           XRL     A,R7
    \   0000C9   7035         JNZ     ??Write16_14
-    235               {
-    236                for(i = 0; i < 16; i++)
+    234               {
+    235                for(i = 0; i < 16; i++)
    \   0000CB   7E00         MOV     R6,#0x0
    \   0000CD   8012         SJMP    ??Write16_15
-    237                  {
-    238                   uiDonneeLue = uiDonneeLue << 1;
-    239                   SCLK        = BAS;
-    240                   if((uiValeur & 0x8000) == 0x8000)
-    241                     {
-    242                      MOSI = 1;
-    243                     }
-    244                   else
-    245                     {
-    246                      MOSI =0;
+    236                  {
+    237                   uiDonneeLue = uiDonneeLue << 1;
+    238                   SCLK        = BAS;
+    239                   if((uiValeur & 0x8000) == 0x8000)
+    240                     {
+    241                      MOSI = 1;
+    242                     }
+    243                   else
+    244                     {
+    245                      MOSI =0;
    \                     ??Write16_16:
    \   0000CF   C295         CLR     0x90.5
-    247                     }
-    248                   uiDonneeLue = uiDonneeLue + MISO;
+    246                     }
+    247                   uiDonneeLue = uiDonneeLue + MISO;
    \                     ??Write16_17:
    \   0000D1   A294         MOV     C,0x90.4
    \   0000D3   E4           CLR     A
@@ -658,7 +657,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   0000DB   EB           MOV     A,R3
    \   0000DC   39           ADDC    A,R1
    \   0000DD   FB           MOV     R3,A
-    249                   SCLK        = HAUT;
+    248                   SCLK        = HAUT;
    \   0000DE   D296         SETB    0x90.6
    \   0000E0   0E           INC     R6
    \                     ??Write16_15:
@@ -685,46 +684,46 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   0000FA   60D3         JZ      ??Write16_16
    \   0000FC   D295         SETB    0x90.5
    \   0000FE   80D1         SJMP    ??Write16_17
-    250                  }
-    251          
-    252                }
-    253          CS = HIGH;
+    249                  }
+    250          
+    251                }
+    252          CS = HIGH;
    \                     ??Write16_14:
    \   000100   D297         SETB    0x90.7
-    254          return(uiDonneeLue);
+    253          return(uiDonneeLue);
    \   000102   7F01         MOV     R7,#0x1
    \   000104   02....       LJMP    ?FUNC_LEAVE_XDATA
    \   000107                REQUIRE _A_P1
-    255          }
-    256          
-    257          //*****************************************************************************
-    258          // Nom de la fct:       : Direction
-    259          // Description:         : Fonction qui permet de modifier la direction des ports
-    260          //                      : du MCP23S08
-    261          //
-    262          // INCLUDE:             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
-    263          //
-    264          // Prototype:           : Direction(UC ucDirection)
+    254          }
+    255          
+    256          //*****************************************************************************
+    257          // Nom de la fct:       : Direction
+    258          // Description:         : Fonction qui permet de modifier la direction des ports
+    259          //                      : du MCP23S08
+    260          //
+    261          // INCLUDE:             : #include "_DeclarationGenerale.h", #include "CLSPI.h"
+    262          //
+    263          // Prototype:           : Direction(UC ucDirection)
+    264          //
     265          //
-    266          //
-    267          // Parametre d'entree:  : ucDirection pour la direction des I/O.
-    268          //
-    269          // Parametre de sortie: : aucun
-    270          //
-    271          // Procedure appelees:  : aucune
-    272          //
-    273          // Exemple d'appel:     : val = clComSPI.ucSPIEcire(0xAA);
-    274          //
-    275          // Fait par             : Vincent Chouinard
-    276          // Date:                : 23 septembre 2014
-    277          // Revision             :
-    278          // Modification         :
-    279          //*****************************************************************************
+    266          // Parametre d'entree:  : ucDirection pour la direction des I/O.
+    267          //
+    268          // Parametre de sortie: : aucun
+    269          //
+    270          // Procedure appelees:  : aucune
+    271          //
+    272          // Exemple d'appel:     : val = clComSPI.ucSPIEcire(0xAA);
+    273          //
+    274          // Fait par             : Vincent Chouinard
+    275          // Date:                : 23 septembre 2014
+    276          // Revision             :
+    277          // Modification         :
+    278          //*****************************************************************************
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    280          void CLSPI :: Direction (UC ucDirection)
+    279          void CLSPI :: Direction (UC ucDirection)
    \                     ??Direction:
-    281          {
+    280          {
    \   000000   74F8         MOV     A,#-0x8
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 8
@@ -733,9 +732,9 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   8B83         MOV     DPH,R3
    \   000009   E9           MOV     A,R1
    \   00000A   FE           MOV     R6,A
-    282          CS = BAS             ; // Chip select bas
+    281          CS = BAS             ; // Chip select bas
    \   00000B   C297         CLR     0x90.7
-    283          Write(0x40, 0)       ; // Envoie l'adresse du boitier
+    282          Write(0x40, 0)       ; // Envoie l'adresse du boitier
    \   00000D                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00000D   7C00         MOV     R4,#0x0
    \   00000F   7940         MOV     R1,#0x40
@@ -743,7 +742,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000013   AB83         MOV     R3,DPH
    \   000015   12....       LCALL   ??Write
    \   000018   E9           MOV     A,R1
-    284          Write(0x00, 0)       ; // Envoie le registre a modifier
+    283          Write(0x00, 0)       ; // Envoie le registre a modifier
    \   000019                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000019   7C00         MOV     R4,#0x0
    \   00001B   7900         MOV     R1,#0x0
@@ -751,7 +750,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00001F   AB83         MOV     R3,DPH
    \   000021   12....       LCALL   ??Write
    \   000024   E9           MOV     A,R1
-    285          Write(ucDirection, 0); // Envoie la direction
+    284          Write(ucDirection, 0); // Envoie la direction
    \   000025                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000025   7C00         MOV     R4,#0x0
    \   000027   EE           MOV     A,R6
@@ -760,18 +759,18 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00002B   AB83         MOV     R3,DPH
    \   00002D   12....       LCALL   ??Write
    \   000030   E9           MOV     A,R1
-    286          CS = HAUT            ; // Chip Select haut
+    285          CS = HAUT            ; // Chip Select haut
    \   000031   D297         SETB    0x90.7
-    287          }
+    286          }
    \   000033   7F01         MOV     R7,#0x1
    \   000035   02....       LJMP    ?FUNC_LEAVE_XDATA
    \   000038                REQUIRE _A_P1
-    288          
+    287          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    289          UC CLSPI :: WriteMPC (UC Data)
+    288          UC CLSPI :: WriteMPC (UC Data)
    \                     ??WriteMPC:
-    290          {
+    289          {
    \   000000   74F8         MOV     A,#-0x8
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 8
@@ -780,11 +779,11 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   8B83         MOV     DPH,R3
    \   000009   E9           MOV     A,R1
    \   00000A   FF           MOV     R7,A
-    291          UC maVar = 0           ;  
+    290          UC maVar = 0           ;  
    \   00000B   7E00         MOV     R6,#0x0
-    292          CS = LOW               ; // Selectionne le MPC via chip select
+    291          CS = LOW               ; // Selectionne le MPC via chip select
    \   00000D   C297         CLR     0x90.7
-    293          Write(0x40, 0)         ; // Envoie l'adresse du boitier
+    292          Write(0x40, 0)         ; // Envoie l'adresse du boitier
    \   00000F                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00000F   7C00         MOV     R4,#0x0
    \   000011   7940         MOV     R1,#0x40
@@ -792,7 +791,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000015   AB83         MOV     R3,DPH
    \   000017   12....       LCALL   ??Write
    \   00001A   E9           MOV     A,R1
-    294          Write(0x09, 0)         ; // Envoie l'adresse du reistre des IO
+    293          Write(0x09, 0)         ; // Envoie l'adresse du reistre des IO
    \   00001B                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00001B   7C00         MOV     R4,#0x0
    \   00001D   7909         MOV     R1,#0x9
@@ -800,7 +799,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000021   AB83         MOV     R3,DPH
    \   000023   12....       LCALL   ??Write
    \   000026   E9           MOV     A,R1
-    295          maVar = Write(Data, 0) ; // Envoie la donnee
+    294          maVar = Write(Data, 0) ; // Envoie la donnee
    \   000027                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000027   7C00         MOV     R4,#0x0
    \   000029   EF           MOV     A,R7
@@ -810,29 +809,29 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00002F   12....       LCALL   ??Write
    \   000032   E9           MOV     A,R1
    \   000033   FE           MOV     R6,A
-    296          CS = HIGH              ; // End chip select
+    295          CS = HIGH              ; // End chip select
    \   000034   D297         SETB    0x90.7
-    297          return(maVar)          ; // Envoie la donnee hexa a ecrire sur les IO
+    296          return(maVar)          ; // Envoie la donnee hexa a ecrire sur les IO
    \   000036   F9           MOV     R1,A
    \   000037   7F01         MOV     R7,#0x1
    \   000039   02....       LJMP    ?FUNC_LEAVE_XDATA
    \   00003C                REQUIRE _A_P1
-    298          }
-    299          
+    297          }
+    298          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    300          UC CLSPI :: ReadMPC (void)
+    299          UC CLSPI :: ReadMPC (void)
    \                     ??ReadMPC:
-    301          {
+    300          {
    \   000000   C082         PUSH    DPL
    \   000002   C083         PUSH    DPH
    \   000004                ; Saved register size: 2
    \   000004                ; Auto size: 0
    \   000004   8A82         MOV     DPL,R2
    \   000006   8B83         MOV     DPH,R3
-    302          CS       = LOW            ; // Selectionne le MPC via chip select  
+    301          CS       = LOW            ; // Selectionne le MPC via chip select  
    \   000008   C297         CLR     0x90.7
-    303          Write(0x41, 0)            ; // Envoie l'adresse du boitier
+    302          Write(0x41, 0)            ; // Envoie l'adresse du boitier
    \   00000A                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00000A   7C00         MOV     R4,#0x0
    \   00000C   7941         MOV     R1,#0x41
@@ -840,7 +839,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000010   AB83         MOV     R3,DPH
    \   000012   12....       LCALL   ??Write
    \   000015   E9           MOV     A,R1
-    304          Write(0x09, 0)            ; // Envoie l'adresse du reistre des IO
+    303          Write(0x09, 0)            ; // Envoie l'adresse du reistre des IO
    \   000016                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000016   7C00         MOV     R4,#0x0
    \   000018   7909         MOV     R1,#0x9
@@ -848,7 +847,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00001C   AB83         MOV     R3,DPH
    \   00001E   12....       LCALL   ??Write
    \   000021   E9           MOV     A,R1
-    305          UC maVar = Write(NULL, 0) ; // Lit le contenu du MPC
+    304          UC maVar = Write(NULL, 0) ; // Lit le contenu du MPC
    \   000022                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000022   7C00         MOV     R4,#0x0
    \   000024   7900         MOV     R1,#0x0
@@ -857,20 +856,20 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00002A   12....       LCALL   ??Write
    \   00002D   E9           MOV     A,R1
    \   00002E   F9           MOV     R1,A
-    306          CS       = HIGH           ; // End chip select
+    305          CS       = HIGH           ; // End chip select
    \   00002F   D297         SETB    0x90.7
-    307          return(maVar); // Lit la donnee hexa a correspondant aux IO
+    306          return(maVar); // Lit la donnee hexa a correspondant aux IO
    \   000031   D083         POP     DPH
    \   000033   D082         POP     DPL
    \   000035   22           RET
    \   000036                REQUIRE _A_P1
-    308          }
-    309          
+    307          }
+    308          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    310          UC CLSPI :: WritePOT (UC Data)
+    309          UC CLSPI :: WritePOT (UC Data)
    \                     ??WritePOT:
-    311          {
+    310          {
    \   000000   74F8         MOV     A,#-0x8
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 8
@@ -879,9 +878,9 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   8B83         MOV     DPH,R3
    \   000009   E9           MOV     A,R1
    \   00000A   FE           MOV     R6,A
-    312          CS       = LOW           ; // Selectionne le MPC via chip select  
+    311          CS       = LOW           ; // Selectionne le MPC via chip select  
    \   00000B   C297         CLR     0x90.7
-    313          Write(0x00, 0)           ; // Pour activer le mode ecriture
+    312          Write(0x00, 0)           ; // Pour activer le mode ecriture
    \   00000D                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00000D   7C00         MOV     R4,#0x0
    \   00000F   7900         MOV     R1,#0x0
@@ -889,7 +888,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000013   AB83         MOV     R3,DPH
    \   000015   12....       LCALL   ??Write
    \   000018   E9           MOV     A,R1
-    314          UC maVar = Write(Data, 0); // Ecrit une valeur sur le POT
+    313          UC maVar = Write(Data, 0); // Ecrit une valeur sur le POT
    \   000019                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000019   7C00         MOV     R4,#0x0
    \   00001B   EE           MOV     A,R6
@@ -899,19 +898,19 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000021   12....       LCALL   ??Write
    \   000024   E9           MOV     A,R1
    \   000025   F9           MOV     R1,A
-    315          CS       = HIGH          ; // Selectionne le MPC via chip select
+    314          CS       = HIGH          ; // Selectionne le MPC via chip select
    \   000026   D297         SETB    0x90.7
-    316          return(maVar)            ; // Ecrit la valeur sur le POT numerique
+    315          return(maVar)            ; // Ecrit la valeur sur le POT numerique
    \   000028   7F01         MOV     R7,#0x1
    \   00002A   02....       LJMP    ?FUNC_LEAVE_XDATA
    \   00002D                REQUIRE _A_P1
-    317          }
-    318          
+    316          }
+    317          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    319          UC CLSPI :: WriteDAC (UC ucPin, int iData)
+    318          UC CLSPI :: WriteDAC (UC ucPin, int iData)
    \                     ??WriteDAC:
-    320          {
+    319          {
    \   000000   74F8         MOV     A,#-0x8
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 8
@@ -920,12 +919,12 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   8B83         MOV     DPH,R3
    \   000009   E9           MOV     A,R1
    \   00000A   FF           MOV     R7,A
-    321          UC ucHaut;
-    322          UC ucBas;
-    323          CSDA = LOW; // DAC CHip Select ON
+    320          UC ucHaut;
+    321          UC ucBas;
+    322          CSDA = LOW; // DAC CHip Select ON
    \   00000B   C296         CLR     0x90.6
-    324          
-    325          switch (ucPin)
+    323          
+    324          switch (ucPin)
    \   00000D   14           DEC     A
    \   00000E   600B         JZ      ??WriteDAC_1
    \   000010   14           DEC     A
@@ -935,27 +934,27 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000016   14           DEC     A
    \   000017   6063         JZ      ??WriteDAC_4
    \   000019   807F         SJMP    ??WriteDAC_5
-    326            { 
-    327            case 1:     // Write on DAC A
-    328               ucHaut    = (iData << 8) & 0x000F; 
+    325            { 
+    326            case 1:     // Write on DAC A
+    327               ucHaut    = (iData << 8) & 0x000F; 
    \                     ??WriteDAC_1:
    \   00001B   7900         MOV     R1,#0x0
-    329               ucHaut    = ucHaut |       0x80  ;    
+    328               ucHaut    = ucHaut |       0x80  ;    
    \   00001D   D3           SETB    C
    \   00001E   E9           MOV     A,R1
    \   00001F   92E7         MOV     0xE0 /* A   */.7,C
    \   000021   F9           MOV     R1,A
-    330               ucBas     = iData  &       0x00FF;    
+    329               ucBas     = iData  &       0x00FF;    
    \   000022   EC           MOV     A,R4
    \   000023   FE           MOV     R6,A
-    331               Write(ucHaut, 0);
+    330               Write(ucHaut, 0);
    \   000024                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000024   7C00         MOV     R4,#0x0
    \   000026   AA82         MOV     R2,DPL
    \   000028   AB83         MOV     R3,DPH
    \   00002A   12....       LCALL   ??Write
    \   00002D   E9           MOV     A,R1
-    332               Write(ucBas,  0);
+    331               Write(ucBas,  0);
    \   00002E                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00002E   7C00         MOV     R4,#0x0
    \   000030   EE           MOV     A,R6
@@ -964,28 +963,28 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000034   AB83         MOV     R3,DPH
    \   000036   12....       LCALL   ??Write
    \   000039   E9           MOV     A,R1
-    333            break;
+    332            break;
    \   00003A   805E         SJMP    ??WriteDAC_5
-    334            
-    335            case 2:     // Write on DAC B
-    336               ucHaut    = (iData << 8) & 0x000F; 
+    333            
+    334            case 2:     // Write on DAC B
+    335               ucHaut    = (iData << 8) & 0x000F; 
    \                     ??WriteDAC_2:
    \   00003C   7900         MOV     R1,#0x0
-    337               ucHaut    = ucHaut |       0x90  ;    
+    336               ucHaut    = ucHaut |       0x90  ;    
    \   00003E   C9           XCH     A,R1
    \   00003F   4490         ORL     A,#0x90
    \   000041   F9           MOV     R1,A
-    338               ucBas     = iData  &       0x00FF;   
+    337               ucBas     = iData  &       0x00FF;   
    \   000042   EC           MOV     A,R4
    \   000043   FE           MOV     R6,A
-    339               Write(ucHaut, 0);
+    338               Write(ucHaut, 0);
    \   000044                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000044   7C00         MOV     R4,#0x0
    \   000046   AA82         MOV     R2,DPL
    \   000048   AB83         MOV     R3,DPH
    \   00004A   12....       LCALL   ??Write
    \   00004D   E9           MOV     A,R1
-    340               Write(ucBas,  0); 
+    339               Write(ucBas,  0); 
    \   00004E                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00004E   7C00         MOV     R4,#0x0
    \   000050   EE           MOV     A,R6
@@ -994,28 +993,28 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000054   AB83         MOV     R3,DPH
    \   000056   12....       LCALL   ??Write
    \   000059   E9           MOV     A,R1
-    341            break;
+    340            break;
    \   00005A   803E         SJMP    ??WriteDAC_5
-    342          
-    343            case 3:     // Write on DAC C
-    344               ucHaut    = (iData << 8) & 0x000F; 
+    341          
+    342            case 3:     // Write on DAC C
+    343               ucHaut    = (iData << 8) & 0x000F; 
    \                     ??WriteDAC_3:
    \   00005C   7900         MOV     R1,#0x0
-    345               ucHaut    = ucHaut |       0xA0  ;    
+    344               ucHaut    = ucHaut |       0xA0  ;    
    \   00005E   C9           XCH     A,R1
    \   00005F   44A0         ORL     A,#0xa0
    \   000061   F9           MOV     R1,A
-    346               ucBas     = iData  &       0x00FF;   
+    345               ucBas     = iData  &       0x00FF;   
    \   000062   EC           MOV     A,R4
    \   000063   FE           MOV     R6,A
-    347               Write(ucHaut, 0);
+    346               Write(ucHaut, 0);
    \   000064                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000064   7C00         MOV     R4,#0x0
    \   000066   AA82         MOV     R2,DPL
    \   000068   AB83         MOV     R3,DPH
    \   00006A   12....       LCALL   ??Write
    \   00006D   E9           MOV     A,R1
-    348               Write(ucBas,  0); 
+    347               Write(ucBas,  0); 
    \   00006E                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00006E   7C00         MOV     R4,#0x0
    \   000070   EE           MOV     A,R6
@@ -1024,28 +1023,28 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000074   AB83         MOV     R3,DPH
    \   000076   12....       LCALL   ??Write
    \   000079   E9           MOV     A,R1
-    349            break;
+    348            break;
    \   00007A   801E         SJMP    ??WriteDAC_5
-    350          
-    351            case 4:     // Write on DAC D
-    352               ucHaut    = (iData << 8) & 0x000F; 
+    349          
+    350            case 4:     // Write on DAC D
+    351               ucHaut    = (iData << 8) & 0x000F; 
    \                     ??WriteDAC_4:
    \   00007C   7900         MOV     R1,#0x0
-    353               ucHaut    = ucHaut |       0xB0  ;    
+    352               ucHaut    = ucHaut |       0xB0  ;    
    \   00007E   C9           XCH     A,R1
    \   00007F   44B0         ORL     A,#0xb0
    \   000081   F9           MOV     R1,A
-    354               ucBas     = iData  &       0x00FF;    
+    353               ucBas     = iData  &       0x00FF;    
    \   000082   EC           MOV     A,R4
    \   000083   FE           MOV     R6,A
-    355               Write(ucHaut, 0);
+    354               Write(ucHaut, 0);
    \   000084                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   000084   7C00         MOV     R4,#0x0
    \   000086   AA82         MOV     R2,DPL
    \   000088   AB83         MOV     R3,DPH
    \   00008A   12....       LCALL   ??Write
    \   00008D   E9           MOV     A,R1
-    356               Write(ucBas,  0);      
+    355               Write(ucBas,  0);      
    \   00008E                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00008E   7C00         MOV     R4,#0x0
    \   000090   EE           MOV     A,R6
@@ -1054,24 +1053,24 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000094   AB83         MOV     R3,DPH
    \   000096   12....       LCALL   ??Write
    \   000099   E9           MOV     A,R1
-    357            break;  
-    358           }
-    359          
-    360          CSDA = HIGH;// DAC CHip Select OFF
+    356            break;  
+    357           }
+    358          
+    359          CSDA = HIGH;// DAC CHip Select OFF
    \                     ??WriteDAC_5:
    \   00009A   D296         SETB    0x90.6
-    361          return(NULL);
+    360          return(NULL);
    \   00009C   7900         MOV     R1,#0x0
    \   00009E   7F01         MOV     R7,#0x1
    \   0000A0   02....       LJMP    ?FUNC_LEAVE_XDATA
    \   0000A3                REQUIRE _A_P1
-    362          }
-    363          
+    361          }
+    362          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    364          UC CLSPI :: WriteMPC(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
+    363          UC CLSPI :: WriteMPC(UC NombreDonneesEnvoyer, UC Donnee1, UC Donnee2, UC Donnee3)
    \                     ??WriteMPC_1:
-    365          {
+    364          {
    \   000000   74F3         MOV     A,#-0xd
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 13
@@ -1089,9 +1088,9 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000016   12....       LCALL   ?XSTACK_DISP0_8
    \   000019   E0           MOVX    A,@DPTR
    \   00001A   F8           MOV     R0,A
-    366          UC i;
-    367          
-    368          UC Donnees[3] = {0x00};
+    365          UC i;
+    366          
+    367          UC Donnees[3] = {0x00};
    \   00001B   90....       MOV     DPTR,#`?<Constant {(UC)'\\000'}>`
    \   00001E   C082         PUSH    DPL
    \   000020   C083         PUSH    DPH
@@ -1103,34 +1102,34 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   00002E   D082         POP     DPL
    \   000030   7403         MOV     A,#0x3
    \   000032   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
-    369             Donnees[0] = Donnee1;
+    368             Donnees[0] = Donnee1;
    \   000035   EE           MOV     A,R6
    \   000036   85..82       MOV     DPL,?XSP + 0
    \   000039   85..83       MOV     DPH,?XSP + 1
    \   00003C   F0           MOVX    @DPTR,A
-    370             Donnees[1] = Donnee2;
+    369             Donnees[1] = Donnee2;
    \   00003D   EF           MOV     A,R7
    \   00003E   C0E0         PUSH    A
    \   000040   7401         MOV     A,#0x1
    \   000042   12....       LCALL   ?XSTACK_DISP0_8
    \   000045   D0E0         POP     A
    \   000047   F0           MOVX    @DPTR,A
-    371             Donnees[2] = Donnee3;
+    370             Donnees[2] = Donnee3;
    \   000048   E8           MOV     A,R0
    \   000049   C0E0         PUSH    A
    \   00004B   7402         MOV     A,#0x2
    \   00004D   12....       LCALL   ?XSTACK_DISP0_8
    \   000050   D0E0         POP     A
    \   000052   F0           MOVX    @DPTR,A
-    372          
-    373          CS = LOW;   // Un chip select
+    371          
+    372          CS = LOW;   // Un chip select
    \   000053   C297         CLR     0x90.7
-    374          
-    375          for(i = 0; i < NombreDonneesEnvoyer; i++)
+    373          
+    374          for(i = 0; i < NombreDonneesEnvoyer; i++)
    \   000055   75..00       MOV     ?V0 + 1,#0x0
    \   000058   8038         SJMP    ??WriteMPC_2
-    376            {
-    377             Write(Donnees[i], 0);      // = Donnees[k];
+    375            {
+    376             Write(Donnees[i], 0);      // = Donnees[k];
    \                     ??WriteMPC_3:
    \   00005A                ; Setup parameters for call to function CLSPI::Write(UC, UC)
    \   00005A   7C00         MOV     R4,#0x0
@@ -1150,7 +1149,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000078   AB..         MOV     R3,?V0 + 5
    \   00007A   12....       LCALL   ??Write
    \   00007D   E9           MOV     A,R1
-    378             Delai(1);   // Delai au moins tant que le module du SPI est occupé 
+    377             Delai(1);   // Delai au moins tant que le module du SPI est occupé 
    \   00007E                ; Setup parameters for call to function CLSPI::Delai(unsigned long)
    \   00007E   90....       MOV     DPTR,#__Constant_1
    \   000081   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
@@ -1159,30 +1158,30 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000088   12....       LCALL   ??Delai
    \   00008B   7404         MOV     A,#0x4
    \   00008D   12....       LCALL   ?DEALLOC_XSTACK8
-    379            }
+    378            }
    \   000090   05..         INC     ?V0 + 1
    \                     ??WriteMPC_2:
    \   000092   E5..         MOV     A,?V0 + 1
    \   000094   C3           CLR     C
    \   000095   95..         SUBB    A,?V0 + 0
    \   000097   40C1         JC      ??WriteMPC_3
-    380          
-    381          CS = HIGH;   // Un chip select
+    379          
+    380          CS = HIGH;   // Un chip select
    \   000099   D297         SETB    0x90.7
-    382          return(0x01);
+    381          return(0x01);
    \   00009B   7901         MOV     R1,#0x1
    \   00009D   7403         MOV     A,#0x3
    \   00009F   12....       LCALL   ?DEALLOC_XSTACK8
    \   0000A2   7F06         MOV     R7,#0x6
    \   0000A4   02....       LJMP    ?FUNC_LEAVE_XDATA
    \   0000A7                REQUIRE _A_P1
-    383          }
-    384          
+    382          }
+    383          
 
    \                                 In  segment NEAR_CODE, align 1, keep-with-next
-    385          void CLSPI :: Delai(unsigned long Temps)
+    384          void CLSPI :: Delai(unsigned long Temps)
    \                     ??Delai:
-    386          {
+    385          {
    \   000000   74F1         MOV     A,#-0xf
    \   000002   12....       LCALL   ?FUNC_ENTER_XDATA
    \   000005                ; Saved register size: 15
@@ -1191,8 +1190,8 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000007   12....       LCALL   ?XSTACK_DISP0_8
    \   00000A   78..         MOV     R0,#?V0 + 0
    \   00000C   12....       LCALL   ?L_MOV_X
-    387          unsigned long k;
-    388          for(k = 0; k < Temps; k++);  
+    386          unsigned long k;
+    387          for(k = 0; k < Temps; k++);  
    \   00000F   90....       MOV     DPTR,#__Constant_0
    \   000012   78..         MOV     R0,#?V0 + 4
    \   000014   12....       LCALL   ?L_MOV_X
@@ -1206,7 +1205,7 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \   000023   79..         MOV     R1,#?V0 + 4
    \   000025   12....       LCALL   ?UL_GT
    \   000028   40EF         JC      ??Delai_2
-    389          }
+    388          }
    \   00002A   7F08         MOV     R7,#0x8
    \   00002C   02....       LJMP    ?FUNC_LEAVE_XDATA
 
@@ -1341,8 +1340,8 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuFESTO\Programm
    \                     `??delete ~CLSPI_1`:
    \   00001B   7F01         MOV     R7,#0x1
    \   00001D   02....       LJMP    ?FUNC_LEAVE_XDATA
-    390          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
-    391          
+    389          //LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX
+    390          
 
    Maximum stack usage in bytes:
 
