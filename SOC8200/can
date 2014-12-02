@@ -2,33 +2,43 @@ while true
 do
  var=`tail -1 ./histocan`
    if [ "$var" != "$ancienvar" ]
-    then  
-     if [ "$var" = "  can0    4  [3] 04 00 FF" ]
-     then 
-      echo "Anti-Horaire (Bloc Métalique)"
-       /usr/bin/cansend can0 001#0801FF
-     fi
+     then  
+       if [ "$var" = "  can0    4  [3] 04 00 FF" ] # Si un bloc métallique est recu
+         then 
+           echo "Anti-Horaire (Bloc Métalique)"
+           /usr/bin/cansend can0 001#0801FF
+       fi
 
-    if [ "$var" = "  can0    4  [3] 04 01 FF" ]
-     then 
-      echo "Invalide (Bloc Noir)"
-     fi
+       if [ "$var" = "  can0    4  [3] 04 01 FF" ] # Si un bloc noir est recu
+         then 
+           echo "STOP (Bloc Noir)"
+       fi
 
-     if [ "$var" = "  can0    4  [3] 04 02 FF" ]
-     then 
-      echo "Horaire (Bloc Orange)"
-       /usr/bin/cansend can0 001#0800FF
-     fi
+       if [ "$var" = "  can0    4  [3] 04 02 FF" ] # Si un bloc orange est recu
+         then 
+           echo "Horaire (Bloc Orange)"
+           /usr/bin/cansend can0 001#0800FF
+       fi
      
-     if [ "$var" = "  can0    4  [3] 07 00 FF" ]
-     then 
-      echo "Station 1"
-     fi     
+       if [ "$var" = "  can0    4  [3] 07 00 FF" ] # Si le véhicule est à la station 1
+         then 
+           echo "Véhicule à la Station 1"
+       fi     
      
-     if [ "$var" = "  can0    4  [3] 07 01 FF" ]
-     then 
-      echo "Station 2"
-     fi
+       if [ "$var" = "  can0    4  [3] 07 01 FF" ] # Si le véhicule est à la station 2
+         then 
+           echo "Véhicule à la Station 2"
+       fi
+       
+       if [ "$var" = "  can0    4  [3] 01 00 FF" ] # Si le véhicule est arrêté
+         then 
+           echo "Le véhicule est arrêté"
+       fi       
+     
+       if [ "$var" = "  can0    0  [3] C0 00 FF" ]
+         then 
+           cat histocandate > /dev/ttySCMA0
+       fi     
      
      ancienvar=$var
     fi

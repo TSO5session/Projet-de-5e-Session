@@ -1,0 +1,5 @@
+while : # Équialent du while(1)
+do
+  #cat tty > keyboard   # Écrit le contenu du clavier dans un fichier
+  cp tty1 keyboard
+done
