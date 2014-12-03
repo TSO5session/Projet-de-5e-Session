@@ -1,4 +1,4 @@
-compteur=0  
+compteur=0
 flagactif=0
 var=0
 ancienVar=0
@@ -7,17 +7,17 @@ echo -n 0 > /sys/class/leds/led/brightness
 echo 0 > /sys/class/misc/beep/val
 
 ifconfig eth0 172.18.42.25                    #Configure l'adresse IP
-while true 
+while true
  do
-   ping 172.18.42.36 -c 1 > ./Connexion  
-   if grep -q "100% packet loss" ./Connexion   
-     then 
+   ping 172.18.42.36 -c 1 > ./Connexion
+   if grep -q "100% packet loss" ./Connexion
+     then
        let "compteur+=1"                      #On incremente le compteur de min.
        if [ $compteur -eq 10 ]                #Si on atteint deux minutes
          then
            echo 1 > /sys/class/misc/beep/val
            sleep 1                            #Attend une seconde
-           echo 0 > /sys/class/misc/beep/val  
+           echo 0 > /sys/class/misc/beep/val
            compteur=0
            if [ $flagactif -eq 0 ]
              then
@@ -26,10 +26,10 @@ while true
                flagactif=1
            fi
        else
-           sleep 1   
+           sleep 1
        fi
-   else 
-      echo -n 0 >/sys/class/leds/led/brightness 
+   else
+      echo -n 0 >/sys/class/leds/led/brightness
       sleep 1
       echo -n 1 >/sys/class/leds/led/brightness
  fi

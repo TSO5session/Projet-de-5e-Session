@@ -1,6 +1,97 @@
 \fancyfoot[L]{ANNEXE 4}
-\section{ANNEXE 4: Code source du script Shell du SOC8200}
+\section{ANNEXE 4: Script Shell du SOC8200}
+\begin{center}\HRule \end{center}
+\begin{center}
+prog.sh
+\end{center}
+\begin{lstlisting}
+compteur=0  
+\end{lstlisting}
+
+
+
+
+
+\begin{center}\HRule \end{center}
+\begin{center}
+read.sh
+\end{center}
 \begin{lstlisting}
 using System;
 \end{lstlisting}
 
+
+
+
+
+\begin{center}\HRule \end{center}
+\begin{center}
+tcp.sh
+\end{center}
+\begin{lstlisting}
+using System;
+\end{lstlisting}
+
+
+
+
+
+
+\begin{center}\HRule \end{center}
+\begin{center}
+can.sh
+\end{center}
+\begin{lstlisting}
+using System;
+\end{lstlisting}
+
+
+
+
+
+\begin{center}\HRule \end{center}
+\begin{center}
+PortSerie.sh
+\end{center}
+\begin{lstlisting}
+while true
+ do
+   head -1 /dev/ttySCMA0 > ./junk
+   echo "Allo" > ./hbeat
+ done 
+\end{lstlisting}
+
+
+
+
+\begin{center}\HRule \end{center}
+\begin{center}
+RxCAN.sh
+\end{center}
+\begin{lstlisting}
+candump can0 >> ./histocan &
+nbligne=1
+ancienvar=0
+  
+while true
+ do
+   var=`tail -1 ./histocan`
+   if [ "$var" != "$ancienvar" ]
+     then
+       echo $var
+       echo $var >> ./histocandate
+       date >> ./histocandate
+       ancienvar=$var
+   fi
+# nbligne=`wc -l ./histocan` 
+done
+
+\end{lstlisting}
+
+\begin{center}\HRule \end{center}
+\begin{center}
+MachinChouette.sh
+\end{center}
+\begin{lstlisting}
+using System;
+\end{lstlisting}

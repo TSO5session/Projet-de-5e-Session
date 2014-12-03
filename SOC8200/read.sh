@@ -1,3 +1,4 @@
+#fichié outdated, NE PAS UTILISER
 echo "A = mode actif   ###   P = mode passif"
 echo " "
 echo " "

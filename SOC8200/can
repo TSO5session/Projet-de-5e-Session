@@ -1,45 +1,88 @@
-while true 
+while true
 do
  var=`tail -1 ./histocan`
    if [ "$var" != "$ancienvar" ]
-     then  
+     then
+       ##################COULEUR DU BLOC#########################
        if [ "$var" = "  can0    4  [3] 04 00 FF" ] # Si un bloc métallique est recu
-         then 
-           echo "Anti-Horaire (Bloc Métalique)"
+         then
+           echo "Anti Horaire (Bloc Metalique)"
            /usr/bin/cansend can0 001#0801FF
        fi
 
-       if [ "$var" = "  can0    4  [3] 04 01 FF" ] # Si un bloc noir est recu
-         then 
+       if [ "$var" = "  can0    4  [3] 04 02 FF" ] # Si un bloc noir est recu
+         then
            echo "STOP (Bloc Noir)"
        fi
 
-       if [ "$var" = "  can0    4  [3] 04 02 FF" ] # Si un bloc orange est recu
-         then 
+       if [ "$var" = "  can0    4  [3] 04 01 FF" ] # Si un bloc orange est recu
+         then
            echo "Horaire (Bloc Orange)"
            /usr/bin/cansend can0 001#0800FF
        fi
-     
+
+       ##################EMPLACEMENT DU VÉHICULE#########################
        if [ "$var" = "  can0    4  [3] 07 00 FF" ] # Si le véhicule est à la station 1
-         then 
-           echo "Véhicule à la Station 1"
-       fi     
-     
-       if [ "$var" = "  can0    4  [3] 07 01 FF" ] # Si le véhicule est à la station 2
-         then 
-           echo "Véhicule à la Station 2"
+         then
+           echo "Vehicule a la Station 1"
        fi
-       
+
+       if [ "$var" = "  can0    4  [3] 07 01 FF" ] # Si le véhicule est à la station 2
+         then
+           echo "Vehicule a la Station 2"
+       fi
+
+       ##################ÉTAT DU VÉHICULE#########################
        if [ "$var" = "  can0    4  [3] 01 00 FF" ] # Si le véhicule est arrêté
-         then 
-           echo "Le véhicule est arrêté"
-       fi       
-     
+         then
+           echo "Le vehicule est arreté"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 01 01 FF" ] # Si le véhicule avance
+         then
+           echo "Le vehicule est en marche"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 01 02 FF" ] # Si le véhicule est hors circuit
+         then
+           echo "Le vehicule est dans le champ"
+           /usr/bin/cansend can0 005#0001FF     #Arrête le véhicule
+       fi
+
+       ##################POIDS, VITESSE ET BATTRIE#########################
+       if [ "$var" = "  can0    4  [3] 05 [00-64] FF" ] # Lecture du poids
+         then
+           echo "Le poids pese: $var"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 02 [00-64] FF" ] # Lecture de la vitesse du bolide
+         then
+           echo "Le bolide se deplace à $var"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 03 [00-64] FF" ] # Lecture de la battrie du véhicule
+         then
+           echo "Battrie pleine à: $var"
+       fi
+
+       ##################TRANSFERT D'HISTORIQUE#########################
        if [ "$var" = "  can0    0  [3] C0 00 FF" ]
-         then 
+         then
            cat histocandate > /dev/ttySCMA0
-       fi     
-     
+       fi
+
+       ##################DÉMARRAGE ET ARRÊT#########################
+       if [ "$var" = "  can0    4  [3] 00 00 FF" ] # Démarrage du véhicule
+         then
+           echo "Booting the bolide"
+           /usr/bin/cansend can0 005#0000FF
+       fi
+
+       if [ "$var" = "  can0    4  [3] 00 01 FF" ] # Arrête le véhicule
+         then
+           echo "Arret du bolide"
+           /usr/bin/cansend can0 005#0001FF
+       fi
      ancienvar=$var
     fi
-done   
+done

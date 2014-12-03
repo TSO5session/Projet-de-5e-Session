@@ -1,19 +1,20 @@
 \select@language {french}
 \contentsline {figure}{\numberline {1}{\ignorespaces Vue d'ensemble du projet}}{5}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{14}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{15}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Historique des actions}}{16}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces H\IeC {\'e}ritage de la classe CLFesto}}{19}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces H\IeC {\'e}ritage de la classe clInOutBase}}{19}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces H\IeC {\'e}ritage de la classe clV\IeC {\'e}hicule}}{20}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces H\IeC {\'e}ritage de la classe I2C}}{20}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces H\IeC {\'e}ritage de la classe SPI}}{20}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces H\IeC {\'e}ritage de la classe clInOutBase}}{21}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces H\IeC {\'e}ritage de la classe Station1}}{21}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Choix de la cible sur IAR}}{22}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Couche TOP}}{25}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Couche BOT}}{25}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Silk Screen TOP}}{26}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Solder mask TOP}}{26}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Drill}}{27}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Correctif}}{27}{figure.18}
+\contentsline {figure}{\numberline {2}{\ignorespaces Sch\IeC {\'e}ma bloc du Bolide}}{7}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{18}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{19}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Historique des actions}}{20}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces H\IeC {\'e}ritage de la classe CLFesto}}{23}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces H\IeC {\'e}ritage de la classe clInOutBase}}{23}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces H\IeC {\'e}ritage de la classe clV\IeC {\'e}hicule}}{24}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces H\IeC {\'e}ritage de la classe I2C}}{24}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces H\IeC {\'e}ritage de la classe SPI}}{24}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces H\IeC {\'e}ritage de la classe clInOutBase}}{25}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces H\IeC {\'e}ritage de la classe Station1}}{25}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Choix de la cible sur IAR}}{26}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Couche TOP}}{30}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Couche BOT}}{30}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Silk Screen TOP}}{31}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Solder mask TOP}}{31}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Drill}}{32}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Correctif}}{32}{figure.19}
