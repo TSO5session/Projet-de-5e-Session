@@ -3201,6 +3201,9 @@
     <name>$PROJ_DIR$\_Source\CLVehicule.cpp</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\_Source\CLXBEE.cpp</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\_Source\Laboratoire.cpp</name>
   </file>
 </project>

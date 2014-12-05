@@ -100,7 +100,7 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \begin{spacing}{1.5}
 
 \section{Présentation du projet}
-Le projet de la cinquième session consiste à réaliser
+Le projet de la cinquième session consiste à réaliser (mettre un cours extrait des consignes)
 \begin{itemize}
 \item[$\Rightarrow$] Le Bolide
 \item[$\Rightarrow$] Carte Dallas DS89C450
@@ -130,23 +130,35 @@ Le projet de la cinquième session consiste à réaliser
 \subsubsection{Schéma bloc du bolide}
 \caption{Schéma bloc du Bolide}
 \centering
-\fbox{\includegraphics[scale=0.85]{Figures/SchemaBloc/bolide.png}}
+\fbox{\includegraphics[scale=1]{Figures/SchemaBloc/bolide.png}}
 \end{figure}
 
 \vfill
 \pagebreak
 
+
+\begin{figure}[hbtp]
 \subsubsection{Schéma bloc de la table FESTO}
+\caption{Schéma bloc de la table FESTO}
+\centering
+\fbox{\includegraphics[scale=0.88]{Figures/SchemaBloc/festo.png}}
+\end{figure}
 
 \vfill
 \pagebreak
 
+
+\begin{figure}[hbtp]
 \subsubsection{Schéma bloc du SOC8200}
+\caption{Schéma bloc du SOC8200}
+\centering
+\fbox{\includegraphics[scale=1]{Figures/SchemaBloc/soc8200.png}}
+\end{figure}
 
 \vfill
 \pagebreak
 
-\subsubsection{Schéma bloc de la station de pesés}
+\subsubsection{Schéma bloc de la station de pesée}
 
 \vfill
 \pagebreak
@@ -168,12 +180,12 @@ Le projet de la cinquième session consiste à réaliser
 \item[•]TerraTerm
 \item[•]Putty
 \item[•]GTKterm 0.99.7-rc1
-\item[•]xTerminator
+\item[•]Terminator
 \item[•]CAPS
 \item[•]tinyBootloader
 \end{itemize}
 
-\textbf{Gestion du projet}
+\textbf{Gestionnaires de projet}
 \begin{itemize}
 \item[•]MS Project 2010
 \item[•]Git Hub
@@ -187,10 +199,10 @@ Le projet de la cinquième session consiste à réaliser
 \item[•]MPLAB version???
 \end{itemize}
 
-\textbf{Éditeur de texte}
+\textbf{Éditeurs de texte}
 \begin{itemize}
 \item[•]Notepad++
-\item[•]gedit
+\item[•]BowPad
 \item[•]medit 1.2.0
 \end{itemize}
 \textbf{Schémas électriques}
@@ -201,7 +213,7 @@ Le projet de la cinquième session consiste à réaliser
 
 \bigskip
 
-\textbf{Système d'exploitation}
+\textbf{Systèmes d'exploitation}
 \begin{itemize}
 \item[•]Windows 7 SP1
 \item[•]Windows 8.1
@@ -229,8 +241,6 @@ Le projet de la cinquième session consiste à réaliser
 
 \pagebreak
 \subsection{Liste des trames}
-
-
 \end{spacing}
 f
 \begin{spacing}{1.5}
@@ -246,7 +256,7 @@ D'un pont de vu matériel, le bloc 1 est le plus simple, car il est composé d'u
 Le bloc 2 est composé du bolide et de la station no.1. Cette dernière, dont le cerveau est une carte uPSD, joue le rôle de centralisateur CAN. En effet, cette station reçoit des consignes\footnote{Sous forme de trames} en provenance du PC, consignes qu'elle s'empresse d'expédier aux bons endroits via Xbee. De plus, cette station reçoit des information de la station de pesée\footnote{Sous forme de trames CAN}, de la table FESTO\footnote{Via Xbee} et du bolide\footnote{Idem}. Ces informations sont systématiquement retransmises au PC via le bus CAN.
 
 \subsection{Bloc 3}
-Le bloc 3 est composé d'une carte PIC et d'une balance. Comme son nom l'indique, la station de pesée pèse le bloc et envoie l'information (le poid) au PC via le bus CAN.
+Le bloc 3 est composé d'une carte PIC (mettre modèle) et d'une balance (mettre modèle.) Comme son nom l'indique, la station de pesée pèse le bloc et envoie l'information (le poid) au PC et au SOC8200 via le bus CAN. La carte PIC fait office de convertisseur CAN vers RS232.
 
 \subsection{Bloc 4}
 Le bloc 4 est composé d'un système embarqué Linux basé sur le SOC8200. Son rôle principal est d'agir comme sniffeur d'information et d'afficher sur son écran toutes les données qui transitent sur le bus CAN. Toutefois, ce dernier est en mesure de détecter une défaillance du PC via un gestionnaire de HeartBeat et de prendre la relève en tant que cerveau de l'opération. Le SOC8200 agit comme vice-président du bus CAN.
@@ -409,21 +419,19 @@ Note: mettre image d'un Xbee
 \begin{itemize}
 \item[•]Carte Dallas
 \item[•]Carte uPSD
-\item[•]SOC 8200 (avec clavier)
+\item[•]SOC 8200 (avec clavier et écran)
 \item[•]PIC18FmachinTruc
 \item[•]Carte d'extension SPI
 \item[•]Carte d'extension I2C
 \item[•]Carte CAN MCP2515
 \item[•]Xbee
 \item[•]Table FESTO
-\item[•]Carte d'extension IO
-\item[•]Carte connecteur IO
-\item[•]Carte connecteur DAC ADC
+\item[•]Carte connecteur IO 24 volts
+\item[•]Carte d'extension DAC ADC
 \item[•]Carte Xbee vers DB9
 \item[•]Câble Ethernet croisé
 \item[•]Câble Ethernet régulier
 \item[•]Câble DB9
-\item[•]Carte Xbee vers DB8
 \item[•]Le Bolide
 \item[•]
 \item[•]
@@ -467,8 +475,37 @@ SaberTooth motor drive\\
 \vfill
 \pagebreak
 
+% mettre toutes les datasheets maquantes ci-dessous
+\pagebreak
+\begin{multicols}{3}
+74HC14\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/74HC14.pdf}}\\
+DAC6574\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/dac6574.pdf}}\\
+DS89C450\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/DS89C450.pdf}}\\
 
+\medskip
 
+LineSensors\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/LineSensor.pdf}}\\
+LM3914\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/lm3914.pdf}}\\
+OPT101\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/opt101.pdf}}\\
+
+\medskip
+
+PCF8573\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/PCF8574.pdf}} \\
+uPSD3254A\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/UPSD3254A.pdf}}\\
+SaberTooth motor drive\\
+\fbox{\includegraphics[scale=0.2]{Figures/Datasheets/Sabertooth.pdf}}\\
+\end{multicols}
+
+\vfill
+\pagebreak
 
 
 
@@ -512,7 +549,7 @@ Toute action effectué via le programme ainsi que toute donnée ayant transité 
 \subsubsection{Exemple d'historique typique}
 \end{spacing}
 \begin{verbatim}
-Insérer copié-collé dMhistorique ici
+Insérer copié-collé de l'historique ici
 \end{verbatim}
 \begin{spacing}{1.5}
 
@@ -531,11 +568,13 @@ Un ghost label est un label de texte présent sur l'interface, mais définit com
 \pagebreak
 \section{Logiciel du SOC8200}
 \subsection{Description du programme}
-D'un commun accord de l'équipe, le programme du SOC2800 est écrit en script Shell. La principale raison de ce choix est Sourcery Codebench lui-même. La gestion des projets avec Sourcery est un cauchemar, et la nécessité de sauvegarder pour compiler et d'utiliser une machine virtuelle ne viennent qu'agaver la situation. De plus, son gestionnaire de licence\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable sur un système Linux} frustre quiconque souhaite l'utiliser. L'utilisation du script shell est plus simple et permet de faire plus en moins de temps.
+D'un commun accord de l'équipe, le programme du SOC2800 est écrit en script Shell. La principale raison de ce choix est Sourcery Codebench lui-même. La gestion des projets avec Sourcery est un cauchemar. Quant à la nécessité de sauvegarder pour compiler et d'utiliser une machine virtuelle, elle ne viennent qu'agraver la situation. De plus, son gestionnaire de licence\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable sur un système Linux} frustre quiconque souhaite l'utiliser. L'utilisation du script shell est à la fois plus simple et permet de faire plus en moins de temps.
 
 \subsection{Schéma bloc du script shell}
+De tous les scripts, \textit{Projet.sh} est le maître, et contient l'équivalent du main. Ce fichier initialise le port série, le bus can, la lecture et l'envoi des heartbeat en asynchrone, ainsi que la lecture du clavier USB. Le script \textit{Projet.sh} peut aussi prendre la relève du bus CAN si le PC est dans l'incapacité d'assurer ses fonctions. Quant aux autres scripts, soit \textit{connexion.sh}, \textit{RxCan.sh}, \textit{tcp.sh} et \textit{Envoi.sh}, ce ne sont que des fonctionnalité que que \textit{Projet.sh} appelle en asychrone.
 
 \subsection{Gestion des processus et du temps de CPU}
+La passe-passe du coyote
 
 \subsection{Format et récupération des logs}
 
@@ -554,15 +593,15 @@ Toutes les trames CAN reçues sont enregistrées dans le fichier «histocan» do
 
 De plus, un autre fichier (histocandate) contient l'heure et la date des trames reçues.
 \begin{verbatim}
-   Thu Jan  1 00:05:28 UTC 1970
-   can0 4 [3] 04 01 FF
-   Thu Jan  1 00:06:13 UTC 1970
-   can0 4 [3] 04 00 FF
-   Thu Jan  1 00:06:16 UTC 1970
-   can0 4 [3] 04 02 FF
-   Thu Jan  1 00:06:18 UTC 1970
-   can0 4 [3] 04 02 FF
-   Thu Jan  1 00:06:50 UTC 1970
+  Thu Jan  1 00:05:28 UTC 1970
+  can0 4 [3] 04 01 FF
+  Thu Jan  1 00:06:13 UTC 1970
+  can0 4 [3] 04 00 FF
+  Thu Jan  1 00:06:16 UTC 1970
+  can0 4 [3] 04 02 FF
+  Thu Jan  1 00:06:18 UTC 1970
+  can0 4 [3] 04 02 FF
+  Thu Jan  1 00:06:50 UTC 1970
 \end{verbatim} 
 
 \begin{spacing}{1.5}
@@ -584,51 +623,23 @@ La station no.1 est composé de uPSD et s'appelle Bloc no.2 dans le cahier de co
 La station no.2 (qui s'appelle Bloc no.3 dans le cahier de consignes) est composé de la table FESTO, de la carte uPSD, de la carte d'extensions IO que nous avons réalisés et d'un Xbee.
 
 \pagebreak
-\subsection{Schéma des héritages de classes, table FESTO}
-Quelles classes utilisent quelles autres classes dans le code de la table FESTO?
 \begin{figure}[hbtp]
-\caption{Héritage de la classe CLFesto}
+\subsection{Schéma des héritages de classes}
+Quelles classes utilisent quelles autres classes dans notre code?
+\caption{Héritage de la classe de contrôle du véhicule}
 \centering
-\fbox{\includegraphics[scale=1]{Figures/DoxyFESTO/clfesto.pdf}}\\
-\caption{Héritage de la classe clInOutBase}
-\fbox{\includegraphics[scale=0.6]{Figures/DoxyFESTO/clinout.pdf}}\\
-
+\fbox{\includegraphics[scale=1.05]{Figures/Doxygen/clvehicule.pdf}}
+\caption{Héritage de la classe de contrôle de la station no.1}
+\fbox{\includegraphics[scale=0.7]{Figures/Doxygen/Station1.pdf}} 
+\caption{Qui hérite du SPI?}
+\fbox{\includegraphics[scale=1]{Figures/Doxygen/SPI.pdf}}
+\caption{Qui hérite de l'I2C?}
+\fbox{\includegraphics[scale=1]{Figures/Doxygen/i2c.pdf}}
 \end{figure}
-\pagebreak
 
-
-
-\subsection{Schéma des héritages de classes, Bolide et Station 1}
-Quelles classes utilisent quelles autres classes dans le code du bolide et de la station no. 1?
-
-\begin{figure}[hbtp]
-\caption{Héritage de la classe clVéhicule}
-\centering
-\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/clvehicule.pdf}}
-\end{figure}
-\begin{figure}[hbtp]
-\caption{Héritage de la classe I2C}
-\centering
-\fbox{\includegraphics[scale=1]{Figures/DoxyBolide/I2C.pdf}}
-\end{figure}
-\begin{figure}[hbtp]
-\caption{Héritage de la classe SPI}
-\centering
-\fbox{\includegraphics[scale=0.9]{Figures/DoxyBolide/SPI.pdf}}
-\end{figure}
-\begin{figure}[hbtp]
-\caption{Héritage de la classe clInOutBase}
-\centering
-\fbox{\includegraphics[scale=0.4]{Figures/DoxyBolide/inout.pdf}}
-\end{figure}
 \vfill
 \pagebreak
 
-\begin{figure}[hbtp]
-\caption{Héritage de la classe Station1}
-\centering
-\fbox{\includegraphics[scale=0.7]{Figures/DoxyBolide/Station1.pdf}}
-\end{figure}
 
 
 \subsection{Le bolide}
@@ -700,14 +711,38 @@ Alors...\\
 $\overbrace{9600 = \dfrac{2^{1}}{32} \cdot \dfrac{24\cdot10^{6}(Hz)}{12\cdot(256 - 243)}}^{uPSD 3254} $ $\Leftarrow \& \Rightarrow $ $ \overbrace{9600 = \dfrac{2^{0}}{32}\cdot \dfrac{11.0597 \cdot 10^{6}(Hz)}{12\cdot(256 - 253)}}^{DS89C450}$
 \pagebreak
 
-\section{Schémas OrCAD}
-
-\pagebreak6
-
-\section{Fichiers Gerbers}
-Une carte d'extension, dont voici les images GERBER\footnote{Les couches présentées no sont pas à l'échelle}, à été réalisée avec OrCAD 16.2 et gravée à l'aide de la rutilante LPKF.
 
 \begin{figure}[hbtp]
+\section{Schémas OrCAD}
+\caption{Schémas carte IO I2C, page 1}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE1.pdf}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Schémas carte IO I2C, page 2}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE2.pdf}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Schémas carte IO I2C, page 3}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE3.pdf}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Schémas carte IO I2C, page 4}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE4.pdf}
+\end{figure}
+
+\vfill
+\pagebreak
+
+\begin{figure}[hbtp]
+\section{Fichiers Gerbers}
+Une carte d'extension, dont voici les images GERBER\footnote{Les couches présentées no sont pas à l'échelle}, à été réalisée avec OrCAD 16.2 et gravée à l'aide de la rutilante LPKF départementale.
 \caption{Couche TOP}
 \centering
 \fbox{\includegraphics[scale=0.47]{Figures/OrCad/top.png}}
@@ -722,8 +757,6 @@ Une carte d'extension, dont voici les images GERBER\footnote{Les couches présen
 \fbox{\includegraphics[scale=0.47]{Figures/OrCad/bot.png}}
 \end{figure}
 
-\vfill
-\pagebreak
 
 \begin{figure}[hbtp]
 \caption{Silk Screen TOP}
@@ -740,55 +773,38 @@ Une carte d'extension, dont voici les images GERBER\footnote{Les couches présen
 \fbox{\includegraphics[scale=0.47]{Figures/OrCad/smt.png}}
 \end{figure}
 
-\vfill
-\pagebreak
-
 
 
 \begin{figure}[hbtp]
 \caption{Drill}
 \centering
 \fbox{\includegraphics[scale=0.45]{Figures/OrCad/drill.png}}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
 \caption{Correctif}
 \fbox{\includegraphics[scale=0.45]{Figures/OrCad/patch.jpg}}
+
+\bigskip
+
+\begin{flushleft}
+Il est à noter que nous avons dû réaliser un correctif lors de la soudure de la carte IO du projet. La zone de ground plane en bleu devait être reliée à GND, c'est-à-dire la zone verte, mais ce n'était pas la cas. C'est pourquoi un bout de fil à été soudé afin de pailler à ce manque. De plus, quelque ponts de soudure ce sont manifestés ça et là, grillant de ce fait nos PCF8574. Rien d'insurmontable.
+\end{flushleft}
 \end{figure}
 
-Il est à noter que nous avons dû réaliser un correctif lors de la soudure de la carte IO du projet. La zone de ground plane en bleu devait être reliée à GND, c'est-à-dire la zone verte, mais ce n'était pas la cas. C'est pourquoi un bout de fil à été soudé afin de pailler à ce manque. De plus, quelque ponts de soudure ce sont manifestés ça et là, grillant de ce fait nos PCF8574. Rien d'insurmontable.
-
-
+\vfill
 \pagebreak
-\section{Conclusion}
-
-\subsection{Ce que le projet m'a apporté}
-\subsubsection{Vincent Chouinard}
-
-\subsubsection{Hicham Safoine}
-
-\subsubsection{Gabriel Fortin-Bélanger}
-
-\subsubsection{Louis-Norman Ang-Houle}
 
 
 
-\subsection{Difficultés et corrections}
-\subsubsection{Vincent Chouinard}
-
-\subsubsection{Hicham Safoine}
-
-\subsubsection{Gabriel Fortin-Bélanger}
-
-\subsubsection{Louis-Norman Ang-Houle}
 
 
-\subsection{Ce que j'ai aimé ou pas}
-\subsubsection{Vincent Chouinard}
 
-\subsubsection{Hicham Safoine}
-
-\subsubsection{Gabriel Fortin-Bélanger}
-
-\subsubsection{Louis-Norman Ang-Houle}
-
+\include{TeX/Conclusion}
 \end{spacing}
 \include{Codesource/cSharp}
 \include{Codesource/BolideUpsd}

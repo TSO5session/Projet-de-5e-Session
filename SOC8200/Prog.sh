@@ -1,6 +1,6 @@
 compteur=0 # Initialisation de variables
 flagetat=0 # Initialisation de variables
-PIDCAN=0   # Initialisation de variables
+# more info here: https://stackoverflow.com/questions/951980/killing-process-in-shell-script
 #------------------------------------------# Initialisation des leds
 echo -n 0 > /sys/class/leds/led/brightness #
 echo 0 > /sys/class/misc/beep/val          #
@@ -8,10 +8,14 @@ echo 0 > /sys/class/misc/beep/val          #
 /usr/bin/ip link set can0 down                                       #
 /usr/bin/ip link set can0 type can bitrate 125000 triple-sampling on #
 /usr/bin/ip link set can0 up                                         #
-#--------------------------------------------------------------------#
+#------------------#-------------------------------------------------#
+date 042411332014  # Initialise la date au jeudi 4 décembre 2014     #
+#--------------------------------------------------------------------# Note: sur notre SOC8200, la pile interne de la clock est more
 #-------------# Démarrage de scripts externes asychrones
 ./portserie & # Démarrage du port série
+  PIDRS232=$! # Le PID du script portserie est mis dans la variable PIDRS232
 ./RxCan &     # Démarrage du bus  CAN
+  PIDCAN=$!   # Le PID du script RxCAN est mis dans la variable PIDRS232
 #-------------#
 while true
 do
@@ -23,7 +27,7 @@ do
   elif [ "$output" = "P" ] || [ "$output" = "p" ]; then # Si l'utilisateur entre p ou P
        echo "Passif"        | tee mode                  # Écrit Passif dans un fichier#  
   fi #--------------------------------------------------#
-maVar="$(cat mode)"                                     #Met le contenu du fichier mode dans maVar
+maVar="$(cat mode)"                                     # Met le contenu du fichier mode dans maVar
 #----------------------------------------------# Gestion du mode passif
 if [ "$maVar" = "Passif" ]; then               #
  if grep -q "Allo" ./hbeat                     # Si un heartbeat est recu
@@ -36,7 +40,9 @@ if [ "$maVar" = "Passif" ]; then               #
      if [ $flagetat -eq 1 ]                    #
        then                                    #
          echo PASSIF                           #
-         kill $PIDCAN                          # Tue le processus CAN
+         kill $PID                             # Tue le processus CAN
+     echo "CAN Master process has been killed by PID $PID" # Affiche le PID de la victime du meurtre
+     eche "Switching to sniffer mode"          # Retour au mode sniffer
      fi                                        #
    flagetat=0                                  #
  fi                                            #
@@ -56,8 +62,9 @@ if [ "$maVar" = "Actif" ]; then                #
          if [ $flagetat -eq 0 ]                # Si tu n'est pas le master du bus CAN
            then                                #
              ./can &                           # Démarre un processus CAN
-             PIDCAN=$!                         # Enregistre son PID
+             PID=$!                            # Le PID du script RxCAN est mis dans la variable PID
              echo ACTIF                        # Mode = actif
+             echo "Switching to Master of CAN" # Devient le maitre absolu du bus CAN
              flagetat=1                        # Devient le master du bus CAN
          fi                                    #
      else                                      #
