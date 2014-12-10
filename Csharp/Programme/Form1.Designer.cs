@@ -123,17 +123,17 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.Range = new System.Windows.Forms.Label();
             this.GhostLabelDeRéception = new System.Windows.Forms.Label();
             this.RangedTrame = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.GhostLabel = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.GhostLabel2 = new System.Windows.Forms.Label();
             this.lblDirection = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -150,14 +150,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
             this.VoitureHS = new System.Windows.Forms.Button();
-            this.GhostLabel = new System.Windows.Forms.Label();
             this.VoitureStop = new System.Windows.Forms.Button();
-            this.GhostLabel2 = new System.Windows.Forms.Label();
             this.VoitureStart = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.ClockSync = new System.Windows.Forms.Button();
-            this.PC_Clock = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.HeartBeatOUT = new System.Windows.Forms.Button();
             this.HeartBeatIN = new System.Windows.Forms.Button();
@@ -177,6 +174,7 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.Poltergeist = new System.Windows.Forms.Label();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.UART1DisplayBox = new System.Windows.Forms.TextBox();
@@ -188,6 +186,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Historique = new System.Windows.Forms.RichTextBox();
+            this.PC_Clock = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -196,6 +195,8 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4RealTimeCAN = new System.Windows.Forms.Timer(this.components);
             this.label30 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.CANid = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -219,7 +220,6 @@
             this.tabPage5.SuspendLayout();
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox24.SuspendLayout();
             this.groupBox18.SuspendLayout();
@@ -257,13 +257,19 @@
             // 
             // btnHwRefresh
             // 
+            this.btnHwRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnHwRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHwRefresh.BackgroundImage")));
+            this.btnHwRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHwRefresh.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnHwRefresh.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnHwRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnHwRefresh.Image")));
             this.btnHwRefresh.Location = new System.Drawing.Point(176, 60);
             this.btnHwRefresh.Name = "btnHwRefresh";
             this.btnHwRefresh.Size = new System.Drawing.Size(79, 23);
             this.btnHwRefresh.TabIndex = 45;
             this.btnHwRefresh.Text = "Refresh";
+            this.btnHwRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnHwRefresh.UseVisualStyleBackColor = true;
             this.btnHwRefresh.Click += new System.EventHandler(this.btnHwRefresh_Click);
             // 
             // cbbChannel
@@ -308,6 +314,7 @@
             // 
             // cbbBaudrates
             // 
+            this.cbbBaudrates.BackColor = System.Drawing.Color.White;
             this.cbbBaudrates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbBaudrates.Items.AddRange(new object[] {
             "1 MBit/sec",
@@ -349,26 +356,36 @@
             // btnRelease
             // 
             this.btnRelease.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRelease.BackColor = System.Drawing.Color.Transparent;
+            this.btnRelease.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRelease.BackgroundImage")));
+            this.btnRelease.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRelease.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRelease.Enabled = false;
             this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnRelease.Image = ((System.Drawing.Image)(resources.GetObject("btnRelease.Image")));
             this.btnRelease.Location = new System.Drawing.Point(91, 60);
             this.btnRelease.Name = "btnRelease";
             this.btnRelease.Size = new System.Drawing.Size(79, 23);
             this.btnRelease.TabIndex = 35;
             this.btnRelease.Text = "Déconnexion";
+            this.btnRelease.UseVisualStyleBackColor = false;
             this.btnRelease.Click += new System.EventHandler(this.btnRelease_Click);
             // 
             // btnInit
             // 
             this.btnInit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInit.BackColor = System.Drawing.Color.Transparent;
+            this.btnInit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInit.BackgroundImage")));
+            this.btnInit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInit.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnInit.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnInit.Image = ((System.Drawing.Image)(resources.GetObject("btnInit.Image")));
             this.btnInit.Location = new System.Drawing.Point(6, 60);
             this.btnInit.Name = "btnInit";
             this.btnInit.Size = new System.Drawing.Size(79, 23);
             this.btnInit.TabIndex = 34;
             this.btnInit.Text = "Connexion";
+            this.btnInit.UseVisualStyleBackColor = false;
             this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
             // 
             // cbbHwType
@@ -561,7 +578,7 @@
             // 
             this.btnFilterQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFilterQuery.BackColor = System.Drawing.Color.White;
-            this.btnFilterQuery.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
+            this.btnFilterQuery.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFilterQuery.BackgroundImage")));
             this.btnFilterQuery.Enabled = false;
             this.btnFilterQuery.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnFilterQuery.Location = new System.Drawing.Point(84, 60);
@@ -575,7 +592,8 @@
             // btnFilterApply
             // 
             this.btnFilterApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilterApply.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
+            this.btnFilterApply.BackColor = System.Drawing.Color.White;
+            this.btnFilterApply.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFilterApply.BackgroundImage")));
             this.btnFilterApply.Enabled = false;
             this.btnFilterApply.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnFilterApply.Location = new System.Drawing.Point(9, 60);
@@ -583,7 +601,7 @@
             this.btnFilterApply.Size = new System.Drawing.Size(69, 23);
             this.btnFilterApply.TabIndex = 44;
             this.btnFilterApply.Text = "Appliquer";
-            this.btnFilterApply.UseVisualStyleBackColor = true;
+            this.btnFilterApply.UseVisualStyleBackColor = false;
             this.btnFilterApply.Click += new System.EventHandler(this.btnFilterApply_Click);
             // 
             // label7
@@ -623,6 +641,8 @@
             // btnParameterSet
             // 
             this.btnParameterSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnParameterSet.BackColor = System.Drawing.Color.White;
+            this.btnParameterSet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnParameterSet.BackgroundImage")));
             this.btnParameterSet.Enabled = false;
             this.btnParameterSet.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnParameterSet.Location = new System.Drawing.Point(824, 28);
@@ -630,7 +650,7 @@
             this.btnParameterSet.Size = new System.Drawing.Size(65, 23);
             this.btnParameterSet.TabIndex = 46;
             this.btnParameterSet.Text = "Set";
-            this.btnParameterSet.UseVisualStyleBackColor = true;
+            this.btnParameterSet.UseVisualStyleBackColor = false;
             this.btnParameterSet.Click += new System.EventHandler(this.btnParameterSet_Click);
             // 
             // groupBox2
@@ -656,6 +676,8 @@
             // btnParameterGet
             // 
             this.btnParameterGet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnParameterGet.BackColor = System.Drawing.Color.White;
+            this.btnParameterGet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnParameterGet.BackgroundImage")));
             this.btnParameterGet.Enabled = false;
             this.btnParameterGet.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnParameterGet.Location = new System.Drawing.Point(899, 28);
@@ -663,7 +685,7 @@
             this.btnParameterGet.Size = new System.Drawing.Size(74, 23);
             this.btnParameterGet.TabIndex = 54;
             this.btnParameterGet.Text = "Get";
-            this.btnParameterGet.UseVisualStyleBackColor = true;
+            this.btnParameterGet.UseVisualStyleBackColor = false;
             this.btnParameterGet.Click += new System.EventHandler(this.btnParameterGet_Click);
             // 
             // label10
@@ -761,6 +783,8 @@
             // btnGetVersions
             // 
             this.btnGetVersions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGetVersions.BackColor = System.Drawing.Color.White;
+            this.btnGetVersions.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGetVersions.BackgroundImage")));
             this.btnGetVersions.Enabled = false;
             this.btnGetVersions.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnGetVersions.Location = new System.Drawing.Point(844, 19);
@@ -768,12 +792,14 @@
             this.btnGetVersions.Size = new System.Drawing.Size(65, 23);
             this.btnGetVersions.TabIndex = 53;
             this.btnGetVersions.Text = "Version";
-            this.btnGetVersions.UseVisualStyleBackColor = true;
+            this.btnGetVersions.UseVisualStyleBackColor = false;
             this.btnGetVersions.Click += new System.EventHandler(this.btnGetVersions_Click);
             // 
             // btnReset
             // 
             this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.BackColor = System.Drawing.Color.White;
+            this.btnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReset.BackgroundImage")));
             this.btnReset.Enabled = false;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnReset.Location = new System.Drawing.Point(915, 48);
@@ -781,12 +807,14 @@
             this.btnReset.Size = new System.Drawing.Size(65, 23);
             this.btnReset.TabIndex = 58;
             this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnStatus
             // 
             this.btnStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStatus.BackColor = System.Drawing.Color.White;
+            this.btnStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStatus.BackgroundImage")));
             this.btnStatus.Enabled = false;
             this.btnStatus.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnStatus.Location = new System.Drawing.Point(844, 48);
@@ -794,7 +822,7 @@
             this.btnStatus.Size = new System.Drawing.Size(65, 23);
             this.btnStatus.TabIndex = 57;
             this.btnStatus.Text = "Statut";
-            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.UseVisualStyleBackColor = false;
             this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
             // 
             // lbxInfo
@@ -816,13 +844,15 @@
             // btnInfoClear
             // 
             this.btnInfoClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInfoClear.BackColor = System.Drawing.Color.White;
+            this.btnInfoClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInfoClear.BackgroundImage")));
             this.btnInfoClear.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnInfoClear.Location = new System.Drawing.Point(915, 19);
             this.btnInfoClear.Name = "btnInfoClear";
             this.btnInfoClear.Size = new System.Drawing.Size(65, 23);
             this.btnInfoClear.TabIndex = 52;
             this.btnInfoClear.Text = "Effacer";
-            this.btnInfoClear.UseVisualStyleBackColor = true;
+            this.btnInfoClear.UseVisualStyleBackColor = false;
             this.btnInfoClear.Click += new System.EventHandler(this.btnInfoClear_Click);
             // 
             // groupBox5
@@ -905,18 +935,22 @@
             // btnMsgClear
             // 
             this.btnMsgClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMsgClear.BackColor = System.Drawing.Color.White;
+            this.btnMsgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMsgClear.BackgroundImage")));
             this.btnMsgClear.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnMsgClear.Location = new System.Drawing.Point(551, 19);
             this.btnMsgClear.Name = "btnMsgClear";
             this.btnMsgClear.Size = new System.Drawing.Size(59, 23);
             this.btnMsgClear.TabIndex = 50;
             this.btnMsgClear.Text = "Effacer";
-            this.btnMsgClear.UseVisualStyleBackColor = true;
+            this.btnMsgClear.UseVisualStyleBackColor = false;
             this.btnMsgClear.Click += new System.EventHandler(this.btnMsgClear_Click);
             // 
             // btnRead
             // 
             this.btnRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRead.BackColor = System.Drawing.Color.White;
+            this.btnRead.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRead.BackgroundImage")));
             this.btnRead.Enabled = false;
             this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnRead.Location = new System.Drawing.Point(467, 19);
@@ -924,7 +958,7 @@
             this.btnRead.Size = new System.Drawing.Size(59, 23);
             this.btnRead.TabIndex = 49;
             this.btnRead.Text = "Lire";
-            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // chbShowPeriod
@@ -1012,10 +1046,11 @@
             // 
             this.btnWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWrite.BackColor = System.Drawing.Color.White;
-            this.btnWrite.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
+            this.btnWrite.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWrite.BackgroundImage")));
             this.btnWrite.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnWrite.Enabled = false;
             this.btnWrite.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnWrite.Image = ((System.Drawing.Image)(resources.GetObject("btnWrite.Image")));
             this.btnWrite.Location = new System.Drawing.Point(262, 13);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(57, 20);
@@ -1299,8 +1334,8 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.helpToolStripMenuItem.Text = "&Aide";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.helpToolStripMenuItem.Text = "&À propos";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // groupBox11
@@ -1371,15 +1406,33 @@
             // 
             // groupBox17
             // 
+            this.groupBox17.Controls.Add(this.label20);
+            this.groupBox17.Controls.Add(this.Poltergeist);
+            this.groupBox17.Controls.Add(this.label27);
+            this.groupBox17.Controls.Add(this.CANid);
+            this.groupBox17.Controls.Add(this.label29);
+            this.groupBox17.Controls.Add(this.GhostLabel);
+            this.groupBox17.Controls.Add(this.lblDirection);
+            this.groupBox17.Controls.Add(this.Range);
+            this.groupBox17.Controls.Add(this.label18);
             this.groupBox17.Controls.Add(this.GhostLabelDeRéception);
+            this.groupBox17.Controls.Add(this.label28);
             this.groupBox17.Controls.Add(this.RangedTrame);
-            this.groupBox17.Controls.Add(this.label33);
+            this.groupBox17.Controls.Add(this.lblEtatVehicule);
+            this.groupBox17.Controls.Add(this.label21);
+            this.groupBox17.Controls.Add(this.GhostLabel2);
+            this.groupBox17.Controls.Add(this.lblBattryLevel);
             this.groupBox17.Controls.Add(this.label32);
-            this.groupBox17.Controls.Add(this.label34);
+            this.groupBox17.Controls.Add(this.lblStation);
             this.groupBox17.Controls.Add(this.label31);
+            this.groupBox17.Controls.Add(this.label22);
             this.groupBox17.Controls.Add(this.pictureBox3);
-            this.groupBox17.Controls.Add(this.groupBox20);
+            this.groupBox17.Controls.Add(this.lblSpeed);
+            this.groupBox17.Controls.Add(this.LblPoidBloc);
             this.groupBox17.Controls.Add(this.pictureBox1);
+            this.groupBox17.Controls.Add(this.label23);
+            this.groupBox17.Controls.Add(this.lblBlocColor);
+            this.groupBox17.Controls.Add(this.label26);
             this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox17.Location = new System.Drawing.Point(3, 108);
             this.groupBox17.Name = "groupBox17";
@@ -1388,55 +1441,51 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Informations en temps réel";
             // 
+            // Range
+            // 
+            this.Range.AutoSize = true;
+            this.Range.Location = new System.Drawing.Point(6, 338);
+            this.Range.Name = "Range";
+            this.Range.Size = new System.Drawing.Size(57, 20);
+            this.Range.TabIndex = 62;
+            this.Range.Text = "Range";
+            this.Range.Visible = false;
+            // 
             // GhostLabelDeRéception
             // 
             this.GhostLabelDeRéception.AutoSize = true;
-            this.GhostLabelDeRéception.Location = new System.Drawing.Point(9, 383);
+            this.GhostLabelDeRéception.Location = new System.Drawing.Point(6, 378);
             this.GhostLabelDeRéception.Name = "GhostLabelDeRéception";
             this.GhostLabelDeRéception.Size = new System.Drawing.Size(53, 20);
             this.GhostLabelDeRéception.TabIndex = 61;
             this.GhostLabelDeRéception.Text = "Ghost";
+            this.GhostLabelDeRéception.Visible = false;
+            this.GhostLabelDeRéception.TextChanged += new System.EventHandler(this.GhostLabelDeRéception_TextChanged);
             // 
             // RangedTrame
             // 
             this.RangedTrame.AutoSize = true;
-            this.RangedTrame.Location = new System.Drawing.Point(9, 363);
+            this.RangedTrame.Location = new System.Drawing.Point(6, 358);
             this.RangedTrame.Name = "RangedTrame";
-            this.RangedTrame.Size = new System.Drawing.Size(53, 20);
+            this.RangedTrame.Size = new System.Drawing.Size(107, 20);
             this.RangedTrame.TabIndex = 60;
-            this.RangedTrame.Text = "Ghost";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(116, 403);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(18, 20);
-            this.label33.TabIndex = 58;
-            this.label33.Text = "?";
+            this.RangedTrame.Text = "RangedValue";
+            this.RangedTrame.Visible = false;
+            this.RangedTrame.TextChanged += new System.EventHandler(this.RangedTrame_TextChanged);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(128, 346);
+            this.label32.Location = new System.Drawing.Point(826, 403);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(55, 20);
             this.label32.TabIndex = 59;
             this.label32.Text = "Aucun";
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(9, 403);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(107, 20);
-            this.label34.TabIndex = 59;
-            this.label34.Text = "TimeStamp = ";
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(88, 326);
+            this.label31.Location = new System.Drawing.Point(785, 383);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(102, 20);
             this.label31.TabIndex = 58;
@@ -1445,51 +1494,36 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::PCANBasicExample.Properties.Resources.NO;
-            this.pictureBox3.Location = new System.Drawing.Point(196, 316);
+            this.pictureBox3.Location = new System.Drawing.Point(887, 309);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 107);
+            this.pictureBox3.Size = new System.Drawing.Size(116, 114);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 21;
             this.pictureBox3.TabStop = false;
             // 
-            // groupBox20
-            // 
-            this.groupBox20.Controls.Add(this.label20);
-            this.groupBox20.Controls.Add(this.label27);
-            this.groupBox20.Controls.Add(this.label29);
-            this.groupBox20.Controls.Add(this.lblDirection);
-            this.groupBox20.Controls.Add(this.label18);
-            this.groupBox20.Controls.Add(this.label28);
-            this.groupBox20.Controls.Add(this.lblEtatVehicule);
-            this.groupBox20.Controls.Add(this.label21);
-            this.groupBox20.Controls.Add(this.lblBattryLevel);
-            this.groupBox20.Controls.Add(this.lblStation);
-            this.groupBox20.Controls.Add(this.label22);
-            this.groupBox20.Controls.Add(this.lblSpeed);
-            this.groupBox20.Controls.Add(this.LblPoidBloc);
-            this.groupBox20.Controls.Add(this.label23);
-            this.groupBox20.Controls.Add(this.label26);
-            this.groupBox20.Controls.Add(this.lblBlocColor);
-            this.groupBox20.Location = new System.Drawing.Point(3, 25);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(302, 288);
-            this.groupBox20.TabIndex = 20;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "Contrôle";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(162, 265);
+            this.label20.Location = new System.Drawing.Point(157, 234);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 20);
             this.label20.TabIndex = 56;
             this.label20.Text = "no data";
             // 
+            // GhostLabel
+            // 
+            this.GhostLabel.AutoSize = true;
+            this.GhostLabel.Location = new System.Drawing.Point(202, 338);
+            this.GhostLabel.Name = "GhostLabel";
+            this.GhostLabel.Size = new System.Drawing.Size(18, 20);
+            this.GhostLabel.TabIndex = 1;
+            this.GhostLabel.Text = "0";
+            this.GhostLabel.Visible = false;
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(12, 231);
+            this.label27.Location = new System.Drawing.Point(7, 52);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(105, 20);
             this.label27.TabIndex = 16;
@@ -1498,16 +1532,26 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(12, 265);
+            this.label29.Location = new System.Drawing.Point(8, 234);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(40, 20);
             this.label29.TabIndex = 57;
             this.label29.Text = "Ping";
             // 
+            // GhostLabel2
+            // 
+            this.GhostLabel2.AutoSize = true;
+            this.GhostLabel2.Location = new System.Drawing.Point(202, 318);
+            this.GhostLabel2.Name = "GhostLabel2";
+            this.GhostLabel2.Size = new System.Drawing.Size(18, 20);
+            this.GhostLabel2.TabIndex = 63;
+            this.GhostLabel2.Text = "0";
+            this.GhostLabel2.Visible = false;
+            // 
             // lblDirection
             // 
             this.lblDirection.AutoSize = true;
-            this.lblDirection.Location = new System.Drawing.Point(162, 132);
+            this.lblDirection.Location = new System.Drawing.Point(157, 72);
             this.lblDirection.Name = "lblDirection";
             this.lblDirection.Size = new System.Drawing.Size(61, 20);
             this.lblDirection.TabIndex = 19;
@@ -1517,7 +1561,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 29);
+            this.label18.Location = new System.Drawing.Point(7, 32);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(122, 20);
             this.label18.TabIndex = 5;
@@ -1526,7 +1570,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(12, 132);
+            this.label28.Location = new System.Drawing.Point(8, 72);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(72, 20);
             this.label28.TabIndex = 18;
@@ -1535,7 +1579,7 @@
             // lblEtatVehicule
             // 
             this.lblEtatVehicule.AutoSize = true;
-            this.lblEtatVehicule.Location = new System.Drawing.Point(162, 29);
+            this.lblEtatVehicule.Location = new System.Drawing.Point(157, 32);
             this.lblEtatVehicule.Name = "lblEtatVehicule";
             this.lblEtatVehicule.Size = new System.Drawing.Size(63, 20);
             this.lblEtatVehicule.TabIndex = 6;
@@ -1544,7 +1588,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 65);
+            this.label21.Location = new System.Drawing.Point(7, 194);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(65, 20);
             this.label21.TabIndex = 8;
@@ -1553,7 +1597,7 @@
             // lblBattryLevel
             // 
             this.lblBattryLevel.AutoSize = true;
-            this.lblBattryLevel.Location = new System.Drawing.Point(162, 65);
+            this.lblBattryLevel.Location = new System.Drawing.Point(157, 194);
             this.lblBattryLevel.Name = "lblBattryLevel";
             this.lblBattryLevel.Size = new System.Drawing.Size(63, 20);
             this.lblBattryLevel.TabIndex = 9;
@@ -1562,7 +1606,7 @@
             // lblStation
             // 
             this.lblStation.AutoSize = true;
-            this.lblStation.Location = new System.Drawing.Point(162, 231);
+            this.lblStation.Location = new System.Drawing.Point(157, 52);
             this.lblStation.Name = "lblStation";
             this.lblStation.Size = new System.Drawing.Size(105, 20);
             this.lblStation.TabIndex = 17;
@@ -1571,7 +1615,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 99);
+            this.label22.Location = new System.Drawing.Point(8, 214);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(62, 20);
             this.label22.TabIndex = 10;
@@ -1580,7 +1624,7 @@
             // lblSpeed
             // 
             this.lblSpeed.AutoSize = true;
-            this.lblSpeed.Location = new System.Drawing.Point(162, 99);
+            this.lblSpeed.Location = new System.Drawing.Point(157, 214);
             this.lblSpeed.Name = "lblSpeed";
             this.lblSpeed.Size = new System.Drawing.Size(63, 20);
             this.lblSpeed.TabIndex = 11;
@@ -1589,7 +1633,7 @@
             // LblPoidBloc
             // 
             this.LblPoidBloc.AutoSize = true;
-            this.LblPoidBloc.Location = new System.Drawing.Point(162, 200);
+            this.LblPoidBloc.Location = new System.Drawing.Point(155, 148);
             this.LblPoidBloc.Name = "LblPoidBloc";
             this.LblPoidBloc.Size = new System.Drawing.Size(63, 20);
             this.LblPoidBloc.TabIndex = 15;
@@ -1598,7 +1642,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(12, 166);
+            this.label23.Location = new System.Drawing.Point(8, 128);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(119, 20);
             this.label23.TabIndex = 12;
@@ -1607,7 +1651,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(12, 200);
+            this.label26.Location = new System.Drawing.Point(8, 148);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(95, 20);
             this.label26.TabIndex = 14;
@@ -1616,7 +1660,7 @@
             // lblBlocColor
             // 
             this.lblBlocColor.AutoSize = true;
-            this.lblBlocColor.Location = new System.Drawing.Point(162, 166);
+            this.lblBlocColor.Location = new System.Drawing.Point(155, 128);
             this.lblBlocColor.Name = "lblBlocColor";
             this.lblBlocColor.Size = new System.Drawing.Size(63, 20);
             this.lblBlocColor.TabIndex = 13;
@@ -1625,9 +1669,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PCANBasicExample.Properties.Resources.festoHoraire;
-            this.pictureBox1.Location = new System.Drawing.Point(311, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(268, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(698, 411);
+            this.pictureBox1.Size = new System.Drawing.Size(741, 411);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -1635,9 +1679,7 @@
             // groupBox24
             // 
             this.groupBox24.Controls.Add(this.VoitureHS);
-            this.groupBox24.Controls.Add(this.GhostLabel);
             this.groupBox24.Controls.Add(this.VoitureStop);
-            this.groupBox24.Controls.Add(this.GhostLabel2);
             this.groupBox24.Controls.Add(this.VoitureStart);
             this.groupBox24.Location = new System.Drawing.Point(809, 6);
             this.groupBox24.Name = "groupBox24";
@@ -1648,46 +1690,31 @@
             // 
             // VoitureHS
             // 
-            this.VoitureHS.Location = new System.Drawing.Point(7, 64);
+            this.VoitureHS.BackColor = System.Drawing.Color.White;
+            this.VoitureHS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("VoitureHS.BackgroundImage")));
+            this.VoitureHS.Location = new System.Drawing.Point(7, 54);
             this.VoitureHS.Name = "VoitureHS";
             this.VoitureHS.Size = new System.Drawing.Size(156, 23);
             this.VoitureHS.TabIndex = 64;
             this.VoitureHS.Text = "Mettre hors circuit";
-            this.VoitureHS.UseVisualStyleBackColor = true;
-            // 
-            // GhostLabel
-            // 
-            this.GhostLabel.AutoSize = true;
-            this.GhostLabel.Location = new System.Drawing.Point(128, 11);
-            this.GhostLabel.Name = "GhostLabel";
-            this.GhostLabel.Size = new System.Drawing.Size(13, 13);
-            this.GhostLabel.TabIndex = 1;
-            this.GhostLabel.Text = "0";
-            this.GhostLabel.Visible = false;
+            this.VoitureHS.UseVisualStyleBackColor = false;
             // 
             // VoitureStop
             // 
-            this.VoitureStop.Location = new System.Drawing.Point(87, 32);
+            this.VoitureStop.BackColor = System.Drawing.Color.White;
+            this.VoitureStop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("VoitureStop.BackgroundImage")));
+            this.VoitureStop.Location = new System.Drawing.Point(87, 22);
             this.VoitureStop.Name = "VoitureStop";
             this.VoitureStop.Size = new System.Drawing.Size(75, 23);
             this.VoitureStop.TabIndex = 0;
             this.VoitureStop.Text = "Stop";
-            this.VoitureStop.UseVisualStyleBackColor = true;
+            this.VoitureStop.UseVisualStyleBackColor = false;
             this.VoitureStop.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // GhostLabel2
-            // 
-            this.GhostLabel2.AutoSize = true;
-            this.GhostLabel2.Location = new System.Drawing.Point(68, 11);
-            this.GhostLabel2.Name = "GhostLabel2";
-            this.GhostLabel2.Size = new System.Drawing.Size(13, 13);
-            this.GhostLabel2.TabIndex = 63;
-            this.GhostLabel2.Text = "0";
-            this.GhostLabel2.Visible = false;
             // 
             // VoitureStart
             // 
-            this.VoitureStart.Location = new System.Drawing.Point(6, 32);
+            this.VoitureStart.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
+            this.VoitureStart.Location = new System.Drawing.Point(6, 22);
             this.VoitureStart.Name = "VoitureStart";
             this.VoitureStart.Size = new System.Drawing.Size(75, 23);
             this.VoitureStart.TabIndex = 1;
@@ -1699,7 +1726,6 @@
             // 
             this.groupBox18.Controls.Add(this.button3);
             this.groupBox18.Controls.Add(this.ClockSync);
-            this.groupBox18.Controls.Add(this.PC_Clock);
             this.groupBox18.Location = new System.Drawing.Point(660, 6);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Size = new System.Drawing.Size(143, 96);
@@ -1709,31 +1735,26 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(9, 61);
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.Location = new System.Drawing.Point(9, 54);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(128, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Synchroniser historique";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // ClockSync
             // 
-            this.ClockSync.Location = new System.Drawing.Point(9, 32);
+            this.ClockSync.BackColor = System.Drawing.Color.White;
+            this.ClockSync.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClockSync.BackgroundImage")));
+            this.ClockSync.Location = new System.Drawing.Point(9, 25);
             this.ClockSync.Name = "ClockSync";
             this.ClockSync.Size = new System.Drawing.Size(128, 23);
             this.ClockSync.TabIndex = 1;
             this.ClockSync.Text = "Synchroniser heure";
-            this.ClockSync.UseVisualStyleBackColor = true;
+            this.ClockSync.UseVisualStyleBackColor = false;
             this.ClockSync.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // PC_Clock
-            // 
-            this.PC_Clock.AutoSize = true;
-            this.PC_Clock.Location = new System.Drawing.Point(49, 16);
-            this.PC_Clock.Name = "PC_Clock";
-            this.PC_Clock.Size = new System.Drawing.Size(41, 13);
-            this.PC_Clock.TabIndex = 0;
-            this.PC_Clock.Text = "label22";
             // 
             // groupBox16
             // 
@@ -1801,7 +1822,8 @@
             // 
             // Connexion
             // 
-            this.Connexion.BackColor = System.Drawing.Color.Transparent;
+            this.Connexion.BackColor = System.Drawing.Color.White;
+            this.Connexion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Connexion.BackgroundImage")));
             this.Connexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Connexion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Connexion.Location = new System.Drawing.Point(6, 61);
@@ -1844,6 +1866,7 @@
             // 
             // TXLED
             // 
+            this.TXLED.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
             this.TXLED.Location = new System.Drawing.Point(31, 50);
             this.TXLED.Name = "TXLED";
             this.TXLED.Size = new System.Drawing.Size(21, 23);
@@ -1863,6 +1886,7 @@
             // 
             this.BAUDselector.BackColor = System.Drawing.Color.White;
             this.BAUDselector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BAUDselector.ForeColor = System.Drawing.Color.Black;
             this.BAUDselector.FormattingEnabled = true;
             this.BAUDselector.Items.AddRange(new object[] {
             "300",
@@ -1948,6 +1972,16 @@
             this.tabPage7.Text = "Onglet de Debug";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // Poltergeist
+            // 
+            this.Poltergeist.AutoSize = true;
+            this.Poltergeist.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Poltergeist.Location = new System.Drawing.Point(6, 397);
+            this.Poltergeist.Name = "Poltergeist";
+            this.Poltergeist.Size = new System.Drawing.Size(116, 26);
+            this.Poltergeist.TabIndex = 63;
+            this.Poltergeist.Text = "Poltergeist";
+            // 
             // groupBox25
             // 
             this.groupBox25.Controls.Add(this.button2);
@@ -1963,6 +1997,8 @@
             // 
             // button2
             // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(930, 337);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 28);
@@ -1985,6 +2021,8 @@
             // 
             // SendUART1
             // 
+            this.SendUART1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SendUART1.BackgroundImage")));
+            this.SendUART1.Image = ((System.Drawing.Image)(resources.GetObject("SendUART1.Image")));
             this.SendUART1.Location = new System.Drawing.Point(866, 337);
             this.SendUART1.Name = "SendUART1";
             this.SendUART1.Size = new System.Drawing.Size(58, 28);
@@ -2032,6 +2070,8 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(7, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(251, 37);
@@ -2063,6 +2103,15 @@
             this.Historique.Text = "";
             this.Historique.TextChanged += new System.EventHandler(this.Historique_TextChanged);
             // 
+            // PC_Clock
+            // 
+            this.PC_Clock.AutoSize = true;
+            this.PC_Clock.Location = new System.Drawing.Point(876, 9);
+            this.PC_Clock.Name = "PC_Clock";
+            this.PC_Clock.Size = new System.Drawing.Size(41, 13);
+            this.PC_Clock.TabIndex = 0;
+            this.PC_Clock.Text = "label22";
+            // 
             // serialPort1
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
@@ -2083,7 +2132,7 @@
             // 
             // timer4RealTimeCAN
             // 
-            this.timer4RealTimeCAN.Interval = 70;
+            this.timer4RealTimeCAN.Interval = 5;
             this.timer4RealTimeCAN.Tick += new System.EventHandler(this.timer4RealTimeCAN_Tick);
             // 
             // label30
@@ -2093,7 +2142,26 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(75, 13);
             this.label30.TabIndex = 56;
-            this.label30.Text = "Version 0.90.1";
+            this.label30.Text = "Version 0.92.1";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(834, 9);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(42, 13);
+            this.label35.TabIndex = 62;
+            this.label35.Text = "Time = ";
+            // 
+            // CANid
+            // 
+            this.CANid.AutoSize = true;
+            this.CANid.Location = new System.Drawing.Point(7, 318);
+            this.CANid.Name = "CANid";
+            this.CANid.Size = new System.Drawing.Size(56, 20);
+            this.CANid.TabIndex = 64;
+            this.CANid.Text = "ID can";
+            this.CANid.Visible = false;
             // 
             // Form1
             // 
@@ -2103,7 +2171,9 @@
             this.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1018, 589);
+            this.Controls.Add(this.label35);
             this.Controls.Add(this.label30);
+            this.Controls.Add(this.PC_Clock);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2143,13 +2213,9 @@
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox24.ResumeLayout(false);
-            this.groupBox24.PerformLayout();
             this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             this.groupBox15.ResumeLayout(false);
@@ -2324,7 +2390,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lblStation;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.Label lblDirection;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label20;
@@ -2333,11 +2398,13 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label RangedTrame;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label GhostLabelDeRéception;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label Range;
+        private System.Windows.Forms.Label Poltergeist;
+        private System.Windows.Forms.Label CANid;
        // private System.Windows.Forms.Label GhostLabelDeRéceptionLabeldeTest;
         //private System.Windows.Forms.Label GhostLabelDeRéceptionTestLabel;
     }

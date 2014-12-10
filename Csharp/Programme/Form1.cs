@@ -1,4 +1,4 @@
-﻿#region les includes
+﻿#region les includeslstMessages
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -487,7 +487,6 @@ namespace ICDIBasic
                     {
                         msgStatus.MarkedAsUpdated = false;
                         lviCurrentItem = lstMessages.Items[msgStatus.Position];
-
                         lviCurrentItem.SubItems[2].Text = msgStatus.CANMsg.LEN.ToString();
                         lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
                         lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
@@ -520,6 +519,7 @@ namespace ICDIBasic
                 // We set the ID of the message
                 //
                 lviCurrentItem.SubItems.Add(msgStsCurrentMsg.IdString);
+                CANid.Text = Convert.ToString(lviCurrentItem.SubItems.Add(msgStsCurrentMsg.IdString));
                 // We set the length of the Message
                 //
                 lviCurrentItem.SubItems.Add(newMsg.LEN.ToString());
@@ -1738,8 +1738,7 @@ namespace ICDIBasic
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Échec du démarrage du véhicule");   // Enregistre le log de la connexion
-            }
-            
+            } 
         }
         #endregion
 
@@ -1864,7 +1863,6 @@ namespace ICDIBasic
                         lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
                         lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
                         lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
-
                         textBox1.Text = lviCurrentItem.SubItems[3].Text;
                     }
                 }
@@ -1894,6 +1892,7 @@ namespace ICDIBasic
         private void timer4RealTimeCAN_Tick(object sender, EventArgs e)  // À toutes les 50 ms
         {
             ListViewItem lviCurrentItem;
+
             try // Essaie de lire le bus CAN
             {
                 foreach (MessageStatus msgStatus in m_LastMsgsList)
@@ -1907,9 +1906,16 @@ namespace ICDIBasic
                         lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
                         lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
 
-                        GhostLabelDeRéception.Text = lviCurrentItem.SubItems[3].Text; // Met le string lu dans un GHOST LABEL
-                        RangedTrame.Text = GhostLabelDeRéception.Text.Remove(GhostLabelDeRéception.Text.Length - 6); // Enlève la timestamp
+                        Poltergeist.Text = lviCurrentItem.SubItems[3].Text; // Met le string lu dans le GHOST LABEL master
+
+                        GhostLabelDeRéception.Text = Poltergeist.Text; // Met le string lu dans un GHOST LABEL
+                        RangedTrame.Text = Poltergeist.Text;           // Met le string lu dans un GHOST LABEL
+                        RangedTrame.Text = RangedTrame.Text.Remove(RangedTrame.Text.Length - 7); // Enlève la timestamp et la variation
                         GhostLabelDeRéception.Text = GhostLabelDeRéception.Text.Remove(GhostLabelDeRéception.Text.Length - 4); // Enlève la valeur variable et la timestamp
+                        
+                        string input = Poltergeist.Text;
+                        string sub = input.Substring(3, 2);
+                        Range.Text = sub;
                     }
                 }
             }
@@ -1922,163 +1928,58 @@ namespace ICDIBasic
                 Historique.AppendText("Erreur de réception try catch");
             }
 
-            ///////////////////////////////////////////////////////////////////////
-            // Toutes les prises de décision qui suivent sont des comparaison    //
-            // du ghost Label avec la trame prédéfinie                           //
-            // Note: 46 46 est le code ASCII de FF                               //
-            // Note: Ne pas oublier de mettre un espace entre le dernier         //
-            //       caractère et le guillemet fermant                           //
-            ///////////////////////////////////////////////////////////////////////
-            if (GhostLabelDeRéception.Text == "01 00") // Lorsque le véhicule est arrêté
+            if(CANid.Text == "ListViewSubItem: {005h}")
             {
-                lblEtatVehicule.Text = "Arrêté";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le véhicule est arrêté");
-            }
-            if (GhostLabelDeRéception.Text == "01 01") // Lorsque le véhicule est en marche
-            {
-                lblEtatVehicule.Text = "En marche";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le véhicule est en marche");
-            }
-            if (GhostLabelDeRéception.Text == "01 02") // Lorsque le véhicule est hors circuit
-            {
-                lblEtatVehicule.Text = "En marche";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le véhicule est Hors circuit");
-                pictureBox1.Image = PCANBasicExample.Properties.Resources.hm;
-            }
-            if (GhostLabelDeRéception.Text == "03") // Indice de battrie
-            {
-                lblBattryLevel.Text = "100 %";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Batterie à ");
-                Historique.AppendText(lblBattryLevel.Text);
-            }
-            if (GhostLabelDeRéception.Text == "02") // Indice de vitesse
-            {
-                lblSpeed.Text = "MAX";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("La vitesse est");
-                Historique.AppendText(lblSpeed.Text);
-            }
-            if (GhostLabelDeRéception.Text == "04 00") // Lorsque le bloc est métallique
-            {
-                lblBlocColor.Text = "Métalique";
-                lblDirection.Text = "Horaire";  // *** Déclanche l'événement textchanged du label lblDirection***
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le bloc est en métal");
-                pictureBox3.Image = PCANBasicExample.Properties.Resources.metal;
-                label32.Text = "Metal";
-            }
-            if (GhostLabelDeRéception.Text == "04 01") // Lorsque le bloc est noir
-            {
-                lblBlocColor.Text = "Noir";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le bloc est noir");
-                pictureBox3.Image = PCANBasicExample.Properties.Resources.noir;
-                label32.Text = "Noir";
-            }
-            if (GhostLabelDeRéception.Text == "04 02") // Lorsque le bloc est orange
-            {
-                lblBlocColor.Text = "Orange";
-                lblDirection.Text = "Antihoraire";  // Déclanche l'événement textchanged du label lblDirection
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le bloc est orange");
-                pictureBox3.Image = PCANBasicExample.Properties.Resources.orange;
-                label32.Text = "Orange";
-            }
-            if (GhostLabelDeRéception.Text == "05") // Lorsque le bloc est pesé
-            {
-                LblPoidBloc.Text = "Lourd";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le bloc est lourd");
-            }
-            if (GhostLabelDeRéception.Text == "07 00") // Lorsque le véhicule est à la station de pesée
-            {
-                lblStation.Text = "Station 1, la pesée";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le véhicule est à la station de pesée");
-
-                if (lblDirection.Text == "Horaire")
+                try
                 {
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsHoraire;
+                    LblPoidBloc.Text = Poltergeist.Text;
+                    //LblPoidBloc.Text = Convert.ToString(Int32.Parse(Poltergeist.Text, System.Globalization.NumberStyles.HexNumber));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Tramme de poids reçue");
+                    Historique.AppendText("Poids = ");
+                    Historique.AppendText(LblPoidBloc.Text);
+
+                    if (lblDirection.Text == "Horaire")
+                    {
+                        pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsHoraire;
+                    }
+
+                    if (lblDirection.Text == "Antihoraire")
+                    {
+                        pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsAnti;
+                    }
+
+                    try
+                    {
+                        TxCan2(VEHICULE, DEMARRE);
+
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Séquence de démarrage du véhicule envoyée suite à la mesure du poids du bloc");   // Enregistre le log de la connexion
+                    }
+                    catch
+                    {
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        Historique.AppendText("\r\n");
+                        Historique.AppendText("Échec du démarrage du véhicule après mesure du bloc");   // Enregistre le log de la connexion 
+                    }
                 }
-
-                if (lblDirection.Text == "Antihoraire")
+                catch
                 {
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsAnti;
-                }
-                
-            }
-            if (GhostLabelDeRéception.Text == "07 01") //Le véhicule est à la table FESTO
-            {
-                lblStation.Text = "Table FESTO";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le véhicule est à la table FESTO");
-
-                if (lblDirection.Text == "Horaire")
-                {
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoHoraire;
-                }
-
-                if (lblDirection.Text == "Antihoraire")
-                {
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoAnti;
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    Historique.AppendText("\r\n");
+                    Historique.AppendText("Erreur de try catch lors de la lecture du poids");
                 }
             }
-            if (GhostLabelDeRéception.Text == "07 02") // Le véhicule est à la station 3
-            {
-                lblStation.Text = "Station 3";
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Le véhicule est à la station 3");
-            }
-
-            if (GhostLabelDeRéception.Text == "C0 00") // Le véhicule est à la station 3
-            {
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("Transfert de l'historique du SOC vars le PC");
-            }
-
         }
         #endregion
 
@@ -2283,5 +2184,161 @@ namespace ICDIBasic
             }
         }
         #endregion
+
+        private void RangedTrame_TextChanged(object sender, EventArgs e)
+        {
+            if (RangedTrame.Text == "02") // Indice de vitesse
+            {
+                lblSpeed.Text = (Int32.Parse(Range.Text, System.Globalization.NumberStyles.HexNumber)).ToString();
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("La vitesse est");
+                Historique.AppendText(lblSpeed.Text);
+            }
+
+            if (RangedTrame.Text == "03") // Indice de battrie
+            {
+                lblBattryLevel.Text = (Int32.Parse(Range.Text, System.Globalization.NumberStyles.HexNumber)).ToString();
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Batterie à ");
+                Historique.AppendText(lblBattryLevel.Text);
+            }
+        }
+
+        private void GhostLabelDeRéception_TextChanged(object sender, EventArgs e)
+        {
+            if (GhostLabelDeRéception.Text == "01 00") // Lorsque le véhicule est arrêté
+            {
+                lblEtatVehicule.Text = "Arrêté";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est arrêté");
+            }
+
+            if (GhostLabelDeRéception.Text == "01 01") // Lorsque le véhicule est en marche
+            {
+                lblEtatVehicule.Text = "En marche";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est en marche");
+            }
+
+            if (GhostLabelDeRéception.Text == "01 02") // Lorsque le véhicule est hors circuit
+            {
+                lblEtatVehicule.Text = "En marche";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est Hors circuit");
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.hm;
+            }
+
+            if (GhostLabelDeRéception.Text == "04 00") // Lorsque le bloc est métallique
+            {
+                lblBlocColor.Text = "Métalique";
+                lblDirection.Text = "Horaire";  // *** Déclanche l'événement textchanged du label lblDirection***
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est en métal");
+                pictureBox3.Image = PCANBasicExample.Properties.Resources.metal;
+                label32.Text = "Metal";
+            }
+
+            if (GhostLabelDeRéception.Text == "04 01") // Lorsque le bloc est noir
+            {
+                lblBlocColor.Text = "Noir";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est noir");
+                pictureBox3.Image = PCANBasicExample.Properties.Resources.noir;
+                label32.Text = "Noir";
+            }
+
+            if (GhostLabelDeRéception.Text == "04 02") // Lorsque le bloc est orange
+            {
+                lblBlocColor.Text = "Orange";
+                lblDirection.Text = "Antihoraire";  // Déclanche l'événement textchanged du label lblDirection
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est orange");
+                pictureBox3.Image = PCANBasicExample.Properties.Resources.orange;
+                label32.Text = "Orange";
+            }
+
+            if (GhostLabelDeRéception.Text == "07 00") // Lorsque le véhicule est à la station de pesée
+            {
+                lblStation.Text = "Station de pesée";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la station de pesée");
+
+                if (lblDirection.Text == "Horaire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsHoraire;
+                }
+
+                if (lblDirection.Text == "Antihoraire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsAnti;
+                }
+            }
+
+            if (GhostLabelDeRéception.Text == "07 01") //Le véhicule est à la table FESTO
+            {
+                lblStation.Text = "Table FESTO";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la table FESTO");
+
+                if (lblDirection.Text == "Horaire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoHoraire;
+                }
+
+                if (lblDirection.Text == "Antihoraire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoAnti;
+                }
+            }
+
+            if (GhostLabelDeRéception.Text == "07 02") // Le véhicule est à la station 3
+            {
+                lblStation.Text = "Station 3";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la station 3");
+            }
+
+            if (GhostLabelDeRéception.Text == "C0 00") // demande de transfert d'historique
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Transfert de l'historique du SOC vars le PC");
+            }
+        }
     }
 }

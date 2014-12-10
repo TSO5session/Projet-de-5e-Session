@@ -294,9 +294,9 @@ Station 1 & 002 \\
 \hline 
 Station 2  & 003 \\ 
 \hline
-Station 3  & 004 \\
+Véhicule & 004 \\
 \hline 
-Véhicule  & 005 \\ 
+Station de pesés  & 005 \\ 
 \hline 
 \end{tabular} 
 \label{tab:testtab1}
@@ -309,7 +309,7 @@ Véhicule  & 005 \\
 \centering
 \begin{tabular}{|l|c|l|}
 \hline 
-\textbf{Fonctionnalité} & \textbf{Composante} & \textbf{Données} \\
+\textbf{Fonctionnalité} & \textbf{Identifiant} & \textbf{Données} \\
 \hline 
 Démarre le véhcule & 0x00 & 0x00 \\ 
 \hline 
@@ -321,13 +321,13 @@ Le véhicule est en marche& 0x01 & 0x01 \\
 \hline 
 Le véhicule est hors circuit & 0x01 & 0x02 \\ 
 \hline 
-Vitesse (0-100) & 0x02 & 0x00 à 0x64 \\ 
+Vitesse (0-100) & 0x02 & 0x00 à 0xFF \\ 
 \hline 
-Battrie & 0x03 & 0x00 à 0x64 \\ 
+Battrie & 0x03 & 0x00 à 0xFF \\ 
 \hline 
 Couleur du bloc & 0x04 & 0x00 à 0x02 \\ 
 \hline 
-Poids du bloc & 0x05 & 0x00 à 0x64 \\ 
+Poids du bloc & 0x05 & 0x00 à 0xFF \\ 
 \hline 
 Envoyer l'heure & 0x06 & à déterminer \\ 
 \hline 
