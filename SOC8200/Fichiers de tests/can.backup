@@ -1,0 +1,153 @@
+while true
+do
+ var=`tail -1 ./histocan`
+   if [ "$var" != "$ancienvar" ]
+     then
+       ##################COULEUR DU BLOC#########################
+       if [ "$var" = "  can0    4  [3] 04 00 [00-FF]" ] # Si un bloc métallique est recu
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp
+           echo ""
+           date
+           echo "Anti Horaire (Bloc Metalique), Timestamp = $TimeStamp"
+           /usr/bin/cansend can0 001#0801FF
+       fi
+
+       if [ "$var" = "  can0    4  [3] 04 02 [00-FF]" ] # Si un bloc noir est recu
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp
+           echo ""
+           date
+           echo "STOP (Bloc Noir), Timestamp = $TimeStamp"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 04 01 [00-FF]" ] # Si un bloc orange est recu
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp
+           echo ""
+           date
+           echo "Horaire (Bloc Orange), Timestamp = $TimeStamp"
+           /usr/bin/cansend can0 001#0800FF
+       fi
+
+       ##################EMPLACEMENT DU VÉHICULE#########################
+       if [ "$var" = "  can0    4  [3] 07 00 [00-FF]" ] # Si le véhicule est à la station 1
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           echo ""
+           date
+           echo "Vehicule a la Station 1, Timestamp = $TimeStamp"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 07 01 [00-FF]" ] # Si le véhicule est à la station 2
+         then
+      echo ""
+           date
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           echo "Vehicule a la Station 2"
+       fi
+
+       ##################ACTUALISER L'HEURE#########################
+       if [ "$var" = "  can0    4  [3] 06 [00-FF] [00-FF] [00-FF]" ] # Lecture de l'heure du PC
+         then
+           Heure="${var:19:2}"   # Dissecte les données CAN et exracte la timestamp de l'heure
+           Minute="${var:22:2}"  # Dissecte les données CAN et exracte la timestamp des minutes
+           Seconde="${var:25:2}" # Dissecte les données CAN et exracte la timestamp des secondes
+           echo "$var"
+           echo " **Sychronisation en cours*** "
+           echo "$Heure    heures"
+           echo "$Minute    minutes"
+           echo "$Seconde    secondes"
+           date +%T -s "$Heure:$Minute:$Seconde"
+           echo " **Sychronisation terminée*** "
+           echo ""
+       fi
+      
+       ##################ÉTAT DU VÉHICULE#########################
+       if [ "$var" = "  can0    4  [3] 01 00 [00-FF]" ] # Si le véhicule est arrêté
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           echo ""
+           date
+           echo "Le vehicule est arreté, Timestamp = $TimeStamp"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 01 01 [00-FF]" ] # Si le véhicule avance
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           echo ""
+           date
+           echo "Le vehicule est en marche, Timestamp = $TimeStamp"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 01 02 [00-FF]" ] # Si le véhicule est hors circuit
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           echo ""
+           date
+           echo "Le vehicule est dans le champ, Timestamp = $TimeStamp"
+           /usr/bin/cansend can0 005#0001FF     #Arrête le véhicule
+       fi
+
+       ##################POIDS, VITESSE ET BATTRIE#########################
+       if [ "$var" = "  can0    4  [3] 05 [00-64] [00-FF]" ] # Lecture du poids
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp   
+           Poids="${var:20:2}"       # Dissecte les données CAN et exracte le poids 
+           echo ""
+           date
+           echo "Le poids pese: $Poids , Timestamp = $TimeStamp"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 02 [00-64] [00-FF]" ] # Lecture de la vitesse du bolide
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           Vitesse="${var:20:2}"     # Dissecte les données CAN et exracte la vitesse
+           echo ""
+           date
+           echo "Le bolide se deplace à $Vitesse , Timestamp = $TimeStamp"
+       fi
+
+       if [ "$var" = "  can0    4  [3] 03 [00-64] [00-FF]" ] # Lecture de la battrie du véhicule
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamps
+           Pile="${var:20:2}"     # Dissecte les données CAN et exracte la vitesse
+           echo ""
+           date
+           echo "Battrie pleine à: $Pile , Timestamp = $TimeStamp"
+       fi
+
+       ##################TRANSFERT D'HISTORIQUE#########################
+       if [ "$var" = "  can0    0  [3] C0 00 [00-FF]" ]
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           echo ""
+           date  
+           echo "Transfert de l'historique en cours , Timestamp = $TimeStamp"
+           cat histocandate > /dev/ttySCMA0
+       fi
+
+       ##################DÉMARRAGE ET ARRÊT#########################
+#if [[ $string == *"My long"* ]]
+       #if [ "$var" = "  can0    6  [7] 00 00 0A [0-9a-fA-F][0-9a-fA-F]" ] # Démarrage du véhicule
+       #if [ "$var" = *"  can0    6  [7] 00 00"*  ] # [00-FF]" ]
+       if [ "$var" = "\c\a\n\0\ \6\ \[\7\]\ \0\0\ \0\0"* ]
+         then
+        #   TimeStamp="${var:26:4}"   # Dissecte les données CAN et exracte la timestamp    
+           echo ""
+           date  
+           echo "Booting the bolide " #, Timestamp = $TimeStamp"
+           /usr/bin/cansend can0 005#0000FF
+       fi
+
+       if [ "$var" = "  can0    4  [3] 00 01 [00-FF]" ] # Arrête le véhicule
+         then
+           TimeStamp="${var:23:2}"   # Dissecte les données CAN et exracte la timestamp    
+           echo ""
+           date
+           echo "Arret du bolide , Timestamp = $TimeStamp"
+           /usr/bin/cansend can0 005#0001FF
+       fi
+     ancienvar=$var
+    fi
+done

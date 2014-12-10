@@ -1,0 +1,133 @@
+
+\subsubsection{CAN}
+Chaque composante matérielle, du Bolide au PC, dispose d'un identifiant CAN unique allant de 000 à 005. Chaque fonctionnalité dispose d'un code d'identification suivi de deux octets de données à transmettre.
+
+\begin{table}[!ht]
+\caption{Index des identifiants matériel CAN}
+\medskip
+\centering
+\begin{tabular}{|l|c|}
+\hline 
+\textbf{Device} & \textbf{ID matériel} \\ 
+\hline 
+Ordinateur & 000 \\ 
+\hline 
+SOC8200 & 001 \\ 
+\hline 
+Station 1 & 002 \\ 
+\hline 
+Station 2  & 003 \\ 
+\hline
+Station 3  & 004 \\
+\hline 
+Véhicule  & 005 \\ 
+\hline 
+\end{tabular} 
+\label{tab:testtab1}
+\end{table} 
+
+
+\begin{table}[!ht]
+\caption{Index des trames CAN}
+\medskip
+\centering
+\begin{tabular}{|l|c|l|}
+\hline 
+\textbf{Fonctionnalité} & \textbf{Composante} & \textbf{Données} \\
+\hline 
+Démarre le véhcule & 0x00 & 0x00 \\ 
+\hline 
+Arrête le véhicule & 0x00 & 0x01 \\ 
+\hline 
+Le véhicule est arrêté & 0x01 & 0x00 \\ 
+\hline 
+Le véhicule est en marche& 0x01 & 0x01 \\ 
+\hline 
+Le véhicule est hors circuit & 0x01 & 0x02 \\ 
+\hline 
+Vitesse (0-100) & 0x02 & 0x00 à 0x64 \\ 
+\hline 
+Battrie & 0x03 & 0x00 à 0x64 \\ 
+\hline 
+Couleur du bloc & 0x04 & 0x00 à 0x02 \\ 
+\hline 
+Poids du bloc & 0x05 & 0x00 à 0x64 \\ 
+\hline 
+Envoyer l'heure & 0x06 & à déterminer \\ 
+\hline 
+No. de la station & 0x07 & 0x00 à 0x02 \\ 
+\hline 
+Demande de l'historique & 0xC0 & 0x00 \\ 
+\hline 
+Direction horaire et antihoraire & 0x08 & 0x00 à 0x01 \\
+\hline
+\end{tabular} 
+\label{tab:testtab1}
+\end{table}
+
+\begin{table}[!ht]
+\caption{Index des communications CAN}
+\medskip
+\centering
+\begin{tabular}{|l|l|c|l|c|l|c|}
+\hline 
+\textbf{Émetteur} & \textbf{Action} & \textbf{ID receveur} & \textbf{Donnée envoyée} & \textbf{Récepteur} & \textbf{Erreur}\\ 
+\hline 
+Ordinateur & Démarrer le véhicule & 004 & 00 00  & Véhicule &  F1\\ 
+\hline 
+Ordinateur & Arrêter le véhicule & 004 & 00 01  & Véhicule &  F2\\ 
+\hline 
+Véhicule & Dit: je suis arrêté & 000 & 01 00   & Ordinateur &  F3\\
+\hline 
+Véhicule & Dit: j'avance & 000 & 01 01  & Ordinateur & F4\\  
+\hline 
+Véhicule & Dit: je suis hors circuit & 000 & 01 02  & Ordinateur &  F5\\ 
+\hline 
+Véhicule & Dit sa vitesse & 000 & 02 [00 à 64]  & Ordinateur &  F6\\ 
+\hline 
+Véhicule & Dit le niveau de sa batterie & 000 & 03 [00 à 64]  & Ordinateur &  F7\\ 
+\hline 
+Station 1 & Dit bloc = métal & 000 & 04 00  & Ordinateur &  F8\\ 
+\hline  
+Station 1 & Dit bloc = orange & 000 & 04 01  & Ordinateur &  F9\\
+\hline 
+Station 1 & Dit bloc = noir & 000 & 04 02  & Ordinateur &  FA\\
+\hline 
+Station 1 & Dit le poids du bloc & 000 & 05 [00 à 64]  & Ordinateur &  FB\\ 
+\hline 
+Voiture & Dit qu'elle est à la station 1 & 000 & 07 00  & Ordinateur &  FC\\ 
+\hline 
+Voiture & Dit qu'elle est à la station 2 & 000 & 07 01  & Ordinateur &  FD\\
+\hline 
+Ordinateur & Envoie l'heure & 003 & 06 à déterminer  & Station 1 &  FE\\ 
+\hline 
+Ordinateur & Demande le LOG & 001 & C0 00  & SOC8200 & E0\\ 
+\hline
+Ordinateur & Exige Horaire & 004 & 08 00  & Véhicule & E1\\ 
+\hline
+Ordinateur & Exige Antihoraire & 004 & 08 01  & Véhicule & E2\\ 
+\hline
+\end{tabular} 
+\label{tab:testtab1}
+\end{table}
+
+\pagebreak
+\begin{flushleft}
+ Exemples de trames CAN à transmettre au PC.
+ \end{flushleft} 
+\end{spacing}
+\begin{lstlisting}
+   CAN.SendToPC("0100FF"); // Arrêté
+   CAN.SendToPC("0101FF"); // En marche
+   CAN.SendToPC("0102FF"); // Hors circuit
+   CAN.SendToPC("02xxFF"); // Vitesse de xx
+   CAN.SendToPC("03xxFF"); // Batterie chargée à xx %
+   CAN.SendToPC("0400FF"); // Bloc métallique
+   CAN.SendToPC("0401FF"); // Bloc noire
+   CAN.SendToPC("0402FF"); // Bloc orange
+   CAN.SendToPC("050064"); // Le bloc est lourd
+   CAN.SendToPC("0700FF"); // Rendu à la station 1
+   CAN.SendToPC("0701FF"); // Rendu à la station 2
+   CAN.SendToPC("0702FF"); // Rendu à la station 3
+\end{lstlisting}
+\begin{spacing}{1.5}

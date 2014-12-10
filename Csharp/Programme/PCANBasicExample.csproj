@@ -55,7 +55,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>10422.ico</ApplicationIcon>
+    <ApplicationIcon>Alecive-Flatwoken-Apps-Audio-Card.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -125,6 +125,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="10422.ico" />
+    <Content Include="Alecive-Flatwoken-Apps-Audio-Card.ico" />
+    <None Include="Resources\hm2.gif" />
+    <None Include="Resources\poidsHoraire.png" />
+    <None Include="Resources\poidsAnti.png" />
+    <None Include="Resources\HorsPiste.png" />
+    <None Include="Resources\festoHoraire.png" />
+    <None Include="Resources\festoAnti.png" />
+    <None Include="Resources\hm1.gif" />
+    <None Include="Resources\hm.gif" />
     <None Include="Resources\NO.png" />
     <None Include="Resources\test.png" />
     <None Include="orange.png" />

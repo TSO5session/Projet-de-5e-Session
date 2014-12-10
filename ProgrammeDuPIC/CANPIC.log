@@ -1,14 +1,22 @@
-0	1	mikroCPIC1618.exe -MSF -DBG -pP18F258 -DL -O11111114 -fo4 -N"J:\Projet_Session5_LNAH\S3_24Nov2014\MIKROC\CANPIC.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"J:\Projet_Session5_LNAH\S3_24Nov2014\MIKROC\" "CANPIC.c" "PIC18F258.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CAN_C_A.mcl"	 
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F258 -RA -DL -O11111114 -fo4 -N"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuPIC\CANPIC.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\ProgrammeDuPIC\" -SP"J:\Projet_Session5_LNAH\S3_24Nov2014\MIKROC\" "CANPIC.c" "PIC18F258.c" "I2CPIC18F258.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CAN_C_A.mcl"	 
+warning: 0	1501	Specified search path does not exist: 'J:\Projet_Session5_LNAH\S3_24Nov2014\MIKROC'	 
 hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
-diagnostics: 0	126	All files Preprocessed in 203 ms	 
+diagnostics: 0	122	Compilation Started	P18F258.c
+diagnostics: 2869	123	Compiled Successfully	P18F258.c
+diagnostics: 0	122	Compilation Started	__Lib_Delays.c
+diagnostics: 172	123	Compiled Successfully	__Lib_Delays.c
+diagnostics: 0	126	All files Preprocessed in 63 ms	 
 diagnostics: 0	122	Compilation Started	declarationpic.h
-diagnostics: 113	123	Compiled Successfully	CANPIC.c
+diagnostics: 121	123	Compiled Successfully	CANPIC.c
 diagnostics: 0	122	Compilation Started	declarationpic.h
-diagnostics: 169	123	Compiled Successfully	PIC18F258.c
-diagnostics: 0	127	All files Compiled in 436 ms	 
-hint: 0	1144	Used RAM (bytes): 76 (5%)  Free RAM (bytes): 1439 (95%)	Used RAM (bytes): 76 (5%)  Free RAM (bytes): 1439 (95%)
-hint: 0	1144	Used ROM (bytes): 1609 (5%)  Free ROM (bytes): 31159 (95%)	Used ROM (bytes): 1609 (5%)  Free ROM (bytes): 31159 (95%)
+diagnostics: 176	123	Compiled Successfully	PIC18F258.c
+diagnostics: 0	122	Compilation Started	declarationpic.h
+hint: 390	1163	Variable 'ucDataDS1307' has been declared, but not used	I2CPIC18F258.c
+diagnostics: 434	123	Compiled Successfully	I2CPIC18F258.c
+diagnostics: 0	127	All files Compiled in 78 ms	 
+hint: 0	1144	Used RAM (bytes): 80 (5%)  Free RAM (bytes): 1435 (95%)	Used RAM (bytes): 80 (5%)  Free RAM (bytes): 1435 (95%)
+hint: 0	1144	Used ROM (bytes): 2101 (6%)  Free ROM (bytes): 30667 (94%)	Used ROM (bytes): 2101 (6%)  Free ROM (bytes): 30667 (94%)
 diagnostics: 0	125	Project Linked Successfully	CANPIC.mcppi
-diagnostics: 0	128	Linked in 312 ms	 
-diagnostics: 0	129	Project 'CANPIC.mcppi' completed: 967 ms	 
-diagnostics: 0	103	Finished successfully: 28 nov. 2014, 09:28:40	CANPIC.mcppi
+diagnostics: 0	128	Linked in 31 ms	 
+diagnostics: 0	129	Project 'CANPIC.mcppi' completed: 266 ms	 
+diagnostics: 0	103	Finished successfully: 05 déc. 2014, 15:48:53	CANPIC.mcppi

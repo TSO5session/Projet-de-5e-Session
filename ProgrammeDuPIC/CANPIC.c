@@ -5,37 +5,50 @@
 // système via le port série qui permet d'envoyer ou de recevoir les commandes
 // via le code.
 //
-// Realise par - Jean Francois Bilodeau / Louis-Normand Ang Houle
+// Realise par - Louis-Normand Ang-Houle, Vincent CHouinard, Gabriel Fortin-Bélanger
+//               et Hicham Safoine
 // MikroC Pro PIC 6.4.0
 // Le 5 novembre 2014
 //
 // EPR 2012-2015
 //****************************************************************************//
 #include "PIC18F258.h"
+#include "I2CPIC18F258.h"
 #include "DeclarationPIC.h"
+
 unsigned char Can_Init_Flags, Can_Send_Flags, Can_Rcv_Flags; //can flags
 unsigned char Rx_Data_Len;                                   //received data length in bytes
 unsigned char HeureFlag = 0, Acknowledge;
-char RxTx_Data[8];                                           //can rx/tx data buffer                                              // eception flag
+
+char RxTx_Data[8];                                           //can rx/tx data buffer
+char cPoid    [5];
+char cTemps   [5];
 char Msg_RcvdFlag;
-char cPoid[8];
+
+
 const long ID_1st = 0x0007, ID_2nd=0x0004, ID_3rd = 0x0005;
 long Rx_ID;
+
+extern UC ucTABHMS[3];
 extern UC ucTabRx232[8];
 extern UC ucTrame;
 extern UC ucNbCaract;
 extern UC ucIndiceTampon;
 
-struct STHorloge stHeure;
-struct STHorloge stSetHeure;
+struct STHorloge stHMS;
 
 void main() 
 {     
-
   vInitPic();                                            //Init PIC18F258 4Mhz
   vInitRS232();                                          //Init RS232 9600
-/*I2C1_Init(10000);*/
-  vTransChaine("RS232OK9600");                           //Test RS232
+  //vTransChaine("Test");
+  
+  vInitI2CMaster();
+  vI2CEcrireDS1307(ADRHOR, 9, 40, 51); // 9 h 51
+  
+   /*
+  vI2CEcrireDS1307(ADRHOR, stHMS.ucHeure, stHMS.ucMinute, stHMS.ucSeconde);*/
+  
   Can_Init_Flags = 0;                                    //
   Can_Send_Flags = 0;                                    //clear flags
   Can_Rcv_Flags  = 0;
@@ -50,13 +63,17 @@ void main()
   CANInitialize(1,1,3,3,1,Can_Init_Flags);                  //Initialize CAN module
   //250000KBPS, 1SJW, 3PH1, 3PH2, 8TQ, 1PHDel
   CANSetOperationMode(_CAN_MODE_CONFIG,0xFF);               //set CONFIGURATION mode
-  CANSetMask(_CAN_MASK_B1,-1,_CAN_CONFIG_STD_MSG);          //set all mask1 bits to ones
-  CANSetMask(_CAN_MASK_B2,-1,_CAN_CONFIG_STD_MSG);          //set all mask2 bits to ones
+  CANSetMask  (_CAN_MASK_B1,-1,_CAN_CONFIG_STD_MSG);        //set all mask1 bits to ones
+  CANSetMask  (_CAN_MASK_B2,-1,_CAN_CONFIG_STD_MSG);        //set all mask2 bits to ones
   CANSetFilter(_CAN_FILTER_B2_F4,ID_2nd,_CAN_CONFIG_STD_MSG);//set id of filter B2_F4 to 2nd node ID
   CANSetOperationMode(_CAN_MODE_NORMAL,0xFF);               //set NORMAL mode
   
+  CANWrite(ID_2nd, "BONJOUR", 7, Can_Send_Flags);
+  
   while (1)
    {
+     vI2CLireDS1307(0xD0); // Envoie l'adresse du DS1307
+     CANWrite(0x0012, "A", 1, Can_Send_Flags);// send incremented data back
      if(ucTrame == COMPLETE)
       {
         cPoid[0] = ucTabRx232[11];
@@ -67,47 +84,39 @@ void main()
         ucIndiceTampon = 0;
         ucNbCaract = 0;
         ucTrame = INCOMPLETE;            //Trame incomplete
-        // send incremented data back
-        CANWrite(ID_2nd, cPoid, 5, Can_Send_Flags);
+
+        CANWrite(ID_3rd, cPoid, 5, Can_Send_Flags); // send incremented data back
+        
+        cTemps[0] = 0x36;
+        cTemps[1] = ucTABHMS[0];
+        cTemps[2] = ucTABHMS[1];
+        cTemps[3] = ucTABHMS[2];
+        cTemps[4] = 0x20;
+        CANWrite(ID_2nd, cTemps, 5, Can_Send_Flags);
       }
-     
-/*if(I2C1_Is_Idle())
+      
+/*if(HeureFlag)
       {
-        I2C1_Start();
-        I2C1_Wr(0xD1);
-        I2C1_Wr(0x00);
-        I2C1_Repeated_Start();
-        I2C1_Wr(0xD0);
-        stHeure.ucSeconde = I2C1_Rd(1);
-        stHeure.ucMinute  = I2C1_Rd(1);
-        stHeure.ucHeure   = I2C1_Rd(0);
-        I2C1_Stop();
-      }
-     if((I2C1_Is_Idle()) && (HeureFlag))
-      {
+        vI2CEcrireDS1307(ADRHOR, stHMS.ucHeure, stHMS.ucMinute, stHMS.ucSeconde);
         HeureFlag = 0;
-        I2C1_Start();
-        I2C1_Wr(0xD1);
-        I2C1_Wr(0x00);
-        I2C1_Wr(stSetHeure.ucSeconde);
-        I2C1_Wr(stSetHeure.ucMinute);
-        I2C1_Wr(stSetHeure.ucHeure);
-        I2C1_Stop();
       }
 
+
      Msg_RcvdFlag = CANRead(&Rx_ID , RxTx_Data , &Rx_Data_Len, &Can_Rcv_Flags); // receive message
+     
      if((Msg_RcvdFlag) && (Rx_ID == ID_1st))
       {
         CANWrite(0x0012, "A", 1, Can_Send_Flags);// send incremented data back
         switch(RxTx_Data[0])
          {
            case '6':
-           stSetHeure.ucHeure   = (RxTx_Data[2] | 0x40);
-           stSetHeure.ucMinute  =  RxTx_Data[3];
-           stSetHeure.ucSeconde = (RxTx_Data[4] | 0x80);
+           stHMS.ucHeure     = RxTx_Data[2];
+           stHMS.ucMinute    = RxTx_Data[3];
+           stHMS.ucSeconde   = RxTx_Data[4];
            HeureFlag = 1;
            break;
          }
       }*/
    }
 }
+//LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

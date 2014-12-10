@@ -1,23 +1,24 @@
 \select@language {french}
 \contentsline {figure}{\numberline {1}{\ignorespaces Vue d'ensemble du projet}}{5}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Sch\IeC {\'e}ma bloc du Bolide}}{6}{figure.2}
+\contentsline {figure}{\numberline {2}{\ignorespaces Sch\IeC {\'e}ma bloc du Bolide}}{7}{figure.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces Sch\IeC {\'e}ma bloc de la table FESTO}}{8}{figure.3}
 \contentsline {figure}{\numberline {4}{\ignorespaces Sch\IeC {\'e}ma bloc du SOC8200}}{9}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{19}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{20}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Historique des actions}}{21}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le du v\IeC {\'e}hicule}}{25}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le de la station no.1}}{25}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Qui h\IeC {\'e}rite du SPI?}}{25}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Qui h\IeC {\'e}rite de l'I2C?}}{25}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Choix de la cible sur IAR}}{26}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 1}}{29}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 2}}{30}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 3}}{31}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 4}}{32}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Couche TOP}}{33}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Couche BOT}}{33}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Silk Screen TOP}}{34}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Solder mask TOP}}{34}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Drill}}{35}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Correctif}}{35}{figure.22}
+\contentsline {figure}{\numberline {5}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{20}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{21}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Historique des actions}}{22}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le du v\IeC {\'e}hicule}}{26}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le de la station no.1}}{26}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Qui h\IeC {\'e}rite du SPI?}}{26}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Qui h\IeC {\'e}rite de l'I2C?}}{26}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Choix de la cible sur IAR}}{27}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Compiler avec MicroC PRO pour PIC}}{28}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 1}}{29}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 2}}{30}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 3}}{31}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 4}}{32}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Couche TOP}}{33}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Couche BOT}}{33}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Silk Screen TOP}}{34}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Solder mask TOP}}{34}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Drill}}{35}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Correctif}}{35}{figure.23}

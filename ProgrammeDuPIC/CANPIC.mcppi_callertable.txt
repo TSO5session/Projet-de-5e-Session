@@ -2,8 +2,15 @@ main
 	__CC2DW
 	vInitPic
 	vInitRS232
-	vTransChaine
-		vTx232
+	vInitI2CMaster
+	vI2CEcrireDS1307
+		vI2CStart
+			vI2CCheck
+		vI2CEcrireOctet
+			vI2CCheck
+			ucReadACK
+		vI2CStop
+			vI2CCheck
 	CANInitialize
 		CANSetOperationMode
 		CANSetBaudRate
@@ -18,4 +25,18 @@ main
 		CANIDToRegs
 	CANWrite
 		CANIDToRegs
+	vI2CLireDS1307
+		vI2CStart
+			vI2CCheck
+		vI2CEcrireOctet
+			vI2CCheck
+			ucReadACK
+		vI2CReStart
+			vI2CCheck
+		ucI2CLireOctet
+			vI2CCheck
+			vSendACK
+				vI2CCheck
+		vI2CStop
+			vI2CCheck
 interrupt

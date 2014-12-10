@@ -1,0 +1,84 @@
+
+\begin{figure}[hbtp]
+\section{Schémas OrCAD}
+\caption{Schémas carte IO I2C, page 1}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE1.pdf}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Schémas carte IO I2C, page 2}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE2.pdf}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Schémas carte IO I2C, page 3}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE3.pdf}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Schémas carte IO I2C, page 4}
+\centering
+\includegraphics[scale=0.87,angle=90]{Figures/OrCad/PAGE4.pdf}
+\end{figure}
+
+\vfill
+\pagebreak
+
+\begin{figure}[hbtp]
+\section{Fichiers Gerbers}
+Une carte d'extension, dont voici les images GERBER\footnote{Les couches présentées no sont pas à l'échelle}, à été réalisée avec OrCAD 16.2 et gravée à l'aide de la rutilante LPKF départementale.
+\caption{Couche TOP}
+\centering
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/top.png}}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\caption{Couche BOT}
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/bot.png}}
+\end{figure}
+
+
+\begin{figure}[hbtp]
+\caption{Silk Screen TOP}
+\centering
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/sstop.png}}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\caption{Solder mask TOP}
+\fbox{\includegraphics[scale=0.47]{Figures/OrCad/smt.png}}
+\end{figure}
+
+
+
+\begin{figure}[hbtp]
+\caption{Drill}
+\centering
+\fbox{\includegraphics[scale=0.45]{Figures/OrCad/drill.png}}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\caption{Correctif}
+\fbox{\includegraphics[scale=0.45]{Figures/OrCad/patch.jpg}}
+
+\bigskip
+
+\begin{flushleft}
+Il est à noter que nous avons dû réaliser un correctif lors de la soudure de la carte IO du projet. La zone de ground plane en bleu devait être reliée à GND, c'est-à-dire la zone verte, mais ce n'était pas la cas. C'est pourquoi un bout de fil à été soudé afin de pailler à ce manque. De plus, quelque ponts de soudure ce sont manifestés ça et là, grillant de ce fait nos PCF8574. Rien d'insurmontable.
+\end{flushleft}
+\end{figure}

@@ -1,0 +1,12 @@
+\section{Calculs}
+\subsection{Calcul du pas de conversion de la pile}
+$V_{MAX}=10.8V \Rightarrow MAX1236  = 12 bit \Rightarrow Pas = \dfrac{4K\Omega \cdot \left(\dfrac{10.8V}{10K\Omega}\right)}{2^{12}(pas)} = 1.33(mV/pas)$
+\subsection{Calcul du baudrate}
+$Baud = \dfrac{2^{SMOD}}{32}\cdot\dfrac{Crystal (Hz)}{12\cdot(256 - TH1)}$\\
+
+%\bigskip
+
+Alors...\\
+
+
+$\overbrace{9600 = \dfrac{2^{1}}{32} \cdot \dfrac{24\cdot10^{6}(Hz)}{12\cdot(256 - 243)}}^{uPSD 3254} $ $\Leftarrow \& \Rightarrow $ $ \overbrace{9600 = \dfrac{2^{0}}{32}\cdot \dfrac{11.0597 \cdot 10^{6}(Hz)}{12\cdot(256 - 253)}}^{DS89C450}$

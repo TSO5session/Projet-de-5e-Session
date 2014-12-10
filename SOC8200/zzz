@@ -1,5 +1,0 @@
-#le seul but de ce fichier est de faire des tests
-while : # Équialent du while(1)
-do
-  cp tty1 keyboard
-done

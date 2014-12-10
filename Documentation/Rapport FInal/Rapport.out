@@ -1,8 +1,8 @@
 \BOOKMARK [1][-]{section.1}{Pr\351sentation du projet}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Explication du projet}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Sch\351ma bloc vue d'ensemble du syst\350me}{section.1}% 3
-\BOOKMARK [3][-]{subsubsection.1.2.1}{Sch\351ma bloc du bolide}{subsection.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2}{Sch\351ma bloc d'ensemble du syst\350me}{section.1}% 3
 \BOOKMARK [3][-]{subsubsection.1.2.4}{Sch\351ma bloc de la station de pes\351e}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Sch\351ma bloc du bolide}{subsection.1.2}% 4
 \BOOKMARK [3][-]{subsubsection.1.2.2}{Sch\351ma bloc de la table FESTO}{subsection.1.2}% 5
 \BOOKMARK [3][-]{subsubsection.1.2.3}{Sch\351ma bloc du SOC8200}{subsection.1.2}% 6
 \BOOKMARK [3][-]{subsubsection.1.2.5}{de la station no.1}{subsection.1.2}% 8
@@ -47,11 +47,11 @@
 \BOOKMARK [2][-]{subsection.6.1}{Description du fonctionnement du programme}{section.6}% 47
 \BOOKMARK [2][-]{subsection.6.2}{Proc\351dure de compilation sur MPLAB}{section.6}% 48
 \BOOKMARK [2][-]{subsection.6.3}{Proc\351dure de v\351rification}{section.6}% 49
-\BOOKMARK [1][-]{section.7}{Calculs}{}% 50
-\BOOKMARK [2][-]{subsection.7.1}{Calcul du pas de conversion de la pile}{section.7}% 51
-\BOOKMARK [2][-]{subsection.7.2}{Calcul du baudrate}{section.7}% 52
-\BOOKMARK [1][-]{section.8}{Sch\351mas OrCAD}{}% 53
-\BOOKMARK [1][-]{section.9}{Fichiers Gerbers}{}% 54
+\BOOKMARK [1][-]{section.7}{Sch\351mas OrCAD}{}% 50
+\BOOKMARK [1][-]{section.8}{Fichiers Gerbers}{}% 51
+\BOOKMARK [1][-]{section.9}{Calculs}{}% 52
+\BOOKMARK [2][-]{subsection.9.1}{Calcul du pas de conversion de la pile}{section.9}% 53
+\BOOKMARK [2][-]{subsection.9.2}{Calcul du baudrate}{section.9}% 54
 \BOOKMARK [1][-]{section.10}{Conclusions}{}% 55
 \BOOKMARK [2][-]{subsection.10.1}{Ce que le projet m'a apport\351}{section.10}% 56
 \BOOKMARK [3][-]{subsubsection.10.1.1}{Vincent}{subsection.10.1}% 57

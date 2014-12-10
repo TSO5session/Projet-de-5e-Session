@@ -1,7 +1,6 @@
 candump can0 >> ./histocan &
 nbligne=1
-ancienvar=0
-  
+ancienvar=0  
 while true
  do
    var=`tail -1 ./histocan`

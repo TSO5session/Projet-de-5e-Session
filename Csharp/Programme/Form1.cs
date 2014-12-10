@@ -386,7 +386,7 @@ namespace ICDIBasic
 
             // Baudrates 
             //
-            cbbBaudrates.SelectedIndex = 2; // 500 K
+            cbbBaudrates.SelectedIndex = 4; // 125 K
 
             // Hardware Type for no plugAndplay hardware
             //
@@ -639,9 +639,6 @@ namespace ICDIBasic
             COMselector.Items.AddRange(PortsDisponible); // Affiche les ports disponibles UART1
             Connexion.Text = "Connexion";                // Le bouton sert à se connecter UART1
             Connexion.Enabled = false;                   // UART1
-
-            // timer1.Start(); // Timer du heartBeat
-            // timer2.Start(); // Timer de synchronisation de clock et de hertbeat
 
             Historique.AppendText("\r\n");
             Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -1602,7 +1599,7 @@ namespace ICDIBasic
 
         #region Timer de 1 seconde
 
-        #region Envoi du HeartBeat
+            #region Envoi du HeartBeat
         private void timer1_Tick(object sender, EventArgs e) // À toutes les secondes
         {
             PingSend();
@@ -1613,8 +1610,8 @@ namespace ICDIBasic
                     serialPort1.Write("Allo\n");    // Envoie le heartBeat
                     TXLED.BackColor = Color.Lime;   // Fait clignotter la LED de transmission
                     HeartBeatOUT.BackColor = Color.Red; // Fait clignotter la LED de transmission de HeartBeat
-                    serialPort1.DiscardInBuffer();   // Pas sur que ce soit nécessaire
-                    serialPort1.DiscardOutBuffer();  // Pas sur que ce soit nécessaire
+                    //serialPort1.DiscardInBuffer();   // Pas sur que ce soit nécessaire
+                    //serialPort1.DiscardOutBuffer();  // Pas sur que ce soit nécessaire
                     Historique.AppendText("\r\n");
                     Historique.AppendText("Heartbat Envoyé");   // Enregistre le log de la connexion (peut-être à enlever...)
                 }
@@ -1630,55 +1627,8 @@ namespace ICDIBasic
                 }
             }
         #endregion
-
-            #region Gestion de l'image du parcours et de son animation de déplacement
-            ////////////////////////////////////////////////////////////////////////////
-            // Note: Le code sert de test et seul le timer gère l'animation           //
-            //       Il faudra remplacer les images et faire en sorte que se sont les //
-            //       données CAN qui viennent modifier le Ghost Label, et non pas     //
-            //       le timer 1                                                       //
-            ////////////////////////////////////////////////////////////////////////////
-            int counter = Convert.ToInt32(GhostLabel.Text); // Lit le ghost label
-            counter++;                                      // et incrémente le counter
-            if (counter == 8) // Counter de 8 positions
-            {
-                counter = 0;
-            }
-
-            GhostLabel.Text = Convert.ToString(counter); // Enregistre la valeur du counter dans le ghost label
-
-            switch (Convert.ToInt32(GhostLabel.Text)) // Switch Case selon la valeur du Ghost Label...
-            { // Les lignes de code qui suivent permettent d'afficher une image à partir du fichier ressource
-                case 0:
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.test;
-                    break;
-
-                case 1:
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.Station3CW;
-                    break;
-
-                case 3:
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.Staion2CW;
-                    break;
-
-                case 4:
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.Station3CCW;
-                    break;
-
-                case 5:
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.Station1CCW;
-                    break;
-
-                case 6:
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.Station2CCW;
-                    break;
-
-                case 7:
-                    pictureBox1.Image = PCANBasicExample.Properties.Resources.OutOfTrack;
-                    break;
-            }
         }
-            #endregion
+
         #endregion
 
         #region Timer de battement du HeartBeat et de gestion de la clock
@@ -1704,6 +1654,7 @@ namespace ICDIBasic
                     Invoke(new SetTextBoxReceiveDeleg(traitementDataReceivedUART1), new object[] { _charRecu });
                     serialPort1.DiscardInBuffer();   // Pas sur que ce soit nécessaire
                     serialPort1.DiscardOutBuffer();  // Pas sur que ce soit nécessaire
+                    UART1DisplayBox.ScrollToCaret();
                 }
                 catch
                 {
@@ -1729,8 +1680,8 @@ namespace ICDIBasic
             {
                 if (GhostLabel2.Text == "0")               // Si c'est le premier heartbeat
                 {
-                    timer2.Start();                          // Start le timer de réception des heartbeat
-                    GhostLabel2.Text = "1";                  // Indique qu'un heartbeat est reçu
+                    timer2.Start();                         // Start le timer de réception des heartbeat
+                    GhostLabel2.Text = "1";                 // Indique qu'un heartbeat est reçu
                 }
 
                 HeartBeatIN.BackColor = Color.Lime;       // Fait clignotter la led du heartbeat reçu
@@ -1770,7 +1721,25 @@ namespace ICDIBasic
         #region Bouton Démarrer le véhicule
         private void button3_Click(object sender, EventArgs e)
         {
-            TxCan2(VEHICULE, DEMARRE);
+          try
+            {
+             TxCan2(VEHICULE, DEMARRE);
+
+             Historique.AppendText("\r\n");
+             Historique.AppendText("\r\n");
+             Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+             Historique.AppendText("\r\n");
+             Historique.AppendText("Séquence de démarrage du véhicule envoyée");   // Enregistre le log de la connexion
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Échec du démarrage du véhicule");   // Enregistre le log de la connexion
+            }
+            
         }
         #endregion
 
@@ -1778,7 +1747,24 @@ namespace ICDIBasic
 
         private void button2_Click(object sender, EventArgs e)
         {
-          TxCan2(VEHICULE, ARRET);
+            try
+            {
+             TxCan2(VEHICULE, ARRET);
+
+             Historique.AppendText("\r\n");
+             Historique.AppendText("\r\n");
+             Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+             Historique.AppendText("\r\n");
+             Historique.AppendText("Séquence d'arrêt du véhicule envoyée");   // Enregistre le log de la connexio
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Échec de la séquence d'arrêt du véhicule");   // Enregistre le log de la connexion
+            }
         }
         #endregion
 
@@ -1791,7 +1777,7 @@ namespace ICDIBasic
             if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK //Si l'user à appuyé sur OK
                 && saveFileDialog1.FileName.Length > 0)
             {
-                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n"); 
                 Historique.AppendText("\r\n");
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
@@ -1839,11 +1825,29 @@ namespace ICDIBasic
         #region Bouton Synchroniser les horloges
         private void button1_Click(object sender, EventArgs e) // Lorsque l'utilisateur veut synchroniser toutes les horloges
         {
-            TxCan2(HORLOGE, 0);
+            try
+            {
+             TxCan2(HORLOGE, 0);
+
+             Historique.AppendText("\r\n");
+             Historique.AppendText("\r\n");
+             Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+             Historique.AppendText("\r\n");
+             Historique.AppendText("Séquence de sychronisation temporelle envoyée");   // Enregistre le log de la connexion
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Échec de la séquence de sychronisation temporelle (try catch error)");   // Enregistre le log de la connexion
+            }
+            
         }
         #endregion
 
-        #region Bouton de test de réception CAN de l'onglet de Debug (à utiliser avec le .HEX d'hicham)
+        #region Bouton de test de réception CAN de l'onglet de Debug (à utiliser avec le .HEX d'hicham SEULEMENT)
         private void button1_Click_1(object sender, EventArgs e)
         {
             ListViewItem lviCurrentItem;
@@ -1902,7 +1906,10 @@ namespace ICDIBasic
                         lviCurrentItem.SubItems[3].Text = msgStatus.DataString;
                         lviCurrentItem.SubItems[4].Text = msgStatus.Count.ToString();
                         lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
+
                         GhostLabelDeRéception.Text = lviCurrentItem.SubItems[3].Text; // Met le string lu dans un GHOST LABEL
+                        RangedTrame.Text = GhostLabelDeRéception.Text.Remove(GhostLabelDeRéception.Text.Length - 6); // Enlève la timestamp
+                        GhostLabelDeRéception.Text = GhostLabelDeRéception.Text.Remove(GhostLabelDeRéception.Text.Length - 4); // Enlève la valeur variable et la timestamp
                     }
                 }
             }
@@ -1922,7 +1929,7 @@ namespace ICDIBasic
             // Note: Ne pas oublier de mettre un espace entre le dernier         //
             //       caractère et le guillemet fermant                           //
             ///////////////////////////////////////////////////////////////////////
-            if (GhostLabelDeRéception.Text == "30 31 30 30 46 46 ") // Lorsque le véhicule est arrêté
+            if (GhostLabelDeRéception.Text == "01 00") // Lorsque le véhicule est arrêté
             {
                 lblEtatVehicule.Text = "Arrêté";
                 Historique.AppendText("\r\n");
@@ -1931,7 +1938,7 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Le véhicule est arrêté");
             }
-            if (GhostLabelDeRéception.Text == "30 31 30 31 46 46 ") // Lorsque le véhicule est en marche
+            if (GhostLabelDeRéception.Text == "01 01") // Lorsque le véhicule est en marche
             {
                 lblEtatVehicule.Text = "En marche";
                 Historique.AppendText("\r\n");
@@ -1940,7 +1947,7 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Le véhicule est en marche");
             }
-            if (GhostLabelDeRéception.Text == "30 31 30 32 46 46 ") // Lorsque le véhicule est hors circuit
+            if (GhostLabelDeRéception.Text == "01 02") // Lorsque le véhicule est hors circuit
             {
                 lblEtatVehicule.Text = "En marche";
                 Historique.AppendText("\r\n");
@@ -1948,18 +1955,19 @@ namespace ICDIBasic
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Le véhicule est Hors circuit");
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.hm;
             }
-            if (GhostLabelDeRéception.Text == "30 33 36 34 46 46 ") // Indice de battrie
+            if (GhostLabelDeRéception.Text == "03") // Indice de battrie
             {
                 lblBattryLevel.Text = "100 %";
                 Historique.AppendText("\r\n");
                 Historique.AppendText("\r\n");
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
-                Historique.AppendText("Battrie à ");
+                Historique.AppendText("Batterie à ");
                 Historique.AppendText(lblBattryLevel.Text);
             }
-            if (GhostLabelDeRéception.Text == "30 32 36 34 46 46 ") // Indice de vitesse
+            if (GhostLabelDeRéception.Text == "02") // Indice de vitesse
             {
                 lblSpeed.Text = "MAX";
                 Historique.AppendText("\r\n");
@@ -1969,7 +1977,7 @@ namespace ICDIBasic
                 Historique.AppendText("La vitesse est");
                 Historique.AppendText(lblSpeed.Text);
             }
-            if (GhostLabelDeRéception.Text == "30 34 30 30 46 46 ") // Lorsque le bloc est métallique
+            if (GhostLabelDeRéception.Text == "04 00") // Lorsque le bloc est métallique
             {
                 lblBlocColor.Text = "Métalique";
                 lblDirection.Text = "Horaire";  // *** Déclanche l'événement textchanged du label lblDirection***
@@ -1981,7 +1989,7 @@ namespace ICDIBasic
                 pictureBox3.Image = PCANBasicExample.Properties.Resources.metal;
                 label32.Text = "Metal";
             }
-            if (GhostLabelDeRéception.Text == "30 34 30 31 46 46 ") // Lorsque le bloc est noire
+            if (GhostLabelDeRéception.Text == "04 01") // Lorsque le bloc est noir
             {
                 lblBlocColor.Text = "Noir";
                 Historique.AppendText("\r\n");
@@ -1992,7 +2000,7 @@ namespace ICDIBasic
                 pictureBox3.Image = PCANBasicExample.Properties.Resources.noir;
                 label32.Text = "Noir";
             }
-            if (GhostLabelDeRéception.Text == "30 34 30 32 46 46 ") // Lorsque le bloc est orange
+            if (GhostLabelDeRéception.Text == "04 02") // Lorsque le bloc est orange
             {
                 lblBlocColor.Text = "Orange";
                 lblDirection.Text = "Antihoraire";  // Déclanche l'événement textchanged du label lblDirection
@@ -2004,7 +2012,7 @@ namespace ICDIBasic
                 pictureBox3.Image = PCANBasicExample.Properties.Resources.orange;
                 label32.Text = "Orange";
             }
-            if (GhostLabelDeRéception.Text == "30 35 36 34 46 46 ") // Lorsque le bloc est pesé
+            if (GhostLabelDeRéception.Text == "05") // Lorsque le bloc est pesé
             {
                 LblPoidBloc.Text = "Lourd";
                 Historique.AppendText("\r\n");
@@ -2013,7 +2021,7 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Le bloc est lourd");
             }
-            if (GhostLabelDeRéception.Text == "30 37 30 30 46 46 ") // Lorsque le véhicule est à la station de pesée
+            if (GhostLabelDeRéception.Text == "07 00") // Lorsque le véhicule est à la station de pesée
             {
                 lblStation.Text = "Station 1, la pesée";
                 Historique.AppendText("\r\n");
@@ -2021,8 +2029,19 @@ namespace ICDIBasic
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Le véhicule est à la station de pesée");
+
+                if (lblDirection.Text == "Horaire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsHoraire;
+                }
+
+                if (lblDirection.Text == "Antihoraire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsAnti;
+                }
+                
             }
-            if (GhostLabelDeRéception.Text == "30 37 30 31 46 46 ") //Le véhicule est à la table FESTO
+            if (GhostLabelDeRéception.Text == "07 01") //Le véhicule est à la table FESTO
             {
                 lblStation.Text = "Table FESTO";
                 Historique.AppendText("\r\n");
@@ -2030,8 +2049,18 @@ namespace ICDIBasic
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Le véhicule est à la table FESTO");
+
+                if (lblDirection.Text == "Horaire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoHoraire;
+                }
+
+                if (lblDirection.Text == "Antihoraire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoAnti;
+                }
             }
-            if (GhostLabelDeRéception.Text == "30 37 30 32 46 46 ") // Le véhicule est à la station 3
+            if (GhostLabelDeRéception.Text == "07 02") // Le véhicule est à la station 3
             {
                 lblStation.Text = "Station 3";
                 Historique.AppendText("\r\n");
@@ -2040,6 +2069,16 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Le véhicule est à la station 3");
             }
+
+            if (GhostLabelDeRéception.Text == "C0 00") // Le véhicule est à la station 3
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Transfert de l'historique du SOC vars le PC");
+            }
+
         }
         #endregion
 
@@ -2101,6 +2140,7 @@ namespace ICDIBasic
                     Historique.AppendText("\r\n");
                     Historique.AppendText("Error sending data on CAN bus (try catch error)");   // Enregistre le log de la connexion
                 }
+                
             }
 
             if (lblDirection.Text == "Antihoraire") // Si le text du label exige un sens antihoraire
@@ -2160,21 +2200,25 @@ namespace ICDIBasic
         }
         #endregion
 
+        #region Envoyer des données sur le bus CAN
         void TxCan2(byte objet, byte cmd)
         {
+            try
+            {
             TPCANMsg CANMsg;
             TPCANStatus stsResult;
 
             CANMsg = new TPCANMsg();
             CANMsg.DATA = new byte[8];
 
-            CANMsg.ID = 006; // 006 c'est pour faire des tests avec le fichier .HEX d'Hicham. Mettre 004 pour la version finale
+            CANMsg.ID = 003; // 006 c'est pour faire des tests avec le fichier .HEX d'Hicham. Mettre 004 pour la version finale
             CANMsg.LEN = 7;
             CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+
             for (int i = 0; i < CANMsg.LEN; i++) // Incrémenteur de longueur de message
             {
                 if (i == 0) { CANMsg.DATA[0] = objet; } // Note: Ce programme en C# envoie en base 10
-                if (i == 1) { CANMsg.DATA[1] = cmd; } // 0x30 (en ascii) = caractère '0'
+                if (i == 1) { CANMsg.DATA[1] = cmd; }   // 0x30 (en ascii) = caractère '0'
                 if (i == 2) { CANMsg.DATA[2] = Convert.ToByte(DateTime.Now.ToString("HH")); } // 0 (en base 10) = caractère ascii '0' (0x30)
                 if (i == 3) { CANMsg.DATA[3] = Convert.ToByte(DateTime.Now.ToString("mm")); }
                 if (i == 4) { CANMsg.DATA[4] = Convert.ToByte(DateTime.Now.ToString("ss")); }
@@ -2183,24 +2227,31 @@ namespace ICDIBasic
 
             if (stsResult == TPCANStatus.PCAN_ERROR_OK) // Si l'envoie est réussi
             {
-                Historique.AppendText("\r\n");
-                Historique.AppendText("\r\n");
-                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                Historique.AppendText("\r\n");
-                Historique.AppendText("START command successfully sent");   // Enregistre le log de la connexion
+
             }
 
             else // Si l'envoi à échoué
+            {
+
+            }
+
+            }
+            catch
             {
                 Historique.AppendText("\r\n");
                 Historique.AppendText("\r\n");
                 Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 Historique.AppendText("\r\n");
-                Historique.AppendText("Error sending START command");   // Enregistre le log de la connexion
+                Historique.AppendText("Erreur de Try Catch d'envoie sur le bus CAN");   // Enregistre le log de la connexion
             }
         }
+        #endregion
+
+        #region envoi de PING
         void PingSend()
         {
+            try
+            {
             Ping pingSender = new Ping();
             PingOptions options = new PingOptions();
 
@@ -2220,6 +2271,17 @@ namespace ICDIBasic
                 label20.Text = "OK";
             }
             else label20.Text = "Fail";
+            }
+
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Erreur de Try Catch lors de l'envoie du Heartbeat sur TCP/IP");   // Enregistre le log de la connexion
+            }
         }
+        #endregion
     }
 }

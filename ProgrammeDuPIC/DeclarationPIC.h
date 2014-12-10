@@ -1,7 +1,5 @@
 //******************************************************************************
 // Declaration generales pour le 16F88
-//
-//
 //******************************************************************************
 #ifndef DECLARATIONPICH
  #define DECLARATIONPICH
@@ -74,8 +72,6 @@ typedef unsigned int UI;
 typedef char C;
 typedef unsigned short int US;
 
-
-
 struct STHorloge
  {
     UC ucHeure;
@@ -84,3 +80,4 @@ struct STHorloge
  };
 
 #endif
+//LinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxLinuxTUX

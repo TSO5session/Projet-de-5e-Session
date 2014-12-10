@@ -9,24 +9,41 @@ echo 0 > /sys/class/misc/beep/val          #
 /usr/bin/ip link set can0 type can bitrate 125000 triple-sampling on #
 /usr/bin/ip link set can0 up                                         #
 #------------------#-------------------------------------------------#
-date 042411332014  # Initialise la date au jeudi 4 décembre 2014     #
+echo "******************************"
+echo "Aujourd'hui on est le"
+date 120811252014  # Initialise la date au jeudi 4 décembre 2014     # mmjjhhmmyyyy
+echo "******************************"
+echo " "
 #--------------------------------------------------------------------# Note: sur notre SOC8200, la pile interne de la clock est more
 #-------------# Démarrage de scripts externes asychrones
 ./portserie & # Démarrage du port série
   PIDRS232=$! # Le PID du script portserie est mis dans la variable PIDRS232
 ./RxCan &     # Démarrage du bus  CAN
-  PIDCAN=$!   # Le PID du script RxCAN est mis dans la variable PIDRS232
+  PIDRxCAN=$! # Le PID du script RxCAN est mis dans la variable PIDRxCAN
+#./can &       
+#  PIDCAN=$!   # Le PID du script sniffer est mis dans la variable PIDCAN
 #-------------#
 while true
 do
+#./can #-------------------------------------------------# Exécution du script sniffer
+/usr/bin/cansend can0 001#010177  # En marche "simulation"
+/usr/bin/cansend can0 001#024447  # En vitesse "simulation"
+/usr/bin/cansend can0 001#0399F7  # Batterie "simulation"
+/usr/bin/cansend can0 001#0401AA  # Bloc orange "simulation"
+/usr/bin/cansend can0 001#05113A  # Poids "simulation"
+/usr/bin/cansend can0 001#0701EE  # Station 1 "simulation"
+/usr/bin/cansend can0 001#07023E  # Station 1 "simulation"
+/usr/bin/cansend can0 001#C00077  # En marche "simulation"
+sleep 3
   #-----------------------------------------------------# Lecture "asychrone" du clavier via passe passe du coyote
-  read -t 1 output                                      # Lit le clavier avec un timout
+#  read -t 1 output                                      # Lit le clavier avec un timout
   #-----------------------------------------------------#
-  if   [ "$output" = "A" ] || [ "$output" = "a" ]; then # Si l'utilisateur entre a ou A
-       echo "Actif"         | tee mode                  # Écrit Actif dans un fichier
-  elif [ "$output" = "P" ] || [ "$output" = "p" ]; then # Si l'utilisateur entre p ou P
-       echo "Passif"        | tee mode                  # Écrit Passif dans un fichier#  
-  fi #--------------------------------------------------#
+#  if   [ "$output" = "A" ] || [ "$output" = "a" ]; then # Si l'utilisateur entre a ou A
+ #      echo "Actif"         | tee mode                 # Écrit Actif dans un fichier
+#        echo "Actif" > mode                             # Écrit Passif dans un fichier#
+#  elif [ "$output" = "P" ] || [ "$output" = "p" ]; then # Si l'utilisateur entre p ou P
+#       echo "Passif" > mode                             # Écrit Passif dans un fichier#  
+#  fi #--------------------------------------------------#
 maVar="$(cat mode)"                                     # Met le contenu du fichier mode dans maVar
 #----------------------------------------------# Gestion du mode passif
 if [ "$maVar" = "Passif" ]; then               #

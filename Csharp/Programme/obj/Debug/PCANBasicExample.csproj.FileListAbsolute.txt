@@ -51,10 +51,10 @@ C:\Users\1240249\Desktop\Hicham\obj\Debug\ICDIBasic.Form1.resources
 C:\Users\1240249\Desktop\Hicham\obj\Debug\PCANBasicExample.Properties.Resources.resources
 C:\Users\1240249\Desktop\Hicham\obj\Debug\PCANBasicExample.csproj.GenerateResource.Cache
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\bin\Debug\CAN Opener.exe.config
-C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\CAN Opener.exe
-C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\CAN Opener.pdb
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\bin\Debug\CAN Opener.exe
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\bin\Debug\CAN Opener.pdb
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\ICDIBasic.Form1.resources
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\PCANBasicExample.Properties.Resources.resources
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\PCANBasicExample.csproj.GenerateResource.Cache
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\CAN Opener.exe
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\CAN Opener.pdb
