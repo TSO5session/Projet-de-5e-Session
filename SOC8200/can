@@ -52,6 +52,9 @@ if [ "$var" == "  can0    3  [7] 01 02" ]; then
    echo " "
    echo "*********************************"
    echo " Le bolide est hors circuit | TimeStamp = $TimeStamp"
+   if [ "$(cat mode)" == "Actif" ]; then
+      /usr/bin/cansend can0 001#0001FFFF
+   fi
 fi
 ############LECTURE DE VITESSE
 if [ "$Range" == "  can0    3  [7] 02" ]; then
@@ -70,18 +73,28 @@ if [ "$var" == "  can0    3  [7] 04 00" ]; then
    echo " "
    echo "*********************************"
    echo " Le bloc est en metal | TimeStamp = $TimeStamp"
+   echo " Le bolide est hors circuit | TimeStamp = $TimeStamp"
+   if [ "$(cat mode)" == "Actif" ]; then
+      /usr/bin/cansend can0 001#0800FFFF
+   fi
 fi
 ############BLOC ORANGE
 if [ "$var" == "  can0    3  [7] 04 01" ]; then
    echo " "
    echo "*********************************"
    echo " Le bloc est orange | TimeStamp = $TimeStamp"
+      if [ "$(cat mode)" == "Actif" ]; then
+      /usr/bin/cansend can0 001#0801FFFF
+   fi
 fi
 ############BLOC NOIR
 if [ "$var" == "  can0    3  [7] 04 02" ]; then
    echo " "
    echo "*********************************"
    echo " Le bloc est noir | TimeStamp = $TimeStamp"
+      if [ "$(cat mode)" == "Actif" ]; then
+      /usr/bin/cansend can0 001#0001FFFF
+   fi
 fi
 ############POIDS DU BLOC
 if [ "$Range" == "  can0    3  [7] 05" ]; then
@@ -140,4 +153,10 @@ if [ "$Range" == "  can0    3  [7] 06" ]; then
    echo " "
    echo " Nous sommes le"
    date
+fi
+############ACTIVE LA TABLE FESTO
+if [ "$var" == "  can0    3  [7] 09 00" ]; then
+   echo " "
+   echo "*********************************"
+   echo " Démarrage de la table FESTO | TimeStamp = $TimeStamp"
 fi

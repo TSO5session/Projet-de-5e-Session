@@ -126,6 +126,7 @@
   <ItemGroup>
     <Content Include="10422.ico" />
     <Content Include="Alecive-Flatwoken-Apps-Audio-Card.ico" />
+    <None Include="Resources\trames2.PNG" />
     <None Include="Resources\hm2.gif" />
     <None Include="Resources\poidsHoraire.png" />
     <None Include="Resources\poidsAnti.png" />

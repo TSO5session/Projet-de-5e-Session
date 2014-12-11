@@ -1,3 +1,5 @@
+# fichier de test, ne pas utiliser
+
 LastCommand="$(tail -1 histocan)"                  # Lit la dernière trame CAN reçue
 echo "$LastCommand" > "LastCAN"                    # Met la dernière trame reçue dans le fichier LastCAN
 var="$(grep -o '^......................' LastCAN)" # Met la partie invariable (sans timestamp) de la trame dans le fichier LastCAN

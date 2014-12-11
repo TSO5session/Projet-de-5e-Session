@@ -20,7 +20,7 @@ namespace ICDIBasic
 {
     public partial class Form1 : Form
     {
-        #region CONSTANTE
+        #region CONSTANTES
         const byte VEHICULE      = 0;
           const byte ARRET       = 1;
           const byte DEMARRE     = 0;
@@ -55,6 +55,9 @@ namespace ICDIBasic
            const byte ANTIHORAIRE = 1;
 
         const byte HORLOGE      = 06;
+
+        const byte FESTO_START = 9;
+        const byte FESTO = 0;
         #endregion
 
         #region Unmodified RAW CAN STUFF
@@ -386,7 +389,7 @@ namespace ICDIBasic
 
             // Baudrates 
             //
-            cbbBaudrates.SelectedIndex = 4; // 125 K
+            cbbBaudrates.SelectedIndex = 3; // 250 K
 
             // Hardware Type for no plugAndplay hardware
             //
@@ -2384,6 +2387,11 @@ namespace ICDIBasic
                 Historique.AppendText("\r\n");
                 Historique.AppendText("Erreur de Try Catch d'envoie sur le bus CAN");   // Enregistre le log de la connexion
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            TxCan2(FESTO_START, FESTO);
         }
     }
 }

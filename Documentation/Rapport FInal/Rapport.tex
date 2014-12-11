@@ -36,7 +36,7 @@
 Vincent Chouinard\\
 Hicham Safoine\\
 Gabriel Fortin-Bélanger\\ 
-Louis-Nomand Ang-Houle\\
+Louis-Nromand Ang-Houle\\
 
 
 
@@ -100,7 +100,19 @@ L'usine à gaz, et le gaz, c'est de l'air!
 \begin{spacing}{1.5}
 
 \section{Présentation du projet}
-Le projet de la cinquième session consiste à réaliser (mettre un cours extrait des consignes)
+\begin{center}
+\textbf{Interface utilisateur contrôlant une station de chargement de blocs, une station de communication, un véhicule de livraison et une station d'acquisition.}
+\end{center}
+
+Nous devons réaliser l'automatisation d'un système industriel constitué d'une station de communication, d'une station de chargement, d'un véhicule de livraison, et d'un système embarqué, le tout, contrôlé à l'aide d'une interface utilisateur réalisée sur un ordinateur de type PC. \\
+
+\bigskip
+
+\begin{flushleft}
+\textbf{Principales composantes:}
+\end{flushleft}
+
+
 \begin{itemize}
 \item[$\Rightarrow$] Le Bolide
 \item[$\Rightarrow$] Carte Dallas DS89C450
@@ -114,8 +126,6 @@ Le projet de la cinquième session consiste à réaliser (mettre un cours extrai
 \item[$\Rightarrow$] Quatre moteurs et autant de pneus
 \end{itemize}
 
-\subsection{Explication du projet}
-
 \subsection{Schéma bloc d'ensemble du système}
 
 \begin{figure}[hbtp]
@@ -124,46 +134,9 @@ Le projet de la cinquième session consiste à réaliser (mettre un cours extrai
 \fbox{\includegraphics[scale=0.45]{Figures/SchemaBloc/1.png}}
 \end{figure}
 \vfill
-\pagebreak 
 
-\begin{figure}[hbtp]
-\subsubsection{Schéma bloc du bolide}
-\caption{Schéma bloc du Bolide}
-\centering
-\fbox{\includegraphics[scale=1.2]{Figures/SchemaBloc/bolide.png}}
-\end{figure}
+\include{TeX/SchemaBloc}
 
-\vfill
-\pagebreak
-
-
-\begin{figure}[hbtp]
-\subsubsection{Schéma bloc de la table FESTO}
-\caption{Schéma bloc de la table FESTO}
-\centering
-\fbox{\includegraphics[scale=0.88]{Figures/SchemaBloc/festo.png}}
-\end{figure}
-
-\vfill
-\pagebreak
-
-
-\begin{figure}[hbtp]
-\subsubsection{Schéma bloc du SOC8200}
-\caption{Schéma bloc du SOC8200}
-\centering
-\fbox{\includegraphics[scale=1]{Figures/SchemaBloc/soc8200.png}}
-\end{figure}
-
-\vfill
-\pagebreak
-
-\subsubsection{Schéma bloc de la station de pesée}
-
-\vfill
-\pagebreak
-
-\subsubsection{de la station no.1}
 
 \subsection{Liste des logiciels}
 \begin{flushleft}
@@ -183,6 +156,11 @@ Le projet de la cinquième session consiste à réaliser (mettre un cours extrai
 \item[•]Terminator
 \item[•]CAPS
 \item[•]tinyBootloader
+\end{itemize}
+
+\textbf{Schémas électriques}
+\begin{itemize}
+\item[•]OrCAD 16.2
 \end{itemize}
 
 \textbf{Gestionnaires de projet}
@@ -205,31 +183,33 @@ Le projet de la cinquième session consiste à réaliser (mettre un cours extrai
 \item[•]BowPad
 \item[•]medit 1.2.0
 \end{itemize}
-\textbf{Schémas électriques}
-
-\begin{itemize}
-\item[•]OrCAD 16.2
-\end{itemize}
-
-\bigskip
 
 \textbf{Systèmes d'exploitation}
 \begin{itemize}
 \item[•]Windows 7 SP1
 \item[•]Windows 8.1
 \item[•]Windows XP SP3
-\item[•]CentOS
+
 \item[•]Arch Linux
+\end{itemize}
+
+\textbf{Éditeurs de texte}
+\begin{itemize}
+\item[•]Notepad++
+\item[•]BowPad
+\item[•]medit 1.2.0
 \end{itemize}
 
 \textbf{Autres}
 \begin{itemize}
 \item[•]VMWare Workstation 10
 \item[•]TeXmaker 4.3
+\item[•]Xctu for Xbee
 \item[•]Dukto R6
 \item[•]Dia
 \item[•]Microsoft Visio 2013
 \item[•]Festo configuration tool
+\item[•]Saleae Logic Analiser
 \item[•]\LaTeX (avec plug-in Doxygen)
 \end{itemize}
 
@@ -239,44 +219,51 @@ Le projet de la cinquième session consiste à réaliser (mettre un cours extrai
 \HRule
 \end{flushleft}
 
-\pagebreak
-\subsection{Liste des trames}
-\end{spacing}
-f
-\begin{spacing}{1.5}
-
+Mettre des photos ici...
 
 \pagebreak
 
-\section{Le matériel}
+\section{Fonctionnement matériel}
 
 \subsection{Bloc 1}
-D'un pont de vue matériel, le bloc 1 est le plus simple, car il est composé d'un ordinateur Windows muni d'une carte PCI vers CAN et d'une prise RS232 et d'une prise Ethernet. Il n'y a rien à faire, mise à part brancher les bons câbles aux bons endroits. Son rôle est de contrôler et diriger toute l'opération et de veiller au bon fonctionnement de chaque composante à l'aide d'une application en Csharp. Le bloc 1 est le cerveau de l'usine.
+D'un pont de vue matériel, le bloc 1 est le plus simple, car il est composé d'un ordinateur Windows muni d'une carte PCI vers CAN et d'une prise RS232 et d'une prise Ethernet. Il n'y a rien à faire, mise à part brancher les bons câbles aux bons endroits. Son rôle est de contrôler et diriger toute l'opération et de veiller au bon fonctionnement de chaque composante à l'aide d'une application en C\#. Le bloc 1 est le cerveau de l'usine.
 
 \subsection{Bloc 2}
-Le bloc 2 est composé du bolide et de la station no.1. Cette dernière, dont le cerveau est une carte uPSD, joue le rôle de centralisateur CAN. En effet, cette station reçoit des consignes\footnote{Sous forme de trames} en provenance du PC, consignes qu'elle s'empresse d'expédier aux bons endroits via Xbee. De plus, cette station reçoit des informations de la station de pesée\footnote{sous forme de trames CAN}, de la table FESTO\footnote{Via Xbee} et du bolide\footnote{Idem}. Ces informations sont systématiquement retransmises au PC via le bus CAN.
+Le bloc 2 est composé du bolide et de la station no.1. Cette dernière, dont le cerveau est une carte uPSD, joue le rôle de centralisateur CAN. En effet, cette station reçoit des consignes\footnote{Sous forme de trames} en provenance du PC, consignes qu'elle s'empresse d'expédier aux bons endroits via Xbee. De plus, cette station reçoit des informations de la station de pesée\footnote{sous forme de trames CAN}, de la table FESTO\footnote{Via Xbee} et du bolide\footnote{Idem}. Ces informations sont systématiquement retransmises au PC via le bus CAN. Quant au bolide, il doit pouvoir fonctionner aussi bien en SPI qu'en I2C, il doit s'arrêter aux bon endroits, choisir son sens de rotation et tenir le système informé de ses moindres faits et gestes.
 
 \subsection{Bloc 3}
-Le bloc 3 est composé d'une carte PIC (mettre modèle) et d'une balance (mettre modèle.) Comme son nom l'indique, la station de pesée pèse le bloc et envoie l'information (le poids) au PC et au SOC8200 via le bus CAN. La carte PIC fait office de convertisseur CAN vers RS232.
+Le Bloc 3 est composé de la table FESTO (incluant toutes ses pompes et ses capteurs) et d'une carte uPSD. Sur la carte uPSD est branché une carte connecteur PCF8570 que nous avons réalisé avec OrCAD, ainsi qu'une carte connecteur 5-24 volts et une carte d'extension avec convertisseurs DAC ADC. De plus, un Xbee est connecté au uPSD afin de relier ce dernier (et la table FESTO) au reste du montage. C'est cette station qui gère les opérations de la table FESTO, de la lecture des capteurs à l'activation des pompes en passant par la gestion du moteur pas à pas.
 
 \subsection{Bloc 4}
-Le bloc 4 est composé d'un système embarqué Linux basé sur le SOC8200. Son rôle principal est d'agir comme sniffeur d'information et d'afficher sur son écran toutes les données qui transitent sur le bus CAN. Toutefois, ce dernier est en mesure de détecter une défaillance du PC via un gestionnaire de HeartBeat et de prendre la relève en tant que cerveau de l'opération. Le SOC8200 agit comme vice-président du bus CAN.
+Le bloc 4 est composé d'un système embarqué Linux basé sur le SOC8200. Son rôle principal est d'agir comme sniffeur d'informations et d'afficher sur son écran toutes les données qui transitent sur le bus CAN. Toutefois, ce dernier est en mesure de détecter une défaillance du PC, via un gestionnaire de HeartBeat, et de prendre la relève en tant que cerveau de l'opération. Le SOC8200 agit comme vice-président du bus CAN. De plus, le bloc 4 comporte une carte PIC (mettre modèle) et d'une balance (mettre modèle.) La balance pèse le poids de la cargaison et envoie l'information en RS232 à la carte PIC qui se charge de convertir la donnée au format CAN avant de l'expédier au PC.
 
-\subsection{Explication des types de liens}
+\vfill
+\pagebreak
+\section{Explication des liens de communication entre les blocs}
 
-\subsubsection{RS232}
-Un lien RS232 9600 Bauds est établi entre l'ordinateur et le SOC8200. Ce lien sert à l'envoi et à la réception de HeartBeat, afin que le SOC8200 ou l'ordinateur soit informé de toute défaillance de l'autre.
+\subsection{RS232}
+Un lien RS232 de 9600 bauds est établi entre l'ordinateur et le SOC8200. Ce lien sert à l'envoi et à la réception d'un HeartBeat, afin que le SOC8200 ou l'ordinateur soit informé de toute défaillance de l'autre. Un autre lien RS232, à XYZ bauds cette foi, relie la car PIC-Machin à la balance. Ainsi, le PIC est informé de tout ce qui est pesé sur la balance.
 
-\subsubsection{Xbee}
-Lorsque les modules Xbee sont adéquatement configurés, ils font office de remplacement au câble RS232. En effet, nos Xbee discutent entre eux à l'aide du protocole de communication RS232 à 9600 bauds.  
+\subsection{Xbee}
+Trois Xbee sont présents sur le système, un sur le bolide, un autre sur la table FESTO (Bloc 3) et le dernier sur la carte uPSD du Bloc 2. Dès que l'un des Xbee envoie une information, les deux autres la reçoivent systématiquement.  La station du bloc 2 fait office de centralisateur en réalisant deux actions:
+\begin{enumerate}
+\item[1.]Transformer les données Xbee du bolide et de la table FESTO en trame CAN à destination du PC
+\item[2.]Transformer les directives CAN du PC en directives Xbee intelligibles pour le bolide et la table FESTO.
+\end{enumerate}
 
-\subsection{Explication des trames}
+\subsection{CAN}
+à écrire
 
-\subsubsection{RS-232}
-Le protocole RS-232 sert à envoyer et à recevoir des HeartBeat. Le PC et le SOC 8200 s'envoient tous deux un HeartBeat par seconde à 9600 bauds. Un HeartBeat, c'est simplement le mot "Allo". Le PC et le SOC2800 "écoutent" les HeartBeats, et si ces derniers ne sont pas entendus, chaque dispositif tient pour acquis que l'autre est hors service et prend la relève de la gestion du bus CAN.\pagebreak
+\pagebreak
+\section{Les trames expliquées en détail}
 
-\subsubsection{CAN}
-Chaque composante matérielle, du Bolide au PC, dispose d'un identifiant CAN unique allant de 000 à 005. Chaque fonctionnalité dispose d'un code d'identification suivi de deux octets de données à transmettre.
+\subsection{RS232}
+Le protocole RS232 sert à envoyer et à recevoir des HeartBeat. Le PC et le SOC 8200 s'envoient tous deux un HeartBeat par seconde, à 9600 bauds. Un HeartBeat, c'est simplement le mot "Allo". Le PC et le SOC2800 "écoutent" tous deux les HeartBeats, et si ces derniers ne leur parviennent pas, chaque dispositif tient pour acquis que l'autre est hors service et prend la relève de la gestion du bus CAN.
+
+\subsection{CAN}
+Chaque composante matérielle, du Bolide au PC, dispose d'un identifiant CAN unique allant de 000 à 005. Chaque fonctionnalité dispose d'un code d'identification suivi de deux octets de données à transmettre et de trois octets de TimeStamp. Seule exception à ce système, la pesée du bloc, qui ne dispose d'aucun octet d'identification, et c'est pourquoi nous filtrons l'ID émetteur afin de détecter l'ID matériel de la station de pesée (005). Quant à sa trame de 5 octets, elle se lit comme suit: \begin{center}
+\textsc{dizaine unité point dixième centième}.
+\end{center}
 
 \begin{table}[!ht]
 \caption{Index des identifiants matériel CAN}
@@ -296,127 +283,89 @@ Station 2  & 003 \\
 \hline
 Véhicule & 004 \\
 \hline 
-Station de pesés  & 005 \\ 
+Station de pesée  & 005 \\ 
 \hline 
 \end{tabular} 
 \label{tab:testtab1}
 \end{table} 
 
-
-\begin{table}[!ht]
-\caption{Index des trames CAN}
-\medskip
-\centering
-\begin{tabular}{|l|c|l|}
-\hline 
-\textbf{Fonctionnalité} & \textbf{Identifiant} & \textbf{Données} \\
-\hline 
-Démarre le véhcule & 0x00 & 0x00 \\ 
-\hline 
-Arrête le véhicule & 0x00 & 0x01 \\ 
-\hline 
-Le véhicule est arrêté & 0x01 & 0x00 \\ 
-\hline 
-Le véhicule est en marche& 0x01 & 0x01 \\ 
-\hline 
-Le véhicule est hors circuit & 0x01 & 0x02 \\ 
-\hline 
-Vitesse (0-100) & 0x02 & 0x00 à 0xFF \\ 
-\hline 
-Battrie & 0x03 & 0x00 à 0xFF \\ 
-\hline 
-Couleur du bloc & 0x04 & 0x00 à 0x02 \\ 
-\hline 
-Poids du bloc & 0x05 & 0x00 à 0xFF \\ 
-\hline 
-Envoyer l'heure & 0x06 & à déterminer \\ 
-\hline 
-No. de la station & 0x07 & 0x00 à 0x02 \\ 
-\hline 
-Demande de l'historique & 0xC0 & 0x00 \\ 
-\hline 
-Direction horaire et antihoraire & 0x08 & 0x00 à 0x01 \\
-\hline
-\end{tabular} 
-\label{tab:testtab1}
-\end{table}
-
-\begin{table}[!ht]
-\caption{Index des communications CAN}
-\medskip
-\centering
-\begin{tabular}{|l|l|c|l|c|l|c|}
-\hline 
-\textbf{Émetteur} & \textbf{Action} & \textbf{ID receveur} & \textbf{Donnée envoyée} & \textbf{Récepteur} & \textbf{Erreur}\\ 
-\hline 
-Ordinateur & Démarrer le véhicule & 004 & 00 00  & Véhicule &  F1\\ 
-\hline 
-Ordinateur & Arrêter le véhicule & 004 & 00 01  & Véhicule &  F2\\ 
-\hline 
-Véhicule & Dit: je suis arrêté & 000 & 01 00   & Ordinateur &  F3\\
-\hline 
-Véhicule & Dit: j'avance & 000 & 01 01  & Ordinateur & F4\\  
-\hline 
-Véhicule & Dit: je suis hors circuit & 000 & 01 02  & Ordinateur &  F5\\ 
-\hline 
-Véhicule & Dit sa vitesse & 000 & 02 [00 à 64]  & Ordinateur &  F6\\ 
-\hline 
-Véhicule & Dit le niveau de sa batterie & 000 & 03 [00 à 64]  & Ordinateur &  F7\\ 
-\hline 
-Station 1 & Dit bloc = métal & 000 & 04 00  & Ordinateur &  F8\\ 
-\hline  
-Station 1 & Dit bloc = orange & 000 & 04 01  & Ordinateur &  F9\\
-\hline 
-Station 1 & Dit bloc = noir & 000 & 04 02  & Ordinateur &  FA\\
-\hline 
-Station 1 & Dit le poids du bloc & 000 & 05 [00 à 64]  & Ordinateur &  FB\\ 
-\hline 
-Voiture & Dit qu'elle est à la station 1 & 000 & 07 00  & Ordinateur &  FC\\ 
-\hline 
-Voiture & Dit qu'elle est à la station 2 & 000 & 07 01  & Ordinateur &  FD\\
-\hline 
-Ordinateur & Envoie l'heure & 003 & 06 à déterminer  & Station 1 &  FE\\ 
-\hline 
-Ordinateur & Demande le LOG & 001 & C0 00  & SOC8200 & E0\\ 
-\hline
-Ordinateur & Exige Horaire & 004 & 08 00  & Véhicule & E1\\ 
-\hline
-Ordinateur & Exige Antihoraire & 004 & 08 01  & Véhicule & E2\\ 
-\hline
-\end{tabular} 
-\label{tab:testtab1}
-\end{table}
-
-\pagebreak
-\begin{flushleft}
- Exemples de trames CAN à transmettre au PC.
- \end{flushleft} 
-\end{spacing}
-\begin{lstlisting}
-   CAN.SendToPC("0100FF"); // Arrêté
-   CAN.SendToPC("0101FF"); // En marche
-   CAN.SendToPC("0102FF"); // Hors circuit
-   CAN.SendToPC("02xxFF"); // Vitesse de xx
-   CAN.SendToPC("03xxFF"); // Batterie chargée à xx %
-   CAN.SendToPC("0400FF"); // Bloc métallique
-   CAN.SendToPC("0401FF"); // Bloc noire
-   CAN.SendToPC("0402FF"); // Bloc orange
-   CAN.SendToPC("050064"); // Le bloc est lourd
-   CAN.SendToPC("0700FF"); // Rendu à la station 1
-   CAN.SendToPC("0701FF"); // Rendu à la station 2
-   CAN.SendToPC("0702FF"); // Rendu à la station 3
-\end{lstlisting}
-\begin{spacing}{1.5}
-\pagebreak
-
-\subsubsection{XBEE}
-Trois modules Xbee sont présents sur l'ensemble du projet, soit sur la station no.1 (la carte uPSD), sur la station no.2 (la table FESTO) et la station no.4, c'est-à-dire le bolide. La particularité des Xbee est que lorsqu'ils sont adéquatement configurés, tout ce qu'envoie un Xbee est reçu et lu par tous les autres Xbee à proximité, et c'est pourquoi nous avons défini un système de trames.
-
-Note: mettre image d'un Xbee
-
-\subsection{Liste des pièces}
 \begin{center}
-\HRule
+Note sur les octets:\\
+TS = TimeStamp; HH = heure; MM = minute; SS = seconde; [00-FF]= valeur allant de 0 à 255
+\end{center}
+
+
+\begin{table}[!ht]
+\caption{Liste des trames CAN}
+\medskip
+\centering
+\begin{tabular}{|l|l|l|}
+\hline 
+\textbf{Émetteur} & \textbf{Fonctionnalité} & \textbf{Trame CAN}  \\ 
+\hline 
+Ordinateur & Démarrer le véhicule & 00 00 TS TS TS 00 00  \\ 
+\hline 
+Ordinateur & Arrêter le véhicule & 00 01 TS TS TS 00 00  \\ 
+\hline 
+Véhicule & Dit: je suis arrêté & 01 00 TS TS TS 00 00  \\ 
+\hline 
+Véhicule & Dit: j'avance & 01 01 TS TS TS 00 00 \\ 
+\hline 
+Véhicule & Dit: je suis hors circuit & 01 02 TS TS TS 00 00  \\ 
+\hline 
+Véhicule & Dit: sa vitesse & 02 [00-FF] TS TS TS 00 00 \\ 
+\hline 
+Véhicule & Dit: le niveau de sa batterie & 03 [00-FF] TS TS TS 00 00 \\ 
+\hline 
+Table FESTO & Bloc = métal & 04 00 TS TS TS 00 00  \\ 
+\hline 
+Table FESTO & Bloc = orange & 04 01 TS TS TS 00 00  \\ 
+\hline 
+Table FESTO & Bloc = noir & 04 02 TS TS TS 00 00  \\ 
+\hline 
+Table FESTO & La voiture est à la table FESTO & 07 00 TS TS TS 00 00 \\ 
+\hline 
+Station de pesée & La voiture est à la station de pesée & 07 01 TS TS TS 00 00  \\ 
+\hline 
+Ordinateur & Synchronisation temporelle & 06 00 HH MM SS 00 00  \\ 
+\hline 
+Ordinateur & Demande le log au SOC8200 & 2B 1E TS TS TS 00 00  \\ 
+\hline 
+Ordinateur & Exige le sens horaire & 08 00 TS TS TS 00 00  \\ 
+\hline 
+Ordinateur & Exige le sens anti horaire & 08 01 TS TS TS 00 00  \\ 
+\hline 
+Ordinateur & Active la table FESTO & 09 00 TS TS TS 00 00  \\ 
+\hline 
+\end{tabular} 
+\label{tab:testtab2}
+\end{table} 
+
+\pagebreak
+\begin{center}
+\fbox{\includegraphics[scale=0.2]{Figures/hichie.jpg}} 
+\end{center}
+
+\begin{flushleft}
+\begin{large}
+Bon, \textbf{Hicham}, maintenant que j'ai ton attention, j'aimerais simplement te dire ce qu'il reste à faire:\\
+
+\bigskip
+
+Il faut réaliser un schéma câblage de la station FESTO et du véhicule\\
+Trouver toutes les datasheets et leurs URL\\
+Écrire tes 3 conclusions\\
+Faire le schéma bloc de la station de pesée\\
+\end{large}
+\end{flushleft}
+
+\pagebreak
+
+\section{Liste des pièces}
+\begin{center}
+\HRule \\
+\textbf{Cartes, kits et câbles}
+%\HRule
 \end{center}
 \begin{multicols}{3}
 \begin{itemize}
@@ -437,14 +386,75 @@ Note: mettre image d'un Xbee
 \item[•]Câble DB9
 \item[•]Le Bolide
 \item[•]SaberTooth motor drive 2x5
-\item[•]
+\end{itemize}
+\end{multicols}
+
+
+\begin{center}
+\HRule \\
+\textbf{Composantes, pièces et puces (liste à compléter)}
+\end{center}
+\begin{multicols}{3}
+\begin{itemize}
+\item[•]PCF8574
+\item[•]DAC65574
+\item[•]MCP2515
+\item[•]74HC07
+\item[•]BS250
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
+\item[•]MCP2515
 \end{itemize}
 \end{multicols}
 \begin{center}
 \HRule
 \end{center}
 
+
+
+\subsection{Liens web}
+\end{spacing}
+\begin{flushleft}
+\url{http://datasheets.maximintegrated.com/en/ds/DS89C430-DS89C450.pdf} \\
+\url{http://www.datasheetcatalog.com/datasheets_pdf/U/P/S/D/UPSD3254.shtml} \\
+\url{http://www.datasheetcatalog.com/datasheets_pdf/D/A/C/6/DAC6574.shtml} \\
+\url{http://www.datasheetcatalog.com/datasheets_pdf/L/M/3/9/LM3914.shtml} \\
+\url{http://www.datasheetcatalog.net/datasheets_pdf/P/C/F/8/PCF8574.shtml} \\
+\url{http://www.datasheetcatalog.com/datasheets_pdf/O/P/T/1/OPT101.shtml} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\url{http://stackoverflow.com/} \\
+\end{flushleft}
+\begin{spacing}{1.5}
+
 \include{TeX/Datasheet}
+
+\pagebreak
+\section{Schémas de toutes les cartes et circuits utilisés dans le projet}
+
+\textbf{{\Huge Arrrg, faut-il vraiment mettre tout ça?}}
+
+\pagebreak
+\include{TeX/OrCAD}  
+\include{TeX/OrCADold} 
 
 \section{Interface PC}
 
@@ -454,7 +464,10 @@ Note: mettre image d'un Xbee
 \fbox{\includegraphics[scale=0.68]{Figures/programme.png}}
 \end{figure}
 
-Notre programme, écrit en C\# à l'aide de Visual Studio, peut se connecter au bus CAN via une carte SPI\footnote{Spécifier le fabricant} et au bus RS232 via un câble DB9 ou USB\footnote{S'il y a présence d'un FTDI}. La connexion RS232 sert à l'envoi et à la réception du HeartBeat afin d'informer le SOC8200 si l'ordinateur en venait à connaître une défaillance. De plus, des témoins lumineux s'allument en présence de données transmises et reçues. Le programme peut lire l'heure interne du PC et, par un simple clic sur le bouton « Synchroniser », inscrire son heure de référence sur la station no.1 via le bus CAN.\\
+Notre programme, écrit en C\# à l'aide de Visual Studio, peut se connecter au bus CAN via une carte PCI et au bus RS232 via un câble DB9 ou USB\footnote{S'il y a présence d'un FTDI}. La connexion RS232 sert à l'envoi et à la réception du HeartBeat afin d'informer le SOC8200 si l'ordinateur en venait à connaître une défaillance. De plus, des témoins lumineux s'allument en présence de données transmises et reçues. Le programme peut lire l'heure interne du PC et, par un simple clic sur le bouton « Synchroniser », inscrire son heure de référence sur la station no.1 via le bus CAN. Enfin, toutes les données pertinentes tel que l'historique, la direction, le poid du bloc, etc. sont affichées à l'écran.\\
+
+\bigskip
+ Parler de l'ordre de gestion des tâches...
 \vfill
 \pagebreak
 
@@ -481,25 +494,19 @@ Insérer copié-collé de l'historique ici
 \end{verbatim}
 \begin{spacing}{1.5}
 
-\subsection{Structure du programme}
 
-\subsubsection{Les Ghosts Labels}
-Un ghost label est un label de texte présent sur l'interface, mais définit comme invisible. Il est donc impossible pour l'usager de le voir et d'y accéder. Leurs principales utilités est de faire office de variable globale afin de passer des paramètres entre fonctions et de déclencher des événements systèmes lorsqu'ils sont lus ou modifiés.
-\subsection{Explication des trames}
-
-\subsection{Ordre de gestion des tâches}
-
-
+%\subsection{Les Ghosts Labels}
+%Un ghost label est un label de texte présent sur l'interface, mais définit comme invisible. Il est donc impossible pour l'usager de le voir et d'y accéder. Leurs principales utilités est de faire office de variable globale afin de passer des paramètres entre fonctions et de déclencher des événements systèmes lorsqu'ils sont lus ou modifiés.
 
 
 
 \pagebreak
 \section{Logiciel du SOC8200}
 \subsection{Description du programme}
-D'un commun accord de l'équipe, le programme du SOC2800 est écrit en script Shell. La principale raison de ce choix est Sourcery Codebench lui-même. La gestion des projets avec Sourcery est un cauchemar. Quant à la nécessité de sauvegarder pour compiler et d'utiliser une machine virtuelle, elles ne viennent qu'aggraver la situation. De plus, son gestionnaire de licence\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable et inexcusable sur un système Linux} frustre quiconque souhaite l'utiliser. L'utilisation du script shell est à la fois plus simple et permet de faire plus en moins de temps.
+D'un commun accord de l'équipe, le programme du SOC2800 a été écrit en script Shell. La principale raison de ce choix est Sourcery Codebench lui-même. La gestion des projets avec Sourcery est un cauchemar. Quant à la nécessité de sauvegarder pour compiler et d'utiliser une machine virtuelle, elles ne viennent qu'aggraver la situation. De plus, son gestionnaire de licence\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable et inexcusable sur un système Linux} frustre quiconque souhaite l'utiliser. Quant au script shell, il est à la fois plus simple et permet de faire plus en moins de temps, enfin, je crois.
 
 \subsection{Schéma bloc du script shell}
-De tous les scripts, \textit{Projet.sh} est le maître, et contient l'équivalent du main. Ce fichier initialise le port série, le bus CAN, la lecture et l'envoi des heartbeat en asynchrone, ainsi que la lecture du clavier USB. Le script \textit{Projet.sh} peut aussi prendre la relève du bus CAN si le PC est dans l'incapacité d'assurer ses fonctions. Quant aux autres scripts, soit \textit{connexion.sh}, \textit{RxCan.sh}, \textit{tcp.sh} et \textit{Envoi.sh}, ce ne sont que des fonctionnalités que \textit{Projet.sh} appelle en asynchrone.
+De tous les scripts, \textit{Projet.sh} est le maître, et contient l'équivalent du main. Ce fichier initialise le port série, le bus CAN, la lecture et l'envoi des heartbeat en asynchrone, ainsi que la lecture du clavier USB. Le script \textit{Projet.sh} peut aussi prendre la relève du bus CAN si le PC est dans l'incapacité d'assurer ses fonctions ou si l'utilisateur a appuyé sur la lettre A. Quant aux autres scripts, soit \textit{connexion.sh}, \textit{RxCan.sh}, \textit{tcp.sh}, \textit{can.sh} et \textit{Envoi.sh}, ce ne sont que des fonctionnalités que \textit{Projet.sh} appelle en asynchrone afin de lire et d'écrire sur le port série et sur le bus CAN.
 
 \subsection{Gestion des processus et du temps de CPU}
 Le seul processus synchrone est script principal \textit{Projet.sh}. Tous les scripts appelés par \textit{Projet.sh} ainsi que leurs processus enfants sont exécutés en asynchrone. Lorsqu'un script doit passer un paramètre à un autre script, un fichier est créé (à l'aide de la commande echo ou cat) afin de contenir le paramètre en question. Les processus impliqués se contentent de lire des fichiers.
@@ -512,14 +519,9 @@ Toutes les trames CAN reçues sont enregistrées dans le fichier «histocan» do
   can0    3  [7] 06 00 0E 0F 06 00 00
   can0    3  [7] 00 00 0E 0F 08 00 00
   can0    3  [7] 00 00 0E 0F 09 00 00
-  can0    3  [7] 00 00 0E 0F 0A 00 00
-  can0    3  [7] 00 01 0E 0F 0B 00 00
-  can0    3  [7] 2B 1E 0E 0F 0E 00 00
-  can0    3  [7] 00 00 0E 0F 1C 00 00
-  can0    3  [7] 00 01 0E 0F 1C 00 00
 \end{verbatim}
 
-De plus, un autre fichier (histocandate) contient l'heure et la date des trames reçues.
+De plus, un autre fichier (histocandate) concatène l'heure à la date dans trames reçues.
 \begin{verbatim}
   ************************
   can0 3 [7] 00 00 0E 0F 09 00 00
@@ -528,72 +530,30 @@ De plus, un autre fichier (histocandate) contient l'heure et la date des trames 
   ************************
   can0 3 [7] 00 00 0E 0F 0A 00 00
   Wed Dec 10 14:15:08 UTC 2014
- 
-  ************************
-  can0 3 [7] 00 01 0E 0F 0B 00 00
-  Wed Dec 10 14:15:09 UTC 2014
 \end{verbatim} 
 \begin{spacing}{1.5}
+\subsection{Liste des tests et logiciels}
+Beaucoup de débogage à la chandelle avec l'écran intégré et PCANview Basic.exe.
 \vfill
 \pagebreak
-\subsection{Liste des tests et logiciels}
 
 
 
 
 
-
-\pagebreak
-\section{Logiciel de la station 1 et du bolide}
+\section{Logiciel du bolide et de la station uPSD }
 Le programme de la station 1 et du bolide est écrit en C++ à l'aide d'IAR WorkBench 8.20 et la compilation conditionnelle offre de le compiler pour chacune des deux stations mentionnées. De plus, la compilation conditionnelle permet au bolide d'utiliser soit une carte d'extension I2C, soit une carte d'extension SPI pour contrôler ses moteurs et ses divers capteurs.
 
-\subsection{La station no.1}
-La station no.1 est composée de uPSD et s'appelle Bloc no.2 dans le cahier de consignes. Cette station reçoit les directives du PC par le BUS CAN et les expédie sur le bus CAN (et vice-versa) aux endroits appropriés. C'est aussi à cette station qu'incombe la tâche de communiquer avec le bolide et la table FESTO via des Xbee.
+\subsection{Logiciel du module PIC18F258}
+Le programme de la station no.1 (appelée Bloc 2 dans le cahier de consignes) est écrit en C à l'aide de MPLABX 6.00...
 
-\subsection{La station no.2}
-La station no.2 (qui s'appelle Bloc no.3 dans le cahier de consignes) est composée de la table FESTO, de la carte uPSD, de la carte d'extensions IO que nous avons réalisées et d'un Xbee.
-\pagebreak
-
-\begin{figure}[hbtp]
-\subsection{Schéma des héritages de classes}
-Quelles classes utilisent quelles autres classes dans notre code?
-\caption{Héritage de la classe de contrôle du véhicule}
-\centering
-\fbox{\includegraphics[scale=1.05]{Figures/Doxygen/clvehicule.pdf}}
-\caption{Héritage de la classe de contrôle de la station no.1}
-\fbox{\includegraphics[scale=0.7]{Figures/Doxygen/Station1.pdf}} 
-\caption{Qui hérite du SPI?}
-\fbox{\includegraphics[scale=1]{Figures/Doxygen/SPI.pdf}}
-\caption{Qui hérite de l'I2C?}
-\fbox{\includegraphics[scale=1]{Figures/Doxygen/i2c.pdf}}
-\end{figure}
+\subsection{Logiciel de la table FESTO}
+La station no.2 (qui s'appelle Bloc no.3 dans le cahier de consignes) est composée de la table FESTO, de la carte uPSD, de la carte d'extensions IO que nous avons réalisée avec OrCAD.
+\include{TeX/Heritage}
 
 \vfill
 \pagebreak
 
-\subsection{Le bolide}
-\begin{table}[!ht]
-\centering
-\begin{tabular}{|l|c|l|}
-\hline 
-\textbf{Composante} & \textbf{Adresse I{\small 2}C} & \textbf{Description} \\ 
-\hline 
-MAX1236 & 0x68 & Convertisseur analogique-numérique \\ 
-\hline 
-DS1307  & 0xD0 & Circuit d'horloge RTC \\ 
-\hline 
-PCF8574 & 0x40 & I/O Expender pour bus I{\small 2}C \\ 
-\hline 
-DAC6574 & 0x98  & Convertisseur numérique-analogique  \\ 
-\hline 
-OPT101  &  0x50 & Suiveur de ligne  \\ 
-\hline 
-\end{tabular} 
-\caption{Informations sur le bus I{\small 2}C du bolide}
-\label{tab:testtab1}
-\end{table}
-
-\pagebreak
 \subsection{Procédure de compilation sur IAR}
 Sur IAR, vous pouvez utiliser le menu déroulant, illustré à la figure suivante, afin de compiler le code pour la carte Dallas ou pour la carte uPSD. Pour lancer une compilation, rien de plus simple que d'appuyer sur F6.
 
@@ -619,11 +579,13 @@ De plus, des paramètres de compilation optionnelle vous permettent, via la déc
 \subsection{Procédure de vérification}
 Pour les vérification, rien de plus simple. Il suffit d'envoyer le fichier .hex dans le microcontrôleur et d'observer visuellement le fonctionnement du montage. Certains appellent cette technique « débogage à la chandelle\footnote{Salut Étienne !!!}. » Cela étant dit, afficher des trames et autres données sur un écran LCD aide grandement.
 
+\vfill
 \pagebreak
 \section{Logiciel du module PIC18F258}
 \subsection{Description du fonctionnement du programme}
 La structure du programme est on ne peut plus classique, car il s'agit d'un programme écrit en C et disposant d'un bon vieux \emph{while(1)} à l'intérieur du \emph{void main(void)}. En bref, le programme initialise d'abord les différents registres du PIC, puis le bus CAN, I2C et RS232. Quant à la boucle, elle lit le poids du bloc, traduit les trames CAN en données RS232 et expédie le tout au... Où déjà?
 \subsection{Procédure de compilation sur MPLAB}
+C'est simple, faites ce qui est indiqué sur l'image ci-dessous:
 \begin{figure}[hbtp]
 \caption{Compiler avec MicroC PRO pour PIC}
 \centering
@@ -633,7 +595,7 @@ La structure du programme est on ne peut plus classique, car il s'agit d'un prog
 \subsection{Procédure de vérification}
 
 
-\include{TeX/OrCAD}      % schémas orcad
+
 \include{TeX/calculs}    % calculs
 \include{TeX/Conclusion} % conclusions
 

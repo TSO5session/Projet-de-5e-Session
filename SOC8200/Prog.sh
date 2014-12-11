@@ -6,13 +6,14 @@ echo -n 0 > /sys/class/leds/led/brightness #
 echo 0 > /sys/class/misc/beep/val          #
 #--------------------------------------------------------------------# CAN init
 /usr/bin/ip link set can0 down                                       #
-/usr/bin/ip link set can0 type can bitrate 125000 triple-sampling on #
+/usr/bin/ip link set can0 type can bitrate 250000 # triple-sampling on #
 /usr/bin/ip link set can0 up                                         #
 #--------------------------------------------------------------------#
+clear
 echo "********SOC Sniffer started**********************"
 echo " "
 echo "Aujourd'hui on est le"
-date 121013052014  # Initialise la date au jeudi 4 décembre 2014     # mmjjhhmmyyyy
+date 121108242014  # Initialise la date au jeudi 4 décembre 2014     # mmjjhhmmyyyy
 echo "******************************"
 echo " "
 #--------------------------------------------------------------------# Note: sur notre SOC8200, la pile interne de la clock est morte

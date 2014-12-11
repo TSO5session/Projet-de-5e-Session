@@ -1,23 +1,25 @@
 \select@language {french}
 \contentsline {figure}{\numberline {1}{\ignorespaces Vue d'ensemble du projet}}{5}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Sch\IeC {\'e}ma bloc du Bolide}}{7}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Sch\IeC {\'e}ma bloc de la table FESTO}}{8}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Sch\IeC {\'e}ma bloc du SOC8200}}{9}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{20}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{21}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Historique des actions}}{22}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le du v\IeC {\'e}hicule}}{27}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le de la station no.1}}{27}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Qui h\IeC {\'e}rite du SPI?}}{27}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Qui h\IeC {\'e}rite de l'I2C?}}{27}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Choix de la cible sur IAR}}{28}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Compiler avec MicroC PRO pour PIC}}{29}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 1}}{30}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 2}}{31}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 3}}{32}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Sch\IeC {\'e}mas carte IO I2C, page 4}}{33}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Couche TOP}}{34}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Couche BOT}}{34}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Silk Screen TOP}}{35}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Solder mask TOP}}{35}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Drill}}{36}{figure.22}
+\contentsline {figure}{\numberline {2}{\ignorespaces Sch\IeC {\'e}ma bloc du Bolide}}{6}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Sch\IeC {\'e}ma bloc de la table FESTO}}{7}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Sch\IeC {\'e}ma bloc du SOC8200}}{8}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Sch\IeC {\'e}ma bloc du Bolide}}{9}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Sch\IeC {\'e}ma bloc du Bolide}}{10}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Sch\IeC {\'e}mas carte connecteur IO I2C, page 1}}{20}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Sch\IeC {\'e}mas carte connecteur IO I2C, page 2}}{21}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Sch\IeC {\'e}mas carte connecteur IO I2C, page 3}}{22}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Sch\IeC {\'e}mas carte Iconnecteur O I2C, page 4}}{23}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Couche TOP}}{24}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Couche BOT}}{24}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Silk Screen TOP}}{25}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Solder mask TOP}}{25}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Drill}}{26}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Programme de contr\IeC {\^o}le principal}}{28}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Options CAN avanc\IeC {\'e}es}}{29}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Historique des actions}}{30}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le du v\IeC {\'e}hicule}}{33}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Qui h\IeC {\'e}rite du SPI?}}{33}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Qui h\IeC {\'e}rite de l'I2C?}}{33}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces H\IeC {\'e}ritage de la classe de contr\IeC {\^o}le de la station no.1}}{33}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Choix de la cible sur IAR}}{34}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Compiler avec MicroC PRO pour PIC}}{35}{figure.24}

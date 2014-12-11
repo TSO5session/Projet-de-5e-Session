@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.9.21)  10 DEC 2014 20:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.9.21)  11 DEC 2014 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -854,19 +854,11 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 (c:/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 )) (./Rapport.aux
-
-LaTeX Warning: Label `tab:testtab1' multiply defined.
-
-
-LaTeX Warning: Label `tab:testtab1' multiply defined.
-
-(./TeX/Datasheet.aux)
-
-LaTeX Warning: Label `tab:testtab1' multiply defined.
-
-(./TeX/OrCAD.aux) (./TeX/calculs.aux) (./TeX/Conclusion.aux)
-(./Codesource/cSharp.aux) (./Codesource/BolideUpsd.aux) (./Codesource/FESTO.aux
-) (./Codesource/PIC.aux) (./Codesource/ShellScript.aux) (./TeX/joke.aux))
+(./TeX/SchemaBloc.aux) (./TeX/Datasheet.aux) (./TeX/OrCAD.aux)
+(./TeX/OrCADold.aux) (./TeX/Heritage.aux) (./TeX/calculs.aux)
+(./TeX/Conclusion.aux) (./Codesource/cSharp.aux) (./Codesource/BolideUpsd.aux)
+(./Codesource/FESTO.aux) (./Codesource/PIC.aux) (./Codesource/ShellScript.aux)
+(./TeX/joke.aux))
 \openout1 = `Rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -885,8 +877,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 7.
-
-(c:/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
+ (c:/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 7.
@@ -986,7 +977,7 @@ LaTeX Info: Redefining \nameref on input line 7.
 \openout3 = `Rapport.out'.
 
 
-<Figures/School_Logo.jpg, id=305, 216.81pt x 124.7862pt>
+<Figures/School_Logo.jpg, id=285, 216.81pt x 124.7862pt>
 File: Figures/School_Logo.jpg Graphic file (type jpg)
 
 <use Figures/School_Logo.jpg>
@@ -1002,7 +993,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 20.
 (c:/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Figures/Picture_for_Title.jpg, id=306, 473.1276pt x 251.2587pt>
+<Figures/Picture_for_Title.jpg, id=286, 473.1276pt x 251.2587pt>
 File: Figures/Picture_for_Title.jpg Graphic file (type jpg)
 
 <use Figures/Picture_for_Title.jpg>
@@ -1040,87 +1031,210 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout6 = `Rapport.lot'.
 
  [4]
-<Figures/SchemaBloc/1.png, id=460, 1157.82562pt x 507.39563pt>
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+<Figures/SchemaBloc/1.png, id=435, 1157.82562pt x 507.39563pt>
 File: Figures/SchemaBloc/1.png Graphic file (type png)
 
 <use Figures/SchemaBloc/1.png>
-Package pdftex.def Info: Figures/SchemaBloc/1.png used on input line 124.
+Package pdftex.def Info: Figures/SchemaBloc/1.png used on input line 134.
 (pdftex.def)             Requested size: 521.01672pt x 228.32593pt.
  [5 <./Figures/SchemaBloc/1.png>]
-<Figures/SchemaBloc/bolide.png, id=468, 392.1852pt x 498.1812pt>
+\openout2 = `TeX/SchemaBloc.aux'.
+
+
+(./TeX/SchemaBloc.tex
+<Figures/SchemaBloc/bolide.png, id=443, 392.1852pt x 498.1812pt>
 File: Figures/SchemaBloc/bolide.png Graphic file (type png)
 
 <use Figures/SchemaBloc/bolide.png>
-Package pdftex.def Info: Figures/SchemaBloc/bolide.png used on input line 133.
+Package pdftex.def Info: Figures/SchemaBloc/bolide.png used on input line 5.
 (pdftex.def)             Requested size: 470.61987pt x 597.81444pt.
 
-<Figures/SchemaBloc/festo.png, id=469, 484.9317pt x 780.516pt>
+<Figures/SchemaBloc/festo.png, id=444, 484.9317pt x 780.516pt>
 File: Figures/SchemaBloc/festo.png Graphic file (type png)
 
 <use Figures/SchemaBloc/festo.png>
-Package pdftex.def Info: Figures/SchemaBloc/festo.png used on input line 144.
+Package pdftex.def Info: Figures/SchemaBloc/festo.png used on input line 16.
 (pdftex.def)             Requested size: 426.74121pt x 686.85622pt.
 
 
-LaTeX Warning: Float too large for page by 0.68034pt on input line 145.
+LaTeX Warning: Float too large for page by 0.68034pt on input line 17.
 
-<Figures/SchemaBloc/soc8200.png, id=470, 526.3665pt x 691.383pt>
+<Figures/SchemaBloc/soc8200.png, id=445, 526.3665pt x 691.383pt>
 File: Figures/SchemaBloc/soc8200.png Graphic file (type png)
 
 <use Figures/SchemaBloc/soc8200.png>
-Package pdftex.def Info: Figures/SchemaBloc/soc8200.png used on input line 155.
-
+Package pdftex.def Info: Figures/SchemaBloc/soc8200.png used on input line 27.
 (pdftex.def)             Requested size: 526.36522pt x 691.38132pt.
 
 
-LaTeX Warning: Float too large for page by 5.20544pt on input line 156.
+LaTeX Warning: Float too large for page by 5.20544pt on input line 28.
 
-[6] [7 <./Figures/SchemaBloc/bolide.png>] [8 <./Figures/SchemaBloc/festo.png>]
-[9 <./Figures/SchemaBloc/soc8200.png>]
-LaTeX Font Info:    Try loading font information for TS1+qhv on input line 178.
+File: Figures/SchemaBloc/bolide.png Graphic file (type png)
+<use Figures/SchemaBloc/bolide.png>
+Package pdftex.def Info: Figures/SchemaBloc/bolide.png used on input line 37.
+(pdftex.def)             Requested size: 470.61987pt x 597.81444pt.
+File: Figures/SchemaBloc/bolide.png Graphic file (type png)
+ <use Figures/SchemaBloc/bolide.png>
+Package pdftex.def Info: Figures/SchemaBloc/bolide.png used on input line 46.
+(pdftex.def)             Requested size: 470.61987pt x 597.81444pt.
+)
+[6 <./Figures/SchemaBloc/bolide.png>] [7 <./Figures/SchemaBloc/festo.png>]
+[8 <./Figures/SchemaBloc/soc8200.png>] [9] [10]
+LaTeX Font Info:    Try loading font information for TS1+qhv on input line 151.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
-) [10] [11] [12]
-[13] [14] [15] [16]
-\openout2 = `TeX/Datasheet.aux'.
+) [11
 
- (./TeX/Datasheet.tex
-LaTeX Font Info:    Try loading font information for OT1+fdm on input line 6.
+
+] [12] [13]
+[14] <Figures/hichie.jpg, id=494, 2346.7675pt x 2708.1175pt>
+File: Figures/hichie.jpg Graphic file (type jpg)
+
+<use Figures/hichie.jpg>
+Package pdftex.def Info: Figures/hichie.jpg used on input line 346.
+(pdftex.def)             Requested size: 469.34518pt x 541.6139pt.
+ [15 <./Figures/hichie.jpg>]
+LaTeX Font Info:    Try loading font information for OT1+fdm on input line 427.
+
 
 (c:/texlive/2014/texmf-dist/tex/latex/droid/ot1fdm.fd
 File: ot1fdm.fd 2011/09/11 Fontinst v1.933 font definitions for OT1/fdm.
-) [17
+) [16]
+\openout2 = `TeX/Datasheet.aux'.
 
-]
+
+(./TeX/Datasheet.tex
 
 pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/74HC14.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/74HC14.pdf, id=546, 614.295pt x 794.97pt>
+<Figures/Datasheets/74HC14.pdf, id=523, 614.295pt x 794.97pt>
 File: Figures/Datasheets/74HC14.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/74HC14.pdf>
-Package pdftex.def Info: Figures/Datasheets/74HC14.pdf used on input line 36.
+Package pdftex.def Info: Figures/Datasheets/74HC14.pdf used on input line 5.
 (pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/dac6574.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/dac6574.pdf, id=547, 614.295pt x 794.97pt>
+<Figures/Datasheets/dac6574.pdf, id=524, 614.295pt x 794.97pt>
 File: Figures/Datasheets/dac6574.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/dac6574.pdf>
-Package pdftex.def Info: Figures/Datasheets/dac6574.pdf used on input line 38.
+Package pdftex.def Info: Figures/Datasheets/dac6574.pdf used on input line 7.
 (pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/DS89C450.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/DS89C450.pdf, id=548, 614.295pt x 794.97pt>
+<Figures/Datasheets/DS89C450.pdf, id=525, 614.295pt x 794.97pt>
 File: Figures/Datasheets/DS89C450.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/DS89C450.pdf>
+Package pdftex.def Info: Figures/Datasheets/DS89C450.pdf used on input line 9.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--10
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/LineSensor.pdf): PDF in
+clusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/LineSensor.pdf, id=526, 614.295pt x 794.97pt>
+File: Figures/Datasheets/LineSensor.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/LineSensor.pdf>
+Package pdftex.def Info: Figures/Datasheets/LineSensor.pdf used on input line 1
+4.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/lm3914.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/lm3914.pdf, id=527, 614.295pt x 794.97pt>
+File: Figures/Datasheets/lm3914.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/lm3914.pdf>
+Package pdftex.def Info: Figures/Datasheets/lm3914.pdf used on input line 16.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/opt101.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/opt101.pdf, id=528, 614.295pt x 794.97pt>
+File: Figures/Datasheets/opt101.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/opt101.pdf>
+Package pdftex.def Info: Figures/Datasheets/opt101.pdf used on input line 18.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--19
+
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/PCF8574.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/PCF8574.pdf, id=529, 614.295pt x 794.97pt>
+File: Figures/Datasheets/PCF8574.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/PCF8574.pdf>
+Package pdftex.def Info: Figures/Datasheets/PCF8574.pdf used on input line 23.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/UPSD3254A.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/UPSD3254A.pdf, id=530, 614.295pt x 794.97pt>
+File: Figures/Datasheets/UPSD3254A.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/UPSD3254A.pdf>
+Package pdftex.def Info: Figures/Datasheets/UPSD3254A.pdf used on input line 25
+.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/Sabertooth.pdf): PDF in
+clusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Datasheets/Sabertooth.pdf, id=531, 614.295pt x 794.97pt>
+File: Figures/Datasheets/Sabertooth.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/Sabertooth.pdf>
+Package pdftex.def Info: Figures/Datasheets/Sabertooth.pdf used on input line 2
+7.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--28
+
+ []
+
+[17
+
+ <./Figures/Datasheets/74HC14.pdf> <./Figures/Datasheets/dac6574.pdf> <./Figure
+s/Datasheets/DS89C450.pdf> <./Figures/Datasheets/LineSensor.pdf> <./Figures/Dat
+asheets/lm3914.pdf> <./Figures/Datasheets/opt101.pdf> <./Figures/Datasheets/PCF
+8574.pdf> <./Figures/Datasheets/UPSD3254A.pdf> <./Figures/Datasheets/Sabertooth
+.pdf>]
+File: Figures/Datasheets/74HC14.pdf Graphic file (type pdf)
+ <use Figures/Datasheets/74HC14.pdf>
+Package pdftex.def Info: Figures/Datasheets/74HC14.pdf used on input line 36.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+File: Figures/Datasheets/dac6574.pdf Graphic file (type pdf)
+
+<use Figures/Datasheets/dac6574.pdf>
+Package pdftex.def Info: Figures/Datasheets/dac6574.pdf used on input line 38.
+(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
+File: Figures/Datasheets/DS89C450.pdf Graphic file (type pdf)
+ <use Figures/Datasheets/DS89C450.pdf>
 Package pdftex.def Info: Figures/Datasheets/DS89C450.pdf used on input line 40.
 
 (pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
@@ -1129,32 +1243,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--41
 
  []
 
-
-
-pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/LineSensor.pdf): PDF in
-clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/LineSensor.pdf, id=549, 614.295pt x 794.97pt>
 File: Figures/Datasheets/LineSensor.pdf Graphic file (type pdf)
-
 <use Figures/Datasheets/LineSensor.pdf>
 Package pdftex.def Info: Figures/Datasheets/LineSensor.pdf used on input line 4
 5.
 (pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/lm3914.pdf): PDF inclus
-ion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/lm3914.pdf, id=550, 614.295pt x 794.97pt>
 File: Figures/Datasheets/lm3914.pdf Graphic file (type pdf)
-
-<use Figures/Datasheets/lm3914.pdf>
+ <use Figures/Datasheets/lm3914.pdf>
 Package pdftex.def Info: Figures/Datasheets/lm3914.pdf used on input line 47.
 (pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/opt101.pdf): PDF inclus
-ion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/opt101.pdf, id=551, 614.295pt x 794.97pt>
 File: Figures/Datasheets/opt101.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/opt101.pdf>
@@ -1165,32 +1262,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--50
 
  []
 
-
-
-pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/PCF8574.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/PCF8574.pdf, id=552, 614.295pt x 794.97pt>
 File: Figures/Datasheets/PCF8574.pdf Graphic file (type pdf)
-
 <use Figures/Datasheets/PCF8574.pdf>
 Package pdftex.def Info: Figures/Datasheets/PCF8574.pdf used on input line 54.
 (pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/UPSD3254A.pdf): PDF inc
-lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/UPSD3254A.pdf, id=553, 614.295pt x 794.97pt>
 File: Figures/Datasheets/UPSD3254A.pdf Graphic file (type pdf)
-
-<use Figures/Datasheets/UPSD3254A.pdf>
+ <use Figures/Datasheets/UPSD3254A.pdf>
 Package pdftex.def Info: Figures/Datasheets/UPSD3254A.pdf used on input line 56
 .
 (pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figures/Datasheets/Sabertooth.pdf): PDF in
-clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Datasheets/Sabertooth.pdf, id=554, 614.295pt x 794.97pt>
 File: Figures/Datasheets/Sabertooth.pdf Graphic file (type pdf)
 
 <use Figures/Datasheets/Sabertooth.pdf>
@@ -1202,153 +1282,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--59
 
  []
 
-[18 <./Figures/Datasheets/74HC14.pdf> <./Figures/Datasheets/dac6574.pdf> <./Fig
-ures/Datasheets/DS89C450.pdf> <./Figures/Datasheets/LineSensor.pdf> <./Figures/
-Datasheets/lm3914.pdf> <./Figures/Datasheets/opt101.pdf> <./Figures/Datasheets/
-PCF8574.pdf> <./Figures/Datasheets/UPSD3254A.pdf> <./Figures/Datasheets/Saberto
-oth.pdf>]
-File: Figures/Datasheets/74HC14.pdf Graphic file (type pdf)
- <use Figures/Datasheets/74HC14.pdf>
-Package pdftex.def Info: Figures/Datasheets/74HC14.pdf used on input line 67.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-File: Figures/Datasheets/dac6574.pdf Graphic file (type pdf)
+) [18] [19
 
-<use Figures/Datasheets/dac6574.pdf>
-Package pdftex.def Info: Figures/Datasheets/dac6574.pdf used on input line 69.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-File: Figures/Datasheets/DS89C450.pdf Graphic file (type pdf)
- <use Figures/Datasheets/DS89C450.pdf>
-Package pdftex.def Info: Figures/Datasheets/DS89C450.pdf used on input line 71.
-
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--72
-
- []
-
-File: Figures/Datasheets/LineSensor.pdf Graphic file (type pdf)
-<use Figures/Datasheets/LineSensor.pdf>
-Package pdftex.def Info: Figures/Datasheets/LineSensor.pdf used on input line 7
-6.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-File: Figures/Datasheets/lm3914.pdf Graphic file (type pdf)
- <use Figures/Datasheets/lm3914.pdf>
-Package pdftex.def Info: Figures/Datasheets/lm3914.pdf used on input line 78.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-File: Figures/Datasheets/opt101.pdf Graphic file (type pdf)
-
-<use Figures/Datasheets/opt101.pdf>
-Package pdftex.def Info: Figures/Datasheets/opt101.pdf used on input line 80.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--81
-
- []
-
-File: Figures/Datasheets/PCF8574.pdf Graphic file (type pdf)
-<use Figures/Datasheets/PCF8574.pdf>
-Package pdftex.def Info: Figures/Datasheets/PCF8574.pdf used on input line 85.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-File: Figures/Datasheets/UPSD3254A.pdf Graphic file (type pdf)
- <use Figures/Datasheets/UPSD3254A.pdf>
-Package pdftex.def Info: Figures/Datasheets/UPSD3254A.pdf used on input line 87
-.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-File: Figures/Datasheets/Sabertooth.pdf Graphic file (type pdf)
-
-<use Figures/Datasheets/Sabertooth.pdf>
-Package pdftex.def Info: Figures/Datasheets/Sabertooth.pdf used on input line 8
-9.
-(pdftex.def)             Requested size: 122.85681pt x 158.99118pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--90
-
- []
-
-) [19] <Figures/programme.png, id=624, 778.40813pt x 472.01344pt>
-File: Figures/programme.png Graphic file (type png)
-
-<use Figures/programme.png>
-Package pdftex.def Info: Figures/programme.png used on input line 454.
-(pdftex.def)             Requested size: 529.31053pt x 320.96489pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
-
- []
-
-[20
-
- <./Figures/programme.png>]
-<Figures/2.png, id=636, 778.40813pt x 472.01344pt>
-File: Figures/2.png Graphic file (type png)
- <use Figures/2.png>
-Package pdftex.def Info: Figures/2.png used on input line 465.
-(pdftex.def)             Requested size: 529.31053pt x 320.96489pt.
- [21 <./Figures/2.png>] <Figures/4.png, id=643, 778.40813pt x 472.01344pt>
-File: Figures/4.png Graphic file (type png)
-
-<use Figures/4.png>
-Package pdftex.def Info: Figures/4.png used on input line 473.
-(pdftex.def)             Requested size: 529.31053pt x 320.96489pt.
- [22 <./Figures/4.png>] [23] [24] [25]
-<Figures/Doxygen/clvehicule.pdf, id=665, 501.875pt x 100.97725pt>
-File: Figures/Doxygen/clvehicule.pdf Graphic file (type pdf)
-
-<use Figures/Doxygen/clvehicule.pdf>
-Package pdftex.def Info: Figures/Doxygen/clvehicule.pdf used on input line 562.
-
-(pdftex.def)             Requested size: 526.96898pt x 106.02614pt.
-
-<Figures/Doxygen/Station1.pdf, id=666, 501.875pt x 184.1781pt>
-File: Figures/Doxygen/Station1.pdf Graphic file (type pdf)
-
-<use Figures/Doxygen/Station1.pdf>
-Package pdftex.def Info: Figures/Doxygen/Station1.pdf used on input line 564.
-(pdftex.def)             Requested size: 351.31009pt x 128.92378pt.
-
-<Figures/Doxygen/SPI.pdf, id=667, 501.875pt x 113.10255pt>
-File: Figures/Doxygen/SPI.pdf Graphic file (type pdf)
-
-<use Figures/Doxygen/SPI.pdf>
-Package pdftex.def Info: Figures/Doxygen/SPI.pdf used on input line 566.
-(pdftex.def)             Requested size: 501.87376pt x 113.10226pt.
-
-<Figures/Doxygen/i2c.pdf, id=668, 501.875pt x 167.29501pt>
-File: Figures/Doxygen/i2c.pdf Graphic file (type pdf)
-
-<use Figures/Doxygen/i2c.pdf>
-Package pdftex.def Info: Figures/Doxygen/i2c.pdf used on input line 568.
-(pdftex.def)             Requested size: 501.87376pt x 167.29459pt.
- [26] [27 <./Figures/Doxygen/clvehicule.pdf> <./Figures/Doxygen/Station1.pdf> <
-./Figures/Doxygen/SPI.pdf> <./Figures/Doxygen/i2c.pdf>] <Figures/Procedure/proc
-edure.png, id=697, 441.14813pt x 200.24812pt>
-File: Figures/Procedure/procedure.png Graphic file (type png)
-
-<use Figures/Procedure/procedure.png>
-Package pdftex.def Info: Figures/Procedure/procedure.png used on input line 603
-.
-(pdftex.def)             Requested size: 441.14705pt x 200.24763pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 606--607
-
- []
-
-[28 <./Figures/Procedure/procedure.png>]
-<Figures/Procedure/PIC.png, id=712, 677.53125pt x 150.5625pt>
-File: Figures/Procedure/PIC.png Graphic file (type png)
-
-<use Figures/Procedure/PIC.png>
-Package pdftex.def Info: Figures/Procedure/PIC.png used on input line 630.
-(pdftex.def)             Requested size: 521.70067pt x 115.93347pt.
- [29 <./Figures/Procedure/PIC.png>]
+]
 \openout2 = `TeX/OrCAD.aux'.
 
-
-(./TeX/OrCAD.tex
+ (./TeX/OrCAD.tex
 
 pdfTeX warning: pdflatex.exe (file ./Figures/OrCad/PAGE1.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<Figures/OrCad/PAGE1.pdf, id=718, 794.97pt x 614.295pt>
+<Figures/OrCad/PAGE1.pdf, id=605, 794.97pt x 614.295pt>
 File: Figures/OrCad/PAGE1.pdf Graphic file (type pdf)
 
 <use Figures/OrCad/PAGE1.pdf>
@@ -1356,13 +1299,13 @@ Package pdftex.def Info: Figures/OrCad/PAGE1.pdf used on input line 6.
 (pdftex.def)             Requested size: 691.61833pt x 534.43233pt.
 
 
-LaTeX Warning: Float too large for page by 8.27046pt on input line 7.
+LaTeX Warning: Float too large for page by 2.30246pt on input line 7.
 
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/OrCad/PAGE2.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<Figures/OrCad/PAGE2.pdf, id=719, 794.97pt x 614.295pt>
+<Figures/OrCad/PAGE2.pdf, id=606, 794.97pt x 614.295pt>
 File: Figures/OrCad/PAGE2.pdf Graphic file (type pdf)
 
 <use Figures/OrCad/PAGE2.pdf>
@@ -1372,7 +1315,7 @@ Package pdftex.def Info: Figures/OrCad/PAGE2.pdf used on input line 12.
 
 pdfTeX warning: pdflatex.exe (file ./Figures/OrCad/PAGE3.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<Figures/OrCad/PAGE3.pdf, id=720, 794.97pt x 614.295pt>
+<Figures/OrCad/PAGE3.pdf, id=607, 794.97pt x 614.295pt>
 File: Figures/OrCad/PAGE3.pdf Graphic file (type pdf)
 
 <use Figures/OrCad/PAGE3.pdf>
@@ -1382,14 +1325,14 @@ Package pdftex.def Info: Figures/OrCad/PAGE3.pdf used on input line 18.
 
 pdfTeX warning: pdflatex.exe (file ./Figures/OrCad/PAGE4.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<Figures/OrCad/PAGE4.pdf, id=721, 794.97pt x 614.295pt>
+<Figures/OrCad/PAGE4.pdf, id=608, 794.97pt x 614.295pt>
 File: Figures/OrCad/PAGE4.pdf Graphic file (type pdf)
 
 <use Figures/OrCad/PAGE4.pdf>
 Package pdftex.def Info: Figures/OrCad/PAGE4.pdf used on input line 24.
 (pdftex.def)             Requested size: 691.61833pt x 534.43233pt.
 
-<Figures/OrCad/top.png, id=723, 1144.275pt x 462.22687pt>
+<Figures/OrCad/top.png, id=610, 1144.275pt x 462.22687pt>
 File: Figures/OrCad/top.png Graphic file (type png)
 
 <use Figures/OrCad/top.png>
@@ -1400,7 +1343,7 @@ Overfull \hbox (4.00693pt too wide) in paragraph at lines 35--36
  [][] 
  []
 
-<Figures/OrCad/bot.png, id=724, 1142.76938pt x 462.22687pt>
+<Figures/OrCad/bot.png, id=612, 1142.76938pt x 462.22687pt>
 File: Figures/OrCad/bot.png Graphic file (type png)
 
 <use Figures/OrCad/bot.png>
@@ -1411,7 +1354,7 @@ Overfull \hbox (3.29929pt too wide) in paragraph at lines 44--45
  [][] 
  []
 
-<Figures/OrCad/sstop.png, id=725, 1144.275pt x 460.72125pt>
+<Figures/OrCad/sstop.png, id=613, 1144.275pt x 460.72125pt>
 File: Figures/OrCad/sstop.png Graphic file (type png)
 
 <use Figures/OrCad/sstop.png>
@@ -1422,23 +1365,240 @@ Overfull \hbox (4.00693pt too wide) in paragraph at lines 51--52
  [][] 
  []
 
-<Figures/OrCad/smt.png, id=726, 1121.69063pt x 447.92343pt>
+<Figures/OrCad/smt.png, id=614, 1121.69063pt x 447.92343pt>
 File: Figures/OrCad/smt.png Graphic file (type png)
 
 <use Figures/OrCad/smt.png>
 Package pdftex.def Info: Figures/OrCad/smt.png used on input line 60.
 (pdftex.def)             Requested size: 527.19467pt x 210.52403pt.
 
-<Figures/OrCad/drill.png, id=727, 1153.30875pt x 679.78969pt>
+<Figures/OrCad/drill.png, id=615, 1153.30875pt x 679.78969pt>
 File: Figures/OrCad/drill.png Graphic file (type png)
 
 <use Figures/OrCad/drill.png>
 Package pdftex.def Info: Figures/OrCad/drill.png used on input line 68.
 (pdftex.def)             Requested size: 518.98415pt x 305.90253pt.
-) [30 <./Figures/OrCad/PAGE1.pdf>] [31 <./Figures/OrCad/PAGE2.pdf>] [32 <./Figu
-res/OrCad/PAGE3.pdf>] [33 <./Figures/OrCad/PAGE4.pdf>] [34 <./Figures/OrCad/top
-.png> <./Figures/OrCad/bot.png>] [35 <./Figures/OrCad/sstop.png> <./Figures/OrC
-ad/smt.png>] [36 <./Figures/OrCad/drill.png>]
+) [20 <./Figures/OrCad/PAGE1.pdf>] [21 <./Figures/OrCad/PAGE2.pdf>] [22 <./Figu
+res/OrCad/PAGE3.pdf>] [23 <./Figures/OrCad/PAGE4.pdf>] [24 <./Figures/OrCad/top
+.png> <./Figures/OrCad/bot.png>] [25 <./Figures/OrCad/sstop.png> <./Figures/OrC
+ad/smt.png>] [26 <./Figures/OrCad/drill.png>]
+\openout2 = `TeX/OrCADold.aux'.
+
+
+(./TeX/OrCADold.tex
+
+pdfTeX warning: pdflatex.exe (file ./Figures/OrCad/ExtensionI2C1.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/OrCad/ExtensionI2C1.pdf, id=704, 794.97pt x 614.295pt>
+File: Figures/OrCad/ExtensionI2C1.pdf Graphic file (type pdf)
+
+<use Figures/OrCad/ExtensionI2C1.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C1.pdf used on input line 6.
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/OrCad/ExtensionI2C2.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/OrCad/ExtensionI2C2.pdf, id=705, 794.97pt x 614.295pt>
+File: Figures/OrCad/ExtensionI2C2.pdf Graphic file (type pdf)
+
+<use Figures/OrCad/ExtensionI2C2.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C2.pdf used on input line 7.
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C1.pdf Graphic file (type pdf)
+ <use Figures/OrCad/ExtensionI2C1.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C1.pdf used on input line 8.
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C2.pdf Graphic file (type pdf)
+
+<use Figures/OrCad/ExtensionI2C2.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C2.pdf used on input line 9.
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C1.pdf Graphic file (type pdf)
+ <use Figures/OrCad/ExtensionI2C1.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C1.pdf used on input line 10.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C2.pdf Graphic file (type pdf)
+
+<use Figures/OrCad/ExtensionI2C2.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C2.pdf used on input line 11.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C1.pdf Graphic file (type pdf)
+ <use Figures/OrCad/ExtensionI2C1.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C1.pdf used on input line 12.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C2.pdf Graphic file (type pdf)
+
+<use Figures/OrCad/ExtensionI2C2.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C2.pdf used on input line 13.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C1.pdf Graphic file (type pdf)
+ <use Figures/OrCad/ExtensionI2C1.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C1.pdf used on input line 14.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C2.pdf Graphic file (type pdf)
+
+<use Figures/OrCad/ExtensionI2C2.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C2.pdf used on input line 15.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C1.pdf Graphic file (type pdf)
+ <use Figures/OrCad/ExtensionI2C1.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C1.pdf used on input line 16.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+File: Figures/OrCad/ExtensionI2C2.pdf Graphic file (type pdf)
+
+<use Figures/OrCad/ExtensionI2C2.pdf>
+Package pdftex.def Info: Figures/OrCad/ExtensionI2C2.pdf used on input line 17.
+
+(pdftex.def)             Requested size: 158.99118pt x 122.85681pt.
+
+Overfull \hbox (10.20622pt too wide) in paragraph at lines 6--18
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--18
+[]
+ []
+
+[27
+
+
+
+ <./Figures/OrCad/ExtensionI2C1.pdf> <./Figures/OrCad/ExtensionI2C2.pdf>])
+<Figures/programme.png, id=743, 778.40813pt x 472.01344pt>
+File: Figures/programme.png Graphic file (type png)
+
+<use Figures/programme.png>
+Package pdftex.def Info: Figures/programme.png used on input line 464.
+(pdftex.def)             Requested size: 529.31053pt x 320.96489pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+
+ []
+
+[28
+
+ <./Figures/programme.png>]
+<Figures/2.png, id=751, 778.40813pt x 472.01344pt>
+File: Figures/2.png Graphic file (type png)
+ <use Figures/2.png>
+Package pdftex.def Info: Figures/2.png used on input line 478.
+(pdftex.def)             Requested size: 529.31053pt x 320.96489pt.
+ [29 <./Figures/2.png>] <Figures/4.png, id=757, 778.40813pt x 472.01344pt>
+File: Figures/4.png Graphic file (type png)
+
+<use Figures/4.png>
+Package pdftex.def Info: Figures/4.png used on input line 486.
+(pdftex.def)             Requested size: 529.31053pt x 320.96489pt.
+ [30 <./Figures/4.png>] [31] [32]
+\openout2 = `TeX/Heritage.aux'.
+
+ (./TeX/Heritage.tex
+<Figures/Doxygen/clvehicule.pdf, id=775, 501.875pt x 100.97725pt>
+File: Figures/Doxygen/clvehicule.pdf Graphic file (type pdf)
+
+<use Figures/Doxygen/clvehicule.pdf>
+Package pdftex.def Info: Figures/Doxygen/clvehicule.pdf used on input line 6.
+(pdftex.def)             Requested size: 526.96898pt x 106.02614pt.
+
+<Figures/Doxygen/SPI.pdf, id=776, 501.875pt x 113.10255pt>
+File: Figures/Doxygen/SPI.pdf Graphic file (type pdf)
+
+<use Figures/Doxygen/SPI.pdf>
+Package pdftex.def Info: Figures/Doxygen/SPI.pdf used on input line 8.
+(pdftex.def)             Requested size: 501.87376pt x 113.10226pt.
+
+<Figures/Doxygen/i2c.pdf, id=777, 501.875pt x 167.29501pt>
+File: Figures/Doxygen/i2c.pdf Graphic file (type pdf)
+
+<use Figures/Doxygen/i2c.pdf>
+Package pdftex.def Info: Figures/Doxygen/i2c.pdf used on input line 10.
+(pdftex.def)             Requested size: 501.87376pt x 167.29459pt.
+
+<Figures/Doxygen/Station1.pdf, id=778, 501.875pt x 184.1781pt>
+File: Figures/Doxygen/Station1.pdf Graphic file (type pdf)
+
+<use Figures/Doxygen/Station1.pdf>
+Package pdftex.def Info: Figures/Doxygen/Station1.pdf used on input line 12.
+(pdftex.def)             Requested size: 351.31009pt x 128.92378pt.
+) [33 <./Figures/Doxygen/clvehicule.pdf> <./Figures/Doxygen/SPI.pdf> <./Figures
+/Doxygen/i2c.pdf> <./Figures/Doxygen/Station1.pdf>] <Figures/Procedure/procedur
+e.png, id=804, 441.14813pt x 200.24812pt>
+File: Figures/Procedure/procedure.png Graphic file (type png)
+
+<use Figures/Procedure/procedure.png>
+Package pdftex.def Info: Figures/Procedure/procedure.png used on input line 563
+.
+(pdftex.def)             Requested size: 441.14705pt x 200.24763pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
+
+ []
+
+[34
+
+
+ <./Figures/Procedure/procedure.png>]
+<Figures/Procedure/PIC.png, id=819, 677.53125pt x 150.5625pt>
+File: Figures/Procedure/PIC.png Graphic file (type png)
+
+<use Figures/Procedure/PIC.png>
+Package pdftex.def Info: Figures/Procedure/PIC.png used on input line 592.
+(pdftex.def)             Requested size: 521.70067pt x 115.93347pt.
+ [35 <./Figures/Procedure/PIC.png>]
 \openout2 = `TeX/calculs.aux'.
 
 
@@ -1452,17 +1612,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-) [37
-
-
+) [36
 
 ]
 \openout2 = `TeX/Conclusion.aux'.
 
- (./TeX/Conclusion.tex) [38
+ (./TeX/Conclusion.tex
+Underfull \hbox (badness 6978) in paragraph at lines 8--9
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 10--11
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 12--13
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 14--15
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 22--23
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 24--25
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 26--27
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 28--29
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+[37
 
 
 ]
+Underfull \hbox (badness 6978) in paragraph at lines 37--38
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 39--40
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 41--42
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 43--44
+\OT1/qhv/m/n/10 im-pres-sion. Le Lo-rem Ip-
+ []
+
+) [38]
 \openout2 = `Codesource/cSharp.aux'.
 
  (./Codesource/cSharp.tex) [39
@@ -1471,21 +1689,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 ]
 \openout2 = `Codesource/BolideUpsd.aux'.
 
-
-(./Codesource/BolideUpsd.tex) [40
+ (./Codesource/BolideUpsd.tex) [40
 
 
 ]
 \openout2 = `Codesource/FESTO.aux'.
 
- (./Codesource/FESTO.tex) [41
+
+(./Codesource/FESTO.tex) [41
 
 
 ]
 \openout2 = `Codesource/PIC.aux'.
 
-
-(./Codesource/PIC.tex
+ (./Codesource/PIC.tex
 LaTeX Font Info:    Try loading font information for OMS+qhv on input line 5.
 LaTeX Font Info:    No file OMSqhv.fd. on input line 5.
 
@@ -1524,38 +1741,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 649.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 649.
- (./Rapport.aux (./TeX/Datasheet.aux) (./TeX/OrCAD.aux)
-(./TeX/calculs.aux) (./TeX/Conclusion.aux) (./Codesource/cSharp.aux)
-(./Codesource/BolideUpsd.aux) (./Codesource/FESTO.aux) (./Codesource/PIC.aux)
-(./Codesource/ShellScript.aux) (./TeX/joke.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 649.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 649.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 611.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 611.
+ (./Rapport.aux (./TeX/SchemaBloc.aux) (./TeX/Datasheet.aux)
+(./TeX/OrCAD.aux) (./TeX/OrCADold.aux) (./TeX/Heritage.aux) (./TeX/calculs.aux)
+(./TeX/Conclusion.aux) (./Codesource/cSharp.aux) (./Codesource/BolideUpsd.aux)
+(./Codesource/FESTO.aux) (./Codesource/PIC.aux) (./Codesource/ShellScript.aux)
+(./TeX/joke.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 611.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 611.
 Package rerunfilecheck Info: File `Rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 534115AA7D4E22B73B412422F019C8EE;5375.
+(rerunfilecheck)             Checksum: 8F65E5B4697F59A2D8176CEF9E474D99;5126.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 649.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 611.
  ) 
 Here is how much of TeX's memory you used:
- 11917 strings out of 493108
- 167054 string characters out of 6138446
- 443120 words of memory out of 5000000
- 14831 multiletter control sequences out of 15000+600000
+ 11932 strings out of 493108
+ 167443 string characters out of 6138446
+ 428120 words of memory out of 5000000
+ 14841 multiletter control sequences out of 15000+600000
  62832 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,14n,60p,682b,1353s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
-, replaced by a fixed one
+ 37i,14n,60p,796b,1353s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exi
+st, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
 , replaced by a fixed one
@@ -1600,10 +1812,10 @@ ype1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre
 /qhvb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb><c:/
 texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb>
-Output written on Rapport.pdf (44 pages, 6724889 bytes).
+Output written on Rapport.pdf (44 pages, 10725871 bytes).
 PDF statistics:
- 1022 PDF objects out of 1200 (max. 8388607)
- 848 compressed objects within 9 object streams
- 225 named destinations out of 1000 (max. 500000)
- 766 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1029 PDF objects out of 1200 (max. 8388607)
+ 838 compressed objects within 9 object streams
+ 206 named destinations out of 1000 (max. 500000)
+ 741 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -151,7 +151,6 @@
             this.lblBlocColor = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.VoitureHS = new System.Windows.Forms.Button();
             this.VoitureStop = new System.Windows.Forms.Button();
             this.VoitureStart = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
@@ -187,6 +186,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Historique = new System.Windows.Forms.RichTextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.PC_Clock = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -197,6 +198,7 @@
             this.timer4RealTimeCAN = new System.Windows.Forms.Timer(this.components);
             this.label30 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -232,6 +234,8 @@
             this.groupBox25.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -239,7 +243,6 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
             this.groupBox1.Controls.Add(this.btnHwRefresh);
             this.groupBox1.Controls.Add(this.cbbChannel);
             this.groupBox1.Controls.Add(this.cbbBaudrates);
@@ -1382,6 +1385,7 @@
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage1);
             this.tabControl2.Location = new System.Drawing.Point(0, 27);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -1456,9 +1460,9 @@
             this.Poltergeist.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Poltergeist.Location = new System.Drawing.Point(6, 397);
             this.Poltergeist.Name = "Poltergeist";
-            this.Poltergeist.Size = new System.Drawing.Size(116, 26);
+            this.Poltergeist.Size = new System.Drawing.Size(190, 26);
             this.Poltergeist.TabIndex = 63;
-            this.Poltergeist.Text = "Poltergeist";
+            this.Poltergeist.Text = "Aperçu des trames";
             // 
             // label27
             // 
@@ -1698,26 +1702,15 @@
             // 
             // groupBox24
             // 
-            this.groupBox24.Controls.Add(this.VoitureHS);
+            this.groupBox24.Controls.Add(this.button4);
             this.groupBox24.Controls.Add(this.VoitureStop);
             this.groupBox24.Controls.Add(this.VoitureStart);
             this.groupBox24.Location = new System.Drawing.Point(809, 6);
             this.groupBox24.Name = "groupBox24";
-            this.groupBox24.Size = new System.Drawing.Size(169, 96);
+            this.groupBox24.Size = new System.Drawing.Size(174, 96);
             this.groupBox24.TabIndex = 62;
             this.groupBox24.TabStop = false;
             this.groupBox24.Text = "Véhicule";
-            // 
-            // VoitureHS
-            // 
-            this.VoitureHS.BackColor = System.Drawing.Color.White;
-            this.VoitureHS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("VoitureHS.BackgroundImage")));
-            this.VoitureHS.Location = new System.Drawing.Point(7, 54);
-            this.VoitureHS.Name = "VoitureHS";
-            this.VoitureHS.Size = new System.Drawing.Size(156, 23);
-            this.VoitureHS.TabIndex = 64;
-            this.VoitureHS.Text = "Mettre hors circuit";
-            this.VoitureHS.UseVisualStyleBackColor = false;
             // 
             // VoitureStop
             // 
@@ -2114,6 +2107,28 @@
             this.Historique.Text = "";
             this.Historique.TextChanged += new System.EventHandler(this.Historique_TextChanged);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.pictureBox4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1012, 540);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Liste des trames";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Image = global::PCANBasicExample.Properties.Resources.trames2;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1006, 534);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
             // PC_Clock
             // 
             this.PC_Clock.AutoSize = true;
@@ -2153,7 +2168,7 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(75, 13);
             this.label30.TabIndex = 56;
-            this.label30.Text = "Version 0.93.0";
+            this.label30.Text = "Version 0.94.0";
             // 
             // label35
             // 
@@ -2163,6 +2178,17 @@
             this.label35.Size = new System.Drawing.Size(42, 13);
             this.label35.TabIndex = 62;
             this.label35.Text = "Time = ";
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
+            this.button4.Location = new System.Drawing.Point(6, 56);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(156, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Activer table FESTO";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -2231,6 +2257,8 @@
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2372,7 +2400,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Button VoitureHS;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox1;
@@ -2406,6 +2433,9 @@
         private System.Windows.Forms.Label Range;
         private System.Windows.Forms.Label Poltergeist;
         private System.Windows.Forms.Label CANid;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button button4;
        // private System.Windows.Forms.Label GhostLabelDeRéceptionLabeldeTest;
         //private System.Windows.Forms.Label GhostLabelDeRéceptionTestLabel;
     }
