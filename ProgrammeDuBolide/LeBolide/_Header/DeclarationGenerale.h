@@ -22,35 +22,32 @@
 // *****************************************************************************
 //                            DEFINITION DE MOTS CLES
 // *****************************************************************************
-#define ACTIF     1
-#define INACTIF   0
+#define ACTIF      1
+#define INACTIF    0
 
-#define ON        0
-#define OFF       1
+#define ON         1
+#define OFF        0
 
-#define VRAI      1
-#define FAUX      0
+#define VRAI       1
+#define FAUX       0
 
-#define FAIL      1
-#define WIN       0
+#define HIGH       1
+#define LOW        0
 
-#define HIGH      1
-#define LOW       0
+#define HAUT       1
+#define BAS        0
 
-#define HAUT      1
-#define BAS       0
+#define ACK        0
+#define NOACK      1
 
-#define Hicham    1
-#define LeReste   0
+#define TRUE       1
+#define FALSE      0
 
-#define ACK       0
-#define NOACK     1
+#define COMPLETE   1
+#define INCOMPLETE 0
 
-#define TRUE      1
-#define FALSE     0
-
-#define COMPLET   1
-#define INCOMPLET 0
+#define VALIDE     1
+#define INVALIDE   0
 
 // *****************************************************************************
 //                            DEFINITION DE TYPE

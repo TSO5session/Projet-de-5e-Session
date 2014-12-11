@@ -164,9 +164,9 @@ void CLMCP2515 :: LireMCP2515(void)
 	BROCHE_MCP2515_CS = 1;
 	BROCHE_MCP2515_SCK = 0;
 	BROCHE_MCP2515_SDO = 0;
-	SLVSLCT = 1;     
+	BROCHE_MCP2515_CS = 1;     
 	ChoisirIdentifiantTX0(MCP2515_CHOIX_IDENTIFIANT);
-        SLVSLCT = 0;
+        BROCHE_MCP2515_CS = 0;
         ucSPITransferMOD0(0x03);           
         ucSPITransferMOD0(0x66);  
         
@@ -179,7 +179,7 @@ void CLMCP2515 :: LireMCP2515(void)
         D7 = ucSPITransferMOD0(0x00);
         D8 = ucSPITransferMOD0(0x00);
        
-        SLVSLCT = 1;    
+        BROCHE_MCP2515_CS = 1;    
         
           Tab [0] = D1;
           Tab [1] = D2;

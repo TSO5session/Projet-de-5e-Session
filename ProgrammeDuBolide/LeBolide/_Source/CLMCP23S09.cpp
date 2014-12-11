@@ -1,4 +1,4 @@
-// ************************** FICHIER: CLMCP23S09.CPP ***********************
+//************************** FICHIER: CLMCP23S09.CPP ***********************
 //
 // Fonctions pour l'extension d'I/O SPI MCP23S09
 //

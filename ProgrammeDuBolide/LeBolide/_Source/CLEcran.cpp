@@ -453,7 +453,7 @@ void CLEcran :: vLCDDisplayScreen(const UC *ucpEcran)
    {         
     vLCDCursor(0,ucLigne); 
     vLCDDisplayCaracChain(ucpEcran);  
-   // ucpEcran = ucpEcran + 1;    ERREUR DE LOGIQUE JEFF EST GAY
+    ucpEcran = ucpEcran + 20; 
    }
  }
 

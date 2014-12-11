@@ -2340,5 +2340,50 @@ namespace ICDIBasic
                 Historique.AppendText("Transfert de l'historique du SOC vars le PC");
             }
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                TPCANMsg CANMsg;
+                TPCANStatus stsResult;
+
+                CANMsg = new TPCANMsg();
+                CANMsg.DATA = new byte[8];
+
+                CANMsg.ID = 003; // 006 c'est pour faire des tests avec le fichier .HEX d'Hicham. Mettre 004 pour la version finale
+                CANMsg.LEN = 7;
+                CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+
+                for (int i = 0; i < CANMsg.LEN; i++) // Incrémenteur de longueur de message
+                {
+                    if (i == 0) { CANMsg.DATA[0] = 43; } // Note: Ce programme en C# envoie en base 10
+                    if (i == 1) { CANMsg.DATA[1] = 30; }   // 0x30 (en ascii) = caractère '0'
+                    if (i == 2) { CANMsg.DATA[2] = Convert.ToByte(DateTime.Now.ToString("HH")); } // 0 (en base 10) = caractère ascii '0' (0x30)
+                    if (i == 3) { CANMsg.DATA[3] = Convert.ToByte(DateTime.Now.ToString("mm")); }
+                    if (i == 4) { CANMsg.DATA[4] = Convert.ToByte(DateTime.Now.ToString("ss")); }
+                }
+                stsResult = PCANBasic.Write(m_PcanHandle, ref CANMsg); // Écrit le message
+
+                if (stsResult == TPCANStatus.PCAN_ERROR_OK) // Si l'envoie est réussi
+                {
+
+                }
+
+                else // Si l'envoi à échoué
+                {
+
+                }
+
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Erreur de Try Catch d'envoie sur le bus CAN");   // Enregistre le log de la connexion
+            }
+        }
     }
 }

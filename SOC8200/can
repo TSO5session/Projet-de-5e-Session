@@ -1,112 +1,127 @@
 ###################Lecture des trames##########################
 LastCommand="$(tail -1 histocan)"                             # Lit la dernière trame CAN reçue
+#echo "cat RAW CAN Data"
 echo "$LastCommand" > "LastCAN"                               # Met la dernière trame reçue dans le fichier LastCAN
+#cat LastCAN
+#echo " "
 ###################Lecture de la timestamp####################
 TimeStamp="$(cat LastCAN | awk '{print substr($0, 24, 8);}')" # Dissecte la TimeStamp
+#echo "TimeStamp = echo "$TimeStamp""
+#echo " "
 ###################Lecture des valeurs avec range##############
-RangedVar="$(cat LastCAN | awk '{print substr($0, 18, 4);}')" # Dissecte la valeur ranged
+RangedVar="$(cat LastCAN | awk '{print substr($0, 21, 2);}')" # Dissecte la valeur ranged
+#echo "RangedVar = $RangedVar"
+#echo " "
 ###################Lecture des données CAN#####################
 var="$(grep -o '^......................' LastCAN)"            # Met la partie invariable (sans timestamp) de la trame dans le fichier LastCAN
 Range="$(grep -o '^...................' LastCAN)"             # Met la partie variable (sans timestamp) de la trame dans le fichier LastCAN
 ###############################################################
+#ActifOUpassif="$(cat mode)"                                   # Vérifie le type de mode
+#echo "var"
+#echo "$var"
+#echo " "
+#echo "Range = $Range"
+#echo " "
+###############################################################
 ############START
-if [ "$var" == "  can0    6  [7] 00 00" ]; then
+if [ "$var" == "  can0    3  [7] 00 00" ]; then
    echo " "
    echo "*********************************"
-   echo "START the car | TimeStamp = $TimeStamp"
+   echo " START the car | TimeStamp = $TimeStamp"
 fi
 ############STOP
-if [ "$var" == "  can0    6  [7] 00 01" ]; then
+if [ "$var" == "  can0    3  [7] 00 01" ]; then
    echo " "
    echo "*********************************"
    echo " STOP the car | TimeStamp = $TimeStamp"
 fi
 ############HAS STOPPED
-if [ "$var" == "  can0    6  [7] 01 00" ]; then
+if [ "$var" == "  can0    3  [7] 01 00" ]; then
    echo " "
    echo "*********************************"
    echo " The car has stopped | TimeStamp = $TimeStamp"
 fi
 ############IS MOVING
-if [ "$var" == "  can0    6  [7] 01 01" ]; then
+if [ "$var" == "  can0    3  [7] 01 01" ]; then
    echo " "
    echo "*********************************"
    echo " The car is moving | TimeStamp = $TimeStamp"
 fi
 ############HORS CIRCUIT
-if [ "$var" == "  can0    6  [7] 01 02" ]; then
+if [ "$var" == "  can0    3  [7] 01 02" ]; then
    echo " "
    echo "*********************************"
    echo " Le bolide est hors circuit | TimeStamp = $TimeStamp"
 fi
 ############LECTURE DE VITESSE
-if [ "$Range" == "  can0    6  [7] 02" ]; then
+if [ "$Range" == "  can0    3  [7] 02" ]; then
    echo " "
    echo "*********************************"
    echo " Vitesse = $RangedVar | TimeStamp = $TimeStamp"
 fi
 ############BATTRIE DU VÉHICULE
-if [ "$Range" == "  can0    6  [7] 03" ]; then
+if [ "$Range" == "  can0    3  [7] 03" ]; then
    echo " "
    echo "*********************************"
    echo " Battrie = $RangedVar | TimeStamp = $TimeStamp"
 fi
 ############BLOC EN MÉTAL
-if [ "$var" == "  can0    6  [7] 04 00" ]; then
+if [ "$var" == "  can0    3  [7] 04 00" ]; then
    echo " "
    echo "*********************************"
    echo " Le bloc est en metal | TimeStamp = $TimeStamp"
 fi
 ############BLOC ORANGE
-if [ "$var" == "  can0    6  [7] 04 01" ]; then
+if [ "$var" == "  can0    3  [7] 04 01" ]; then
    echo " "
    echo "*********************************"
    echo " Le bloc est orange | TimeStamp = $TimeStamp"
 fi
 ############BLOC NOIR
-if [ "$var" == "  can0    6  [7] 04 02" ]; then
+if [ "$var" == "  can0    3  [7] 04 02" ]; then
    echo " "
    echo "*********************************"
    echo " Le bloc est noir | TimeStamp = $TimeStamp"
 fi
 ############POIDS DU BLOC
-if [ "$Range" == "  can0    6  [7] 05" ]; then
+if [ "$Range" == "  can0    3  [7] 05" ]; then
    echo " "
    echo "*********************************"
    echo " Le bloc pese $RangedVar | TimeStamp = $TimeStamp"
 fi
 ############VÉHICULE À LA STATION 1
-if [ "$var" == "  can0    6  [7] 07 00" ]; then
+if [ "$var" == "  can0    3  [7] 07 00" ]; then
    echo " "
    echo "*********************************"
    echo " Le bolide est a la station no.1 | TimeStamp = $TimeStamp"
 fi
 ############VÉHICULE À LA STATION 2
-if [ "$var" == "  can0    6  [7] 07 01" ]; then
+if [ "$var" == "  can0    3  [7] 07 01" ]; then
    echo " "
    echo "*********************************"
    echo " Le bolide est a la station no.2 | TimeStamp = $TimeStamp"
 fi
 ############REQUÊTE DE TRANSFERT D'HISTORIQUE
-if [ "$var" == "  can0    6  [7] C0 00" ]; then
+if [ "$var" == "  can0    3  [7] 2B 1E" ]; then
    echo " "
    echo "*********************************"
-   echo " Transfert d'historique | TimeStamp = $TimeStamp"
+   echo " Transfert d'historique | TimeStamp = $TimeStamp" 
+   ./LogToPC.sh  #Effectue le transfert
 fi
 ############EXIGE SENS HORAIRE
-if [ "$var" == "  can0    6  [7] 08 00" ]; then
+if [ "$var" == "  can0    3  [7] 08 00" ]; then
    echo " "
    echo "*********************************"
    echo " Exige sens horaire | TimeStamp = $TimeStamp"
 fi
 ############EXIGE SENS ANTIHORAIRE
-if [ "$var" == "  can0    6  [7] 08 01" ]; then
+if [ "$var" == "  can0    3  [7] 08 01" ]; then
    echo " "
    echo "*********************************"
    echo " Exige sens antihoraire | TimeStamp = $TimeStamp"
 fi
 ############SYCHRONISATION TEMPORELLE
-if [ "$Range" == "  can0    6  [7] 06" ]; then
+if [ "$Range" == "  can0    3  [7] 06" ]; then
    Heure="$(cat LastCAN | awk '{print substr($0, 24, 3);}')"
    Minute="$(cat LastCAN | awk '{print substr($0, 27, 3);}')"
    Seconde="$(cat LastCAN | awk '{print substr($0, 30, 3);}')"
@@ -123,6 +138,6 @@ if [ "$Range" == "  can0    6  [7] 06" ]; then
    echo " "
    date +%T -s "$HH:$MM:$SS"
    echo " "
-   echo "Nous sommes le"
+   echo " Nous sommes le"
    date
 fi

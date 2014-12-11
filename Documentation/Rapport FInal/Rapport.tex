@@ -451,7 +451,7 @@ Note: mettre image d'un Xbee
 \begin{figure}[hbtp]
 \caption{Programme de contrôle principal}
 \centering
-\fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
+\fbox{\includegraphics[scale=0.68]{Figures/programme.png}}
 \end{figure}
 
 Notre programme, écrit en C\# à l'aide de Visual Studio, peut se connecter au bus CAN via une carte SPI\footnote{Spécifier le fabricant} et au bus RS232 via un câble DB9 ou USB\footnote{S'il y a présence d'un FTDI}. La connexion RS232 sert à l'envoi et à la réception du HeartBeat afin d'informer le SOC8200 si l'ordinateur en venait à connaître une défaillance. De plus, des témoins lumineux s'allument en présence de données transmises et reçues. Le programme peut lire l'heure interne du PC et, par un simple clic sur le bouton « Synchroniser », inscrire son heure de référence sur la station no.1 via le bus CAN.\\
@@ -462,7 +462,7 @@ Notre programme, écrit en C\# à l'aide de Visual Studio, peut se connecter au 
 \begin{figure}[hbtp]
 \caption{Options CAN avancées}
 \centering
-\fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
+\fbox{\includegraphics[scale=0.68]{Figures/2.png}}
 \end{figure}
 Il est possible d'utiliser des fonctionnalités CAN avancées telles que les masques et filtres de données. De plus, cette fenêtre permet de visualiser les données CAN reçues à l'état brut et non traitées, ce qui peut s'avérer utile pour du débogage.\pagebreak
 
@@ -470,7 +470,7 @@ Il est possible d'utiliser des fonctionnalités CAN avancées telles que les mas
 \begin{figure}[hbtp]
 \caption{Historique des actions}
 \centering
-\fbox{\includegraphics[scale=0.7]{Figures/programme.png}}
+\fbox{\includegraphics[scale=0.68]{Figures/4.png}}
 \end{figure}
 Toute action effectuée via le programme ainsi que toute donnée ayant transité sur le bus CAN, RS232 et TCP/IP est cataloguée en bonne et due forme dans un historique qu'il est possible de consulter et sauvegarder à tout moment.
 
@@ -496,7 +496,7 @@ Un ghost label est un label de texte présent sur l'interface, mais définit com
 \pagebreak
 \section{Logiciel du SOC8200}
 \subsection{Description du programme}
-D'un commun accord de l'équipe, le programme du SOC2800 est écrit en script Shell. La principale raison de ce choix est Sourcery Codebench lui-même. La gestion des projets avec Sourcery est un cauchemar. Quant à la nécessité de sauvegarder pour compiler et d'utiliser une machine virtuelle, elles ne viennent qu'aggraver la situation. De plus, son gestionnaire de licence\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable sur un système Linux} frustre quiconque souhaite l'utiliser. L'utilisation du script shell est à la fois plus simple et permet de faire plus en moins de temps.
+D'un commun accord de l'équipe, le programme du SOC2800 est écrit en script Shell. La principale raison de ce choix est Sourcery Codebench lui-même. La gestion des projets avec Sourcery est un cauchemar. Quant à la nécessité de sauvegarder pour compiler et d'utiliser une machine virtuelle, elles ne viennent qu'aggraver la situation. De plus, son gestionnaire de licence\footnote{L'un des membres de l'équipe fait dire que les licences sont une horreur inacceptable et inexcusable sur un système Linux} frustre quiconque souhaite l'utiliser. L'utilisation du script shell est à la fois plus simple et permet de faire plus en moins de temps.
 
 \subsection{Schéma bloc du script shell}
 De tous les scripts, \textit{Projet.sh} est le maître, et contient l'équivalent du main. Ce fichier initialise le port série, le bus CAN, la lecture et l'envoi des heartbeat en asynchrone, ainsi que la lecture du clavier USB. Le script \textit{Projet.sh} peut aussi prendre la relève du bus CAN si le PC est dans l'incapacité d'assurer ses fonctions. Quant aux autres scripts, soit \textit{connexion.sh}, \textit{RxCan.sh}, \textit{tcp.sh} et \textit{Envoi.sh}, ce ne sont que des fonctionnalités que \textit{Projet.sh} appelle en asynchrone.
@@ -509,28 +509,33 @@ Toutes les trames CAN reçues sont enregistrées dans le fichier «histocan» do
 \end{spacing}
 
 \begin{verbatim}
-  can0    6  [7] 00 00 0B 04 34 00 00
-  can0    6  [7] 00 00 0B 04 34 00 00
-  can0    6  [7] 00 00 0B 04 35 00 00
-  can0    6  [7] 00 01 0B 04 36 00 00
-  can0    6  [7] 00 01 0B 04 37 00 00
-  can0    6  [7] 00 01 0B 04 37 00 00
-  can0    6  [7] 00 01 0B 04 38 00 00
-  can0    6  [7] 01 00 0B 04 39 00 00
+  can0    3  [7] 06 00 0E 0F 06 00 00
+  can0    3  [7] 00 00 0E 0F 08 00 00
+  can0    3  [7] 00 00 0E 0F 09 00 00
+  can0    3  [7] 00 00 0E 0F 0A 00 00
+  can0    3  [7] 00 01 0E 0F 0B 00 00
+  can0    3  [7] 2B 1E 0E 0F 0E 00 00
+  can0    3  [7] 00 00 0E 0F 1C 00 00
+  can0    3  [7] 00 01 0E 0F 1C 00 00
 \end{verbatim}
 
 De plus, un autre fichier (histocandate) contient l'heure et la date des trames reçues.
 \begin{verbatim}
-  can0 6 [7] 00 00 0B 1D 08 00 00
-  Wed Nov  5 11:30:00 UTC 2014
-  can0 6 [7] 00 00 0B 27 38 00 00
-  Wed Nov  5 11:30:13 UTC 2014
-  can0 6 [7] 00 00 0B 27 38 00 00
-  Wed Nov  5 11:30:13 UTC 2014
-  can0 6 [7] 00 00 0B 27 39 00 00
+  ************************
+  can0 3 [7] 00 00 0E 0F 09 00 00
+  Wed Dec 10 14:15:07 UTC 2014
+ 
+  ************************
+  can0 3 [7] 00 00 0E 0F 0A 00 00
+  Wed Dec 10 14:15:08 UTC 2014
+ 
+  ************************
+  can0 3 [7] 00 01 0E 0F 0B 00 00
+  Wed Dec 10 14:15:09 UTC 2014
 \end{verbatim} 
-
 \begin{spacing}{1.5}
+\vfill
+\pagebreak
 \subsection{Liste des tests et logiciels}
 
 

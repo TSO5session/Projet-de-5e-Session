@@ -20,35 +20,20 @@
 //
 // *****************************************************************************
 #include "Laboratoire.h"
-#include "TypeCible.h"
-#include "ProjetBolide.h"
-#include "CLXBEE.h"
+#include "DeclarationGenerale.h"
 
 void main(void)
  { 
-  class CLTest clTest;    // Declaration d'un objet de test
+   #ifdef UPSD3254A
+   WDKEY = 0x55;
+   #endif   
    
-#ifdef DALLAS89C450   
-   class CLVehicule Vehicule;
-  // class CLXbee     Xbee;
-
+   class CLTest clTest;    // Declaration d'un objet de test
+   clTest.vControleTest(); // Fonctions de test
+   
    while(1)
     {      
-      //Vehicule.vControleBolide();
-      //Xbee.SendString("Hello ");
-      //Vehicule.BattryInfo();
-      clTest.vControleTest();
-      //Vehicule.vControleBolide();
+
     }  
-#endif
-   
-#ifdef UPSD3254A
-   WDKEY = 0x55;
-   class CLEcran Ecran;
-   while(1)
-    {   
-      clTest.vControleTest();    
-    } 
-#endif  
  }
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -15,10 +15,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 //  Choix de la cible
-  #define UPSD3254A
-//#define DALLAS89C450
-//  #define SPI_DALLAS
-//  #define I2C_DALLAS
+// #define UPSD3254A
+ // #define STATION_1  
+ // #define STATION_2 
+
+   
+#define DALLAS89C450
+ // #define SPI_DALLAS
+  #define I2C_DALLAS
+
+//#define CHECKSUM_RS232
 
 ////////////////////////////////////////////////////////////////////////////////
 //  Fichier de definition des registres en fonction de la cible.
@@ -31,4 +37,5 @@
   #endif
 #endif
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 

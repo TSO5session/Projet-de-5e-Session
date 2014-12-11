@@ -44,6 +44,36 @@ CLSuiveurLigne :: ~CLSuiveurLigne(void)
 {
    
 }
+///////////////////////////////////////////////////////////////////////////////
+// UC CLSuiveurLigne :: ucLireCapteurs(void)
+///////////////////////////////////////////////////////////////////////////////
+//
+// Description: Renvoi l'état des capteurs 
+//
+// Parametres d'entrees: null
+//
+// Parametres de sortie: null
+//
+// Appel de la fonction: ucLireCapteurs();
+//
+// Cree le 04/12/2014 par Louis-Normand Ang Houle
+//
+// Modifications:
+// -
+//
+///////////////////////////////////////////////////////////////////////////////
+
+UC CLSuiveurLigne :: ucLireCapteurs(void)
+{
+   #ifdef SPI_DALLAS 
+   clMCP23S09Suiveur.vSetModeMCP23S09(LECTURE_MCP23S09, 0xFF);
+   return(clMCP23S09Suiveur.ucLireMCP23S09());
+   #endif
+   
+   #ifdef I2C_DALLAS
+   return(clIOPCF8574Suiveur.ucLireIOPCF());
+   #endif 
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // UC CLSuiveurLigne :: ucSuivreLigne(void)
@@ -53,23 +83,22 @@ CLSuiveurLigne :: ~CLSuiveurLigne(void)
 //
 // Parametres d'entrees: null
 //
-// Parametres de sortie: null
+// Parametres de sortie: DIRECTION
 //
-// Appel de la fonction: void (void);
+// Appel de la fonction: ucSuivreLigne();
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree en mai 2014 par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
 UC CLSuiveurLigne :: ucSuivreLigne(void)
- {
-   #ifdef SPI_DALLAS
-   union UNOctetBit unSuiveurLigne;
+ {  
    UC    ucDirection;
    
-   clMCP23S09Suiveur.vSetModeMCP23S09(LECTURE_MCP23S09, 0xE0);
+   #ifdef SPI_DALLAS 
+   clMCP23S09Suiveur.vSetModeMCP23S09(LECTURE_MCP23S09, 0xFF);
    
    unSuiveurLigne.ucOctet = clMCP23S09Suiveur.ucLireMCP23S09(); 
   
@@ -93,32 +122,7 @@ UC CLSuiveurLigne :: ucSuivreLigne(void)
    #endif
    
    #ifdef I2C_DALLAS
-       union  UNOctetBit unSuiveurLigne;
-       UC     ucDirection;
-       unSuiveurLigne.ucOctet = clIOPCF8574Suiveur.ucLireIOPCF();    
-/*   
-   #ifdef PCF_5_CAPTEURS
-       if(unSuiveurLigne.ucOctet  == 0xFE){ucDirection = DROITE;}
-   
-       if((unSuiveurLigne.ucOctet == 0xC0) || // Tous les senseurs sont ouverts.
-          (unSuiveurLigne.ucOctet == 0xC8) || // Le senseur central est actif.
-          (unSuiveurLigne.ucOctet == 0x18) || // Centre + CentreGauche
-          (unSuiveurLigne.ucOctet == 0x0C) || // Centre + CentreDroite
-          (unSuiveurLigne.ucOctet == 0xDC))   // Centre + CentreDroite + CentreGauche
-         {
-          ucDirection = DROITDEVANT;
-         }     
-       else
-        {
-         if(unSuiveurLigne.stChampBit.bBit1 == 1){ucDirection = GAUCHE    ;}
-         if(unSuiveurLigne.stChampBit.bBit2 == 1){ucDirection = GAUCHELENT;}
-         if(unSuiveurLigne.stChampBit.bBit5 == 1){ucDirection = DROITE    ;}
-         if(unSuiveurLigne.stChampBit.bBit4 == 1){ucDirection = DROITELENT;}
-        } 
-      return(ucDirection);
-   #endif
-     */ 
- //  #ifdef PCF_3_CAPTEURS  
+   unSuiveurLigne.ucOctet = clIOPCF8574Suiveur.ucLireIOPCF();    
        
    if((unSuiveurLigne.stChampBit.bBit5 == 1) & //Tous les senseurs sont ouverts.
       (unSuiveurLigne.stChampBit.bBit7 == 1))   //Le senseur central est actif.
@@ -136,8 +140,12 @@ UC CLSuiveurLigne :: ucSuivreLigne(void)
         ucDirection = GAUCHE;
        }
     } 
-      return(ucDirection);
- //  #endif
+   if((!unSuiveurLigne.stChampBit.bBit7) &&
+      (!unSuiveurLigne.stChampBit.bBit6) &&
+      (!unSuiveurLigne.stChampBit.bBit5))
+      {ucDirection = DROITVITE;}
+   
+   return(ucDirection);
    #endif   
  }
 

@@ -14,7 +14,7 @@
 //
 // ****************************************************************************
 
-#include "_DeclarationGenerale.h"
+#include "DeclarationGenerale.h"
 #include "CLFesto.h"
 
 
@@ -44,10 +44,8 @@ void CLFesto :: vFestoWrite(UC ucPeripherique, UC ucEtat)
 
 
 }    
-    
-    
-   
-UC CLFesto :: ucFestoRead(UC ucPeripherique)
+       
+void CLFesto :: vFestoRead(void)
 {
 
 

@@ -18,15 +18,8 @@
 // *****************************************************************************
 
 #include "CLTest.h"
+#include "CLVehicule.h"
 
-   UC VAR1,VAR2;
-   void ucECRIRE( UC ucACTUATEUR , UC ucEtat);
-   UC ucLIRE( UC ucACTUATEUR );
-   UC ucLireCapteur(void);
-   UC ucFin = 0;
-   UC ucType;
-   class CLIOPCF8574 IN_1(0x44), IN_2 (0x46), OUT_1 (0x40), OUT_2 (0x42);
-   
 // Constructeur par defaut ////////////////////////////////////////////////////
 CLTest :: CLTest(void)    
 : clTestEcran (0xF800)     // Adresse de l'ecran: 0xF800 
@@ -67,8 +60,14 @@ void CLTest :: vControleTest(void)
 //   vTestI2C();
 //   vTestSPI();
 //   vTestCommunic();
-   vTestCAN(); 
-//   vTestVehicule();
+//   vTestCAN(); 
+#ifdef DALLAS89C450
+   vTestVehicule();
+#endif
+   
+#ifdef UPSD3254A
+   vTestStation();
+#endif
  }
  
 ///////////////////////////////////////////////////////////////////////////////
@@ -295,137 +294,101 @@ void CLTest :: vTestCommunic(void)
  
 void CLTest :: vTestCAN(void)
  {
-#define STATION_2 
-   
 #ifdef UPSD3254A 
   #ifdef STATION_1
-   class CLMCP2515     Can;
-   class CLRS232       Serie;
-   class CLHorloge1307 Horloge;  
-   class CLEcran       Ecran;
-   char *ptr;
-
-   
+   class CLMCP2515     TestCan;
+   class CLCommunic    TestSerie;
+   class CLHorloge1307 TestHorloge;  
    
    UC  Menu[4][20] = {"H:   M:   S:      ",
                       "                  ",
                       "                  ",
                       "                  "};  
-   Ecran.vLCDDisplayScreen(*Menu); 
+   
+   clTestEcran.vLCDDisplayScreen(*Menu); 
    while (1)
      {
-       Can.LireMCP2515(); 
-       if (Serie.ucLireEtatTrame());
-        {         
-          ptr = Serie.ucpLireTrame();
-          Can.Tab[0] = 0x04;              
-          for (UC i = 1; i< 6; i++)
-           {
-            Can.Tab [i] = ptr [ i -1 ];
-           }         
-          Can.EnvoyerTrameMCP2515 (Can.Tab);         
-          Can.Tab[0] = 0x06;
-          Can.Tab[1] = Horloge.stTemps.ucHeure;
-          Can.Tab[2] = Horloge.stTemps.ucMinute;
-          Can.Tab[3] = Horloge.stTemps.ucSeconde;           
-          Can.EnvoyerTrameMCP2515 (Can.Tab);  
-        }  
+       TestCan.LireMCP2515(); 
+//       if (TestSerie.ucLireEtatTrame());
+//        {         
+//          ptr = TestSerie.ucpLireTrame();
+//          TestCan.Tab[0] = 0x04;              
+//          for (UC i = 1; i< 6; i++)
+//           {
+//            TestCan.Tab [i] = ptr [ i -1 ];
+//           }         
+//          TestCan.EnvoyerTrameMCP2515 (TestCan.Tab);         
+//          TestCan.Tab[0] = 0x06;
+//          TestCan.Tab[1] = Horloge.stTemps.ucHeure;
+//          TestCan.Tab[2] = Horloge.stTemps.ucMinute;
+//          TestCan.Tab[3] = Horloge.stTemps.ucSeconde;           
+//          TestCan.EnvoyerTrameMCP2515 (TestCan.Tab);  
+//        }  
         
-       switch (Can.Tab [0])
+       switch (TestCan.Tab [0])
        {
         case 0x06:
-         if (Can.Tab [1] == 0x00)
+         if (TestCan.Tab [1] == 0x00)
            {
-             Horloge.stTemps.ucHeure   =  ((Can.Tab [2] / 10)<<4) + (Can.Tab [2] % 10);             
-             Horloge.stTemps.ucMinute  =  ((Can.Tab [3] / 10)<<4) + (Can.Tab [3] % 10);
-             Horloge.stTemps.ucSeconde =  ((Can.Tab [4] / 10)<<4) + (Can.Tab [4] % 10);    
+             TestHorloge.stTemps.ucHeure   =  ((TestCan.Tab [2] / 10)<<4) + (TestCan.Tab [2] % 10);             
+             TestHorloge.stTemps.ucMinute  =  ((TestCan.Tab [3] / 10)<<4) + (TestCan.Tab [3] % 10);
+             TestHorloge.stTemps.ucSeconde =  ((TestCan.Tab [4] / 10)<<4) + (TestCan.Tab [4] % 10);    
            }         
          break;
-        case 0xAA:
-          Serie.Send (0xAA);        
+         case 0xAA:      
          break;        
        }
-      Horloge.vReadTime ();
-      Ecran.vLCDCursor (2,1);
-      Ecran.vLCDDisplayHexCarac (Horloge.stTemps.ucHeure);  
-      Ecran.vLCDCursor (7,1);
-      Ecran.vLCDDisplayHexCarac (Horloge.stTemps.ucMinute);
-      Ecran.vLCDCursor (12,1); 
-      Ecran.vLCDDisplayHexCarac (Horloge.stTemps.ucSeconde);
+      TestHorloge.vReadTime ();
+      clTestEcran.vLCDCursor (2,1);
+      clTestEcran.vLCDDisplayHexCarac (TestHorloge.stTemps.ucHeure);  
+      clTestEcran.vLCDCursor (7,1);
+      clTestEcran.vLCDDisplayHexCarac (TestHorloge.stTemps.ucMinute);
+      clTestEcran.vLCDCursor (12,1); 
+      clTestEcran.vLCDDisplayHexCarac (TestHorloge.stTemps.ucSeconde);
      }     
    #endif
-  #ifdef STATION_2
-    class CLEcran Ecran;
+   #ifdef STATION_2
+   class CLIOPCF8574 IN_1(0x44), IN_2 (0x46), OUT_1 (0x40), OUT_2 (0x42);
+     
+
+    UC var = 0x01; 
     while (1)
     {
-      UC is, io;
-      VAR1 = 0xFF;
-      VAR2 = 0xFF;
-#define OFF 1
-#define ON  0  
-#define ACTIF 1
-#define INACTIF 0
-
-         is = IN_1.ucLireIOPCF();
-         io = IN_2.ucLireIOPCF();
-         
-         Ecran.vLCDCursor (0,1);
-         Ecran.vLCDDisplayEtatPort(is);
-         Ecran.vLCDCursor (0,2);
-         Ecran.vLCDDisplayEtatPort(io);
-      if(ucLIRE(BOUTON_DEPART) == ACTIF)
-        { 
-
-         Ecran.vLCDDisplayHexCarac((UC) 'A');
-         
-
-          while((ucLIRE(BOUTON_ARRET) == INACTIF) || (ucFin == 0))
-          {      
-            Ecran.vLCDDisplayHexCarac((UC) 'A');	   
-            ucECRIRE(LUMIERE_VERTE , ON); 
-            while(ucLIRE(DETECTEUR_CAPACITIF_PLATEAU) == INACTIF) ucECRIRE( POUSSOIR_MAGASINBLOC_ENTREE_OUT , ON);
-            Ecran.vLCDDisplayHexCarac((UC) 'A');
-            ucECRIRE( POUSSOIR_MAGASINBLOC_ENTREE_OUT , OFF);
-            
-	    ucType = ucLireCapteur();
-           
-            while(ucLIRE(ELEVATEUR_HAUT) == INACTIF) ucECRIRE( ELEVATEUR_POSITION_HAUTE , ON);
-            ucECRIRE(ELEVATEUR_POSITION_HAUTE , OFF);
-           
-            
-	    while(ucLIRE(DETECTEUR_CAPACITIF_PLATEAU) == INACTIF) ucECRIRE( POUSSOIR_MAGASINBLOC_SORTIE_IN , ON);
-            ucECRIRE( POUSSOIR_MAGASINBLOC_SORTIE_IN , OFF);
-           
-            while(ucLIRE(ELEVATEUR_BAS) == INACTIF)  ucECRIRE( ELEVATEUR_POSITION_BASSE , ON);       
-            ucECRIRE( ELEVATEUR_POSITION_BASSE , OFF); 
-            
-            while(ucLIRE(DETECTEUR_OPTIQUE_CHUTE) == INACTIF)  ucECRIRE( RELAIS_CONVOYEUR , ON); 
-            ucECRIRE( RELAIS_CONVOYEUR , OFF);
-            
-            while((  ucLIRE(CYLINDRE_VENTOUSE_BAS_OUT)  == ACTIF ) && (ucLIRE(CYLINDRE_VENTOUSE_HAUT_OUT) == INACTIF))  ucECRIRE( CYLINDRE_VENTOUSE_HAUT_IN , ON);
-            ucECRIRE( CYLINDRE_VENTOUSE_HAUT_IN , OFF);
-            
-            //DRIVE(P0);
-            while(ucLIRE(CYLINDRE_VENTOUSE_BAS_OUT) == INACTIF) { ucECRIRE( CYLINDRE_VENTOUSE_BAS_IN , ON);}
-            ucECRIRE( CYLINDRE_VENTOUSE_BAS_IN , OFF);
-            ucECRIRE( VACUUM_ON , ON);
-			
-            while((  ucLIRE(CYLINDRE_VENTOUSE_BAS_OUT)  == ACTIF ) && (ucLIRE(CYLINDRE_VENTOUSE_HAUT_OUT) == INACTIF))  ucECRIRE( CYLINDRE_VENTOUSE_HAUT_IN , ON);
-            ucECRIRE( CYLINDRE_VENTOUSE_HAUT_IN , OFF);
-             //DRIVE(P4);
-            ucECRIRE( VACUUM_ON , OFF);
-            //DRIVE(P0);
-           ucFin = 1;
-          }  
-        ucFin = 0;
-        //OFF = 1;      
-        }
-    //   Ecran.vLCDDisplayHexCarac('a');              
-
-  #endif  
+   //   clTestEcran.vLCDCursor(0,1);
+   //   clTestEcran.vLCDDisplayCaracChain("TEST");
+   //   clTestEcran.vLCDCursor(0,2);
+   //   clTestEcran.vLCDDisplayEtatPort(IN_2.ucLireIOPCF());
+   //   clTestEcran.vLCDCursor(10,2);
+   //   clTestEcran.vLCDDisplayEtatPort(IN_1.ucLireIOPCF());
+      OUT_1.vEcrireIOPCF (0x00);
+    //  OUT_2.vEcrireIOPCF (0x00);  
+     /* 
+      for (UC i=0; i < 8; i++)
+       {         
+         clTestEcran.vLCDCursor(0,2);
+         clTestEcran.vLCDDisplayEtatPort(var);
+         clTestEcran.vLCDCursor(0,3);
+         clTestEcran.vLCDDisplayEtatPort(IN_1.ucLireIOPCF());
+         OUT_1.vEcrireIOPCF (var);
+         for (long i=0; i < 65000; i++);
+         var = var << 1;
+       } 
+      var = 0x01; 
+      for (UC i=0; i < 8; i++)
+       {      
+         clTestEcran.vLCDCursor(10,2);
+         clTestEcran.vLCDDisplayEtatPort(var); 
+         clTestEcran.vLCDCursor(10,3);
+         clTestEcran.vLCDDisplayEtatPort(IN_2.ucLireIOPCF());           
+         OUT_2.vEcrireIOPCF (var);
+         for (long i=0; i < 65000; i++);
+         var = var << 1;
+       } 
+      var = 0x01; */
+    }  
+  #endif   
  #endif 
- }
-}
+} 
  
 ///////////////////////////////////////////////////////////////////////////////
 // void CLTest :: vTestVehicule(void) 
@@ -437,7 +400,7 @@ void CLTest :: vTestCAN(void)
 //            
 // Parametres de sortie: null
 //
-// Appel de la fonction: vTestCommunic();
+// Appel de la fonction: vTestVehicule();
 //
 // Cree le 11 novembre 2014 par Louis-Normand Ang Houle 
 // 
@@ -449,162 +412,44 @@ void CLTest :: vTestVehicule(void)
  {
    #ifdef DALLAS89C450
    class CLVehicule clTestVehicule;
-   while(1)
-    {
-      clTestVehicule.vControleBolide();
-    }
+   
+   while(1){clTestVehicule.vControleBolide();}   
    #endif
  }
-
-
-
-void ucECRIRE( UC ucACTUATEUR , UC ucEtat)
-{ 
-   switch(ucACTUATEUR)
-   {
-     case LUMIERE_VERTE:
-	 VAR1 = (ucEtat == ON ?  ( VAR1 & 0xFE) :  ( VAR1 | 0x01) );
-	 OUT_1.vEcrireIOPCF(VAR1);
-     break; 
-     
-	 case CYLINDRE_VENTOUSE_BAS_IN:
-	 VAR1 = (ucEtat == ON ?  VAR1 & 0xBF : VAR1 | 0x40 );
-     OUT_2.vEcrireIOPCF( VAR1);
-     break;
-     
-	 case CYLINDRE_VENTOUSE_HAUT_IN:
-     VAR1 = ((ucEtat == ON) ?  VAR1 & 0xDF : VAR1 | 0x20 );
-	 OUT_2.vEcrireIOPCF( VAR1  );
-     break;
-     
-	 case VACUUM_ON:
-	 VAR1 = ((ucEtat == ON) ? VAR1 & 0xEF : VAR1 | 0x10 );
-     OUT_2.vEcrireIOPCF( VAR1);
-     break;
-     
-	 case ELEVATEUR_POSITION_BASSE:
-     VAR1 = ((ucEtat == ON) ?  VAR1 & 0xF7 : VAR1 | 0x08 );
-	 OUT_2.vEcrireIOPCF( VAR1 );
-     break;
-     
-	 case ELEVATEUR_POSITION_HAUTE:
-     VAR1 = ((ucEtat == ON) ? VAR1 & 0xFB :  VAR1 | 0x04 );
-	 OUT_2.vEcrireIOPCF( VAR1  );
-     break;
-     
-	 case POUSSOIR_MAGASINBLOC_ENTREE_IN:
-     VAR1 = ((ucEtat == ON) ?  VAR1 & 0xFD :  VAR1 | 0x02 );
-	 OUT_2.vEcrireIOPCF( VAR1 );
-     break;
-     
-	 case POUSSOIR_MAGASINBLOC_SORTIE_IN:
-     VAR1 = ((ucEtat == ON) ?  VAR1 & 0xFE : VAR1 | 0x01 );
-	 OUT_2.vEcrireIOPCF( VAR1 );
-     break;
-     
-	 case EJECTEUR_BLOC_SORTIE_IN:
-     VAR1 = ((ucEtat == ON) ?  VAR1 & 0x7F : VAR1 | 0x80 );
-	 OUT_1.vEcrireIOPCF( VAR2  );
-     break;
-     case RELAIS_CONVOYEUR:
-     VAR1 = ((ucEtat == ON) ?  VAR1 & 0xBF : VAR1 | 0x40 );
-      OUT_1.vEcrireIOPCF( VAR2);
-     break; 
-   }
-}
-
-UC ucLIRE(UC ucACTUATEUR)
+ 
+///////////////////////////////////////////////////////////////////////////////
+// void CLTest :: vTestStation(void) 
+///////////////////////////////////////////////////////////////////////////////
+//
+// Description: Fonction de test des stations
+//
+// Parametres d'entrees: null
+//            
+// Parametres de sortie: null
+//
+// Appel de la fonction: vTestStation();
+//
+// Cree le 28 novembre 2014 par Louis-Normand Ang Houle 
+// 
+// Modifications:   
+// -
+//
+/////////////////////////////////////////////////////////////////////////////// 
+ 
+void CLTest :: vTestStation(void)
 {
-   UC ucLecture;
-   switch(ucACTUATEUR)
-   {
-     case CYLINDRE_VENTOUSE_HAUT_OUT :
-     ucLecture = IN_2.ucLireIOPCF() & 0x01;
-     break;
-     
-	 case CYLINDRE_VENTOUSE_BAS_OUT :
-     ucLecture = IN_2.ucLireIOPCF() & 0x02;
-     break;
-     
-	 case DETECTEUR_MAGNETIQUE_PLATEAU :
-     ucLecture = IN_2.ucLireIOPCF() & 0x04;
-     break;
-     
-	 case DETECTEUR_CAPACITIF_PLATEAU :
-     ucLecture = IN_2.ucLireIOPCF() & 0x08;
-     break;
-      
-     
-	 case EJECTEUR_BLOC_ENTREE_OUT :
-     ucLecture = IN_2.ucLireIOPCF() & 0x10;
-     break;
-     
-	 case EJECTEUR_BLOC_SORTIE_OUT :
-     ucLecture = IN_2.ucLireIOPCF() & 0x20;
-     break;
-     
-	 case ELEVATEUR_BAS :
-     ucLecture = IN_2.ucLireIOPCF() & 0x40;
-     break;
-     
-	 case ELEVATEUR_HAUT :
-     ucLecture = IN_2.ucLireIOPCF() & 0x80;
-     break;
-     
-     
-     case POUSSOIR_MAGASINBLOC_ENTREE_OUT :
-     ucLecture = IN_1.ucLireIOPCF() & 0x01;
-     break;
-     
-	 case POUSSOIR_MAGASINBLOC_SORTIE_OUT :
-     ucLecture = IN_2.ucLireIOPCF() & 0x02;
-     break;
-     
-	 case DETECTEUR_OPTIQUE_PLATEAU :
-     ucLecture = IN_2.ucLireIOPCF() & 0x04;
-     break;
-     
-	 case DETECTEUR_OPTIQUE_CHUTE :
-     ucLecture = IN_2.ucLireIOPCF() & 0x08;
-     break;
-      
-     case BOUTON_DEPART :
-     ucLecture = IN_2.ucLireIOPCF() & 0x10;
-     break;
-     
-	 case BOUTON_ARRET :
-     ucLecture = IN_2.ucLireIOPCF() & 0x20;
-     break;
-     
-	 case INDICATIONPRESSION :
-     ucLecture = IN_2.ucLireIOPCF() & 0x40;
-     break;
-     
-	 case DETECTEUR_HAUTEUR :
-     ucLecture = IN_2.ucLireIOPCF() & 0x80;
-     break; 
-   } 
-   return ((ucLecture == 0) ? INACTIF : ACTIF); 
-  }
+   #ifdef UPSD3254A
+   #ifdef STATION_1
+   class CLStation1 clTestStation1;
+   while(1){clTestStation1.vControleStation1();}
+   #endif
   
-  
-  void vDrive(UC ucPostion)
-  {
-    
-  
-  
-  
-  
-  }
-  
-  
-  UC ucLireCapteur(void)
-  {
-    if((ucLIRE(DETECTEUR_MAGNETIQUE_PLATEAU) == ACTIF) && (ucLIRE(DETECTEUR_CAPACITIF_PLATEAU) == ACTIF)) return(METAL);
-    if(ucLIRE(DETECTEUR_OPTIQUE_PLATEAU) == ACTIF)return(NOIR);
-    if((ucLIRE(DETECTEUR_MAGNETIQUE_PLATEAU) == INACTIF) && (ucLIRE(DETECTEUR_CAPACITIF_PLATEAU) == ACTIF) && (ucLIRE(DETECTEUR_OPTIQUE_PLATEAU) == INACTIF)) return(ORANGE);
-    return(0xFF);
-  }
+   #ifdef STATION_2
+   class CLStation2 clTestStation2;
+   while(1){clTestStation2.vControleStation2();}
+   #endif
+   #endif
+}
 
  
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

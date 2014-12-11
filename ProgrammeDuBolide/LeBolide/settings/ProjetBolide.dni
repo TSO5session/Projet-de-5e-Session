@@ -65,9 +65,8 @@ GraphEnabled=0
 ShowTimeLog=1
 ShowTimeSum=1
 [Breakpoints2]
-Bp0=_ 0 "STD_CODE2" "{$PROJ_DIR$\_Source\CLTest.cpp}.301.4" 0 0 1 "" 0 ""
-Bp1=_ 1 "STD_CODE2" "{$PROJ_DIR$\_Header\CLFesto.h}.85.2" 0 0 1 "" 0 ""
-Count=2
+Bp0=_ 0 "STD_CODE2" "{$PROJ_DIR$\_Source\CLTest.cpp}.302.4" 0 0 1 "" 0 ""
+Count=1
 [Interrupts]
 Enabled=1
 [MemoryMap]

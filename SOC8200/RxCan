@@ -6,7 +6,9 @@ while true
    var=`tail -1 ./histocan`
    if [ "$var" != "$ancienvar" ]
      then
-       echo $var
+       echo " " >> ./histocandate
+       echo "************************" >> ./histocandate
+      # echo $var
        echo $var >> ./histocandate
        date >> ./histocandate
        ancienvar=$var

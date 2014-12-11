@@ -18,7 +18,7 @@
 // *****************************************************************************
 
 #include "DeclarationGenerale.h"
-
+#include "TypeCible.h"
 #include "CLTest.h"
 
 #ifndef CLLABORATOIREH

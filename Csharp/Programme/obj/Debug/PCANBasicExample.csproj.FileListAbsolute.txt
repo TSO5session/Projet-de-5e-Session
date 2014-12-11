@@ -58,3 +58,4 @@ C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debu
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\PCANBasicExample.csproj.GenerateResource.Cache
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\CAN Opener.exe
 C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\CAN Opener.pdb
+C:\Synchro\Dropbox\Travaux\Automne 2014\ProjetSession5\Csharp\Programme\obj\Debug\PCANBasicExample.csprojResolveAssemblyReference.cache

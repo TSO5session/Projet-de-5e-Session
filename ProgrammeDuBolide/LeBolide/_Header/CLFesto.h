@@ -17,52 +17,55 @@
 #ifndef CLFESTOH
 #define CLFESTOH
 
-#include "CLIOPcf8574.h"
+#include "CLIOPCF8574.h"
 
-
+class CLFesto
+{
+public:
+  CLFesto(void);
+ ~CLFesto(void);
+  void vFestoRead(void);
+  void vFestoWrite(UC ucPeripherique, UC ucEtat);
+  
+protected:
+  
+private:
+   
+};
 
 //Signaux venant de la table FESTO
+#define CYLINDRE_VENTOUSE_HAUT_OUT        0
+#define CYLINDRE_VENTOUSE_BAS_OUT         1
+#define DETECTEUR_MAGNETIQUE_PLATEAU      2
+#define DETECTEUR_CAPACITIF_PLATEAU       3
+#define EJECTEUR_BLOC_ENTREE_OUT          4
+#define EJECTEUR_BLOC_SORTIE _OUT         5
+#define ELEVATEUR_BAS                     6
+#define ELEVATEUR_HAUT                    7
+#define POUSSOIR_MAGASINBLOC_ENTREE_OUT   8
+#define POUSSOIR_MAGASINBLOC_SORTIE_OUT   9
+#define DETECTEUR_OPTIQUE_PLATEAU        10
+#define DETECTEUR_OPTIQUE_CHUTE          11
+#define BOUTON_DEPART                    12
+#define BOUTON_ARRET                     13
+#define INDICATIONPRESSION               14
+#define DETECTEUR_HAUTEUR                15
 
-#define CYLINDRE_VENTOUSE_HAUT_OUT     0   
-#define CYLINDRE_VENTOUSE_BAS_OUT      1   
-#define DETECTEUR_MAGNETIQUE_PLATEAU   2   
-#define DETECTEUR_CAPACITIF_PLATEAU    3   
-#define EJECTEUR_BLOC_ENTREE_OUT       4   
-#define EJECTEUR_BLOC_SORTIE_OUT       5   
-#define ELEVATEUR_BAS                  6   
-#define ELEVATEUR_HAUT                 7   
-
-#define POUSSOIR_MAGASINBLOC_ENTREE_OUT 8   
-#define POUSSOIR_MAGASINBLOC_SORTIE_OUT 9   
-#define DETECTEUR_OPTIQUE_PLATEAU       10  
-#define DETECTEUR_OPTIQUE_CHUTE         11  
-#define BOUTON_DEPART                   12  
-#define BOUTON_ARRET                    13  
-#define INDICATIONPRESSION              14  
-#define DETECTEUR_HAUTEUR               15  
 
 //Signaux Entran dans la table
 
-//#define DETECTEUR_HAUTEUR_5V            0
-//#define DETECTEUR_HAUTEUR_GND           1
-
-
-
-
-#define LUMIERE_VERTE                    0 
-#define CYLINDRE_VENTOUSE_BAS_IN         1 
-#define CYLINDRE_VENTOUSE_HAUT_IN        2 
-#define VACUUM_ON                        3 
-#define ELEVATEUR_POSITION_BASSE         4 
-#define ELEVATEUR_POSITION_HAUTE         5 
-#define POUSSOIR_MAGASINBLOC_ENTREE_IN   6 
-#define POUSSOIR_MAGASINBLOC_SORTIE_IN   7 
-
-
-#define EJECTEUR_BLOC_SORTIE_IN          8  
-#define RELAIS_CONVOYEUR                 9 
-
-
+#define DETECTEUR_HAUTEUR_5V              0
+#define DETECTEUR_HAUTEUR_GND             1
+#define LUMIERE_VERTE                     2
+#define CYLINDRE_VENTOUSE_BAS_IN          3
+#define CYLINDRE_VENTOUSE_HAUT_IN         4
+#define VACUUM_ON                         5
+#define ELEVATEUR_POSITION_BASSE          6
+#define ELEVATEUR_POSITION_HAUTE          7
+#define POUSSOIR_MAGASINBLOC_ENTREE_IN    8
+#define POUSSOIR_MAGASINBLOC_SORTIE_IN    9
+#define EJECTEUR_BLOC_SORTIE_IN          10
+#define RELAIS_CONVOYEUR                 11
 
 
 
@@ -84,11 +87,8 @@
 #define DEFAULT_MOTION_COMPLETE 13
 #define DEFAULT_ACK_START       14
 #define DEFAULT_ERROR           15
-
-#define NOIR 0x00
-#define METAL 0x01
-#define ORANGE 0x02
-
+#define ALIMENTATION_GND        16
+#define ALIMENTATION_24v        17 
 
 
 #endif

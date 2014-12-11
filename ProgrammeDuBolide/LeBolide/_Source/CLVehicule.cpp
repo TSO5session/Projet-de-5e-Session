@@ -20,6 +20,8 @@
 //
 // *****************************************************************************
 
+#include "DeclarationGenerale.h"
+
 #ifdef DALLAS89C450
 #include "CLVehicule.h"
 
@@ -31,42 +33,46 @@ CLVehicule :: CLVehicule(void) :
               clRoueAvantD   (R_AVANTD)  ,
               clRoueAvantG   (R_AVANTG)  ,
               clRoueArriereD (R_ARRIERED),
-              clRoueArriereG (R_ARRIEREG)  
+              clRoueArriereG (R_ARRIEREG),
+              clXbeeVehicule(5, 5, 9600)  
  { 
-   ucMode           = MODEMANUEL;
-   
-   #ifdef SPI_DALLAS
-     uiVitesse        = VITESSEINIT;
-     uiVitesseTourne  = VITESSEINITTOURNE;
-   #endif
-   
-   #ifdef I2C_DALLAS
+     ucMode          = MODEMANUEL;
+     ucCompteur      = 0;
+     ucPosition      = 0;
+     ucSens          = HORAIRE;
      ucVitesse       = VITESSEINIT;
      ucVitesseTourne = VITESSEINITTOURNE; 
-   #endif
+     
+     TrameTxVehicule[0] = '3';
+     TrameTxVehicule[1] = ' ';
+     TrameTxVehicule[2] = '0';
+     TrameTxVehicule[3] = '0';
+     TrameTxVehicule[4] = '0';
  }
 
 //******************************************************************************
 //                            LE CONSTRUCTEUR INITIALISATEUR
 // *****************************************************************************
- CLVehicule :: CLVehicule(USI uiVit, USI uiVitTourne) :
+CLVehicule :: CLVehicule(USI uiVit, USI uiVitTourne) :
               clEcranVehicule(0xF800),
               clRoueAvantD   (R_AVANTD),
               clRoueAvantG   (R_AVANTG),
               clRoueArriereD (R_ARRIERED),
-              clRoueArriereG (R_ARRIEREG) 
+              clRoueArriereG (R_ARRIEREG),
+              clXbeeVehicule(5, 5, 9600)
  { 
-   ucMode            = MODEMANUEL;
-   
-   #ifdef SPI_DALLAS
-     uiVitesse       = uiVit;
-     uiVitesseTourne = uiVitTourne;  
-   #endif
-   
-   #ifdef I2C_DALLAS
+     ucMode          = MODEMANUEL;
+     ucCompteur      = 0;
+     ucPosition      = 0;
+     ucSens          = HORAIRE;
      ucVitesse       = uiVit;
-     ucVitesseTourne = uiVitTourne; 
-   #endif 
+     ucVitesseTourne = uiVitTourne;
+     
+     TrameTxVehicule[0] = '3';
+     TrameTxVehicule[1] = ' ';
+     TrameTxVehicule[2] = '0';
+     TrameTxVehicule[3] = '0';
+     TrameTxVehicule[4] = '0';
  }
 
 // *****************************************************************************
@@ -89,7 +95,7 @@ CLVehicule :: CLVehicule(void) :
 //
 // Appel de la fonction: void (void);
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree le 2014/04/24 par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
@@ -97,7 +103,134 @@ CLVehicule :: CLVehicule(void) :
 ///////////////////////////////////////////////////////////////////////////////
 void CLVehicule :: vControleBolide(void)
 {  
- vSuivreLigne();
+  static UC ucStart = 1;
+  static UC ucFlagVehicule = 0; 
+
+  TrameRxVehicule = clXbeeVehicule.ucpLireTrame();
+  vInfoPosition();
+
+  clEcranVehicule.vLCDCursor(10,2);
+  clEcranVehicule.vLCDDisplayHexCarac(ucSens);
+  
+  if(TrameRxVehicule != NULL)
+   {    
+     clEcranVehicule.vLCDCursor(0,2);
+     clEcranVehicule.vLCDDisplayCaracChain(TrameRxVehicule);
+     if(TrameRxVehicule[0] == '2' &&   // Commande recue de la station 2
+        TrameRxVehicule[1] == ' ')
+     {   
+       switch(TrameRxVehicule[2])
+       {
+       case 'A':
+         TrameRxVehicule = NULL;
+         ucMode = MODEMANUEL;
+         
+         break;
+         
+       case 'L':    
+         ucStart = 1;     
+         if(TrameRxVehicule[4] == '1')
+          {
+            ucMode = MODESUIVEUR;
+            ucSens = HORAIRE;
+            ucFlagVehicule = 1;
+          }
+         
+         if(TrameRxVehicule[4] == '2')
+          {
+            ucMode = MODESUIVEUR;
+            ucSens = ANTIHORAIRE;  
+          }
+         
+         if(TrameRxVehicule[4] == '0')
+         {
+           ucMode = MODEMANUEL;
+         }
+         TrameRxVehicule = NULL;
+         break; 
+         
+       default:
+         break;
+        }
+     }
+     else clXbeeVehicule.vResetTampon();
+   }
+  
+  if (ucPosition == 1) ucMode = MODEMANUEL;
+  if (ucPosition == 3) ucMode = MODEMANUEL;
+
+  switch(ucMode)
+  {
+  case MODEMANUEL:
+    vAvancer(ARRET);
+    TrameTxVehicule[2] = 'A';
+    TrameTxVehicule[3] = (ucPosition + 0x30);
+    clXbeeVehicule.vTransChaine(TrameTxVehicule);
+    break;
+    
+  case MODESUIVEUR:
+    
+    if(ucSens == HORAIRE)
+     {
+       if(ucFlagVehicule == 1)
+       {
+          if(ucCompteur == 1) {
+            ucStart = 0;
+            vAvancer(GAUCHE);
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+            for(UI i = 0; i<65000; i++);   
+            vAvancer(DROITDEVANT);
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+         }
+       
+          if(ucCompteur == 2) {
+            vAvancer(DROITE);
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+            for(UI i = 0; i<65000; i++);
+            vAvancer(DROITDEVANT);
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+            for(UI i = 0; i<65000; i++);
+            for(UI i = 0; i<65000; i++); 
+            ucCompteur = 0;
+         }
+          ucFlagVehicule = 0;
+       }
+     }
+    if(ucSens == ANTIHORAIRE)
+     {   
+       if(ucCompteur == 1)
+        {
+         ucStart = 0;
+         clEcranVehicule.vLCDCursor(10,4);
+         clEcranVehicule.vLCDDisplayCaracChain("vagin");
+         ucCompteur = 0;
+         ucVitesse         = 0x40; 
+         vAvancer(DROITDEVANT);
+         for(UI i = 0; i<65000; i++); 
+         for(UI i = 0; i<65000; i++); 
+         for(UI i = 0; i<65000; i++); 
+        }
+     }
+    vSuivreLigne();
+    TrameTxVehicule[2] = 'L';
+    TrameTxVehicule[3] = (ucPosition + 0x30);
+    clXbeeVehicule.vTransChaine(TrameTxVehicule);
+    break;
+  default:
+    break;
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -112,7 +245,7 @@ void CLVehicule :: vControleBolide(void)
 //
 // Appel de la fonction: void (void);
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree le 2014/04/24 par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
@@ -231,49 +364,43 @@ void CLVehicule :: vAvancer(UC ucDirection)
 //
 // Appel de la fonction: void (void);
 //
-// Cree le  par Louis-Normand Ang Houle
+// Cree le 2014/04/24 par Louis-Normand Ang Houle
 //
 // Modifications:
 // -
 //
 ///////////////////////////////////////////////////////////////////////////////
 void CLVehicule :: vSuivreLigne(void)
- {
-#ifdef SPI_DALLAS
+ { 
+ 
    clEcranVehicule.vLCDCursor(0,1);
    clEcranVehicule.vLCDDisplayCaracChain("****SUIVIE LIGNE****");   
-
-   uiVitesse          = 0x0280; 
-
+#ifdef SPI_DALLAS
+   uiVitesse          = 0x0270; 
    switch(clSuiveurLigne.ucSuivreLigne())
     {
     case GAUCHE:
       uiVitesseTourne = 0x0700;
       vAvancer(GAUCHE);
-    break;
+    break; 
     
     case DROITE:
       uiVitesseTourne = 0x0700;
       vAvancer(DROITE);
     break;
- 
+    
     case DROITDEVANT:
-      
       vAvancer(DROITDEVANT);
     break;
     }
 #endif
    
 #ifdef I2C_DALLAS
-   clEcranVehicule.vLCDCursor(0,1);
-   clEcranVehicule.vLCDDisplayCaracChain("****SUIVIE LIGNE****");  
-
-   ucVitesse         = 0x28; 
-
+   ucVitesse         = 0x27; 
    switch(clSuiveurLigne.ucSuivreLigne())
     {
     case GAUCHE:
-      ucVitesseTourne = 0x40;
+      ucVitesseTourne = 0x3A;
       vAvancer(GAUCHE);
     break;
     
@@ -283,7 +410,7 @@ void CLVehicule :: vSuivreLigne(void)
     break;  
     
     case DROITE:
-      ucVitesseTourne = 0x40;
+      ucVitesseTourne = 0x3A;
       vAvancer(DROITE);
     break;
     
@@ -295,7 +422,10 @@ void CLVehicule :: vSuivreLigne(void)
     case DROITDEVANT:
       vAvancer(DROITDEVANT);
     break;
-    
+    case DROITVITE:
+      ucVitesse         = 0x40; 
+      vAvancer(DROITDEVANT);
+    break;  
     case ARRET:
       vAvancer(ARRET);
     break;
@@ -303,82 +433,106 @@ void CLVehicule :: vSuivreLigne(void)
 #endif
  }
  
-// ********************** FONCTION: BattryInfo()
+///////////////////////////////////////////////////////////////////////////////
+//void CLVehicule :: vInfoBatterie(void)
+///////////////////////////////////////////////////////////////////////////////
 //
-// DESCRIPTION:         Fonction pour lire l'énergie de la pile et l'envoyer sur Xbee
+// Description: Fonction de lecture du niveau de la pile
 //
-// INCLUDE:             "clVehicule.h"
+// Parametres d'entrees: null
 //
-// PROTOTYPE:           void BattryInfo(void)
+// Parametres de sortie: null
 //
-// PROCEDURE D'APPEL:   BattryInfo()
+// Appel de la fonction: void (void);
 //
-// PARAMETRE D'ENTREE:  AUCUN
+// Cree le 04/12/2014 par Louis-Normand Ang Houle
 //
-// PARAMETRE DE SORTIE: AUCUN
+// Modifications:
+// -
 //
-// Auteur:              Vincent Chouinard
-// Date:                21 novembre 2014 (Version 1.0)
-// *****************************************************************************
- void CLVehicule :: BattryInfo (void)
- {
-  Xbee.SendNumber((int)Battry.fLirePile());
- }
- 
-// ********************** FONCTION: SpeedInfo()
-//
-// DESCRIPTION:         Fonction pour lire la vitesse du bolide et l'envoyer sur Xbee
-//
-// INCLUDE:             "clVehicule.h"
-//
-// PROTOTYPE:           void SpeedInfo(void)
-//
-// PROCEDURE D'APPEL:   SpeedInfo()
-//
-// PARAMETRE D'ENTREE:  AUCUN
-//
-// PARAMETRE DE SORTIE: AUCUN
-//
-// Auteur:              Vincent Chouinard
-// Date:                21 novembre 2014 (Version 1.0)
-// *****************************************************************************
-  void CLVehicule :: SpeedInfo (void)
- {
-  Xbee.SendNumber(NULL); // Code à écrire 
- }
- 
-// ********************** FONCTION: GetPosition()
-//
-// DESCRIPTION:         Fonction pour lire la position du bolide et l'envoyer sur Xbee
-//
-// INCLUDE:             "clVehicule.h"
-//
-// PROTOTYPE:           void GetPosition(void)
-//
-// PROCEDURE D'APPEL:   GetPosition()
-//
-// PARAMETRE D'ENTREE:  AUCUN
-//
-// PARAMETRE DE SORTIE: AUCUN
-//
-// Auteur:              Vincent Chouinard
-// Date:                21 novembre 2014 (Version 1.0)
-// *****************************************************************************
- void CLVehicule :: GetPosition (void)
- {  
- UC ucPosition = Xbee.GetChar(); // Hmmm... Qui envoie la position du véhicule, le véhicule lui-même ou le poste actif?
+///////////////////////////////////////////////////////////////////////////////
+void CLVehicule :: vInfoBatterie(void)
+{
   
- switch(ucPosition)
-  { 
-   case 1:
-      Xbee.SendString("Je suis à la table FESTO");
-   break;
+}
 
-   case 2:
-      Xbee.SendString("Je suis à la tstation de pesée");
-   break;
-  }  
- }
+///////////////////////////////////////////////////////////////////////////////
+//void CLVehicule :: vInfoPosition(void) 
+///////////////////////////////////////////////////////////////////////////////
+//
+// Description: Fonction de 
+//
+// Parametres d'entrees: null
+//
+// Parametres de sortie: null
+//
+// Appel de la fonction: void (void);
+//
+// Cree le 04/12/2014 par Louis-Normand Ang Houle
+//
+// Modifications:
+// -
+//
+///////////////////////////////////////////////////////////////////////////////
+void CLVehicule :: vInfoPosition(void) 
+{
+  static UC ucFlag = 0;
+  unCapteurPos.ucOctet = clSuiveurLigne.ucLireCapteurs();  
+  
+  if((unCapteurPos.stChampBit.bBit0 == 0) &&
+     (unCapteurPos.stChampBit.bBit1 == 1) &&
+     (unCapteurPos.stChampBit.bBit2 == 0) && 
+      ucFlag == 0)
+     {
+       ucPosition = 1;
+       if((unCapteurPos.stChampBit.bBit5 == 0) &&
+          (unCapteurPos.stChampBit.bBit6 == 0) && 
+          (unCapteurPos.stChampBit.bBit7 == 0))
+       {ucPosition = 3;}  
+       ucFlag = 1;
+     }  
+  
+  if((unCapteurPos.stChampBit.bBit0 == 0) &&
+     (unCapteurPos.stChampBit.bBit1 == 0) &&
+     (unCapteurPos.stChampBit.bBit2 == 0) &&
+       
+     (unCapteurPos.stChampBit.bBit5 == 0) &&
+     (unCapteurPos.stChampBit.bBit6 == 0) && 
+     (unCapteurPos.stChampBit.bBit7 == 0) &&        
+      ucFlag == 0)
+     {
+       ucCompteur ++;
+       ucFlag = 1;
+     }  
+  
+   if((unCapteurPos.stChampBit.bBit0 == 0) ||
+      (unCapteurPos.stChampBit.bBit1 == 0) ||
+      (unCapteurPos.stChampBit.bBit2 == 0) &&
+       
+      (unCapteurPos.stChampBit.bBit5 == 1) &&
+      (unCapteurPos.stChampBit.bBit6 == 0) && 
+      (unCapteurPos.stChampBit.bBit7 == 0) &&        
+       ucFlag == 0)
+     {
+       ucVitesse         = 0x40; 
+       vAvancer(DROITDEVANT);       
+       ucFlag = 1;
+     } 
+  
+  if((unCapteurPos.stChampBit.bBit0 == 1) &&
+     (unCapteurPos.stChampBit.bBit1 == 1) &&
+     (unCapteurPos.stChampBit.bBit2 == 1))
+     {
+       ucFlag = 0;
+       ucPosition = 0;
+     }
+  
+  clEcranVehicule.vLCDCursor(0,4);
+  clEcranVehicule.vLCDDisplayHexCarac(ucPosition);
+  
+  clEcranVehicule.vLCDCursor(10,4);
+  clEcranVehicule.vLCDDisplayHexCarac(ucCompteur);
+}
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #endif 
  

@@ -123,31 +123,33 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.Range = new System.Windows.Forms.Label();
-            this.GhostLabelDeRéception = new System.Windows.Forms.Label();
-            this.RangedTrame = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.GhostLabel = new System.Windows.Forms.Label();
+            this.Poltergeist = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.CANid = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.GhostLabel2 = new System.Windows.Forms.Label();
+            this.GhostLabel = new System.Windows.Forms.Label();
             this.lblDirection = new System.Windows.Forms.Label();
+            this.Range = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.GhostLabelDeRéception = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.RangedTrame = new System.Windows.Forms.Label();
             this.lblEtatVehicule = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.GhostLabel2 = new System.Windows.Forms.Label();
             this.lblBattryLevel = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.lblStation = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblSpeed = new System.Windows.Forms.Label();
             this.LblPoidBloc = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.lblBlocColor = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lblBlocColor = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
             this.VoitureHS = new System.Windows.Forms.Button();
             this.VoitureStop = new System.Windows.Forms.Button();
@@ -174,7 +176,6 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.Poltergeist = new System.Windows.Forms.Label();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.UART1DisplayBox = new System.Windows.Forms.TextBox();
@@ -196,7 +197,6 @@
             this.timer4RealTimeCAN = new System.Windows.Forms.Timer(this.components);
             this.label30 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.CANid = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -1441,6 +1441,73 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Informations en temps réel";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(157, 234);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(63, 20);
+            this.label20.TabIndex = 56;
+            this.label20.Text = "no data";
+            // 
+            // Poltergeist
+            // 
+            this.Poltergeist.AutoSize = true;
+            this.Poltergeist.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Poltergeist.Location = new System.Drawing.Point(6, 397);
+            this.Poltergeist.Name = "Poltergeist";
+            this.Poltergeist.Size = new System.Drawing.Size(116, 26);
+            this.Poltergeist.TabIndex = 63;
+            this.Poltergeist.Text = "Poltergeist";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(7, 52);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(105, 20);
+            this.label27.TabIndex = 16;
+            this.label27.Text = "Station active";
+            // 
+            // CANid
+            // 
+            this.CANid.AutoSize = true;
+            this.CANid.Location = new System.Drawing.Point(7, 318);
+            this.CANid.Name = "CANid";
+            this.CANid.Size = new System.Drawing.Size(56, 20);
+            this.CANid.TabIndex = 64;
+            this.CANid.Text = "ID can";
+            this.CANid.Visible = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(8, 234);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 20);
+            this.label29.TabIndex = 57;
+            this.label29.Text = "Ping";
+            // 
+            // GhostLabel
+            // 
+            this.GhostLabel.AutoSize = true;
+            this.GhostLabel.Location = new System.Drawing.Point(202, 338);
+            this.GhostLabel.Name = "GhostLabel";
+            this.GhostLabel.Size = new System.Drawing.Size(18, 20);
+            this.GhostLabel.TabIndex = 1;
+            this.GhostLabel.Text = "0";
+            this.GhostLabel.Visible = false;
+            // 
+            // lblDirection
+            // 
+            this.lblDirection.AutoSize = true;
+            this.lblDirection.Location = new System.Drawing.Point(157, 72);
+            this.lblDirection.Name = "lblDirection";
+            this.lblDirection.Size = new System.Drawing.Size(61, 20);
+            this.lblDirection.TabIndex = 19;
+            this.lblDirection.Text = "Horaire";
+            this.lblDirection.TextChanged += new System.EventHandler(this.lblDirection_TextChanged);
+            // 
             // Range
             // 
             this.Range.AutoSize = true;
@@ -1450,6 +1517,15 @@
             this.Range.TabIndex = 62;
             this.Range.Text = "Range";
             this.Range.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 32);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 20);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "État du véhicule";
             // 
             // GhostLabelDeRéception
             // 
@@ -1462,6 +1538,15 @@
             this.GhostLabelDeRéception.Visible = false;
             this.GhostLabelDeRéception.TextChanged += new System.EventHandler(this.GhostLabelDeRéception_TextChanged);
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(8, 72);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(72, 20);
+            this.label28.TabIndex = 18;
+            this.label28.Text = "Direction";
+            // 
             // RangedTrame
             // 
             this.RangedTrame.AutoSize = true;
@@ -1472,109 +1557,6 @@
             this.RangedTrame.Text = "RangedValue";
             this.RangedTrame.Visible = false;
             this.RangedTrame.TextChanged += new System.EventHandler(this.RangedTrame_TextChanged);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(826, 403);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(55, 20);
-            this.label32.TabIndex = 59;
-            this.label32.Text = "Aucun";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(785, 383);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(102, 20);
-            this.label31.TabIndex = 58;
-            this.label31.Text = "Type de bloc:";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PCANBasicExample.Properties.Resources.NO;
-            this.pictureBox3.Location = new System.Drawing.Point(887, 309);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(116, 114);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 21;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(157, 234);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(63, 20);
-            this.label20.TabIndex = 56;
-            this.label20.Text = "no data";
-            // 
-            // GhostLabel
-            // 
-            this.GhostLabel.AutoSize = true;
-            this.GhostLabel.Location = new System.Drawing.Point(202, 338);
-            this.GhostLabel.Name = "GhostLabel";
-            this.GhostLabel.Size = new System.Drawing.Size(18, 20);
-            this.GhostLabel.TabIndex = 1;
-            this.GhostLabel.Text = "0";
-            this.GhostLabel.Visible = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(7, 52);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(105, 20);
-            this.label27.TabIndex = 16;
-            this.label27.Text = "Station active";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(8, 234);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(40, 20);
-            this.label29.TabIndex = 57;
-            this.label29.Text = "Ping";
-            // 
-            // GhostLabel2
-            // 
-            this.GhostLabel2.AutoSize = true;
-            this.GhostLabel2.Location = new System.Drawing.Point(202, 318);
-            this.GhostLabel2.Name = "GhostLabel2";
-            this.GhostLabel2.Size = new System.Drawing.Size(18, 20);
-            this.GhostLabel2.TabIndex = 63;
-            this.GhostLabel2.Text = "0";
-            this.GhostLabel2.Visible = false;
-            // 
-            // lblDirection
-            // 
-            this.lblDirection.AutoSize = true;
-            this.lblDirection.Location = new System.Drawing.Point(157, 72);
-            this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(61, 20);
-            this.lblDirection.TabIndex = 19;
-            this.lblDirection.Text = "Horaire";
-            this.lblDirection.TextChanged += new System.EventHandler(this.lblDirection_TextChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 32);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 20);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "État du véhicule";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(8, 72);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(72, 20);
-            this.label28.TabIndex = 18;
-            this.label28.Text = "Direction";
             // 
             // lblEtatVehicule
             // 
@@ -1594,6 +1576,16 @@
             this.label21.TabIndex = 8;
             this.label21.Text = "Batterie";
             // 
+            // GhostLabel2
+            // 
+            this.GhostLabel2.AutoSize = true;
+            this.GhostLabel2.Location = new System.Drawing.Point(202, 318);
+            this.GhostLabel2.Name = "GhostLabel2";
+            this.GhostLabel2.Size = new System.Drawing.Size(18, 20);
+            this.GhostLabel2.TabIndex = 63;
+            this.GhostLabel2.Text = "0";
+            this.GhostLabel2.Visible = false;
+            // 
             // lblBattryLevel
             // 
             this.lblBattryLevel.AutoSize = true;
@@ -1602,6 +1594,15 @@
             this.lblBattryLevel.Size = new System.Drawing.Size(63, 20);
             this.lblBattryLevel.TabIndex = 9;
             this.lblBattryLevel.Text = "no data";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(826, 403);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(55, 20);
+            this.label32.TabIndex = 59;
+            this.label32.Text = "Aucun";
             // 
             // lblStation
             // 
@@ -1612,6 +1613,15 @@
             this.lblStation.TabIndex = 17;
             this.lblStation.Text = "Table FESTO";
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(785, 383);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(102, 20);
+            this.label31.TabIndex = 58;
+            this.label31.Text = "Type de bloc:";
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1620,6 +1630,16 @@
             this.label22.Size = new System.Drawing.Size(62, 20);
             this.label22.TabIndex = 10;
             this.label22.Text = "Vitesse";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PCANBasicExample.Properties.Resources.NO;
+            this.pictureBox3.Location = new System.Drawing.Point(887, 309);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(116, 114);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 21;
+            this.pictureBox3.TabStop = false;
             // 
             // lblSpeed
             // 
@@ -1639,6 +1659,16 @@
             this.LblPoidBloc.TabIndex = 15;
             this.LblPoidBloc.Text = "no data";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PCANBasicExample.Properties.Resources.festoHoraire;
+            this.pictureBox1.Location = new System.Drawing.Point(268, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(741, 411);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -1647,15 +1677,6 @@
             this.label23.Size = new System.Drawing.Size(119, 20);
             this.label23.TabIndex = 12;
             this.label23.Text = "Couleur du bloc";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 148);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(95, 20);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "Poid du bloc";
             // 
             // lblBlocColor
             // 
@@ -1666,15 +1687,14 @@
             this.lblBlocColor.TabIndex = 13;
             this.lblBlocColor.Text = "no data";
             // 
-            // pictureBox1
+            // label26
             // 
-            this.pictureBox1.Image = global::PCANBasicExample.Properties.Resources.festoHoraire;
-            this.pictureBox1.Location = new System.Drawing.Point(268, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(741, 411);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(8, 148);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(95, 20);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Poid du bloc";
             // 
             // groupBox24
             // 
@@ -1743,6 +1763,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Synchroniser historique";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // ClockSync
             // 
@@ -1972,16 +1993,6 @@
             this.tabPage7.Text = "Onglet de Debug";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // Poltergeist
-            // 
-            this.Poltergeist.AutoSize = true;
-            this.Poltergeist.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Poltergeist.Location = new System.Drawing.Point(6, 397);
-            this.Poltergeist.Name = "Poltergeist";
-            this.Poltergeist.Size = new System.Drawing.Size(116, 26);
-            this.Poltergeist.TabIndex = 63;
-            this.Poltergeist.Text = "Poltergeist";
-            // 
             // groupBox25
             // 
             this.groupBox25.Controls.Add(this.button2);
@@ -2142,7 +2153,7 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(75, 13);
             this.label30.TabIndex = 56;
-            this.label30.Text = "Version 0.92.1";
+            this.label30.Text = "Version 0.93.0";
             // 
             // label35
             // 
@@ -2152,16 +2163,6 @@
             this.label35.Size = new System.Drawing.Size(42, 13);
             this.label35.TabIndex = 62;
             this.label35.Text = "Time = ";
-            // 
-            // CANid
-            // 
-            this.CANid.AutoSize = true;
-            this.CANid.Location = new System.Drawing.Point(7, 318);
-            this.CANid.Name = "CANid";
-            this.CANid.Size = new System.Drawing.Size(56, 20);
-            this.CANid.TabIndex = 64;
-            this.CANid.Text = "ID can";
-            this.CANid.Visible = false;
             // 
             // Form1
             // 

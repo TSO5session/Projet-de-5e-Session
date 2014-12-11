@@ -16,7 +16,6 @@
 //               pile.
 // *****************************************************************************
 #include "CLPile.h"
-#include "CLADCMAX1236.h"
 #include "DeclarationGenerale.h"
 
 //******************************************************************************
@@ -73,13 +72,19 @@ float CLPile :: fLirePile(void)
 #ifdef I2C_DALLAS 
 float fTensionPile = uiLireValeur(PILE);// Met le MAX1236 en mode "Lire Pile"
                                         // et lit les 2 octets transmis
-return(fTensionPile * CONVPILE);        // Retourne une valeur decimale 
-#endif                                  // correspondant a la tension de la pile
+fTensionPile *= CONVPILE;               // Retourne une valeur decimale 
+return(fTensionPile);                   // correspondant a la tension de la pile
+#endif                                  
 
 #ifdef SPI_DALLAS 
-// Il faut écrire la version SPI du CODE
-return(Hicham);                      
+float fTensionPile = uiLireConversion(TLV2554_CAN3);// Met le MAX1236 en mode "Lire Pile"
+                                            // et lit les 2 octets transmis       
+fTensionPile *= CONVPILE;
+return(fTensionPile);                       // Retourne une valeur decimale    
+                                            // correspondant a la tension de la pile
 #endif                                  
+
+
 }
 
 

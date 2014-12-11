@@ -22,8 +22,9 @@
 #define ARRET       4
 #define DROITELENT  5
 #define GAUCHELENT  6
+#define DROITVITE   7
 
-class CLSuiveurLigne : public CLMCP23S09
+class CLSuiveurLigne
 {
 public:
    CLSuiveurLigne(void);
@@ -31,10 +32,11 @@ public:
   ~CLSuiveurLigne(void);
 
    UC ucSuivreLigne(void);
-
+   UC ucLireCapteurs(void);
 protected:
 
 private:
+   union UNOctetBit unSuiveurLigne;
    #ifdef SPI_DALLAS
      class CLMCP23S09 clMCP23S09Suiveur;
    #endif

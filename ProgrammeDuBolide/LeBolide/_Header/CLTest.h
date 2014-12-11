@@ -28,12 +28,22 @@
    #include "CLMCP2515.h" 
    #include "CLHorloge1307.h"
    #include "CLEcran.h"
-   #include "CLRS232.h"
+   #include "CLCommunic.h"
    #include "CLIOPCF8574.h"
-   #include "CLFesto.h"
+
+   #ifdef STATION_1
+   #include "CLStation1.h"
+   #endif
+
+   #ifdef STATION_2
+   #include "CLStation2.h"
+   #endif
 #endif
 
 #ifdef DALLAS89C450
+   #include "CLCommunic.h"
+   #include "CLVehicule.h" 
+
    #ifdef SPI_DALLAS
     #include "CLDAC7554.h"
     #include "CLTLV2544.h"
@@ -45,8 +55,6 @@
     #include "CLADCMAX1236.h"
     #include "CLIOPCF8574.h"
    #endif
-
-   #include "CLVehicule.h" 
 #endif
 
 #ifndef CLTESTH
@@ -58,8 +66,7 @@ public:
    CLTest(void);
   ~CLTest(void);
   
-   class CLEcran        clTestEcran;
-   
+   class CLEcran        clTestEcran;   
    #ifdef UPSD3254A
    class CLClavier      clTestClavier;
    #endif
@@ -72,7 +79,7 @@ public:
    void vTestCAN         (void);
    void vTestCommunic    (void);
    void vTestVehicule    (void);
-   
+   void vTestStation     (void);
 protected:
 
 private:

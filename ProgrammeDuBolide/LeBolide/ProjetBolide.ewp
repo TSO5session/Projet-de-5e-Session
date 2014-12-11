@@ -1483,7 +1483,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>C:\Users\1240249\Desktop\LeBolide\_Header</state>
+          <state>C:\Travail\LeBolide\_Header</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1820,7 +1820,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>C:\Users\1240249\Desktop\LAB6_Hicham\IAR\_Ver810_lnk51ew_DS89C450.xcl</state>
+          <state>C:\Travail\LeBolide\_Ver810_lnk51ew_DS89C450.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -2527,7 +2527,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>C:\Users\1240249\Desktop\LeBolide\_Header</state>
+          <state>C:\Travail\LeBolide\_Header</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2864,7 +2864,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>C:\Users\1240249\Desktop\LeBolide\_Ver810_lnk51ew_uPSD3254A.xcl</state>
+          <state>C:\Travail\LeBolide\_Ver810_lnk51ew_uPSD3254A.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -3141,7 +3141,7 @@
     <name>$PROJ_DIR$\_Source\CLClavier.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\_Header\CLClavier.h</name>
+    <name>$PROJ_DIR$\_Source\CLCommunic.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLDAC6574.cpp</name>
@@ -3151,6 +3151,9 @@
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLEcran.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\_Source\CLFesto.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLHorloge1307.cpp</name>
@@ -3174,19 +3177,19 @@
     <name>$PROJ_DIR$\_Source\CLMCP2515.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\_Header\CLMCP2515.h</name>
-  </file>
-  <file>
     <name>$PROJ_DIR$\_Source\CLPile.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLRoue.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\_Source\CLRS232.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\_Source\CLSerialPortInterface.cpp</name>
+    <name>$PROJ_DIR$\_Source\CLStation1.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\_Source\CLStation2.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLSuiveurLigne.cpp</name>
@@ -3199,9 +3202,6 @@
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\CLVehicule.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\_Source\CLXBEE.cpp</name>
   </file>
   <file>
     <name>$PROJ_DIR$\_Source\Laboratoire.cpp</name>
