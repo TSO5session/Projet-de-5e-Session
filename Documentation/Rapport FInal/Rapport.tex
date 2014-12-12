@@ -204,7 +204,7 @@ Nous devons réaliser l'automatisation d'un système industriel constitué d'une
 \begin{itemize}
 \item[•]VMWare Workstation 10
 \item[•]TeXmaker 4.3
-\item[•]Xctu for Xbee
+\item[•]X-ctu for Xbee
 \item[•]Dukto R6
 \item[•]Dia
 \item[•]Microsoft Visio 2013
@@ -303,9 +303,9 @@ TS = TimeStamp; HH = heure; MM = minute; SS = seconde; [00-FF]= valeur allant de
 \hline 
 \textbf{Émetteur} & \textbf{Fonctionnalité} & \textbf{Trame CAN}  \\ 
 \hline 
-Ordinateur & Démarrer le véhicule & 00 00 TS TS TS 00 00  \\ 
+Ordinateur & Démarrer le véhicule & 08 00 TS TS TS 00 00  \\ 
 \hline 
-Ordinateur & Arrêter le véhicule & 00 01 TS TS TS 00 00  \\ 
+Ordinateur & Arrêter le véhicule & 08 01 TS TS TS 00 00  \\ 
 \hline 
 Véhicule & Dit: je suis arrêté & 01 00 TS TS TS 00 00  \\ 
 \hline 
@@ -323,9 +323,9 @@ Table FESTO & Bloc = orange & 04 01 TS TS TS 00 00  \\
 \hline 
 Table FESTO & Bloc = noir & 04 02 TS TS TS 00 00  \\ 
 \hline 
-Table FESTO & La voiture est à la table FESTO & 07 00 TS TS TS 00 00 \\ 
+Table FESTO & La voiture est à la table FESTO & 07 01 TS TS TS 00 00 \\ 
 \hline 
-Station de pesée & La voiture est à la station de pesée & 07 01 TS TS TS 00 00  \\ 
+Station de pesée & La voiture est à la station de pesée & 07 00 TS TS TS 00 00  \\ 
 \hline 
 Ordinateur & Synchronisation temporelle & 06 00 HH MM SS 00 00  \\ 
 \hline 

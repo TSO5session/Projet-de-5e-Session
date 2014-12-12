@@ -1,36 +1,24 @@
+while true
+ do
 ###################Lecture des trames##########################
 LastCommand="$(tail -1 histocan)"                             # Lit la dernière trame CAN reçue
-#echo "cat RAW CAN Data"
 echo "$LastCommand" > "LastCAN"                               # Met la dernière trame reçue dans le fichier LastCAN
-#cat LastCAN
-#echo " "
 ###################Lecture de la timestamp####################
 TimeStamp="$(cat LastCAN | awk '{print substr($0, 24, 8);}')" # Dissecte la TimeStamp
-#echo "TimeStamp = echo "$TimeStamp""
-#echo " "
 ###################Lecture des valeurs avec range##############
 RangedVar="$(cat LastCAN | awk '{print substr($0, 21, 2);}')" # Dissecte la valeur ranged
-#echo "RangedVar = $RangedVar"
-#echo " "
 ###################Lecture des données CAN#####################
-var="$(grep -o '^......................' LastCAN)"            # Met la partie invariable (sans timestamp) de la trame dans le fichier LastCAN
-Range="$(grep -o '^...................' LastCAN)"             # Met la partie variable (sans timestamp) de la trame dans le fichier LastCAN
-###############################################################
-#ActifOUpassif="$(cat mode)"                                   # Vérifie le type de mode
-#echo "var"
-#echo "$var"
-#echo " "
-#echo "Range = $Range"
-#echo " "
+var="$(grep -o '^......................' LastCAN)"            # Met la partie invariable (sans timestamp) de la trame dans 
+Range="$(grep -o '^...................' LastCAN)"             # Met la partie variable (sans timestamp) de la trame dans le 
 ###############################################################
 ############START
-if [ "$var" == "  can0    3  [7] 00 00" ]; then
+if [ "$var" == "  can0    3  [7] 08 00" ]; then
    echo " "
    echo "*********************************"
    echo " START the car | TimeStamp = $TimeStamp"
 fi
 ############STOP
-if [ "$var" == "  can0    3  [7] 00 01" ]; then
+if [ "$var" == "  can0    3  [7] 08 01" ]; then
    echo " "
    echo "*********************************"
    echo " STOP the car | TimeStamp = $TimeStamp"
@@ -85,7 +73,7 @@ if [ "$var" == "  can0    3  [7] 04 01" ]; then
    echo " Le bloc est orange | TimeStamp = $TimeStamp"
       if [ "$(cat mode)" == "Actif" ]; then
       /usr/bin/cansend can0 001#0801FFFF
-   fi
+      fi
 fi
 ############BLOC NOIR
 if [ "$var" == "  can0    3  [7] 04 02" ]; then
@@ -94,7 +82,7 @@ if [ "$var" == "  can0    3  [7] 04 02" ]; then
    echo " Le bloc est noir | TimeStamp = $TimeStamp"
       if [ "$(cat mode)" == "Actif" ]; then
       /usr/bin/cansend can0 001#0001FFFF
-   fi
+      fi
 fi
 ############POIDS DU BLOC
 if [ "$Range" == "  can0    3  [7] 05" ]; then
@@ -102,14 +90,14 @@ if [ "$Range" == "  can0    3  [7] 05" ]; then
    echo "*********************************"
    echo " Le bloc pese $RangedVar | TimeStamp = $TimeStamp"
 fi
-############VÉHICULE À LA STATION 1
-if [ "$var" == "  can0    3  [7] 07 00" ]; then
+############VÉHICULE À LA STATION 1 FESTO
+if [ "$var" == "  can0    3  [7] 07 01" ]; then
    echo " "
    echo "*********************************"
    echo " Le bolide est a la station no.1 | TimeStamp = $TimeStamp"
 fi
-############VÉHICULE À LA STATION 2
-if [ "$var" == "  can0    3  [7] 07 01" ]; then
+############VÉHICULE À LA STATION 3 LA PESÉE
+if [ "$var" == "  can0    3  [7] 07 00" ]; then
    echo " "
    echo "*********************************"
    echo " Le bolide est a la station no.2 | TimeStamp = $TimeStamp"
@@ -158,5 +146,6 @@ fi
 if [ "$var" == "  can0    3  [7] 09 00" ]; then
    echo " "
    echo "*********************************"
-   echo " Démarrage de la table FESTO | TimeStamp = $TimeStamp"
+   echo " Demarrage de la table FESTO | TimeStamp = $TimeStamp"
 fi
+done 

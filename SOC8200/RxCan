@@ -8,7 +8,7 @@ while true
      then
        echo " " >> ./histocandate
        echo "************************" >> ./histocandate
-      # echo $var
+       echo $var
        echo $var >> ./histocandate
        date >> ./histocandate
        ancienvar=$var

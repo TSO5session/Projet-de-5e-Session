@@ -27,15 +27,16 @@ echo " "
 #-------------#
 while true
 do
-./can #-------------------------------------------------# Exécution du script sniffer
+#./can #-------------------------------------------------# Exécution du script sniffer
+echo "$(cat LastCAN)"                                   # For debugging purposes only
   #-----------------------------------------------------# Lecture "asychrone" du clavier via passe passe du coyote
   read -t 1 output                                      # Lit le clavier avec un timout
   #-----------------------------------------------------#
   if   [ "$output" = "A" ] || [ "$output" = "a" ]; then # Si l'utilisateur entre a ou A
-       echo " Mode Actif"   | tee mode                  # Écrit Actif dans un fichier
+    #   echo " Mode Actif"   # | tee mode                  # Écrit Actif dans un fichier
        echo "Actif" > mode                              # Écrit Passif dans un fichier#
   elif [ "$output" = "P" ] || [ "$output" = "p" ]; then # Si l'utilisateur entre p ou P
-       echo " Mode Passif"                              #
+    #   echo " Mode Passif"                              #
        echo "Passif" > mode                             # Écrit Passif dans un fichier#  
   fi #--------------------------------------------------#
 maVar="$(cat mode)"                                     # Met le contenu du fichier mode dans maVar
@@ -72,7 +73,7 @@ if [ "$maVar" = "Actif" ]; then                #
          compteur=0                            #
          if [ $flagetat -eq 0 ]                # Si tu n'est pas le master du bus CAN
            then                                #
-             ./can &                           # Démarre un processus CAN
+             ./can                             # Démarre un processus CAN
              PID=$!                            # Le PID du script RxCAN est mis dans la variable PID
              echo ACTIF                        # Mode = actif
              echo "Switching to Master of CAN" # Devient le maitre absolu du bus CAN

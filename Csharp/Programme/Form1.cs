@@ -20,8 +20,9 @@ namespace ICDIBasic
 {
     public partial class Form1 : Form
     {
+       
         #region CONSTANTES
-        const byte VEHICULE      = 0;
+        const byte VEHICULE      = 8;
           const byte ARRET       = 1;
           const byte DEMARRE     = 0;
 
@@ -54,7 +55,7 @@ namespace ICDIBasic
            const byte HORAIRE     = 0;
            const byte ANTIHORAIRE = 1;
 
-        const byte HORLOGE      = 06;
+        const byte HORLOGE      = 6;
 
         const byte FESTO_START = 9;
         const byte FESTO = 0;
@@ -637,7 +638,8 @@ namespace ICDIBasic
         {
             InitializeComponent();
             InitializeBasicComponents();
-
+            //Poltergeist.Text = "";
+           // Poltergeist.Text = "0";
             timer3.Start(); // Pour gérer la clock interne du PC, celle pour la synchronisation de l'heure
             COMselector.Items.AddRange(PortsDisponible); // Affiche les ports disponibles UART1
             Connexion.Text = "Connexion";                // Le bouton sert à se connecter UART1
@@ -1662,11 +1664,11 @@ namespace ICDIBasic
                 catch
                 {
                     label7.Text = "Failure";
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    Historique.AppendText("\r\n");
-                    Historique.AppendText("Échec de réception des données en RS-232");   // Enregistre le log de la connexion
+                   // Historique.AppendText("\r\n");
+                   // Historique.AppendText("\r\n");
+                   // Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                   // Historique.AppendText("\r\n");
+                   // Historique.AppendText("Échec de réception des données en RS-232");   // Enregistre le log de la connexion
                 }
             }
         }
@@ -1727,6 +1729,7 @@ namespace ICDIBasic
           try
             {
              TxCan2(VEHICULE, DEMARRE);
+             TxCan2(99, 99);
 
              Historique.AppendText("\r\n");
              Historique.AppendText("\r\n");
@@ -1752,6 +1755,7 @@ namespace ICDIBasic
             try
             {
              TxCan2(VEHICULE, ARRET);
+             TxCan2(99, 99);
 
              Historique.AppendText("\r\n");
              Historique.AppendText("\r\n");
@@ -1830,6 +1834,7 @@ namespace ICDIBasic
             try
             {
              TxCan2(HORLOGE, 0);
+             TxCan2(99, 99);
 
              Historique.AppendText("\r\n");
              Historique.AppendText("\r\n");
@@ -1910,7 +1915,7 @@ namespace ICDIBasic
                         lviCurrentItem.SubItems[5].Text = msgStatus.TimeString;
 
                         Poltergeist.Text = lviCurrentItem.SubItems[3].Text; // Met le string lu dans le GHOST LABEL master
-
+                        PoidsLabel.Text = lviCurrentItem.SubItems[3].Text;
                         GhostLabelDeRéception.Text = Poltergeist.Text; // Met le string lu dans un GHOST LABEL
                         RangedTrame.Text = Poltergeist.Text;           // Met le string lu dans un GHOST LABEL
                         RangedTrame.Text = RangedTrame.Text.Remove(RangedTrame.Text.Length - 7); // Enlève la timestamp et la variation
@@ -1933,10 +1938,30 @@ namespace ICDIBasic
 
             if(CANid.Text == "ListViewSubItem: {005h}")
             {
+                string Dizaine = Poltergeist.Text.Remove(0, 1);
+                Dizaine = Dizaine.Remove(Dizaine.Length - 12);
+
+                string Unite = Poltergeist.Text.Remove(0, 4);
+                Unite = Unite.Remove(Unite.Length - 9);
+
+                string Dizieme = Poltergeist.Text.Remove(0, 10);
+                Dizieme = Dizieme.Remove(Dizieme.Length - 3);
+
+                string Centieme = Poltergeist.Text.Remove(0, 13);
+
+               // int Dix = Convert.ToInt16(Dizaine);
+               // int Un = Convert.ToInt16(Unite);
+               // int Diz = Convert.ToInt16(Dizieme);
+               // int Cnt = Convert.ToInt16(Centieme);
+
+                //string Newton = Convert.ToString(Dix + Un + (Diz / 10) + (Cnt / 100));
+
                 try
                 {
-                    LblPoidBloc.Text = Poltergeist.Text;
-                    //LblPoidBloc.Text = Convert.ToString(Int32.Parse(Poltergeist.Text, System.Globalization.NumberStyles.HexNumber));
+                    LblPoidBloc.Text = Dizaine;
+                    Poidunite.Text = Unite;
+                    PoidDizieme.Text = Dizieme;
+                    PoidCentieme.Text = Centieme;
                     Historique.AppendText("\r\n");
                     Historique.AppendText("\r\n");
                     Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -1958,6 +1983,7 @@ namespace ICDIBasic
                     try
                     {
                         TxCan2(VEHICULE, DEMARRE);
+                        TxCan2(99, 99);
 
                         Historique.AppendText("\r\n");
                         Historique.AppendText("\r\n");
@@ -2246,7 +2272,7 @@ namespace ICDIBasic
                 pictureBox1.Image = PCANBasicExample.Properties.Resources.hm;
             }
 
-            if (GhostLabelDeRéception.Text == "04 00") // Lorsque le bloc est métallique
+            if (Poltergeist.Text.Contains("34 30")) // Lorsque le bloc est métallique
             {
                 lblBlocColor.Text = "Métalique";
                 lblDirection.Text = "Horaire";  // *** Déclanche l'événement textchanged du label lblDirection***
@@ -2259,7 +2285,7 @@ namespace ICDIBasic
                 label32.Text = "Metal";
             }
 
-            if (GhostLabelDeRéception.Text == "04 01") // Lorsque le bloc est noir
+            if (Poltergeist.Text.Contains ("34 32")) // Lorsque le bloc est noir
             {
                 lblBlocColor.Text = "Noir";
                 Historique.AppendText("\r\n");
@@ -2271,7 +2297,7 @@ namespace ICDIBasic
                 label32.Text = "Noir";
             }
 
-            if (GhostLabelDeRéception.Text == "04 02") // Lorsque le bloc est orange
+            if (Poltergeist.Text.Contains("34 31")) // Lorsque le bloc est orange
             {
                 lblBlocColor.Text = "Orange";
                 lblDirection.Text = "Antihoraire";  // Déclanche l'événement textchanged du label lblDirection
@@ -2284,7 +2310,7 @@ namespace ICDIBasic
                 label32.Text = "Orange";
             }
 
-            if (GhostLabelDeRéception.Text == "07 00") // Lorsque le véhicule est à la station de pesée
+            if (Poltergeist.Text.Contains("37 30")) // Lorsque le véhicule est à la station de pesée
             {
                 lblStation.Text = "Station de pesée";
                 Historique.AppendText("\r\n");
@@ -2304,7 +2330,7 @@ namespace ICDIBasic
                 }
             }
 
-            if (GhostLabelDeRéception.Text == "07 01") //Le véhicule est à la table FESTO
+            if (Poltergeist.Text.Contains("37 31")) //Le véhicule est à la table FESTO
             {
                 lblStation.Text = "Table FESTO";
                 Historique.AppendText("\r\n");
@@ -2391,7 +2417,198 @@ namespace ICDIBasic
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TxCan2(FESTO_START, FESTO);
+            try
+            {
+             TxCan2(FESTO_START, FESTO);
+             TxCan2(99, 99);
+
+             Historique.AppendText("\r\n");
+             Historique.AppendText("\r\n");
+             Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+             Historique.AppendText("\r\n");
+             Historique.AppendText("Démarrage de la séquence FESTO");
+            }
+            catch
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Échec du démarrage de la séquence FESTO (try catch error)");
+            }
+            
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void redémarrerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void sauvegarderToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();        //Cré un dialog de sauvegarde
+            saveFileDialog1.Filter = "Text file (*.doc)|*.doc";           //Fichier par défaut = .doc
+
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK //Si l'user à appuyé sur OK
+                && saveFileDialog1.FileName.Length > 0)
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Enregistrement de l'historique sur PC");   // Enregistre le log de la connexion
+                Historique.SaveFile(saveFileDialog1.FileName); //Sauvegarde le texte
+            }
+        }
+
+        private void effacerToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Historique.Clear();
+        }
+
+        private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result1 = MessageBox.Show("Projet de 5ème session Par Vincent, Hicham, Gabriel et Louis-Normand", "Hey listen!", MessageBoxButtons.OK); // Note: À moifier
+            if (result1 == DialogResult.Yes)
+            {
+
+            }
+        }
+        
+        private void Poltergeist_TextChanged(object sender, EventArgs e)
+        {
+            if (GhostLabelDeRéception.Text == "31 30") // Lorsque le véhicule est arrêté
+            {
+                lblEtatVehicule.Text = "Arrêté";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est arrêté");
+            }
+
+            if (GhostLabelDeRéception.Text == "31 31") // Lorsque le véhicule est en marche
+            {
+                lblEtatVehicule.Text = "En marche";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est en marche");
+            }
+
+            if (GhostLabelDeRéception.Text == "01 02") // Lorsque le véhicule est hors circuit
+            {
+                lblEtatVehicule.Text = "En marche";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est Hors circuit");
+                pictureBox1.Image = PCANBasicExample.Properties.Resources.hm;
+            }
+
+            if (Poltergeist.Text == "34 30") // Lorsque le bloc est métallique
+            {
+                lblBlocColor.Text = "Métalique";
+                lblDirection.Text = "Horaire";  // *** Déclanche l'événement textchanged du label lblDirection***
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est en métal");
+                pictureBox3.Image = PCANBasicExample.Properties.Resources.metal;
+                label32.Text = "Metal";
+            }
+
+            if (Poltergeist.Text == "34 32") // Lorsque le bloc est noir
+            {
+                lblBlocColor.Text = "Noir";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est noir");
+                pictureBox3.Image = PCANBasicExample.Properties.Resources.noir;
+                label32.Text = "Noir";
+            }
+
+            if (Poltergeist.Text == "34 31") // Lorsque le bloc est orange
+            {
+                lblBlocColor.Text = "Orange";
+                lblDirection.Text = "Antihoraire";  // Déclanche l'événement textchanged du label lblDirection
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le bloc est orange");
+                pictureBox3.Image = PCANBasicExample.Properties.Resources.orange;
+                label32.Text = "Orange";
+            }
+
+            if (GhostLabelDeRéception.Text == "07 00") // Lorsque le véhicule est à la station de pesée
+            {
+                lblStation.Text = "Station de pesée";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la station de pesée");
+
+                if (lblDirection.Text == "Horaire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsHoraire;
+                }
+
+                if (lblDirection.Text == "Antihoraire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.poidsAnti;
+                }
+            }
+
+            if (GhostLabelDeRéception.Text == "07 01") //Le véhicule est à la table FESTO
+            {
+                lblStation.Text = "Table FESTO";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la table FESTO");
+
+                if (lblDirection.Text == "Horaire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoHoraire;
+                }
+
+                if (lblDirection.Text == "Antihoraire")
+                {
+                    pictureBox1.Image = PCANBasicExample.Properties.Resources.festoAnti;
+                }
+            }
+
+            if (GhostLabelDeRéception.Text == "07 02") // Le véhicule est à la station 3
+            {
+                lblStation.Text = "Station 3";
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Le véhicule est à la station 3");
+            }
+
+            if (GhostLabelDeRéception.Text == "C0 00") // demande de transfert d'historique
+            {
+                Historique.AppendText("\r\n");
+                Historique.AppendText("\r\n");
+                Historique.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                Historique.AppendText("\r\n");
+                Historique.AppendText("Transfert de l'historique du SOC vars le PC");
+            }
         }
     }
 }

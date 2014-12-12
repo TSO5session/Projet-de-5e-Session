@@ -110,6 +110,13 @@
             this.tmrRead = new System.Windows.Forms.Timer(this.components);
             this.tmrDisplay = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redémarrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiqueToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sauvegarderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.effacerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,6 +130,10 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.PoidCentieme = new System.Windows.Forms.Label();
+            this.PoidDizieme = new System.Windows.Forms.Label();
+            this.Poidunite = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.Poltergeist = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -151,6 +162,7 @@
             this.lblBlocColor = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.VoitureStop = new System.Windows.Forms.Button();
             this.VoitureStart = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
@@ -198,7 +210,7 @@
             this.timer4RealTimeCAN = new System.Windows.Forms.Timer(this.components);
             this.label30 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.PoidsLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -1275,14 +1287,71 @@
             // 
             this.menuStrip1.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.historiqueToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.fichierToolStripMenuItem,
+            this.historiqueToolStripMenuItem1,
+            this.àProposToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1018, 24);
             this.menuStrip1.TabIndex = 52;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fichierToolStripMenuItem
+            // 
+            this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quitterToolStripMenuItem,
+            this.redémarrerToolStripMenuItem});
+            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem.Text = "&Fichier";
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("quitterToolStripMenuItem.BackgroundImage")));
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
+            // redémarrerToolStripMenuItem
+            // 
+            this.redémarrerToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("redémarrerToolStripMenuItem.BackgroundImage")));
+            this.redémarrerToolStripMenuItem.Name = "redémarrerToolStripMenuItem";
+            this.redémarrerToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.redémarrerToolStripMenuItem.Text = "Redémarrer";
+            this.redémarrerToolStripMenuItem.Click += new System.EventHandler(this.redémarrerToolStripMenuItem_Click);
+            // 
+            // historiqueToolStripMenuItem1
+            // 
+            this.historiqueToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sauvegarderToolStripMenuItem1,
+            this.effacerToolStripMenuItem1});
+            this.historiqueToolStripMenuItem1.Name = "historiqueToolStripMenuItem1";
+            this.historiqueToolStripMenuItem1.Size = new System.Drawing.Size(74, 20);
+            this.historiqueToolStripMenuItem1.Text = "&Historique";
+            // 
+            // sauvegarderToolStripMenuItem1
+            // 
+            this.sauvegarderToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sauvegarderToolStripMenuItem1.BackgroundImage")));
+            this.sauvegarderToolStripMenuItem1.Name = "sauvegarderToolStripMenuItem1";
+            this.sauvegarderToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.sauvegarderToolStripMenuItem1.Text = "&Sauvegarder";
+            this.sauvegarderToolStripMenuItem1.Click += new System.EventHandler(this.sauvegarderToolStripMenuItem1_Click);
+            // 
+            // effacerToolStripMenuItem1
+            // 
+            this.effacerToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("effacerToolStripMenuItem1.BackgroundImage")));
+            this.effacerToolStripMenuItem1.Name = "effacerToolStripMenuItem1";
+            this.effacerToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.effacerToolStripMenuItem1.Text = "&Effacer";
+            this.effacerToolStripMenuItem1.Click += new System.EventHandler(this.effacerToolStripMenuItem1_Click);
+            // 
+            // àProposToolStripMenuItem
+            // 
+            this.àProposToolStripMenuItem.Name = "àProposToolStripMenuItem";
+            this.àProposToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.àProposToolStripMenuItem.Text = "&À propos";
+            this.àProposToolStripMenuItem.Click += new System.EventHandler(this.àProposToolStripMenuItem_Click);
             // 
             // fileToolStripMenuItem
             // 
@@ -1311,9 +1380,6 @@
             // 
             // historiqueToolStripMenuItem
             // 
-            this.historiqueToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sauvegarderToolStripMenuItem,
-            this.effacerToolStripMenuItem});
             this.historiqueToolStripMenuItem.Name = "historiqueToolStripMenuItem";
             this.historiqueToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.historiqueToolStripMenuItem.Text = "Historique";
@@ -1322,7 +1388,7 @@
             // 
             this.sauvegarderToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.sauvegarderToolStripMenuItem.Name = "sauvegarderToolStripMenuItem";
-            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sauvegarderToolStripMenuItem.Text = "Sauvegarder";
             this.sauvegarderToolStripMenuItem.Click += new System.EventHandler(this.sauvegarderToolStripMenuItem_Click);
             // 
@@ -1330,7 +1396,7 @@
             // 
             this.effacerToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.effacerToolStripMenuItem.Text = "Effacer";
             this.effacerToolStripMenuItem.Click += new System.EventHandler(this.effacerToolStripMenuItem_Click);
             // 
@@ -1410,6 +1476,11 @@
             // 
             // groupBox17
             // 
+            this.groupBox17.Controls.Add(this.PoidsLabel);
+            this.groupBox17.Controls.Add(this.PoidCentieme);
+            this.groupBox17.Controls.Add(this.PoidDizieme);
+            this.groupBox17.Controls.Add(this.Poidunite);
+            this.groupBox17.Controls.Add(this.label33);
             this.groupBox17.Controls.Add(this.label20);
             this.groupBox17.Controls.Add(this.Poltergeist);
             this.groupBox17.Controls.Add(this.label27);
@@ -1445,6 +1516,42 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Informations en temps réel";
             // 
+            // PoidCentieme
+            // 
+            this.PoidCentieme.AutoSize = true;
+            this.PoidCentieme.Location = new System.Drawing.Point(211, 194);
+            this.PoidCentieme.Name = "PoidCentieme";
+            this.PoidCentieme.Size = new System.Drawing.Size(18, 20);
+            this.PoidCentieme.TabIndex = 68;
+            this.PoidCentieme.Text = "?";
+            // 
+            // PoidDizieme
+            // 
+            this.PoidDizieme.AutoSize = true;
+            this.PoidDizieme.Location = new System.Drawing.Point(197, 194);
+            this.PoidDizieme.Name = "PoidDizieme";
+            this.PoidDizieme.Size = new System.Drawing.Size(18, 20);
+            this.PoidDizieme.TabIndex = 67;
+            this.PoidDizieme.Text = "?";
+            // 
+            // Poidunite
+            // 
+            this.Poidunite.AutoSize = true;
+            this.Poidunite.Location = new System.Drawing.Point(173, 194);
+            this.Poidunite.Name = "Poidunite";
+            this.Poidunite.Size = new System.Drawing.Size(18, 20);
+            this.Poidunite.TabIndex = 66;
+            this.Poidunite.Text = "?";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(191, 194);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(13, 20);
+            this.label33.TabIndex = 65;
+            this.label33.Text = ".";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1453,6 +1560,7 @@
             this.label20.Size = new System.Drawing.Size(63, 20);
             this.label20.TabIndex = 56;
             this.label20.Text = "no data";
+            this.label20.Visible = false;
             // 
             // Poltergeist
             // 
@@ -1463,11 +1571,12 @@
             this.Poltergeist.Size = new System.Drawing.Size(190, 26);
             this.Poltergeist.TabIndex = 63;
             this.Poltergeist.Text = "Aperçu des trames";
+           // this.Poltergeist.TextChanged += new System.EventHandler(this.Poltergeist_TextChanged);
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(7, 52);
+            this.label27.Location = new System.Drawing.Point(8, 98);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(105, 20);
             this.label27.TabIndex = 16;
@@ -1491,6 +1600,7 @@
             this.label29.Size = new System.Drawing.Size(40, 20);
             this.label29.TabIndex = 57;
             this.label29.Text = "Ping";
+            this.label29.Visible = false;
             // 
             // GhostLabel
             // 
@@ -1505,7 +1615,7 @@
             // lblDirection
             // 
             this.lblDirection.AutoSize = true;
-            this.lblDirection.Location = new System.Drawing.Point(157, 72);
+            this.lblDirection.Location = new System.Drawing.Point(158, 118);
             this.lblDirection.Name = "lblDirection";
             this.lblDirection.Size = new System.Drawing.Size(61, 20);
             this.lblDirection.TabIndex = 19;
@@ -1525,7 +1635,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 32);
+            this.label18.Location = new System.Drawing.Point(8, 78);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(122, 20);
             this.label18.TabIndex = 5;
@@ -1545,7 +1655,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(8, 72);
+            this.label28.Location = new System.Drawing.Point(9, 118);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(72, 20);
             this.label28.TabIndex = 18;
@@ -1565,7 +1675,7 @@
             // lblEtatVehicule
             // 
             this.lblEtatVehicule.AutoSize = true;
-            this.lblEtatVehicule.Location = new System.Drawing.Point(157, 32);
+            this.lblEtatVehicule.Location = new System.Drawing.Point(158, 78);
             this.lblEtatVehicule.Name = "lblEtatVehicule";
             this.lblEtatVehicule.Size = new System.Drawing.Size(63, 20);
             this.lblEtatVehicule.TabIndex = 6;
@@ -1579,6 +1689,7 @@
             this.label21.Size = new System.Drawing.Size(65, 20);
             this.label21.TabIndex = 8;
             this.label21.Text = "Batterie";
+            this.label21.Visible = false;
             // 
             // GhostLabel2
             // 
@@ -1598,6 +1709,7 @@
             this.lblBattryLevel.Size = new System.Drawing.Size(63, 20);
             this.lblBattryLevel.TabIndex = 9;
             this.lblBattryLevel.Text = "no data";
+            this.lblBattryLevel.Visible = false;
             // 
             // label32
             // 
@@ -1611,7 +1723,7 @@
             // lblStation
             // 
             this.lblStation.AutoSize = true;
-            this.lblStation.Location = new System.Drawing.Point(157, 52);
+            this.lblStation.Location = new System.Drawing.Point(158, 98);
             this.lblStation.Name = "lblStation";
             this.lblStation.Size = new System.Drawing.Size(105, 20);
             this.lblStation.TabIndex = 17;
@@ -1634,6 +1746,7 @@
             this.label22.Size = new System.Drawing.Size(62, 20);
             this.label22.TabIndex = 10;
             this.label22.Text = "Vitesse";
+            this.label22.Visible = false;
             // 
             // pictureBox3
             // 
@@ -1653,15 +1766,16 @@
             this.lblSpeed.Size = new System.Drawing.Size(63, 20);
             this.lblSpeed.TabIndex = 11;
             this.lblSpeed.Text = "no data";
+            this.lblSpeed.Visible = false;
             // 
             // LblPoidBloc
             // 
             this.LblPoidBloc.AutoSize = true;
-            this.LblPoidBloc.Location = new System.Drawing.Point(155, 148);
+            this.LblPoidBloc.Location = new System.Drawing.Point(158, 194);
             this.LblPoidBloc.Name = "LblPoidBloc";
-            this.LblPoidBloc.Size = new System.Drawing.Size(63, 20);
+            this.LblPoidBloc.Size = new System.Drawing.Size(18, 20);
             this.LblPoidBloc.TabIndex = 15;
-            this.LblPoidBloc.Text = "no data";
+            this.LblPoidBloc.Text = "?";
             // 
             // pictureBox1
             // 
@@ -1676,7 +1790,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 128);
+            this.label23.Location = new System.Drawing.Point(9, 174);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(119, 20);
             this.label23.TabIndex = 12;
@@ -1685,7 +1799,7 @@
             // lblBlocColor
             // 
             this.lblBlocColor.AutoSize = true;
-            this.lblBlocColor.Location = new System.Drawing.Point(155, 128);
+            this.lblBlocColor.Location = new System.Drawing.Point(156, 174);
             this.lblBlocColor.Name = "lblBlocColor";
             this.lblBlocColor.Size = new System.Drawing.Size(63, 20);
             this.lblBlocColor.TabIndex = 13;
@@ -1694,7 +1808,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 148);
+            this.label26.Location = new System.Drawing.Point(9, 194);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(95, 20);
             this.label26.TabIndex = 14;
@@ -1711,6 +1825,17 @@
             this.groupBox24.TabIndex = 62;
             this.groupBox24.TabStop = false;
             this.groupBox24.Text = "Véhicule";
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
+            this.button4.Location = new System.Drawing.Point(6, 56);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(156, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Activer table FESTO";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // VoitureStop
             // 
@@ -2168,7 +2293,7 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(75, 13);
             this.label30.TabIndex = 56;
-            this.label30.Text = "Version 0.94.0";
+            this.label30.Text = "Version 0.95.1";
             // 
             // label35
             // 
@@ -2179,16 +2304,15 @@
             this.label35.TabIndex = 62;
             this.label35.Text = "Time = ";
             // 
-            // button4
+            // PoidsLabel
             // 
-            this.button4.BackgroundImage = global::PCANBasicExample.Properties.Resources.Image1;
-            this.button4.Location = new System.Drawing.Point(6, 56);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(156, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Activer table FESTO";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.PoidsLabel.AutoSize = true;
+            this.PoidsLabel.Location = new System.Drawing.Point(47, 277);
+            this.PoidsLabel.Name = "PoidsLabel";
+            this.PoidsLabel.Size = new System.Drawing.Size(48, 20);
+            this.PoidsLabel.TabIndex = 69;
+            this.PoidsLabel.Text = "Poids";
+            this.PoidsLabel.Visible = false;
             // 
             // Form1
             // 
@@ -2436,6 +2560,18 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label PoidCentieme;
+        private System.Windows.Forms.Label PoidDizieme;
+        private System.Windows.Forms.Label Poidunite;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redémarrerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiqueToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sauvegarderToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem effacerToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem;
+        private System.Windows.Forms.Label PoidsLabel;
        // private System.Windows.Forms.Label GhostLabelDeRéceptionLabeldeTest;
         //private System.Windows.Forms.Label GhostLabelDeRéceptionTestLabel;
     }
